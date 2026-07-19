@@ -1,0 +1,884 @@
+{
+ "scannedDates": {
+  "2026-02-01": true,
+  "2026-02-02": true,
+  "2026-02-03": true,
+  "2026-02-04": true,
+  "2026-02-05": true,
+  "2026-02-06": true,
+  "2026-02-07": true,
+  "2026-02-08": true,
+  "2026-02-09": true,
+  "2026-02-10": true,
+  "2026-02-11": true,
+  "2026-02-12": true,
+  "2026-02-13": true,
+  "2026-02-14": true,
+  "2026-02-15": true,
+  "2026-02-16": true,
+  "2026-02-17": true,
+  "2026-02-18": true,
+  "2026-02-19": true,
+  "2026-02-20": true,
+  "2026-02-21": true,
+  "2026-02-22": true,
+  "2026-02-23": true,
+  "2026-02-24": true,
+  "2026-02-25": true,
+  "2026-02-26": true,
+  "2026-02-27": true,
+  "2026-02-28": true,
+  "2026-03-01": true,
+  "2026-03-02": true,
+  "2026-03-03": true,
+  "2026-03-04": true,
+  "2026-03-05": true,
+  "2026-03-06": true,
+  "2026-03-07": true,
+  "2026-03-08": true,
+  "2026-03-09": true,
+  "2026-03-10": true,
+  "2026-03-11": true,
+  "2026-03-12": true,
+  "2026-03-13": true,
+  "2026-03-14": true,
+  "2026-03-15": true,
+  "2026-03-16": true,
+  "2026-03-17": true,
+  "2026-03-18": true,
+  "2026-03-19": true,
+  "2026-03-20": true,
+  "2026-03-21": true,
+  "2026-03-22": true,
+  "2026-03-23": true,
+  "2026-03-24": true,
+  "2026-03-25": true,
+  "2026-03-26": true,
+  "2026-03-27": true,
+  "2026-03-28": true,
+  "2026-03-29": true,
+  "2026-03-30": true,
+  "2026-03-31": true,
+  "2026-04-01": true,
+  "2026-04-02": true,
+  "2026-04-03": true,
+  "2026-04-04": true,
+  "2026-04-05": true,
+  "2026-04-06": true,
+  "2026-04-07": true,
+  "2026-04-08": true,
+  "2026-04-09": true,
+  "2026-04-10": true,
+  "2026-04-11": true,
+  "2026-04-12": true,
+  "2026-04-13": true,
+  "2026-04-14": true,
+  "2026-04-15": true,
+  "2026-04-16": true,
+  "2026-04-17": true,
+  "2026-04-18": true,
+  "2026-04-19": true,
+  "2026-04-20": true,
+  "2026-04-21": true,
+  "2026-04-22": true,
+  "2026-04-23": true,
+  "2026-04-24": true,
+  "2026-04-25": true,
+  "2026-04-26": true,
+  "2026-04-27": true,
+  "2026-04-28": true,
+  "2026-04-29": true,
+  "2026-04-30": true,
+  "2026-05-01": true,
+  "2026-05-02": true,
+  "2026-05-03": true,
+  "2026-05-04": true,
+  "2026-05-05": true,
+  "2026-05-06": true,
+  "2026-05-07": true,
+  "2026-05-08": true,
+  "2026-05-09": true,
+  "2026-05-10": true,
+  "2026-05-11": true,
+  "2026-05-12": true,
+  "2026-05-13": true,
+  "2026-05-14": true,
+  "2026-05-15": true,
+  "2026-05-16": true,
+  "2026-05-17": true,
+  "2026-05-18": true,
+  "2026-05-19": true,
+  "2026-05-20": true,
+  "2026-05-21": true,
+  "2026-05-22": true,
+  "2026-05-23": true,
+  "2026-05-24": true,
+  "2026-05-25": true,
+  "2026-05-26": true,
+  "2026-05-27": true,
+  "2026-05-28": true,
+  "2026-05-29": true,
+  "2026-05-30": true,
+  "2026-05-31": true,
+  "2026-06-01": true,
+  "2026-06-02": true,
+  "2026-06-03": true,
+  "2026-06-04": true,
+  "2026-06-05": true,
+  "2026-06-06": true,
+  "2026-06-07": true,
+  "2026-06-08": true,
+  "2026-06-09": true,
+  "2026-06-10": true,
+  "2026-06-11": true,
+  "2026-06-12": true,
+  "2026-06-13": true,
+  "2026-06-14": true,
+  "2026-06-15": true
+ },
+ "ncaaGames": {
+  "6542954": {
+   "date": "2026-04-24",
+   "final": true,
+   "opponent": "Iowa St.",
+   "kuIsHome": true,
+   "kuScore": "12",
+   "oppScore": "2"
+  },
+  "6542967": {
+   "date": "2026-04-25",
+   "final": true,
+   "opponent": "Iowa St.",
+   "kuIsHome": true,
+   "kuScore": "4",
+   "oppScore": "2"
+  },
+  "6542969": {
+   "date": "2026-04-24",
+   "final": true,
+   "opponent": "Iowa St.",
+   "kuIsHome": true,
+   "kuScore": "1",
+   "oppScore": "4"
+  },
+  "6543174": {
+   "date": "2026-03-04",
+   "final": true,
+   "opponent": "Wichita St.",
+   "kuIsHome": false,
+   "kuScore": "9",
+   "oppScore": "1"
+  },
+  "6543231": {
+   "date": "2026-04-28",
+   "final": true,
+   "opponent": "Wichita St.",
+   "kuIsHome": true,
+   "kuScore": "10",
+   "oppScore": "0"
+  },
+  "6544381": {
+   "date": "2026-04-17",
+   "final": true,
+   "opponent": "UCF",
+   "kuIsHome": false,
+   "kuScore": "3",
+   "oppScore": "6"
+  },
+  "6544383": {
+   "date": "2026-04-18",
+   "final": true,
+   "opponent": "UCF",
+   "kuIsHome": false,
+   "kuScore": "2",
+   "oppScore": "9"
+  },
+  "6544385": {
+   "date": "2026-04-19",
+   "final": true,
+   "opponent": "UCF",
+   "kuIsHome": false,
+   "kuScore": "4",
+   "oppScore": "2"
+  },
+  "6545404": {
+   "date": "2026-03-01",
+   "final": true,
+   "opponent": "Arkansas",
+   "kuIsHome": false,
+   "kuScore": "3",
+   "oppScore": "11"
+  },
+  "6546758": {
+   "date": "2026-02-10",
+   "final": true,
+   "opponent": "FGCU",
+   "kuIsHome": false,
+   "kuScore": "5",
+   "oppScore": "3"
+  },
+  "6547057": {
+   "date": "2026-02-20",
+   "final": true,
+   "opponent": "Southern Ind.",
+   "kuIsHome": true,
+   "kuScore": "9",
+   "oppScore": "1"
+  },
+  "6547708": {
+   "date": "2026-02-12",
+   "final": true,
+   "opponent": "Boston College",
+   "kuIsHome": false,
+   "kuScore": "2",
+   "oppScore": "4"
+  },
+  "6547918": {
+   "date": "2026-03-26",
+   "final": true,
+   "opponent": "BYU",
+   "kuIsHome": false,
+   "kuScore": "6",
+   "oppScore": "4"
+  },
+  "6547920": {
+   "date": "2026-03-27",
+   "final": true,
+   "opponent": "BYU",
+   "kuIsHome": false,
+   "kuScore": "3",
+   "oppScore": "4"
+  },
+  "6547922": {
+   "date": "2026-03-28",
+   "final": true,
+   "opponent": "BYU",
+   "kuIsHome": false,
+   "kuScore": "10",
+   "oppScore": "3"
+  },
+  "6550549": {
+   "date": "2026-02-08",
+   "final": true,
+   "opponent": "Florida",
+   "kuIsHome": true,
+   "kuScore": "2",
+   "oppScore": "11"
+  },
+  "6551499": {
+   "date": "2026-04-10",
+   "final": true,
+   "opponent": "Baylor",
+   "kuIsHome": true,
+   "kuScore": "7",
+   "oppScore": "8"
+  },
+  "6551501": {
+   "date": "2026-04-10",
+   "final": true,
+   "opponent": "Baylor",
+   "kuIsHome": true,
+   "kuScore": "1",
+   "oppScore": "0"
+  },
+  "6551507": {
+   "date": "2026-04-11",
+   "final": true,
+   "opponent": "Baylor",
+   "kuIsHome": true,
+   "kuScore": "5",
+   "oppScore": "4"
+  },
+  "6552132": {
+   "date": "2026-02-14",
+   "final": true,
+   "opponent": "DePaul",
+   "kuIsHome": false,
+   "kuScore": "11",
+   "oppScore": "0"
+  },
+  "6553405": {
+   "date": "2026-04-02",
+   "final": true,
+   "opponent": "Arizona St.",
+   "kuIsHome": true,
+   "kuScore": "5",
+   "oppScore": "8"
+  },
+  "6553407": {
+   "date": "2026-04-04",
+   "final": true,
+   "opponent": "Arizona St.",
+   "kuIsHome": true,
+   "kuScore": "5",
+   "oppScore": "4"
+  },
+  "6553430": {
+   "date": "2026-02-08",
+   "final": true,
+   "opponent": "Michigan",
+   "kuIsHome": false,
+   "kuScore": "2",
+   "oppScore": "4"
+  },
+  "6553998": {
+   "date": "2026-03-13",
+   "final": true,
+   "opponent": "Houston",
+   "kuIsHome": false,
+   "kuScore": "9",
+   "oppScore": "10"
+  },
+  "6553999": {
+   "date": "2026-03-14",
+   "final": true,
+   "opponent": "Houston",
+   "kuIsHome": false,
+   "kuScore": "18",
+   "oppScore": "1"
+  },
+  "6554000": {
+   "date": "2026-03-15",
+   "final": true,
+   "opponent": "Houston",
+   "kuIsHome": false,
+   "kuScore": "11",
+   "oppScore": "8"
+  },
+  "6554147": {
+   "date": "2026-02-06",
+   "final": true,
+   "opponent": "Illinois St.",
+   "kuIsHome": false,
+   "kuScore": "13",
+   "oppScore": "5"
+  },
+  "6554229": {
+   "date": "2026-02-12",
+   "final": true,
+   "opponent": "Indiana St.",
+   "kuIsHome": true,
+   "kuScore": "10",
+   "oppScore": "4"
+  },
+  "6554462": {
+   "date": "2026-02-06",
+   "final": true,
+   "opponent": "Bethune-Cookman",
+   "kuIsHome": true,
+   "kuScore": "12",
+   "oppScore": "0"
+  },
+  "6554466": {
+   "date": "2026-02-07",
+   "final": true,
+   "opponent": "South Fla.",
+   "kuIsHome": false,
+   "kuScore": "4",
+   "oppScore": "12"
+  },
+  "6554469": {
+   "date": "2026-02-13",
+   "final": true,
+   "opponent": "South Fla.",
+   "kuIsHome": false,
+   "kuScore": "7",
+   "oppScore": "2"
+  },
+  "6554472": {
+   "date": "2026-02-14",
+   "final": true,
+   "opponent": "Yale",
+   "kuIsHome": false,
+   "kuScore": "12",
+   "oppScore": "0"
+  },
+  "6554476": {
+   "date": "2026-02-19",
+   "final": true,
+   "opponent": "Fla. Atlantic",
+   "kuIsHome": false,
+   "kuScore": "5",
+   "oppScore": "6"
+  },
+  "6554482": {
+   "date": "2026-02-20",
+   "final": true,
+   "opponent": "Villanova",
+   "kuIsHome": true,
+   "kuScore": "8",
+   "oppScore": "1"
+  },
+  "6554487": {
+   "date": "2026-05-01",
+   "final": true,
+   "opponent": "Oklahoma St.",
+   "kuIsHome": false,
+   "kuScore": "1",
+   "oppScore": "8"
+  },
+  "6554488": {
+   "date": "2026-05-02",
+   "final": true,
+   "opponent": "Oklahoma St.",
+   "kuIsHome": false,
+   "kuScore": "10",
+   "oppScore": "1"
+  },
+  "6554490": {
+   "date": "2026-02-21",
+   "final": true,
+   "opponent": "Massachusetts",
+   "kuIsHome": false,
+   "kuScore": "0",
+   "oppScore": "8"
+  },
+  "6554491": {
+   "date": "2026-05-03",
+   "final": true,
+   "opponent": "Oklahoma St.",
+   "kuIsHome": false,
+   "kuScore": "0",
+   "oppScore": "7"
+  },
+  "6554495": {
+   "date": "2026-02-27",
+   "final": true,
+   "opponent": "Omaha",
+   "kuIsHome": true,
+   "kuScore": "6",
+   "oppScore": "5"
+  },
+  "6554498": {
+   "date": "2026-02-28",
+   "final": true,
+   "opponent": "Charlotte",
+   "kuIsHome": true,
+   "kuScore": "15",
+   "oppScore": "4"
+  },
+  "6554508": {
+   "date": "2026-02-27",
+   "final": true,
+   "opponent": "Boise St.",
+   "kuIsHome": true,
+   "kuScore": "4",
+   "oppScore": "1"
+  },
+  "6554511": {
+   "date": "2026-02-28",
+   "final": true,
+   "opponent": "Boise St.",
+   "kuIsHome": false,
+   "kuScore": "10",
+   "oppScore": "1"
+  },
+  "6554512": {
+   "date": "2026-03-06",
+   "final": true,
+   "opponent": "Utah St.",
+   "kuIsHome": true,
+   "kuScore": "7",
+   "oppScore": "1"
+  },
+  "6554514": {
+   "date": "2026-03-06",
+   "final": true,
+   "opponent": "Utah St.",
+   "kuIsHome": true,
+   "kuScore": "18",
+   "oppScore": "2"
+  },
+  "6554516": {
+   "date": "2026-03-07",
+   "final": true,
+   "opponent": "Utah St.",
+   "kuIsHome": true,
+   "kuScore": "14",
+   "oppScore": "0"
+  },
+  "6554522": {
+   "date": "2026-03-20",
+   "final": true,
+   "opponent": "Utah",
+   "kuIsHome": true,
+   "kuScore": "7",
+   "oppScore": "5"
+  },
+  "6554523": {
+   "date": "2026-03-21",
+   "final": true,
+   "opponent": "Utah",
+   "kuIsHome": true,
+   "kuScore": "1",
+   "oppScore": "2"
+  },
+  "6554524": {
+   "date": "2026-03-22",
+   "final": true,
+   "opponent": "Utah",
+   "kuIsHome": true,
+   "kuScore": "10",
+   "oppScore": "5"
+  },
+  "6554526": {
+   "date": "2026-04-15",
+   "final": true,
+   "opponent": "Missouri",
+   "kuIsHome": true,
+   "kuScore": "2",
+   "oppScore": "4"
+  },
+  "6554527": {
+   "date": "2026-02-21",
+   "final": true,
+   "opponent": "Villanova",
+   "kuIsHome": false,
+   "kuScore": "4",
+   "oppScore": "1"
+  },
+  "6595291": {
+   "date": "2026-03-18",
+   "final": true,
+   "opponent": "South Dakota",
+   "kuIsHome": true,
+   "kuScore": "4",
+   "oppScore": "3"
+  },
+  "6597018": {
+   "date": "2026-04-02",
+   "final": true,
+   "opponent": "Arizona St.",
+   "kuIsHome": true,
+   "kuScore": "11",
+   "oppScore": "7"
+  },
+  "6599839": {
+   "date": "2026-05-15",
+   "final": true,
+   "opponent": "Michigan",
+   "kuIsHome": true,
+   "kuScore": "1",
+   "oppScore": "0"
+  },
+  "6599840": {
+   "date": "2026-05-16",
+   "final": true,
+   "opponent": "Oklahoma",
+   "kuIsHome": false,
+   "kuScore": "0",
+   "oppScore": "9"
+  },
+  "6599842": {
+   "date": "2026-05-16",
+   "final": true,
+   "opponent": "Michigan",
+   "kuIsHome": false,
+   "kuScore": "10",
+   "oppScore": "12"
+  },
+  "6602296": {
+   "date": "2026-05-08",
+   "final": true,
+   "opponent": "Texas Tech",
+   "kuIsHome": false,
+   "kuScore": "0",
+   "oppScore": "14"
+  },
+  "6602297": {
+   "date": "2026-05-07",
+   "final": false,
+   "opponent": "UCF",
+   "kuIsHome": false,
+   "kuScore": "",
+   "oppScore": ""
+  }
+ },
+ "sidearmGames": {
+  "20426": {
+   "captured": true,
+   "season": "2026",
+   "url": "https://kuathletics.com/sports/softball/stats/2026/bethune-cookman/boxscore/20426"
+  },
+  "20427": {
+   "captured": true,
+   "season": "2026",
+   "url": "https://kuathletics.com/sports/softball/stats/2026/illinois-state/boxscore/20427"
+  },
+  "20428": {
+   "captured": true,
+   "season": "2026",
+   "url": "https://kuathletics.com/sports/softball/stats/2026/south-florida/boxscore/20428"
+  },
+  "20429": {
+   "captured": true,
+   "season": "2026",
+   "url": "https://kuathletics.com/sports/softball/stats/2026/michigan/boxscore/20429"
+  },
+  "20430": {
+   "captured": true,
+   "season": "2026",
+   "url": "https://kuathletics.com/sports/softball/stats/2026/florida/boxscore/20430"
+  },
+  "20431": {
+   "captured": true,
+   "season": "2026",
+   "url": "https://kuathletics.com/sports/softball/stats/2026/fgcu/boxscore/20431"
+  },
+  "20432": {
+   "captured": true,
+   "season": "2026",
+   "url": "https://kuathletics.com/sports/softball/stats/2026/indiana-state/boxscore/20432"
+  },
+  "20433": {
+   "captured": true,
+   "season": "2026",
+   "url": "https://kuathletics.com/sports/softball/stats/2026/boston-college/boxscore/20433"
+  },
+  "20434": {
+   "captured": true,
+   "season": "2026",
+   "url": "https://kuathletics.com/sports/softball/stats/2026/south-florida/boxscore/20434"
+  },
+  "20435": {
+   "captured": true,
+   "season": "2026",
+   "url": "https://kuathletics.com/sports/softball/stats/2026/depaul/boxscore/20435"
+  },
+  "20436": {
+   "captured": true,
+   "season": "2026",
+   "url": "https://kuathletics.com/sports/softball/stats/2026/yale/boxscore/20436"
+  },
+  "20437": {
+   "captured": true,
+   "season": "2026",
+   "url": "https://kuathletics.com/sports/softball/stats/2026/florida-atlantic/boxscore/20437"
+  },
+  "20438": {
+   "captured": true,
+   "season": "2026",
+   "url": "https://kuathletics.com/sports/softball/stats/2026/villanova/boxscore/20438"
+  },
+  "20439": {
+   "captured": true,
+   "season": "2026",
+   "url": "https://kuathletics.com/sports/softball/stats/2026/southern-ind-/boxscore/20439"
+  },
+  "20440": {
+   "captured": true,
+   "season": "2026",
+   "url": "https://kuathletics.com/sports/softball/stats/2026/massachusetts/boxscore/20440"
+  },
+  "20441": {
+   "captured": true,
+   "season": "2026",
+   "url": "https://kuathletics.com/sports/softball/stats/2026/villanova/boxscore/20441"
+  },
+  "20442": {
+   "captured": true,
+   "season": "2026",
+   "url": "https://kuathletics.com/sports/softball/stats/2026/omaha/boxscore/20442"
+  },
+  "20443": {
+   "captured": true,
+   "season": "2026",
+   "url": "https://kuathletics.com/sports/softball/stats/2026/charlotte/boxscore/20443"
+  },
+  "20444": {
+   "captured": true,
+   "season": "2026",
+   "url": "https://kuathletics.com/sports/softball/stats/2026/boise-state/boxscore/20444"
+  },
+  "20445": {
+   "captured": true,
+   "season": "2026",
+   "url": "https://kuathletics.com/sports/softball/stats/2026/boise-state/boxscore/20445"
+  },
+  "20446": {
+   "captured": true,
+   "season": "2026",
+   "url": "https://kuathletics.com/sports/softball/stats/2026/arkansas/boxscore/20446"
+  },
+  "20447": {
+   "captured": true,
+   "season": "2026",
+   "url": "https://kuathletics.com/sports/softball/stats/2026/wichita-state/boxscore/20447"
+  },
+  "20448": {
+   "captured": true,
+   "season": "2026",
+   "url": "https://kuathletics.com/sports/softball/stats/2026/utah-state/boxscore/20448"
+  },
+  "20449": {
+   "captured": true,
+   "season": "2026",
+   "url": "https://kuathletics.com/sports/softball/stats/2026/utah-state/boxscore/20449"
+  },
+  "20450": {
+   "captured": true,
+   "season": "2026",
+   "url": "https://kuathletics.com/sports/softball/stats/2026/utah-state/boxscore/20450"
+  },
+  "20454": {
+   "captured": true,
+   "season": "2026",
+   "url": "https://kuathletics.com/sports/softball/stats/2026/houston/boxscore/20454"
+  },
+  "20455": {
+   "captured": true,
+   "season": "2026",
+   "url": "https://kuathletics.com/sports/softball/stats/2026/houston/boxscore/20455"
+  },
+  "20456": {
+   "captured": true,
+   "season": "2026",
+   "url": "https://kuathletics.com/sports/softball/stats/2026/houston/boxscore/20456"
+  },
+  "20459": {
+   "captured": true,
+   "season": "2026",
+   "url": "https://kuathletics.com/sports/softball/stats/2026/utah/boxscore/20459"
+  },
+  "20460": {
+   "captured": true,
+   "season": "2026",
+   "url": "https://kuathletics.com/sports/softball/stats/2026/utah/boxscore/20460"
+  },
+  "20461": {
+   "captured": true,
+   "season": "2026",
+   "url": "https://kuathletics.com/sports/softball/stats/2026/utah/boxscore/20461"
+  },
+  "20462": {
+   "captured": true,
+   "season": "2026",
+   "url": "https://kuathletics.com/sports/softball/stats/2026/byu/boxscore/20462"
+  },
+  "20463": {
+   "captured": true,
+   "season": "2026",
+   "url": "https://kuathletics.com/sports/softball/stats/2026/byu/boxscore/20463"
+  },
+  "20465": {
+   "captured": true,
+   "season": "2026",
+   "url": "https://kuathletics.com/sports/softball/stats/2026/byu/boxscore/20465"
+  },
+  "20466": {
+   "captured": true,
+   "season": "2026",
+   "url": "https://kuathletics.com/sports/softball/stats/2026/arizona-state/boxscore/20466"
+  },
+  "20468": {
+   "captured": true,
+   "season": "2026",
+   "url": "https://kuathletics.com/sports/softball/stats/2026/arizona-state/boxscore/20468"
+  },
+  "20469": {
+   "captured": true,
+   "season": "2026",
+   "url": "https://kuathletics.com/sports/softball/stats/2026/baylor/boxscore/20469"
+  },
+  "20470": {
+   "captured": true,
+   "season": "2026",
+   "url": "https://kuathletics.com/sports/softball/stats/2026/baylor/boxscore/20470"
+  },
+  "20471": {
+   "captured": true,
+   "season": "2026",
+   "url": "https://kuathletics.com/sports/softball/stats/2026/baylor/boxscore/20471"
+  },
+  "20472": {
+   "captured": true,
+   "season": "2026",
+   "url": "https://kuathletics.com/sports/softball/stats/2026/missouri/boxscore/20472"
+  },
+  "20500": {
+   "captured": true,
+   "season": "2026",
+   "url": "https://kuathletics.com/sports/softball/stats/2026/ucf/boxscore/20500"
+  },
+  "20501": {
+   "captured": true,
+   "season": "2026",
+   "url": "https://kuathletics.com/sports/softball/stats/2026/ucf/boxscore/20501"
+  },
+  "20502": {
+   "captured": true,
+   "season": "2026",
+   "url": "https://kuathletics.com/sports/softball/stats/2026/ucf/boxscore/20502"
+  },
+  "20503": {
+   "captured": true,
+   "season": "2026",
+   "url": "https://kuathletics.com/sports/softball/stats/2026/iowa-state/boxscore/20503"
+  },
+  "20504": {
+   "captured": true,
+   "season": "2026",
+   "url": "https://kuathletics.com/sports/softball/stats/2026/iowa-state/boxscore/20504"
+  },
+  "20505": {
+   "captured": true,
+   "season": "2026",
+   "url": "https://kuathletics.com/sports/softball/stats/2026/iowa-state/boxscore/20505"
+  },
+  "20506": {
+   "captured": true,
+   "season": "2026",
+   "url": "https://kuathletics.com/sports/softball/stats/2026/wichita-state/boxscore/20506"
+  },
+  "20507": {
+   "captured": true,
+   "season": "2026",
+   "url": "https://kuathletics.com/sports/softball/stats/2026/oklahoma-state/boxscore/20507"
+  },
+  "20508": {
+   "captured": true,
+   "season": "2026",
+   "url": "https://kuathletics.com/sports/softball/stats/2026/oklahoma-state/boxscore/20508"
+  },
+  "20509": {
+   "captured": true,
+   "season": "2026",
+   "url": "https://kuathletics.com/sports/softball/stats/2026/oklahoma-state/boxscore/20509"
+  },
+  "20566": {
+   "captured": true,
+   "season": "2026",
+   "url": "https://kuathletics.com/sports/softball/stats/2026/south-dakota/boxscore/20566"
+  },
+  "20578": {
+   "captured": true,
+   "season": "2026",
+   "url": "https://kuathletics.com/sports/softball/stats/2026/arizona-state/boxscore/20578"
+  },
+  "20610": {
+   "captured": true,
+   "season": "2026",
+   "url": "https://kuathletics.com/sports/softball/stats/2026/ucf/boxscore/20610"
+  },
+  "20611": {
+   "captured": true,
+   "season": "2026",
+   "url": "https://kuathletics.com/sports/softball/stats/2026/texas-tech/boxscore/20611"
+  },
+  "20612": {
+   "captured": true,
+   "season": "2026",
+   "url": "https://kuathletics.com/sports/softball/stats/2026/michigan/boxscore/20612"
+  },
+  "20613": {
+   "captured": true,
+   "season": "2026",
+   "url": "https://kuathletics.com/sports/softball/stats/2026/oklahoma-sooners/boxscore/20613"
+  },
+  "20616": {
+   "captured": true,
+   "season": "2026",
+   "url": "https://kuathletics.com/sports/softball/stats/2026/michigan/boxscore/20616"
+  }
+ }
+}
