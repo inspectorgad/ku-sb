@@ -1,0 +1,44 @@
+name: Probe 2 - Sidearm box scores + NCAA gaps
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - 'scripts/probe2-ku-sb.mjs'
+      - '.github/workflows/probe2-data.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install Playwright Chromium
+        run: |
+          npm init -y > /dev/null
+          npm install playwright@1.49.0 > /dev/null
+          npx playwright install --with-deps chromium
+
+      - name: Run second-round probe
+        run: node scripts/probe2-ku-sb.mjs
+
+      - name: Upload probe evidence
+        uses: actions/upload-artifact@v4
+        with:
+          name: probe2-evidence
+          path: probe2/
+
+      - name: Commit probe results
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add -f probe2/
+          git diff --cached --quiet || git commit -m "Add second-round probe results [skip ci]"
+          git push
