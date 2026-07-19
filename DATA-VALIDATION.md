@@ -87,3 +87,24 @@ substitution in the pipeline:
 - Softball is a single-calendar-year season: label seasons "2026", not
   "2025-26" (note: NCAA `seasonYear` is 2025 for spring 2026 — academic
   year start).
+
+## Fall exhibitions (probe3, 2026-07-19)
+
+KU plays fall pre-season exhibition games, but **no structured data for
+them is published anywhere the pipeline can reach**:
+
+- **NCAA API**: zero D1 softball games — for any team — on the scoreboard
+  across the whole Sep 1 – Nov 30, 2025 window. The NCAA feed simply does
+  not carry fall ball.
+- **kuathletics.com**: the 2026 season schedule page starts with the
+  Feb 6 openers — the Fall 2025 exhibitions were never listed, and no
+  box scores exist for them (Sidearm ids 20426–20616 are all spring
+  games). `/schedule/season/2027` and a fall-labeled schedule URL both
+  404 (nothing posted yet as of July 2026), and `/stats/2027` is an
+  empty shell.
+
+Consequence: fall games cannot be auto-scraped; if fall results/stats are
+wanted in the app they must be entered by hand (the Games tab supports
+manual games + stat lines, and the sync merge never overwrites them). If
+KU ever starts posting fall box scores, the scraper's stats-page sweep
+picks up a new season by adding its year to `SEASONS` in scrape-data.yml.
