@@ -1,0 +1,164 @@
+{
+ "formatVersion": 1,
+ "generatedAt": "2026-07-19T14:14:18Z",
+ "team": "Kansas Jayhawks Softball",
+ "players": [
+  {
+   "name": "Anna Soles",
+   "jerseyNumber": "22",
+   "position": "LHP/UTL",
+   "active": true
+  },
+  {
+   "name": "Audri Youngblood",
+   "jerseyNumber": "31",
+   "position": "OF",
+   "active": true
+  },
+  {
+   "name": "Ava Wallace",
+   "jerseyNumber": "7",
+   "position": "OF",
+   "active": true
+  },
+  {
+   "name": "Aynslee Linduff",
+   "jerseyNumber": "39",
+   "position": "OF",
+   "active": true
+  },
+  {
+   "name": "Bailey Amezcua",
+   "jerseyNumber": "25",
+   "position": "C",
+   "active": true
+  },
+  {
+   "name": "Bailey Weber",
+   "jerseyNumber": "13",
+   "position": "OF",
+   "active": true
+  },
+  {
+   "name": "Blakely Barber",
+   "jerseyNumber": "3",
+   "position": "P",
+   "active": true
+  },
+  {
+   "name": "Brinley Ramirez",
+   "jerseyNumber": "29",
+   "position": "OF",
+   "active": true
+  },
+  {
+   "name": "Campbell Bagshaw",
+   "jerseyNumber": "6",
+   "position": "INF",
+   "active": true
+  },
+  {
+   "name": "Chloe Barber",
+   "jerseyNumber": "26",
+   "position": "P",
+   "active": true
+  },
+  {
+   "name": "Ella Boyer",
+   "jerseyNumber": "75",
+   "position": "C",
+   "active": true
+  },
+  {
+   "name": "Ellie Loveless",
+   "jerseyNumber": "21",
+   "position": "P/UTL",
+   "active": true
+  },
+  {
+   "name": "Emma Tatum",
+   "jerseyNumber": "20",
+   "position": "INF",
+   "active": true
+  },
+  {
+   "name": "Hailey Cripe",
+   "jerseyNumber": "41",
+   "position": "INF",
+   "active": true
+  },
+  {
+   "name": "Jaeden Murphy",
+   "jerseyNumber": "15",
+   "position": "C",
+   "active": true
+  },
+  {
+   "name": "Kadence Stafford",
+   "jerseyNumber": "5",
+   "position": "INF",
+   "active": true
+  },
+  {
+   "name": "Kaelee Washington",
+   "jerseyNumber": "17",
+   "position": "RHP",
+   "active": true
+  },
+  {
+   "name": "Karsen Griggs",
+   "jerseyNumber": "14",
+   "position": "INF",
+   "active": true
+  },
+  {
+   "name": "Kennedy Diggs",
+   "jerseyNumber": "2",
+   "position": "RHP/UTL",
+   "active": true
+  },
+  {
+   "name": "Lila Partridge",
+   "jerseyNumber": "10",
+   "position": "P",
+   "active": true
+  },
+  {
+   "name": "Lizzy Ludwig",
+   "jerseyNumber": "11",
+   "position": "RHP/UTL",
+   "active": true
+  },
+  {
+   "name": "Madi Hays",
+   "jerseyNumber": "36",
+   "position": "OF",
+   "active": true
+  },
+  {
+   "name": "Presley Limbaugh",
+   "jerseyNumber": "4",
+   "position": "OF",
+   "active": true
+  },
+  {
+   "name": "Sam Claire",
+   "jerseyNumber": "24",
+   "position": "P",
+   "active": true
+  },
+  {
+   "name": "September Flanagan",
+   "jerseyNumber": "12",
+   "position": "INF/UTL",
+   "active": true
+  },
+  {
+   "name": "Tehya Pitts",
+   "jerseyNumber": "1",
+   "position": "OF",
+   "active": true
+  }
+ ],
+ "games": []
+}

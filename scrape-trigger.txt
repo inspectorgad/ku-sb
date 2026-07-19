@@ -1,0 +1,1 @@
+Nightly scrape trigger file. Change this file to force a scrape run.
