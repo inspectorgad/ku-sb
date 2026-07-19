@@ -1,0 +1,14 @@
+game-6602297-info: captured (1171 chars)
+game-6602297-boxscore: 502 for https://ncaa-api.henrygd.me/game/6602297/boxscore
+game-6602297-pbp: 502 for https://ncaa-api.henrygd.me/game/6602297/play-by-play
+game-6542954-pbp: captured (15845 chars)
+game-6542954-scoring: captured (3537 chars)
+stats-2026: 4166 chars text, 357 links, html saved
+schedule: 10502 chars text, 585 links
+boxscore-ish links found on stats page: 95
+capturing box score 1: https://kuathletics.com/sports/softball/stats/2026/ucf/boxscore/20500
+boxscore-1: 5113 chars text, 195 links, html saved
+capturing box score 2: https://kuathletics.com/sports/softball/stats/2026/ucf/boxscore/20501
+boxscore-2: 5467 chars text, 196 links, html saved
+capturing box score 3: https://kuathletics.com/sports/softball/stats/2026/ucf/boxscore/20502
+boxscore-3: 5072 chars text, 201 links, html saved

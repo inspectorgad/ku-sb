@@ -1,0 +1,926 @@
+{
+ "__typename": "PlayByPlay",
+ "contestId": 6542954,
+ "title": "WSB PLAY-BY-PLAY",
+ "description": "Kansas vs Iowa St.",
+ "divisionName": "d1",
+ "status": "final",
+ "period": 5,
+ "minutes": "",
+ "seconds": "",
+ "teams": [
+  {
+   "__typename": "ContestTeam",
+   "isHome": true,
+   "teamId": "42479",
+   "seoname": "kansas",
+   "name6Char": "KANSAS",
+   "nameShort": "Kansas",
+   "nameFull": "University of Kansas",
+   "teamName": "Jayhawks",
+   "color": "#1967B8"
+  },
+  {
+   "__typename": "ContestTeam",
+   "isHome": false,
+   "teamId": "41987",
+   "seoname": "iowa-st",
+   "name6Char": "IOWAST",
+   "nameShort": "Iowa St.",
+   "nameFull": "Iowa State University",
+   "teamName": "Cyclones",
+   "color": "#A6192E"
+  }
+ ],
+ "periods": [
+  {
+   "__typename": "PlayByPlayDetails",
+   "periodNumber": 1,
+   "periodDisplay": "1st",
+   "playbyplayStats": [
+    {
+     "__typename": "PlayByPlayGenericSport",
+     "clock": "",
+     "teamId": 41987,
+     "plays": [
+      {
+       "__typename": "GenericPlay",
+       "playText": "Clemons,Jessie walked (3-2 BKBFBB).",
+       "homeScore": null,
+       "visitorScore": null,
+       "clock": ""
+      }
+     ]
+    },
+    {
+     "__typename": "PlayByPlayGenericSport",
+     "clock": "",
+     "teamId": 41987,
+     "plays": [
+      {
+       "__typename": "GenericPlay",
+       "playText": "Johnson,Tatum flied out to left center putout by lf (3-2 KBBBK).",
+       "homeScore": null,
+       "visitorScore": null,
+       "clock": ""
+      }
+     ]
+    },
+    {
+     "__typename": "PlayByPlayGenericSport",
+     "clock": "",
+     "teamId": 41987,
+     "plays": [
+      {
+       "__typename": "GenericPlay",
+       "playText": "Bartholomew,Reagan singled to center field (3-2 BKFBB)3a Clemons,Jessie advanced to second base.",
+       "homeScore": null,
+       "visitorScore": null,
+       "clock": ""
+      }
+     ]
+    },
+    {
+     "__typename": "PlayByPlayGenericSport",
+     "clock": "",
+     "teamId": 41987,
+     "plays": [
+      {
+       "__typename": "GenericPlay",
+       "playText": "Shepherd,Kadence reached on a fielding error fielding by 2b by Bagshaw,Campbell (E4) (1-2 KKB)3a Clemons,Jessie advanced to third base3a Bartholomew,Reagan advanced to second base.",
+       "homeScore": null,
+       "visitorScore": null,
+       "clock": ""
+      }
+     ]
+    },
+    {
+     "__typename": "PlayByPlayGenericSport",
+     "clock": "",
+     "teamId": 41987,
+     "plays": [
+      {
+       "__typename": "GenericPlay",
+       "playText": "Ford,Karlee sacrifice fly to lf, RBI (0-0)3a Clemons,Jessie scored, unearned3a Bartholomew,Reagan advanced to third base3a Shepherd,Kadence advanced to second base.",
+       "homeScore": 0,
+       "visitorScore": 1,
+       "clock": ""
+      }
+     ]
+    },
+    {
+     "__typename": "PlayByPlayGenericSport",
+     "clock": "",
+     "teamId": 41987,
+     "plays": [
+      {
+       "__typename": "GenericPlay",
+       "playText": "Malott,Sydney flied out to shallow left field putout by lf (2-2 KBSB).",
+       "homeScore": null,
+       "visitorScore": null,
+       "clock": ""
+      }
+     ]
+    },
+    {
+     "__typename": "PlayByPlayGenericSport",
+     "clock": "",
+     "teamId": 42479,
+     "plays": [
+      {
+       "__typename": "GenericPlay",
+       "playText": "Limbaugh,Presley singled through the right side of the infield (3-2 KKBBBF).",
+       "homeScore": null,
+       "visitorScore": null,
+       "clock": ""
+      }
+     ]
+    },
+    {
+     "__typename": "PlayByPlayGenericSport",
+     "clock": "",
+     "teamId": 42479,
+     "plays": [
+      {
+       "__typename": "GenericPlay",
+       "playText": "Mound visit (ISU)",
+       "homeScore": null,
+       "visitorScore": null,
+       "clock": ""
+      }
+     ]
+    },
+    {
+     "__typename": "PlayByPlayGenericSport",
+     "clock": "",
+     "teamId": 42479,
+     "plays": [
+      {
+       "__typename": "GenericPlay",
+       "playText": "Boyer,Ella walked (3-2 BBKBFB)3a Limbaugh,Presley advanced to second base.",
+       "homeScore": null,
+       "visitorScore": null,
+       "clock": ""
+      }
+     ]
+    },
+    {
+     "__typename": "PlayByPlayGenericSport",
+     "clock": "",
+     "teamId": 42479,
+     "plays": [
+      {
+       "__typename": "GenericPlay",
+       "playText": "Soles,Anna singled to right field (2-1 KBB)3a Limbaugh,Presley advanced to third base3a Boyer,Ella advanced to second base.",
+       "homeScore": null,
+       "visitorScore": null,
+       "clock": ""
+      }
+     ]
+    },
+    {
+     "__typename": "PlayByPlayGenericSport",
+     "clock": "",
+     "teamId": 42479,
+     "plays": [
+      {
+       "__typename": "GenericPlay",
+       "playText": "Cripe,Hailey struck out looking (2-2 KBFBK).",
+       "homeScore": null,
+       "visitorScore": null,
+       "clock": ""
+      }
+     ]
+    },
+    {
+     "__typename": "PlayByPlayGenericSport",
+     "clock": "",
+     "teamId": 42479,
+     "plays": [
+      {
+       "__typename": "GenericPlay",
+       "playText": "Stafford,Kadence walked, RBI (3-1 BBKBB)3a Limbaugh,Presley scored3a Boyer,Ella advanced to third base3a Soles,Anna advanced to second base.",
+       "homeScore": 1,
+       "visitorScore": 1,
+       "clock": ""
+      }
+     ]
+    },
+    {
+     "__typename": "PlayByPlayGenericSport",
+     "clock": "",
+     "teamId": 42479,
+     "plays": [
+      {
+       "__typename": "GenericPlay",
+       "playText": "Mound visit (ISU)",
+       "homeScore": null,
+       "visitorScore": null,
+       "clock": ""
+      }
+     ]
+    },
+    {
+     "__typename": "PlayByPlayGenericSport",
+     "clock": "",
+     "teamId": 42479,
+     "plays": [
+      {
+       "__typename": "GenericPlay",
+       "playText": "Bagshaw,Campbell doubled to right field, 2RBI (1-1 BF)3a Boyer,Ella scored3a Soles,Anna scored from second base3a Stafford,Kadence advanced from first base to third base.",
+       "homeScore": 3,
+       "visitorScore": 1,
+       "clock": ""
+      }
+     ]
+    },
+    {
+     "__typename": "PlayByPlayGenericSport",
+     "clock": "",
+     "teamId": 42479,
+     "plays": [
+      {
+       "__typename": "GenericPlay",
+       "playText": "Linduff,Aynslee reached on a fielder's choice hit to third base, RBI (3-2 BBFBK)3a Stafford,Kadence scored3a Bagshaw,Campbell advanced to third base.",
+       "homeScore": 4,
+       "visitorScore": 1,
+       "clock": ""
+      }
+     ]
+    },
+    {
+     "__typename": "PlayByPlayGenericSport",
+     "clock": "",
+     "teamId": 42479,
+     "plays": [
+      {
+       "__typename": "GenericPlay",
+       "playText": "Mound visit (ISU)",
+       "homeScore": null,
+       "visitorScore": null,
+       "clock": ""
+      }
+     ]
+    },
+    {
+     "__typename": "PlayByPlayGenericSport",
+     "clock": "",
+     "teamId": 42479,
+     "plays": [
+      {
+       "__typename": "GenericPlay",
+       "playText": "Wallace,Ava grounded out to first base, unassisted, RBI (3-1 BFBB)3a Bagshaw,Campbell scored3a Linduff,Aynslee advanced to second base.",
+       "homeScore": 5,
+       "visitorScore": 1,
+       "clock": ""
+      }
+     ]
+    },
+    {
+     "__typename": "PlayByPlayGenericSport",
+     "clock": "",
+     "teamId": 42479,
+     "plays": [
+      {
+       "__typename": "GenericPlay",
+       "playText": "Amezcua,Bailey popped up to shallow left field putout by ss (1-2 BKFF).",
+       "homeScore": null,
+       "visitorScore": null,
+       "clock": ""
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "__typename": "PlayByPlayDetails",
+   "periodNumber": 2,
+   "periodDisplay": "2nd",
+   "playbyplayStats": [
+    {
+     "__typename": "PlayByPlayGenericSport",
+     "clock": "",
+     "teamId": 41987,
+     "plays": [
+      {
+       "__typename": "GenericPlay",
+       "playText": "Prado,Victoria flied out to cf (2-0 BB).",
+       "homeScore": null,
+       "visitorScore": null,
+       "clock": ""
+      }
+     ]
+    },
+    {
+     "__typename": "PlayByPlayGenericSport",
+     "clock": "",
+     "teamId": 41987,
+     "plays": [
+      {
+       "__typename": "GenericPlay",
+       "playText": "Oliver,Hayleigh walked (3-1 BFBBB).",
+       "homeScore": null,
+       "visitorScore": null,
+       "clock": ""
+      }
+     ]
+    },
+    {
+     "__typename": "PlayByPlayGenericSport",
+     "clock": "",
+     "teamId": 41987,
+     "plays": [
+      {
+       "__typename": "GenericPlay",
+       "playText": "Andrews,McKenna flied out to left center putout by lf (0-1 K).",
+       "homeScore": null,
+       "visitorScore": null,
+       "clock": ""
+      }
+     ]
+    },
+    {
+     "__typename": "PlayByPlayGenericSport",
+     "clock": "",
+     "teamId": 41987,
+     "plays": [
+      {
+       "__typename": "GenericPlay",
+       "playText": "Clemons,Jessie flied out to rf (0-1 K).",
+       "homeScore": null,
+       "visitorScore": null,
+       "clock": ""
+      }
+     ]
+    },
+    {
+     "__typename": "PlayByPlayGenericSport",
+     "clock": "",
+     "teamId": 42479,
+     "plays": [
+      {
+       "__typename": "GenericPlay",
+       "playText": "Limbaugh,Presley singled in the infield, bunt (0-0).",
+       "homeScore": null,
+       "visitorScore": null,
+       "clock": ""
+      }
+     ]
+    },
+    {
+     "__typename": "PlayByPlayGenericSport",
+     "clock": "",
+     "teamId": 42479,
+     "plays": [
+      {
+       "__typename": "GenericPlay",
+       "playText": "Boyer,Ella popped up to first base (0-0).",
+       "homeScore": null,
+       "visitorScore": null,
+       "clock": ""
+      }
+     ]
+    },
+    {
+     "__typename": "PlayByPlayGenericSport",
+     "clock": "",
+     "teamId": 42479,
+     "plays": [
+      {
+       "__typename": "GenericPlay",
+       "playText": "Soles,Anna homered to deep right field, 10th of season, 2RBI (2-1 BKB)3a Limbaugh,Presley scored from first base.",
+       "homeScore": 7,
+       "visitorScore": 1,
+       "clock": ""
+      }
+     ]
+    },
+    {
+     "__typename": "PlayByPlayGenericSport",
+     "clock": "",
+     "teamId": 42479,
+     "plays": [
+      {
+       "__typename": "GenericPlay",
+       "playText": "Cripe,Hailey flied out to rf (0-0).",
+       "homeScore": null,
+       "visitorScore": null,
+       "clock": ""
+      }
+     ]
+    },
+    {
+     "__typename": "PlayByPlayGenericSport",
+     "clock": "",
+     "teamId": 42479,
+     "plays": [
+      {
+       "__typename": "GenericPlay",
+       "playText": "Stafford,Kadence flied out to rf (1-1 KB).",
+       "homeScore": null,
+       "visitorScore": null,
+       "clock": ""
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "__typename": "PlayByPlayDetails",
+   "periodNumber": 3,
+   "periodDisplay": "3rd",
+   "playbyplayStats": [
+    {
+     "__typename": "PlayByPlayGenericSport",
+     "clock": "",
+     "teamId": 41987,
+     "plays": [
+      {
+       "__typename": "GenericPlay",
+       "playText": "Johnson,Tatum doubled to right center (2-2 BBKK).",
+       "homeScore": null,
+       "visitorScore": null,
+       "clock": ""
+      }
+     ]
+    },
+    {
+     "__typename": "PlayByPlayGenericSport",
+     "clock": "",
+     "teamId": 41987,
+     "plays": [
+      {
+       "__typename": "GenericPlay",
+       "playText": "Bartholomew,Reagan fouled out in third base side foul territory putout by ss (3-2 KKBFBB).",
+       "homeScore": null,
+       "visitorScore": null,
+       "clock": ""
+      }
+     ]
+    },
+    {
+     "__typename": "PlayByPlayGenericSport",
+     "clock": "",
+     "teamId": 41987,
+     "plays": [
+      {
+       "__typename": "GenericPlay",
+       "playText": "Shepherd,Kadence reached on a fielder's choice hit to third base (0-0)3a Johnson,Tatum advanced to third base.",
+       "homeScore": null,
+       "visitorScore": null,
+       "clock": ""
+      }
+     ]
+    },
+    {
+     "__typename": "PlayByPlayGenericSport",
+     "clock": "",
+     "teamId": 41987,
+     "plays": [
+      {
+       "__typename": "GenericPlay",
+       "playText": "Ford,Karlee reached on a fielding error fielding by 3b by Stafford,Kadence (E5) (2-2 BBFF)3a Johnson,Tatum scored3a Shepherd,Kadence advanced to second base.",
+       "homeScore": 7,
+       "visitorScore": 2,
+       "clock": ""
+      }
+     ]
+    },
+    {
+     "__typename": "PlayByPlayGenericSport",
+     "clock": "",
+     "teamId": 41987,
+     "plays": [
+      {
+       "__typename": "GenericPlay",
+       "playText": "Malott,Sydney grounded out to first base, unassisted (1-0 B)3a Shepherd,Kadence advanced to third base3a Ford,Karlee advanced to second base.",
+       "homeScore": null,
+       "visitorScore": null,
+       "clock": ""
+      }
+     ]
+    },
+    {
+     "__typename": "PlayByPlayGenericSport",
+     "clock": "",
+     "teamId": 41987,
+     "plays": [
+      {
+       "__typename": "GenericPlay",
+       "playText": "Prado,Victoria flied out to cf (2-1 FBB).",
+       "homeScore": null,
+       "visitorScore": null,
+       "clock": ""
+      }
+     ]
+    },
+    {
+     "__typename": "PlayByPlayGenericSport",
+     "clock": "",
+     "teamId": 42479,
+     "plays": [
+      {
+       "__typename": "GenericPlay",
+       "playText": "ISU pitching change: Mullen,Ava replaces Schurman,Lauren.",
+       "homeScore": null,
+       "visitorScore": null,
+       "clock": ""
+      }
+     ]
+    },
+    {
+     "__typename": "PlayByPlayGenericSport",
+     "clock": "",
+     "teamId": 42479,
+     "plays": [
+      {
+       "__typename": "GenericPlay",
+       "playText": "ISU defensive substitution: Wilmes,Ava replaces Malott,Sydney at 1b",
+       "homeScore": null,
+       "visitorScore": null,
+       "clock": ""
+      }
+     ]
+    },
+    {
+     "__typename": "PlayByPlayGenericSport",
+     "clock": "",
+     "teamId": 42479,
+     "plays": [
+      {
+       "__typename": "GenericPlay",
+       "playText": "Bagshaw,Campbell walked (3-1 BBBKB).",
+       "homeScore": null,
+       "visitorScore": null,
+       "clock": ""
+      }
+     ]
+    },
+    {
+     "__typename": "PlayByPlayGenericSport",
+     "clock": "",
+     "teamId": 42479,
+     "plays": [
+      {
+       "__typename": "GenericPlay",
+       "playText": "Linduff,Aynslee lined out to rf (2-1 KBB).",
+       "homeScore": null,
+       "visitorScore": null,
+       "clock": ""
+      }
+     ]
+    },
+    {
+     "__typename": "PlayByPlayGenericSport",
+     "clock": "",
+     "teamId": 42479,
+     "plays": [
+      {
+       "__typename": "GenericPlay",
+       "playText": "Wallace,Ava hit by pitch (1-2 KFBB)3a Bagshaw,Campbell advanced to second base.",
+       "homeScore": null,
+       "visitorScore": null,
+       "clock": ""
+      }
+     ]
+    },
+    {
+     "__typename": "PlayByPlayGenericSport",
+     "clock": "",
+     "teamId": 42479,
+     "plays": [
+      {
+       "__typename": "GenericPlay",
+       "playText": "Amezcua,Bailey walked (3-2 BBKBKFFFFFB)3a Bagshaw,Campbell advanced to third base3a Wallace,Ava advanced to second base.",
+       "homeScore": null,
+       "visitorScore": null,
+       "clock": ""
+      }
+     ]
+    },
+    {
+     "__typename": "PlayByPlayGenericSport",
+     "clock": "",
+     "teamId": 42479,
+     "plays": [
+      {
+       "__typename": "GenericPlay",
+       "playText": "Mound visit (ISU)",
+       "homeScore": null,
+       "visitorScore": null,
+       "clock": ""
+      }
+     ]
+    },
+    {
+     "__typename": "PlayByPlayGenericSport",
+     "clock": "",
+     "teamId": 42479,
+     "plays": [
+      {
+       "__typename": "GenericPlay",
+       "playText": "Limbaugh,Presley singled to left field, RBI (2-1 BBK)3a Bagshaw,Campbell scored3a Wallace,Ava advanced to third base3a Amezcua,Bailey advanced to second base.",
+       "homeScore": 8,
+       "visitorScore": 2,
+       "clock": ""
+      }
+     ]
+    },
+    {
+     "__typename": "PlayByPlayGenericSport",
+     "clock": "",
+     "teamId": 42479,
+     "plays": [
+      {
+       "__typename": "GenericPlay",
+       "playText": "Boyer,Ella walked, RBI (3-1 SBBBB)3a Wallace,Ava scored3a Amezcua,Bailey advanced to third base3a Limbaugh,Presley advanced to second base.",
+       "homeScore": 9,
+       "visitorScore": 2,
+       "clock": ""
+      }
+     ]
+    },
+    {
+     "__typename": "PlayByPlayGenericSport",
+     "clock": "",
+     "teamId": 42479,
+     "plays": [
+      {
+       "__typename": "GenericPlay",
+       "playText": "ISU pitching change: Holtz,Hailey replaces Mullen,Ava.",
+       "homeScore": null,
+       "visitorScore": null,
+       "clock": ""
+      }
+     ]
+    },
+    {
+     "__typename": "PlayByPlayGenericSport",
+     "clock": "",
+     "teamId": 42479,
+     "plays": [
+      {
+       "__typename": "GenericPlay",
+       "playText": "KU substitution: Youngblood,Audri pinch running for Boyer,Ella.",
+       "homeScore": null,
+       "visitorScore": null,
+       "clock": ""
+      }
+     ]
+    },
+    {
+     "__typename": "PlayByPlayGenericSport",
+     "clock": "",
+     "teamId": 42479,
+     "plays": [
+      {
+       "__typename": "GenericPlay",
+       "playText": "Soles,Anna grounded out to short, ss to 1b, RBI (0-1 K)3a Amezcua,Bailey scored3a Limbaugh,Presley advanced to third base3a Youngblood,Audri advanced to second base.",
+       "homeScore": 10,
+       "visitorScore": 2,
+       "clock": ""
+      }
+     ]
+    },
+    {
+     "__typename": "PlayByPlayGenericSport",
+     "clock": "",
+     "teamId": 42479,
+     "plays": [
+      {
+       "__typename": "GenericPlay",
+       "playText": "Cripe,Hailey singled up the middle, 2RBI (2-0 BB)3a Limbaugh,Presley scored3a Youngblood,Audri scored from second base.",
+       "homeScore": 12,
+       "visitorScore": 2,
+       "clock": ""
+      }
+     ]
+    },
+    {
+     "__typename": "PlayByPlayGenericSport",
+     "clock": "",
+     "teamId": 42479,
+     "plays": [
+      {
+       "__typename": "GenericPlay",
+       "playText": "Stafford,Kadence grounded out to third base, 3b to 1b (0-0).",
+       "homeScore": null,
+       "visitorScore": null,
+       "clock": ""
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "__typename": "PlayByPlayDetails",
+   "periodNumber": 4,
+   "periodDisplay": "4th",
+   "playbyplayStats": [
+    {
+     "__typename": "PlayByPlayGenericSport",
+     "clock": "",
+     "teamId": 41987,
+     "plays": [
+      {
+       "__typename": "GenericPlay",
+       "playText": "KU substitution: Boyer,Ella replaces Youngblood,Audri at dp, batting 2nd.",
+       "homeScore": null,
+       "visitorScore": null,
+       "clock": ""
+      }
+     ]
+    },
+    {
+     "__typename": "PlayByPlayGenericSport",
+     "clock": "",
+     "teamId": 41987,
+     "plays": [
+      {
+       "__typename": "GenericPlay",
+       "playText": "Oliver,Hayleigh flied out to cf (2-0 BB).",
+       "homeScore": null,
+       "visitorScore": null,
+       "clock": ""
+      }
+     ]
+    },
+    {
+     "__typename": "PlayByPlayGenericSport",
+     "clock": "",
+     "teamId": 41987,
+     "plays": [
+      {
+       "__typename": "GenericPlay",
+       "playText": "Andrews,McKenna flied out to lf (0-0).",
+       "homeScore": null,
+       "visitorScore": null,
+       "clock": ""
+      }
+     ]
+    },
+    {
+     "__typename": "PlayByPlayGenericSport",
+     "clock": "",
+     "teamId": 41987,
+     "plays": [
+      {
+       "__typename": "GenericPlay",
+       "playText": "Clemons,Jessie grounded out to third base, 3b to 1b (0-2 KFF).",
+       "homeScore": null,
+       "visitorScore": null,
+       "clock": ""
+      }
+     ]
+    },
+    {
+     "__typename": "PlayByPlayGenericSport",
+     "clock": "",
+     "teamId": 42479,
+     "plays": [
+      {
+       "__typename": "GenericPlay",
+       "playText": "Bagshaw,Campbell grounded out to short, ss to 1b (2-2 BFBS).",
+       "homeScore": null,
+       "visitorScore": null,
+       "clock": ""
+      }
+     ]
+    },
+    {
+     "__typename": "PlayByPlayGenericSport",
+     "clock": "",
+     "teamId": 42479,
+     "plays": [
+      {
+       "__typename": "GenericPlay",
+       "playText": "Linduff,Aynslee struck out swinging (2-2 KKBBFS).",
+       "homeScore": null,
+       "visitorScore": null,
+       "clock": ""
+      }
+     ]
+    },
+    {
+     "__typename": "PlayByPlayGenericSport",
+     "clock": "",
+     "teamId": 42479,
+     "plays": [
+      {
+       "__typename": "GenericPlay",
+       "playText": "KU substitution: Murphy,Jaeden pinch hitting for Wallace,Ava.",
+       "homeScore": null,
+       "visitorScore": null,
+       "clock": ""
+      }
+     ]
+    },
+    {
+     "__typename": "PlayByPlayGenericSport",
+     "clock": "",
+     "teamId": 42479,
+     "plays": [
+      {
+       "__typename": "GenericPlay",
+       "playText": "Murphy,Jaeden grounded out to third base, 3b to 1b (1-2 FFFB).",
+       "homeScore": null,
+       "visitorScore": null,
+       "clock": ""
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "__typename": "PlayByPlayDetails",
+   "periodNumber": 5,
+   "periodDisplay": "5th",
+   "playbyplayStats": [
+    {
+     "__typename": "PlayByPlayGenericSport",
+     "clock": "",
+     "teamId": 41987,
+     "plays": [
+      {
+       "__typename": "GenericPlay",
+       "playText": "KU substitution: Weber,Bailey replaces Murphy,Jaeden at lf, batting 8th.",
+       "homeScore": null,
+       "visitorScore": null,
+       "clock": ""
+      }
+     ]
+    },
+    {
+     "__typename": "PlayByPlayGenericSport",
+     "clock": "",
+     "teamId": 41987,
+     "plays": [
+      {
+       "__typename": "GenericPlay",
+       "playText": "Johnson,Tatum struck out swinging (0-2 FKFFS).",
+       "homeScore": null,
+       "visitorScore": null,
+       "clock": ""
+      }
+     ]
+    },
+    {
+     "__typename": "PlayByPlayGenericSport",
+     "clock": "",
+     "teamId": 41987,
+     "plays": [
+      {
+       "__typename": "GenericPlay",
+       "playText": "Bartholomew,Reagan walked (3-2 FBFBBB).",
+       "homeScore": null,
+       "visitorScore": null,
+       "clock": ""
+      }
+     ]
+    },
+    {
+     "__typename": "PlayByPlayGenericSport",
+     "clock": "",
+     "teamId": 41987,
+     "plays": [
+      {
+       "__typename": "GenericPlay",
+       "playText": "Shepherd,Kadence struck out swinging (0-2 KKFS).",
+       "homeScore": null,
+       "visitorScore": null,
+       "clock": ""
+      }
+     ]
+    },
+    {
+     "__typename": "PlayByPlayGenericSport",
+     "clock": "",
+     "teamId": 41987,
+     "plays": [
+      {
+       "__typename": "GenericPlay",
+       "playText": "Ford,Karlee singled to center field (0-0)3a Bartholomew,Reagan advanced to second base.",
+       "homeScore": null,
+       "visitorScore": null,
+       "clock": ""
+      }
+     ]
+    },
+    {
+     "__typename": "PlayByPlayGenericSport",
+     "clock": "",
+     "teamId": 41987,
+     "plays": [
+      {
+       "__typename": "GenericPlay",
+       "playText": "Wilmes,Ava grounded out to short, ss to 1b (0-0).",
+       "homeScore": null,
+       "visitorScore": null,
+       "clock": ""
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

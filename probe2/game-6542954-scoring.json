@@ -1,0 +1,141 @@
+{
+ "teams": [
+  {
+   "__typename": "ContestTeam",
+   "teamId": "42479",
+   "isHome": true,
+   "score": 12,
+   "seoname": "kansas",
+   "name6Char": "KANSAS",
+   "nameShort": "Kansas"
+  },
+  {
+   "__typename": "ContestTeam",
+   "teamId": "41987",
+   "isHome": false,
+   "score": 2,
+   "seoname": "iowa-st",
+   "name6Char": "IOWAST",
+   "nameShort": "Iowa St."
+  }
+ ],
+ "periods": [
+  {
+   "__typename": "ScoringSummaryDetails",
+   "title": "1st",
+   "summary": [
+    {
+     "__typename": "GenericSummaryInfo",
+     "teamId": "41987",
+     "time": "",
+     "scoreType": "SCORE",
+     "scoreText": "Ford,Karlee sacrifice fly to lf, RBI (0-0)3a Clemons,Jessie scored, unearned3a Bartholomew,Reagan advanced to third base3a Shepherd,Kadence advanced to second base.",
+     "visitScore": "1",
+     "homeScore": "0"
+    },
+    {
+     "__typename": "GenericSummaryInfo",
+     "teamId": "42479",
+     "time": "",
+     "scoreType": "SCORE",
+     "scoreText": "Stafford,Kadence walked, RBI (3-1 BBKBB)3a Limbaugh,Presley scored3a Boyer,Ella advanced to third base3a Soles,Anna advanced to second base.",
+     "visitScore": "1",
+     "homeScore": "1"
+    },
+    {
+     "__typename": "GenericSummaryInfo",
+     "teamId": "42479",
+     "time": "",
+     "scoreType": "SCORE",
+     "scoreText": "Bagshaw,Campbell doubled to right field, 2RBI (1-1 BF)3a Boyer,Ella scored3a Soles,Anna scored from second base3a Stafford,Kadence advanced from first base to third base.",
+     "visitScore": "1",
+     "homeScore": "3"
+    },
+    {
+     "__typename": "GenericSummaryInfo",
+     "teamId": "42479",
+     "time": "",
+     "scoreType": "SCORE",
+     "scoreText": "Linduff,Aynslee reached on a fielder's choice hit to third base, RBI (3-2 BBFBK)3a Stafford,Kadence scored3a Bagshaw,Campbell advanced to third base.",
+     "visitScore": "1",
+     "homeScore": "4"
+    },
+    {
+     "__typename": "GenericSummaryInfo",
+     "teamId": "42479",
+     "time": "",
+     "scoreType": "SCORE",
+     "scoreText": "Wallace,Ava grounded out to first base, unassisted, RBI (3-1 BFBB)3a Bagshaw,Campbell scored3a Linduff,Aynslee advanced to second base.",
+     "visitScore": "1",
+     "homeScore": "5"
+    }
+   ]
+  },
+  {
+   "__typename": "ScoringSummaryDetails",
+   "title": "2nd",
+   "summary": [
+    {
+     "__typename": "GenericSummaryInfo",
+     "teamId": "42479",
+     "time": "",
+     "scoreType": "SCORE",
+     "scoreText": "Soles,Anna homered to deep right field, 10th of season, 2RBI (2-1 BKB)3a Limbaugh,Presley scored from first base.",
+     "visitScore": "1",
+     "homeScore": "7"
+    }
+   ]
+  },
+  {
+   "__typename": "ScoringSummaryDetails",
+   "title": "3rd",
+   "summary": [
+    {
+     "__typename": "GenericSummaryInfo",
+     "teamId": "41987",
+     "time": "",
+     "scoreType": "SCORE",
+     "scoreText": "Ford,Karlee reached on a fielding error fielding by 3b by Stafford,Kadence (E5) (2-2 BBFF)3a Johnson,Tatum scored3a Shepherd,Kadence advanced to second base.",
+     "visitScore": "2",
+     "homeScore": "7"
+    },
+    {
+     "__typename": "GenericSummaryInfo",
+     "teamId": "42479",
+     "time": "",
+     "scoreType": "SCORE",
+     "scoreText": "Limbaugh,Presley singled to left field, RBI (2-1 BBK)3a Bagshaw,Campbell scored3a Wallace,Ava advanced to third base3a Amezcua,Bailey advanced to second base.",
+     "visitScore": "2",
+     "homeScore": "8"
+    },
+    {
+     "__typename": "GenericSummaryInfo",
+     "teamId": "42479",
+     "time": "",
+     "scoreType": "SCORE",
+     "scoreText": "Boyer,Ella walked, RBI (3-1 SBBBB)3a Wallace,Ava scored3a Amezcua,Bailey advanced to third base3a Limbaugh,Presley advanced to second base.",
+     "visitScore": "2",
+     "homeScore": "9"
+    },
+    {
+     "__typename": "GenericSummaryInfo",
+     "teamId": "42479",
+     "time": "",
+     "scoreType": "SCORE",
+     "scoreText": "Soles,Anna grounded out to short, ss to 1b, RBI (0-1 K)3a Amezcua,Bailey scored3a Limbaugh,Presley advanced to third base3a Youngblood,Audri advanced to second base.",
+     "visitScore": "2",
+     "homeScore": "10"
+    },
+    {
+     "__typename": "GenericSummaryInfo",
+     "teamId": "42479",
+     "time": "",
+     "scoreType": "SCORE",
+     "scoreText": "Cripe,Hailey singled up the middle, 2RBI (2-0 BB)3a Limbaugh,Presley scored3a Youngblood,Audri scored from second base.",
+     "visitScore": "2",
+     "homeScore": "12"
+    }
+   ]
+  }
+ ]
+}
