@@ -1,0 +1,1122 @@
+[
+ {
+  "gameId": "6554462",
+  "date": "2026-02-06",
+  "team": "Kansas",
+  "ku": true,
+  "players": 19,
+  "playerRunsSum": null,
+  "finalScore": 12,
+  "match": null
+ },
+ {
+  "gameId": "6554462",
+  "date": "2026-02-06",
+  "team": "Bethune-Cookman",
+  "ku": false,
+  "players": 13,
+  "playerRunsSum": null,
+  "finalScore": 0,
+  "match": null
+ },
+ {
+  "gameId": "6554147",
+  "date": "2026-02-06",
+  "team": "Illinois St.",
+  "ku": false,
+  "players": 16,
+  "playerRunsSum": null,
+  "finalScore": 5,
+  "match": null
+ },
+ {
+  "gameId": "6554147",
+  "date": "2026-02-06",
+  "team": "Kansas",
+  "ku": true,
+  "players": 17,
+  "playerRunsSum": null,
+  "finalScore": 13,
+  "match": null
+ },
+ {
+  "gameId": "6554466",
+  "date": "2026-02-07",
+  "team": "South Fla.",
+  "ku": false,
+  "players": 14,
+  "playerRunsSum": null,
+  "finalScore": 12,
+  "match": null
+ },
+ {
+  "gameId": "6554466",
+  "date": "2026-02-07",
+  "team": "Kansas",
+  "ku": true,
+  "players": 14,
+  "playerRunsSum": null,
+  "finalScore": 4,
+  "match": null
+ },
+ {
+  "gameId": "6553430",
+  "date": "2026-02-08",
+  "team": "Michigan",
+  "ku": false,
+  "players": 15,
+  "playerRunsSum": null,
+  "finalScore": 4,
+  "match": null
+ },
+ {
+  "gameId": "6553430",
+  "date": "2026-02-08",
+  "team": "Kansas",
+  "ku": true,
+  "players": 14,
+  "playerRunsSum": null,
+  "finalScore": 2,
+  "match": null
+ },
+ {
+  "gameId": "6550549",
+  "date": "2026-02-08",
+  "team": "Kansas",
+  "ku": true,
+  "players": 13,
+  "playerRunsSum": null,
+  "finalScore": 2,
+  "match": null
+ },
+ {
+  "gameId": "6550549",
+  "date": "2026-02-08",
+  "team": "Florida",
+  "ku": false,
+  "players": 14,
+  "playerRunsSum": null,
+  "finalScore": 11,
+  "match": null
+ },
+ {
+  "gameId": "6546758",
+  "date": "2026-02-10",
+  "team": "FGCU",
+  "ku": false,
+  "players": 14,
+  "playerRunsSum": null,
+  "finalScore": 3,
+  "match": null
+ },
+ {
+  "gameId": "6546758",
+  "date": "2026-02-10",
+  "team": "Kansas",
+  "ku": true,
+  "players": 14,
+  "playerRunsSum": null,
+  "finalScore": 5,
+  "match": null
+ },
+ {
+  "gameId": "6554229",
+  "date": "2026-02-12",
+  "team": "Kansas",
+  "ku": true,
+  "players": 16,
+  "playerRunsSum": null,
+  "finalScore": 10,
+  "match": null
+ },
+ {
+  "gameId": "6554229",
+  "date": "2026-02-12",
+  "team": "Indiana St.",
+  "ku": false,
+  "players": 17,
+  "playerRunsSum": null,
+  "finalScore": 4,
+  "match": null
+ },
+ {
+  "gameId": "6547708",
+  "date": "2026-02-12",
+  "team": "Boston College",
+  "ku": false,
+  "players": 13,
+  "playerRunsSum": null,
+  "finalScore": 4,
+  "match": null
+ },
+ {
+  "gameId": "6547708",
+  "date": "2026-02-12",
+  "team": "Kansas",
+  "ku": true,
+  "players": 13,
+  "playerRunsSum": null,
+  "finalScore": 2,
+  "match": null
+ },
+ {
+  "gameId": "6554469",
+  "date": "2026-02-13",
+  "team": "South Fla.",
+  "ku": false,
+  "players": 13,
+  "playerRunsSum": null,
+  "finalScore": 2,
+  "match": null
+ },
+ {
+  "gameId": "6554469",
+  "date": "2026-02-13",
+  "team": "Kansas",
+  "ku": true,
+  "players": 14,
+  "playerRunsSum": null,
+  "finalScore": 7,
+  "match": null
+ },
+ {
+  "gameId": "6552132",
+  "date": "2026-02-14",
+  "team": "DePaul",
+  "ku": false,
+  "players": 18,
+  "playerRunsSum": null,
+  "finalScore": 0,
+  "match": null
+ },
+ {
+  "gameId": "6552132",
+  "date": "2026-02-14",
+  "team": "Kansas",
+  "ku": true,
+  "players": 15,
+  "playerRunsSum": null,
+  "finalScore": 11,
+  "match": null
+ },
+ {
+  "gameId": "6554472",
+  "date": "2026-02-14",
+  "team": "Yale",
+  "ku": false,
+  "players": 15,
+  "playerRunsSum": null,
+  "finalScore": 0,
+  "match": null
+ },
+ {
+  "gameId": "6554472",
+  "date": "2026-02-14",
+  "team": "Kansas",
+  "ku": true,
+  "players": 18,
+  "playerRunsSum": null,
+  "finalScore": 12,
+  "match": null
+ },
+ {
+  "gameId": "6554476",
+  "date": "2026-02-19",
+  "team": "Fla. Atlantic",
+  "ku": false,
+  "players": 17,
+  "playerRunsSum": null,
+  "finalScore": 6,
+  "match": null
+ },
+ {
+  "gameId": "6554476",
+  "date": "2026-02-19",
+  "team": "Kansas",
+  "ku": true,
+  "players": 15,
+  "playerRunsSum": null,
+  "finalScore": 5,
+  "match": null
+ },
+ {
+  "gameId": "6554482",
+  "date": "2026-02-20",
+  "team": "Kansas",
+  "ku": true,
+  "players": 12,
+  "playerRunsSum": null,
+  "finalScore": 8,
+  "match": null
+ },
+ {
+  "gameId": "6554482",
+  "date": "2026-02-20",
+  "team": "Villanova",
+  "ku": false,
+  "players": 14,
+  "playerRunsSum": null,
+  "finalScore": 1,
+  "match": null
+ },
+ {
+  "gameId": "6547057",
+  "date": "2026-02-20",
+  "team": "Kansas",
+  "ku": true,
+  "players": 16,
+  "playerRunsSum": null,
+  "finalScore": 9,
+  "match": null
+ },
+ {
+  "gameId": "6547057",
+  "date": "2026-02-20",
+  "team": "Southern Ind.",
+  "ku": false,
+  "players": 11,
+  "playerRunsSum": null,
+  "finalScore": 1,
+  "match": null
+ },
+ {
+  "gameId": "6554490",
+  "date": "2026-02-21",
+  "team": "Massachusetts",
+  "ku": false,
+  "players": 10,
+  "playerRunsSum": null,
+  "finalScore": 8,
+  "match": null
+ },
+ {
+  "gameId": "6554490",
+  "date": "2026-02-21",
+  "team": "Kansas",
+  "ku": true,
+  "players": 11,
+  "playerRunsSum": null,
+  "finalScore": 0,
+  "match": null
+ },
+ {
+  "gameId": "6554527",
+  "date": "2026-02-21",
+  "team": "Villanova",
+  "ku": false,
+  "players": 10,
+  "playerRunsSum": null,
+  "finalScore": 1,
+  "match": null
+ },
+ {
+  "gameId": "6554527",
+  "date": "2026-02-21",
+  "team": "Kansas",
+  "ku": true,
+  "players": 11,
+  "playerRunsSum": null,
+  "finalScore": 4,
+  "match": null
+ },
+ {
+  "gameId": "6554495",
+  "date": "2026-02-27",
+  "team": "Kansas",
+  "ku": true,
+  "players": 14,
+  "playerRunsSum": null,
+  "finalScore": 6,
+  "match": null
+ },
+ {
+  "gameId": "6554495",
+  "date": "2026-02-27",
+  "team": "Omaha",
+  "ku": false,
+  "players": 11,
+  "playerRunsSum": null,
+  "finalScore": 5,
+  "match": null
+ },
+ {
+  "gameId": "6554508",
+  "date": "2026-02-27",
+  "team": "Kansas",
+  "ku": true,
+  "players": 13,
+  "playerRunsSum": null,
+  "finalScore": 4,
+  "match": null
+ },
+ {
+  "gameId": "6554508",
+  "date": "2026-02-27",
+  "team": "Boise St.",
+  "ku": false,
+  "players": 14,
+  "playerRunsSum": null,
+  "finalScore": 1,
+  "match": null
+ },
+ {
+  "gameId": "6554511",
+  "date": "2026-02-28",
+  "team": "Boise St.",
+  "ku": false,
+  "players": 12,
+  "playerRunsSum": null,
+  "finalScore": 1,
+  "match": null
+ },
+ {
+  "gameId": "6554511",
+  "date": "2026-02-28",
+  "team": "Kansas",
+  "ku": true,
+  "players": 15,
+  "playerRunsSum": null,
+  "finalScore": 10,
+  "match": null
+ },
+ {
+  "gameId": "6554498",
+  "date": "2026-02-28",
+  "team": "Kansas",
+  "ku": true,
+  "players": 16,
+  "playerRunsSum": null,
+  "finalScore": 15,
+  "match": null
+ },
+ {
+  "gameId": "6554498",
+  "date": "2026-02-28",
+  "team": "Charlotte",
+  "ku": false,
+  "players": 13,
+  "playerRunsSum": null,
+  "finalScore": 4,
+  "match": null
+ },
+ {
+  "gameId": "6545404",
+  "date": "2026-03-01",
+  "team": "Arkansas",
+  "ku": false,
+  "players": 14,
+  "playerRunsSum": null,
+  "finalScore": 11,
+  "match": null
+ },
+ {
+  "gameId": "6545404",
+  "date": "2026-03-01",
+  "team": "Kansas",
+  "ku": true,
+  "players": 14,
+  "playerRunsSum": null,
+  "finalScore": 3,
+  "match": null
+ },
+ {
+  "gameId": "6543174",
+  "date": "2026-03-04",
+  "team": "Wichita St.",
+  "ku": false,
+  "players": 13,
+  "playerRunsSum": null,
+  "finalScore": 1,
+  "match": null
+ },
+ {
+  "gameId": "6543174",
+  "date": "2026-03-04",
+  "team": "Kansas",
+  "ku": true,
+  "players": 12,
+  "playerRunsSum": null,
+  "finalScore": 9,
+  "match": null
+ },
+ {
+  "gameId": "6554512",
+  "date": "2026-03-06",
+  "team": "Kansas",
+  "ku": true,
+  "players": 12,
+  "playerRunsSum": null,
+  "finalScore": 7,
+  "match": null
+ },
+ {
+  "gameId": "6554512",
+  "date": "2026-03-06",
+  "team": "Utah St.",
+  "ku": false,
+  "players": 15,
+  "playerRunsSum": null,
+  "finalScore": 1,
+  "match": null
+ },
+ {
+  "gameId": "6554514",
+  "date": "2026-03-06",
+  "team": "Kansas",
+  "ku": true,
+  "players": 17,
+  "playerRunsSum": null,
+  "finalScore": 18,
+  "match": null
+ },
+ {
+  "gameId": "6554514",
+  "date": "2026-03-06",
+  "team": "Utah St.",
+  "ku": false,
+  "players": 15,
+  "playerRunsSum": null,
+  "finalScore": 2,
+  "match": null
+ },
+ {
+  "gameId": "6554516",
+  "date": "2026-03-07",
+  "team": "Kansas",
+  "ku": true,
+  "players": 20,
+  "playerRunsSum": null,
+  "finalScore": 14,
+  "match": null
+ },
+ {
+  "gameId": "6554516",
+  "date": "2026-03-07",
+  "team": "Utah St.",
+  "ku": false,
+  "players": 14,
+  "playerRunsSum": null,
+  "finalScore": 0,
+  "match": null
+ },
+ {
+  "gameId": "6553998",
+  "date": "2026-03-13",
+  "team": "Houston",
+  "ku": false,
+  "players": 15,
+  "playerRunsSum": null,
+  "finalScore": 10,
+  "match": null
+ },
+ {
+  "gameId": "6553998",
+  "date": "2026-03-13",
+  "team": "Kansas",
+  "ku": true,
+  "players": 17,
+  "playerRunsSum": null,
+  "finalScore": 9,
+  "match": null
+ },
+ {
+  "gameId": "6553999",
+  "date": "2026-03-14",
+  "team": "Houston",
+  "ku": false,
+  "players": 16,
+  "playerRunsSum": null,
+  "finalScore": 1,
+  "match": null
+ },
+ {
+  "gameId": "6553999",
+  "date": "2026-03-14",
+  "team": "Kansas",
+  "ku": true,
+  "players": 15,
+  "playerRunsSum": null,
+  "finalScore": 18,
+  "match": null
+ },
+ {
+  "gameId": "6554000",
+  "date": "2026-03-15",
+  "team": "Houston",
+  "ku": false,
+  "players": 18,
+  "playerRunsSum": null,
+  "finalScore": 8,
+  "match": null
+ },
+ {
+  "gameId": "6554000",
+  "date": "2026-03-15",
+  "team": "Kansas",
+  "ku": true,
+  "players": 14,
+  "playerRunsSum": null,
+  "finalScore": 11,
+  "match": null
+ },
+ {
+  "gameId": "6595291",
+  "date": "2026-03-18",
+  "team": "Kansas",
+  "ku": true,
+  "players": 14,
+  "playerRunsSum": null,
+  "finalScore": 4,
+  "match": null
+ },
+ {
+  "gameId": "6595291",
+  "date": "2026-03-18",
+  "team": "South Dakota",
+  "ku": false,
+  "players": 15,
+  "playerRunsSum": null,
+  "finalScore": 3,
+  "match": null
+ },
+ {
+  "gameId": "6554522",
+  "date": "2026-03-20",
+  "team": "Kansas",
+  "ku": true,
+  "players": 14,
+  "playerRunsSum": null,
+  "finalScore": 7,
+  "match": null
+ },
+ {
+  "gameId": "6554522",
+  "date": "2026-03-20",
+  "team": "Utah",
+  "ku": false,
+  "players": 15,
+  "playerRunsSum": null,
+  "finalScore": 5,
+  "match": null
+ },
+ {
+  "gameId": "6554523",
+  "date": "2026-03-21",
+  "team": "Kansas",
+  "ku": true,
+  "players": 13,
+  "playerRunsSum": null,
+  "finalScore": 1,
+  "match": null
+ },
+ {
+  "gameId": "6554523",
+  "date": "2026-03-21",
+  "team": "Utah",
+  "ku": false,
+  "players": 12,
+  "playerRunsSum": null,
+  "finalScore": 2,
+  "match": null
+ },
+ {
+  "gameId": "6554524",
+  "date": "2026-03-22",
+  "team": "Kansas",
+  "ku": true,
+  "players": 14,
+  "playerRunsSum": null,
+  "finalScore": 10,
+  "match": null
+ },
+ {
+  "gameId": "6554524",
+  "date": "2026-03-22",
+  "team": "Utah",
+  "ku": false,
+  "players": 15,
+  "playerRunsSum": null,
+  "finalScore": 5,
+  "match": null
+ },
+ {
+  "gameId": "6547918",
+  "date": "2026-03-26",
+  "team": "BYU",
+  "ku": false,
+  "players": 13,
+  "playerRunsSum": null,
+  "finalScore": 4,
+  "match": null
+ },
+ {
+  "gameId": "6547918",
+  "date": "2026-03-26",
+  "team": "Kansas",
+  "ku": true,
+  "players": 15,
+  "playerRunsSum": null,
+  "finalScore": 6,
+  "match": null
+ },
+ {
+  "gameId": "6547920",
+  "date": "2026-03-27",
+  "team": "BYU",
+  "ku": false,
+  "players": 9,
+  "playerRunsSum": null,
+  "finalScore": 4,
+  "match": null
+ },
+ {
+  "gameId": "6547920",
+  "date": "2026-03-27",
+  "team": "Kansas",
+  "ku": true,
+  "players": 13,
+  "playerRunsSum": null,
+  "finalScore": 3,
+  "match": null
+ },
+ {
+  "gameId": "6547922",
+  "date": "2026-03-28",
+  "team": "BYU",
+  "ku": false,
+  "players": 14,
+  "playerRunsSum": null,
+  "finalScore": 3,
+  "match": null
+ },
+ {
+  "gameId": "6547922",
+  "date": "2026-03-28",
+  "team": "Kansas",
+  "ku": true,
+  "players": 16,
+  "playerRunsSum": null,
+  "finalScore": 10,
+  "match": null
+ },
+ {
+  "gameId": "6553405",
+  "date": "2026-04-02",
+  "team": "Kansas",
+  "ku": true,
+  "players": 14,
+  "playerRunsSum": null,
+  "finalScore": 5,
+  "match": null
+ },
+ {
+  "gameId": "6553405",
+  "date": "2026-04-02",
+  "team": "Arizona St.",
+  "ku": false,
+  "players": 16,
+  "playerRunsSum": null,
+  "finalScore": 8,
+  "match": null
+ },
+ {
+  "gameId": "6597018",
+  "date": "2026-04-02",
+  "team": "Kansas",
+  "ku": true,
+  "players": 15,
+  "playerRunsSum": null,
+  "finalScore": 11,
+  "match": null
+ },
+ {
+  "gameId": "6597018",
+  "date": "2026-04-02",
+  "team": "Arizona St.",
+  "ku": false,
+  "players": 13,
+  "playerRunsSum": null,
+  "finalScore": 7,
+  "match": null
+ },
+ {
+  "gameId": "6553407",
+  "date": "2026-04-04",
+  "team": "Kansas",
+  "ku": true,
+  "players": 16,
+  "playerRunsSum": null,
+  "finalScore": 5,
+  "match": null
+ },
+ {
+  "gameId": "6553407",
+  "date": "2026-04-04",
+  "team": "Arizona St.",
+  "ku": false,
+  "players": 14,
+  "playerRunsSum": null,
+  "finalScore": 4,
+  "match": null
+ },
+ {
+  "gameId": "6551499",
+  "date": "2026-04-10",
+  "team": "Kansas",
+  "ku": true,
+  "players": 15,
+  "playerRunsSum": null,
+  "finalScore": 7,
+  "match": null
+ },
+ {
+  "gameId": "6551499",
+  "date": "2026-04-10",
+  "team": "Baylor",
+  "ku": false,
+  "players": 14,
+  "playerRunsSum": null,
+  "finalScore": 8,
+  "match": null
+ },
+ {
+  "gameId": "6551501",
+  "date": "2026-04-10",
+  "team": "Kansas",
+  "ku": true,
+  "players": 12,
+  "playerRunsSum": null,
+  "finalScore": 1,
+  "match": null
+ },
+ {
+  "gameId": "6551501",
+  "date": "2026-04-10",
+  "team": "Baylor",
+  "ku": false,
+  "players": 12,
+  "playerRunsSum": null,
+  "finalScore": 0,
+  "match": null
+ },
+ {
+  "gameId": "6551507",
+  "date": "2026-04-11",
+  "team": "Kansas",
+  "ku": true,
+  "players": 15,
+  "playerRunsSum": null,
+  "finalScore": 5,
+  "match": null
+ },
+ {
+  "gameId": "6551507",
+  "date": "2026-04-11",
+  "team": "Baylor",
+  "ku": false,
+  "players": 13,
+  "playerRunsSum": null,
+  "finalScore": 4,
+  "match": null
+ },
+ {
+  "gameId": "6554526",
+  "date": "2026-04-15",
+  "team": "Kansas",
+  "ku": true,
+  "players": 16,
+  "playerRunsSum": null,
+  "finalScore": 2,
+  "match": null
+ },
+ {
+  "gameId": "6554526",
+  "date": "2026-04-15",
+  "team": "Missouri",
+  "ku": false,
+  "players": 15,
+  "playerRunsSum": null,
+  "finalScore": 4,
+  "match": null
+ },
+ {
+  "gameId": "6544381",
+  "date": "2026-04-17",
+  "team": "UCF",
+  "ku": false,
+  "players": 13,
+  "playerRunsSum": null,
+  "finalScore": 6,
+  "match": null
+ },
+ {
+  "gameId": "6544381",
+  "date": "2026-04-17",
+  "team": "Kansas",
+  "ku": true,
+  "players": 13,
+  "playerRunsSum": null,
+  "finalScore": 3,
+  "match": null
+ },
+ {
+  "gameId": "6544383",
+  "date": "2026-04-18",
+  "team": "UCF",
+  "ku": false,
+  "players": 15,
+  "playerRunsSum": null,
+  "finalScore": 9,
+  "match": null
+ },
+ {
+  "gameId": "6544383",
+  "date": "2026-04-18",
+  "team": "Kansas",
+  "ku": true,
+  "players": 14,
+  "playerRunsSum": null,
+  "finalScore": 2,
+  "match": null
+ },
+ {
+  "gameId": "6544385",
+  "date": "2026-04-19",
+  "team": "UCF",
+  "ku": false,
+  "players": 15,
+  "playerRunsSum": null,
+  "finalScore": 2,
+  "match": null
+ },
+ {
+  "gameId": "6544385",
+  "date": "2026-04-19",
+  "team": "Kansas",
+  "ku": true,
+  "players": 15,
+  "playerRunsSum": null,
+  "finalScore": 4,
+  "match": null
+ },
+ {
+  "gameId": "6542954",
+  "date": "2026-04-24",
+  "team": "Kansas",
+  "ku": true,
+  "players": 13,
+  "playerRunsSum": null,
+  "finalScore": 12,
+  "match": null
+ },
+ {
+  "gameId": "6542954",
+  "date": "2026-04-24",
+  "team": "Iowa St.",
+  "ku": false,
+  "players": 13,
+  "playerRunsSum": null,
+  "finalScore": 2,
+  "match": null
+ },
+ {
+  "gameId": "6542969",
+  "date": "2026-04-24",
+  "team": "Kansas",
+  "ku": true,
+  "players": 12,
+  "playerRunsSum": null,
+  "finalScore": 1,
+  "match": null
+ },
+ {
+  "gameId": "6542969",
+  "date": "2026-04-24",
+  "team": "Iowa St.",
+  "ku": false,
+  "players": 12,
+  "playerRunsSum": null,
+  "finalScore": 4,
+  "match": null
+ },
+ {
+  "gameId": "6542967",
+  "date": "2026-04-25",
+  "team": "Kansas",
+  "ku": true,
+  "players": 16,
+  "playerRunsSum": null,
+  "finalScore": 4,
+  "match": null
+ },
+ {
+  "gameId": "6542967",
+  "date": "2026-04-25",
+  "team": "Iowa St.",
+  "ku": false,
+  "players": 14,
+  "playerRunsSum": null,
+  "finalScore": 2,
+  "match": null
+ },
+ {
+  "gameId": "6543231",
+  "date": "2026-04-28",
+  "team": "Kansas",
+  "ku": true,
+  "players": 13,
+  "playerRunsSum": null,
+  "finalScore": 10,
+  "match": null
+ },
+ {
+  "gameId": "6543231",
+  "date": "2026-04-28",
+  "team": "Wichita St.",
+  "ku": false,
+  "players": 13,
+  "playerRunsSum": null,
+  "finalScore": 0,
+  "match": null
+ },
+ {
+  "gameId": "6554487",
+  "date": "2026-05-01",
+  "team": "Oklahoma St.",
+  "ku": false,
+  "players": 16,
+  "playerRunsSum": null,
+  "finalScore": 8,
+  "match": null
+ },
+ {
+  "gameId": "6554487",
+  "date": "2026-05-01",
+  "team": "Kansas",
+  "ku": true,
+  "players": 12,
+  "playerRunsSum": null,
+  "finalScore": 1,
+  "match": null
+ },
+ {
+  "gameId": "6554488",
+  "date": "2026-05-02",
+  "team": "Oklahoma St.",
+  "ku": false,
+  "players": 14,
+  "playerRunsSum": null,
+  "finalScore": 1,
+  "match": null
+ },
+ {
+  "gameId": "6554488",
+  "date": "2026-05-02",
+  "team": "Kansas",
+  "ku": true,
+  "players": 12,
+  "playerRunsSum": null,
+  "finalScore": 10,
+  "match": null
+ },
+ {
+  "gameId": "6554491",
+  "date": "2026-05-03",
+  "team": "Oklahoma St.",
+  "ku": false,
+  "players": 13,
+  "playerRunsSum": null,
+  "finalScore": 7,
+  "match": null
+ },
+ {
+  "gameId": "6554491",
+  "date": "2026-05-03",
+  "team": "Kansas",
+  "ku": true,
+  "players": 13,
+  "playerRunsSum": null,
+  "finalScore": 0,
+  "match": null
+ },
+ {
+  "gameId": "6602296",
+  "date": "2026-05-08",
+  "team": "Texas Tech",
+  "ku": false,
+  "players": 14,
+  "playerRunsSum": null,
+  "finalScore": 14,
+  "match": null
+ },
+ {
+  "gameId": "6602296",
+  "date": "2026-05-08",
+  "team": "Kansas",
+  "ku": true,
+  "players": 14,
+  "playerRunsSum": null,
+  "finalScore": 0,
+  "match": null
+ },
+ {
+  "gameId": "6599839",
+  "date": "2026-05-15",
+  "team": "Kansas",
+  "ku": true,
+  "players": 25,
+  "playerRunsSum": null,
+  "finalScore": 1,
+  "match": null
+ },
+ {
+  "gameId": "6599839",
+  "date": "2026-05-15",
+  "team": "Michigan",
+  "ku": false,
+  "players": 24,
+  "playerRunsSum": null,
+  "finalScore": 0,
+  "match": null
+ },
+ {
+  "gameId": "6599840",
+  "date": "2026-05-16",
+  "team": "Oklahoma",
+  "ku": false,
+  "players": 21,
+  "playerRunsSum": null,
+  "finalScore": 9,
+  "match": null
+ },
+ {
+  "gameId": "6599840",
+  "date": "2026-05-16",
+  "team": "Kansas",
+  "ku": true,
+  "players": 25,
+  "playerRunsSum": null,
+  "finalScore": 0,
+  "match": null
+ },
+ {
+  "gameId": "6599842",
+  "date": "2026-05-16",
+  "team": "Michigan",
+  "ku": false,
+  "players": 24,
+  "playerRunsSum": null,
+  "finalScore": 12,
+  "match": null
+ },
+ {
+  "gameId": "6599842",
+  "date": "2026-05-16",
+  "team": "Kansas",
+  "ku": true,
+  "players": 25,
+  "playerRunsSum": null,
+  "finalScore": 10,
+  "match": null
+ }
+]

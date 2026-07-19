@@ -1,0 +1,1847 @@
+{
+ "gameId": "6547922",
+ "date": "2026-03-28",
+ "info": {
+  "contests": [
+   {
+    "__typename": "Contest",
+    "id": "6547922",
+    "sportCode": "WSB",
+    "sportUrl": "softball",
+    "division": 1,
+    "clock": null,
+    "currentPeriod": "FINAL",
+    "finalMessage": "FINAL",
+    "gameState": "F",
+    "statusCodeDisplay": "final",
+    "network": null,
+    "startTime": "14:00",
+    "startTimeEpoch": 1774720800,
+    "week": null,
+    "seasonYear": 2025,
+    "winner": 42479,
+    "hasStartTime": true,
+    "hasBoxscore": true,
+    "hasPbp": true,
+    "hasScoringSummary": true,
+    "hasPreview": false,
+    "hasRecap": false,
+    "hasTeamStats": true,
+    "linescores": [
+     {
+      "__typename": "Linescore",
+      "period": "1",
+      "home": "0",
+      "visit": "0"
+     },
+     {
+      "__typename": "Linescore",
+      "period": "2",
+      "home": "1",
+      "visit": "0"
+     },
+     {
+      "__typename": "Linescore",
+      "period": "3",
+      "home": "1",
+      "visit": "3"
+     },
+     {
+      "__typename": "Linescore",
+      "period": "4",
+      "home": "0",
+      "visit": "2"
+     },
+     {
+      "__typename": "Linescore",
+      "period": "5",
+      "home": "0",
+      "visit": "0"
+     },
+     {
+      "__typename": "Linescore",
+      "period": "6",
+      "home": "1",
+      "visit": "5"
+     },
+     {
+      "__typename": "Linescore",
+      "period": "7",
+      "home": "0",
+      "visit": "0"
+     },
+     {
+      "__typename": "Linescore",
+      "period": "R",
+      "home": "3",
+      "visit": "10"
+     },
+     {
+      "__typename": "Linescore",
+      "period": "H",
+      "home": "9",
+      "visit": "15"
+     },
+     {
+      "__typename": "Linescore",
+      "period": "E",
+      "home": "2",
+      "visit": "0"
+     }
+    ],
+    "teams": [
+     {
+      "__typename": "ContestTeam",
+      "teamId": "41892",
+      "isHome": true,
+      "color": "#0047BA",
+      "seoname": "byu",
+      "nameFull": "Brigham Young University",
+      "nameShort": "BYU",
+      "name6Char": "BYU",
+      "teamRank": null,
+      "gameRank": null,
+      "score": 3,
+      "seed": null,
+      "record": "(10-21-0)",
+      "divisionName": "d1",
+      "division": 1,
+      "isWinner": false
+     },
+     {
+      "__typename": "ContestTeam",
+      "teamId": "42479",
+      "isHome": false,
+      "color": "#1967B8",
+      "seoname": "kansas",
+      "nameFull": "University of Kansas",
+      "nameShort": "Kansas",
+      "name6Char": "KANSAS",
+      "teamRank": null,
+      "gameRank": null,
+      "score": 10,
+      "seed": null,
+      "record": "(23-9-0)",
+      "divisionName": "d1",
+      "division": 1,
+      "isWinner": true
+     }
+    ],
+    "liveVideos": [],
+    "championship": null,
+    "championshipGame": null,
+    "links": [],
+    "location": null,
+    "stats": {
+     "__typename": "LinescoreStatsBaseball",
+     "balls": 0,
+     "outs": 3,
+     "strikes": 0,
+     "playerOnFirst": false,
+     "playerOnSecond": false,
+     "playerOnThird": false
+    }
+   }
+  ]
+ },
+ "box": {
+  "__typename": "Boxscore",
+  "title": "WSB Boxscore",
+  "contestId": 6547922,
+  "description": "BYU vs Kansas",
+  "division": 1,
+  "divisionName": "d1",
+  "status": "F",
+  "period": "FINAL",
+  "minutes": null,
+  "seconds": null,
+  "sportCode": "WSB",
+  "teams": [
+   {
+    "__typename": "ContestTeam",
+    "isHome": true,
+    "teamId": "41892",
+    "seoname": "byu",
+    "name6Char": "BYU",
+    "nameFull": "Brigham Young University",
+    "nameShort": "BYU",
+    "teamName": "Cougars",
+    "color": "#0047BA"
+   },
+   {
+    "__typename": "ContestTeam",
+    "isHome": false,
+    "teamId": "42479",
+    "seoname": "kansas",
+    "name6Char": "KANSAS",
+    "nameFull": "University of Kansas",
+    "nameShort": "Kansas",
+    "teamName": "Jayhawks",
+    "color": "#1967B8"
+   }
+  ],
+  "teamBoxscore": [
+   {
+    "__typename": "BoxscoreDetails",
+    "teamId": 41892,
+    "playerStats": [
+     {
+      "__typename": "PlayerStatsSoftball",
+      "firstName": "Jada",
+      "lastName": "Villegas",
+      "position": "p",
+      "number": 55,
+      "starter": true,
+      "participated": true,
+      "substitute": false,
+      "batterStats": {
+       "__typename": "BatterStat",
+       "atBats": "0",
+       "runsScored": "2",
+       "hits": "0",
+       "runsBattedIn": "0",
+       "walks": "0",
+       "strikeouts": "1",
+       "battingAverage": ".000",
+       "onBasePercentage": "0.0%"
+      },
+      "pitcherStats": null,
+      "fieldStats": {
+       "__typename": "FieldStat",
+       "putouts": "0",
+       "assists": "1",
+       "errors": "0",
+       "passedBalls": "0",
+       "catcherInterference": "0",
+       "stolenBasesAgainst": "0",
+       "caughtStealingBy": "0",
+       "involvedInDoublePlays": "0",
+       "involvedInTriplePlays": "0"
+      },
+      "hittingSeason": {
+       "__typename": "HittingSeason",
+       "atBats": "0",
+       "runsScored": "2",
+       "hits": "0",
+       "runsBattedIn": "0",
+       "walks": "0",
+       "strikeouts": "0",
+       "battingAverage": ".000",
+       "onBasePercentage": "0.0%",
+       "doubles": "0",
+       "triples": "0",
+       "homeRuns": "0"
+      }
+     },
+     {
+      "__typename": "PlayerStatsSoftball",
+      "firstName": "Maddie",
+      "lastName": "UdallWoolley",
+      "position": "1b",
+      "number": 34,
+      "starter": true,
+      "participated": true,
+      "substitute": false,
+      "batterStats": {
+       "__typename": "BatterStat",
+       "atBats": "4",
+       "runsScored": "0",
+       "hits": "1",
+       "runsBattedIn": "0",
+       "walks": "0",
+       "strikeouts": "0",
+       "battingAverage": ".000",
+       "onBasePercentage": "0.0%"
+      },
+      "pitcherStats": null,
+      "fieldStats": {
+       "__typename": "FieldStat",
+       "putouts": "12",
+       "assists": "0",
+       "errors": "0",
+       "passedBalls": "0",
+       "catcherInterference": "0",
+       "stolenBasesAgainst": "0",
+       "caughtStealingBy": "0",
+       "involvedInDoublePlays": "0",
+       "involvedInTriplePlays": "0"
+      },
+      "hittingSeason": {
+       "__typename": "HittingSeason",
+       "atBats": "4",
+       "runsScored": "0",
+       "hits": "1",
+       "runsBattedIn": "0",
+       "walks": "0",
+       "strikeouts": "0",
+       "battingAverage": ".000",
+       "onBasePercentage": "0.0%",
+       "doubles": "0",
+       "triples": "0",
+       "homeRuns": "0"
+      }
+     },
+     {
+      "__typename": "PlayerStatsSoftball",
+      "firstName": "Lily",
+      "lastName": "Owens",
+      "position": "lf",
+      "number": 13,
+      "starter": true,
+      "participated": true,
+      "substitute": false,
+      "batterStats": {
+       "__typename": "BatterStat",
+       "atBats": "4",
+       "runsScored": "0",
+       "hits": "0",
+       "runsBattedIn": "0",
+       "walks": "0",
+       "strikeouts": "0",
+       "battingAverage": ".000",
+       "onBasePercentage": "0.0%"
+      },
+      "pitcherStats": null,
+      "fieldStats": {
+       "__typename": "FieldStat",
+       "putouts": "0",
+       "assists": "0",
+       "errors": "0",
+       "passedBalls": "0",
+       "catcherInterference": "0",
+       "stolenBasesAgainst": "0",
+       "caughtStealingBy": "0",
+       "involvedInDoublePlays": "0",
+       "involvedInTriplePlays": "0"
+      },
+      "hittingSeason": {
+       "__typename": "HittingSeason",
+       "atBats": "4",
+       "runsScored": "0",
+       "hits": "0",
+       "runsBattedIn": "0",
+       "walks": "0",
+       "strikeouts": "0",
+       "battingAverage": ".000",
+       "onBasePercentage": "0.0%",
+       "doubles": "0",
+       "triples": "0",
+       "homeRuns": "0"
+      }
+     },
+     {
+      "__typename": "PlayerStatsSoftball",
+      "firstName": "Danica",
+      "lastName": "Acosta",
+      "position": "2b",
+      "number": 15,
+      "starter": true,
+      "participated": true,
+      "substitute": false,
+      "batterStats": {
+       "__typename": "BatterStat",
+       "atBats": "4",
+       "runsScored": "1",
+       "hits": "3",
+       "runsBattedIn": "2",
+       "walks": "0",
+       "strikeouts": "0",
+       "battingAverage": ".000",
+       "onBasePercentage": "0.0%"
+      },
+      "pitcherStats": null,
+      "fieldStats": {
+       "__typename": "FieldStat",
+       "putouts": "2",
+       "assists": "3",
+       "errors": "1",
+       "passedBalls": "0",
+       "catcherInterference": "0",
+       "stolenBasesAgainst": "0",
+       "caughtStealingBy": "0",
+       "involvedInDoublePlays": "0",
+       "involvedInTriplePlays": "0"
+      },
+      "hittingSeason": {
+       "__typename": "HittingSeason",
+       "atBats": "4",
+       "runsScored": "1",
+       "hits": "3",
+       "runsBattedIn": "2",
+       "walks": "0",
+       "strikeouts": "0",
+       "battingAverage": ".000",
+       "onBasePercentage": "0.0%",
+       "doubles": "0",
+       "triples": "0",
+       "homeRuns": "1"
+      }
+     },
+     {
+      "__typename": "PlayerStatsSoftball",
+      "firstName": "Gianna",
+      "lastName": "Mares",
+      "position": "p",
+      "number": 1,
+      "starter": false,
+      "participated": true,
+      "substitute": false,
+      "batterStats": {
+       "__typename": "BatterStat",
+       "atBats": "0",
+       "runsScored": "3",
+       "hits": "0",
+       "runsBattedIn": "0",
+       "walks": "1",
+       "strikeouts": "1",
+       "battingAverage": ".000",
+       "onBasePercentage": "0.0%"
+      },
+      "pitcherStats": null,
+      "fieldStats": {
+       "__typename": "FieldStat",
+       "putouts": "0",
+       "assists": "0",
+       "errors": "0",
+       "passedBalls": "0",
+       "catcherInterference": "0",
+       "stolenBasesAgainst": "0",
+       "caughtStealingBy": "0",
+       "involvedInDoublePlays": "0",
+       "involvedInTriplePlays": "0"
+      },
+      "hittingSeason": {
+       "__typename": "HittingSeason",
+       "atBats": "0",
+       "runsScored": "3",
+       "hits": "0",
+       "runsBattedIn": "0",
+       "walks": "1",
+       "strikeouts": "0",
+       "battingAverage": ".000",
+       "onBasePercentage": "0.0%",
+       "doubles": "0",
+       "triples": "0",
+       "homeRuns": "0"
+      }
+     },
+     {
+      "__typename": "PlayerStatsSoftball",
+      "firstName": "Hailey",
+      "lastName": "Shuler",
+      "position": "dp/p",
+      "number": 4,
+      "starter": true,
+      "participated": true,
+      "substitute": false,
+      "batterStats": {
+       "__typename": "BatterStat",
+       "atBats": "3",
+       "runsScored": "5",
+       "hits": "1",
+       "runsBattedIn": "0",
+       "walks": "1",
+       "strikeouts": "1",
+       "battingAverage": ".000",
+       "onBasePercentage": "0.0%"
+      },
+      "pitcherStats": null,
+      "fieldStats": {
+       "__typename": "FieldStat",
+       "putouts": "0",
+       "assists": "0",
+       "errors": "0",
+       "passedBalls": "0",
+       "catcherInterference": "0",
+       "stolenBasesAgainst": "0",
+       "caughtStealingBy": "0",
+       "involvedInDoublePlays": "0",
+       "involvedInTriplePlays": "0"
+      },
+      "hittingSeason": {
+       "__typename": "HittingSeason",
+       "atBats": "3",
+       "runsScored": "5",
+       "hits": "1",
+       "runsBattedIn": "0",
+       "walks": "1",
+       "strikeouts": "0",
+       "battingAverage": ".000",
+       "onBasePercentage": "0.0%",
+       "doubles": "0",
+       "triples": "0",
+       "homeRuns": "0"
+      }
+     },
+     {
+      "__typename": "PlayerStatsSoftball",
+      "firstName": "Irma",
+      "lastName": "Urincho",
+      "position": "PH",
+      "number": 5,
+      "starter": false,
+      "participated": true,
+      "substitute": false,
+      "batterStats": {
+       "__typename": "BatterStat",
+       "atBats": "1",
+       "runsScored": "0",
+       "hits": "1",
+       "runsBattedIn": "0",
+       "walks": "0",
+       "strikeouts": "0",
+       "battingAverage": "1.000",
+       "onBasePercentage": "100.0%"
+      },
+      "pitcherStats": null,
+      "fieldStats": {
+       "__typename": "FieldStat",
+       "putouts": "0",
+       "assists": "0",
+       "errors": "0",
+       "passedBalls": "0",
+       "catcherInterference": "0",
+       "stolenBasesAgainst": "0",
+       "caughtStealingBy": "0",
+       "involvedInDoublePlays": "0",
+       "involvedInTriplePlays": "0"
+      },
+      "hittingSeason": {
+       "__typename": "HittingSeason",
+       "atBats": "1",
+       "runsScored": "0",
+       "hits": "1",
+       "runsBattedIn": "0",
+       "walks": "0",
+       "strikeouts": "0",
+       "battingAverage": "1.000",
+       "onBasePercentage": "100.0%",
+       "doubles": "0",
+       "triples": "0",
+       "homeRuns": "0"
+      }
+     },
+     {
+      "__typename": "PlayerStatsSoftball",
+      "firstName": "Ilovea",
+      "lastName": "Brittingham",
+      "position": "cf",
+      "number": 8,
+      "starter": true,
+      "participated": true,
+      "substitute": false,
+      "batterStats": {
+       "__typename": "BatterStat",
+       "atBats": "3",
+       "runsScored": "1",
+       "hits": "0",
+       "runsBattedIn": "0",
+       "walks": "1",
+       "strikeouts": "0",
+       "battingAverage": ".000",
+       "onBasePercentage": "0.0%"
+      },
+      "pitcherStats": null,
+      "fieldStats": {
+       "__typename": "FieldStat",
+       "putouts": "0",
+       "assists": "0",
+       "errors": "0",
+       "passedBalls": "0",
+       "catcherInterference": "0",
+       "stolenBasesAgainst": "0",
+       "caughtStealingBy": "0",
+       "involvedInDoublePlays": "0",
+       "involvedInTriplePlays": "0"
+      },
+      "hittingSeason": {
+       "__typename": "HittingSeason",
+       "atBats": "3",
+       "runsScored": "1",
+       "hits": "0",
+       "runsBattedIn": "0",
+       "walks": "1",
+       "strikeouts": "0",
+       "battingAverage": ".000",
+       "onBasePercentage": "0.0%",
+       "doubles": "0",
+       "triples": "0",
+       "homeRuns": "0"
+      }
+     },
+     {
+      "__typename": "PlayerStatsSoftball",
+      "firstName": "Kaiya",
+      "lastName": "Fabela",
+      "position": "c",
+      "number": 7,
+      "starter": true,
+      "participated": true,
+      "substitute": false,
+      "batterStats": {
+       "__typename": "BatterStat",
+       "atBats": "2",
+       "runsScored": "0",
+       "hits": "0",
+       "runsBattedIn": "0",
+       "walks": "1",
+       "strikeouts": "0",
+       "battingAverage": ".000",
+       "onBasePercentage": "0.0%"
+      },
+      "pitcherStats": null,
+      "fieldStats": {
+       "__typename": "FieldStat",
+       "putouts": "4",
+       "assists": "1",
+       "errors": "0",
+       "passedBalls": "0",
+       "catcherInterference": "0",
+       "stolenBasesAgainst": "0",
+       "caughtStealingBy": "0",
+       "involvedInDoublePlays": "0",
+       "involvedInTriplePlays": "0"
+      },
+      "hittingSeason": {
+       "__typename": "HittingSeason",
+       "atBats": "2",
+       "runsScored": "0",
+       "hits": "0",
+       "runsBattedIn": "0",
+       "walks": "1",
+       "strikeouts": "0",
+       "battingAverage": ".000",
+       "onBasePercentage": "0.0%",
+       "doubles": "0",
+       "triples": "0",
+       "homeRuns": "0"
+      }
+     },
+     {
+      "__typename": "PlayerStatsSoftball",
+      "firstName": "Bre",
+      "lastName": "Townsend",
+      "position": "3b",
+      "number": 21,
+      "starter": true,
+      "participated": true,
+      "substitute": false,
+      "batterStats": {
+       "__typename": "BatterStat",
+       "atBats": "2",
+       "runsScored": "0",
+       "hits": "1",
+       "runsBattedIn": "1",
+       "walks": "0",
+       "strikeouts": "0",
+       "battingAverage": ".000",
+       "onBasePercentage": "0.0%"
+      },
+      "pitcherStats": null,
+      "fieldStats": {
+       "__typename": "FieldStat",
+       "putouts": "2",
+       "assists": "2",
+       "errors": "1",
+       "passedBalls": "0",
+       "catcherInterference": "0",
+       "stolenBasesAgainst": "0",
+       "caughtStealingBy": "0",
+       "involvedInDoublePlays": "0",
+       "involvedInTriplePlays": "0"
+      },
+      "hittingSeason": {
+       "__typename": "HittingSeason",
+       "atBats": "2",
+       "runsScored": "0",
+       "hits": "1",
+       "runsBattedIn": "1",
+       "walks": "0",
+       "strikeouts": "0",
+       "battingAverage": ".000",
+       "onBasePercentage": "0.0%",
+       "doubles": "1",
+       "triples": "0",
+       "homeRuns": "0"
+      }
+     },
+     {
+      "__typename": "PlayerStatsSoftball",
+      "firstName": "Miranda",
+      "lastName": "Mansfield",
+      "position": "PR/3b",
+      "number": 22,
+      "starter": false,
+      "participated": true,
+      "substitute": false,
+      "batterStats": {
+       "__typename": "BatterStat",
+       "atBats": "0",
+       "runsScored": "0",
+       "hits": "0",
+       "runsBattedIn": "0",
+       "walks": "0",
+       "strikeouts": "0",
+       "battingAverage": ".000",
+       "onBasePercentage": "0.0%"
+      },
+      "pitcherStats": null,
+      "fieldStats": {
+       "__typename": "FieldStat",
+       "putouts": "0",
+       "assists": "0",
+       "errors": "0",
+       "passedBalls": "0",
+       "catcherInterference": "0",
+       "stolenBasesAgainst": "0",
+       "caughtStealingBy": "0",
+       "involvedInDoublePlays": "0",
+       "involvedInTriplePlays": "0"
+      },
+      "hittingSeason": {
+       "__typename": "HittingSeason",
+       "atBats": "0",
+       "runsScored": "0",
+       "hits": "0",
+       "runsBattedIn": "0",
+       "walks": "0",
+       "strikeouts": "0",
+       "battingAverage": ".000",
+       "onBasePercentage": "0.0%",
+       "doubles": "0",
+       "triples": "0",
+       "homeRuns": "0"
+      }
+     },
+     {
+      "__typename": "PlayerStatsSoftball",
+      "firstName": "Rita",
+      "lastName": "Tavita",
+      "position": "rf",
+      "number": 24,
+      "starter": true,
+      "participated": true,
+      "substitute": false,
+      "batterStats": {
+       "__typename": "BatterStat",
+       "atBats": "2",
+       "runsScored": "0",
+       "hits": "0",
+       "runsBattedIn": "0",
+       "walks": "1",
+       "strikeouts": "0",
+       "battingAverage": ".000",
+       "onBasePercentage": "0.0%"
+      },
+      "pitcherStats": null,
+      "fieldStats": {
+       "__typename": "FieldStat",
+       "putouts": "0",
+       "assists": "0",
+       "errors": "0",
+       "passedBalls": "0",
+       "catcherInterference": "0",
+       "stolenBasesAgainst": "0",
+       "caughtStealingBy": "0",
+       "involvedInDoublePlays": "0",
+       "involvedInTriplePlays": "0"
+      },
+      "hittingSeason": {
+       "__typename": "HittingSeason",
+       "atBats": "2",
+       "runsScored": "0",
+       "hits": "0",
+       "runsBattedIn": "0",
+       "walks": "1",
+       "strikeouts": "0",
+       "battingAverage": ".000",
+       "onBasePercentage": "0.0%",
+       "doubles": "0",
+       "triples": "0",
+       "homeRuns": "0"
+      }
+     },
+     {
+      "__typename": "PlayerStatsSoftball",
+      "firstName": "Tristen",
+      "lastName": "Turlington",
+      "position": "PH",
+      "number": 28,
+      "starter": false,
+      "participated": true,
+      "substitute": false,
+      "batterStats": {
+       "__typename": "BatterStat",
+       "atBats": "1",
+       "runsScored": "0",
+       "hits": "0",
+       "runsBattedIn": "0",
+       "walks": "0",
+       "strikeouts": "0",
+       "battingAverage": ".000",
+       "onBasePercentage": "0.0%"
+      },
+      "pitcherStats": null,
+      "fieldStats": {
+       "__typename": "FieldStat",
+       "putouts": "0",
+       "assists": "0",
+       "errors": "0",
+       "passedBalls": "0",
+       "catcherInterference": "0",
+       "stolenBasesAgainst": "0",
+       "caughtStealingBy": "0",
+       "involvedInDoublePlays": "0",
+       "involvedInTriplePlays": "0"
+      },
+      "hittingSeason": {
+       "__typename": "HittingSeason",
+       "atBats": "1",
+       "runsScored": "0",
+       "hits": "0",
+       "runsBattedIn": "0",
+       "walks": "0",
+       "strikeouts": "0",
+       "battingAverage": ".000",
+       "onBasePercentage": "0.0%",
+       "doubles": "0",
+       "triples": "0",
+       "homeRuns": "0"
+      }
+     },
+     {
+      "__typename": "PlayerStatsSoftball",
+      "firstName": "Hailey",
+      "lastName": "Morrow",
+      "position": "ss",
+      "number": 20,
+      "starter": true,
+      "participated": true,
+      "substitute": false,
+      "batterStats": {
+       "__typename": "BatterStat",
+       "atBats": "3",
+       "runsScored": "1",
+       "hits": "2",
+       "runsBattedIn": "0",
+       "walks": "1",
+       "strikeouts": "0",
+       "battingAverage": ".000",
+       "onBasePercentage": "0.0%"
+      },
+      "pitcherStats": null,
+      "fieldStats": {
+       "__typename": "FieldStat",
+       "putouts": "1",
+       "assists": "3",
+       "errors": "0",
+       "passedBalls": "0",
+       "catcherInterference": "0",
+       "stolenBasesAgainst": "0",
+       "caughtStealingBy": "0",
+       "involvedInDoublePlays": "0",
+       "involvedInTriplePlays": "0"
+      },
+      "hittingSeason": {
+       "__typename": "HittingSeason",
+       "atBats": "3",
+       "runsScored": "1",
+       "hits": "2",
+       "runsBattedIn": "0",
+       "walks": "1",
+       "strikeouts": "0",
+       "battingAverage": ".000",
+       "onBasePercentage": "0.0%",
+       "doubles": "0",
+       "triples": "0",
+       "homeRuns": "0"
+      }
+     }
+    ],
+    "teamStats": {
+     "__typename": "TeamStatsSoftball",
+     "batterTotals": {
+      "__typename": "BatterTotal",
+      "atBats": "29",
+      "runsScored": "10",
+      "hits": "9",
+      "runsBattedIn": "3",
+      "walks": "5",
+      "strikeouts": "3"
+     },
+     "battingStats": {
+      "__typename": "BattingStat",
+      "doubles": [
+       {
+        "__typename": "StatBreakout",
+        "lastName": "Townsend",
+        "total": "1",
+        "seasonTotal": "1"
+       }
+      ],
+      "triples": [],
+      "homeRuns": [
+       {
+        "__typename": "StatBreakout",
+        "lastName": "Acosta",
+        "total": "1",
+        "seasonTotal": "1"
+       }
+      ],
+      "runsBattedIn": [
+       {
+        "__typename": "StatBreakout",
+        "lastName": "Acosta",
+        "total": "2",
+        "seasonTotal": "2"
+       },
+       {
+        "__typename": "StatBreakout",
+        "lastName": "Townsend",
+        "total": "1",
+        "seasonTotal": "1"
+       }
+      ],
+      "leftOnBase": "11"
+     },
+     "fieldingStats": {
+      "__typename": "FieldingStat",
+      "errors": [
+       {
+        "__typename": "StatBreakout",
+        "lastName": "Acosta",
+        "total": "1"
+       },
+       {
+        "__typename": "StatBreakout",
+        "lastName": "Townsend",
+        "total": "1"
+       }
+      ]
+     },
+     "pitcherTotals": {
+      "__typename": "PitcherTotal",
+      "inningsPitched": "7",
+      "hitsAllowed": "9",
+      "runsAllowed": "3",
+      "earnedRunsAllowed": "10",
+      "walksAllowed": "0",
+      "strikeouts": "5",
+      "battersFaced": "40"
+     },
+     "pitchingStats": {
+      "__typename": "PitchingStat",
+      "numberOfPitches": null,
+      "win": null,
+      "save": null,
+      "loss": null,
+      "pitchers": []
+     }
+    }
+   },
+   {
+    "__typename": "BoxscoreDetails",
+    "teamId": 42479,
+    "playerStats": [
+     {
+      "__typename": "PlayerStatsSoftball",
+      "firstName": "Hailey",
+      "lastName": "Cripe",
+      "position": "ss",
+      "number": 41,
+      "starter": true,
+      "participated": true,
+      "substitute": false,
+      "batterStats": {
+       "__typename": "BatterStat",
+       "atBats": "4",
+       "runsScored": "2",
+       "hits": "2",
+       "runsBattedIn": "2",
+       "walks": "0",
+       "strikeouts": "0",
+       "battingAverage": ".000",
+       "onBasePercentage": "0.0%"
+      },
+      "pitcherStats": null,
+      "fieldStats": {
+       "__typename": "FieldStat",
+       "putouts": "3",
+       "assists": "0",
+       "errors": "0",
+       "passedBalls": "0",
+       "catcherInterference": "0",
+       "stolenBasesAgainst": "0",
+       "caughtStealingBy": "0",
+       "involvedInDoublePlays": "0",
+       "involvedInTriplePlays": "0"
+      },
+      "hittingSeason": {
+       "__typename": "HittingSeason",
+       "atBats": "4",
+       "runsScored": "2",
+       "hits": "2",
+       "runsBattedIn": "2",
+       "walks": "0",
+       "strikeouts": "0",
+       "battingAverage": ".000",
+       "onBasePercentage": "0.0%",
+       "doubles": "1",
+       "triples": "0",
+       "homeRuns": "1"
+      }
+     },
+     {
+      "__typename": "PlayerStatsSoftball",
+      "firstName": "Emma",
+      "lastName": "Tatum",
+      "position": "PH",
+      "number": 20,
+      "starter": false,
+      "participated": true,
+      "substitute": false,
+      "batterStats": {
+       "__typename": "BatterStat",
+       "atBats": "1",
+       "runsScored": "0",
+       "hits": "0",
+       "runsBattedIn": "0",
+       "walks": "0",
+       "strikeouts": "0",
+       "battingAverage": ".000",
+       "onBasePercentage": "0.0%"
+      },
+      "pitcherStats": null,
+      "fieldStats": {
+       "__typename": "FieldStat",
+       "putouts": "0",
+       "assists": "0",
+       "errors": "0",
+       "passedBalls": "0",
+       "catcherInterference": "0",
+       "stolenBasesAgainst": "0",
+       "caughtStealingBy": "0",
+       "involvedInDoublePlays": "0",
+       "involvedInTriplePlays": "0"
+      },
+      "hittingSeason": {
+       "__typename": "HittingSeason",
+       "atBats": "1",
+       "runsScored": "0",
+       "hits": "0",
+       "runsBattedIn": "0",
+       "walks": "0",
+       "strikeouts": "0",
+       "battingAverage": ".000",
+       "onBasePercentage": "0.0%",
+       "doubles": "0",
+       "triples": "0",
+       "homeRuns": "0"
+      }
+     },
+     {
+      "__typename": "PlayerStatsSoftball",
+      "firstName": "Anna",
+      "lastName": "Soles",
+      "position": "1b",
+      "number": 22,
+      "starter": true,
+      "participated": true,
+      "substitute": false,
+      "batterStats": {
+       "__typename": "BatterStat",
+       "atBats": "5",
+       "runsScored": "1",
+       "hits": "2",
+       "runsBattedIn": "1",
+       "walks": "0",
+       "strikeouts": "0",
+       "battingAverage": ".000",
+       "onBasePercentage": "0.0%"
+      },
+      "pitcherStats": null,
+      "fieldStats": {
+       "__typename": "FieldStat",
+       "putouts": "2",
+       "assists": "0",
+       "errors": "0",
+       "passedBalls": "0",
+       "catcherInterference": "0",
+       "stolenBasesAgainst": "0",
+       "caughtStealingBy": "0",
+       "involvedInDoublePlays": "0",
+       "involvedInTriplePlays": "0"
+      },
+      "hittingSeason": {
+       "__typename": "HittingSeason",
+       "atBats": "5",
+       "runsScored": "1",
+       "hits": "2",
+       "runsBattedIn": "1",
+       "walks": "0",
+       "strikeouts": "0",
+       "battingAverage": ".000",
+       "onBasePercentage": "0.0%",
+       "doubles": "1",
+       "triples": "0",
+       "homeRuns": "0"
+      }
+     },
+     {
+      "__typename": "PlayerStatsSoftball",
+      "firstName": "Bailey",
+      "lastName": "Amezcua",
+      "position": "dp",
+      "number": 25,
+      "starter": true,
+      "participated": true,
+      "substitute": false,
+      "batterStats": {
+       "__typename": "BatterStat",
+       "atBats": "2",
+       "runsScored": "0",
+       "hits": "1",
+       "runsBattedIn": "0",
+       "walks": "0",
+       "strikeouts": "0",
+       "battingAverage": ".000",
+       "onBasePercentage": "0.0%"
+      },
+      "pitcherStats": null,
+      "fieldStats": {
+       "__typename": "FieldStat",
+       "putouts": "0",
+       "assists": "0",
+       "errors": "0",
+       "passedBalls": "0",
+       "catcherInterference": "0",
+       "stolenBasesAgainst": "0",
+       "caughtStealingBy": "0",
+       "involvedInDoublePlays": "0",
+       "involvedInTriplePlays": "0"
+      },
+      "hittingSeason": {
+       "__typename": "HittingSeason",
+       "atBats": "2",
+       "runsScored": "0",
+       "hits": "1",
+       "runsBattedIn": "0",
+       "walks": "0",
+       "strikeouts": "0",
+       "battingAverage": ".000",
+       "onBasePercentage": "0.0%",
+       "doubles": "1",
+       "triples": "0",
+       "homeRuns": "0"
+      }
+     },
+     {
+      "__typename": "PlayerStatsSoftball",
+      "firstName": "Chloe",
+      "lastName": "Barber",
+      "position": "p",
+      "number": 26,
+      "starter": true,
+      "participated": true,
+      "substitute": false,
+      "batterStats": {
+       "__typename": "BatterStat",
+       "atBats": "0",
+       "runsScored": "3",
+       "hits": "0",
+       "runsBattedIn": "0",
+       "walks": "5",
+       "strikeouts": "3",
+       "battingAverage": ".000",
+       "onBasePercentage": "0.0%"
+      },
+      "pitcherStats": null,
+      "fieldStats": {
+       "__typename": "FieldStat",
+       "putouts": "0",
+       "assists": "0",
+       "errors": "0",
+       "passedBalls": "0",
+       "catcherInterference": "0",
+       "stolenBasesAgainst": "0",
+       "caughtStealingBy": "0",
+       "involvedInDoublePlays": "0",
+       "involvedInTriplePlays": "0"
+      },
+      "hittingSeason": {
+       "__typename": "HittingSeason",
+       "atBats": "0",
+       "runsScored": "3",
+       "hits": "0",
+       "runsBattedIn": "0",
+       "walks": "5",
+       "strikeouts": "0",
+       "battingAverage": ".000",
+       "onBasePercentage": "0.0%",
+       "doubles": "0",
+       "triples": "0",
+       "homeRuns": "0"
+      }
+     },
+     {
+      "__typename": "PlayerStatsSoftball",
+      "firstName": "Kadence",
+      "lastName": "Stafford",
+      "position": "lf",
+      "number": 5,
+      "starter": true,
+      "participated": true,
+      "substitute": false,
+      "batterStats": {
+       "__typename": "BatterStat",
+       "atBats": "3",
+       "runsScored": "1",
+       "hits": "2",
+       "runsBattedIn": "0",
+       "walks": "1",
+       "strikeouts": "0",
+       "battingAverage": ".000",
+       "onBasePercentage": "0.0%"
+      },
+      "pitcherStats": null,
+      "fieldStats": {
+       "__typename": "FieldStat",
+       "putouts": "4",
+       "assists": "0",
+       "errors": "0",
+       "passedBalls": "0",
+       "catcherInterference": "0",
+       "stolenBasesAgainst": "0",
+       "caughtStealingBy": "0",
+       "involvedInDoublePlays": "0",
+       "involvedInTriplePlays": "0"
+      },
+      "hittingSeason": {
+       "__typename": "HittingSeason",
+       "atBats": "3",
+       "runsScored": "1",
+       "hits": "2",
+       "runsBattedIn": "0",
+       "walks": "1",
+       "strikeouts": "0",
+       "battingAverage": ".000",
+       "onBasePercentage": "0.0%",
+       "doubles": "0",
+       "triples": "0",
+       "homeRuns": "0"
+      }
+     },
+     {
+      "__typename": "PlayerStatsSoftball",
+      "firstName": "Campbell",
+      "lastName": "Bagshaw",
+      "position": "2b",
+      "number": 6,
+      "starter": true,
+      "participated": true,
+      "substitute": false,
+      "batterStats": {
+       "__typename": "BatterStat",
+       "atBats": "4",
+       "runsScored": "1",
+       "hits": "2",
+       "runsBattedIn": "1",
+       "walks": "0",
+       "strikeouts": "0",
+       "battingAverage": ".000",
+       "onBasePercentage": "0.0%"
+      },
+      "pitcherStats": null,
+      "fieldStats": {
+       "__typename": "FieldStat",
+       "putouts": "0",
+       "assists": "0",
+       "errors": "0",
+       "passedBalls": "0",
+       "catcherInterference": "0",
+       "stolenBasesAgainst": "0",
+       "caughtStealingBy": "0",
+       "involvedInDoublePlays": "0",
+       "involvedInTriplePlays": "0"
+      },
+      "hittingSeason": {
+       "__typename": "HittingSeason",
+       "atBats": "4",
+       "runsScored": "1",
+       "hits": "2",
+       "runsBattedIn": "1",
+       "walks": "0",
+       "strikeouts": "0",
+       "battingAverage": ".000",
+       "onBasePercentage": "0.0%",
+       "doubles": "0",
+       "triples": "0",
+       "homeRuns": "1"
+      }
+     },
+     {
+      "__typename": "PlayerStatsSoftball",
+      "firstName": "Ava",
+      "lastName": "Wallace",
+      "position": "PH",
+      "number": 7,
+      "starter": false,
+      "participated": true,
+      "substitute": false,
+      "batterStats": {
+       "__typename": "BatterStat",
+       "atBats": "1",
+       "runsScored": "0",
+       "hits": "0",
+       "runsBattedIn": "0",
+       "walks": "0",
+       "strikeouts": "0",
+       "battingAverage": ".000",
+       "onBasePercentage": "0.0%"
+      },
+      "pitcherStats": null,
+      "fieldStats": {
+       "__typename": "FieldStat",
+       "putouts": "0",
+       "assists": "0",
+       "errors": "0",
+       "passedBalls": "0",
+       "catcherInterference": "0",
+       "stolenBasesAgainst": "0",
+       "caughtStealingBy": "0",
+       "involvedInDoublePlays": "0",
+       "involvedInTriplePlays": "0"
+      },
+      "hittingSeason": {
+       "__typename": "HittingSeason",
+       "atBats": "1",
+       "runsScored": "0",
+       "hits": "0",
+       "runsBattedIn": "0",
+       "walks": "0",
+       "strikeouts": "0",
+       "battingAverage": ".000",
+       "onBasePercentage": "0.0%",
+       "doubles": "0",
+       "triples": "0",
+       "homeRuns": "0"
+      }
+     },
+     {
+      "__typename": "PlayerStatsSoftball",
+      "firstName": "Ella",
+      "lastName": "Boyer",
+      "position": "c",
+      "number": 75,
+      "starter": true,
+      "participated": true,
+      "substitute": false,
+      "batterStats": {
+       "__typename": "BatterStat",
+       "atBats": "5",
+       "runsScored": "1",
+       "hits": "2",
+       "runsBattedIn": "2",
+       "walks": "0",
+       "strikeouts": "0",
+       "battingAverage": ".000",
+       "onBasePercentage": "0.0%"
+      },
+      "pitcherStats": null,
+      "fieldStats": {
+       "__typename": "FieldStat",
+       "putouts": "5",
+       "assists": "0",
+       "errors": "0",
+       "passedBalls": "0",
+       "catcherInterference": "0",
+       "stolenBasesAgainst": "0",
+       "caughtStealingBy": "0",
+       "involvedInDoublePlays": "0",
+       "involvedInTriplePlays": "0"
+      },
+      "hittingSeason": {
+       "__typename": "HittingSeason",
+       "atBats": "5",
+       "runsScored": "1",
+       "hits": "2",
+       "runsBattedIn": "2",
+       "walks": "0",
+       "strikeouts": "0",
+       "battingAverage": ".000",
+       "onBasePercentage": "0.0%",
+       "doubles": "0",
+       "triples": "0",
+       "homeRuns": "1"
+      }
+     },
+     {
+      "__typename": "PlayerStatsSoftball",
+      "firstName": "Audri",
+      "lastName": "Youngblood",
+      "position": "PR",
+      "number": 31,
+      "starter": false,
+      "participated": true,
+      "substitute": false,
+      "batterStats": {
+       "__typename": "BatterStat",
+       "atBats": "1",
+       "runsScored": "1",
+       "hits": "0",
+       "runsBattedIn": "0",
+       "walks": "0",
+       "strikeouts": "0",
+       "battingAverage": ".000",
+       "onBasePercentage": "0.0%"
+      },
+      "pitcherStats": null,
+      "fieldStats": {
+       "__typename": "FieldStat",
+       "putouts": "0",
+       "assists": "0",
+       "errors": "0",
+       "passedBalls": "0",
+       "catcherInterference": "0",
+       "stolenBasesAgainst": "0",
+       "caughtStealingBy": "0",
+       "involvedInDoublePlays": "0",
+       "involvedInTriplePlays": "0"
+      },
+      "hittingSeason": {
+       "__typename": "HittingSeason",
+       "atBats": "1",
+       "runsScored": "1",
+       "hits": "0",
+       "runsBattedIn": "0",
+       "walks": "0",
+       "strikeouts": "0",
+       "battingAverage": ".000",
+       "onBasePercentage": "0.0%",
+       "doubles": "0",
+       "triples": "0",
+       "homeRuns": "0"
+      }
+     },
+     {
+      "__typename": "PlayerStatsSoftball",
+      "firstName": "September",
+      "lastName": "Flanagan",
+      "position": "3b",
+      "number": 12,
+      "starter": true,
+      "participated": true,
+      "substitute": false,
+      "batterStats": {
+       "__typename": "BatterStat",
+       "atBats": "4",
+       "runsScored": "1",
+       "hits": "1",
+       "runsBattedIn": "2",
+       "walks": "0",
+       "strikeouts": "0",
+       "battingAverage": ".000",
+       "onBasePercentage": "0.0%"
+      },
+      "pitcherStats": null,
+      "fieldStats": {
+       "__typename": "FieldStat",
+       "putouts": "2",
+       "assists": "1",
+       "errors": "0",
+       "passedBalls": "0",
+       "catcherInterference": "0",
+       "stolenBasesAgainst": "0",
+       "caughtStealingBy": "0",
+       "involvedInDoublePlays": "0",
+       "involvedInTriplePlays": "0"
+      },
+      "hittingSeason": {
+       "__typename": "HittingSeason",
+       "atBats": "4",
+       "runsScored": "1",
+       "hits": "1",
+       "runsBattedIn": "2",
+       "walks": "0",
+       "strikeouts": "0",
+       "battingAverage": ".000",
+       "onBasePercentage": "0.0%",
+       "doubles": "0",
+       "triples": "0",
+       "homeRuns": "1"
+      }
+     },
+     {
+      "__typename": "PlayerStatsSoftball",
+      "firstName": "Bailey",
+      "lastName": "Weber",
+      "position": "rf",
+      "number": 13,
+      "starter": false,
+      "participated": true,
+      "substitute": false,
+      "batterStats": {
+       "__typename": "BatterStat",
+       "atBats": "0",
+       "runsScored": "0",
+       "hits": "0",
+       "runsBattedIn": "0",
+       "walks": "0",
+       "strikeouts": "0",
+       "battingAverage": ".000",
+       "onBasePercentage": "0.0%"
+      },
+      "pitcherStats": null,
+      "fieldStats": {
+       "__typename": "FieldStat",
+       "putouts": "0",
+       "assists": "0",
+       "errors": "0",
+       "passedBalls": "0",
+       "catcherInterference": "0",
+       "stolenBasesAgainst": "0",
+       "caughtStealingBy": "0",
+       "involvedInDoublePlays": "0",
+       "involvedInTriplePlays": "0"
+      },
+      "hittingSeason": {
+       "__typename": "HittingSeason",
+       "atBats": "0",
+       "runsScored": "0",
+       "hits": "0",
+       "runsBattedIn": "0",
+       "walks": "0",
+       "strikeouts": "0",
+       "battingAverage": ".000",
+       "onBasePercentage": "0.0%",
+       "doubles": "0",
+       "triples": "0",
+       "homeRuns": "0"
+      }
+     },
+     {
+      "__typename": "PlayerStatsSoftball",
+      "firstName": "Lizzy",
+      "lastName": "Ludwig",
+      "position": "p",
+      "number": 11,
+      "starter": false,
+      "participated": true,
+      "substitute": false,
+      "batterStats": {
+       "__typename": "BatterStat",
+       "atBats": "0",
+       "runsScored": "0",
+       "hits": "0",
+       "runsBattedIn": "0",
+       "walks": "0",
+       "strikeouts": "2",
+       "battingAverage": ".000",
+       "onBasePercentage": "0.0%"
+      },
+      "pitcherStats": null,
+      "fieldStats": {
+       "__typename": "FieldStat",
+       "putouts": "0",
+       "assists": "0",
+       "errors": "0",
+       "passedBalls": "0",
+       "catcherInterference": "0",
+       "stolenBasesAgainst": "0",
+       "caughtStealingBy": "0",
+       "involvedInDoublePlays": "0",
+       "involvedInTriplePlays": "0"
+      },
+      "hittingSeason": {
+       "__typename": "HittingSeason",
+       "atBats": "0",
+       "runsScored": "0",
+       "hits": "0",
+       "runsBattedIn": "0",
+       "walks": "0",
+       "strikeouts": "0",
+       "battingAverage": ".000",
+       "onBasePercentage": "0.0%",
+       "doubles": "0",
+       "triples": "0",
+       "homeRuns": "0"
+      }
+     },
+     {
+      "__typename": "PlayerStatsSoftball",
+      "firstName": "Aynslee",
+      "lastName": "Linduff",
+      "position": "rf",
+      "number": 39,
+      "starter": true,
+      "participated": true,
+      "substitute": false,
+      "batterStats": {
+       "__typename": "BatterStat",
+       "atBats": "2",
+       "runsScored": "0",
+       "hits": "0",
+       "runsBattedIn": "0",
+       "walks": "0",
+       "strikeouts": "0",
+       "battingAverage": ".000",
+       "onBasePercentage": "0.0%"
+      },
+      "pitcherStats": null,
+      "fieldStats": {
+       "__typename": "FieldStat",
+       "putouts": "2",
+       "assists": "0",
+       "errors": "0",
+       "passedBalls": "0",
+       "catcherInterference": "0",
+       "stolenBasesAgainst": "0",
+       "caughtStealingBy": "0",
+       "involvedInDoublePlays": "0",
+       "involvedInTriplePlays": "0"
+      },
+      "hittingSeason": {
+       "__typename": "HittingSeason",
+       "atBats": "2",
+       "runsScored": "0",
+       "hits": "0",
+       "runsBattedIn": "0",
+       "walks": "0",
+       "strikeouts": "0",
+       "battingAverage": ".000",
+       "onBasePercentage": "0.0%",
+       "doubles": "0",
+       "triples": "0",
+       "homeRuns": "0"
+      }
+     },
+     {
+      "__typename": "PlayerStatsSoftball",
+      "firstName": "Madi",
+      "lastName": "Hays",
+      "position": "PR",
+      "number": 36,
+      "starter": false,
+      "participated": true,
+      "substitute": false,
+      "batterStats": {
+       "__typename": "BatterStat",
+       "atBats": "0",
+       "runsScored": "0",
+       "hits": "0",
+       "runsBattedIn": "0",
+       "walks": "0",
+       "strikeouts": "0",
+       "battingAverage": ".000",
+       "onBasePercentage": "0.0%"
+      },
+      "pitcherStats": null,
+      "fieldStats": {
+       "__typename": "FieldStat",
+       "putouts": "0",
+       "assists": "0",
+       "errors": "0",
+       "passedBalls": "0",
+       "catcherInterference": "0",
+       "stolenBasesAgainst": "0",
+       "caughtStealingBy": "0",
+       "involvedInDoublePlays": "0",
+       "involvedInTriplePlays": "0"
+      },
+      "hittingSeason": {
+       "__typename": "HittingSeason",
+       "atBats": "0",
+       "runsScored": "0",
+       "hits": "0",
+       "runsBattedIn": "0",
+       "walks": "0",
+       "strikeouts": "0",
+       "battingAverage": ".000",
+       "onBasePercentage": "0.0%",
+       "doubles": "0",
+       "triples": "0",
+       "homeRuns": "0"
+      }
+     },
+     {
+      "__typename": "PlayerStatsSoftball",
+      "firstName": "Presley",
+      "lastName": "Limbaugh",
+      "position": "cf",
+      "number": 4,
+      "starter": true,
+      "participated": true,
+      "substitute": false,
+      "batterStats": {
+       "__typename": "BatterStat",
+       "atBats": "5",
+       "runsScored": "2",
+       "hits": "3",
+       "runsBattedIn": "2",
+       "walks": "0",
+       "strikeouts": "0",
+       "battingAverage": ".000",
+       "onBasePercentage": "0.0%"
+      },
+      "pitcherStats": null,
+      "fieldStats": {
+       "__typename": "FieldStat",
+       "putouts": "3",
+       "assists": "0",
+       "errors": "0",
+       "passedBalls": "0",
+       "catcherInterference": "0",
+       "stolenBasesAgainst": "0",
+       "caughtStealingBy": "0",
+       "involvedInDoublePlays": "0",
+       "involvedInTriplePlays": "0"
+      },
+      "hittingSeason": {
+       "__typename": "HittingSeason",
+       "atBats": "5",
+       "runsScored": "2",
+       "hits": "3",
+       "runsBattedIn": "2",
+       "walks": "0",
+       "strikeouts": "0",
+       "battingAverage": ".000",
+       "onBasePercentage": "0.0%",
+       "doubles": "1",
+       "triples": "0",
+       "homeRuns": "0"
+      }
+     }
+    ],
+    "teamStats": {
+     "__typename": "TeamStatsSoftball",
+     "batterTotals": {
+      "__typename": "BatterTotal",
+      "atBats": "37",
+      "runsScored": "10",
+      "hits": "15",
+      "runsBattedIn": "10",
+      "walks": "1",
+      "strikeouts": "5"
+     },
+     "battingStats": {
+      "__typename": "BattingStat",
+      "doubles": [
+       {
+        "__typename": "StatBreakout",
+        "lastName": "Cripe",
+        "total": "1",
+        "seasonTotal": "1"
+       },
+       {
+        "__typename": "StatBreakout",
+        "lastName": "Soles",
+        "total": "1",
+        "seasonTotal": "1"
+       },
+       {
+        "__typename": "StatBreakout",
+        "lastName": "Amezcua",
+        "total": "1",
+        "seasonTotal": "1"
+       },
+       {
+        "__typename": "StatBreakout",
+        "lastName": "Limbaugh",
+        "total": "1",
+        "seasonTotal": "1"
+       }
+      ],
+      "triples": [],
+      "homeRuns": [
+       {
+        "__typename": "StatBreakout",
+        "lastName": "Cripe",
+        "total": "1",
+        "seasonTotal": "1"
+       },
+       {
+        "__typename": "StatBreakout",
+        "lastName": "Bagshaw",
+        "total": "1",
+        "seasonTotal": "1"
+       },
+       {
+        "__typename": "StatBreakout",
+        "lastName": "Boyer",
+        "total": "1",
+        "seasonTotal": "1"
+       },
+       {
+        "__typename": "StatBreakout",
+        "lastName": "Flanagan",
+        "total": "1",
+        "seasonTotal": "1"
+       }
+      ],
+      "runsBattedIn": [
+       {
+        "__typename": "StatBreakout",
+        "lastName": "Cripe",
+        "total": "2",
+        "seasonTotal": "2"
+       },
+       {
+        "__typename": "StatBreakout",
+        "lastName": "Soles",
+        "total": "1",
+        "seasonTotal": "1"
+       },
+       {
+        "__typename": "StatBreakout",
+        "lastName": "Bagshaw",
+        "total": "1",
+        "seasonTotal": "1"
+       },
+       {
+        "__typename": "StatBreakout",
+        "lastName": "Boyer",
+        "total": "2",
+        "seasonTotal": "2"
+       },
+       {
+        "__typename": "StatBreakout",
+        "lastName": "Flanagan",
+        "total": "2",
+        "seasonTotal": "2"
+       },
+       {
+        "__typename": "StatBreakout",
+        "lastName": "Limbaugh",
+        "total": "2",
+        "seasonTotal": "2"
+       }
+      ],
+      "leftOnBase": "9"
+     },
+     "fieldingStats": {
+      "__typename": "FieldingStat",
+      "errors": []
+     },
+     "pitcherTotals": {
+      "__typename": "PitcherTotal",
+      "inningsPitched": "7",
+      "hitsAllowed": "15",
+      "runsAllowed": "10",
+      "earnedRunsAllowed": "3",
+      "walksAllowed": "0",
+      "strikeouts": "3",
+      "battersFaced": "35"
+     },
+     "pitchingStats": {
+      "__typename": "PitchingStat",
+      "numberOfPitches": null,
+      "win": null,
+      "save": null,
+      "loss": null,
+      "pitchers": []
+     }
+    }
+   }
+  ]
+ }
+}

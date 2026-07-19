@@ -1,0 +1,14 @@
+[
+ "__typename",
+ "batterStats",
+ "fieldStats",
+ "firstName",
+ "hittingSeason",
+ "lastName",
+ "number",
+ "participated",
+ "pitcherStats",
+ "position",
+ "starter",
+ "substitute"
+]
