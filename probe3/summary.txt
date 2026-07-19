@@ -1,0 +1,7 @@
+Scanning NCAA softball/d1 scoreboard 2025-09-01..2025-11-30 for kansas
+NCAA fall window: 0 Kansas games found; 0 days had any D1 softball games at all
+schedule-current: 10462 chars, 585 links
+schedule-2027: 2351 chars, 123 links
+schedule-2026-fall: 2351 chars, 123 links
+news: 2351 chars, 123 links
+stats-2027: 2094 chars, 157 links
