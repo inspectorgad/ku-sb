@@ -6,8 +6,10 @@ pitching box scores, season aggregates (AVG/OBP/SLG/OPS, ERA/WHIP), and
 team leaderboards — automatically updated through the season. Modeled on
 the [ku-wbb](https://github.com/inspectorgad/ku-wbb) and
 [ku-volleyball](https://github.com/inspectorgad/ku-volleyball) apps and
-seeded with the complete Spring 2026 season (57 games, 39-18, NCAA
-Norman regional).
+seeded with the complete Spring 2026 season (58 games, 36-22, Big 12
+tournament and NCAA regional included — 57 with full box scores, plus
+the Mar 1 Arkansas game as a result-only entry since kuathletics never
+posted its box score).
 
 ## Features
 

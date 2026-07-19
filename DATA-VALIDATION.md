@@ -1,10 +1,14 @@
 # Data validation — KU Softball, Spring 2026
 
-Result: **PASS**. The full 2026 season (57 games, Feb 6 – May 16) is
-retrievable, and per-player batting AND pitching are available with clean,
-internally consistent data — but unlike the ku-wbb app, the primary
+Result: **PASS**. The full 2026 season (58 games, Feb 6 – May 16, 36-22)
+is retrievable, and per-player batting AND pitching are available with
+clean, internally consistent data — but unlike the ku-wbb app, the primary
 per-game source must be **kuathletics.com box scores**, with the NCAA API
-used for game discovery and cross-validation. Raw evidence lives in
+used for game discovery and cross-validation. Neither source alone covers
+the whole season: the NCAA feed is missing the May 7 Big 12 tournament
+game, and kuathletics has no box score for the Mar 1 Arkansas game (the
+production scrape confirmed both, so the app's seed carries 57 games with
+full lines plus Arkansas as a result-only game). Raw evidence lives in
 `probe/` (NCAA season sweep) and `probe2/` (Sidearm box scores + NCAA
 gaps), captured by the `probe-data.yml` / `probe2-data.yml` workflows on
 2026-07-19.
@@ -12,9 +16,9 @@ gaps), captured by the `probe-data.yml` / `probe2-data.yml` workflows on
 ## Source 1: NCAA API (`ncaa-api.henrygd.me`)
 
 - Scanned the daily `softball/d1` scoreboard from 2026-02-01 to
-  2026-06-15: **57 Kansas games found, 0 scan errors** — 51 regular-season
-  games, 2 Big 12 tournament games, a 4-game NCAA regional run
-  (Norman regional, ending 2026-05-16), season record 39-18.
+  2026-06-15: **57 Kansas games found, 0 scan errors** — the regular
+  season, 2 Big 12 tournament games, and a 3-game NCAA regional run
+  ending 2026-05-16.
 - **56/56 box scores captured** for games the feed marks final
   (`probe/games/`).
 - Game results and **inning-by-inning line scores are reliable**
@@ -53,8 +57,10 @@ gaps), captured by the `probe-data.yml` / `probe2-data.yml` workflows on
 - **Roster page**: parsed cleanly — 26 players with name / jersey /
   position; every 2026 box-score name resolves to it (`probe/roster.json`).
 - **Season stats page** (`/sports/softball/stats/2026`): carries links to
-  **all 57 game box scores** (57 distinct ids, including id 20610 for the
-  May 7 UCF game the NCAA feed is missing).
+  **57 game box scores** (including id 20610 for the May 7 UCF game the
+  NCAA feed is missing). The one gap — found by the first production
+  scrape, not the probe — is the 2026-03-01 Arkansas game, which has no
+  box score on kuathletics; its result comes from the NCAA feed instead.
 - **Box score pages embed complete structured data** in the
   `__NUXT_DATA__` JSON payload (devalue format, parsed successfully in
   `probe2/boxscore-*.html`): per-player hitting (AB, R, H, RBI, 2B, 3B,
