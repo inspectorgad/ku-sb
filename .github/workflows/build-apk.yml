@@ -8,11 +8,14 @@ on:
     paths-ignore:
       - 'probe/**'
       - 'probe2/**'
+      - 'probe3/**'
       - 'DATA-VALIDATION.md'
       - 'scripts/probe-ku-sb.mjs'
       - 'scripts/probe2-ku-sb.mjs'
+      - 'scripts/probe3-ku-sb.mjs'
       - '.github/workflows/probe-data.yml'
       - '.github/workflows/probe2-data.yml'
+      - '.github/workflows/probe3-data.yml'
   workflow_dispatch:
 
 permissions:
