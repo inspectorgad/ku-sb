@@ -5,8 +5,8 @@ on:
   workflow_dispatch:
   # Temporary self-heal: GitHub's Pages API was 503ing during first
   # enablement (2026-07-20 incident); retry hourly until the site exists.
-  # Once the site is live this schedule is redundant (deploys are
-  # idempotent) and can be removed.
+  # Once the site is live this schedule is redundant (idempotent) and
+  # can be removed.
   schedule:
     - cron: '25 * * * *'
   push:
