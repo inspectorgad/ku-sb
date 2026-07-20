@@ -1,5 +1,5 @@
 name: Deploy dashboard to GitHub Pages
-# Retried after a transient GitHub Pages API 503 on first enablement.
+# Pages enablement retried after transient GitHub API 503s (incident 2026-07-20).
 
 on:
   workflow_dispatch:
