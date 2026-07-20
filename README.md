@@ -93,3 +93,16 @@ primary per-game source.
 2. Select **Open** and choose the directory containing this project
 3. Allow Android Studio to fix any incompatibilities as it imports the project
 4. Run the app on an emulator or physical device
+
+## Season dashboard
+
+A colorful single-page dashboard of the whole season — team tiles,
+run-margin chart, leaderboards, every game with its line score, and a
+clickable roster where each player opens their game-by-game batting and
+pitching log — is published on GitHub Pages:
+
+**https://inspectorgad.github.io/ku-sb/**
+
+`scripts/build-dashboard.py` regenerates `docs/index.html` from
+`seed.json`; the nightly scrape rebuilds and redeploys it whenever the
+data changes.

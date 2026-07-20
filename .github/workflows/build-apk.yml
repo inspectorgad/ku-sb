@@ -6,6 +6,9 @@ on:
       - main
       - claude/ku-softball-stats-app-07iqli
     paths-ignore:
+      - 'docs/**'
+      - 'scripts/build-dashboard.py'
+      - '.github/workflows/deploy-pages.yml'
       - 'probe/**'
       - 'probe2/**'
       - 'probe3/**'
