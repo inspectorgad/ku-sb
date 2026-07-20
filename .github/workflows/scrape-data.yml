@@ -2,7 +2,9 @@ name: Scrape KU Softball data
 
 on:
   workflow_dispatch:
-  # Nightly at 09:00 UTC (4 AM Central) — after even late games are final.
+  # Fires nightly at 09:00 UTC (4 AM Central) — after even late games are
+  # final — but the gate job below skips scheduled runs down to weekly
+  # (Mondays) during the off-season (July through January).
   schedule:
     - cron: '0 9 * * *'
   push:
@@ -20,7 +22,31 @@ permissions:
   actions: write
 
 jobs:
+  # Off-season throttle: D1 softball runs February to mid-June, so between
+  # July and January nothing changes night to night — scheduled runs are
+  # skipped except on Mondays. Manual dispatches and pushes always run,
+  # and Feb-Jun scheduled runs are nightly again with no changes needed.
+  gate:
+    runs-on: ubuntu-latest
+    outputs:
+      run: ${{ steps.decide.outputs.run }}
+    steps:
+      - id: decide
+        run: |
+          month=$(date -u +%-m)
+          dow=$(date -u +%u)   # 1 = Monday
+          if [ "$GITHUB_EVENT_NAME" = "schedule" ] && \
+             { [ "$month" -ge 7 ] || [ "$month" -eq 1 ]; } && \
+             [ "$dow" -ne 1 ]; then
+            echo "run=false" >> "$GITHUB_OUTPUT"
+            echo "Off-season (month $month) and not Monday — skipping nightly scrape."
+          else
+            echo "run=true" >> "$GITHUB_OUTPUT"
+          fi
+
   scrape:
+    needs: gate
+    if: needs.gate.outputs.run == 'true'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
