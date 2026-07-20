@@ -1,12 +1,12 @@
 name: Deploy dashboard to GitHub Pages
-# Pages enablement: first attempts hit the 2026-07-20 GitHub API incident.
 
 on:
   workflow_dispatch:
-  # Temporary self-heal: GitHub's Pages API was 503ing during first
-  # enablement (2026-07-20 incident); retry hourly until the site exists.
-  # Once the site is live this schedule is redundant (idempotent) and
-  # can be removed.
+  # The workflow token can deploy to Pages but cannot CREATE the Pages
+  # site ("Resource not accessible by integration"), so Pages needs one
+  # manual enable: repo Settings -> Pages -> Source: "GitHub Actions".
+  # This hourly schedule publishes automatically once that's done; it can
+  # be removed after the first green deploy (pushes also trigger deploys).
   schedule:
     - cron: '25 * * * *'
   push:
