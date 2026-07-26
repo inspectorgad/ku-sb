@@ -1,0 +1,6521 @@
+[
+ {
+  "id": 20426,
+  "date": "2026-02-06T08:00:00",
+  "enddate": null,
+  "game_state": 0,
+  "game_state_display": "SCHEDULED",
+  "game_center_enabled": false,
+  "game_center_link": "/game-center/20426",
+  "time": "8 a.m. CT",
+  "conference": false,
+  "location": "Tampa, Fla.",
+  "location_indicator": "N",
+  "neutral_hometeam": null,
+  "at_vs": "vs",
+  "status": "O",
+  "noplay_text": "",
+  "type": "R",
+  "promotion": null,
+  "promotion_link": "",
+  "promotion_image_link": null,
+  "promotion_image": null,
+  "promotion_caption": null,
+  "event_image": null,
+  "is_a_doubleheader": false,
+  "opponent_history_path": "/sports/softball/opponent-history/bethune-cookman/2922",
+  "display_vsat_indicator": true,
+  "game_program_link": null,
+  "opponent": {
+   "id": 2922,
+   "title": "Bethune-Cookman",
+   "prefix": "",
+   "website": "http://bcuathletics.com/",
+   "website_label": "Bethune-Cookman on February 6, 2026 8 a.m. CT",
+   "location": "Daytona Beach, FL",
+   "conference": false,
+   "mascot": "Wildcats",
+   "image": {
+    "filename": "BC_SecondaryColor_2015.png",
+    "path": "/images/logos",
+    "title": "Bethune-Cookman University Logo",
+    "alt": "Bethune-Cookman University Logo",
+    "fullpath": "https://dxbhsrqyrr690.cloudfront.net/sidearm.nextgen.sites/ukansas.sidearmsports.com/images/logos/BC_SecondaryColor_2015.png"
+   }
+  },
+  "media": {
+   "tv": "",
+   "tv_image": null,
+   "tv_image_link": "",
+   "tv_image_caption": null,
+   "radio": "",
+   "video": null,
+   "audio": null,
+   "stats": {
+    "title": "Live stats",
+    "url": "https://stats.statbroadcast.com/broadcast/?id=646143",
+    "label": "Live stats for Softball vs Bethune-Cookman on February 6, 2026 at 8 a.m. CT",
+    "cssClass": null
+   },
+   "tickets": null,
+   "preview": {
+    "title": "Preview",
+    "url": "/news/2026/2/5/kansas-softball-set-to-open-season-at-usf-rawlings-invitational",
+    "label": "Preview for Softball vs Bethune-Cookman on February 6, 2026 at 8 a.m. CT",
+    "cssClass": null
+   },
+   "gamefiles": [],
+   "custom_display_fields": []
+  },
+  "result": {
+   "status": "W",
+   "team_score": "12",
+   "opponent_score": "0",
+   "prescore_info": "",
+   "postscore_info": "(5 Inn.)",
+   "boxscore": {
+    "title": "Box Score",
+    "url": "/sports/softball/stats/2026/bethune-cookman/boxscore/20426",
+    "label": "Box score of Softball vs Bethune-Cookman on February 6, 2026 at 8 a.m. CT",
+    "cssClass": null
+   },
+   "recap": {
+    "title": "Recap",
+    "url": "/news/2026/2/6/softball-jayhawks-open-2026-season-with-pair-of-run-rule-wins-in-tampa",
+    "label": "Story recap for Softball vs Bethune-Cookman on February 6, 2026 at 8 a.m. CT",
+    "cssClass": null
+   }
+  },
+  "facility": {
+   "id": 309,
+   "title": "USF Softball Stadium",
+   "url": ""
+  },
+  "tournament": {
+   "id": 1220,
+   "title": "USF-Rawlings Invitational ",
+   "website": "https://gousfbulls.com/sports/2023/1/10/usf-rawlings-tournament-information.aspx",
+   "color": "default"
+  },
+  "tournament_startdate": null,
+  "galleries": [],
+  "game_program": "Program",
+  "has_weplayed_moments": false,
+  "ticket_link": {
+   "customMessages": [],
+   "label": "Buy Tickets:  Bethune-Cookman on February 6 8 a.m. CT",
+   "fallbackText": "Buy tickets",
+   "seatGeekLink": null,
+   "showSeatGeek": false,
+   "featured": false,
+   "url": null,
+   "text": "Buy Tickets"
+  },
+  "game_links": []
+ },
+ {
+  "id": 20427,
+  "date": "2026-02-06T13:00:00",
+  "enddate": null,
+  "game_state": 0,
+  "game_state_display": "SCHEDULED",
+  "game_center_enabled": false,
+  "game_center_link": "/game-center/20427",
+  "time": "1 p.m. CT",
+  "conference": false,
+  "location": "Tampa, Fla.",
+  "location_indicator": "N",
+  "neutral_hometeam": null,
+  "at_vs": "vs",
+  "status": "O",
+  "noplay_text": "",
+  "type": "R",
+  "promotion": null,
+  "promotion_link": "",
+  "promotion_image_link": null,
+  "promotion_image": null,
+  "promotion_caption": null,
+  "event_image": null,
+  "is_a_doubleheader": false,
+  "opponent_history_path": "/sports/softball/opponent-history/illinois-state/3002",
+  "display_vsat_indicator": true,
+  "game_program_link": null,
+  "opponent": {
+   "id": 3002,
+   "title": "Illinois State",
+   "prefix": "",
+   "website": " ",
+   "website_label": "Illinois State on February 6, 2026 1 p.m. CT",
+   "location": "Normal, IL",
+   "conference": false,
+   "mascot": "Redbirds",
+   "image": {
+    "filename": "Illinois_State_2023.png",
+    "path": "/images/logos",
+    "title": "Illinois State University Logo",
+    "alt": "Illinois State University Logo",
+    "fullpath": "https://dxbhsrqyrr690.cloudfront.net/sidearm.nextgen.sites/ukansas.sidearmsports.com/images/logos/Illinois_State_2023.png"
+   }
+  },
+  "media": {
+   "tv": "",
+   "tv_image": null,
+   "tv_image_link": "",
+   "tv_image_caption": null,
+   "radio": "",
+   "video": null,
+   "audio": null,
+   "stats": {
+    "title": "Live stats",
+    "url": "https://stats.statbroadcast.com/broadcast/?id=648233",
+    "label": "Live stats for Softball vs Illinois State on February 6, 2026 at 1 p.m. CT",
+    "cssClass": null
+   },
+   "tickets": null,
+   "preview": {
+    "title": "Preview",
+    "url": "/news/2026/2/5/kansas-softball-set-to-open-season-at-usf-rawlings-invitational",
+    "label": "Preview for Softball vs Illinois State on February 6, 2026 at 1 p.m. CT",
+    "cssClass": null
+   },
+   "gamefiles": [],
+   "custom_display_fields": []
+  },
+  "result": {
+   "status": "W",
+   "team_score": "13",
+   "opponent_score": "5",
+   "prescore_info": "",
+   "postscore_info": "(5 Inn.)",
+   "boxscore": {
+    "title": "Box Score",
+    "url": "/sports/softball/stats/2026/illinois-state/boxscore/20427",
+    "label": "Box score of Softball vs Illinois State on February 6, 2026 at 1 p.m. CT",
+    "cssClass": null
+   },
+   "recap": {
+    "title": "Recap",
+    "url": "/news/2026/2/6/softball-jayhawks-open-2026-season-with-pair-of-run-rule-wins-in-tampa",
+    "label": "Story recap for Softball vs Illinois State on February 6, 2026 at 1 p.m. CT",
+    "cssClass": null
+   }
+  },
+  "facility": {
+   "id": 309,
+   "title": "USF Softball Stadium",
+   "url": ""
+  },
+  "tournament": {
+   "id": 1220,
+   "title": "USF-Rawlings Invitational ",
+   "website": "https://gousfbulls.com/sports/2023/1/10/usf-rawlings-tournament-information.aspx",
+   "color": "default"
+  },
+  "tournament_startdate": null,
+  "galleries": [],
+  "game_program": "Program",
+  "has_weplayed_moments": false,
+  "ticket_link": {
+   "customMessages": [],
+   "label": "Buy Tickets:  Illinois State on February 6 1 p.m. CT",
+   "fallbackText": "Buy tickets",
+   "seatGeekLink": null,
+   "showSeatGeek": false,
+   "featured": false,
+   "url": null,
+   "text": "Buy Tickets"
+  },
+  "game_links": []
+ },
+ {
+  "id": 20428,
+  "date": "2026-02-07T14:00:00",
+  "enddate": null,
+  "game_state": 0,
+  "game_state_display": "SCHEDULED",
+  "game_center_enabled": false,
+  "game_center_link": "/game-center/20428",
+  "time": "1 p.m. CT",
+  "conference": false,
+  "location": " Tampa, Fla. ",
+  "location_indicator": "A",
+  "neutral_hometeam": null,
+  "at_vs": "at",
+  "status": "O",
+  "noplay_text": "",
+  "type": "R",
+  "promotion": null,
+  "promotion_link": "",
+  "promotion_image_link": null,
+  "promotion_image": null,
+  "promotion_caption": null,
+  "event_image": null,
+  "is_a_doubleheader": false,
+  "opponent_history_path": "/sports/softball/opponent-history/usf/3164",
+  "display_vsat_indicator": true,
+  "game_program_link": null,
+  "opponent": {
+   "id": 3164,
+   "title": "USF",
+   "prefix": "",
+   "website": " ",
+   "website_label": "USF on February 7, 2026 1 p.m. CT",
+   "location": "Tampa, FL",
+   "conference": false,
+   "mascot": "Bulls",
+   "image": {
+    "filename": "South_Florida.png",
+    "path": "/images/logos",
+    "title": "University of South Florida Logo",
+    "alt": "University of South Florida Logo",
+    "fullpath": "https://dxbhsrqyrr690.cloudfront.net/sidearm.nextgen.sites/ukansas.sidearmsports.com/images/logos/South_Florida.png"
+   }
+  },
+  "media": {
+   "tv": "ESPN+",
+   "tv_image": null,
+   "tv_image_link": "",
+   "tv_image_caption": null,
+   "radio": "",
+   "video": {
+    "title": "Watch",
+    "url": "https://www.espn.com/watch/player/_/id/59a5f991-14ef-4c92-b0cd-c90618487e62",
+    "label": "Video for Softball at USF on February 7, 2026 at 1 p.m. CT",
+    "cssClass": null
+   },
+   "audio": null,
+   "stats": {
+    "title": "Live stats",
+    "url": "https://stats.statbroadcast.com/broadcast/?id=646144",
+    "label": "Live stats for Softball at USF on February 7, 2026 at 1 p.m. CT",
+    "cssClass": null
+   },
+   "tickets": null,
+   "preview": {
+    "title": "Preview",
+    "url": "/news/2026/2/5/kansas-softball-set-to-open-season-at-usf-rawlings-invitational",
+    "label": "Preview for Softball at USF on February 7, 2026 at 1 p.m. CT",
+    "cssClass": null
+   },
+   "gamefiles": [],
+   "custom_display_fields": []
+  },
+  "result": {
+   "status": "L",
+   "team_score": "4",
+   "opponent_score": "12",
+   "prescore_info": "",
+   "postscore_info": "(6 Inn.)",
+   "boxscore": {
+    "title": "Box Score",
+    "url": "/sports/softball/stats/2026/usf/boxscore/20428",
+    "label": "Box score of Softball at USF on February 7, 2026 at 1 p.m. CT",
+    "cssClass": null
+   },
+   "recap": {
+    "title": "Recap",
+    "url": "/news/2026/2/7/kansas-falls-to-usf-after-late-rally-12-4",
+    "label": "Story recap for Softball at USF on February 7, 2026 at 1 p.m. CT",
+    "cssClass": null
+   }
+  },
+  "facility": {
+   "id": 309,
+   "title": "USF Softball Stadium",
+   "url": ""
+  },
+  "tournament": {
+   "id": 1220,
+   "title": "USF-Rawlings Invitational ",
+   "website": "https://gousfbulls.com/sports/2023/1/10/usf-rawlings-tournament-information.aspx",
+   "color": "default"
+  },
+  "tournament_startdate": null,
+  "galleries": [],
+  "game_program": "Program",
+  "has_weplayed_moments": false,
+  "ticket_link": {
+   "customMessages": [],
+   "label": "Buy Tickets:  USF on February 7 1 p.m. CT",
+   "fallbackText": "Buy tickets",
+   "seatGeekLink": null,
+   "showSeatGeek": false,
+   "featured": false,
+   "url": null,
+   "text": "Buy Tickets"
+  },
+  "game_links": []
+ },
+ {
+  "id": 20429,
+  "date": "2026-02-08T08:30:00",
+  "enddate": null,
+  "game_state": 0,
+  "game_state_display": "SCHEDULED",
+  "game_center_enabled": false,
+  "game_center_link": "/game-center/20429",
+  "time": "8:30 a.m. CT",
+  "conference": false,
+  "location": "Tampa, Fla.",
+  "location_indicator": "N",
+  "neutral_hometeam": null,
+  "at_vs": "vs",
+  "status": "O",
+  "noplay_text": "",
+  "type": "R",
+  "promotion": null,
+  "promotion_link": "",
+  "promotion_image_link": null,
+  "promotion_image": null,
+  "promotion_caption": null,
+  "event_image": null,
+  "is_a_doubleheader": false,
+  "opponent_history_path": "/sports/softball/opponent-history/michigan/3040",
+  "display_vsat_indicator": true,
+  "game_program_link": null,
+  "opponent": {
+   "id": 3040,
+   "title": "Michigan",
+   "prefix": "",
+   "website": " ",
+   "website_label": "Michigan on February 8, 2026 8:30 a.m. CT",
+   "location": "Ann Arbor, MI",
+   "conference": false,
+   "mascot": "Wolverines",
+   "image": {
+    "filename": "michigan_logo_200x200.png",
+    "path": "/images/logos",
+    "title": "University of Michigan Logo",
+    "alt": "University of Michigan Logo",
+    "fullpath": "https://dxbhsrqyrr690.cloudfront.net/sidearm.nextgen.sites/ukansas.sidearmsports.com/images/logos/michigan_logo_200x200.png"
+   }
+  },
+  "media": {
+   "tv": "",
+   "tv_image": null,
+   "tv_image_link": "",
+   "tv_image_caption": null,
+   "radio": "",
+   "video": null,
+   "audio": null,
+   "stats": {
+    "title": "Live stats",
+    "url": "https://stats.statbroadcast.com/broadcast/?id=646137",
+    "label": "Live stats for Softball vs Michigan on February 8, 2026 at 8:30 a.m. CT",
+    "cssClass": null
+   },
+   "tickets": null,
+   "preview": {
+    "title": "Preview",
+    "url": "/news/2026/2/5/kansas-softball-set-to-open-season-at-usf-rawlings-invitational",
+    "label": "Preview for Softball vs Michigan on February 8, 2026 at 8:30 a.m. CT",
+    "cssClass": null
+   },
+   "gamefiles": [],
+   "custom_display_fields": []
+  },
+  "result": {
+   "status": "L",
+   "team_score": "2",
+   "opponent_score": "4",
+   "prescore_info": "",
+   "postscore_info": "",
+   "boxscore": {
+    "title": "Box Score",
+    "url": "/sports/softball/stats/2026/michigan/boxscore/20429",
+    "label": "Box score of Softball vs Michigan on February 8, 2026 at 8:30 a.m. CT",
+    "cssClass": null
+   },
+   "recap": {
+    "title": "Recap",
+    "url": "/news/2026/2/8/softball-jayhawks-drop-final-two-games-at-usf-rawlings-invitational",
+    "label": "Story recap for Softball vs Michigan on February 8, 2026 at 8:30 a.m. CT",
+    "cssClass": null
+   }
+  },
+  "facility": {
+   "id": 309,
+   "title": "USF Softball Stadium",
+   "url": ""
+  },
+  "tournament": {
+   "id": 1220,
+   "title": "USF-Rawlings Invitational ",
+   "website": "https://gousfbulls.com/sports/2023/1/10/usf-rawlings-tournament-information.aspx",
+   "color": "default"
+  },
+  "tournament_startdate": null,
+  "galleries": [],
+  "game_program": "Program",
+  "has_weplayed_moments": false,
+  "ticket_link": {
+   "customMessages": [],
+   "label": "Buy Tickets:  Michigan on February 8 8:30 a.m. CT",
+   "fallbackText": "Buy tickets",
+   "seatGeekLink": null,
+   "showSeatGeek": false,
+   "featured": false,
+   "url": null,
+   "text": "Buy Tickets"
+  },
+  "game_links": []
+ },
+ {
+  "id": 20430,
+  "date": "2026-02-08T11:00:00",
+  "enddate": null,
+  "game_state": 0,
+  "game_state_display": "SCHEDULED",
+  "game_center_enabled": false,
+  "game_center_link": "/game-center/20430",
+  "time": "11 a.m. CT",
+  "conference": false,
+  "location": "Tampa, Fla.",
+  "location_indicator": "N",
+  "neutral_hometeam": null,
+  "at_vs": "vs",
+  "status": "O",
+  "noplay_text": "",
+  "type": "R",
+  "promotion": null,
+  "promotion_link": "",
+  "promotion_image_link": null,
+  "promotion_image": null,
+  "promotion_caption": null,
+  "event_image": null,
+  "is_a_doubleheader": false,
+  "opponent_history_path": "/sports/softball/opponent-history/florida/2975",
+  "display_vsat_indicator": true,
+  "game_program_link": null,
+  "opponent": {
+   "id": 2975,
+   "title": "Florida",
+   "prefix": "",
+   "website": " ",
+   "website_label": "Florida on February 8, 2026 11 a.m. CT",
+   "location": "Gainesville, FL",
+   "conference": false,
+   "mascot": "Gators",
+   "image": {
+    "filename": "Florida.png",
+    "path": "/images/logos",
+    "title": "University of Florida Logo",
+    "alt": "University of Florida Logo",
+    "fullpath": "https://dxbhsrqyrr690.cloudfront.net/sidearm.nextgen.sites/ukansas.sidearmsports.com/images/logos/Florida.png"
+   }
+  },
+  "media": {
+   "tv": "",
+   "tv_image": null,
+   "tv_image_link": "",
+   "tv_image_caption": null,
+   "radio": "",
+   "video": null,
+   "audio": null,
+   "stats": {
+    "title": "Live stats",
+    "url": "https://stats.statbroadcast.com/broadcast/?id=646135",
+    "label": "Live stats for Softball vs Florida on February 8, 2026 at 11 a.m. CT",
+    "cssClass": null
+   },
+   "tickets": null,
+   "preview": {
+    "title": "Preview",
+    "url": "/news/2026/2/5/kansas-softball-set-to-open-season-at-usf-rawlings-invitational",
+    "label": "Preview for Softball vs Florida on February 8, 2026 at 11 a.m. CT",
+    "cssClass": null
+   },
+   "gamefiles": [],
+   "custom_display_fields": []
+  },
+  "result": {
+   "status": "L",
+   "team_score": "2",
+   "opponent_score": "11",
+   "prescore_info": "",
+   "postscore_info": "",
+   "boxscore": {
+    "title": "Box Score",
+    "url": "/sports/softball/stats/2026/florida/boxscore/20430",
+    "label": "Box score of Softball vs Florida on February 8, 2026 at 11 a.m. CT",
+    "cssClass": null
+   },
+   "recap": {
+    "title": "Recap",
+    "url": "/news/2026/2/8/softball-jayhawks-drop-final-two-games-at-usf-rawlings-invitational",
+    "label": "Story recap for Softball vs Florida on February 8, 2026 at 11 a.m. CT",
+    "cssClass": null
+   }
+  },
+  "facility": {
+   "id": 309,
+   "title": "USF Softball Stadium",
+   "url": ""
+  },
+  "tournament": {
+   "id": 1220,
+   "title": "USF-Rawlings Invitational ",
+   "website": "https://gousfbulls.com/sports/2023/1/10/usf-rawlings-tournament-information.aspx",
+   "color": "default"
+  },
+  "tournament_startdate": null,
+  "galleries": [],
+  "game_program": "Program",
+  "has_weplayed_moments": false,
+  "ticket_link": {
+   "customMessages": [],
+   "label": "Buy Tickets:  Florida on February 8 11 a.m. CT",
+   "fallbackText": "Buy tickets",
+   "seatGeekLink": null,
+   "showSeatGeek": false,
+   "featured": false,
+   "url": null,
+   "text": "Buy Tickets"
+  },
+  "game_links": []
+ },
+ {
+  "id": 20431,
+  "date": "2026-02-10T16:00:00",
+  "enddate": null,
+  "game_state": 0,
+  "game_state_display": "SCHEDULED",
+  "game_center_enabled": false,
+  "game_center_link": "/game-center/20431",
+  "time": "4 p.m. CT",
+  "conference": false,
+  "location": " Fort Myers, Fla. ",
+  "location_indicator": "A",
+  "neutral_hometeam": null,
+  "at_vs": "at",
+  "status": "O",
+  "noplay_text": "",
+  "type": "R",
+  "promotion": null,
+  "promotion_link": "",
+  "promotion_image_link": null,
+  "promotion_image": null,
+  "promotion_caption": null,
+  "event_image": null,
+  "is_a_doubleheader": false,
+  "opponent_history_path": "/sports/softball/opponent-history/florida-gulf-coast/2978",
+  "display_vsat_indicator": true,
+  "game_program_link": null,
+  "opponent": {
+   "id": 2978,
+   "title": "Florida Gulf Coast",
+   "prefix": "",
+   "website": " ",
+   "website_label": "Florida Gulf Coast on February 10, 2026 4 p.m. CT",
+   "location": "Fort Myers, Florida",
+   "conference": false,
+   "mascot": "Eagles",
+   "image": {
+    "filename": "Florida-Gulf-Coast.png",
+    "path": "/images/logos",
+    "title": "Florida Gulf Coast University Logo",
+    "alt": "Florida Gulf Coast University Logo",
+    "fullpath": "https://dxbhsrqyrr690.cloudfront.net/sidearm.nextgen.sites/ukansas.sidearmsports.com/images/logos/Florida-Gulf-Coast.png"
+   }
+  },
+  "media": {
+   "tv": "ESPN+",
+   "tv_image": null,
+   "tv_image_link": "",
+   "tv_image_caption": null,
+   "radio": "",
+   "video": {
+    "title": "Watch",
+    "url": "https://www.espn.com/watch/player/_/id/daba3467-a9ea-44bc-85e7-210033193a25",
+    "label": "Video for Softball at Florida Gulf Coast on February 10, 2026 at 4 p.m. CT",
+    "cssClass": null
+   },
+   "audio": null,
+   "stats": {
+    "title": "Live stats",
+    "url": "https://stats.statbroadcast.com/broadcast/?id=626722",
+    "label": "Live stats for Softball at Florida Gulf Coast on February 10, 2026 at 4 p.m. CT",
+    "cssClass": null
+   },
+   "tickets": null,
+   "preview": {
+    "title": "Preview",
+    "url": "/news/2026/2/9/softball-kansas-faces-fgcu-in-midweek-matchup",
+    "label": "Preview for Softball at Florida Gulf Coast on February 10, 2026 at 4 p.m. CT",
+    "cssClass": null
+   },
+   "gamefiles": [],
+   "custom_display_fields": []
+  },
+  "result": {
+   "status": "W",
+   "team_score": "5",
+   "opponent_score": "3",
+   "prescore_info": "",
+   "postscore_info": "",
+   "boxscore": {
+    "title": "Box Score",
+    "url": "/sports/softball/stats/2026/florida-gulf-coast/boxscore/20431",
+    "label": "Box score of Softball at Florida Gulf Coast on February 10, 2026 at 4 p.m. CT",
+    "cssClass": null
+   },
+   "recap": {
+    "title": "Recap",
+    "url": "/news/2026/2/10/softball-kansas-tops-fgcu-behind-cripes-two-homer-night",
+    "label": "Story recap for Softball at Florida Gulf Coast on February 10, 2026 at 4 p.m. CT",
+    "cssClass": null
+   }
+  },
+  "facility": {
+   "id": 477,
+   "title": "FGCU Softball Complex",
+   "url": ""
+  },
+  "tournament": null,
+  "tournament_startdate": null,
+  "galleries": [],
+  "game_program": "Program",
+  "has_weplayed_moments": false,
+  "ticket_link": {
+   "customMessages": [],
+   "label": "Buy Tickets:  Florida Gulf Coast on February 10 4 p.m. CT",
+   "fallbackText": "Buy tickets",
+   "seatGeekLink": null,
+   "showSeatGeek": false,
+   "featured": false,
+   "url": null,
+   "text": "Buy Tickets"
+  },
+  "game_links": []
+ },
+ {
+  "id": 20432,
+  "date": "2026-02-12T11:30:00",
+  "enddate": null,
+  "game_state": 0,
+  "game_state_display": "SCHEDULED",
+  "game_center_enabled": false,
+  "game_center_link": "/game-center/20432",
+  "time": "11:30 a.m. CT",
+  "conference": false,
+  "location": "Tampa, Fla. ",
+  "location_indicator": "N",
+  "neutral_hometeam": null,
+  "at_vs": "vs",
+  "status": "O",
+  "noplay_text": "",
+  "type": "R",
+  "promotion": null,
+  "promotion_link": "",
+  "promotion_image_link": null,
+  "promotion_image": null,
+  "promotion_caption": null,
+  "event_image": null,
+  "is_a_doubleheader": false,
+  "opponent_history_path": "/sports/softball/opponent-history/indiana-state/3006",
+  "display_vsat_indicator": true,
+  "game_program_link": null,
+  "opponent": {
+   "id": 3006,
+   "title": "Indiana State",
+   "prefix": "",
+   "website": " ",
+   "website_label": "Indiana State on February 12, 2026 11:30 a.m. CT",
+   "location": "Terre Haute, IN",
+   "conference": false,
+   "mascot": "Sycamores",
+   "image": {
+    "filename": "Indiana_State.png",
+    "path": "/images/logos",
+    "title": "Indiana State University Logo",
+    "alt": "Indiana State University Logo",
+    "fullpath": "https://dxbhsrqyrr690.cloudfront.net/sidearm.nextgen.sites/ukansas.sidearmsports.com/images/logos/Indiana_State.png"
+   }
+  },
+  "media": {
+   "tv": "",
+   "tv_image": null,
+   "tv_image_link": "",
+   "tv_image_caption": null,
+   "radio": "",
+   "video": null,
+   "audio": null,
+   "stats": {
+    "title": "Live stats",
+    "url": "https://stats.statbroadcast.com/broadcast/?id=646142&vislive=kan",
+    "label": "Live stats for Softball vs Indiana State on February 12, 2026 at 11:30 a.m. CT",
+    "cssClass": null
+   },
+   "tickets": null,
+   "preview": {
+    "title": "Preview",
+    "url": "/news/2026/2/11/softball-jayhawks-head-to-tampa-for-fonesca-memorial-tournament",
+    "label": "Preview for Softball vs Indiana State on February 12, 2026 at 11:30 a.m. CT",
+    "cssClass": null
+   },
+   "gamefiles": [],
+   "custom_display_fields": []
+  },
+  "result": {
+   "status": "W",
+   "team_score": "10",
+   "opponent_score": "4",
+   "prescore_info": "",
+   "postscore_info": "",
+   "boxscore": {
+    "title": "Box Score",
+    "url": "/sports/softball/stats/2026/indiana-state/boxscore/20432",
+    "label": "Box score of Softball vs Indiana State on February 12, 2026 at 11:30 a.m. CT",
+    "cssClass": null
+   },
+   "recap": {
+    "title": "Recap",
+    "url": "/news/2026/2/12/softball-kansas-jayhawks-split-opening-day-at-fonseca-memorial-tournament",
+    "label": "Story recap for Softball vs Indiana State on February 12, 2026 at 11:30 a.m. CT",
+    "cssClass": null
+   }
+  },
+  "facility": {
+   "id": 309,
+   "title": "USF Softball Stadium",
+   "url": ""
+  },
+  "tournament": {
+   "id": 1221,
+   "title": "Fonseca Memorial Tournament",
+   "website": "https://gousfbulls.com/sports/2024/1/25/the-fonseca-memorial-tournament-at-usf-tournament-central.aspx",
+   "color": "default"
+  },
+  "tournament_startdate": null,
+  "galleries": [],
+  "game_program": "Program",
+  "has_weplayed_moments": false,
+  "ticket_link": {
+   "customMessages": [],
+   "label": "Buy Tickets:  Indiana State on February 12 11:30 a.m. CT",
+   "fallbackText": "Buy tickets",
+   "seatGeekLink": null,
+   "showSeatGeek": false,
+   "featured": false,
+   "url": null,
+   "text": "Buy Tickets"
+  },
+  "game_links": []
+ },
+ {
+  "id": 20433,
+  "date": "2026-02-12T14:00:00",
+  "enddate": null,
+  "game_state": 0,
+  "game_state_display": "SCHEDULED",
+  "game_center_enabled": false,
+  "game_center_link": "/game-center/20433",
+  "time": "2 p.m. CT",
+  "conference": false,
+  "location": "Tampa, Fla.",
+  "location_indicator": "N",
+  "neutral_hometeam": null,
+  "at_vs": "vs",
+  "status": "O",
+  "noplay_text": "",
+  "type": "R",
+  "promotion": null,
+  "promotion_link": "",
+  "promotion_image_link": null,
+  "promotion_image": null,
+  "promotion_caption": null,
+  "event_image": null,
+  "is_a_doubleheader": false,
+  "opponent_history_path": "/sports/softball/opponent-history/boston-college/2927",
+  "display_vsat_indicator": true,
+  "game_program_link": null,
+  "opponent": {
+   "id": 2927,
+   "title": "Boston College",
+   "prefix": "",
+   "website": " ",
+   "website_label": "Boston College on February 12, 2026 2 p.m. CT",
+   "location": "Chestnut Hill, MA",
+   "conference": false,
+   "mascot": "Eagles",
+   "image": {
+    "filename": "Boston_College_200x200.png",
+    "path": "/images/logos",
+    "title": "Boston College Logo",
+    "alt": "Boston College Logo",
+    "fullpath": "https://dxbhsrqyrr690.cloudfront.net/sidearm.nextgen.sites/ukansas.sidearmsports.com/images/logos/Boston_College_200x200.png"
+   }
+  },
+  "media": {
+   "tv": "",
+   "tv_image": null,
+   "tv_image_link": "",
+   "tv_image_caption": null,
+   "radio": "",
+   "video": null,
+   "audio": null,
+   "stats": {
+    "title": "Live stats",
+    "url": "https://stats.statbroadcast.com/broadcast/?id=646134&vislive=kan",
+    "label": "Live stats for Softball vs Boston College on February 12, 2026 at 2 p.m. CT",
+    "cssClass": null
+   },
+   "tickets": null,
+   "preview": {
+    "title": "Preview",
+    "url": "/news/2026/2/11/softball-jayhawks-head-to-tampa-for-fonesca-memorial-tournament",
+    "label": "Preview for Softball vs Boston College on February 12, 2026 at 2 p.m. CT",
+    "cssClass": null
+   },
+   "gamefiles": [],
+   "custom_display_fields": []
+  },
+  "result": {
+   "status": "L",
+   "team_score": "2",
+   "opponent_score": "4",
+   "prescore_info": "",
+   "postscore_info": "",
+   "boxscore": {
+    "title": "Box Score",
+    "url": "/sports/softball/stats/2026/boston-college/boxscore/20433",
+    "label": "Box score of Softball vs Boston College on February 12, 2026 at 2 p.m. CT",
+    "cssClass": null
+   },
+   "recap": {
+    "title": "Recap",
+    "url": "/news/2026/2/12/softball-kansas-jayhawks-split-opening-day-at-fonseca-memorial-tournament",
+    "label": "Story recap for Softball vs Boston College on February 12, 2026 at 2 p.m. CT",
+    "cssClass": null
+   }
+  },
+  "facility": {
+   "id": 309,
+   "title": "USF Softball Stadium",
+   "url": ""
+  },
+  "tournament": {
+   "id": 1221,
+   "title": "Fonseca Memorial Tournament",
+   "website": "https://gousfbulls.com/sports/2024/1/25/the-fonseca-memorial-tournament-at-usf-tournament-central.aspx",
+   "color": "default"
+  },
+  "tournament_startdate": null,
+  "galleries": [],
+  "game_program": "Program",
+  "has_weplayed_moments": false,
+  "ticket_link": {
+   "customMessages": [],
+   "label": "Buy Tickets:  Boston College on February 12 2 p.m. CT",
+   "fallbackText": "Buy tickets",
+   "seatGeekLink": null,
+   "showSeatGeek": false,
+   "featured": false,
+   "url": null,
+   "text": "Buy Tickets"
+  },
+  "game_links": []
+ },
+ {
+  "id": 20434,
+  "date": "2026-02-13T15:35:00",
+  "enddate": null,
+  "game_state": 0,
+  "game_state_display": "SCHEDULED",
+  "game_center_enabled": false,
+  "game_center_link": "/game-center/20434",
+  "time": "3:35 p.m. CT",
+  "conference": false,
+  "location": "Tampa, FL",
+  "location_indicator": "A",
+  "neutral_hometeam": null,
+  "at_vs": "at",
+  "status": "O",
+  "noplay_text": "",
+  "type": "R",
+  "promotion": null,
+  "promotion_link": "",
+  "promotion_image_link": null,
+  "promotion_image": null,
+  "promotion_caption": null,
+  "event_image": null,
+  "is_a_doubleheader": false,
+  "opponent_history_path": "/sports/softball/opponent-history/usf/3164",
+  "display_vsat_indicator": true,
+  "game_program_link": null,
+  "opponent": {
+   "id": 3164,
+   "title": "USF",
+   "prefix": "",
+   "website": " ",
+   "website_label": "USF on February 13, 2026 3:35 p.m. CT",
+   "location": "Tampa, FL",
+   "conference": false,
+   "mascot": "Bulls",
+   "image": {
+    "filename": "South_Florida.png",
+    "path": "/images/logos",
+    "title": "University of South Florida Logo",
+    "alt": "University of South Florida Logo",
+    "fullpath": "https://dxbhsrqyrr690.cloudfront.net/sidearm.nextgen.sites/ukansas.sidearmsports.com/images/logos/South_Florida.png"
+   }
+  },
+  "media": {
+   "tv": "",
+   "tv_image": null,
+   "tv_image_link": "",
+   "tv_image_caption": null,
+   "radio": "",
+   "video": {
+    "title": "Watch",
+    "url": "https://www.espn.com/watch/player/_/id/a2f97117-9076-4768-9c6e-5708f3a2aa3c",
+    "label": "Video for Softball at USF on February 13, 2026 at 3:35 p.m. CT",
+    "cssClass": null
+   },
+   "audio": null,
+   "stats": {
+    "title": "Live stats",
+    "url": "https://stats.statbroadcast.com/broadcast/?id=646145&vislive=kan",
+    "label": "Live stats for Softball at USF on February 13, 2026 at 3:35 p.m. CT",
+    "cssClass": null
+   },
+   "tickets": null,
+   "preview": {
+    "title": "Preview",
+    "url": "/news/2026/2/11/softball-jayhawks-head-to-tampa-for-fonesca-memorial-tournament",
+    "label": "Preview for Softball at USF on February 13, 2026 at 3:35 p.m. CT",
+    "cssClass": null
+   },
+   "gamefiles": [],
+   "custom_display_fields": []
+  },
+  "result": {
+   "status": "W",
+   "team_score": "7",
+   "opponent_score": "2",
+   "prescore_info": "",
+   "postscore_info": "",
+   "boxscore": {
+    "title": "Box Score",
+    "url": "/sports/softball/stats/2026/usf/boxscore/20434",
+    "label": "Box score of Softball at USF on February 13, 2026 at 3:35 p.m. CT",
+    "cssClass": null
+   },
+   "recap": null
+  },
+  "facility": {
+   "id": 309,
+   "title": "USF Softball Stadium",
+   "url": ""
+  },
+  "tournament": {
+   "id": 1221,
+   "title": "Fonseca Memorial Tournament",
+   "website": "https://gousfbulls.com/sports/2024/1/25/the-fonseca-memorial-tournament-at-usf-tournament-central.aspx",
+   "color": "default"
+  },
+  "tournament_startdate": null,
+  "galleries": [],
+  "game_program": "Program",
+  "has_weplayed_moments": false,
+  "ticket_link": {
+   "customMessages": [],
+   "label": "Buy Tickets:  USF on February 13 3:35 p.m. CT",
+   "fallbackText": "Buy tickets",
+   "seatGeekLink": null,
+   "showSeatGeek": false,
+   "featured": false,
+   "url": null,
+   "text": "Buy Tickets"
+  },
+  "game_links": []
+ },
+ {
+  "id": 20435,
+  "date": "2026-02-14T08:00:00",
+  "enddate": null,
+  "game_state": 0,
+  "game_state_display": "SCHEDULED",
+  "game_center_enabled": false,
+  "game_center_link": "/game-center/20435",
+  "time": "8 a.m. CT",
+  "conference": false,
+  "location": "Tampa, Fla.",
+  "location_indicator": "N",
+  "neutral_hometeam": null,
+  "at_vs": "vs",
+  "status": "O",
+  "noplay_text": "",
+  "type": "R",
+  "promotion": null,
+  "promotion_link": "",
+  "promotion_image_link": null,
+  "promotion_image": null,
+  "promotion_caption": null,
+  "event_image": null,
+  "is_a_doubleheader": false,
+  "opponent_history_path": "/sports/softball/opponent-history/depaul/2961",
+  "display_vsat_indicator": true,
+  "game_program_link": null,
+  "opponent": {
+   "id": 2961,
+   "title": "DePaul",
+   "prefix": "",
+   "website": " ",
+   "website_label": "DePaul on February 14, 2026 8 a.m. CT",
+   "location": "Chicago, IL",
+   "conference": false,
+   "mascot": "Blue Demons",
+   "image": {
+    "filename": "DePaul_2025.png",
+    "path": "/images/logos",
+    "title": "DePaul University Logo",
+    "alt": "DePaul University Logo",
+    "fullpath": "https://dxbhsrqyrr690.cloudfront.net/sidearm.nextgen.sites/ukansas.sidearmsports.com/images/logos/DePaul_2025.png"
+   }
+  },
+  "media": {
+   "tv": "",
+   "tv_image": null,
+   "tv_image_link": "",
+   "tv_image_caption": null,
+   "radio": "",
+   "video": null,
+   "audio": null,
+   "stats": {
+    "title": "Live stats",
+    "url": "https://stats.statbroadcast.com/broadcast/?id=646136&vislive=kan",
+    "label": "Live stats for Softball vs DePaul on February 14, 2026 at 8 a.m. CT",
+    "cssClass": null
+   },
+   "tickets": null,
+   "preview": {
+    "title": "Preview",
+    "url": "/news/2026/2/11/softball-jayhawks-head-to-tampa-for-fonesca-memorial-tournament",
+    "label": "Preview for Softball vs DePaul on February 14, 2026 at 8 a.m. CT",
+    "cssClass": null
+   },
+   "gamefiles": [],
+   "custom_display_fields": []
+  },
+  "result": {
+   "status": "W",
+   "team_score": "11",
+   "opponent_score": "0",
+   "prescore_info": "",
+   "postscore_info": "(5 Inn.)",
+   "boxscore": {
+    "title": "Box Score",
+    "url": "/sports/softball/stats/2026/depaul/boxscore/20435",
+    "label": "Box score of Softball vs DePaul on February 14, 2026 at 8 a.m. CT",
+    "cssClass": null
+   },
+   "recap": {
+    "title": "Recap",
+    "url": "/news/2026/2/14/softball-kansas-dominates-saturday-with-back-to-back-run-rule-wins-over-depaul-and-yale",
+    "label": "Story recap for Softball vs DePaul on February 14, 2026 at 8 a.m. CT",
+    "cssClass": null
+   }
+  },
+  "facility": {
+   "id": 309,
+   "title": "USF Softball Stadium",
+   "url": ""
+  },
+  "tournament": {
+   "id": 1221,
+   "title": "Fonseca Memorial Tournament",
+   "website": "https://gousfbulls.com/sports/2024/1/25/the-fonseca-memorial-tournament-at-usf-tournament-central.aspx",
+   "color": "default"
+  },
+  "tournament_startdate": null,
+  "galleries": [],
+  "game_program": "Program",
+  "has_weplayed_moments": false,
+  "ticket_link": {
+   "customMessages": [],
+   "label": "Buy Tickets:  DePaul on February 14 8 a.m. CT",
+   "fallbackText": "Buy tickets",
+   "seatGeekLink": null,
+   "showSeatGeek": false,
+   "featured": false,
+   "url": null,
+   "text": "Buy Tickets"
+  },
+  "game_links": []
+ },
+ {
+  "id": 20436,
+  "date": "2026-02-14T10:30:00",
+  "enddate": null,
+  "game_state": 0,
+  "game_state_display": "SCHEDULED",
+  "game_center_enabled": false,
+  "game_center_link": "/game-center/20436",
+  "time": "10:30 a.m. CT",
+  "conference": false,
+  "location": "Tampa, Fla.",
+  "location_indicator": "N",
+  "neutral_hometeam": null,
+  "at_vs": "vs",
+  "status": "O",
+  "noplay_text": "",
+  "type": "R",
+  "promotion": null,
+  "promotion_link": "",
+  "promotion_image_link": null,
+  "promotion_image": null,
+  "promotion_caption": null,
+  "event_image": null,
+  "is_a_doubleheader": false,
+  "opponent_history_path": "/sports/softball/opponent-history/yale/3209",
+  "display_vsat_indicator": true,
+  "game_program_link": null,
+  "opponent": {
+   "id": 3209,
+   "title": "Yale",
+   "prefix": "",
+   "website": " ",
+   "website_label": "Yale on February 14, 2026 10:30 a.m. CT",
+   "location": "New Haven, CT",
+   "conference": false,
+   "mascot": "Bulldogs",
+   "image": {
+    "filename": "YALE_LOGO_2020.png",
+    "path": "/images/logos",
+    "title": "Yale University Logo",
+    "alt": "Yale University Logo",
+    "fullpath": "https://dxbhsrqyrr690.cloudfront.net/sidearm.nextgen.sites/ukansas.sidearmsports.com/images/logos/YALE_LOGO_2020.png"
+   }
+  },
+  "media": {
+   "tv": "",
+   "tv_image": null,
+   "tv_image_link": "",
+   "tv_image_caption": null,
+   "radio": "",
+   "video": null,
+   "audio": null,
+   "stats": {
+    "title": "Live stats",
+    "url": "https://stats.statbroadcast.com/broadcast/?id=646146&vislive=kan",
+    "label": "Live stats for Softball vs Yale on February 14, 2026 at 10:30 a.m. CT",
+    "cssClass": null
+   },
+   "tickets": null,
+   "preview": null,
+   "gamefiles": [],
+   "custom_display_fields": []
+  },
+  "result": {
+   "status": "W",
+   "team_score": "12",
+   "opponent_score": "0",
+   "prescore_info": "",
+   "postscore_info": "(5 Inn.)",
+   "boxscore": {
+    "title": "Box Score",
+    "url": "/sports/softball/stats/2026/yale/boxscore/20436",
+    "label": "Box score of Softball vs Yale on February 14, 2026 at 10:30 a.m. CT",
+    "cssClass": null
+   },
+   "recap": {
+    "title": "Recap",
+    "url": "/news/2026/2/14/softball-kansas-dominates-saturday-with-back-to-back-run-rule-wins-over-depaul-and-yale",
+    "label": "Story recap for Softball vs Yale on February 14, 2026 at 10:30 a.m. CT",
+    "cssClass": null
+   }
+  },
+  "facility": {
+   "id": 309,
+   "title": "USF Softball Stadium",
+   "url": ""
+  },
+  "tournament": {
+   "id": 1221,
+   "title": "Fonseca Memorial Tournament",
+   "website": "https://gousfbulls.com/sports/2024/1/25/the-fonseca-memorial-tournament-at-usf-tournament-central.aspx",
+   "color": "default"
+  },
+  "tournament_startdate": null,
+  "galleries": [],
+  "game_program": "Program",
+  "has_weplayed_moments": false,
+  "ticket_link": {
+   "customMessages": [],
+   "label": "Buy Tickets:  Yale on February 14 10:30 a.m. CT",
+   "fallbackText": "Buy tickets",
+   "seatGeekLink": null,
+   "showSeatGeek": false,
+   "featured": false,
+   "url": null,
+   "text": "Buy Tickets"
+  },
+  "game_links": []
+ },
+ {
+  "id": 20437,
+  "date": "2026-02-19T17:00:00",
+  "enddate": null,
+  "game_state": 0,
+  "game_state_display": "SCHEDULED",
+  "game_center_enabled": false,
+  "game_center_link": "/game-center/20437",
+  "time": "5 p.m. CT",
+  "conference": false,
+  "location": " Boca Raton, Fla.",
+  "location_indicator": "A",
+  "neutral_hometeam": null,
+  "at_vs": "at",
+  "status": "O",
+  "noplay_text": "",
+  "type": "R",
+  "promotion": null,
+  "promotion_link": "",
+  "promotion_image_link": null,
+  "promotion_image": null,
+  "promotion_caption": null,
+  "event_image": null,
+  "is_a_doubleheader": false,
+  "opponent_history_path": "/sports/softball/opponent-history/florida-atlantic/2977",
+  "display_vsat_indicator": true,
+  "game_program_link": null,
+  "opponent": {
+   "id": 2977,
+   "title": "Florida Atlantic",
+   "prefix": "",
+   "website": " ",
+   "website_label": "Florida Atlantic on February 19, 2026 5 p.m. CT",
+   "location": "Boca Raton, FL",
+   "conference": false,
+   "mascot": "Owls",
+   "image": {
+    "filename": "FAU_2023.png",
+    "path": "/images/logos",
+    "title": "Florida Atlantic University Logo",
+    "alt": "Florida Atlantic University Logo",
+    "fullpath": "https://dxbhsrqyrr690.cloudfront.net/sidearm.nextgen.sites/ukansas.sidearmsports.com/images/logos/FAU_2023.png"
+   }
+  },
+  "media": {
+   "tv": "FAUSports.com",
+   "tv_image": null,
+   "tv_image_link": "",
+   "tv_image_caption": null,
+   "radio": "",
+   "video": null,
+   "audio": null,
+   "stats": {
+    "title": "Live stats",
+    "url": "https://stats.statbroadcast.com/broadcast/?id=646147&vislive=kan",
+    "label": "Live stats for Softball at Florida Atlantic on February 19, 2026 at 5 p.m. CT",
+    "cssClass": null
+   },
+   "tickets": null,
+   "preview": {
+    "title": "Preview",
+    "url": "/news/2026/2/17/softball-kansas-heads-to-boca-raton-for-joan-joyce-classic",
+    "label": "Preview for Softball at Florida Atlantic on February 19, 2026 at 5 p.m. CT",
+    "cssClass": null
+   },
+   "gamefiles": [],
+   "custom_display_fields": []
+  },
+  "result": {
+   "status": "L",
+   "team_score": "5",
+   "opponent_score": "6",
+   "prescore_info": "",
+   "postscore_info": "",
+   "boxscore": {
+    "title": "Box Score",
+    "url": "/sports/softball/stats/2026/florida-atlantic/boxscore/20437",
+    "label": "Box score of Softball at Florida Atlantic on February 19, 2026 at 5 p.m. CT",
+    "cssClass": null
+   },
+   "recap": {
+    "title": "Recap",
+    "url": "/news/2026/2/19/softball-late-rally-lifts-fau-past-kansas-6-5",
+    "label": "Story recap for Softball at Florida Atlantic on February 19, 2026 at 5 p.m. CT",
+    "cssClass": null
+   }
+  },
+  "facility": {
+   "id": 418,
+   "title": "Joan Joyce Field ",
+   "url": ""
+  },
+  "tournament": {
+   "id": 1222,
+   "title": "Joan Joyce Classic ",
+   "website": "https://fausports.com/feature/joanjoyceclassic",
+   "color": "default"
+  },
+  "tournament_startdate": null,
+  "galleries": [],
+  "game_program": "Program",
+  "has_weplayed_moments": false,
+  "ticket_link": {
+   "customMessages": [],
+   "label": "Buy Tickets:  Florida Atlantic on February 19 5 p.m. CT",
+   "fallbackText": "Buy tickets",
+   "seatGeekLink": null,
+   "showSeatGeek": false,
+   "featured": false,
+   "url": null,
+   "text": "Buy Tickets"
+  },
+  "game_links": []
+ },
+ {
+  "id": 20438,
+  "date": "2026-02-20T10:15:00",
+  "enddate": null,
+  "game_state": 0,
+  "game_state_display": "SCHEDULED",
+  "game_center_enabled": false,
+  "game_center_link": "/game-center/20438",
+  "time": "10:15 a.m. CT",
+  "conference": false,
+  "location": " Boca Raton, Fla.",
+  "location_indicator": "N",
+  "neutral_hometeam": null,
+  "at_vs": "vs",
+  "status": "O",
+  "noplay_text": "",
+  "type": "R",
+  "promotion": null,
+  "promotion_link": "",
+  "promotion_image_link": null,
+  "promotion_image": null,
+  "promotion_caption": null,
+  "event_image": null,
+  "is_a_doubleheader": false,
+  "opponent_history_path": "/sports/softball/opponent-history/villanova/3025",
+  "display_vsat_indicator": true,
+  "game_program_link": null,
+  "opponent": {
+   "id": 3025,
+   "title": "Villanova",
+   "prefix": "",
+   "website": " ",
+   "website_label": "Villanova on February 20, 2026 10:15 a.m. CT",
+   "location": "Villanova, PA",
+   "conference": false,
+   "mascot": "Wildcats",
+   "image": {
+    "filename": "Villanova.png",
+    "path": "/images/logos",
+    "title": "Villanova University Logo",
+    "alt": "Villanova University Logo",
+    "fullpath": "https://dxbhsrqyrr690.cloudfront.net/sidearm.nextgen.sites/ukansas.sidearmsports.com/images/logos/Villanova.png"
+   }
+  },
+  "media": {
+   "tv": "FloSports",
+   "tv_image": null,
+   "tv_image_link": "",
+   "tv_image_caption": null,
+   "radio": "",
+   "video": {
+    "title": "Watch",
+    "url": "https://www.flocollege.com/signup?redirect=%2Flive%2F224109&utm_campaign=781263kansasvsvillano&utm_medium=partner&utm_source=multiple&utm_content=signup&contract_id=0063m00000oinbkaau&coverage_id=14924482&sp=",
+    "label": "Video for Softball vs Villanova on February 20, 2026 at 10:15 a.m. CT",
+    "cssClass": null
+   },
+   "audio": null,
+   "stats": {
+    "title": "Live stats",
+    "url": "https://stats.statbroadcast.com/broadcast/?id=646148&vislive=kan",
+    "label": "Live stats for Softball vs Villanova on February 20, 2026 at 10:15 a.m. CT",
+    "cssClass": null
+   },
+   "tickets": null,
+   "preview": {
+    "title": "Preview",
+    "url": "/news/2026/2/17/softball-kansas-heads-to-boca-raton-for-joan-joyce-classic",
+    "label": "Preview for Softball vs Villanova on February 20, 2026 at 10:15 a.m. CT",
+    "cssClass": null
+   },
+   "gamefiles": [],
+   "custom_display_fields": []
+  },
+  "result": {
+   "status": "W",
+   "team_score": "8",
+   "opponent_score": "1",
+   "prescore_info": "",
+   "postscore_info": "",
+   "boxscore": {
+    "title": "Box Score",
+    "url": "/sports/softball/stats/2026/villanova/boxscore/20438",
+    "label": "Box score of Softball vs Villanova on February 20, 2026 at 10:15 a.m. CT",
+    "cssClass": null
+   },
+   "recap": {
+    "title": "Recap",
+    "url": "/news/2026/2/20/softball-kansas-sweeps-second-day-at-joan-joyce-classic-with",
+    "label": "Story recap for Softball vs Villanova on February 20, 2026 at 10:15 a.m. CT",
+    "cssClass": null
+   }
+  },
+  "facility": {
+   "id": 418,
+   "title": "Joan Joyce Field ",
+   "url": ""
+  },
+  "tournament": {
+   "id": 1222,
+   "title": "Joan Joyce Classic ",
+   "website": "https://fausports.com/feature/joanjoyceclassic",
+   "color": "default"
+  },
+  "tournament_startdate": null,
+  "galleries": [],
+  "game_program": "Program",
+  "has_weplayed_moments": false,
+  "ticket_link": {
+   "customMessages": [],
+   "label": "Buy Tickets:  Villanova on February 20 10:15 a.m. CT",
+   "fallbackText": "Buy tickets",
+   "seatGeekLink": null,
+   "showSeatGeek": false,
+   "featured": false,
+   "url": null,
+   "text": "Buy Tickets"
+  },
+  "game_links": []
+ },
+ {
+  "id": 20439,
+  "date": "2026-02-20T14:45:00",
+  "enddate": null,
+  "game_state": 0,
+  "game_state_display": "SCHEDULED",
+  "game_center_enabled": false,
+  "game_center_link": "/game-center/20439",
+  "time": "2:45 p.m. CT",
+  "conference": false,
+  "location": " Boca Raton, Fla.",
+  "location_indicator": "N",
+  "neutral_hometeam": null,
+  "at_vs": "vs",
+  "status": "O",
+  "noplay_text": "",
+  "type": "R",
+  "promotion": null,
+  "promotion_link": "",
+  "promotion_image_link": null,
+  "promotion_image": null,
+  "promotion_caption": null,
+  "event_image": null,
+  "is_a_doubleheader": false,
+  "opponent_history_path": "/sports/softball/opponent-history/southern-indiana/3410",
+  "display_vsat_indicator": true,
+  "game_program_link": null,
+  "opponent": {
+   "id": 3410,
+   "title": "Southern Indiana",
+   "prefix": "",
+   "website": "http://gousieagles.com",
+   "website_label": "Southern Indiana on February 20, 2026 2:45 p.m. CT",
+   "location": "Evansville, IN",
+   "conference": false,
+   "mascot": "Screaming Eagles",
+   "image": {
+    "filename": "Southern_Indiana.png",
+    "path": "/images/2026/1/12",
+    "title": "Southern Indiana",
+    "alt": "Southern Indiana",
+    "fullpath": "https://dxbhsrqyrr690.cloudfront.net/sidearm.nextgen.sites/ukansas.sidearmsports.com/images/2026/1/12/Southern_Indiana.png"
+   }
+  },
+  "media": {
+   "tv": "FloSports",
+   "tv_image": null,
+   "tv_image_link": "",
+   "tv_image_caption": null,
+   "radio": "",
+   "video": {
+    "title": "Watch",
+    "url": "flocollege.com/signup?redirect=/live/224110&utm_campaign=781264southernindiana&utm_medium=partner&utm_source=multiple&utm_content=signup&contract_id=0063m00000oinbkaau&coverage_id=14924486&sp=",
+    "label": "Video for Softball vs Southern Indiana on February 20, 2026 at 2:45 p.m. CT",
+    "cssClass": null
+   },
+   "audio": null,
+   "stats": {
+    "title": "Live stats",
+    "url": "https://stats.statbroadcast.com/broadcast/?id=644668&vislive=kan",
+    "label": "Live stats for Softball vs Southern Indiana on February 20, 2026 at 2:45 p.m. CT",
+    "cssClass": null
+   },
+   "tickets": null,
+   "preview": {
+    "title": "Preview",
+    "url": "/news/2026/2/17/softball-kansas-heads-to-boca-raton-for-joan-joyce-classic",
+    "label": "Preview for Softball vs Southern Indiana on February 20, 2026 at 2:45 p.m. CT",
+    "cssClass": null
+   },
+   "gamefiles": [],
+   "custom_display_fields": []
+  },
+  "result": {
+   "status": "W",
+   "team_score": "9",
+   "opponent_score": "1",
+   "prescore_info": "",
+   "postscore_info": "(6 Inn.)",
+   "boxscore": {
+    "title": "Box Score",
+    "url": "/sports/softball/stats/2026/southern-indiana/boxscore/20439",
+    "label": "Box score of Softball vs Southern Indiana on February 20, 2026 at 2:45 p.m. CT",
+    "cssClass": null
+   },
+   "recap": {
+    "title": "Recap",
+    "url": "/news/2026/2/20/softball-kansas-sweeps-second-day-at-joan-joyce-classic-with",
+    "label": "Story recap for Softball vs Southern Indiana on February 20, 2026 at 2:45 p.m. CT",
+    "cssClass": null
+   }
+  },
+  "facility": {
+   "id": 418,
+   "title": "Joan Joyce Field ",
+   "url": ""
+  },
+  "tournament": {
+   "id": 1222,
+   "title": "Joan Joyce Classic ",
+   "website": "https://fausports.com/feature/joanjoyceclassic",
+   "color": "default"
+  },
+  "tournament_startdate": null,
+  "galleries": [],
+  "game_program": "Program",
+  "has_weplayed_moments": false,
+  "ticket_link": {
+   "customMessages": [],
+   "label": "Buy Tickets:  Southern Indiana on February 20 2:45 p.m. CT",
+   "fallbackText": "Buy tickets",
+   "seatGeekLink": null,
+   "showSeatGeek": false,
+   "featured": false,
+   "url": null,
+   "text": "Buy Tickets"
+  },
+  "game_links": []
+ },
+ {
+  "id": 20440,
+  "date": "2026-02-21T08:00:00",
+  "enddate": null,
+  "game_state": 0,
+  "game_state_display": "SCHEDULED",
+  "game_center_enabled": false,
+  "game_center_link": "/game-center/20440",
+  "time": "8 a.m. CT",
+  "conference": false,
+  "location": " Boca Raton, Fla.",
+  "location_indicator": "N",
+  "neutral_hometeam": null,
+  "at_vs": "vs",
+  "status": "O",
+  "noplay_text": "",
+  "type": "R",
+  "promotion": null,
+  "promotion_link": "",
+  "promotion_image_link": null,
+  "promotion_image": null,
+  "promotion_caption": null,
+  "event_image": null,
+  "is_a_doubleheader": false,
+  "opponent_history_path": "/sports/softball/opponent-history/umass/3187",
+  "display_vsat_indicator": true,
+  "game_program_link": null,
+  "opponent": {
+   "id": 3187,
+   "title": "UMass",
+   "prefix": "",
+   "website": "http://www.umassathletics.com/",
+   "website_label": "UMass on February 21, 2026 8 a.m. CT",
+   "location": "Amherst, MA",
+   "conference": false,
+   "mascot": "Minutemen",
+   "image": {
+    "filename": "UMass.png",
+    "path": "/images/logos",
+    "title": "University of Massachusetts Logo",
+    "alt": "University of Massachusetts Logo",
+    "fullpath": "https://dxbhsrqyrr690.cloudfront.net/sidearm.nextgen.sites/ukansas.sidearmsports.com/images/logos/UMass.png"
+   }
+  },
+  "media": {
+   "tv": "FloSports",
+   "tv_image": null,
+   "tv_image_link": "",
+   "tv_image_caption": null,
+   "radio": "",
+   "video": {
+    "title": "Watch",
+    "url": "https://www.flocollege.com/signup?redirect=%2Flive%2F224196&utm_campaign=781265kansasvsumass&utm_medium=partner&utm_source=multiple&utm_content=signup&contract_id=0063m00000oinbkaau&coverage_id=14937505&sp=",
+    "label": "Video for Softball vs UMass on February 21, 2026 at 8 a.m. CT",
+    "cssClass": null
+   },
+   "audio": null,
+   "stats": {
+    "title": "Live stats",
+    "url": "https://stats.statbroadcast.com/broadcast/?id=646151&vislive=kan",
+    "label": "Live stats for Softball vs UMass on February 21, 2026 at 8 a.m. CT",
+    "cssClass": null
+   },
+   "tickets": null,
+   "preview": {
+    "title": "Preview",
+    "url": "/news/2026/2/17/softball-kansas-heads-to-boca-raton-for-joan-joyce-classic",
+    "label": "Preview for Softball vs UMass on February 21, 2026 at 8 a.m. CT",
+    "cssClass": null
+   },
+   "gamefiles": [],
+   "custom_display_fields": []
+  },
+  "result": {
+   "status": "L",
+   "team_score": "0",
+   "opponent_score": "8",
+   "prescore_info": "",
+   "postscore_info": "",
+   "boxscore": {
+    "title": "Box Score",
+    "url": "/sports/softball/stats/2026/umass/boxscore/20440",
+    "label": "Box score of Softball vs UMass on February 21, 2026 at 8 a.m. CT",
+    "cssClass": null
+   },
+   "recap": {
+    "title": "Recap",
+    "url": "/news/2026/2/21/softball-jayhawks-respond-with-win-over-villanova-to-close-boca-weekend",
+    "label": "Story recap for Softball vs UMass on February 21, 2026 at 8 a.m. CT",
+    "cssClass": null
+   }
+  },
+  "facility": {
+   "id": 418,
+   "title": "Joan Joyce Field ",
+   "url": ""
+  },
+  "tournament": {
+   "id": 1222,
+   "title": "Joan Joyce Classic ",
+   "website": "https://fausports.com/feature/joanjoyceclassic",
+   "color": "default"
+  },
+  "tournament_startdate": null,
+  "galleries": [],
+  "game_program": "Program",
+  "has_weplayed_moments": false,
+  "ticket_link": {
+   "customMessages": [],
+   "label": "Buy Tickets:  UMass on February 21 8 a.m. CT",
+   "fallbackText": "Buy tickets",
+   "seatGeekLink": null,
+   "showSeatGeek": false,
+   "featured": false,
+   "url": null,
+   "text": "Buy Tickets"
+  },
+  "game_links": []
+ },
+ {
+  "id": 20441,
+  "date": "2026-02-21T10:15:00",
+  "enddate": null,
+  "game_state": 0,
+  "game_state_display": "SCHEDULED",
+  "game_center_enabled": false,
+  "game_center_link": "/game-center/20441",
+  "time": "10:15 a.m. CT",
+  "conference": false,
+  "location": " Boca Raton, Fla.",
+  "location_indicator": "N",
+  "neutral_hometeam": null,
+  "at_vs": "vs",
+  "status": "O",
+  "noplay_text": "",
+  "type": "R",
+  "promotion": null,
+  "promotion_link": "",
+  "promotion_image_link": null,
+  "promotion_image": null,
+  "promotion_caption": null,
+  "event_image": null,
+  "is_a_doubleheader": false,
+  "opponent_history_path": "/sports/softball/opponent-history/villanova/3025",
+  "display_vsat_indicator": true,
+  "game_program_link": null,
+  "opponent": {
+   "id": 3025,
+   "title": "Villanova",
+   "prefix": "",
+   "website": " ",
+   "website_label": "Villanova on February 21, 2026 10:15 a.m. CT",
+   "location": "Villanova, PA",
+   "conference": false,
+   "mascot": "Wildcats",
+   "image": {
+    "filename": "Villanova.png",
+    "path": "/images/logos",
+    "title": "Villanova University Logo",
+    "alt": "Villanova University Logo",
+    "fullpath": "https://dxbhsrqyrr690.cloudfront.net/sidearm.nextgen.sites/ukansas.sidearmsports.com/images/logos/Villanova.png"
+   }
+  },
+  "media": {
+   "tv": "FloSports",
+   "tv_image": null,
+   "tv_image_link": "",
+   "tv_image_caption": null,
+   "radio": "",
+   "video": {
+    "title": "Watch",
+    "url": "https://www.flocollege.com/signup?redirect=%2Flive%2F224111&utm_campaign=781266kansasvsvillano&utm_medium=partner&utm_source=multiple&utm_content=signup&contract_id=0063m00000oinbkaau&coverage_id=14924490&sp=",
+    "label": "Video for Softball vs Villanova on February 21, 2026 at 10:15 a.m. CT",
+    "cssClass": null
+   },
+   "audio": null,
+   "stats": {
+    "title": "Live stats",
+    "url": "https://stats.statbroadcast.com/broadcast/?id=646166&vislive=kan",
+    "label": "Live stats for Softball vs Villanova on February 21, 2026 at 10:15 a.m. CT",
+    "cssClass": null
+   },
+   "tickets": null,
+   "preview": {
+    "title": "Preview",
+    "url": "/news/2026/2/17/softball-kansas-heads-to-boca-raton-for-joan-joyce-classic",
+    "label": "Preview for Softball vs Villanova on February 21, 2026 at 10:15 a.m. CT",
+    "cssClass": null
+   },
+   "gamefiles": [],
+   "custom_display_fields": []
+  },
+  "result": {
+   "status": "W",
+   "team_score": "4",
+   "opponent_score": "1",
+   "prescore_info": "",
+   "postscore_info": "",
+   "boxscore": {
+    "title": "Box Score",
+    "url": "/sports/softball/stats/2026/villanova/boxscore/20441",
+    "label": "Box score of Softball vs Villanova on February 21, 2026 at 10:15 a.m. CT",
+    "cssClass": null
+   },
+   "recap": {
+    "title": "Recap",
+    "url": "/news/2026/2/21/softball-jayhawks-respond-with-win-over-villanova-to-close-boca-weekend",
+    "label": "Story recap for Softball vs Villanova on February 21, 2026 at 10:15 a.m. CT",
+    "cssClass": null
+   }
+  },
+  "facility": {
+   "id": 418,
+   "title": "Joan Joyce Field ",
+   "url": ""
+  },
+  "tournament": {
+   "id": 1222,
+   "title": "Joan Joyce Classic ",
+   "website": "https://fausports.com/feature/joanjoyceclassic",
+   "color": "default"
+  },
+  "tournament_startdate": null,
+  "galleries": [],
+  "game_program": "Program",
+  "has_weplayed_moments": false,
+  "ticket_link": {
+   "customMessages": [],
+   "label": "Buy Tickets:  Villanova on February 21 10:15 a.m. CT",
+   "fallbackText": "Buy tickets",
+   "seatGeekLink": null,
+   "showSeatGeek": false,
+   "featured": false,
+   "url": null,
+   "text": "Buy Tickets"
+  },
+  "game_links": []
+ },
+ {
+  "id": 20442,
+  "date": "2026-02-27T10:00:00",
+  "enddate": null,
+  "game_state": 0,
+  "game_state_display": "SCHEDULED",
+  "game_center_enabled": false,
+  "game_center_link": "/game-center/20442",
+  "time": "10 a.m. CT",
+  "conference": false,
+  "location": "Fayetteville, Ark. ",
+  "location_indicator": "N",
+  "neutral_hometeam": null,
+  "at_vs": "vs",
+  "status": "O",
+  "noplay_text": "",
+  "type": "R",
+  "promotion": null,
+  "promotion_link": "",
+  "promotion_image_link": null,
+  "promotion_image": null,
+  "promotion_caption": null,
+  "event_image": null,
+  "is_a_doubleheader": false,
+  "opponent_history_path": "/sports/softball/opponent-history/omaha/3097",
+  "display_vsat_indicator": true,
+  "game_program_link": null,
+  "opponent": {
+   "id": 3097,
+   "title": "Omaha",
+   "prefix": "",
+   "website": " ",
+   "website_label": "Omaha on February 27, 2026 10 a.m. CT",
+   "location": "Omaha, NE",
+   "conference": false,
+   "mascot": "Mavericks",
+   "image": {
+    "filename": "omaha_logo_200x200.png",
+    "path": "/images/logos",
+    "title": "University of Nebraska at Omaha Logo",
+    "alt": "University of Nebraska at Omaha Logo",
+    "fullpath": "https://dxbhsrqyrr690.cloudfront.net/sidearm.nextgen.sites/ukansas.sidearmsports.com/images/logos/omaha_logo_200x200.png"
+   }
+  },
+  "media": {
+   "tv": "",
+   "tv_image": null,
+   "tv_image_link": "",
+   "tv_image_caption": null,
+   "radio": "",
+   "video": null,
+   "audio": null,
+   "stats": {
+    "title": "Live stats",
+    "url": "https://stats.statbroadcast.com/broadcast/?id=646153",
+    "label": "Live stats for Softball vs Omaha on February 27, 2026 at 10 a.m. CT",
+    "cssClass": null
+   },
+   "tickets": null,
+   "preview": {
+    "title": "Preview",
+    "url": "/news/2026/2/26/softball-kansas-continues-nonconference-slate-in-fayetteville",
+    "label": "Preview for Softball vs Omaha on February 27, 2026 at 10 a.m. CT",
+    "cssClass": null
+   },
+   "gamefiles": [],
+   "custom_display_fields": []
+  },
+  "result": {
+   "status": "W",
+   "team_score": "6",
+   "opponent_score": "5",
+   "prescore_info": "",
+   "postscore_info": "",
+   "boxscore": {
+    "title": "Box Score",
+    "url": "/sports/softball/stats/2026/omaha/boxscore/20442",
+    "label": "Box score of Softball vs Omaha on February 27, 2026 at 10 a.m. CT",
+    "cssClass": null
+   },
+   "recap": {
+    "title": "Recap",
+    "url": "/news/2026/2/27/softball-jayhawks-sweep-friday-at-woo-pig-classic-with-wins-over-omaha-boise-state",
+    "label": "Story recap for Softball vs Omaha on February 27, 2026 at 10 a.m. CT",
+    "cssClass": null
+   }
+  },
+  "facility": {
+   "id": 338,
+   "title": "Bogle Park",
+   "url": ""
+  },
+  "tournament": {
+   "id": 1223,
+   "title": "Wooo Pig Classic ",
+   "website": "https://arkansasrazorbacks.com/2025wooopigclassic/",
+   "color": "default"
+  },
+  "tournament_startdate": null,
+  "galleries": [
+   2665
+  ],
+  "game_program": "Program",
+  "has_weplayed_moments": false,
+  "ticket_link": {
+   "customMessages": [],
+   "label": "Buy Tickets:  Omaha on February 27 10 a.m. CT",
+   "fallbackText": "Buy tickets",
+   "seatGeekLink": null,
+   "showSeatGeek": false,
+   "featured": false,
+   "url": null,
+   "text": "Buy Tickets"
+  },
+  "game_links": []
+ },
+ {
+  "id": 20444,
+  "date": "2026-02-27T12:15:00",
+  "enddate": null,
+  "game_state": 0,
+  "game_state_display": "SCHEDULED",
+  "game_center_enabled": false,
+  "game_center_link": "/game-center/20444",
+  "time": "12:15 p.m. CT",
+  "conference": false,
+  "location": "Fayetteville, Ark. ",
+  "location_indicator": "N",
+  "neutral_hometeam": null,
+  "at_vs": "vs",
+  "status": "O",
+  "noplay_text": "",
+  "type": "R",
+  "promotion": null,
+  "promotion_link": "",
+  "promotion_image_link": null,
+  "promotion_image": null,
+  "promotion_caption": null,
+  "event_image": null,
+  "is_a_doubleheader": false,
+  "opponent_history_path": "/sports/softball/opponent-history/boise-state/2926",
+  "display_vsat_indicator": true,
+  "game_program_link": null,
+  "opponent": {
+   "id": 2926,
+   "title": "Boise State",
+   "prefix": "",
+   "website": " ",
+   "website_label": "Boise State on February 27, 2026 12:15 p.m. CT",
+   "location": "Boise, ID",
+   "conference": false,
+   "mascot": "Broncos",
+   "image": {
+    "filename": "Boise_State.png",
+    "path": "/images/logos",
+    "title": "Boise State University Logo",
+    "alt": "Boise State University Logo",
+    "fullpath": "https://dxbhsrqyrr690.cloudfront.net/sidearm.nextgen.sites/ukansas.sidearmsports.com/images/logos/Boise_State.png"
+   }
+  },
+  "media": {
+   "tv": "",
+   "tv_image": null,
+   "tv_image_link": "",
+   "tv_image_caption": null,
+   "radio": "",
+   "video": null,
+   "audio": null,
+   "stats": {
+    "title": "Live stats",
+    "url": "https://stats.statbroadcast.com/broadcast/?id=646155",
+    "label": "Live stats for Softball vs Boise State on February 27, 2026 at 12:15 p.m. CT",
+    "cssClass": null
+   },
+   "tickets": null,
+   "preview": {
+    "title": "Preview",
+    "url": "/news/2026/2/26/softball-kansas-continues-nonconference-slate-in-fayetteville",
+    "label": "Preview for Softball vs Boise State on February 27, 2026 at 12:15 p.m. CT",
+    "cssClass": null
+   },
+   "gamefiles": [],
+   "custom_display_fields": []
+  },
+  "result": {
+   "status": "W",
+   "team_score": "4",
+   "opponent_score": "1",
+   "prescore_info": "",
+   "postscore_info": "",
+   "boxscore": {
+    "title": "Box Score",
+    "url": "/sports/softball/stats/2026/boise-state/boxscore/20444",
+    "label": "Box score of Softball vs Boise State on February 27, 2026 at 12:15 p.m. CT",
+    "cssClass": null
+   },
+   "recap": {
+    "title": "Recap",
+    "url": "/news/2026/2/27/softball-jayhawks-sweep-friday-at-woo-pig-classic-with-wins-over-omaha-boise-state",
+    "label": "Story recap for Softball vs Boise State on February 27, 2026 at 12:15 p.m. CT",
+    "cssClass": null
+   }
+  },
+  "facility": {
+   "id": 338,
+   "title": "Bogle Park",
+   "url": ""
+  },
+  "tournament": {
+   "id": 1223,
+   "title": "Wooo Pig Classic ",
+   "website": "https://arkansasrazorbacks.com/2025wooopigclassic/",
+   "color": "default"
+  },
+  "tournament_startdate": null,
+  "galleries": [
+   2664
+  ],
+  "game_program": "Program",
+  "has_weplayed_moments": false,
+  "ticket_link": {
+   "customMessages": [],
+   "label": "Buy Tickets:  Boise State on February 27 12:15 p.m. CT",
+   "fallbackText": "Buy tickets",
+   "seatGeekLink": null,
+   "showSeatGeek": false,
+   "featured": false,
+   "url": null,
+   "text": "Buy Tickets"
+  },
+  "game_links": []
+ },
+ {
+  "id": 20445,
+  "date": "2026-02-28T12:15:00",
+  "enddate": null,
+  "game_state": 0,
+  "game_state_display": "SCHEDULED",
+  "game_center_enabled": false,
+  "game_center_link": "/game-center/20445",
+  "time": "12:15 p.m. CT",
+  "conference": false,
+  "location": "Fayetteville, Ark. ",
+  "location_indicator": "N",
+  "neutral_hometeam": null,
+  "at_vs": "vs",
+  "status": "O",
+  "noplay_text": "",
+  "type": "R",
+  "promotion": null,
+  "promotion_link": "",
+  "promotion_image_link": null,
+  "promotion_image": null,
+  "promotion_caption": null,
+  "event_image": null,
+  "is_a_doubleheader": false,
+  "opponent_history_path": "/sports/softball/opponent-history/boise-state/1203",
+  "display_vsat_indicator": true,
+  "game_program_link": null,
+  "opponent": {
+   "id": 1203,
+   "title": "Boise State",
+   "prefix": "",
+   "website": " ",
+   "website_label": "Boise State on February 28, 2026 12:15 p.m. CT",
+   "location": " ",
+   "conference": false,
+   "mascot": "",
+   "image": {
+    "filename": "Boise.png",
+    "path": "/images/2024/5/11",
+    "title": "",
+    "alt": "",
+    "fullpath": "https://dxbhsrqyrr690.cloudfront.net/sidearm.nextgen.sites/ukansas.sidearmsports.com/images/2024/5/11/Boise.png"
+   }
+  },
+  "media": {
+   "tv": "",
+   "tv_image": null,
+   "tv_image_link": "",
+   "tv_image_caption": null,
+   "radio": "",
+   "video": null,
+   "audio": null,
+   "stats": {
+    "title": "Live stats",
+    "url": "https://stats.statbroadcast.com/broadcast/?id=646156",
+    "label": "Live stats for Softball vs Boise State on February 28, 2026 at 12:15 p.m. CT",
+    "cssClass": null
+   },
+   "tickets": null,
+   "preview": {
+    "title": "Preview",
+    "url": "/news/2026/2/26/softball-kansas-continues-nonconference-slate-in-fayetteville",
+    "label": "Preview for Softball vs Boise State on February 28, 2026 at 12:15 p.m. CT",
+    "cssClass": null
+   },
+   "gamefiles": [],
+   "custom_display_fields": []
+  },
+  "result": {
+   "status": "W",
+   "team_score": "10",
+   "opponent_score": "1",
+   "prescore_info": "",
+   "postscore_info": "(5 Inn.)",
+   "boxscore": {
+    "title": "Box Score",
+    "url": "/sports/softball/stats/2026/boise-state/boxscore/20445",
+    "label": "Box score of Softball vs Boise State on February 28, 2026 at 12:15 p.m. CT",
+    "cssClass": null
+   },
+   "recap": {
+    "title": "Recap",
+    "url": "/news/2026/2/28/softball-jayhawks-stay-perfect-with-25-run-offensive-outburst-at-wooo-pig-classic",
+    "label": "Story recap for Softball vs Boise State on February 28, 2026 at 12:15 p.m. CT",
+    "cssClass": null
+   }
+  },
+  "facility": {
+   "id": 338,
+   "title": "Bogle Park",
+   "url": ""
+  },
+  "tournament": {
+   "id": 1223,
+   "title": "Wooo Pig Classic ",
+   "website": "https://arkansasrazorbacks.com/2025wooopigclassic/",
+   "color": "default"
+  },
+  "tournament_startdate": null,
+  "galleries": [
+   2666
+  ],
+  "game_program": "Program",
+  "has_weplayed_moments": false,
+  "ticket_link": {
+   "customMessages": [],
+   "label": "Buy Tickets:  Boise State on February 28 12:15 p.m. CT",
+   "fallbackText": "Buy tickets",
+   "seatGeekLink": null,
+   "showSeatGeek": false,
+   "featured": false,
+   "url": null,
+   "text": "Buy Tickets"
+  },
+  "game_links": []
+ },
+ {
+  "id": 20443,
+  "date": "2026-02-28T19:00:00",
+  "enddate": null,
+  "game_state": 0,
+  "game_state_display": "SCHEDULED",
+  "game_center_enabled": false,
+  "game_center_link": "/game-center/20443",
+  "time": "7 p.m. CT",
+  "conference": false,
+  "location": "Fayetteville, Ark",
+  "location_indicator": "N",
+  "neutral_hometeam": null,
+  "at_vs": "vs",
+  "status": "O",
+  "noplay_text": "",
+  "type": "R",
+  "promotion": null,
+  "promotion_link": "",
+  "promotion_image_link": null,
+  "promotion_image": null,
+  "promotion_caption": null,
+  "event_image": null,
+  "is_a_doubleheader": false,
+  "opponent_history_path": "/sports/softball/opponent-history/charlotte/2943",
+  "display_vsat_indicator": true,
+  "game_program_link": null,
+  "opponent": {
+   "id": 2943,
+   "title": "Charlotte",
+   "prefix": "",
+   "website": "http://www.charlotte49ers.com/",
+   "website_label": "Charlotte on February 28, 2026 7 p.m. CT",
+   "location": "Charlotte, NC",
+   "conference": false,
+   "mascot": "49ers",
+   "image": {
+    "filename": "Charlotte200x200.png",
+    "path": "/images/logos",
+    "title": "Charlotte Logo",
+    "alt": "Charlotte Logo",
+    "fullpath": "https://dxbhsrqyrr690.cloudfront.net/sidearm.nextgen.sites/ukansas.sidearmsports.com/images/logos/Charlotte200x200.png"
+   }
+  },
+  "media": {
+   "tv": "",
+   "tv_image": null,
+   "tv_image_link": "",
+   "tv_image_caption": null,
+   "radio": "",
+   "video": null,
+   "audio": null,
+   "stats": {
+    "title": "Live stats",
+    "url": "https://stats.statbroadcast.com/broadcast/?id=651313",
+    "label": "Live stats for Softball vs Charlotte on February 28, 2026 at 7 p.m. CT",
+    "cssClass": null
+   },
+   "tickets": null,
+   "preview": {
+    "title": "Preview",
+    "url": "/news/2026/2/26/softball-kansas-continues-nonconference-slate-in-fayetteville",
+    "label": "Preview for Softball vs Charlotte on February 28, 2026 at 7 p.m. CT",
+    "cssClass": null
+   },
+   "gamefiles": [],
+   "custom_display_fields": []
+  },
+  "result": {
+   "status": "W",
+   "team_score": "15",
+   "opponent_score": "4",
+   "prescore_info": "",
+   "postscore_info": "(6 Inn.)",
+   "boxscore": {
+    "title": "Box Score",
+    "url": "/sports/softball/stats/2026/charlotte/boxscore/20443",
+    "label": "Box score of Softball vs Charlotte on February 28, 2026 at 7 p.m. CT",
+    "cssClass": null
+   },
+   "recap": {
+    "title": "Recap",
+    "url": "/news/2026/2/28/softball-jayhawks-stay-perfect-with-25-run-offensive-outburst-at-wooo-pig-classic",
+    "label": "Story recap for Softball vs Charlotte on February 28, 2026 at 7 p.m. CT",
+    "cssClass": null
+   }
+  },
+  "facility": {
+   "id": 338,
+   "title": "Bogle Park",
+   "url": ""
+  },
+  "tournament": {
+   "id": 1223,
+   "title": "Wooo Pig Classic ",
+   "website": "https://arkansasrazorbacks.com/2025wooopigclassic/",
+   "color": "default"
+  },
+  "tournament_startdate": null,
+  "galleries": [
+   2667
+  ],
+  "game_program": "Program",
+  "has_weplayed_moments": false,
+  "ticket_link": {
+   "customMessages": [],
+   "label": "Buy Tickets:  Charlotte on February 28 7 p.m. CT",
+   "fallbackText": "Buy tickets",
+   "seatGeekLink": null,
+   "showSeatGeek": false,
+   "featured": false,
+   "url": null,
+   "text": "Buy Tickets"
+  },
+  "game_links": []
+ },
+ {
+  "id": 20446,
+  "date": "2026-03-01T12:15:00",
+  "enddate": null,
+  "game_state": 0,
+  "game_state_display": "SCHEDULED",
+  "game_center_enabled": false,
+  "game_center_link": "/game-center/20446",
+  "time": "12:15 p.m. CT",
+  "conference": false,
+  "location": "Fayetteville, Ark.",
+  "location_indicator": "A",
+  "neutral_hometeam": null,
+  "at_vs": "at",
+  "status": "O",
+  "noplay_text": "",
+  "type": "R",
+  "promotion": null,
+  "promotion_link": "",
+  "promotion_image_link": null,
+  "promotion_image": null,
+  "promotion_caption": null,
+  "event_image": null,
+  "is_a_doubleheader": false,
+  "opponent_history_path": "/sports/softball/opponent-history/arkansas/2910",
+  "display_vsat_indicator": true,
+  "game_program_link": null,
+  "opponent": {
+   "id": 2910,
+   "title": "No. 7 Arkansas",
+   "prefix": "No. 7",
+   "website": " ",
+   "website_label": "Arkansas on March 1, 2026 12:15 p.m. CT",
+   "location": "Fayetteville, AR",
+   "conference": false,
+   "mascot": "Razorbacks",
+   "image": {
+    "filename": "Arkansas.png",
+    "path": "/images/logos",
+    "title": "University of Arkansas Logo",
+    "alt": "University of Arkansas Logo",
+    "fullpath": "https://dxbhsrqyrr690.cloudfront.net/sidearm.nextgen.sites/ukansas.sidearmsports.com/images/logos/Arkansas.png"
+   }
+  },
+  "media": {
+   "tv": "",
+   "tv_image": null,
+   "tv_image_link": "",
+   "tv_image_caption": null,
+   "radio": "",
+   "video": null,
+   "audio": null,
+   "stats": {
+    "title": "Live stats",
+    "url": "https://stats.statbroadcast.com/broadcast/?id=637095",
+    "label": "Live stats for Softball at Arkansas on March 1, 2026 at 12:15 p.m. CT",
+    "cssClass": null
+   },
+   "tickets": null,
+   "preview": {
+    "title": "Preview",
+    "url": "/news/2026/2/26/softball-kansas-continues-nonconference-slate-in-fayetteville",
+    "label": "Preview for Softball at Arkansas on March 1, 2026 at 12:15 p.m. CT",
+    "cssClass": null
+   },
+   "gamefiles": [],
+   "custom_display_fields": []
+  },
+  "result": {
+   "status": "L",
+   "team_score": "3",
+   "opponent_score": "11",
+   "prescore_info": "",
+   "postscore_info": "",
+   "boxscore": {
+    "title": "Box Score",
+    "url": "/sports/softball/stats/2026/arkansas/boxscore/20446",
+    "label": "Box score of Softball at Arkansas on March 1, 2026 at 12:15 p.m. CT",
+    "cssClass": null
+   },
+   "recap": {
+    "title": "Recap",
+    "url": "/news/2026/3/1/softball-kansas-falls-to-no-8-arkansas-in-fayetteville",
+    "label": "Story recap for Softball at Arkansas on March 1, 2026 at 12:15 p.m. CT",
+    "cssClass": null
+   }
+  },
+  "facility": {
+   "id": 338,
+   "title": "Bogle Park",
+   "url": ""
+  },
+  "tournament": {
+   "id": 1223,
+   "title": "Wooo Pig Classic ",
+   "website": "https://arkansasrazorbacks.com/2025wooopigclassic/",
+   "color": "default"
+  },
+  "tournament_startdate": null,
+  "galleries": [],
+  "game_program": "Program",
+  "has_weplayed_moments": false,
+  "ticket_link": {
+   "customMessages": [],
+   "label": "Buy Tickets:  Arkansas on March 1 12:15 p.m. CT",
+   "fallbackText": "Buy tickets",
+   "seatGeekLink": null,
+   "showSeatGeek": false,
+   "featured": false,
+   "url": null,
+   "text": "Buy Tickets"
+  },
+  "game_links": []
+ },
+ {
+  "id": 20447,
+  "date": "2026-03-04T18:00:00",
+  "enddate": null,
+  "game_state": 0,
+  "game_state_display": "SCHEDULED",
+  "game_center_enabled": false,
+  "game_center_link": "/game-center/20447",
+  "time": "6 p.m. CT",
+  "conference": false,
+  "location": " Wichita, Kan. ",
+  "location_indicator": "A",
+  "neutral_hometeam": null,
+  "at_vs": "at",
+  "status": "O",
+  "noplay_text": "",
+  "type": "R",
+  "promotion": null,
+  "promotion_link": "",
+  "promotion_image_link": null,
+  "promotion_image": null,
+  "promotion_caption": null,
+  "event_image": null,
+  "is_a_doubleheader": false,
+  "opponent_history_path": "/sports/softball/opponent-history/wichita-state/2896",
+  "display_vsat_indicator": true,
+  "game_program_link": null,
+  "opponent": {
+   "id": 2896,
+   "title": "Wichita State",
+   "prefix": "",
+   "website": " ",
+   "website_label": "Wichita State on March 4, 2026 6 p.m. CT",
+   "location": "Wichita, KS",
+   "conference": false,
+   "mascot": "Shockers",
+   "image": {
+    "filename": "Wichitia-State.png",
+    "path": "/images/logos",
+    "title": "Wichita State University Logo",
+    "alt": "Wichita State University Logo",
+    "fullpath": "https://dxbhsrqyrr690.cloudfront.net/sidearm.nextgen.sites/ukansas.sidearmsports.com/images/logos/Wichitia-State.png"
+   }
+  },
+  "media": {
+   "tv": "ESPN+",
+   "tv_image": null,
+   "tv_image_link": "",
+   "tv_image_caption": null,
+   "radio": "",
+   "video": {
+    "title": "Watch",
+    "url": "https://www.espn.com/watch/player/_/id/e5e04f53-26b3-478f-871d-b542fef5d5b3",
+    "label": "Video for Softball at Wichita State on March 4, 2026 at 6 p.m. CT",
+    "cssClass": null
+   },
+   "audio": null,
+   "stats": {
+    "title": "Live stats",
+    "url": "https://stats.statbroadcast.com/broadcast/?id=642204",
+    "label": "Live stats for Softball at Wichita State on March 4, 2026 at 6 p.m. CT",
+    "cssClass": null
+   },
+   "tickets": null,
+   "preview": {
+    "title": "Preview",
+    "url": "/news/2026/3/3/softball-kansas-travels-to-wichita-state-for-midweek-test",
+    "label": "Preview for Softball at Wichita State on March 4, 2026 at 6 p.m. CT",
+    "cssClass": null
+   },
+   "gamefiles": [],
+   "custom_display_fields": []
+  },
+  "result": {
+   "status": "W",
+   "team_score": "9",
+   "opponent_score": "1",
+   "prescore_info": "",
+   "postscore_info": "(5 Inn.)",
+   "boxscore": {
+    "title": "Box Score",
+    "url": "/sports/softball/stats/2026/wichita-state/boxscore/20447",
+    "label": "Box score of Softball at Wichita State on March 4, 2026 at 6 p.m. CT",
+    "cssClass": null
+   },
+   "recap": {
+    "title": "Recap",
+    "url": "/news/2026/3/4/softball-jayhawks-cruise-to-9-1-run-rule-win-over-wichita-state",
+    "label": "Story recap for Softball at Wichita State on March 4, 2026 at 6 p.m. CT",
+    "cssClass": null
+   }
+  },
+  "facility": {
+   "id": 334,
+   "title": "Wilkins Softball Stadium",
+   "url": ""
+  },
+  "tournament": null,
+  "tournament_startdate": null,
+  "galleries": [
+   2675
+  ],
+  "game_program": "Program",
+  "has_weplayed_moments": false,
+  "ticket_link": {
+   "customMessages": [],
+   "label": "Buy Tickets:  Wichita State on March 4 6 p.m. CT",
+   "fallbackText": "Buy tickets",
+   "seatGeekLink": null,
+   "showSeatGeek": false,
+   "featured": false,
+   "url": null,
+   "text": "Buy Tickets"
+  },
+  "game_links": []
+ },
+ {
+  "id": 20448,
+  "date": "2026-03-06T13:00:00",
+  "enddate": null,
+  "game_state": 0,
+  "game_state_display": "SCHEDULED",
+  "game_center_enabled": false,
+  "game_center_link": "/game-center/20448",
+  "time": "1 p.m. CT",
+  "conference": true,
+  "location": "Lawrence, Kan. ",
+  "location_indicator": "H",
+  "neutral_hometeam": null,
+  "at_vs": "vs",
+  "status": "O",
+  "noplay_text": "",
+  "type": "R",
+  "promotion": "Explore Lawrence",
+  "promotion_link": "https://www.explorelawrence.com/",
+  "promotion_image_link": null,
+  "promotion_image": null,
+  "promotion_caption": null,
+  "event_image": null,
+  "is_a_doubleheader": true,
+  "opponent_history_path": "/sports/softball/opponent-history/utah-state/3214",
+  "display_vsat_indicator": true,
+  "game_program_link": null,
+  "opponent": {
+   "id": 3214,
+   "title": "Utah State",
+   "prefix": "",
+   "website": " ",
+   "website_label": "Utah State on March 6, 2026 1 p.m. CT",
+   "location": "Logan, UT",
+   "conference": false,
+   "mascot": "Aggies",
+   "image": {
+    "filename": "Utah-State.png",
+    "path": "/images/logos",
+    "title": "Utah State University Logo",
+    "alt": "Utah State University Logo",
+    "fullpath": "https://dxbhsrqyrr690.cloudfront.net/sidearm.nextgen.sites/ukansas.sidearmsports.com/images/logos/Utah-State.png"
+   }
+  },
+  "media": {
+   "tv": "ESPN+",
+   "tv_image": null,
+   "tv_image_link": "",
+   "tv_image_caption": null,
+   "radio": "",
+   "video": {
+    "title": "Watch",
+    "url": "https://www.espn.com/watch/player/_/eventCalendarId/401846072?gameId=401846072&sourceLang=en&om-navmethod=espn%3Aglobalsearch%3Aresults",
+    "label": "Video for Softball vs Utah State on March 6, 2026 at 1 p.m. CT",
+    "cssClass": null
+   },
+   "audio": null,
+   "stats": {
+    "title": "Live stats",
+    "url": "https://stats.statbroadcast.com/broadcast/?id=646157",
+    "label": "Live stats for Softball vs Utah State on March 6, 2026 at 1 p.m. CT",
+    "cssClass": null
+   },
+   "tickets": null,
+   "preview": null,
+   "gamefiles": [],
+   "custom_display_fields": []
+  },
+  "result": {
+   "status": "W",
+   "team_score": "7",
+   "opponent_score": "1",
+   "prescore_info": "",
+   "postscore_info": "",
+   "boxscore": {
+    "title": "Box Score",
+    "url": "/sports/softball/stats/2026/utah-state/boxscore/20448",
+    "label": "Box score of Softball vs Utah State on March 6, 2026 at 1 p.m. CT",
+    "cssClass": null
+   },
+   "recap": {
+    "title": "Recap",
+    "url": "/news/2026/3/6/softball-kansas-homers-its-way-to-doubleheader-sweep-at-arrocha",
+    "label": "Story recap for Softball vs Utah State on March 6, 2026 at 1 p.m. CT",
+    "cssClass": null
+   }
+  },
+  "facility": {
+   "id": 313,
+   "title": "Arrocha Ballpark",
+   "url": "/facilities/arrocha-ballpark/313"
+  },
+  "tournament": null,
+  "tournament_startdate": null,
+  "galleries": [
+   2677
+  ],
+  "game_program": "Program",
+  "has_weplayed_moments": false,
+  "ticket_link": {
+   "customMessages": [],
+   "label": "Buy Tickets:  Utah State on March 6 1 p.m. CT",
+   "fallbackText": "Buy tickets",
+   "seatGeekLink": null,
+   "showSeatGeek": false,
+   "featured": false,
+   "url": null,
+   "text": "Buy Tickets"
+  },
+  "game_links": []
+ },
+ {
+  "id": 20449,
+  "date": "2026-03-06T15:30:00",
+  "enddate": null,
+  "game_state": 0,
+  "game_state_display": "SCHEDULED",
+  "game_center_enabled": false,
+  "game_center_link": "/game-center/20449",
+  "time": "3:30 p.m CT",
+  "conference": false,
+  "location": "Lawrence, Kan. ",
+  "location_indicator": "H",
+  "neutral_hometeam": null,
+  "at_vs": "vs",
+  "status": "O",
+  "noplay_text": "",
+  "type": "R",
+  "promotion": "Explore Lawrence",
+  "promotion_link": "https://www.explorelawrence.com/",
+  "promotion_image_link": null,
+  "promotion_image": null,
+  "promotion_caption": null,
+  "event_image": null,
+  "is_a_doubleheader": true,
+  "opponent_history_path": "/sports/softball/opponent-history/utah-state/3214",
+  "display_vsat_indicator": true,
+  "game_program_link": null,
+  "opponent": {
+   "id": 3214,
+   "title": "Utah State",
+   "prefix": "",
+   "website": " ",
+   "website_label": "Utah State on March 6, 2026 3:30 p.m CT",
+   "location": "Logan, UT",
+   "conference": false,
+   "mascot": "Aggies",
+   "image": {
+    "filename": "Utah-State.png",
+    "path": "/images/logos",
+    "title": "Utah State University Logo",
+    "alt": "Utah State University Logo",
+    "fullpath": "https://dxbhsrqyrr690.cloudfront.net/sidearm.nextgen.sites/ukansas.sidearmsports.com/images/logos/Utah-State.png"
+   }
+  },
+  "media": {
+   "tv": "ESPN+",
+   "tv_image": null,
+   "tv_image_link": "",
+   "tv_image_caption": null,
+   "radio": "",
+   "video": {
+    "title": "Watch",
+    "url": "https://www.espn.com/watch/player/_/eventCalendarId/401846073?gameId=401846073&sourceLang=en&om-navmethod=espn%3Aglobalsearch%3Aresults",
+    "label": "Video for Softball vs Utah State on March 6, 2026 at 3:30 p.m CT",
+    "cssClass": null
+   },
+   "audio": null,
+   "stats": {
+    "title": "Live stats",
+    "url": "https://stats.statbroadcast.com/broadcast/?id=646158",
+    "label": "Live stats for Softball vs Utah State on March 6, 2026 at 3:30 p.m CT",
+    "cssClass": null
+   },
+   "tickets": null,
+   "preview": null,
+   "gamefiles": [],
+   "custom_display_fields": []
+  },
+  "result": {
+   "status": "W",
+   "team_score": "18",
+   "opponent_score": "2",
+   "prescore_info": "",
+   "postscore_info": "(5 Inn.)",
+   "boxscore": {
+    "title": "Box Score",
+    "url": "/sports/softball/stats/2026/utah-state/boxscore/20449",
+    "label": "Box score of Softball vs Utah State on March 6, 2026 at 3:30 p.m CT",
+    "cssClass": null
+   },
+   "recap": {
+    "title": "Recap",
+    "url": "/news/2026/3/6/softball-kansas-homers-its-way-to-doubleheader-sweep-at-arrocha",
+    "label": "Story recap for Softball vs Utah State on March 6, 2026 at 3:30 p.m CT",
+    "cssClass": null
+   }
+  },
+  "facility": {
+   "id": 313,
+   "title": "Arrocha Ballpark",
+   "url": "/facilities/arrocha-ballpark/313"
+  },
+  "tournament": null,
+  "tournament_startdate": null,
+  "galleries": [
+   2678
+  ],
+  "game_program": "Program",
+  "has_weplayed_moments": false,
+  "ticket_link": {
+   "customMessages": [],
+   "label": "Buy Tickets:  Utah State on March 6 3:30 p.m CT",
+   "fallbackText": "Buy tickets",
+   "seatGeekLink": null,
+   "showSeatGeek": false,
+   "featured": false,
+   "url": null,
+   "text": "Buy Tickets"
+  },
+  "game_links": []
+ },
+ {
+  "id": 20450,
+  "date": "2026-03-07T14:00:00",
+  "enddate": null,
+  "game_state": 0,
+  "game_state_display": "SCHEDULED",
+  "game_center_enabled": false,
+  "game_center_link": "/game-center/20450",
+  "time": "2 p.m. CT ",
+  "conference": false,
+  "location": "Lawrence, Kan. ",
+  "location_indicator": "H",
+  "neutral_hometeam": null,
+  "at_vs": "vs",
+  "status": "O",
+  "noplay_text": "",
+  "type": "R",
+  "promotion": "Explore Lawrence",
+  "promotion_link": "https://www.explorelawrence.com/",
+  "promotion_image_link": null,
+  "promotion_image": null,
+  "promotion_caption": null,
+  "event_image": null,
+  "is_a_doubleheader": false,
+  "opponent_history_path": "/sports/softball/opponent-history/utah-state/3214",
+  "display_vsat_indicator": true,
+  "game_program_link": null,
+  "opponent": {
+   "id": 3214,
+   "title": "Utah State",
+   "prefix": "",
+   "website": " ",
+   "website_label": "Utah State on March 7, 2026 2 p.m. CT ",
+   "location": "Logan, UT",
+   "conference": false,
+   "mascot": "Aggies",
+   "image": {
+    "filename": "Utah-State.png",
+    "path": "/images/logos",
+    "title": "Utah State University Logo",
+    "alt": "Utah State University Logo",
+    "fullpath": "https://dxbhsrqyrr690.cloudfront.net/sidearm.nextgen.sites/ukansas.sidearmsports.com/images/logos/Utah-State.png"
+   }
+  },
+  "media": {
+   "tv": "ESPN+",
+   "tv_image": null,
+   "tv_image_link": "",
+   "tv_image_caption": null,
+   "radio": "",
+   "video": {
+    "title": "Watch",
+    "url": "https://www.espn.com/watch/collections/36b71781-cc45-4f3a-9ddb-03b58a9ef2fb/live-upcoming",
+    "label": "Video for Softball vs Utah State on March 7, 2026 at 2 p.m. CT ",
+    "cssClass": null
+   },
+   "audio": null,
+   "stats": {
+    "title": "Live stats",
+    "url": "https://stats.statbroadcast.com/broadcast/?id=646159",
+    "label": "Live stats for Softball vs Utah State on March 7, 2026 at 2 p.m. CT ",
+    "cssClass": null
+   },
+   "tickets": null,
+   "preview": null,
+   "gamefiles": [],
+   "custom_display_fields": []
+  },
+  "result": {
+   "status": "W",
+   "team_score": "14",
+   "opponent_score": "0",
+   "prescore_info": "",
+   "postscore_info": "(5 Inn.)",
+   "boxscore": {
+    "title": "Box Score",
+    "url": "/sports/softball/stats/2026/utah-state/boxscore/20450",
+    "label": "Box score of Softball vs Utah State on March 7, 2026 at 2 p.m. CT ",
+    "cssClass": null
+   },
+   "recap": null
+  },
+  "facility": {
+   "id": 313,
+   "title": "Arrocha Ballpark",
+   "url": "/facilities/arrocha-ballpark/313"
+  },
+  "tournament": null,
+  "tournament_startdate": null,
+  "galleries": [],
+  "game_program": "Program",
+  "has_weplayed_moments": false,
+  "ticket_link": {
+   "customMessages": [],
+   "label": "Buy Tickets:  Utah State on March 7 2 p.m. CT ",
+   "fallbackText": "Buy tickets",
+   "seatGeekLink": null,
+   "showSeatGeek": false,
+   "featured": false,
+   "url": null,
+   "text": "Buy Tickets"
+  },
+  "game_links": []
+ },
+ {
+  "id": 20454,
+  "date": "2026-03-13T18:00:00",
+  "enddate": "2026-03-13T00:00:00",
+  "game_state": 0,
+  "game_state_display": "SCHEDULED",
+  "game_center_enabled": false,
+  "game_center_link": "/game-center/20454",
+  "time": "6 p.m.",
+  "conference": true,
+  "location": " Houston, Texas",
+  "location_indicator": "A",
+  "neutral_hometeam": null,
+  "at_vs": "at",
+  "status": "O",
+  "noplay_text": "",
+  "type": "R",
+  "promotion": null,
+  "promotion_link": "",
+  "promotion_image_link": null,
+  "promotion_image": null,
+  "promotion_caption": null,
+  "event_image": null,
+  "is_a_doubleheader": false,
+  "opponent_history_path": "/sports/softball/opponent-history/houston/3000",
+  "display_vsat_indicator": true,
+  "game_program_link": null,
+  "opponent": {
+   "id": 3000,
+   "title": "Houston",
+   "prefix": "",
+   "website": " ",
+   "website_label": "Houston on March 13, 2026 6 p.m.",
+   "location": "Houston, TX",
+   "conference": false,
+   "mascot": "Cougars",
+   "image": {
+    "filename": "houston.png",
+    "path": "/images/logos",
+    "title": "University of Houston Logo",
+    "alt": "University of Houston Logo",
+    "fullpath": "https://dxbhsrqyrr690.cloudfront.net/sidearm.nextgen.sites/ukansas.sidearmsports.com/images/logos/houston.png"
+   }
+  },
+  "media": {
+   "tv": "ESPN+",
+   "tv_image": null,
+   "tv_image_link": "",
+   "tv_image_caption": null,
+   "radio": "",
+   "video": {
+    "title": "Watch",
+    "url": "https://www.espn.com/watch/?redirected=true",
+    "label": "Video for Softball at Houston on March 13, 2026 at 6 p.m.",
+    "cssClass": null
+   },
+   "audio": null,
+   "stats": {
+    "title": "Live stats",
+    "url": "https://stats.statbroadcast.com/broadcast/?id=646138",
+    "label": "Live stats for Softball at Houston on March 13, 2026 at 6 p.m.",
+    "cssClass": null
+   },
+   "tickets": null,
+   "preview": {
+    "title": "Preview",
+    "url": "/news/2026/3/11/softball-kansas-opens-big-12-play-at-houston",
+    "label": "Preview for Softball at Houston on March 13, 2026 at 6 p.m.",
+    "cssClass": null
+   },
+   "gamefiles": [],
+   "custom_display_fields": []
+  },
+  "result": {
+   "status": "L",
+   "team_score": "9",
+   "opponent_score": "10",
+   "prescore_info": "",
+   "postscore_info": "(8 Inn.)",
+   "boxscore": {
+    "title": "Box Score",
+    "url": "/sports/softball/stats/2026/houston/boxscore/20454",
+    "label": "Box score of Softball at Houston on March 13, 2026 at 6 p.m.",
+    "cssClass": null
+   },
+   "recap": null
+  },
+  "facility": {
+   "id": 315,
+   "title": "Cougar Softball Stadium",
+   "url": ""
+  },
+  "tournament": null,
+  "tournament_startdate": null,
+  "galleries": [],
+  "game_program": "Program",
+  "has_weplayed_moments": false,
+  "ticket_link": {
+   "customMessages": [],
+   "label": "Buy Tickets:  Houston on March 13 6 p.m.",
+   "fallbackText": "Buy tickets",
+   "seatGeekLink": null,
+   "showSeatGeek": false,
+   "featured": false,
+   "url": null,
+   "text": "Buy Tickets"
+  },
+  "game_links": []
+ },
+ {
+  "id": 20455,
+  "date": "2026-03-14T15:00:00",
+  "enddate": null,
+  "game_state": 0,
+  "game_state_display": "SCHEDULED",
+  "game_center_enabled": false,
+  "game_center_link": "/game-center/20455",
+  "time": "3 p.m. CT",
+  "conference": true,
+  "location": " Houston, Texas",
+  "location_indicator": "A",
+  "neutral_hometeam": null,
+  "at_vs": "at",
+  "status": "O",
+  "noplay_text": "",
+  "type": "R",
+  "promotion": null,
+  "promotion_link": "",
+  "promotion_image_link": null,
+  "promotion_image": null,
+  "promotion_caption": null,
+  "event_image": null,
+  "is_a_doubleheader": false,
+  "opponent_history_path": "/sports/softball/opponent-history/houston/3000",
+  "display_vsat_indicator": true,
+  "game_program_link": null,
+  "opponent": {
+   "id": 3000,
+   "title": "Houston",
+   "prefix": "",
+   "website": " ",
+   "website_label": "Houston on March 14, 2026 3 p.m. CT",
+   "location": "Houston, TX",
+   "conference": false,
+   "mascot": "Cougars",
+   "image": {
+    "filename": "houston.png",
+    "path": "/images/logos",
+    "title": "University of Houston Logo",
+    "alt": "University of Houston Logo",
+    "fullpath": "https://dxbhsrqyrr690.cloudfront.net/sidearm.nextgen.sites/ukansas.sidearmsports.com/images/logos/houston.png"
+   }
+  },
+  "media": {
+   "tv": "ESPN+",
+   "tv_image": null,
+   "tv_image_link": "",
+   "tv_image_caption": null,
+   "radio": "",
+   "video": {
+    "title": "Watch",
+    "url": "https://www.espn.com/watch/?redirected=true",
+    "label": "Video for Softball at Houston on March 14, 2026 at 3 p.m. CT",
+    "cssClass": null
+   },
+   "audio": null,
+   "stats": {
+    "title": "Live stats",
+    "url": "https://stats.statbroadcast.com/broadcast/?id=646139",
+    "label": "Live stats for Softball at Houston on March 14, 2026 at 3 p.m. CT",
+    "cssClass": null
+   },
+   "tickets": null,
+   "preview": {
+    "title": "Preview",
+    "url": "/news/2026/3/11/softball-kansas-opens-big-12-play-at-houston",
+    "label": "Preview for Softball at Houston on March 14, 2026 at 3 p.m. CT",
+    "cssClass": null
+   },
+   "gamefiles": [],
+   "custom_display_fields": []
+  },
+  "result": {
+   "status": "W",
+   "team_score": "18",
+   "opponent_score": "1",
+   "prescore_info": "",
+   "postscore_info": "(5 Inn.)",
+   "boxscore": {
+    "title": "Box Score",
+    "url": "/sports/softball/stats/2026/houston/boxscore/20455",
+    "label": "Box score of Softball at Houston on March 14, 2026 at 3 p.m. CT",
+    "cssClass": null
+   },
+   "recap": {
+    "title": "Recap",
+    "url": "/news/2026/3/14/softball-kansas-secures-first-conference-win-behind-record-breaking-offense",
+    "label": "Story recap for Softball at Houston on March 14, 2026 at 3 p.m. CT",
+    "cssClass": null
+   }
+  },
+  "facility": {
+   "id": 315,
+   "title": "Cougar Softball Stadium",
+   "url": ""
+  },
+  "tournament": null,
+  "tournament_startdate": null,
+  "galleries": [],
+  "game_program": "Program",
+  "has_weplayed_moments": false,
+  "ticket_link": {
+   "customMessages": [],
+   "label": "Buy Tickets:  Houston on March 14 3 p.m. CT",
+   "fallbackText": "Buy tickets",
+   "seatGeekLink": null,
+   "showSeatGeek": false,
+   "featured": false,
+   "url": null,
+   "text": "Buy Tickets"
+  },
+  "game_links": []
+ },
+ {
+  "id": 20456,
+  "date": "2026-03-15T11:00:00",
+  "enddate": null,
+  "game_state": 0,
+  "game_state_display": "SCHEDULED",
+  "game_center_enabled": false,
+  "game_center_link": "/game-center/20456",
+  "time": "11 a.m. CT ",
+  "conference": true,
+  "location": " Houston, Texas",
+  "location_indicator": "A",
+  "neutral_hometeam": null,
+  "at_vs": "at",
+  "status": "O",
+  "noplay_text": "",
+  "type": "R",
+  "promotion": null,
+  "promotion_link": "",
+  "promotion_image_link": null,
+  "promotion_image": null,
+  "promotion_caption": null,
+  "event_image": null,
+  "is_a_doubleheader": false,
+  "opponent_history_path": "/sports/softball/opponent-history/houston/3000",
+  "display_vsat_indicator": true,
+  "game_program_link": null,
+  "opponent": {
+   "id": 3000,
+   "title": "Houston",
+   "prefix": "",
+   "website": " ",
+   "website_label": "Houston on March 15, 2026 11 a.m. CT ",
+   "location": "Houston, TX",
+   "conference": false,
+   "mascot": "Cougars",
+   "image": {
+    "filename": "houston.png",
+    "path": "/images/logos",
+    "title": "University of Houston Logo",
+    "alt": "University of Houston Logo",
+    "fullpath": "https://dxbhsrqyrr690.cloudfront.net/sidearm.nextgen.sites/ukansas.sidearmsports.com/images/logos/houston.png"
+   }
+  },
+  "media": {
+   "tv": "ESPN+",
+   "tv_image": null,
+   "tv_image_link": "",
+   "tv_image_caption": null,
+   "radio": "",
+   "video": {
+    "title": "Watch",
+    "url": "https://www.espn.com/watch/player/_/id/49b8eeb2-0323-42a1-8a7c-a8e7a86ce7b9",
+    "label": "Video for Softball at Houston on March 15, 2026 at 11 a.m. CT ",
+    "cssClass": null
+   },
+   "audio": null,
+   "stats": {
+    "title": "Live stats",
+    "url": "https://stats.statbroadcast.com/broadcast/?id=646140",
+    "label": "Live stats for Softball at Houston on March 15, 2026 at 11 a.m. CT ",
+    "cssClass": null
+   },
+   "tickets": null,
+   "preview": {
+    "title": "Preview",
+    "url": "/news/2026/3/11/softball-kansas-opens-big-12-play-at-houston",
+    "label": "Preview for Softball at Houston on March 15, 2026 at 11 a.m. CT ",
+    "cssClass": null
+   },
+   "gamefiles": [],
+   "custom_display_fields": []
+  },
+  "result": {
+   "status": "W",
+   "team_score": "11",
+   "opponent_score": "8",
+   "prescore_info": "",
+   "postscore_info": "",
+   "boxscore": {
+    "title": "Box Score",
+    "url": "/sports/softball/stats/2026/houston/boxscore/20456",
+    "label": "Box score of Softball at Houston on March 15, 2026 at 11 a.m. CT ",
+    "cssClass": null
+   },
+   "recap": {
+    "title": "Recap",
+    "url": "/news/2026/3/15/softball-jayhawks-claim-first-conference-series-of-season-against-houston-2-1",
+    "label": "Story recap for Softball at Houston on March 15, 2026 at 11 a.m. CT ",
+    "cssClass": null
+   }
+  },
+  "facility": {
+   "id": 315,
+   "title": "Cougar Softball Stadium",
+   "url": ""
+  },
+  "tournament": null,
+  "tournament_startdate": null,
+  "galleries": [],
+  "game_program": "Program",
+  "has_weplayed_moments": false,
+  "ticket_link": {
+   "customMessages": [],
+   "label": "Buy Tickets:  Houston on March 15 11 a.m. CT ",
+   "fallbackText": "Buy tickets",
+   "seatGeekLink": null,
+   "showSeatGeek": false,
+   "featured": false,
+   "url": null,
+   "text": "Buy Tickets"
+  },
+  "game_links": []
+ },
+ {
+  "id": 20566,
+  "date": "2026-03-18T12:00:00",
+  "enddate": null,
+  "game_state": 0,
+  "game_state_display": "SCHEDULED",
+  "game_center_enabled": false,
+  "game_center_link": "/game-center/20566",
+  "time": "12 p.m. CT ",
+  "conference": false,
+  "location": "Lawrence, Kan. ",
+  "location_indicator": "H",
+  "neutral_hometeam": null,
+  "at_vs": "vs",
+  "status": "O",
+  "noplay_text": "",
+  "type": "R",
+  "promotion": null,
+  "promotion_link": "",
+  "promotion_image_link": null,
+  "promotion_image": null,
+  "promotion_caption": null,
+  "event_image": null,
+  "is_a_doubleheader": false,
+  "opponent_history_path": "/sports/softball/opponent-history/south-dakota/1087",
+  "display_vsat_indicator": true,
+  "game_program_link": null,
+  "opponent": {
+   "id": 1087,
+   "title": "South Dakota",
+   "prefix": "",
+   "website": " ",
+   "website_label": "South Dakota on March 18, 2026 12 p.m. CT ",
+   "location": " ",
+   "conference": false,
+   "mascot": "",
+   "image": {
+    "filename": "South-Dakota.png",
+    "path": "/images/2024/5/11",
+    "title": "",
+    "alt": "",
+    "fullpath": "https://dxbhsrqyrr690.cloudfront.net/sidearm.nextgen.sites/ukansas.sidearmsports.com/images/2024/5/11/South-Dakota.png"
+   }
+  },
+  "media": {
+   "tv": "ESPN+",
+   "tv_image": null,
+   "tv_image_link": "",
+   "tv_image_caption": null,
+   "radio": "",
+   "video": {
+    "title": "Watch",
+    "url": "https://www.espn.com/watch/collections/44052/ncaa-softball-live-upcoming",
+    "label": "Video for Softball vs South Dakota on March 18, 2026 at 12 p.m. CT ",
+    "cssClass": null
+   },
+   "audio": null,
+   "stats": {
+    "title": "Live stats",
+    "url": "https://stats.statbroadcast.com/broadcast/?id=656159",
+    "label": "Live stats for Softball vs South Dakota on March 18, 2026 at 12 p.m. CT ",
+    "cssClass": null
+   },
+   "tickets": null,
+   "preview": {
+    "title": "Preview",
+    "url": "/news/2026/3/17/kansas-softball-hosts-south-dakota-in-midweek-matchup",
+    "label": "Preview for Softball vs South Dakota on March 18, 2026 at 12 p.m. CT ",
+    "cssClass": null
+   },
+   "gamefiles": [],
+   "custom_display_fields": []
+  },
+  "result": {
+   "status": "W",
+   "team_score": "4",
+   "opponent_score": "3",
+   "prescore_info": "",
+   "postscore_info": "",
+   "boxscore": {
+    "title": "Box Score",
+    "url": "/sports/softball/stats/2026/south-dakota/boxscore/20566",
+    "label": "Box score of Softball vs South Dakota on March 18, 2026 at 12 p.m. CT ",
+    "cssClass": null
+   },
+   "recap": {
+    "title": "Recap",
+    "url": "/news/2026/3/18/softball-bagshaws-walk-off-lifts-kansas-past-south-dakota-4-3",
+    "label": "Story recap for Softball vs South Dakota on March 18, 2026 at 12 p.m. CT ",
+    "cssClass": null
+   }
+  },
+  "facility": {
+   "id": 313,
+   "title": "Arrocha Ballpark",
+   "url": "/facilities/arrocha-ballpark/313"
+  },
+  "tournament": null,
+  "tournament_startdate": null,
+  "galleries": [
+   2693
+  ],
+  "game_program": "Program",
+  "has_weplayed_moments": false,
+  "ticket_link": {
+   "customMessages": [],
+   "label": "Buy Tickets:  South Dakota on March 18 12 p.m. CT ",
+   "fallbackText": "Buy tickets",
+   "seatGeekLink": null,
+   "showSeatGeek": false,
+   "featured": false,
+   "url": null,
+   "text": "Buy Tickets"
+  },
+  "game_links": []
+ },
+ {
+  "id": 20459,
+  "date": "2026-03-20T17:00:00",
+  "enddate": null,
+  "game_state": 0,
+  "game_state_display": "SCHEDULED",
+  "game_center_enabled": false,
+  "game_center_link": "/game-center/20459",
+  "time": "5 p.m. CT",
+  "conference": true,
+  "location": "Lawrence, Kan. ",
+  "location_indicator": "H",
+  "neutral_hometeam": null,
+  "at_vs": "vs",
+  "status": "O",
+  "noplay_text": "",
+  "type": "R",
+  "promotion": "Explore Lawrence",
+  "promotion_link": "https://www.explorelawrence.com/",
+  "promotion_image_link": null,
+  "promotion_image": null,
+  "promotion_caption": null,
+  "event_image": null,
+  "is_a_doubleheader": false,
+  "opponent_history_path": "/sports/softball/opponent-history/utah/3194",
+  "display_vsat_indicator": true,
+  "game_program_link": null,
+  "opponent": {
+   "id": 3194,
+   "title": "Utah",
+   "prefix": "",
+   "website": " ",
+   "website_label": "Utah on March 20, 2026 5 p.m. CT",
+   "location": "Salt Lake City, UT",
+   "conference": false,
+   "mascot": "Utes",
+   "image": {
+    "filename": "UtahUtesLogo.png",
+    "path": "/images/logos",
+    "title": "University of Utah Logo",
+    "alt": "University of Utah Logo",
+    "fullpath": "https://dxbhsrqyrr690.cloudfront.net/sidearm.nextgen.sites/ukansas.sidearmsports.com/images/logos/UtahUtesLogo.png"
+   }
+  },
+  "media": {
+   "tv": "ESPN+",
+   "tv_image": null,
+   "tv_image_link": "",
+   "tv_image_caption": null,
+   "radio": "",
+   "video": {
+    "title": "Watch",
+    "url": "https://www.espn.com/watch/player/_/id/1b262fed-765f-43bd-b087-0ec5c94a9a9e",
+    "label": "Video for Softball vs Utah on March 20, 2026 at 5 p.m. CT",
+    "cssClass": null
+   },
+   "audio": null,
+   "stats": {
+    "title": "Live stats",
+    "url": "https://stats.statbroadcast.com/broadcast/?id=646162",
+    "label": "Live stats for Softball vs Utah on March 20, 2026 at 5 p.m. CT",
+    "cssClass": null
+   },
+   "tickets": null,
+   "preview": {
+    "title": "Preview",
+    "url": "/news/2026/3/19/kansas-softball-set-for-first-big-12-home-series-vs-utah",
+    "label": "Preview for Softball vs Utah on March 20, 2026 at 5 p.m. CT",
+    "cssClass": null
+   },
+   "gamefiles": [],
+   "custom_display_fields": []
+  },
+  "result": {
+   "status": "W",
+   "team_score": "7",
+   "opponent_score": "5",
+   "prescore_info": "",
+   "postscore_info": "",
+   "boxscore": {
+    "title": "Box Score",
+    "url": "/sports/softball/stats/2026/utah/boxscore/20459",
+    "label": "Box score of Softball vs Utah on March 20, 2026 at 5 p.m. CT",
+    "cssClass": null
+   },
+   "recap": {
+    "title": "Recap",
+    "url": "/news/2026/3/20/softball-kansas-completes-comeback-to-hand-utah-first-conference-loss-7-5",
+    "label": "Story recap for Softball vs Utah on March 20, 2026 at 5 p.m. CT",
+    "cssClass": null
+   }
+  },
+  "facility": {
+   "id": 313,
+   "title": "Arrocha Ballpark",
+   "url": "/facilities/arrocha-ballpark/313"
+  },
+  "tournament": null,
+  "tournament_startdate": null,
+  "galleries": [],
+  "game_program": "Program",
+  "has_weplayed_moments": false,
+  "ticket_link": {
+   "customMessages": [],
+   "label": "Buy Tickets:  Utah on March 20 5 p.m. CT",
+   "fallbackText": "Buy tickets",
+   "seatGeekLink": null,
+   "showSeatGeek": false,
+   "featured": false,
+   "url": null,
+   "text": "Buy Tickets"
+  },
+  "game_links": []
+ },
+ {
+  "id": 20460,
+  "date": "2026-03-21T14:00:00",
+  "enddate": null,
+  "game_state": 0,
+  "game_state_display": "SCHEDULED",
+  "game_center_enabled": false,
+  "game_center_link": "/game-center/20460",
+  "time": "2 p.m. CT",
+  "conference": true,
+  "location": "Lawrence, Kan. ",
+  "location_indicator": "H",
+  "neutral_hometeam": null,
+  "at_vs": "vs",
+  "status": "O",
+  "noplay_text": "",
+  "type": "R",
+  "promotion": "Explore Lawrence",
+  "promotion_link": "https://www.explorelawrence.com/",
+  "promotion_image_link": null,
+  "promotion_image": null,
+  "promotion_caption": null,
+  "event_image": null,
+  "is_a_doubleheader": false,
+  "opponent_history_path": "/sports/softball/opponent-history/utah/3194",
+  "display_vsat_indicator": true,
+  "game_program_link": null,
+  "opponent": {
+   "id": 3194,
+   "title": "Utah",
+   "prefix": "",
+   "website": " ",
+   "website_label": "Utah on March 21, 2026 2 p.m. CT",
+   "location": "Salt Lake City, UT",
+   "conference": false,
+   "mascot": "Utes",
+   "image": {
+    "filename": "UtahUtesLogo.png",
+    "path": "/images/logos",
+    "title": "University of Utah Logo",
+    "alt": "University of Utah Logo",
+    "fullpath": "https://dxbhsrqyrr690.cloudfront.net/sidearm.nextgen.sites/ukansas.sidearmsports.com/images/logos/UtahUtesLogo.png"
+   }
+  },
+  "media": {
+   "tv": "ESPN+",
+   "tv_image": null,
+   "tv_image_link": "",
+   "tv_image_caption": null,
+   "radio": "",
+   "video": {
+    "title": "Watch",
+    "url": "https://www.espn.com/watch/player/_/id/5b607c09-396f-4092-8f3f-9982be525576",
+    "label": "Video for Softball vs Utah on March 21, 2026 at 2 p.m. CT",
+    "cssClass": null
+   },
+   "audio": null,
+   "stats": {
+    "title": "Live stats",
+    "url": "https://stats.statbroadcast.com/broadcast/?id=646163",
+    "label": "Live stats for Softball vs Utah on March 21, 2026 at 2 p.m. CT",
+    "cssClass": null
+   },
+   "tickets": null,
+   "preview": {
+    "title": "Preview",
+    "url": "/news/2026/3/19/kansas-softball-set-for-first-big-12-home-series-vs-utah",
+    "label": "Preview for Softball vs Utah on March 21, 2026 at 2 p.m. CT",
+    "cssClass": null
+   },
+   "gamefiles": [],
+   "custom_display_fields": []
+  },
+  "result": {
+   "status": "L",
+   "team_score": "1",
+   "opponent_score": "2",
+   "prescore_info": "",
+   "postscore_info": "",
+   "boxscore": {
+    "title": "Box Score",
+    "url": "/sports/softball/stats/2026/utah/boxscore/20460",
+    "label": "Box score of Softball vs Utah on March 21, 2026 at 2 p.m. CT",
+    "cssClass": null
+   },
+   "recap": {
+    "title": "Recap",
+    "url": "/news/2026/3/21/softball-jayhawks-drop-first-conference-game-to-utah-2-1",
+    "label": "Story recap for Softball vs Utah on March 21, 2026 at 2 p.m. CT",
+    "cssClass": null
+   }
+  },
+  "facility": {
+   "id": 313,
+   "title": "Arrocha Ballpark",
+   "url": "/facilities/arrocha-ballpark/313"
+  },
+  "tournament": null,
+  "tournament_startdate": null,
+  "galleries": [
+   2707
+  ],
+  "game_program": "Program",
+  "has_weplayed_moments": false,
+  "ticket_link": {
+   "customMessages": [],
+   "label": "Buy Tickets:  Utah on March 21 2 p.m. CT",
+   "fallbackText": "Buy tickets",
+   "seatGeekLink": null,
+   "showSeatGeek": false,
+   "featured": false,
+   "url": null,
+   "text": "Buy Tickets"
+  },
+  "game_links": []
+ },
+ {
+  "id": 20461,
+  "date": "2026-03-22T12:00:00",
+  "enddate": null,
+  "game_state": 0,
+  "game_state_display": "SCHEDULED",
+  "game_center_enabled": false,
+  "game_center_link": "/game-center/20461",
+  "time": "12 p.m. CT",
+  "conference": true,
+  "location": "Lawrence, Kan. ",
+  "location_indicator": "H",
+  "neutral_hometeam": null,
+  "at_vs": "vs",
+  "status": "O",
+  "noplay_text": "",
+  "type": "R",
+  "promotion": "Explore Lawrence",
+  "promotion_link": "https://www.explorelawrence.com/",
+  "promotion_image_link": null,
+  "promotion_image": null,
+  "promotion_caption": null,
+  "event_image": null,
+  "is_a_doubleheader": false,
+  "opponent_history_path": "/sports/softball/opponent-history/utah/3194",
+  "display_vsat_indicator": true,
+  "game_program_link": null,
+  "opponent": {
+   "id": 3194,
+   "title": "Utah",
+   "prefix": "",
+   "website": " ",
+   "website_label": "Utah on March 22, 2026 12 p.m. CT",
+   "location": "Salt Lake City, UT",
+   "conference": false,
+   "mascot": "Utes",
+   "image": {
+    "filename": "UtahUtesLogo.png",
+    "path": "/images/logos",
+    "title": "University of Utah Logo",
+    "alt": "University of Utah Logo",
+    "fullpath": "https://dxbhsrqyrr690.cloudfront.net/sidearm.nextgen.sites/ukansas.sidearmsports.com/images/logos/UtahUtesLogo.png"
+   }
+  },
+  "media": {
+   "tv": "ESPN+",
+   "tv_image": null,
+   "tv_image_link": "",
+   "tv_image_caption": null,
+   "radio": "",
+   "video": {
+    "title": "Watch",
+    "url": "https://www.espn.com/watch/player/_/id/50cd4dd3-976c-4931-a4ce-73c2b7e68738",
+    "label": "Video for Softball vs Utah on March 22, 2026 at 12 p.m. CT",
+    "cssClass": null
+   },
+   "audio": null,
+   "stats": {
+    "title": "Live stats",
+    "url": "https://stats.statbroadcast.com/broadcast/?id=646164",
+    "label": "Live stats for Softball vs Utah on March 22, 2026 at 12 p.m. CT",
+    "cssClass": null
+   },
+   "tickets": null,
+   "preview": {
+    "title": "Preview",
+    "url": "/news/2026/3/19/kansas-softball-set-for-first-big-12-home-series-vs-utah",
+    "label": "Preview for Softball vs Utah on March 22, 2026 at 12 p.m. CT",
+    "cssClass": null
+   },
+   "gamefiles": [],
+   "custom_display_fields": []
+  },
+  "result": {
+   "status": "W",
+   "team_score": "10",
+   "opponent_score": "5",
+   "prescore_info": "",
+   "postscore_info": "",
+   "boxscore": {
+    "title": "Box Score",
+    "url": "/sports/softball/stats/2026/utah/boxscore/20461",
+    "label": "Box score of Softball vs Utah on March 22, 2026 at 12 p.m. CT",
+    "cssClass": null
+   },
+   "recap": null
+  },
+  "facility": {
+   "id": 313,
+   "title": "Arrocha Ballpark",
+   "url": "/facilities/arrocha-ballpark/313"
+  },
+  "tournament": null,
+  "tournament_startdate": null,
+  "galleries": [
+   2702
+  ],
+  "game_program": "Program",
+  "has_weplayed_moments": false,
+  "ticket_link": {
+   "customMessages": [],
+   "label": "Buy Tickets:  Utah on March 22 12 p.m. CT",
+   "fallbackText": "Buy tickets",
+   "seatGeekLink": null,
+   "showSeatGeek": false,
+   "featured": false,
+   "url": null,
+   "text": "Buy Tickets"
+  },
+  "game_links": []
+ },
+ {
+  "id": 20465,
+  "date": "2026-03-26T19:00:00",
+  "enddate": null,
+  "game_state": 0,
+  "game_state_display": "SCHEDULED",
+  "game_center_enabled": false,
+  "game_center_link": "/game-center/20465",
+  "time": "7 p.m. CT ",
+  "conference": true,
+  "location": " Provo, Utah",
+  "location_indicator": "A",
+  "neutral_hometeam": null,
+  "at_vs": "at",
+  "status": "O",
+  "noplay_text": "",
+  "type": "R",
+  "promotion": null,
+  "promotion_link": "",
+  "promotion_image_link": null,
+  "promotion_image": null,
+  "promotion_caption": null,
+  "event_image": null,
+  "is_a_doubleheader": false,
+  "opponent_history_path": "/sports/softball/opponent-history/byu/2929",
+  "display_vsat_indicator": true,
+  "game_program_link": null,
+  "opponent": {
+   "id": 2929,
+   "title": "BYU",
+   "prefix": "",
+   "website": " ",
+   "website_label": "BYU on March 26, 2026 7 p.m. CT ",
+   "location": "Provo, UT",
+   "conference": false,
+   "mascot": "Cougars",
+   "image": {
+    "filename": "BYU_logo.png",
+    "path": "/images/logos",
+    "title": "Brigham Young University Logo",
+    "alt": "Brigham Young University Logo",
+    "fullpath": "https://dxbhsrqyrr690.cloudfront.net/sidearm.nextgen.sites/ukansas.sidearmsports.com/images/logos/BYU_logo.png"
+   }
+  },
+  "media": {
+   "tv": "ESPN+",
+   "tv_image": null,
+   "tv_image_link": "",
+   "tv_image_caption": null,
+   "radio": "",
+   "video": {
+    "title": "Watch",
+    "url": "https://www.espn.com/watch/player/_/id/3a8074b1-b07c-48ac-9e2f-4548e087952f",
+    "label": "Video for Softball at BYU on March 26, 2026 at 7 p.m. CT ",
+    "cssClass": null
+   },
+   "audio": null,
+   "stats": {
+    "title": "Live stats",
+    "url": "https://stats.statbroadcast.com/broadcast/?id=637346&vislive=kan",
+    "label": "Live stats for Softball at BYU on March 26, 2026 at 7 p.m. CT ",
+    "cssClass": null
+   },
+   "tickets": null,
+   "preview": {
+    "title": "Preview",
+    "url": "/news/2026/3/25/kansas-softball-continues-big-12-play-at-byu",
+    "label": "Preview for Softball at BYU on March 26, 2026 at 7 p.m. CT ",
+    "cssClass": null
+   },
+   "gamefiles": [],
+   "custom_display_fields": []
+  },
+  "result": {
+   "status": "W",
+   "team_score": "6",
+   "opponent_score": "4",
+   "prescore_info": "",
+   "postscore_info": "",
+   "boxscore": {
+    "title": "Box Score",
+    "url": "/sports/softball/stats/2026/byu/boxscore/20465",
+    "label": "Box score of Softball at BYU on March 26, 2026 at 7 p.m. CT ",
+    "cssClass": null
+   },
+   "recap": {
+    "title": "Recap",
+    "url": "/news/2026/3/26/softball-jayhawks-use-early-surge-to-take-series-opener-over-byu-6-4",
+    "label": "Story recap for Softball at BYU on March 26, 2026 at 7 p.m. CT ",
+    "cssClass": null
+   }
+  },
+  "facility": {
+   "id": 146,
+   "title": "Miller Park",
+   "url": ""
+  },
+  "tournament": null,
+  "tournament_startdate": null,
+  "galleries": [],
+  "game_program": "Program",
+  "has_weplayed_moments": false,
+  "ticket_link": {
+   "customMessages": [],
+   "label": "Buy Tickets:  BYU on March 26 7 p.m. CT ",
+   "fallbackText": "Buy tickets",
+   "seatGeekLink": null,
+   "showSeatGeek": false,
+   "featured": false,
+   "url": null,
+   "text": "Buy Tickets"
+  },
+  "game_links": []
+ },
+ {
+  "id": 20462,
+  "date": "2026-03-27T19:00:00",
+  "enddate": null,
+  "game_state": 0,
+  "game_state_display": "SCHEDULED",
+  "game_center_enabled": false,
+  "game_center_link": "/game-center/20462",
+  "time": "7 p.m. CT",
+  "conference": true,
+  "location": " Provo, Utah",
+  "location_indicator": "A",
+  "neutral_hometeam": null,
+  "at_vs": "at",
+  "status": "O",
+  "noplay_text": "",
+  "type": "R",
+  "promotion": null,
+  "promotion_link": "",
+  "promotion_image_link": null,
+  "promotion_image": null,
+  "promotion_caption": null,
+  "event_image": null,
+  "is_a_doubleheader": false,
+  "opponent_history_path": "/sports/softball/opponent-history/byu/2929",
+  "display_vsat_indicator": true,
+  "game_program_link": null,
+  "opponent": {
+   "id": 2929,
+   "title": "BYU",
+   "prefix": "",
+   "website": " ",
+   "website_label": "BYU on March 27, 2026 7 p.m. CT",
+   "location": "Provo, UT",
+   "conference": false,
+   "mascot": "Cougars",
+   "image": {
+    "filename": "BYU_logo.png",
+    "path": "/images/logos",
+    "title": "Brigham Young University Logo",
+    "alt": "Brigham Young University Logo",
+    "fullpath": "https://dxbhsrqyrr690.cloudfront.net/sidearm.nextgen.sites/ukansas.sidearmsports.com/images/logos/BYU_logo.png"
+   }
+  },
+  "media": {
+   "tv": "ESPN+",
+   "tv_image": null,
+   "tv_image_link": "",
+   "tv_image_caption": null,
+   "radio": "",
+   "video": {
+    "title": "Watch",
+    "url": "https://www.espn.com/watch/player/_/id/4ad5d2c6-7056-4461-baae-591ffa48cab9",
+    "label": "Video for Softball at BYU on March 27, 2026 at 7 p.m. CT",
+    "cssClass": null
+   },
+   "audio": null,
+   "stats": {
+    "title": "Live stats",
+    "url": "https://stats.statbroadcast.com/broadcast/?id=637347&vislive=kan",
+    "label": "Live stats for Softball at BYU on March 27, 2026 at 7 p.m. CT",
+    "cssClass": null
+   },
+   "tickets": null,
+   "preview": {
+    "title": "Preview",
+    "url": "/news/2026/3/25/kansas-softball-continues-big-12-play-at-byu",
+    "label": "Preview for Softball at BYU on March 27, 2026 at 7 p.m. CT",
+    "cssClass": null
+   },
+   "gamefiles": [],
+   "custom_display_fields": []
+  },
+  "result": {
+   "status": "L",
+   "team_score": "3",
+   "opponent_score": "4",
+   "prescore_info": "",
+   "postscore_info": "",
+   "boxscore": {
+    "title": "Box Score",
+    "url": "/sports/softball/stats/2026/byu/boxscore/20462",
+    "label": "Box score of Softball at BYU on March 27, 2026 at 7 p.m. CT",
+    "cssClass": null
+   },
+   "recap": null
+  },
+  "facility": {
+   "id": 146,
+   "title": "Miller Park",
+   "url": ""
+  },
+  "tournament": null,
+  "tournament_startdate": null,
+  "galleries": [],
+  "game_program": "Program",
+  "has_weplayed_moments": false,
+  "ticket_link": {
+   "customMessages": [],
+   "label": "Buy Tickets:  BYU on March 27 7 p.m. CT",
+   "fallbackText": "Buy tickets",
+   "seatGeekLink": null,
+   "showSeatGeek": false,
+   "featured": false,
+   "url": null,
+   "text": "Buy Tickets"
+  },
+  "game_links": []
+ },
+ {
+  "id": 20463,
+  "date": "2026-03-28T12:30:00",
+  "enddate": null,
+  "game_state": 0,
+  "game_state_display": "SCHEDULED",
+  "game_center_enabled": false,
+  "game_center_link": "/game-center/20463",
+  "time": "12:30  p.m. CT",
+  "conference": true,
+  "location": " Provo, Utah",
+  "location_indicator": "A",
+  "neutral_hometeam": null,
+  "at_vs": "at",
+  "status": "O",
+  "noplay_text": "",
+  "type": "R",
+  "promotion": null,
+  "promotion_link": "",
+  "promotion_image_link": null,
+  "promotion_image": null,
+  "promotion_caption": null,
+  "event_image": null,
+  "is_a_doubleheader": false,
+  "opponent_history_path": "/sports/softball/opponent-history/byu/2929",
+  "display_vsat_indicator": true,
+  "game_program_link": null,
+  "opponent": {
+   "id": 2929,
+   "title": "BYU",
+   "prefix": "",
+   "website": " ",
+   "website_label": "BYU on March 28, 2026 12:30  p.m. CT",
+   "location": "Provo, UT",
+   "conference": false,
+   "mascot": "Cougars",
+   "image": {
+    "filename": "BYU_logo.png",
+    "path": "/images/logos",
+    "title": "Brigham Young University Logo",
+    "alt": "Brigham Young University Logo",
+    "fullpath": "https://dxbhsrqyrr690.cloudfront.net/sidearm.nextgen.sites/ukansas.sidearmsports.com/images/logos/BYU_logo.png"
+   }
+  },
+  "media": {
+   "tv": "ESPN+ ",
+   "tv_image": null,
+   "tv_image_link": "",
+   "tv_image_caption": null,
+   "radio": "",
+   "video": {
+    "title": "Watch",
+    "url": "https://www.espn.com/watch/player/_/id/ebb90c03-0dc4-4b4c-8e01-5ba8e7f7c121",
+    "label": "Video for Softball at BYU on March 28, 2026 at 12:30  p.m. CT",
+    "cssClass": null
+   },
+   "audio": null,
+   "stats": {
+    "title": "Live stats",
+    "url": "https://stats.statbroadcast.com/broadcast/?id=637348&vislive=kan",
+    "label": "Live stats for Softball at BYU on March 28, 2026 at 12:30  p.m. CT",
+    "cssClass": null
+   },
+   "tickets": null,
+   "preview": {
+    "title": "Preview",
+    "url": "/news/2026/3/25/kansas-softball-continues-big-12-play-at-byu",
+    "label": "Preview for Softball at BYU on March 28, 2026 at 12:30  p.m. CT",
+    "cssClass": null
+   },
+   "gamefiles": [],
+   "custom_display_fields": []
+  },
+  "result": {
+   "status": "W",
+   "team_score": "10",
+   "opponent_score": "3",
+   "prescore_info": "",
+   "postscore_info": "",
+   "boxscore": {
+    "title": "Box Score",
+    "url": "/sports/softball/stats/2026/byu/boxscore/20463",
+    "label": "Box score of Softball at BYU on March 28, 2026 at 12:30  p.m. CT",
+    "cssClass": null
+   },
+   "recap": {
+    "title": "Recap",
+    "url": "/news/2026/3/28/softball-kansas-caps-road-trip-with-series-clinching-win-at-byu",
+    "label": "Story recap for Softball at BYU on March 28, 2026 at 12:30  p.m. CT",
+    "cssClass": null
+   }
+  },
+  "facility": {
+   "id": 146,
+   "title": "Miller Park",
+   "url": ""
+  },
+  "tournament": null,
+  "tournament_startdate": null,
+  "galleries": [],
+  "game_program": "Program",
+  "has_weplayed_moments": false,
+  "ticket_link": {
+   "customMessages": [],
+   "label": "Buy Tickets:  BYU on March 28 12:30  p.m. CT",
+   "fallbackText": "Buy tickets",
+   "seatGeekLink": null,
+   "showSeatGeek": false,
+   "featured": false,
+   "url": null,
+   "text": "Buy Tickets"
+  },
+  "game_links": []
+ },
+ {
+  "id": 20466,
+  "date": "2026-04-02T15:00:00",
+  "enddate": null,
+  "game_state": 0,
+  "game_state_display": "SCHEDULED",
+  "game_center_enabled": false,
+  "game_center_link": "/game-center/20466",
+  "time": "3 p.m. CT",
+  "conference": true,
+  "location": "Lawrence, Kan. ",
+  "location_indicator": "H",
+  "neutral_hometeam": null,
+  "at_vs": "vs",
+  "status": "O",
+  "noplay_text": "",
+  "type": "R",
+  "promotion": "Explore Lawrence",
+  "promotion_link": "https://www.explorelawrence.com/",
+  "promotion_image_link": null,
+  "promotion_image": null,
+  "promotion_caption": null,
+  "event_image": null,
+  "is_a_doubleheader": true,
+  "opponent_history_path": "/sports/softball/opponent-history/arizona-state/2909",
+  "display_vsat_indicator": true,
+  "game_program_link": null,
+  "opponent": {
+   "id": 2909,
+   "title": "#20/23 Arizona State",
+   "prefix": "#20/23",
+   "website": " ",
+   "website_label": "Arizona State on April 2, 2026 3 p.m. CT",
+   "location": "Tempe, AZ",
+   "conference": false,
+   "mascot": "Sun Devils",
+   "image": {
+    "filename": "Arizona-State.png",
+    "path": "/images/logos",
+    "title": "Arizona State University Logo",
+    "alt": "Arizona State University Logo",
+    "fullpath": "https://dxbhsrqyrr690.cloudfront.net/sidearm.nextgen.sites/ukansas.sidearmsports.com/images/logos/Arizona-State.png"
+   }
+  },
+  "media": {
+   "tv": "ESPN+",
+   "tv_image": null,
+   "tv_image_link": "",
+   "tv_image_caption": null,
+   "radio": "",
+   "video": {
+    "title": "Watch",
+    "url": "https://www.espn.com/watch/collections/36b71781-cc45-4f3a-9ddb-03b58a9ef2fb/live-upcoming",
+    "label": "Video for Softball vs Arizona State on April 2, 2026 at 3 p.m. CT",
+    "cssClass": null
+   },
+   "audio": null,
+   "stats": {
+    "title": "Live stats",
+    "url": "https://stats.statbroadcast.com/broadcast/?id=657270",
+    "label": "Live stats for Softball vs Arizona State on April 2, 2026 at 3 p.m. CT",
+    "cssClass": null
+   },
+   "tickets": null,
+   "preview": {
+    "title": "Preview",
+    "url": "/news/2026/4/1/softball-kansas-faces-top-25-arizona-state-at-arrocha-ballpark",
+    "label": "Preview for Softball vs Arizona State on April 2, 2026 at 3 p.m. CT",
+    "cssClass": null
+   },
+   "gamefiles": [],
+   "custom_display_fields": []
+  },
+  "result": {
+   "status": "L",
+   "team_score": "5",
+   "opponent_score": "8",
+   "prescore_info": "",
+   "postscore_info": "",
+   "boxscore": {
+    "title": "Box Score",
+    "url": "/sports/softball/stats/2026/arizona-state/boxscore/20466",
+    "label": "Box score of Softball vs Arizona State on April 2, 2026 at 3 p.m. CT",
+    "cssClass": null
+   },
+   "recap": {
+    "title": "Recap",
+    "url": "/news/2026/4/2/softball-kansas-splits-with-no-20-23-arizona-state-wins-11-7-in-game-2",
+    "label": "Story recap for Softball vs Arizona State on April 2, 2026 at 3 p.m. CT",
+    "cssClass": null
+   }
+  },
+  "facility": {
+   "id": 313,
+   "title": "Arrocha Ballpark",
+   "url": "/facilities/arrocha-ballpark/313"
+  },
+  "tournament": null,
+  "tournament_startdate": null,
+  "galleries": [],
+  "game_program": "Program",
+  "has_weplayed_moments": false,
+  "ticket_link": {
+   "customMessages": [],
+   "label": "Buy Tickets:  Arizona State on April 2 3 p.m. CT",
+   "fallbackText": "Buy tickets",
+   "seatGeekLink": null,
+   "showSeatGeek": false,
+   "featured": false,
+   "url": null,
+   "text": "Buy Tickets"
+  },
+  "game_links": []
+ },
+ {
+  "id": 20578,
+  "date": "2026-04-02T17:30:00",
+  "enddate": null,
+  "game_state": 0,
+  "game_state_display": "SCHEDULED",
+  "game_center_enabled": false,
+  "game_center_link": "/game-center/20578",
+  "time": "5:30 p.m. CT",
+  "conference": false,
+  "location": "Lawrence, Kan. ",
+  "location_indicator": "H",
+  "neutral_hometeam": null,
+  "at_vs": "vs",
+  "status": "O",
+  "noplay_text": "",
+  "type": "R",
+  "promotion": null,
+  "promotion_link": "",
+  "promotion_image_link": null,
+  "promotion_image": null,
+  "promotion_caption": null,
+  "event_image": null,
+  "is_a_doubleheader": true,
+  "opponent_history_path": "/sports/softball/opponent-history/arizona-state/926",
+  "display_vsat_indicator": true,
+  "game_program_link": null,
+  "opponent": {
+   "id": 926,
+   "title": "#20/23 Arizona State",
+   "prefix": "#20/23",
+   "website": " ",
+   "website_label": "Arizona State on April 2, 2026 5:30 p.m. CT",
+   "location": " ",
+   "conference": false,
+   "mascot": "",
+   "image": {
+    "filename": "Arizona-State.png",
+    "path": "/images/2024/5/10",
+    "title": "",
+    "alt": "",
+    "fullpath": "https://dxbhsrqyrr690.cloudfront.net/sidearm.nextgen.sites/ukansas.sidearmsports.com/images/2024/5/10/Arizona-State.png"
+   }
+  },
+  "media": {
+   "tv": "ESPN+",
+   "tv_image": null,
+   "tv_image_link": "",
+   "tv_image_caption": null,
+   "radio": "",
+   "video": {
+    "title": "Watch",
+    "url": "https://www.espn.com/watch/collections/44052/ncaa-softball-live-upcoming",
+    "label": "Video for Softball vs Arizona State on April 2, 2026 at 5:30 p.m. CT",
+    "cssClass": null
+   },
+   "audio": null,
+   "stats": {
+    "title": "Live stats",
+    "url": "https://stats.statbroadcast.com/statmonitr/?id=657269",
+    "label": "Live stats for Softball vs Arizona State on April 2, 2026 at 5:30 p.m. CT",
+    "cssClass": null
+   },
+   "tickets": null,
+   "preview": {
+    "title": "Preview",
+    "url": "/news/2026/4/1/softball-kansas-faces-top-25-arizona-state-at-arrocha-ballpark",
+    "label": "Preview for Softball vs Arizona State on April 2, 2026 at 5:30 p.m. CT",
+    "cssClass": null
+   },
+   "gamefiles": [],
+   "custom_display_fields": []
+  },
+  "result": {
+   "status": "W",
+   "team_score": "11",
+   "opponent_score": "7",
+   "prescore_info": "",
+   "postscore_info": "",
+   "boxscore": {
+    "title": "Box Score",
+    "url": "/sports/softball/stats/2026/arizona-state/boxscore/20578",
+    "label": "Box score of Softball vs Arizona State on April 2, 2026 at 5:30 p.m. CT",
+    "cssClass": null
+   },
+   "recap": {
+    "title": "Recap",
+    "url": "/news/2026/4/2/softball-kansas-splits-with-no-20-23-arizona-state-wins-11-7-in-game-2",
+    "label": "Story recap for Softball vs Arizona State on April 2, 2026 at 5:30 p.m. CT",
+    "cssClass": null
+   }
+  },
+  "facility": {
+   "id": 313,
+   "title": "Arrocha Ballpark",
+   "url": "/facilities/arrocha-ballpark/313"
+  },
+  "tournament": null,
+  "tournament_startdate": null,
+  "galleries": [],
+  "game_program": "Program",
+  "has_weplayed_moments": false,
+  "ticket_link": {
+   "customMessages": [],
+   "label": "Buy Tickets:  Arizona State on April 2 5:30 p.m. CT",
+   "fallbackText": "Buy tickets",
+   "seatGeekLink": null,
+   "showSeatGeek": false,
+   "featured": false,
+   "url": null,
+   "text": "Buy Tickets"
+  },
+  "game_links": []
+ },
+ {
+  "id": 20468,
+  "date": "2026-04-04T12:00:00",
+  "enddate": null,
+  "game_state": 0,
+  "game_state_display": "SCHEDULED",
+  "game_center_enabled": false,
+  "game_center_link": "/game-center/20468",
+  "time": "12 p.m. CT ",
+  "conference": true,
+  "location": "Lawrence, Kan. ",
+  "location_indicator": "H",
+  "neutral_hometeam": null,
+  "at_vs": "vs",
+  "status": "O",
+  "noplay_text": "",
+  "type": "R",
+  "promotion": "Explore Lawrence",
+  "promotion_link": "https://www.explorelawrence.com/",
+  "promotion_image_link": null,
+  "promotion_image": null,
+  "promotion_caption": null,
+  "event_image": null,
+  "is_a_doubleheader": false,
+  "opponent_history_path": "/sports/softball/opponent-history/arizona-state/2909",
+  "display_vsat_indicator": true,
+  "game_program_link": null,
+  "opponent": {
+   "id": 2909,
+   "title": "#20/23 Arizona State",
+   "prefix": "#20/23",
+   "website": " ",
+   "website_label": "Arizona State on April 4, 2026 12 p.m. CT ",
+   "location": "Tempe, AZ",
+   "conference": false,
+   "mascot": "Sun Devils",
+   "image": {
+    "filename": "Arizona-State.png",
+    "path": "/images/logos",
+    "title": "Arizona State University Logo",
+    "alt": "Arizona State University Logo",
+    "fullpath": "https://dxbhsrqyrr690.cloudfront.net/sidearm.nextgen.sites/ukansas.sidearmsports.com/images/logos/Arizona-State.png"
+   }
+  },
+  "media": {
+   "tv": "ESPN+",
+   "tv_image": null,
+   "tv_image_link": "",
+   "tv_image_caption": null,
+   "radio": "",
+   "video": {
+    "title": "Watch",
+    "url": "https://www.espn.com/watch/collections/44052/ncaa-softball-live-upcoming",
+    "label": "Video for Softball vs Arizona State on April 4, 2026 at 12 p.m. CT ",
+    "cssClass": null
+   },
+   "audio": null,
+   "stats": {
+    "title": "Live stats",
+    "url": "https://stats.statbroadcast.com/broadcast/?id=638878",
+    "label": "Live stats for Softball vs Arizona State on April 4, 2026 at 12 p.m. CT ",
+    "cssClass": null
+   },
+   "tickets": null,
+   "preview": {
+    "title": "Preview",
+    "url": "/news/2026/4/1/softball-kansas-faces-top-25-arizona-state-at-arrocha-ballpark",
+    "label": "Preview for Softball vs Arizona State on April 4, 2026 at 12 p.m. CT ",
+    "cssClass": null
+   },
+   "gamefiles": [],
+   "custom_display_fields": []
+  },
+  "result": {
+   "status": "W",
+   "team_score": "5",
+   "opponent_score": "4",
+   "prescore_info": "",
+   "postscore_info": "",
+   "boxscore": {
+    "title": "Box Score",
+    "url": "/sports/softball/stats/2026/arizona-state/boxscore/20468",
+    "label": "Box score of Softball vs Arizona State on April 4, 2026 at 12 p.m. CT ",
+    "cssClass": null
+   },
+   "recap": {
+    "title": "Recap",
+    "url": "/news/2026/4/4/softball-boyer-bagshaw-power-kansas-to-5-4-win-over-no-20-arizona-state",
+    "label": "Story recap for Softball vs Arizona State on April 4, 2026 at 12 p.m. CT ",
+    "cssClass": null
+   }
+  },
+  "facility": {
+   "id": 313,
+   "title": "Arrocha Ballpark",
+   "url": "/facilities/arrocha-ballpark/313"
+  },
+  "tournament": null,
+  "tournament_startdate": null,
+  "galleries": [],
+  "game_program": "Program",
+  "has_weplayed_moments": false,
+  "ticket_link": {
+   "customMessages": [],
+   "label": "Buy Tickets:  Arizona State on April 4 12 p.m. CT ",
+   "fallbackText": "Buy tickets",
+   "seatGeekLink": null,
+   "showSeatGeek": false,
+   "featured": false,
+   "url": null,
+   "text": "Buy Tickets"
+  },
+  "game_links": []
+ },
+ {
+  "id": 20469,
+  "date": "2026-04-10T14:00:00",
+  "enddate": null,
+  "game_state": 0,
+  "game_state_display": "SCHEDULED",
+  "game_center_enabled": false,
+  "game_center_link": "/game-center/20469",
+  "time": "2 p.m. CT",
+  "conference": true,
+  "location": "Lawrence, Kan. ",
+  "location_indicator": "H",
+  "neutral_hometeam": null,
+  "at_vs": "vs",
+  "status": "O",
+  "noplay_text": "",
+  "type": "R",
+  "promotion": "Explore Lawrence",
+  "promotion_link": "https://www.explorelawrence.com/",
+  "promotion_image_link": null,
+  "promotion_image": null,
+  "promotion_caption": null,
+  "event_image": null,
+  "is_a_doubleheader": true,
+  "opponent_history_path": "/sports/softball/opponent-history/baylor/2919",
+  "display_vsat_indicator": true,
+  "game_program_link": null,
+  "opponent": {
+   "id": 2919,
+   "title": "Baylor",
+   "prefix": "",
+   "website": " ",
+   "website_label": "Baylor on April 10, 2026 2 p.m. CT",
+   "location": "Waco, TX",
+   "conference": false,
+   "mascot": "Bears",
+   "image": {
+    "filename": "bu-1-color-01.png",
+    "path": "/images/logos",
+    "title": "Baylor University Logo",
+    "alt": "Baylor University Logo",
+    "fullpath": "https://dxbhsrqyrr690.cloudfront.net/sidearm.nextgen.sites/ukansas.sidearmsports.com/images/logos/bu-1-color-01.png"
+   }
+  },
+  "media": {
+   "tv": "ESPN+",
+   "tv_image": null,
+   "tv_image_link": "",
+   "tv_image_caption": null,
+   "radio": "",
+   "video": {
+    "title": "Watch",
+    "url": "https://www.espn.com/watch/player/_/id/522a47ff-60a3-4a52-861e-e4388a088f04",
+    "label": "Video for Softball vs Baylor on April 10, 2026 at 2 p.m. CT",
+    "cssClass": null
+   },
+   "audio": null,
+   "stats": {
+    "title": "Live stats",
+    "url": "https://stats.statbroadcast.com/broadcast/?id=630438&vislive=kan",
+    "label": "Live stats for Softball vs Baylor on April 10, 2026 at 2 p.m. CT",
+    "cssClass": null
+   },
+   "tickets": null,
+   "preview": {
+    "title": "Preview",
+    "url": "/news/2026/4/9/kansas-softball-climbs-into-top-25-eyes-big-12-series-at-baylor",
+    "label": "Preview for Softball vs Baylor on April 10, 2026 at 2 p.m. CT",
+    "cssClass": null
+   },
+   "gamefiles": [],
+   "custom_display_fields": []
+  },
+  "result": {
+   "status": "L",
+   "team_score": "7",
+   "opponent_score": "8",
+   "prescore_info": "",
+   "postscore_info": "",
+   "boxscore": {
+    "title": "Box Score",
+    "url": "/sports/softball/stats/2026/baylor/boxscore/20469",
+    "label": "Box score of Softball vs Baylor on April 10, 2026 at 2 p.m. CT",
+    "cssClass": null
+   },
+   "recap": {
+    "title": "Recap",
+    "url": "/news/2026/4/10/softball-no-23-kansas-splits-doubleheader-vs-baylor-friday",
+    "label": "Story recap for Softball vs Baylor on April 10, 2026 at 2 p.m. CT",
+    "cssClass": null
+   }
+  },
+  "facility": {
+   "id": 313,
+   "title": "Arrocha Ballpark",
+   "url": "/facilities/arrocha-ballpark/313"
+  },
+  "tournament": null,
+  "tournament_startdate": null,
+  "galleries": [
+   2720
+  ],
+  "game_program": "Program",
+  "has_weplayed_moments": false,
+  "ticket_link": {
+   "customMessages": [],
+   "label": "Buy Tickets:  Baylor on April 10 2 p.m. CT",
+   "fallbackText": "Buy tickets",
+   "seatGeekLink": null,
+   "showSeatGeek": false,
+   "featured": false,
+   "url": null,
+   "text": "Buy Tickets"
+  },
+  "game_links": []
+ },
+ {
+  "id": 20470,
+  "date": "2026-04-10T16:30:00",
+  "enddate": null,
+  "game_state": 0,
+  "game_state_display": "SCHEDULED",
+  "game_center_enabled": false,
+  "game_center_link": "/game-center/20470",
+  "time": "4:30  p.m. CT",
+  "conference": true,
+  "location": "Lawrence, Kan. ",
+  "location_indicator": "H",
+  "neutral_hometeam": null,
+  "at_vs": "vs",
+  "status": "O",
+  "noplay_text": "",
+  "type": "R",
+  "promotion": "Explore Lawrence",
+  "promotion_link": "https://www.explorelawrence.com/",
+  "promotion_image_link": null,
+  "promotion_image": null,
+  "promotion_caption": null,
+  "event_image": null,
+  "is_a_doubleheader": true,
+  "opponent_history_path": "/sports/softball/opponent-history/baylor/2919",
+  "display_vsat_indicator": true,
+  "game_program_link": null,
+  "opponent": {
+   "id": 2919,
+   "title": "Baylor",
+   "prefix": "",
+   "website": " ",
+   "website_label": "Baylor on April 10, 2026 4:30  p.m. CT",
+   "location": "Waco, TX",
+   "conference": false,
+   "mascot": "Bears",
+   "image": {
+    "filename": "bu-1-color-01.png",
+    "path": "/images/logos",
+    "title": "Baylor University Logo",
+    "alt": "Baylor University Logo",
+    "fullpath": "https://dxbhsrqyrr690.cloudfront.net/sidearm.nextgen.sites/ukansas.sidearmsports.com/images/logos/bu-1-color-01.png"
+   }
+  },
+  "media": {
+   "tv": "ESPN+",
+   "tv_image": null,
+   "tv_image_link": "",
+   "tv_image_caption": null,
+   "radio": "",
+   "video": {
+    "title": "Watch",
+    "url": "https://www.espn.com/watch/player/_/id/1ec2226a-9436-4a58-992c-ee16002ac36a",
+    "label": "Video for Softball vs Baylor on April 10, 2026 at 4:30  p.m. CT",
+    "cssClass": null
+   },
+   "audio": null,
+   "stats": {
+    "title": "Live stats",
+    "url": "https://stats.statbroadcast.com/broadcast/?id=630439&vislive=kan",
+    "label": "Live stats for Softball vs Baylor on April 10, 2026 at 4:30  p.m. CT",
+    "cssClass": null
+   },
+   "tickets": null,
+   "preview": {
+    "title": "Preview",
+    "url": "/news/2026/4/9/kansas-softball-climbs-into-top-25-eyes-big-12-series-at-baylor",
+    "label": "Preview for Softball vs Baylor on April 10, 2026 at 4:30  p.m. CT",
+    "cssClass": null
+   },
+   "gamefiles": [],
+   "custom_display_fields": []
+  },
+  "result": {
+   "status": "W",
+   "team_score": "1",
+   "opponent_score": "0",
+   "prescore_info": "",
+   "postscore_info": "",
+   "boxscore": {
+    "title": "Box Score",
+    "url": "/sports/softball/stats/2026/baylor/boxscore/20470",
+    "label": "Box score of Softball vs Baylor on April 10, 2026 at 4:30  p.m. CT",
+    "cssClass": null
+   },
+   "recap": {
+    "title": "Recap",
+    "url": "/news/2026/4/10/softball-no-23-kansas-splits-doubleheader-vs-baylor-friday",
+    "label": "Story recap for Softball vs Baylor on April 10, 2026 at 4:30  p.m. CT",
+    "cssClass": null
+   }
+  },
+  "facility": {
+   "id": 313,
+   "title": "Arrocha Ballpark",
+   "url": "/facilities/arrocha-ballpark/313"
+  },
+  "tournament": null,
+  "tournament_startdate": null,
+  "galleries": [
+   2719
+  ],
+  "game_program": "Program",
+  "has_weplayed_moments": false,
+  "ticket_link": {
+   "customMessages": [],
+   "label": "Buy Tickets:  Baylor on April 10 4:30  p.m. CT",
+   "fallbackText": "Buy tickets",
+   "seatGeekLink": null,
+   "showSeatGeek": false,
+   "featured": false,
+   "url": null,
+   "text": "Buy Tickets"
+  },
+  "game_links": []
+ },
+ {
+  "id": 20471,
+  "date": "2026-04-11T14:00:00",
+  "enddate": null,
+  "game_state": 0,
+  "game_state_display": "SCHEDULED",
+  "game_center_enabled": false,
+  "game_center_link": "/game-center/20471",
+  "time": "2 p.m. CT ",
+  "conference": true,
+  "location": "Lawrence, Kan. ",
+  "location_indicator": "H",
+  "neutral_hometeam": null,
+  "at_vs": "vs",
+  "status": "O",
+  "noplay_text": "",
+  "type": "R",
+  "promotion": "Explore Lawrence",
+  "promotion_link": "https://www.explorelawrence.com/",
+  "promotion_image_link": null,
+  "promotion_image": null,
+  "promotion_caption": null,
+  "event_image": null,
+  "is_a_doubleheader": false,
+  "opponent_history_path": "/sports/softball/opponent-history/baylor/2919",
+  "display_vsat_indicator": true,
+  "game_program_link": null,
+  "opponent": {
+   "id": 2919,
+   "title": "Baylor",
+   "prefix": "",
+   "website": " ",
+   "website_label": "Baylor on April 11, 2026 2 p.m. CT ",
+   "location": "Waco, TX",
+   "conference": false,
+   "mascot": "Bears",
+   "image": {
+    "filename": "bu-1-color-01.png",
+    "path": "/images/logos",
+    "title": "Baylor University Logo",
+    "alt": "Baylor University Logo",
+    "fullpath": "https://dxbhsrqyrr690.cloudfront.net/sidearm.nextgen.sites/ukansas.sidearmsports.com/images/logos/bu-1-color-01.png"
+   }
+  },
+  "media": {
+   "tv": "ESPN+",
+   "tv_image": null,
+   "tv_image_link": "",
+   "tv_image_caption": null,
+   "radio": "",
+   "video": {
+    "title": "Watch",
+    "url": "https://www.espn.com/watch/player/_/id/e1577007-da91-46a7-a235-07f771744f8f",
+    "label": "Video for Softball vs Baylor on April 11, 2026 at 2 p.m. CT ",
+    "cssClass": null
+   },
+   "audio": null,
+   "stats": {
+    "title": "Live stats",
+    "url": "https://stats.statbroadcast.com/broadcast/?id=630440&vislive=kan",
+    "label": "Live stats for Softball vs Baylor on April 11, 2026 at 2 p.m. CT ",
+    "cssClass": null
+   },
+   "tickets": null,
+   "preview": {
+    "title": "Preview",
+    "url": "/news/2026/4/9/kansas-softball-climbs-into-top-25-eyes-big-12-series-at-baylor",
+    "label": "Preview for Softball vs Baylor on April 11, 2026 at 2 p.m. CT ",
+    "cssClass": null
+   },
+   "gamefiles": [],
+   "custom_display_fields": []
+  },
+  "result": {
+   "status": "W",
+   "team_score": "5",
+   "opponent_score": "4",
+   "prescore_info": "",
+   "postscore_info": "",
+   "boxscore": {
+    "title": "Box Score",
+    "url": "/sports/softball/stats/2026/baylor/boxscore/20471",
+    "label": "Box score of Softball vs Baylor on April 11, 2026 at 2 p.m. CT ",
+    "cssClass": null
+   },
+   "recap": {
+    "title": "Recap",
+    "url": "/news/2026/4/11/softball-no-23-kansas-walks-off-baylor-5-4-on-saturday",
+    "label": "Story recap for Softball vs Baylor on April 11, 2026 at 2 p.m. CT ",
+    "cssClass": null
+   }
+  },
+  "facility": {
+   "id": 313,
+   "title": "Arrocha Ballpark",
+   "url": "/facilities/arrocha-ballpark/313"
+  },
+  "tournament": null,
+  "tournament_startdate": null,
+  "galleries": [
+   2721
+  ],
+  "game_program": "Program",
+  "has_weplayed_moments": false,
+  "ticket_link": {
+   "customMessages": [],
+   "label": "Buy Tickets:  Baylor on April 11 2 p.m. CT ",
+   "fallbackText": "Buy tickets",
+   "seatGeekLink": null,
+   "showSeatGeek": false,
+   "featured": false,
+   "url": null,
+   "text": "Buy Tickets"
+  },
+  "game_links": []
+ },
+ {
+  "id": 20472,
+  "date": "2026-04-15T17:00:00",
+  "enddate": null,
+  "game_state": 0,
+  "game_state_display": "SCHEDULED",
+  "game_center_enabled": false,
+  "game_center_link": "/game-center/20472",
+  "time": "5 p.m. CT",
+  "conference": false,
+  "location": "Lawrence, Kan. ",
+  "location_indicator": "H",
+  "neutral_hometeam": null,
+  "at_vs": "vs",
+  "status": "O",
+  "noplay_text": "",
+  "type": "R",
+  "promotion": "Explore Lawrence",
+  "promotion_link": "https://www.explorelawrence.com/",
+  "promotion_image_link": "https://www.storage-mart.com/",
+  "promotion_image": "/images/2025/8/1/StorageMart.png",
+  "promotion_caption": null,
+  "event_image": null,
+  "is_a_doubleheader": false,
+  "opponent_history_path": "/sports/softball/opponent-history/missouri/2900",
+  "display_vsat_indicator": true,
+  "game_program_link": null,
+  "opponent": {
+   "id": 2900,
+   "title": "Missouri",
+   "prefix": "",
+   "website": " ",
+   "website_label": "Missouri on April 15, 2026 5 p.m. CT",
+   "location": "Columbia, MO",
+   "conference": false,
+   "mascot": "Tigers",
+   "image": {
+    "filename": "mizzou.png",
+    "path": "/images/logos",
+    "title": "University of Missouri Logo",
+    "alt": "University of Missouri Logo",
+    "fullpath": "https://dxbhsrqyrr690.cloudfront.net/sidearm.nextgen.sites/ukansas.sidearmsports.com/images/logos/mizzou.png"
+   }
+  },
+  "media": {
+   "tv": "ESPN+ ",
+   "tv_image": null,
+   "tv_image_link": "",
+   "tv_image_caption": null,
+   "radio": "",
+   "video": {
+    "title": "Watch",
+    "url": "https://www.espn.com/watch/player/_/id/95f6eb75-8486-4780-b8a6-5f37b57c8844",
+    "label": "Video for Softball vs Missouri on April 15, 2026 at 5 p.m. CT",
+    "cssClass": null
+   },
+   "audio": null,
+   "stats": {
+    "title": "Live stats",
+    "url": "https://stats.statbroadcast.com/statmonitr/?id=646165",
+    "label": "Live stats for Softball vs Missouri on April 15, 2026 at 5 p.m. CT",
+    "cssClass": null
+   },
+   "tickets": null,
+   "preview": {
+    "title": "Preview",
+    "url": "/news/2026/4/14/softball-kansas-to-host-missouri-in-storagemart-border-showdown-wednesday",
+    "label": "Preview for Softball vs Missouri on April 15, 2026 at 5 p.m. CT",
+    "cssClass": null
+   },
+   "gamefiles": [],
+   "custom_display_fields": []
+  },
+  "result": {
+   "status": "L",
+   "team_score": "2",
+   "opponent_score": "4",
+   "prescore_info": "",
+   "postscore_info": "",
+   "boxscore": {
+    "title": "Box Score",
+    "url": "/sports/softball/stats/2026/missouri/boxscore/20472",
+    "label": "Box score of Softball vs Missouri on April 15, 2026 at 5 p.m. CT",
+    "cssClass": null
+   },
+   "recap": {
+    "title": "Recap",
+    "url": "/news/2026/4/15/softball-jayhawks-fall-to-tigers-4-2-in-storagemart-border-showdown",
+    "label": "Story recap for Softball vs Missouri on April 15, 2026 at 5 p.m. CT",
+    "cssClass": null
+   }
+  },
+  "facility": {
+   "id": 313,
+   "title": "Arrocha Ballpark",
+   "url": "/facilities/arrocha-ballpark/313"
+  },
+  "tournament": null,
+  "tournament_startdate": null,
+  "galleries": [
+   2728
+  ],
+  "game_program": "Program",
+  "has_weplayed_moments": false,
+  "ticket_link": {
+   "customMessages": [],
+   "label": "Buy Tickets:  Missouri on April 15 5 p.m. CT",
+   "fallbackText": "Buy tickets",
+   "seatGeekLink": null,
+   "showSeatGeek": false,
+   "featured": false,
+   "url": null,
+   "text": "Buy Tickets"
+  },
+  "game_links": []
+ },
+ {
+  "id": 20500,
+  "date": "2026-04-17T17:00:00",
+  "enddate": null,
+  "game_state": 0,
+  "game_state_display": "SCHEDULED",
+  "game_center_enabled": false,
+  "game_center_link": "/game-center/20500",
+  "time": "5 p.m. CT",
+  "conference": true,
+  "location": " Orlando, Fla. ",
+  "location_indicator": "A",
+  "neutral_hometeam": null,
+  "at_vs": "at",
+  "status": "O",
+  "noplay_text": "",
+  "type": "R",
+  "promotion": null,
+  "promotion_link": "",
+  "promotion_image_link": null,
+  "promotion_image": null,
+  "promotion_caption": null,
+  "event_image": null,
+  "is_a_doubleheader": false,
+  "opponent_history_path": "/sports/softball/opponent-history/ucf/2936",
+  "display_vsat_indicator": true,
+  "game_program_link": null,
+  "opponent": {
+   "id": 2936,
+   "title": "#24/#22 UCF",
+   "prefix": "#24/#22",
+   "website": " ",
+   "website_label": "UCF on April 17, 2026 5 p.m. CT",
+   "location": "Orlando, FL",
+   "conference": false,
+   "mascot": "Knights",
+   "image": {
+    "filename": "UCF.png",
+    "path": "/images/logos",
+    "title": "University of Central Florida Logo",
+    "alt": "University of Central Florida Logo",
+    "fullpath": "https://dxbhsrqyrr690.cloudfront.net/sidearm.nextgen.sites/ukansas.sidearmsports.com/images/logos/UCF.png"
+   }
+  },
+  "media": {
+   "tv": "",
+   "tv_image": null,
+   "tv_image_link": "",
+   "tv_image_caption": null,
+   "radio": "",
+   "video": {
+    "title": "Watch",
+    "url": "https://www.espn.com/watch/player/_/id/000d59db-9752-4d46-bb98-6fa6ff271aa9",
+    "label": "Video for Softball at UCF on April 17, 2026 at 5 p.m. CT",
+    "cssClass": null
+   },
+   "audio": null,
+   "stats": {
+    "title": "Live stats",
+    "url": "https://stats.statbroadcast.com/broadcast/?id=641589&vislive=kan",
+    "label": "Live stats for Softball at UCF on April 17, 2026 at 5 p.m. CT",
+    "cssClass": null
+   },
+   "tickets": null,
+   "preview": {
+    "title": "Preview",
+    "url": "/news/2026/4/16/softball-kansas-hits-the-road-to-take-on-no-24-22-ucf",
+    "label": "Preview for Softball at UCF on April 17, 2026 at 5 p.m. CT",
+    "cssClass": null
+   },
+   "gamefiles": [],
+   "custom_display_fields": []
+  },
+  "result": {
+   "status": "L",
+   "team_score": "3",
+   "opponent_score": "6",
+   "prescore_info": "",
+   "postscore_info": "(8 Inn.)",
+   "boxscore": {
+    "title": "Box Score",
+    "url": "/sports/softball/stats/2026/ucf/boxscore/20500",
+    "label": "Box score of Softball at UCF on April 17, 2026 at 5 p.m. CT",
+    "cssClass": null
+   },
+   "recap": {
+    "title": "Recap",
+    "url": "/news/2026/4/17/softball-jayhawks-fall-to-knights-6-3-in-extra-innings",
+    "label": "Story recap for Softball at UCF on April 17, 2026 at 5 p.m. CT",
+    "cssClass": null
+   }
+  },
+  "facility": {
+   "id": 314,
+   "title": "UCF Softball Complex",
+   "url": ""
+  },
+  "tournament": null,
+  "tournament_startdate": null,
+  "galleries": [],
+  "game_program": "Program",
+  "has_weplayed_moments": false,
+  "ticket_link": {
+   "customMessages": [],
+   "label": "Buy Tickets:  UCF on April 17 5 p.m. CT",
+   "fallbackText": "Buy tickets",
+   "seatGeekLink": null,
+   "showSeatGeek": false,
+   "featured": false,
+   "url": null,
+   "text": "Buy Tickets"
+  },
+  "game_links": []
+ },
+ {
+  "id": 20501,
+  "date": "2026-04-18T16:00:00",
+  "enddate": null,
+  "game_state": 0,
+  "game_state_display": "SCHEDULED",
+  "game_center_enabled": false,
+  "game_center_link": "/game-center/20501",
+  "time": "4 p.m. CT",
+  "conference": true,
+  "location": " Orlando, Fla. ",
+  "location_indicator": "A",
+  "neutral_hometeam": null,
+  "at_vs": "at",
+  "status": "O",
+  "noplay_text": "",
+  "type": "R",
+  "promotion": null,
+  "promotion_link": "",
+  "promotion_image_link": null,
+  "promotion_image": null,
+  "promotion_caption": null,
+  "event_image": null,
+  "is_a_doubleheader": false,
+  "opponent_history_path": "/sports/softball/opponent-history/ucf/2936",
+  "display_vsat_indicator": true,
+  "game_program_link": null,
+  "opponent": {
+   "id": 2936,
+   "title": "#24/#22 UCF",
+   "prefix": "#24/#22",
+   "website": " ",
+   "website_label": "UCF on April 18, 2026 4 p.m. CT",
+   "location": "Orlando, FL",
+   "conference": false,
+   "mascot": "Knights",
+   "image": {
+    "filename": "UCF.png",
+    "path": "/images/logos",
+    "title": "University of Central Florida Logo",
+    "alt": "University of Central Florida Logo",
+    "fullpath": "https://dxbhsrqyrr690.cloudfront.net/sidearm.nextgen.sites/ukansas.sidearmsports.com/images/logos/UCF.png"
+   }
+  },
+  "media": {
+   "tv": "",
+   "tv_image": null,
+   "tv_image_link": "",
+   "tv_image_caption": null,
+   "radio": "",
+   "video": {
+    "title": "Watch",
+    "url": "https://www.espn.com/watch/player/_/id/9984ef8a-dec4-4874-b1bd-b0df65f01aec",
+    "label": "Video for Softball at UCF on April 18, 2026 at 4 p.m. CT",
+    "cssClass": null
+   },
+   "audio": null,
+   "stats": {
+    "title": "Live stats",
+    "url": "https://stats.statbroadcast.com/broadcast/?id=641590&vislive=kan",
+    "label": "Live stats for Softball at UCF on April 18, 2026 at 4 p.m. CT",
+    "cssClass": null
+   },
+   "tickets": null,
+   "preview": {
+    "title": "Preview",
+    "url": "/news/2026/4/16/softball-kansas-hits-the-road-to-take-on-no-24-22-ucf",
+    "label": "Preview for Softball at UCF on April 18, 2026 at 4 p.m. CT",
+    "cssClass": null
+   },
+   "gamefiles": [],
+   "custom_display_fields": []
+  },
+  "result": {
+   "status": "L",
+   "team_score": "2",
+   "opponent_score": "9",
+   "prescore_info": "",
+   "postscore_info": "",
+   "boxscore": {
+    "title": "Box Score",
+    "url": "/sports/softball/stats/2026/ucf/boxscore/20501",
+    "label": "Box score of Softball at UCF on April 18, 2026 at 4 p.m. CT",
+    "cssClass": null
+   },
+   "recap": {
+    "title": "Recap",
+    "url": "/news/2026/4/18/softball-kansas-drops-game-2-to-ucf-9-2",
+    "label": "Story recap for Softball at UCF on April 18, 2026 at 4 p.m. CT",
+    "cssClass": null
+   }
+  },
+  "facility": {
+   "id": 314,
+   "title": "UCF Softball Complex",
+   "url": ""
+  },
+  "tournament": null,
+  "tournament_startdate": null,
+  "galleries": [],
+  "game_program": "Program",
+  "has_weplayed_moments": false,
+  "ticket_link": {
+   "customMessages": [],
+   "label": "Buy Tickets:  UCF on April 18 4 p.m. CT",
+   "fallbackText": "Buy tickets",
+   "seatGeekLink": null,
+   "showSeatGeek": false,
+   "featured": false,
+   "url": null,
+   "text": "Buy Tickets"
+  },
+  "game_links": []
+ },
+ {
+  "id": 20502,
+  "date": "2026-04-19T10:00:00",
+  "enddate": null,
+  "game_state": 0,
+  "game_state_display": "SCHEDULED",
+  "game_center_enabled": false,
+  "game_center_link": "/game-center/20502",
+  "time": "10 a.m. CT",
+  "conference": true,
+  "location": " Orlando, Fla. ",
+  "location_indicator": "A",
+  "neutral_hometeam": null,
+  "at_vs": "at",
+  "status": "O",
+  "noplay_text": "",
+  "type": "R",
+  "promotion": null,
+  "promotion_link": "",
+  "promotion_image_link": null,
+  "promotion_image": null,
+  "promotion_caption": null,
+  "event_image": null,
+  "is_a_doubleheader": false,
+  "opponent_history_path": "/sports/softball/opponent-history/ucf/2936",
+  "display_vsat_indicator": true,
+  "game_program_link": null,
+  "opponent": {
+   "id": 2936,
+   "title": "#24/#22 UCF",
+   "prefix": "#24/#22",
+   "website": " ",
+   "website_label": "UCF on April 19, 2026 10 a.m. CT",
+   "location": "Orlando, FL",
+   "conference": false,
+   "mascot": "Knights",
+   "image": {
+    "filename": "UCF.png",
+    "path": "/images/logos",
+    "title": "University of Central Florida Logo",
+    "alt": "University of Central Florida Logo",
+    "fullpath": "https://dxbhsrqyrr690.cloudfront.net/sidearm.nextgen.sites/ukansas.sidearmsports.com/images/logos/UCF.png"
+   }
+  },
+  "media": {
+   "tv": "",
+   "tv_image": null,
+   "tv_image_link": "",
+   "tv_image_caption": null,
+   "radio": "",
+   "video": {
+    "title": "Watch",
+    "url": "https://www.espn.com/watch/player/_/id/a072980b-5bb7-4b67-b1e8-7a0901a16d59",
+    "label": "Video for Softball at UCF on April 19, 2026 at 10 a.m. CT",
+    "cssClass": null
+   },
+   "audio": null,
+   "stats": {
+    "title": "Live stats",
+    "url": "https://stats.statbroadcast.com/broadcast/?id=641591&vislive=kan",
+    "label": "Live stats for Softball at UCF on April 19, 2026 at 10 a.m. CT",
+    "cssClass": null
+   },
+   "tickets": null,
+   "preview": {
+    "title": "Preview",
+    "url": "/news/2026/4/16/softball-kansas-hits-the-road-to-take-on-no-24-22-ucf",
+    "label": "Preview for Softball at UCF on April 19, 2026 at 10 a.m. CT",
+    "cssClass": null
+   },
+   "gamefiles": [],
+   "custom_display_fields": []
+  },
+  "result": {
+   "status": "W",
+   "team_score": "4",
+   "opponent_score": "2",
+   "prescore_info": "",
+   "postscore_info": "",
+   "boxscore": {
+    "title": "Box Score",
+    "url": "/sports/softball/stats/2026/ucf/boxscore/20502",
+    "label": "Box score of Softball at UCF on April 19, 2026 at 10 a.m. CT",
+    "cssClass": null
+   },
+   "recap": {
+    "title": "Recap",
+    "url": "/news/2026/4/19/kansas-wins-series-finale-over-ucf-4-1",
+    "label": "Story recap for Softball at UCF on April 19, 2026 at 10 a.m. CT",
+    "cssClass": null
+   }
+  },
+  "facility": {
+   "id": 314,
+   "title": "UCF Softball Complex",
+   "url": ""
+  },
+  "tournament": null,
+  "tournament_startdate": null,
+  "galleries": [],
+  "game_program": "Program",
+  "has_weplayed_moments": false,
+  "ticket_link": {
+   "customMessages": [],
+   "label": "Buy Tickets:  UCF on April 19 10 a.m. CT",
+   "fallbackText": "Buy tickets",
+   "seatGeekLink": null,
+   "showSeatGeek": false,
+   "featured": false,
+   "url": null,
+   "text": "Buy Tickets"
+  },
+  "game_links": []
+ },
+ {
+  "id": 20503,
+  "date": "2026-04-24T15:00:00",
+  "enddate": null,
+  "game_state": 0,
+  "game_state_display": "SCHEDULED",
+  "game_center_enabled": false,
+  "game_center_link": "/game-center/20503",
+  "time": "3 p.m. CT",
+  "conference": true,
+  "location": "Lawrence, Kan. ",
+  "location_indicator": "H",
+  "neutral_hometeam": null,
+  "at_vs": "vs",
+  "status": "O",
+  "noplay_text": "",
+  "type": "R",
+  "promotion": "Explore Lawrence",
+  "promotion_link": "https://www.explorelawrence.com/",
+  "promotion_image_link": null,
+  "promotion_image": null,
+  "promotion_caption": null,
+  "event_image": null,
+  "is_a_doubleheader": true,
+  "opponent_history_path": "/sports/softball/opponent-history/iowa-state/2913",
+  "display_vsat_indicator": true,
+  "game_program_link": null,
+  "opponent": {
+   "id": 2913,
+   "title": "Iowa State",
+   "prefix": "",
+   "website": " ",
+   "website_label": "Iowa State on April 24, 2026 3 p.m. CT",
+   "location": "Ames, IA",
+   "conference": false,
+   "mascot": "Cyclones",
+   "image": {
+    "filename": "Iowa_State.png",
+    "path": "/images/logos",
+    "title": "Iowa State University Logo",
+    "alt": "Iowa State University Logo",
+    "fullpath": "https://dxbhsrqyrr690.cloudfront.net/sidearm.nextgen.sites/ukansas.sidearmsports.com/images/logos/Iowa_State.png"
+   }
+  },
+  "media": {
+   "tv": "",
+   "tv_image": null,
+   "tv_image_link": "",
+   "tv_image_caption": null,
+   "radio": "",
+   "video": {
+    "title": "Watch",
+    "url": "https://www.espn.com/watch/player/_/id/fff80adf-d1a5-4a23-be98-7d871d39f949",
+    "label": "Video for Softball vs Iowa State on April 24, 2026 at 3 p.m. CT",
+    "cssClass": null
+   },
+   "audio": null,
+   "stats": {
+    "title": "Live stats",
+    "url": "https://stats.statbroadcast.com/broadcast/?id=638872",
+    "label": "Live stats for Softball vs Iowa State on April 24, 2026 at 3 p.m. CT",
+    "cssClass": null
+   },
+   "tickets": null,
+   "preview": {
+    "title": "Preview",
+    "url": "/news/2026/4/23/kansas-softball-returns-home-to-take-on-iowa-state",
+    "label": "Preview for Softball vs Iowa State on April 24, 2026 at 3 p.m. CT",
+    "cssClass": null
+   },
+   "gamefiles": [],
+   "custom_display_fields": []
+  },
+  "result": {
+   "status": "W",
+   "team_score": "12",
+   "opponent_score": "2",
+   "prescore_info": "",
+   "postscore_info": "(5 Inn.)",
+   "boxscore": {
+    "title": "Box Score",
+    "url": "/sports/softball/stats/2026/iowa-state/boxscore/20503",
+    "label": "Box score of Softball vs Iowa State on April 24, 2026 at 3 p.m. CT",
+    "cssClass": null
+   },
+   "recap": {
+    "title": "Recap",
+    "url": "/news/2026/4/24/softball-jayhawks-and-cyclones-split-doubleheader",
+    "label": "Story recap for Softball vs Iowa State on April 24, 2026 at 3 p.m. CT",
+    "cssClass": null
+   }
+  },
+  "facility": {
+   "id": 313,
+   "title": "Arrocha Ballpark",
+   "url": "/facilities/arrocha-ballpark/313"
+  },
+  "tournament": null,
+  "tournament_startdate": null,
+  "galleries": [
+   2731
+  ],
+  "game_program": "Program",
+  "has_weplayed_moments": false,
+  "ticket_link": {
+   "customMessages": [],
+   "label": "Buy Tickets:  Iowa State on April 24 3 p.m. CT",
+   "fallbackText": "Buy tickets",
+   "seatGeekLink": null,
+   "showSeatGeek": false,
+   "featured": false,
+   "url": null,
+   "text": "Buy Tickets"
+  },
+  "game_links": []
+ },
+ {
+  "id": 20505,
+  "date": "2026-04-24T17:30:00",
+  "enddate": null,
+  "game_state": 0,
+  "game_state_display": "SCHEDULED",
+  "game_center_enabled": false,
+  "game_center_link": "/game-center/20505",
+  "time": "5:30 p.m. CT ",
+  "conference": true,
+  "location": "Lawrence, Kan. ",
+  "location_indicator": "H",
+  "neutral_hometeam": null,
+  "at_vs": "vs",
+  "status": "O",
+  "noplay_text": "",
+  "type": "R",
+  "promotion": "Explore Lawrence",
+  "promotion_link": "https://www.explorelawrence.com/",
+  "promotion_image_link": null,
+  "promotion_image": null,
+  "promotion_caption": null,
+  "event_image": null,
+  "is_a_doubleheader": true,
+  "opponent_history_path": "/sports/softball/opponent-history/iowa-state/2913",
+  "display_vsat_indicator": true,
+  "game_program_link": null,
+  "opponent": {
+   "id": 2913,
+   "title": "Iowa State",
+   "prefix": "",
+   "website": " ",
+   "website_label": "Iowa State on April 24, 2026 5:30 p.m. CT ",
+   "location": "Ames, IA",
+   "conference": false,
+   "mascot": "Cyclones",
+   "image": {
+    "filename": "Iowa_State.png",
+    "path": "/images/logos",
+    "title": "Iowa State University Logo",
+    "alt": "Iowa State University Logo",
+    "fullpath": "https://dxbhsrqyrr690.cloudfront.net/sidearm.nextgen.sites/ukansas.sidearmsports.com/images/logos/Iowa_State.png"
+   }
+  },
+  "media": {
+   "tv": "",
+   "tv_image": null,
+   "tv_image_link": "",
+   "tv_image_caption": null,
+   "radio": "",
+   "video": {
+    "title": "Watch",
+    "url": "https://www.espn.com/watch/player/_/id/30d3d9e5-8a63-432b-9c2a-4413f42e43e2",
+    "label": "Video for Softball vs Iowa State on April 24, 2026 at 5:30 p.m. CT ",
+    "cssClass": null
+   },
+   "audio": null,
+   "stats": {
+    "title": "Live stats",
+    "url": "https://stats.statbroadcast.com/broadcast/?id=638874",
+    "label": "Live stats for Softball vs Iowa State on April 24, 2026 at 5:30 p.m. CT ",
+    "cssClass": null
+   },
+   "tickets": null,
+   "preview": {
+    "title": "Preview",
+    "url": "/news/2026/4/23/kansas-softball-returns-home-to-take-on-iowa-state",
+    "label": "Preview for Softball vs Iowa State on April 24, 2026 at 5:30 p.m. CT ",
+    "cssClass": null
+   },
+   "gamefiles": [],
+   "custom_display_fields": []
+  },
+  "result": {
+   "status": "L",
+   "team_score": "1",
+   "opponent_score": "4",
+   "prescore_info": "",
+   "postscore_info": "",
+   "boxscore": {
+    "title": "Box Score",
+    "url": "/sports/softball/stats/2026/iowa-state/boxscore/20505",
+    "label": "Box score of Softball vs Iowa State on April 24, 2026 at 5:30 p.m. CT ",
+    "cssClass": null
+   },
+   "recap": {
+    "title": "Recap",
+    "url": "/news/2026/4/24/softball-jayhawks-and-cyclones-split-doubleheader",
+    "label": "Story recap for Softball vs Iowa State on April 24, 2026 at 5:30 p.m. CT ",
+    "cssClass": null
+   }
+  },
+  "facility": {
+   "id": 313,
+   "title": "Arrocha Ballpark",
+   "url": "/facilities/arrocha-ballpark/313"
+  },
+  "tournament": null,
+  "tournament_startdate": null,
+  "galleries": [
+   2732
+  ],
+  "game_program": "Program",
+  "has_weplayed_moments": false,
+  "ticket_link": {
+   "customMessages": [],
+   "label": "Buy Tickets:  Iowa State on April 24 5:30 p.m. CT ",
+   "fallbackText": "Buy tickets",
+   "seatGeekLink": null,
+   "showSeatGeek": false,
+   "featured": false,
+   "url": null,
+   "text": "Buy Tickets"
+  },
+  "game_links": []
+ },
+ {
+  "id": 20504,
+  "date": "2026-04-25T14:00:00",
+  "enddate": null,
+  "game_state": 0,
+  "game_state_display": "SCHEDULED",
+  "game_center_enabled": false,
+  "game_center_link": "/game-center/20504",
+  "time": "2 p.m. CT",
+  "conference": true,
+  "location": "Lawrence, Kan. ",
+  "location_indicator": "H",
+  "neutral_hometeam": null,
+  "at_vs": "vs",
+  "status": "O",
+  "noplay_text": "",
+  "type": "R",
+  "promotion": "Explore Lawrence",
+  "promotion_link": "https://www.explorelawrence.com/",
+  "promotion_image_link": null,
+  "promotion_image": null,
+  "promotion_caption": null,
+  "event_image": null,
+  "is_a_doubleheader": false,
+  "opponent_history_path": "/sports/softball/opponent-history/iowa-state/2913",
+  "display_vsat_indicator": true,
+  "game_program_link": null,
+  "opponent": {
+   "id": 2913,
+   "title": "Iowa State",
+   "prefix": "",
+   "website": " ",
+   "website_label": "Iowa State on April 25, 2026 2 p.m. CT",
+   "location": "Ames, IA",
+   "conference": false,
+   "mascot": "Cyclones",
+   "image": {
+    "filename": "Iowa_State.png",
+    "path": "/images/logos",
+    "title": "Iowa State University Logo",
+    "alt": "Iowa State University Logo",
+    "fullpath": "https://dxbhsrqyrr690.cloudfront.net/sidearm.nextgen.sites/ukansas.sidearmsports.com/images/logos/Iowa_State.png"
+   }
+  },
+  "media": {
+   "tv": "",
+   "tv_image": null,
+   "tv_image_link": "",
+   "tv_image_caption": null,
+   "radio": "",
+   "video": {
+    "title": "Watch",
+    "url": "https://www.espn.com/watch/player/_/id/ba0eca02-e98a-4e0d-96a8-b715e3337b86",
+    "label": "Video for Softball vs Iowa State on April 25, 2026 at 2 p.m. CT",
+    "cssClass": null
+   },
+   "audio": null,
+   "stats": {
+    "title": "Live stats",
+    "url": "https://stats.statbroadcast.com/broadcast/?id=638873",
+    "label": "Live stats for Softball vs Iowa State on April 25, 2026 at 2 p.m. CT",
+    "cssClass": null
+   },
+   "tickets": null,
+   "preview": {
+    "title": "Preview",
+    "url": "/news/2026/4/23/kansas-softball-returns-home-to-take-on-iowa-state",
+    "label": "Preview for Softball vs Iowa State on April 25, 2026 at 2 p.m. CT",
+    "cssClass": null
+   },
+   "gamefiles": [],
+   "custom_display_fields": []
+  },
+  "result": {
+   "status": "W",
+   "team_score": "4",
+   "opponent_score": "2",
+   "prescore_info": "",
+   "postscore_info": "(8 Inn.)",
+   "boxscore": {
+    "title": "Box Score",
+    "url": "/sports/softball/stats/2026/iowa-state/boxscore/20504",
+    "label": "Box score of Softball vs Iowa State on April 25, 2026 at 2 p.m. CT",
+    "cssClass": null
+   },
+   "recap": {
+    "title": "Recap",
+    "url": "/news/2026/4/25/soles-homer-gives-kansas-a-4-2-walk-off-win-against-iowa-state",
+    "label": "Story recap for Softball vs Iowa State on April 25, 2026 at 2 p.m. CT",
+    "cssClass": null
+   }
+  },
+  "facility": {
+   "id": 313,
+   "title": "Arrocha Ballpark",
+   "url": "/facilities/arrocha-ballpark/313"
+  },
+  "tournament": null,
+  "tournament_startdate": null,
+  "galleries": [
+   2733
+  ],
+  "game_program": "Program",
+  "has_weplayed_moments": false,
+  "ticket_link": {
+   "customMessages": [],
+   "label": "Buy Tickets:  Iowa State on April 25 2 p.m. CT",
+   "fallbackText": "Buy tickets",
+   "seatGeekLink": null,
+   "showSeatGeek": false,
+   "featured": false,
+   "url": null,
+   "text": "Buy Tickets"
+  },
+  "game_links": []
+ },
+ {
+  "id": 20506,
+  "date": "2026-04-28T17:00:00",
+  "enddate": null,
+  "game_state": 0,
+  "game_state_display": "SCHEDULED",
+  "game_center_enabled": false,
+  "game_center_link": "/game-center/20506",
+  "time": "5 p.m. CT",
+  "conference": false,
+  "location": "Lawrence, Kan. ",
+  "location_indicator": "H",
+  "neutral_hometeam": null,
+  "at_vs": "vs",
+  "status": "O",
+  "noplay_text": "",
+  "type": "R",
+  "promotion": "Explore Lawrence",
+  "promotion_link": "https://www.explorelawrence.com/",
+  "promotion_image_link": null,
+  "promotion_image": null,
+  "promotion_caption": null,
+  "event_image": null,
+  "is_a_doubleheader": false,
+  "opponent_history_path": "/sports/softball/opponent-history/wichita-state/2896",
+  "display_vsat_indicator": true,
+  "game_program_link": null,
+  "opponent": {
+   "id": 2896,
+   "title": "Wichita State",
+   "prefix": "",
+   "website": " ",
+   "website_label": "Wichita State on April 28, 2026 5 p.m. CT",
+   "location": "Wichita, KS",
+   "conference": false,
+   "mascot": "Shockers",
+   "image": {
+    "filename": "Wichitia-State.png",
+    "path": "/images/logos",
+    "title": "Wichita State University Logo",
+    "alt": "Wichita State University Logo",
+    "fullpath": "https://dxbhsrqyrr690.cloudfront.net/sidearm.nextgen.sites/ukansas.sidearmsports.com/images/logos/Wichitia-State.png"
+   }
+  },
+  "media": {
+   "tv": "",
+   "tv_image": null,
+   "tv_image_link": "",
+   "tv_image_caption": null,
+   "radio": "",
+   "video": {
+    "title": "Watch",
+    "url": "https://www.espn.com/watch/schedule/_/type/upcoming/categoryId/0ea819a4-6496-3b75-8c5f-d060b93e7c85/startDate/20260428",
+    "label": "Video for Softball vs Wichita State on April 28, 2026 at 5 p.m. CT",
+    "cssClass": null
+   },
+   "audio": null,
+   "stats": {
+    "title": "Live stats",
+    "url": "https://stats.statbroadcast.com/broadcast/?id=638875",
+    "label": "Live stats for Softball vs Wichita State on April 28, 2026 at 5 p.m. CT",
+    "cssClass": null
+   },
+   "tickets": null,
+   "preview": {
+    "title": "Preview",
+    "url": "/news/2026/4/27/kansas-softball-hosts-wichita-state-in-final-home-game-of-2026",
+    "label": "Preview for Softball vs Wichita State on April 28, 2026 at 5 p.m. CT",
+    "cssClass": null
+   },
+   "gamefiles": [],
+   "custom_display_fields": []
+  },
+  "result": {
+   "status": "W",
+   "team_score": "10",
+   "opponent_score": "0",
+   "prescore_info": "",
+   "postscore_info": "",
+   "boxscore": {
+    "title": "Box Score",
+    "url": "/sports/softball/stats/2026/wichita-state/boxscore/20506",
+    "label": "Box score of Softball vs Wichita State on April 28, 2026 at 5 p.m. CT",
+    "cssClass": null
+   },
+   "recap": {
+    "title": "Recap",
+    "url": "/news/2026/4/28/softball-jayhawks-shutout-wichita-state-10-0-in-home-finale",
+    "label": "Story recap for Softball vs Wichita State on April 28, 2026 at 5 p.m. CT",
+    "cssClass": null
+   }
+  },
+  "facility": {
+   "id": 313,
+   "title": "Arrocha Ballpark",
+   "url": "/facilities/arrocha-ballpark/313"
+  },
+  "tournament": null,
+  "tournament_startdate": null,
+  "galleries": [
+   2735
+  ],
+  "game_program": "Program",
+  "has_weplayed_moments": false,
+  "ticket_link": {
+   "customMessages": [],
+   "label": "Buy Tickets:  Wichita State on April 28 5 p.m. CT",
+   "fallbackText": "Buy tickets",
+   "seatGeekLink": null,
+   "showSeatGeek": false,
+   "featured": false,
+   "url": null,
+   "text": "Buy Tickets"
+  },
+  "game_links": []
+ },
+ {
+  "id": 20507,
+  "date": "2026-05-01T18:00:00",
+  "enddate": null,
+  "game_state": 0,
+  "game_state_display": "SCHEDULED",
+  "game_center_enabled": false,
+  "game_center_link": "/game-center/20507",
+  "time": "6 p.m. CT",
+  "conference": true,
+  "location": " Stillwater, Okla. ",
+  "location_indicator": "A",
+  "neutral_hometeam": null,
+  "at_vs": "at",
+  "status": "O",
+  "noplay_text": "",
+  "type": "R",
+  "promotion": null,
+  "promotion_link": "",
+  "promotion_image_link": null,
+  "promotion_image": null,
+  "promotion_caption": null,
+  "event_image": null,
+  "is_a_doubleheader": false,
+  "opponent_history_path": "/sports/softball/opponent-history/oklahoma-state/3020",
+  "display_vsat_indicator": true,
+  "game_program_link": null,
+  "opponent": {
+   "id": 3020,
+   "title": "#13/#16 Oklahoma State",
+   "prefix": "#13/#16",
+   "website": " ",
+   "website_label": "Oklahoma State on May 1, 2026 6 p.m. CT",
+   "location": "Stillwater, OK",
+   "conference": false,
+   "mascot": "Cowboys",
+   "image": {
+    "filename": "ok-state.png",
+    "path": "/images/logos",
+    "title": "Oklahoma State Logo",
+    "alt": "Oklahoma State Logo",
+    "fullpath": "https://dxbhsrqyrr690.cloudfront.net/sidearm.nextgen.sites/ukansas.sidearmsports.com/images/logos/ok-state.png"
+   }
+  },
+  "media": {
+   "tv": "",
+   "tv_image": null,
+   "tv_image_link": "",
+   "tv_image_caption": null,
+   "radio": "",
+   "video": {
+    "title": "Watch",
+    "url": "https://www.espn.com/watch/player/_/id/0dc40a8d-9dbc-4e93-b0d2-f0c85f930e92",
+    "label": "Video for Softball at Oklahoma State on May 1, 2026 at 6 p.m. CT",
+    "cssClass": null
+   },
+   "audio": null,
+   "stats": {
+    "title": "Live stats",
+    "url": "https://stats.statbroadcast.com/statmonitr/?id=646149",
+    "label": "Live stats for Softball at Oklahoma State on May 1, 2026 at 6 p.m. CT",
+    "cssClass": null
+   },
+   "tickets": null,
+   "preview": {
+    "title": "Preview",
+    "url": "/news/2026/4/30/kansas-softball-heads-to-oklahoma-state-for-final-big-12-series",
+    "label": "Preview for Softball at Oklahoma State on May 1, 2026 at 6 p.m. CT",
+    "cssClass": null
+   },
+   "gamefiles": [],
+   "custom_display_fields": []
+  },
+  "result": {
+   "status": "L",
+   "team_score": "1",
+   "opponent_score": "8",
+   "prescore_info": "",
+   "postscore_info": "",
+   "boxscore": {
+    "title": "Box Score",
+    "url": "/sports/softball/stats/2026/oklahoma-state/boxscore/20507",
+    "label": "Box score of Softball at Oklahoma State on May 1, 2026 at 6 p.m. CT",
+    "cssClass": null
+   },
+   "recap": {
+    "title": "Recap",
+    "url": "/news/2026/5/1/softball-jayhawks-drop-game-one-to-no-13-oklahoma-state-8-1",
+    "label": "Story recap for Softball at Oklahoma State on May 1, 2026 at 6 p.m. CT",
+    "cssClass": null
+   }
+  },
+  "facility": {
+   "id": 320,
+   "title": "Cowgirl Stadium",
+   "url": ""
+  },
+  "tournament": null,
+  "tournament_startdate": null,
+  "galleries": [],
+  "game_program": "Program",
+  "has_weplayed_moments": false,
+  "ticket_link": {
+   "customMessages": [],
+   "label": "Buy Tickets:  Oklahoma State on May 1 6 p.m. CT",
+   "fallbackText": "Buy tickets",
+   "seatGeekLink": null,
+   "showSeatGeek": false,
+   "featured": false,
+   "url": null,
+   "text": "Buy Tickets"
+  },
+  "game_links": []
+ },
+ {
+  "id": 20508,
+  "date": "2026-05-02T14:00:00",
+  "enddate": null,
+  "game_state": 0,
+  "game_state_display": "SCHEDULED",
+  "game_center_enabled": false,
+  "game_center_link": "/game-center/20508",
+  "time": "2 p.m. CT",
+  "conference": true,
+  "location": " Stillwater, Okla. ",
+  "location_indicator": "A",
+  "neutral_hometeam": null,
+  "at_vs": "at",
+  "status": "O",
+  "noplay_text": "",
+  "type": "R",
+  "promotion": null,
+  "promotion_link": "",
+  "promotion_image_link": null,
+  "promotion_image": null,
+  "promotion_caption": null,
+  "event_image": null,
+  "is_a_doubleheader": false,
+  "opponent_history_path": "/sports/softball/opponent-history/oklahoma-state/3020",
+  "display_vsat_indicator": true,
+  "game_program_link": null,
+  "opponent": {
+   "id": 3020,
+   "title": "#13/#16 Oklahoma State",
+   "prefix": "#13/#16",
+   "website": " ",
+   "website_label": "Oklahoma State on May 2, 2026 2 p.m. CT",
+   "location": "Stillwater, OK",
+   "conference": false,
+   "mascot": "Cowboys",
+   "image": {
+    "filename": "ok-state.png",
+    "path": "/images/logos",
+    "title": "Oklahoma State Logo",
+    "alt": "Oklahoma State Logo",
+    "fullpath": "https://dxbhsrqyrr690.cloudfront.net/sidearm.nextgen.sites/ukansas.sidearmsports.com/images/logos/ok-state.png"
+   }
+  },
+  "media": {
+   "tv": "",
+   "tv_image": null,
+   "tv_image_link": "",
+   "tv_image_caption": null,
+   "radio": "",
+   "video": {
+    "title": "Watch",
+    "url": "https://www.espn.com/watch/player/_/id/8f80bf78-eabb-47c4-b994-b43e333d3755",
+    "label": "Video for Softball at Oklahoma State on May 2, 2026 at 2 p.m. CT",
+    "cssClass": null
+   },
+   "audio": null,
+   "stats": {
+    "title": "Live stats",
+    "url": "https://stats.statbroadcast.com/broadcast/?id=646150&vislive=kan",
+    "label": "Live stats for Softball at Oklahoma State on May 2, 2026 at 2 p.m. CT",
+    "cssClass": null
+   },
+   "tickets": null,
+   "preview": {
+    "title": "Preview",
+    "url": "/news/2026/4/30/kansas-softball-heads-to-oklahoma-state-for-final-big-12-series",
+    "label": "Preview for Softball at Oklahoma State on May 2, 2026 at 2 p.m. CT",
+    "cssClass": null
+   },
+   "gamefiles": [],
+   "custom_display_fields": []
+  },
+  "result": {
+   "status": "W",
+   "team_score": "10",
+   "opponent_score": "1",
+   "prescore_info": "",
+   "postscore_info": "(5 Inn.)",
+   "boxscore": {
+    "title": "Box Score",
+    "url": "/sports/softball/stats/2026/oklahoma-state/boxscore/20508",
+    "label": "Box score of Softball at Oklahoma State on May 2, 2026 at 2 p.m. CT",
+    "cssClass": null
+   },
+   "recap": {
+    "title": "Recap",
+    "url": "/news/2026/5/2/softball-kansas-dominates-no-13-oklahoma-state-10-1-on-saturday",
+    "label": "Story recap for Softball at Oklahoma State on May 2, 2026 at 2 p.m. CT",
+    "cssClass": null
+   }
+  },
+  "facility": {
+   "id": 320,
+   "title": "Cowgirl Stadium",
+   "url": ""
+  },
+  "tournament": null,
+  "tournament_startdate": null,
+  "galleries": [],
+  "game_program": "Program",
+  "has_weplayed_moments": false,
+  "ticket_link": {
+   "customMessages": [],
+   "label": "Buy Tickets:  Oklahoma State on May 2 2 p.m. CT",
+   "fallbackText": "Buy tickets",
+   "seatGeekLink": null,
+   "showSeatGeek": false,
+   "featured": false,
+   "url": null,
+   "text": "Buy Tickets"
+  },
+  "game_links": []
+ },
+ {
+  "id": 20509,
+  "date": "2026-05-03T13:00:00",
+  "enddate": null,
+  "game_state": 0,
+  "game_state_display": "SCHEDULED",
+  "game_center_enabled": false,
+  "game_center_link": "/game-center/20509",
+  "time": "1 p.m. CT",
+  "conference": true,
+  "location": " Stillwater, Okla. ",
+  "location_indicator": "A",
+  "neutral_hometeam": null,
+  "at_vs": "at",
+  "status": "O",
+  "noplay_text": "",
+  "type": "R",
+  "promotion": null,
+  "promotion_link": "",
+  "promotion_image_link": null,
+  "promotion_image": null,
+  "promotion_caption": null,
+  "event_image": null,
+  "is_a_doubleheader": false,
+  "opponent_history_path": "/sports/softball/opponent-history/oklahoma-state/3020",
+  "display_vsat_indicator": true,
+  "game_program_link": null,
+  "opponent": {
+   "id": 3020,
+   "title": "#13/#16 Oklahoma State",
+   "prefix": "#13/#16",
+   "website": " ",
+   "website_label": "Oklahoma State on May 3, 2026 1 p.m. CT",
+   "location": "Stillwater, OK",
+   "conference": false,
+   "mascot": "Cowboys",
+   "image": {
+    "filename": "ok-state.png",
+    "path": "/images/logos",
+    "title": "Oklahoma State Logo",
+    "alt": "Oklahoma State Logo",
+    "fullpath": "https://dxbhsrqyrr690.cloudfront.net/sidearm.nextgen.sites/ukansas.sidearmsports.com/images/logos/ok-state.png"
+   }
+  },
+  "media": {
+   "tv": "",
+   "tv_image": null,
+   "tv_image_link": "",
+   "tv_image_caption": null,
+   "radio": "",
+   "video": {
+    "title": "Watch",
+    "url": "https://www.espn.com/watch/player/_/id/cfe8b6b1-2b7d-4f18-bffd-b0fb3937f3a8",
+    "label": "Video for Softball at Oklahoma State on May 3, 2026 at 1 p.m. CT",
+    "cssClass": null
+   },
+   "audio": null,
+   "stats": {
+    "title": "Live stats",
+    "url": "https://stats.statbroadcast.com/broadcast/?id=646152&vislive=kan",
+    "label": "Live stats for Softball at Oklahoma State on May 3, 2026 at 1 p.m. CT",
+    "cssClass": null
+   },
+   "tickets": null,
+   "preview": {
+    "title": "Preview",
+    "url": "/news/2026/4/30/kansas-softball-heads-to-oklahoma-state-for-final-big-12-series",
+    "label": "Preview for Softball at Oklahoma State on May 3, 2026 at 1 p.m. CT",
+    "cssClass": null
+   },
+   "gamefiles": [],
+   "custom_display_fields": []
+  },
+  "result": {
+   "status": "L",
+   "team_score": "0",
+   "opponent_score": "7",
+   "prescore_info": "",
+   "postscore_info": "",
+   "boxscore": {
+    "title": "Box Score",
+    "url": "/sports/softball/stats/2026/oklahoma-state/boxscore/20509",
+    "label": "Box score of Softball at Oklahoma State on May 3, 2026 at 1 p.m. CT",
+    "cssClass": null
+   },
+   "recap": {
+    "title": "Recap",
+    "url": "/news/2026/5/3/softball-kansas-falls-to-no-13-oklahoma-state-in-regular-season-finale",
+    "label": "Story recap for Softball at Oklahoma State on May 3, 2026 at 1 p.m. CT",
+    "cssClass": null
+   }
+  },
+  "facility": {
+   "id": 320,
+   "title": "Cowgirl Stadium",
+   "url": ""
+  },
+  "tournament": null,
+  "tournament_startdate": null,
+  "galleries": [],
+  "game_program": "Program",
+  "has_weplayed_moments": false,
+  "ticket_link": {
+   "customMessages": [],
+   "label": "Buy Tickets:  Oklahoma State on May 3 1 p.m. CT",
+   "fallbackText": "Buy tickets",
+   "seatGeekLink": null,
+   "showSeatGeek": false,
+   "featured": false,
+   "url": null,
+   "text": "Buy Tickets"
+  },
+  "game_links": []
+ },
+ {
+  "id": 20610,
+  "date": "2026-05-07T11:00:00",
+  "enddate": null,
+  "game_state": 0,
+  "game_state_display": "SCHEDULED",
+  "game_center_enabled": false,
+  "game_center_link": "/game-center/20610",
+  "time": "11 a.m. CT",
+  "conference": false,
+  "location": "Oklahoma City, Okla.",
+  "location_indicator": "N",
+  "neutral_hometeam": false,
+  "at_vs": "vs",
+  "status": "O",
+  "noplay_text": "",
+  "type": "P",
+  "promotion": null,
+  "promotion_link": "",
+  "promotion_image_link": null,
+  "promotion_image": null,
+  "promotion_caption": null,
+  "event_image": null,
+  "is_a_doubleheader": false,
+  "opponent_history_path": "/sports/softball/opponent-history/ucf/1026",
+  "display_vsat_indicator": true,
+  "game_program_link": null,
+  "opponent": {
+   "id": 1026,
+   "title": "(4) UCF",
+   "prefix": "(4)",
+   "website": " ",
+   "website_label": "UCF on May 7, 2026 11 a.m. CT",
+   "location": " ",
+   "conference": false,
+   "mascot": "",
+   "image": {
+    "filename": "2022_04_UCF.png",
+    "path": "/images/2024/6/18",
+    "title": "",
+    "alt": "",
+    "fullpath": "https://dxbhsrqyrr690.cloudfront.net/sidearm.nextgen.sites/ukansas.sidearmsports.com/images/2024/6/18/2022_04_UCF.png"
+   }
+  },
+  "media": {
+   "tv": "",
+   "tv_image": null,
+   "tv_image_link": "",
+   "tv_image_caption": null,
+   "radio": "",
+   "video": null,
+   "audio": null,
+   "stats": null,
+   "tickets": null,
+   "preview": {
+    "title": "Preview",
+    "url": "/news/2026/5/6/softball-no-5-seed-kansas-opens-big-12-tournament-against-no-4-ucf",
+    "label": "Preview for Softball vs UCF on May 7, 2026 at 11 a.m. CT",
+    "cssClass": null
+   },
+   "gamefiles": [],
+   "custom_display_fields": []
+  },
+  "result": {
+   "status": "W",
+   "team_score": "6",
+   "opponent_score": "5",
+   "prescore_info": "",
+   "postscore_info": "",
+   "boxscore": {
+    "title": "Box Score",
+    "url": "/sports/softball/stats/2026/ucf/boxscore/20610",
+    "label": "Box score of Softball vs UCF on May 7, 2026 at 11 a.m. CT",
+    "cssClass": null
+   },
+   "recap": {
+    "title": "Recap",
+    "url": "/news/2026/5/7/softball-kansas-wins-back-and-forth-battle-over-ucf-6-5-in-game-one-of-the-big-12-tournament",
+    "label": "Story recap for Softball vs UCF on May 7, 2026 at 11 a.m. CT",
+    "cssClass": null
+   }
+  },
+  "facility": {
+   "id": 321,
+   "title": "OGE Energy Field at Devon Park",
+   "url": ""
+  },
+  "tournament": {
+   "id": 1236,
+   "title": "2026 Big 12 Softball Tournament",
+   "website": "https://big12sports.com/tournaments/?id=1066&path=softball",
+   "color": "#000000"
+  },
+  "tournament_startdate": null,
+  "galleries": [
+   2743
+  ],
+  "game_program": "Program",
+  "has_weplayed_moments": false,
+  "ticket_link": {
+   "customMessages": [],
+   "label": "Buy Tickets:  UCF on May 7 11 a.m. CT",
+   "fallbackText": "Buy tickets",
+   "seatGeekLink": null,
+   "showSeatGeek": false,
+   "featured": false,
+   "url": null,
+   "text": "Buy Tickets"
+  },
+  "game_links": []
+ },
+ {
+  "id": 20611,
+  "date": "2026-05-08T15:00:00",
+  "enddate": null,
+  "game_state": 0,
+  "game_state_display": "SCHEDULED",
+  "game_center_enabled": false,
+  "game_center_link": "/game-center/20611",
+  "time": "3 p.m. CT",
+  "conference": false,
+  "location": "Oklahoma City, Okla.",
+  "location_indicator": "N",
+  "neutral_hometeam": false,
+  "at_vs": "vs",
+  "status": "O",
+  "noplay_text": "",
+  "type": "P",
+  "promotion": null,
+  "promotion_link": "",
+  "promotion_image_link": null,
+  "promotion_image": null,
+  "promotion_caption": null,
+  "event_image": null,
+  "is_a_doubleheader": false,
+  "opponent_history_path": "/sports/softball/opponent-history/texas-tech/2897",
+  "display_vsat_indicator": false,
+  "game_program_link": null,
+  "opponent": {
+   "id": 2897,
+   "title": "(1) Texas Tech",
+   "prefix": "(1)",
+   "website": "http://www.texastech.com",
+   "website_label": "Texas Tech on May 8, 2026 3 p.m. CT",
+   "location": "Lubbock, TX",
+   "conference": false,
+   "mascot": "Red Raiders",
+   "image": {
+    "filename": "Texas-Tech.png",
+    "path": "/images/logos",
+    "title": "Texas Tech University Logo",
+    "alt": "Texas Tech University Logo",
+    "fullpath": "https://dxbhsrqyrr690.cloudfront.net/sidearm.nextgen.sites/ukansas.sidearmsports.com/images/logos/Texas-Tech.png"
+   }
+  },
+  "media": {
+   "tv": "",
+   "tv_image": null,
+   "tv_image_link": "",
+   "tv_image_caption": null,
+   "radio": "",
+   "video": {
+    "title": "Watch",
+    "url": "https://www.espn.com/watch/player/_/id/f2fd7321-f99d-46fe-bc8e-7fe834aca28a",
+    "label": "Video for Softball vs Texas Tech on May 8, 2026 at 3 p.m. CT",
+    "cssClass": null
+   },
+   "audio": null,
+   "stats": {
+    "title": "Live stats",
+    "url": "https://stats.statbroadcast.com/statmonitr/?id=658931",
+    "label": "Live stats for Softball vs Texas Tech on May 8, 2026 at 3 p.m. CT",
+    "cssClass": null
+   },
+   "tickets": null,
+   "preview": null,
+   "gamefiles": [],
+   "custom_display_fields": []
+  },
+  "result": {
+   "status": "L",
+   "team_score": "0",
+   "opponent_score": "14",
+   "prescore_info": "",
+   "postscore_info": "",
+   "boxscore": {
+    "title": "Box Score",
+    "url": "/sports/softball/stats/2026/texas-tech/boxscore/20611",
+    "label": "Box score of Softball vs Texas Tech on May 8, 2026 at 3 p.m. CT",
+    "cssClass": null
+   },
+   "recap": {
+    "title": "Recap",
+    "url": "/news/2026/5/8/softball-kansas-falls-to-texas-tech-in-big-12-tournament-semifinal",
+    "label": "Story recap for Softball vs Texas Tech on May 8, 2026 at 3 p.m. CT",
+    "cssClass": null
+   }
+  },
+  "facility": {
+   "id": 321,
+   "title": "OGE Energy Field at Devon Park",
+   "url": ""
+  },
+  "tournament": {
+   "id": 1236,
+   "title": "2026 Big 12 Softball Tournament",
+   "website": "https://big12sports.com/tournaments/?id=1066&path=softball",
+   "color": "#000000"
+  },
+  "tournament_startdate": null,
+  "galleries": [
+   2746
+  ],
+  "game_program": "Program",
+  "has_weplayed_moments": false,
+  "ticket_link": {
+   "customMessages": [],
+   "label": "Buy Tickets:  Texas Tech on May 8 3 p.m. CT",
+   "fallbackText": "Buy tickets",
+   "seatGeekLink": null,
+   "showSeatGeek": false,
+   "featured": false,
+   "url": null,
+   "text": "Buy Tickets"
+  },
+  "game_links": []
+ },
+ {
+  "id": 20612,
+  "date": "2026-05-15T17:00:00",
+  "enddate": null,
+  "game_state": 0,
+  "game_state_display": "SCHEDULED",
+  "game_center_enabled": false,
+  "game_center_link": "/game-center/20612",
+  "time": "5 p.m. CT",
+  "conference": false,
+  "location": "Norman, Okla.",
+  "location_indicator": "N",
+  "neutral_hometeam": null,
+  "at_vs": "vs",
+  "status": "O",
+  "noplay_text": "",
+  "type": "P",
+  "promotion": null,
+  "promotion_link": "",
+  "promotion_image_link": null,
+  "promotion_image": null,
+  "promotion_caption": null,
+  "event_image": null,
+  "is_a_doubleheader": false,
+  "opponent_history_path": "/sports/softball/opponent-history/michigan/3040",
+  "display_vsat_indicator": true,
+  "game_program_link": null,
+  "opponent": {
+   "id": 3040,
+   "title": "Michigan",
+   "prefix": "",
+   "website": "http://www.mgoblue.com/",
+   "website_label": "Michigan on May 15, 2026 5 p.m. CT",
+   "location": "Ann Arbor, MI",
+   "conference": false,
+   "mascot": "Wolverines",
+   "image": {
+    "filename": "michigan_logo_200x200.png",
+    "path": "/images/logos",
+    "title": "University of Michigan Logo",
+    "alt": "University of Michigan Logo",
+    "fullpath": "https://dxbhsrqyrr690.cloudfront.net/sidearm.nextgen.sites/ukansas.sidearmsports.com/images/logos/michigan_logo_200x200.png"
+   }
+  },
+  "media": {
+   "tv": "ESPNU",
+   "tv_image": "/images/2024/5/10/espnu-logo.png",
+   "tv_image_link": "https://www.espn.com/watch/player/_/id/d12aa5d6-1aba-4c84-9d0b-0db526d4bf49",
+   "tv_image_caption": null,
+   "radio": "",
+   "video": null,
+   "audio": null,
+   "stats": null,
+   "tickets": null,
+   "preview": {
+    "title": "Preview",
+    "url": "/news/2026/5/14/softball-kansas-faces-off-with-michigan-in-first-round-of-norman-regional",
+    "label": "Preview for Softball vs Michigan on May 15, 2026 at 5 p.m. CT",
+    "cssClass": null
+   },
+   "gamefiles": [],
+   "custom_display_fields": []
+  },
+  "result": {
+   "status": "W",
+   "team_score": "1",
+   "opponent_score": "0",
+   "prescore_info": "",
+   "postscore_info": "",
+   "boxscore": {
+    "title": "Box Score",
+    "url": "/sports/softball/stats/2026/michigan/boxscore/20612",
+    "label": "Box score of Softball vs Michigan on May 15, 2026 at 5 p.m. CT",
+    "cssClass": null
+   },
+   "recap": {
+    "title": "Recap",
+    "url": "/news/2026/5/15/softball-wallaces-walk-off-leads-kansas-over-michigan-in-first-round-of-norman-regional-1-0",
+    "label": "Story recap for Softball vs Michigan on May 15, 2026 at 5 p.m. CT",
+    "cssClass": null
+   }
+  },
+  "facility": {
+   "id": 406,
+   "title": "Love's Field ",
+   "url": ""
+  },
+  "tournament": {
+   "id": 1237,
+   "title": "NCAA Regionals",
+   "website": "https://www.ncaa.com/sports/softball/d1",
+   "color": "default"
+  },
+  "tournament_startdate": null,
+  "galleries": [
+   2748
+  ],
+  "game_program": "Program",
+  "has_weplayed_moments": false,
+  "ticket_link": {
+   "customMessages": [],
+   "label": "Buy Tickets:  Michigan on May 15 5 p.m. CT",
+   "fallbackText": "Buy tickets",
+   "seatGeekLink": null,
+   "showSeatGeek": false,
+   "featured": false,
+   "url": null,
+   "text": "Buy Tickets"
+  },
+  "game_links": []
+ },
+ {
+  "id": 20613,
+  "date": "2026-05-16T14:00:00",
+  "enddate": null,
+  "game_state": 0,
+  "game_state_display": "SCHEDULED",
+  "game_center_enabled": false,
+  "game_center_link": "/game-center/20613",
+  "time": "2 p.m.",
+  "conference": false,
+  "location": "",
+  "location_indicator": "N",
+  "neutral_hometeam": null,
+  "at_vs": "vs",
+  "status": "O",
+  "noplay_text": "",
+  "type": "P",
+  "promotion": null,
+  "promotion_link": "",
+  "promotion_image_link": null,
+  "promotion_image": null,
+  "promotion_caption": null,
+  "event_image": null,
+  "is_a_doubleheader": false,
+  "opponent_history_path": "/sports/softball/opponent-history/oklahoma/2903",
+  "display_vsat_indicator": true,
+  "game_program_link": null,
+  "opponent": {
+   "id": 2903,
+   "title": "Oklahoma",
+   "prefix": "",
+   "website": "http://www.soonersports.com",
+   "website_label": "Oklahoma on May 16, 2026 2 p.m.",
+   "location": "Norman, OK",
+   "conference": false,
+   "mascot": "Sooners",
+   "image": {
+    "filename": "Oklahoma_site_logo.png",
+    "path": "/images/logos",
+    "title": "University of Oklahoma Logo",
+    "alt": "University of Oklahoma Logo",
+    "fullpath": "https://dxbhsrqyrr690.cloudfront.net/sidearm.nextgen.sites/ukansas.sidearmsports.com/images/logos/Oklahoma_site_logo.png"
+   }
+  },
+  "media": {
+   "tv": "ESPN+",
+   "tv_image": null,
+   "tv_image_link": "",
+   "tv_image_caption": null,
+   "radio": "",
+   "video": {
+    "title": "Watch",
+    "url": "https://www.espn.com/watch/player/_/id/e1213d06-5626-4964-bdc6-c10d80dd18cd",
+    "label": "Video for Softball vs Oklahoma on May 16, 2026 at 2 p.m.",
+    "cssClass": null
+   },
+   "audio": null,
+   "stats": {
+    "title": "Live stats",
+    "url": "https://stats.statbroadcast.com/statmonitr/?id=659537",
+    "label": "Live stats for Softball vs Oklahoma on May 16, 2026 at 2 p.m.",
+    "cssClass": null
+   },
+   "tickets": null,
+   "preview": null,
+   "gamefiles": [],
+   "custom_display_fields": []
+  },
+  "result": {
+   "status": "L",
+   "team_score": "0",
+   "opponent_score": "9",
+   "prescore_info": "",
+   "postscore_info": "",
+   "boxscore": {
+    "title": "Box Score",
+    "url": "/sports/softball/stats/2026/oklahoma/boxscore/20613",
+    "label": "Box score of Softball vs Oklahoma on May 16, 2026 at 2 p.m.",
+    "cssClass": null
+   },
+   "recap": {
+    "title": "Recap",
+    "url": "/news/2026/5/16/record-breaking-season-concludes-in-norman-regional-for-kansas-softball",
+    "label": "Story recap for Softball vs Oklahoma on May 16, 2026 at 2 p.m.",
+    "cssClass": null
+   }
+  },
+  "facility": {
+   "id": 406,
+   "title": "Love's Field ",
+   "url": ""
+  },
+  "tournament": {
+   "id": 1237,
+   "title": "NCAA Regionals",
+   "website": "https://www.ncaa.com/sports/softball/d1",
+   "color": "default"
+  },
+  "tournament_startdate": null,
+  "galleries": [
+   2754
+  ],
+  "game_program": "Program",
+  "has_weplayed_moments": false,
+  "ticket_link": {
+   "customMessages": [],
+   "label": "Buy Tickets:  Oklahoma on May 16 2 p.m.",
+   "fallbackText": "Buy tickets",
+   "seatGeekLink": null,
+   "showSeatGeek": false,
+   "featured": false,
+   "url": null,
+   "text": "Buy Tickets"
+  },
+  "game_links": []
+ },
+ {
+  "id": 20616,
+  "date": "2026-05-16T19:00:00",
+  "enddate": null,
+  "game_state": 0,
+  "game_state_display": "SCHEDULED",
+  "game_center_enabled": false,
+  "game_center_link": "/game-center/20616",
+  "time": "07:10 PM",
+  "conference": false,
+  "location": "Norman, Oklahoma",
+  "location_indicator": "N",
+  "neutral_hometeam": null,
+  "at_vs": "vs",
+  "status": "O",
+  "noplay_text": "",
+  "type": "P",
+  "promotion": null,
+  "promotion_link": "",
+  "promotion_image_link": null,
+  "promotion_image": null,
+  "promotion_caption": null,
+  "event_image": null,
+  "is_a_doubleheader": false,
+  "opponent_history_path": "/sports/softball/opponent-history/michigan/888",
+  "display_vsat_indicator": true,
+  "game_program_link": null,
+  "opponent": {
+   "id": 888,
+   "title": "Michigan",
+   "prefix": "",
+   "website": " https://mgoblue.com/",
+   "website_label": "Michigan on May 16, 2026 07:10 PM",
+   "location": " ",
+   "conference": false,
+   "mascot": "",
+   "image": {
+    "filename": "Michigan_GoldM.png",
+    "path": "/images/2024/5/10",
+    "title": "",
+    "alt": "",
+    "fullpath": "https://dxbhsrqyrr690.cloudfront.net/sidearm.nextgen.sites/ukansas.sidearmsports.com/images/2024/5/10/Michigan_GoldM.png"
+   }
+  },
+  "media": {
+   "tv": "ESPN+",
+   "tv_image": null,
+   "tv_image_link": "",
+   "tv_image_caption": null,
+   "radio": "",
+   "video": {
+    "title": "Watch",
+    "url": "https://www.espn.com/watch/player/_/id/ee372fcc-0f80-441c-86c5-f83c505a4980",
+    "label": "Video for Softball vs Michigan on May 16, 2026 at 07:10 PM",
+    "cssClass": null
+   },
+   "audio": null,
+   "stats": {
+    "title": "Live stats",
+    "url": "https://stats.statbroadcast.com/statmonitr/?id=659539",
+    "label": "Live stats for Softball vs Michigan on May 16, 2026 at 07:10 PM",
+    "cssClass": null
+   },
+   "tickets": null,
+   "preview": null,
+   "gamefiles": [],
+   "custom_display_fields": []
+  },
+  "result": {
+   "status": "L",
+   "team_score": "10",
+   "opponent_score": "12",
+   "prescore_info": "",
+   "postscore_info": "",
+   "boxscore": {
+    "title": "Box Score",
+    "url": "/sports/softball/stats/2026/michigan/boxscore/20616",
+    "label": "Box score of Softball vs Michigan on May 16, 2026 at 07:10 PM",
+    "cssClass": null
+   },
+   "recap": {
+    "title": "Recap",
+    "url": "/news/2026/5/16/record-breaking-season-concludes-in-norman-regional-for-kansas-softball",
+    "label": "Story recap for Softball vs Michigan on May 16, 2026 at 07:10 PM",
+    "cssClass": null
+   }
+  },
+  "facility": {
+   "id": 406,
+   "title": "Love's Field ",
+   "url": ""
+  },
+  "tournament": {
+   "id": 1237,
+   "title": "NCAA Regionals",
+   "website": "https://www.ncaa.com/sports/softball/d1",
+   "color": "default"
+  },
+  "tournament_startdate": null,
+  "galleries": [
+   2753
+  ],
+  "game_program": "Program",
+  "has_weplayed_moments": false,
+  "ticket_link": {
+   "customMessages": [],
+   "label": "Buy Tickets:  Michigan on May 16 07:10 PM",
+   "fallbackText": "Buy tickets",
+   "seatGeekLink": null,
+   "showSeatGeek": false,
+   "featured": false,
+   "url": null,
+   "text": "Buy Tickets"
+  },
+  "game_links": []
+ }
+]

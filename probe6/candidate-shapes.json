@@ -1,0 +1,155 @@
+[
+ {
+  "signature": "at_vs,conference,date,display_vsat_indicator,enddate,event_image,facility,galleries,game_center_enabled,game_center_link,game_links,game_program,game_program_link,game_state,game_state_display,has_weplayed_moments,id,is_a_doubleheader,location,location_indicator,media,neutral_hometeam,noplay_text,opponent,opponent_history_path,promotion,promotion_caption,promotion_image,promotion_image_link,promotion_link,result,status,ticket_link,time,tournament,tournament_startdate,type",
+  "occurrences": 57,
+  "sample": {
+   "id": 20426,
+   "date": "2026-02-06T08:00:00",
+   "enddate": null,
+   "game_state": 0,
+   "game_state_display": "SCHEDULED",
+   "game_center_enabled": false,
+   "game_center_link": "/game-center/20426",
+   "time": "8 a.m. CT",
+   "conference": false,
+   "location": "Tampa, Fla.",
+   "location_indicator": "N",
+   "neutral_hometeam": null,
+   "at_vs": "vs",
+   "status": "O",
+   "noplay_text": "",
+   "type": "R",
+   "promotion": null,
+   "promotion_link": "",
+   "promotion_image_link": null,
+   "promotion_image": null,
+   "promotion_caption": null,
+   "event_image": null,
+   "is_a_doubleheader": false,
+   "opponent_history_path": "/sports/softball/opponent-history/bethune-cookman/2922",
+   "display_vsat_indicator": true,
+   "game_program_link": null,
+   "opponent": {
+    "id": 2922,
+    "title": "Bethune-Cookman",
+    "prefix": "",
+    "website": "http://bcuathletics.com/",
+    "website_label": "Bethune-Cookman on February 6, 2026 8 a.m. CT",
+    "location": "Daytona Beach, FL",
+    "conference": false,
+    "mascot": "Wildcats",
+    "image": {
+     "filename": "BC_SecondaryColor_2015.png",
+     "path": "/images/logos",
+     "title": "Bethune-Cookman University Logo",
+     "alt": "Bethune-Cookman University Logo",
+     "fullpath": "https://dxbhsrqyrr690.cloudfront.net/sidearm.nextgen.sites/ukansas.sidearmsports.com/images/logos/BC_SecondaryColor_2015.png"
+    }
+   },
+   "media": {
+    "tv": "",
+    "tv_image": null,
+    "tv_image_link": "",
+    "tv_image_caption": null,
+    "radio": "",
+    "video": null,
+    "audio": null,
+    "stats": {
+     "title": "Live stats",
+     "url": "https://stats.statbroadcast.com/broadcast/?id=646143",
+     "label": "Live stats for Softball vs Bethune-Cookman on February 6, 2026 at 8 a.m. CT",
+     "cssClass": null
+    },
+    "tickets": null,
+    "preview": {
+     "title": "Preview",
+     "url": "/news/2026/2/5/kansas-softball-set-to-open-season-at-usf-rawlings-invitational",
+     "label": "Preview for Softball vs Bethune-Cookman on February 6, 2026 at 8 a.m. CT",
+     "cssClass": null
+    },
+    "gamefiles": [],
+    "custom_display_fields": []
+   },
+   "result": {
+    "status": "W",
+    "team_score": "12",
+    "opponent_score": "0",
+    "prescore_info": "",
+    "postscore_info": "(5 Inn.)",
+    "boxscore": {
+     "title": "Box Score",
+     "url": "/sports/softball/stats/2026/bethune-cookman/boxscore/20426",
+     "label": "Box score of Softball vs Bethune-Cookman on February 6, 2026 at 8 a.m. CT",
+     "cssClass": null
+    },
+    "recap": {
+     "title": "Recap",
+     "url": "/news/2026/2/6/softball-jayhawks-open-2026-season-with-pair-of-run-rule-wins-in-tampa",
+     "label": "Story recap for Softball vs Bethune-Cookman on February 6, 2026 at 8 a.m. CT",
+     "cssClass": null
+    }
+   },
+   "facility": {
+    "id": 309,
+    "title": "USF Softball Stadium",
+    "url": ""
+   },
+   "tournament": {
+    "id": 1220,
+    "title": "USF-Rawlings Invitational ",
+    "website": "https://gousfbulls.com/sports/2023/1/10/usf-rawlings-tournament-information.aspx",
+    "color": "default"
+   },
+   "tournament_startdate": null,
+   "galleries": [],
+   "game_program": "Program",
+   "has_weplayed_moments": false,
+   "ticket_link": {
+    "customMessages": [],
+    "label": "Buy Tickets:  Bethune-Cookman on February 6 8 a.m. CT",
+    "fallbackText": "Buy tickets",
+    "seatGeekLink": null,
+    "showSeatGeek": false,
+    "featured": false,
+    "url": null,
+    "text": "Buy Tickets"
+   },
+   "game_links": []
+  }
+ },
+ {
+  "signature": "app_exclusive,byline,content_date,content_id,content_image_url,content_title,content_url,date,gallery_id,game_id,games,homepage_feed_template,id,image_alt_text,image_focal_point,image_source,links,redirect_absolute_url,sport,sport_display,sport_shortname,sub_headline,teaser,title,title_in_rotator,type,url,video,writer",
+  "occurrences": 10,
+  "sample": {
+   "title": "Soles’ Homer Gives Kansas a 4-2 Walk-Off Win Against Iowa State",
+   "title_in_rotator": false,
+   "sub_headline": null,
+   "teaser": null,
+   "type": null,
+   "byline": null,
+   "app_exclusive": false,
+   "sport_display": null,
+   "sport": null,
+   "sport_shortname": null,
+   "image_source": "/images/2026/4/25/Anna_Soles_Walkoff_.jpeg",
+   "image_focal_point": null,
+   "image_alt_text": null,
+   "video": null,
+   "url": "/news/2026/4/25/soles-homer-gives-kansas-a-4-2-walk-off-win-against-iowa-state",
+   "redirect_absolute_url": null,
+   "links": null,
+   "homepage_feed_template": null,
+   "game_id": null,
+   "games": null,
+   "gallery_id": null,
+   "writer": null,
+   "id": 22526,
+   "content_id": "22526",
+   "content_title": "Soles’ Homer Gives Kansas a 4-2 Walk-Off Win Against Iowa State",
+   "content_date": "2026-04-25T22:20:47.873",
+   "content_url": "/news/2026/4/25/soles-homer-gives-kansas-a-4-2-walk-off-win-against-iowa-state",
+   "content_image_url": "https://kuathletics.com/images/2026/4/25/Anna_Soles_Walkoff_.jpeg",
+   "date": "2026-04-25T22:20:47.873"
+  }
+ }
+]

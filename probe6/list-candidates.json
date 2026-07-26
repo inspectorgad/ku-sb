@@ -1,0 +1,27 @@
+[
+ {
+  "idx": 401,
+  "length": 57,
+  "firstKeys": "at_vs,conference,date,display_vsat_indicator,enddate,event_image,facility,galleries,game_center_enabled,game_center_link,game_links,game_program,game_program_link,game_state,game_state_display,has_weplayed_moments,id,is_a_doubleheader,location,location_indicator,media,neutral_hometeam,noplay_text,op"
+ },
+ {
+  "idx": 5442,
+  "length": 27,
+  "firstKeys": "class_name,column,id,is_hidden,is_item_open,items,open_in_new_window,rank,schedule_roster_news_links,separator,social_media_links,sport,stats,tickets,title,url,youtube"
+ },
+ {
+  "idx": 153,
+  "length": 26,
+  "firstKeys": "abbreviation,displayOpponentHistory,facebook,gender,global_sport_id,global_sport_name_slug,global_sport_shortname,id,instagram,non_sport,pinterest,rosterId,scheduleId,short_title,shortname,tickets,title,twitter,url,youtube"
+ },
+ {
+  "idx": 5085,
+  "length": 26,
+  "firstKeys": "class_name,column,id,is_hidden,is_item_open,items,open_in_new_window,rank,schedule_roster_news_links,separator,social_media_links,sport,stats,tickets,title,url,youtube"
+ },
+ {
+  "idx": 4734,
+  "length": 25,
+  "firstKeys": "class_name,column,id,is_hidden,is_item_open,items,open_in_new_window,rank,schedule_roster_news_links,separator,social_media_links,sport,stats,tickets,title,url,youtube"
+ }
+]

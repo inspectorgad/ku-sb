@@ -1,0 +1,74 @@
+University of Kansas
+2026 Softball Schedule
+Overall
+36-21
+0.632
+Conference
+14-10
+0.583
+Streak
+L2
+Home
+13-5
+Away
+9-9
+Neutral
+14-7
+Date	Time	At	Opponent	Location	Tournament	Result
+Feb 6 (Fri)	8 a.m. CT	Neutral	Bethune-Cookman	Tampa, Fla. (USF Softball Stadium)	USF-Rawlings Invitational	W 12-0
+Feb 6 (Fri)	1 p.m. CT	Neutral	Illinois State	Tampa, Fla. (USF Softball Stadium)	USF-Rawlings Invitational	W 13-5
+Feb 7 (Sat)	1 p.m. CT	Away	USF	Tampa, Fla. (USF Softball Stadium)	USF-Rawlings Invitational	L 4-12
+Feb 8 (Sun)	8:30 a.m. CT	Neutral	Michigan	Tampa, Fla. (USF Softball Stadium)	USF-Rawlings Invitational	L 2-4
+Feb 8 (Sun)	11 a.m. CT	Neutral	Florida	Tampa, Fla. (USF Softball Stadium)	USF-Rawlings Invitational	L 2-11
+Feb 10 (Tue)	4 p.m. CT	Away	Florida Gulf Coast	Fort Myers, Fla. (FGCU Softball Complex)		W 5-3
+Feb 12 (Thu)	11:30 a.m. CT	Neutral	Indiana State	Tampa, Fla. (USF Softball Stadium)	Fonseca Memorial Tournament	W 10-4
+Feb 12 (Thu)	2 p.m. CT	Neutral	Boston College	Tampa, Fla. (USF Softball Stadium)	Fonseca Memorial Tournament	L 2-4
+Feb 13 (Fri)	3:35 p.m. CT	Away	USF	Tampa, FL (USF Softball Stadium)	Fonseca Memorial Tournament	W 7-2
+Feb 14 (Sat)	8 a.m. CT	Neutral	DePaul	Tampa, Fla. (USF Softball Stadium)	Fonseca Memorial Tournament	W 11-0
+Feb 14 (Sat)	10:30 a.m. CT	Neutral	Yale	Tampa, Fla. (USF Softball Stadium)	Fonseca Memorial Tournament	W 12-0
+Feb 19 (Thu)	5 p.m. CT	Away	Florida Atlantic	Boca Raton, Fla. (Joan Joyce Field )	Joan Joyce Classic	L 5-6
+Feb 20 (Fri)	10:15 a.m. CT	Neutral	Villanova	Boca Raton, Fla. (Joan Joyce Field )	Joan Joyce Classic	W 8-1
+Feb 20 (Fri)	2:45 p.m. CT	Neutral	Southern Indiana	Boca Raton, Fla. (Joan Joyce Field )	Joan Joyce Classic	W 9-1
+Feb 21 (Sat)	8 a.m. CT	Neutral	UMass	Boca Raton, Fla. (Joan Joyce Field )	Joan Joyce Classic	L 0-8
+Feb 21 (Sat)	10:15 a.m. CT	Neutral	Villanova	Boca Raton, Fla. (Joan Joyce Field )	Joan Joyce Classic	W 4-1
+Feb 27 (Fri)	10 a.m. CT	Neutral	Omaha	Fayetteville, Ark. (Bogle Park)	Wooo Pig Classic	W 6-5
+Feb 27 (Fri)	12:15 p.m. CT	Neutral	Boise State	Fayetteville, Ark. (Bogle Park)	Wooo Pig Classic	W 4-1
+Feb 28 (Sat)	12:15 p.m. CT	Neutral	Boise State	Fayetteville, Ark. (Bogle Park)	Wooo Pig Classic	W 10-1
+Feb 28 (Sat)	7 p.m. CT	Neutral	Charlotte	Fayetteville, Ark (Bogle Park)	Wooo Pig Classic	W 15-4
+Mar 1 (Sun)	12:15 p.m. CT	Away	No. 7 Arkansas	Fayetteville, Ark. (Bogle Park)	Wooo Pig Classic	L 3-11
+Mar 4 (Wed)	6 p.m. CT	Away	Wichita State	Wichita, Kan. (Wilkins Softball Stadium)		W 9-1
+Mar 6 (Fri)	1 p.m. CT	Home	Utah State	Lawrence, Kan. (Arrocha Ballpark)		W 7-1
+Mar 6 (Fri)	3:30 p.m CT	Home	Utah State	Lawrence, Kan. (Arrocha Ballpark)		W 18-2
+Mar 7 (Sat)	2 p.m. CT	Home	Utah State	Lawrence, Kan. (Arrocha Ballpark)		W 14-0
+Mar 13 (Fri)	6 p.m.	Away	Houston	Houston, Texas (Cougar Softball Stadium)		L 9-10
+Mar 14 (Sat)	3 p.m. CT	Away	Houston	Houston, Texas (Cougar Softball Stadium)		W 18-1
+Mar 15 (Sun)	11 a.m. CT	Away	Houston	Houston, Texas (Cougar Softball Stadium)		W 11-8
+Mar 18 (Wed)	12 p.m. CT	Home	South Dakota	Lawrence, Kan. (Arrocha Ballpark)		W 4-3
+Mar 20 (Fri)	5 p.m. CT	Home	Utah	Lawrence, Kan. (Arrocha Ballpark)		W 7-5
+Mar 21 (Sat)	2 p.m. CT	Home	Utah	Lawrence, Kan. (Arrocha Ballpark)		L 1-2
+Mar 22 (Sun)	12 p.m. CT	Home	Utah	Lawrence, Kan. (Arrocha Ballpark)		W 10-5
+Mar 26 (Thu)	7 p.m. CT	Away	BYU	Provo, Utah (Miller Park)		W 6-4
+Mar 27 (Fri)	7 p.m. CT	Away	BYU	Provo, Utah (Miller Park)		L 3-4
+Mar 28 (Sat)	12:30 p.m. CT	Away	BYU	Provo, Utah (Miller Park)		W 10-3
+Apr 2 (Thu)	3 p.m. CT	Home	#20/23 Arizona State	Lawrence, Kan. (Arrocha Ballpark)		L 5-8
+Apr 2 (Thu)	5:30 p.m. CT	Home	#20/23 Arizona State	Lawrence, Kan. (Arrocha Ballpark)		W 11-7
+Apr 4 (Sat)	12 p.m. CT	Home	#20/23 Arizona State	Lawrence, Kan. (Arrocha Ballpark)		W 5-4
+Apr 10 (Fri)	2 p.m. CT	Home	Baylor	Lawrence, Kan. (Arrocha Ballpark)		L 7-8
+Apr 10 (Fri)	4:30 p.m. CT	Home	Baylor	Lawrence, Kan. (Arrocha Ballpark)		W 1-0
+Apr 11 (Sat)	2 p.m. CT	Home	Baylor	Lawrence, Kan. (Arrocha Ballpark)		W 5-4
+Apr 15 (Wed)	5 p.m. CT	Home	Missouri	Lawrence, Kan. (Arrocha Ballpark)		L 2-4
+Apr 17 (Fri)	5 p.m. CT	Away	#24/#22 UCF	Orlando, Fla. (UCF Softball Complex)		L 3-6
+Apr 18 (Sat)	4 p.m. CT	Away	#24/#22 UCF	Orlando, Fla. (UCF Softball Complex)		L 2-9
+Apr 19 (Sun)	10 a.m. CT	Away	#24/#22 UCF	Orlando, Fla. (UCF Softball Complex)		W 4-2
+Apr 24 (Fri)	3 p.m. CT	Home	Iowa State	Lawrence, Kan. (Arrocha Ballpark)		W 12-2
+Apr 24 (Fri)	5:30 p.m. CT	Home	Iowa State	Lawrence, Kan. (Arrocha Ballpark)		L 1-4
+Apr 25 (Sat)	2 p.m. CT	Home	Iowa State	Lawrence, Kan. (Arrocha Ballpark)		W 4-2
+Apr 28 (Tue)	5 p.m. CT	Home	Wichita State	Lawrence, Kan. (Arrocha Ballpark)		W 10-0
+May 1 (Fri)	6 p.m. CT	Away	#13/#16 Oklahoma State	Stillwater, Okla. (Cowgirl Stadium)		L 1-8
+May 2 (Sat)	2 p.m. CT	Away	#13/#16 Oklahoma State	Stillwater, Okla. (Cowgirl Stadium)		W 10-1
+May 3 (Sun)	1 p.m. CT	Away	#13/#16 Oklahoma State	Stillwater, Okla. (Cowgirl Stadium)		L 0-7
+May 7 (Thu)	11 a.m. CT	Neutral	(4) UCF	Oklahoma City, Okla. (OGE Energy Field at Devon Park)	2026 Big 12 Softball Tournament	W 6-5
+May 8 (Fri)	3 p.m. CT	Neutral	(1) Texas Tech	Oklahoma City, Okla. (OGE Energy Field at Devon Park)	2026 Big 12 Softball Tournament	L 0-14
+May 15 (Fri)	5 p.m. CT	Neutral	Michigan	Norman, Okla. (Love's Field )	NCAA Regionals	W 1-0
+May 16 (Sat)	2 p.m.	Neutral	Oklahoma	(Love's Field )	NCAA Regionals	L 0-9
+May 16 (Sat)	07:10 PM	Neutral	Michigan	Norman, Oklahoma (Love's Field )	NCAA Regionals	L 10-12
