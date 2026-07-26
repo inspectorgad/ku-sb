@@ -11,6 +11,8 @@ on:
       - '.github/workflows/deploy-pages.yml'
       - 'probe/**'
       - 'probe4/**'
+      - 'probe5/**'
+      - 'probe6/**'
       - 'probe2/**'
       - 'probe3/**'
       - 'DATA-VALIDATION.md'

@@ -1,0 +1,38 @@
+name: Probe 6 - Full schedule parsing
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - 'scripts/probe6-ku-sb.mjs'
+      - '.github/workflows/probe6-data.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install Playwright Chromium
+        run: |
+          npm init -y > /dev/null
+          npm install playwright@1.49.0 > /dev/null
+          npx playwright install --with-deps chromium
+
+      - name: Run schedule-parsing probe
+        run: node scripts/probe6-ku-sb.mjs
+
+      - name: Commit probe results
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add -f probe6/
+          git diff --cached --quiet || git commit -m "Add full-schedule parsing probe results [skip ci]"
+          git push
