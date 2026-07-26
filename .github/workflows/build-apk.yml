@@ -10,6 +10,7 @@ on:
       - 'scripts/build-dashboard.py'
       - '.github/workflows/deploy-pages.yml'
       - 'probe/**'
+      - 'probe4/**'
       - 'probe2/**'
       - 'probe3/**'
       - 'DATA-VALIDATION.md'
