@@ -1,0 +1,560 @@
+[
+ {
+  "gameID": "6599798",
+  "away": {
+   "score": "10",
+   "names": {
+    "char6": "UCF",
+    "short": "UCF",
+    "seo": "ucf",
+    "full": ""
+   },
+   "winner": true,
+   "seed": "6",
+   "description": "",
+   "rank": "",
+   "conferences": [
+    {
+     "conferenceName": "",
+     "conferenceSeo": "big-12"
+    }
+   ]
+  },
+  "finalMessage": "FINAL",
+  "title": "UCF Stetson",
+  "url": "/game/6599798",
+  "network": "",
+  "home": {
+   "score": "1",
+   "names": {
+    "char6": "STETSN",
+    "short": "Stetson",
+    "seo": "stetson",
+    "full": ""
+   },
+   "winner": false,
+   "seed": "",
+   "description": "",
+   "rank": "",
+   "conferences": [
+    {
+     "conferenceName": "",
+     "conferenceSeo": "asun"
+    }
+   ]
+  },
+  "liveVideoEnabled": true,
+  "startTime": "12:00 PM ET",
+  "startTimeEpoch": "1778947200",
+  "gameState": "final",
+  "startDate": "05/16/2026",
+  "currentPeriod": "FINAL",
+  "contestClock": "0:00",
+  "bracketId": 1033,
+  "bracketRound": 1,
+  "championshipId": 6410,
+  "championshipGame": {
+   "round": {
+    "roundNumber": 1,
+    "title": "Regionals",
+    "subtitle": ""
+   }
+  }
+ },
+ {
+  "gameID": "6599819",
+  "away": {
+   "score": "10",
+   "names": {
+    "char6": "ARIZ",
+    "short": "Arizona",
+    "seo": "arizona",
+    "full": ""
+   },
+   "winner": true,
+   "seed": "6",
+   "description": "",
+   "rank": "",
+   "conferences": [
+    {
+     "conferenceName": "",
+     "conferenceSeo": "big-12"
+    }
+   ]
+  },
+  "finalMessage": "FINAL",
+  "title": "Arizona Duke",
+  "url": "/game/6599819",
+  "network": "",
+  "home": {
+   "score": "1",
+   "names": {
+    "char6": "DUKE",
+    "short": "Duke",
+    "seo": "duke",
+    "full": ""
+   },
+   "winner": false,
+   "seed": "3",
+   "description": "",
+   "rank": "",
+   "conferences": [
+    {
+     "conferenceName": "",
+     "conferenceSeo": "acc"
+    }
+   ]
+  },
+  "liveVideoEnabled": true,
+  "startTime": "1:00 PM ET",
+  "startTimeEpoch": "1778950800",
+  "gameState": "final",
+  "startDate": "05/16/2026",
+  "currentPeriod": "FINAL",
+  "contestClock": "0:00",
+  "bracketId": 1063,
+  "bracketRound": 1,
+  "championshipId": 6410,
+  "championshipGame": {
+   "round": {
+    "roundNumber": 1,
+    "title": "Regionals",
+    "subtitle": ""
+   }
+  }
+ },
+ {
+  "gameID": "6599826",
+  "away": {
+   "score": "2",
+   "names": {
+    "char6": "STAN",
+    "short": "Stanford",
+    "seo": "stanford",
+    "full": ""
+   },
+   "winner": false,
+   "seed": "5",
+   "description": "",
+   "rank": "",
+   "conferences": [
+    {
+     "conferenceName": "",
+     "conferenceSeo": "acc"
+    }
+   ]
+  },
+  "finalMessage": "FINAL",
+  "title": "Stanford Oklahoma St.",
+  "url": "/game/6599826",
+  "network": "",
+  "home": {
+   "score": "7",
+   "names": {
+    "char6": "OKLAST",
+    "short": "Oklahoma St.",
+    "seo": "oklahoma-st",
+    "full": ""
+   },
+   "winner": true,
+   "seed": "4",
+   "description": "",
+   "rank": "",
+   "conferences": [
+    {
+     "conferenceName": "",
+     "conferenceSeo": "big-12"
+    }
+   ]
+  },
+  "liveVideoEnabled": true,
+  "startTime": "1:00 PM ET",
+  "startTimeEpoch": "1778950800",
+  "gameState": "final",
+  "startDate": "05/16/2026",
+  "currentPeriod": "FINAL",
+  "contestClock": "0:00",
+  "bracketId": 1073,
+  "bracketRound": 1,
+  "championshipId": 6410,
+  "championshipGame": {
+   "round": {
+    "roundNumber": 1,
+    "title": "Regionals",
+    "subtitle": ""
+   }
+  }
+ },
+ {
+  "gameID": "6599840",
+  "away": {
+   "score": "0",
+   "names": {
+    "char6": "KANSAS",
+    "short": "Kansas",
+    "seo": "kansas",
+    "full": ""
+   },
+   "winner": false,
+   "seed": "8",
+   "description": "",
+   "rank": "",
+   "conferences": [
+    {
+     "conferenceName": "",
+     "conferenceSeo": "big-12"
+    }
+   ]
+  },
+  "finalMessage": "FINAL",
+  "title": "Kansas Oklahoma",
+  "url": "/game/6599840",
+  "network": "",
+  "home": {
+   "score": "9",
+   "names": {
+    "char6": "OKLA",
+    "short": "Oklahoma",
+    "seo": "oklahoma",
+    "full": ""
+   },
+   "winner": true,
+   "seed": "1",
+   "description": "",
+   "rank": "",
+   "conferences": [
+    {
+     "conferenceName": "",
+     "conferenceSeo": "sec"
+    }
+   ]
+  },
+  "liveVideoEnabled": true,
+  "startTime": "3:00 PM ET",
+  "startTimeEpoch": "1778958000",
+  "gameState": "final",
+  "startDate": "05/16/2026",
+  "currentPeriod": "FINAL",
+  "contestClock": "0:00",
+  "bracketId": 1093,
+  "bracketRound": 1,
+  "championshipId": 6410,
+  "championshipGame": {
+   "round": {
+    "roundNumber": 1,
+    "title": "Regionals",
+    "subtitle": ""
+   }
+  }
+ },
+ {
+  "gameID": "6599854",
+  "away": {
+   "score": "9",
+   "names": {
+    "char6": "MISS",
+    "short": "Ole Miss",
+    "seo": "ole-miss",
+    "full": ""
+   },
+   "winner": false,
+   "seed": "6",
+   "description": "",
+   "rank": "",
+   "conferences": [
+    {
+     "conferenceName": "",
+     "conferenceSeo": "sec"
+    }
+   ]
+  },
+  "finalMessage": "FINAL",
+  "title": "Ole Miss Texas Tech",
+  "url": "/game/6599854",
+  "network": "",
+  "home": {
+   "score": "10",
+   "names": {
+    "char6": "TXTECH",
+    "short": "Texas Tech",
+    "seo": "texas-tech",
+    "full": ""
+   },
+   "winner": true,
+   "seed": "3",
+   "description": "",
+   "rank": "",
+   "conferences": [
+    {
+     "conferenceName": "",
+     "conferenceSeo": "big-12"
+    }
+   ]
+  },
+  "liveVideoEnabled": true,
+  "startTime": "3:00 PM ET",
+  "startTimeEpoch": "1778958000",
+  "gameState": "final",
+  "startDate": "05/16/2026",
+  "currentPeriod": "FINAL (8)",
+  "contestClock": "0:00",
+  "bracketId": 1113,
+  "bracketRound": 1,
+  "championshipId": 6410,
+  "championshipGame": {
+   "round": {
+    "roundNumber": 1,
+    "title": "Regionals",
+    "subtitle": ""
+   }
+  }
+ },
+ {
+  "gameID": "6599882",
+  "away": {
+   "score": "4",
+   "names": {
+    "char6": "AZ ST",
+    "short": "Arizona St.",
+    "seo": "arizona-st",
+    "full": ""
+   },
+   "winner": true,
+   "seed": "5",
+   "description": "",
+   "rank": "",
+   "conferences": [
+    {
+     "conferenceName": "",
+     "conferenceSeo": "big-12"
+    }
+   ]
+  },
+  "finalMessage": "FINAL",
+  "title": "Arizona St. Texas A&M",
+  "url": "/game/6599882",
+  "network": "",
+  "home": {
+   "score": "3",
+   "names": {
+    "char6": "TX A&M",
+    "short": "Texas A&M",
+    "seo": "texas-am",
+    "full": ""
+   },
+   "winner": false,
+   "seed": "4",
+   "description": "",
+   "rank": "",
+   "conferences": [
+    {
+     "conferenceName": "",
+     "conferenceSeo": "sec"
+    }
+   ]
+  },
+  "liveVideoEnabled": true,
+  "startTime": "3:00 PM ET",
+  "startTimeEpoch": "1778958000",
+  "gameState": "final",
+  "startDate": "05/16/2026",
+  "currentPeriod": "FINAL",
+  "contestClock": "0:00",
+  "bracketId": 1153,
+  "bracketRound": 1,
+  "championshipId": 6410,
+  "championshipGame": {
+   "round": {
+    "roundNumber": 1,
+    "title": "Regionals",
+    "subtitle": ""
+   }
+  }
+ },
+ {
+  "gameID": "6599890",
+  "away": {
+   "score": "0",
+   "names": {
+    "char6": "WAGNER",
+    "short": "Wagner",
+    "seo": "wagner",
+    "full": ""
+   },
+   "winner": false,
+   "seed": "",
+   "description": "",
+   "rank": "",
+   "conferences": [
+    {
+     "conferenceName": "",
+     "conferenceSeo": "nec"
+    }
+   ]
+  },
+  "finalMessage": "FINAL",
+  "title": "Wagner Baylor",
+  "url": "/game/6599890",
+  "network": "",
+  "home": {
+   "score": "9",
+   "names": {
+    "char6": "BAYLOR",
+    "short": "Baylor",
+    "seo": "baylor",
+    "full": ""
+   },
+   "winner": true,
+   "seed": "",
+   "description": "",
+   "rank": "",
+   "conferences": [
+    {
+     "conferenceName": "",
+     "conferenceSeo": "big-12"
+    }
+   ]
+  },
+  "liveVideoEnabled": true,
+  "startTime": "3:30 PM ET",
+  "startTimeEpoch": "1778959800",
+  "gameState": "final",
+  "startDate": "05/16/2026",
+  "currentPeriod": "FINAL",
+  "contestClock": "0:00",
+  "bracketId": 1164,
+  "bracketRound": 1,
+  "championshipId": 6410,
+  "championshipGame": {
+   "round": {
+    "roundNumber": 1,
+    "title": "Regionals",
+    "subtitle": ""
+   }
+  }
+ },
+ {
+  "gameID": "6599891",
+  "away": {
+   "score": "2",
+   "names": {
+    "char6": "WISC",
+    "short": "Wisconsin",
+    "seo": "wisconsin",
+    "full": ""
+   },
+   "winner": false,
+   "seed": "8",
+   "description": "",
+   "rank": "",
+   "conferences": [
+    {
+     "conferenceName": "",
+     "conferenceSeo": "big-ten"
+    }
+   ]
+  },
+  "finalMessage": "FINAL",
+  "title": "Wisconsin Baylor",
+  "url": "/game/6599891",
+  "network": "",
+  "home": {
+   "score": "5",
+   "names": {
+    "char6": "BAYLOR",
+    "short": "Baylor",
+    "seo": "baylor",
+    "full": ""
+   },
+   "winner": true,
+   "seed": "",
+   "description": "",
+   "rank": "",
+   "conferences": [
+    {
+     "conferenceName": "",
+     "conferenceSeo": "big-12"
+    }
+   ]
+  },
+  "liveVideoEnabled": true,
+  "startTime": "6:00 PM ET",
+  "startTimeEpoch": "1778968800",
+  "gameState": "final",
+  "startDate": "05/16/2026",
+  "currentPeriod": "FINAL",
+  "contestClock": "0:00",
+  "bracketId": 1165,
+  "bracketRound": 1,
+  "championshipId": 6410,
+  "championshipGame": {
+   "round": {
+    "roundNumber": 1,
+    "title": "Regionals",
+    "subtitle": ""
+   }
+  }
+ },
+ {
+  "gameID": "6599842",
+  "away": {
+   "score": "10",
+   "names": {
+    "char6": "KANSAS",
+    "short": "Kansas",
+    "seo": "kansas",
+    "full": ""
+   },
+   "winner": false,
+   "seed": "8",
+   "description": "",
+   "rank": "",
+   "conferences": [
+    {
+     "conferenceName": "",
+     "conferenceSeo": "big-12"
+    }
+   ]
+  },
+  "finalMessage": "FINAL",
+  "title": "Kansas Michigan",
+  "url": "/game/6599842",
+  "network": "",
+  "home": {
+   "score": "12",
+   "names": {
+    "char6": "MICH",
+    "short": "Michigan",
+    "seo": "michigan",
+    "full": ""
+   },
+   "winner": true,
+   "seed": "",
+   "description": "",
+   "rank": "",
+   "conferences": [
+    {
+     "conferenceName": "",
+     "conferenceSeo": "big-ten"
+    }
+   ]
+  },
+  "liveVideoEnabled": true,
+  "startTime": "8:00 PM ET",
+  "startTimeEpoch": "1778976000",
+  "gameState": "final",
+  "startDate": "05/16/2026",
+  "currentPeriod": "FINAL",
+  "contestClock": "0:00",
+  "bracketId": 1095,
+  "bracketRound": 1,
+  "championshipId": 6410,
+  "championshipGame": {
+   "round": {
+    "roundNumber": 1,
+    "title": "Regionals",
+    "subtitle": ""
+   }
+  }
+ }
+]

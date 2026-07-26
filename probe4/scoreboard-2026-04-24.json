@@ -1,0 +1,380 @@
+[
+ {
+  "gameID": "6542954",
+  "away": {
+   "score": "2",
+   "names": {
+    "char6": "IOWAST",
+    "short": "Iowa St.",
+    "seo": "iowa-st",
+    "full": ""
+   },
+   "winner": false,
+   "seed": "",
+   "description": "",
+   "rank": "",
+   "conferences": [
+    {
+     "conferenceName": "",
+     "conferenceSeo": "big-12"
+    }
+   ]
+  },
+  "finalMessage": "FINAL",
+  "title": "Iowa St. Kansas",
+  "url": "/game/6542954",
+  "network": "",
+  "home": {
+   "score": "12",
+   "names": {
+    "char6": "KANSAS",
+    "short": "Kansas",
+    "seo": "kansas",
+    "full": ""
+   },
+   "winner": true,
+   "seed": "",
+   "description": "",
+   "rank": "",
+   "conferences": [
+    {
+     "conferenceName": "",
+     "conferenceSeo": "big-12"
+    }
+   ]
+  },
+  "liveVideoEnabled": false,
+  "startTime": "4:00 PM ET",
+  "startTimeEpoch": "1777060800",
+  "gameState": "final",
+  "startDate": "04/24/2026",
+  "currentPeriod": "FINAL",
+  "contestClock": "0:00",
+  "bracketId": "",
+  "bracketRound": ""
+ },
+ {
+  "gameID": "6542969",
+  "away": {
+   "score": "4",
+   "names": {
+    "char6": "IOWAST",
+    "short": "Iowa St.",
+    "seo": "iowa-st",
+    "full": ""
+   },
+   "winner": true,
+   "seed": "",
+   "description": "",
+   "rank": "",
+   "conferences": [
+    {
+     "conferenceName": "",
+     "conferenceSeo": "big-12"
+    }
+   ]
+  },
+  "finalMessage": "FINAL",
+  "title": "Iowa St. Kansas",
+  "url": "/game/6542969",
+  "network": "",
+  "home": {
+   "score": "1",
+   "names": {
+    "char6": "KANSAS",
+    "short": "Kansas",
+    "seo": "kansas",
+    "full": ""
+   },
+   "winner": false,
+   "seed": "",
+   "description": "",
+   "rank": "",
+   "conferences": [
+    {
+     "conferenceName": "",
+     "conferenceSeo": "big-12"
+    }
+   ]
+  },
+  "liveVideoEnabled": false,
+  "startTime": "6:00 PM ET",
+  "startTimeEpoch": "1777068000",
+  "gameState": "final",
+  "startDate": "04/24/2026",
+  "currentPeriod": "FINAL",
+  "contestClock": "0:00",
+  "bracketId": "",
+  "bracketRound": ""
+ },
+ {
+  "gameID": "6544389",
+  "away": {
+   "score": "0",
+   "names": {
+    "char6": "UCF",
+    "short": "UCF",
+    "seo": "ucf",
+    "full": ""
+   },
+   "winner": false,
+   "seed": "",
+   "description": "",
+   "rank": "",
+   "conferences": [
+    {
+     "conferenceName": "",
+     "conferenceSeo": "big-12"
+    }
+   ]
+  },
+  "finalMessage": "FINAL",
+  "title": "UCF Florida",
+  "url": "/game/6544389",
+  "network": "",
+  "home": {
+   "score": "7",
+   "names": {
+    "char6": "FLA",
+    "short": "Florida",
+    "seo": "florida",
+    "full": ""
+   },
+   "winner": true,
+   "seed": "",
+   "description": "",
+   "rank": "",
+   "conferences": [
+    {
+     "conferenceName": "",
+     "conferenceSeo": "sec"
+    }
+   ]
+  },
+  "liveVideoEnabled": false,
+  "startTime": "6:00 PM ET",
+  "startTimeEpoch": "1777068000",
+  "gameState": "final",
+  "startDate": "04/24/2026",
+  "currentPeriod": "FINAL",
+  "contestClock": "0:00",
+  "bracketId": "",
+  "bracketRound": ""
+ },
+ {
+  "gameID": "6547938",
+  "away": {
+   "score": "0",
+   "names": {
+    "char6": "BYU",
+    "short": "BYU",
+    "seo": "byu",
+    "full": ""
+   },
+   "winner": false,
+   "seed": "",
+   "description": "",
+   "rank": "",
+   "conferences": [
+    {
+     "conferenceName": "",
+     "conferenceSeo": "big-12"
+    }
+   ]
+  },
+  "finalMessage": "FINAL",
+  "title": "BYU Utah",
+  "url": "/game/6547938",
+  "network": "",
+  "home": {
+   "score": "9",
+   "names": {
+    "char6": "UTAH",
+    "short": "Utah",
+    "seo": "utah",
+    "full": ""
+   },
+   "winner": true,
+   "seed": "",
+   "description": "",
+   "rank": "",
+   "conferences": [
+    {
+     "conferenceName": "",
+     "conferenceSeo": "big-12"
+    }
+   ]
+  },
+  "liveVideoEnabled": false,
+  "startTime": "7:00 PM ET",
+  "startTimeEpoch": "1777071600",
+  "gameState": "final",
+  "startDate": "04/24/2026",
+  "currentPeriod": "FINAL",
+  "contestClock": "0:00",
+  "bracketId": "",
+  "bracketRound": ""
+ },
+ {
+  "gameID": "6551514",
+  "away": {
+   "score": "4",
+   "names": {
+    "char6": "OKLAST",
+    "short": "Oklahoma St.",
+    "seo": "oklahoma-st",
+    "full": ""
+   },
+   "winner": true,
+   "seed": "",
+   "description": "",
+   "rank": "",
+   "conferences": [
+    {
+     "conferenceName": "",
+     "conferenceSeo": "big-12"
+    }
+   ]
+  },
+  "finalMessage": "FINAL",
+  "title": "Oklahoma St. Baylor",
+  "url": "/game/6551514",
+  "network": "",
+  "home": {
+   "score": "2",
+   "names": {
+    "char6": "BAYLOR",
+    "short": "Baylor",
+    "seo": "baylor",
+    "full": ""
+   },
+   "winner": false,
+   "seed": "",
+   "description": "",
+   "rank": "",
+   "conferences": [
+    {
+     "conferenceName": "",
+     "conferenceSeo": "big-12"
+    }
+   ]
+  },
+  "liveVideoEnabled": false,
+  "startTime": "7:30 PM ET",
+  "startTimeEpoch": "1777073400",
+  "gameState": "final",
+  "startDate": "04/24/2026",
+  "currentPeriod": "FINAL",
+  "contestClock": "0:00",
+  "bracketId": "",
+  "bracketRound": ""
+ },
+ {
+  "gameID": "6549298",
+  "away": {
+   "score": "6",
+   "names": {
+    "char6": "TXTECH",
+    "short": "Texas Tech",
+    "seo": "texas-tech",
+    "full": ""
+   },
+   "winner": true,
+   "seed": "",
+   "description": "",
+   "rank": "",
+   "conferences": [
+    {
+     "conferenceName": "",
+     "conferenceSeo": "big-12"
+    }
+   ]
+  },
+  "finalMessage": "FINAL",
+  "title": "Texas Tech Arizona St.",
+  "url": "/game/6549298",
+  "network": "",
+  "home": {
+   "score": "0",
+   "names": {
+    "char6": "AZ ST",
+    "short": "Arizona St.",
+    "seo": "arizona-st",
+    "full": ""
+   },
+   "winner": false,
+   "seed": "",
+   "description": "",
+   "rank": "",
+   "conferences": [
+    {
+     "conferenceName": "",
+     "conferenceSeo": "big-12"
+    }
+   ]
+  },
+  "liveVideoEnabled": false,
+  "startTime": "9:00 PM ET",
+  "startTimeEpoch": "1777078800",
+  "gameState": "final",
+  "startDate": "04/24/2026",
+  "currentPeriod": "FINAL",
+  "contestClock": "0:00",
+  "bracketId": "",
+  "bracketRound": ""
+ },
+ {
+  "gameID": "6554003",
+  "away": {
+   "score": "1",
+   "names": {
+    "char6": "HOU",
+    "short": "Houston",
+    "seo": "houston",
+    "full": ""
+   },
+   "winner": false,
+   "seed": "",
+   "description": "",
+   "rank": "",
+   "conferences": [
+    {
+     "conferenceName": "",
+     "conferenceSeo": "big-12"
+    }
+   ]
+  },
+  "finalMessage": "FINAL",
+  "title": "Houston Arizona",
+  "url": "/game/6554003",
+  "network": "",
+  "home": {
+   "score": "9",
+   "names": {
+    "char6": "ARIZ",
+    "short": "Arizona",
+    "seo": "arizona",
+    "full": ""
+   },
+   "winner": true,
+   "seed": "",
+   "description": "",
+   "rank": "",
+   "conferences": [
+    {
+     "conferenceName": "",
+     "conferenceSeo": "big-12"
+    }
+   ]
+  },
+  "liveVideoEnabled": false,
+  "startTime": "9:00 PM ET",
+  "startTimeEpoch": "1777078800",
+  "gameState": "final",
+  "startDate": "04/24/2026",
+  "currentPeriod": "FINAL",
+  "contestClock": "0:00",
+  "bracketId": "",
+  "bracketRound": ""
+ }
+]
