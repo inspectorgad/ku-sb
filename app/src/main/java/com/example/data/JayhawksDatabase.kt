@@ -10,7 +10,7 @@ import androidx.sqlite.db.SupportSQLiteDatabase
 @Database(
     entities = [Player::class, Game::class, StatLine::class,
         ConferenceStanding::class, PollEntry::class],
-    version = 3,
+    version = 4,
     exportSchema = false
 )
 abstract class JayhawksDatabase : RoomDatabase() {
@@ -60,13 +60,23 @@ abstract class JayhawksDatabase : RoomDatabase() {
             }
         }
 
+        // v3 -> v4: home/away/neutral and scheduled start time, so the full
+        // posted schedule (including games not yet played) can be shown.
+        private val MIGRATION_3_4 = object : Migration(3, 4) {
+            override fun migrate(db: SupportSQLiteDatabase) {
+                db.execSQL("ALTER TABLE games ADD COLUMN site TEXT NOT NULL DEFAULT ''")
+                db.execSQL("ALTER TABLE games ADD COLUMN startTime TEXT NOT NULL DEFAULT ''")
+            }
+        }
+
         fun get(context: Context): JayhawksDatabase =
             instance ?: synchronized(this) {
                 instance ?: Room.databaseBuilder(
                     context.applicationContext,
                     JayhawksDatabase::class.java,
                     "ku_sb.db"
-                ).addMigrations(MIGRATION_1_2, MIGRATION_2_3).build().also { instance = it }
+                ).addMigrations(MIGRATION_1_2, MIGRATION_2_3, MIGRATION_3_4)
+                    .build().also { instance = it }
             }
     }
 }

@@ -71,6 +71,11 @@ data class Game(
     // Final score. Null until played.
     val teamScore: Int? = null,
     val opponentScore: Int? = null,
+    // Where the game is played, from the schedule scrape: "H" home, "A" away,
+    // "N" neutral site, "" unknown. Drives "vs" versus "at" in the UI.
+    val site: String = "",
+    // Scheduled start ("6 p.m. CT") for games that haven't been played yet.
+    val startTime: String = "",
     // Per-inning runs from KU's perspective, e.g. "0-1, 2-0, 1-0, 0-0, 3-1"
     // (extra innings simply append).
     val inningScores: String? = null,
