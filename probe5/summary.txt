@@ -1,0 +1,4 @@
+ncaa.com rankings page: HTTP 200
+slugs found: espncom, ncaa-womens-softball-rpi
+API espncom: 404 for https://ncaa-api.henrygd.me/rankings/softball/d1/espncom
+API ncaa-womens-softball-rpi: OK — 308 rows, updated "Through Games Jun. 04 2026", title "NCAA Women's Softball RPI", columns: Rank, School, Record, Conf, Road, Neutral, Home, Non-Div I, Prev
