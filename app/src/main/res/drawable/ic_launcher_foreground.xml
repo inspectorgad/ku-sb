@@ -4,32 +4,17 @@
     android:height="108dp"
     android:viewportWidth="108"
     android:viewportHeight="108">
-    <!-- Document Card Background (centered, safe zone is 66dp) -->
-    <path
-        android:fillColor="#FFFFFF"
-        android:pathData="M32,22 h44 a4,4 0,0 1 4,4 v56 a4,4 0,0 1 -4,4 h-44 a4,4 0,0 1 -4,-4 v-56 a4,4 0,0 1 4,-4 z" />
-    
-    <!-- Document header line: Markdown Heading (# Title) style -->
-    <path
-        android:fillColor="#181B22"
-        android:pathData="M38,32 h32 v4 h-32 z" />
-        
-    <!-- Markdown content lines -->
-    <path
-        android:fillColor="#90A4AE"
-        android:pathData="M38,42 h20 v3 h-20 z" />
-    <path
-        android:fillColor="#90A4AE"
-        android:pathData="M38,50 h24 v3 h-24 z" />
-    <path
-        android:fillColor="#90A4AE"
-        android:pathData="M38,58 h16 v3 h-16 z" />
-
-    <!-- A cool downward Markdown M and arrow badge -->
-    <path
-        android:fillColor="#181B22"
-        android:pathData="M62,66 L65,66 L65,74 L68,70 L71,74 L71,66 L74,66 L74,78 L71,78 L68,74 L65,78 L62,78 Z" />
-    <path
-        android:fillColor="#546E7A"
-        android:pathData="M77,66 L81,66 L81,72 L83,72 L79,78 L75,72 L77,72 Z" />
+    <path android:pathData="M 28.0,54.0 a 26.0,26.0 0 1,0 52.0,0 a 26.0,26.0 0 1,0 -52.0,0 Z" android:fillColor="#F2E84B" android:strokeColor="#D9CB35" android:strokeWidth="1"/>
+    <path android:pathData="M 39.70,32.29 Q 48.80,54.00 39.70,75.71" android:fillColor="#00000000" android:strokeColor="#D0000C" android:strokeWidth="1.9" android:strokeLineCap="round"/>
+    <path android:pathData="M 46.66,38.96 L 38.12,41.25" android:fillColor="#00000000" android:strokeColor="#D0000C" android:strokeWidth="1.5" android:strokeLineCap="round"/>
+    <path android:pathData="M 48.16,46.47 L 39.40,47.64" android:fillColor="#00000000" android:strokeColor="#D0000C" android:strokeWidth="1.5" android:strokeLineCap="round"/>
+    <path android:pathData="M 48.67,54.00 L 39.83,54.00" android:fillColor="#00000000" android:strokeColor="#D0000C" android:strokeWidth="1.5" android:strokeLineCap="round"/>
+    <path android:pathData="M 48.16,61.53 L 39.40,60.36" android:fillColor="#00000000" android:strokeColor="#D0000C" android:strokeWidth="1.5" android:strokeLineCap="round"/>
+    <path android:pathData="M 46.66,69.04 L 38.12,66.75" android:fillColor="#00000000" android:strokeColor="#D0000C" android:strokeWidth="1.5" android:strokeLineCap="round"/>
+    <path android:pathData="M 68.30,32.29 Q 59.20,54.00 68.30,75.71" android:fillColor="#00000000" android:strokeColor="#D0000C" android:strokeWidth="1.9" android:strokeLineCap="round"/>
+    <path android:pathData="M 69.88,41.25 L 61.34,38.96" android:fillColor="#00000000" android:strokeColor="#D0000C" android:strokeWidth="1.5" android:strokeLineCap="round"/>
+    <path android:pathData="M 68.60,47.64 L 59.84,46.47" android:fillColor="#00000000" android:strokeColor="#D0000C" android:strokeWidth="1.5" android:strokeLineCap="round"/>
+    <path android:pathData="M 68.17,54.00 L 59.33,54.00" android:fillColor="#00000000" android:strokeColor="#D0000C" android:strokeWidth="1.5" android:strokeLineCap="round"/>
+    <path android:pathData="M 68.60,60.36 L 59.84,61.53" android:fillColor="#00000000" android:strokeColor="#D0000C" android:strokeWidth="1.5" android:strokeLineCap="round"/>
+    <path android:pathData="M 69.88,66.75 L 61.34,69.04" android:fillColor="#00000000" android:strokeColor="#D0000C" android:strokeWidth="1.5" android:strokeLineCap="round"/>
 </vector>
