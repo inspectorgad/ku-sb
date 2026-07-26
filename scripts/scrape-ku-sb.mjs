@@ -1,13 +1,18 @@
-// Scrapes KU Softball data from two sources (see DATA-VALIDATION.md):
+// Scrapes KU Softball data (see DATA-VALIDATION.md):
 //  1. kuathletics.com (Sidearm) via headless Chromium — the PRIMARY per-game
 //     source. The season stats page links every game's box score page, and
 //     each box score page embeds complete structured data (full batting,
 //     pitching, and fielding lines with clean names, line scores, W/L/S)
 //     in its __NUXT_DATA__ payload. Also scrapes the current roster and
 //     upcoming schedule.
-//  2. NCAA API (ncaa-api.henrygd.me) — game discovery/results cross-check.
-//     The softball feed's stat lines are NOT trustworthy (see validation),
-//     so only schedule facts are kept from it.
+//  2. NCAA API (ncaa-api.henrygd.me) — game discovery/results cross-check,
+//     plus every Big 12 team's results (each scoreboard side carries a
+//     conference tag), which is what the Big 12 standings are computed
+//     from. The softball feed's stat lines are NOT trustworthy (see
+//     validation), so only schedule facts are kept from it.
+//  3. Rankings — the NCAA RPI through the API, and the ESPN.com/USA
+//     Softball poll parsed from ncaa.com's server-rendered rankings page
+//     (probe5: the poll's JSON endpoint 404s but the HTML table is stable).
 // Runs in GitHub Actions where outbound network is open. Incremental: an
 // index in scraped/ku-index.json records scanned dates and captured box
 // scores so nightly runs only touch new games.
@@ -18,16 +23,28 @@ const API = 'https://ncaa-api.henrygd.me';
 // Season years: "2026" is the Spring 2026 season.
 const SEASONS = (process.env.SEASONS || '2026').trim().split(/\s+/);
 const TEAM_SEO = 'kansas';
+const CONFERENCE_SEO = 'big-12';
+// Bump to force a one-time full re-sweep of scanned dates (e.g. when the
+// sweep starts collecting something new, like v2's big12Games).
+const INDEX_VERSION = 2;
 
 fs.mkdirSync('scraped', { recursive: true });
 
 const INDEX_PATH = 'scraped/ku-index.json';
 const index = fs.existsSync(INDEX_PATH)
   ? JSON.parse(fs.readFileSync(INDEX_PATH, 'utf8'))
-  : { scannedDates: {}, ncaaGames: {}, sidearmGames: {} };
+  : { indexVersion: INDEX_VERSION, scannedDates: {}, ncaaGames: {}, sidearmGames: {}, big12Games: {} };
 index.scannedDates ??= {};
 index.ncaaGames ??= {};
 index.sidearmGames ??= {};
+index.big12Games ??= {};
+if ((index.indexVersion ?? 1) < INDEX_VERSION) {
+  console.log(
+    `index v${index.indexVersion ?? 1} < v${INDEX_VERSION}: clearing ${Object.keys(index.scannedDates).length} scanned dates for a one-time full re-sweep`
+  );
+  index.scannedDates = {};
+  index.indexVersion = INDEX_VERSION;
+}
 
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
@@ -74,6 +91,39 @@ for (const season of SEASONS) {
     for (const wrap of data.games || []) {
       const g = wrap.game || wrap;
       const sides = [g.home, g.away];
+
+      // Big 12 capture: any final game with at least one conference team.
+      // Conference games (both sides tagged) drive conference records; the
+      // rest still count toward each team's overall record. Membership comes
+      // from the tags themselves, never a hardcoded list, so realignment
+      // can't stale it.
+      const confTags = (s) => (s?.conferences ?? []).map((c) => c.conferenceSeo);
+      const homeInConf = confTags(g.home).includes(CONFERENCE_SEO);
+      const awayInConf = confTags(g.away).includes(CONFERENCE_SEO);
+      if ((homeInConf || awayInConf) && g.gameState === 'final') {
+        const side = (s, inConf) => ({
+          name: s?.names?.short ?? '',
+          seo: s?.names?.seo ?? '',
+          score: Number(s?.score ?? 0),
+          winner: Boolean(s?.winner),
+          rank: s?.rank ? Number(s.rank) : null,
+          inConference: inConf,
+        });
+        index.big12Games[g.gameID] = {
+          date,
+          // Softball seasons sit inside one calendar year.
+          season: date.slice(0, 4),
+          home: side(g.home, homeInConf),
+          away: side(g.away, awayInConf),
+          conferenceGame: homeInConf && awayInConf,
+          // NCAA-tournament games carry bracket fields on the scoreboard.
+          // The Big 12 tournament does NOT (probe4), so update-seed.py
+          // fences it off with a date window instead. Bracket games count
+          // toward overall records but never conference records.
+          bracket: Boolean(g.bracketRound || g.bracketId),
+        };
+      }
+
       if (!sides.some((s) => s?.names?.seo === TEAM_SEO)) continue;
       const kuIsHome = g.home?.names?.seo === TEAM_SEO;
       const ku = kuIsHome ? g.home : g.away;
@@ -90,6 +140,58 @@ for (const season of SEASONS) {
     }
     index.scannedDates[date] = true;
   }
+}
+
+console.log(`big12 games captured: ${Object.keys(index.big12Games).length}`);
+
+// --- 1b. Rankings snapshots (best effort; never fail the run) ---------------
+// Both sources serve only the CURRENT snapshot — no per-season history — so
+// each run overwrites its file and update-seed.py keys it by the season in
+// the "Through Games ..." label.
+
+// NCAA RPI (softball's selection metric): plain JSON via the API.
+try {
+  const data = await getJson(`${API}/rankings/softball/d1/ncaa-womens-softball-rpi`);
+  fs.writeFileSync('scraped/rankings-rpi.json', JSON.stringify(data, null, 1));
+  console.log(`rankings rpi: ${data.data?.length ?? 0} rows (${data.updated ?? 'no date'})`);
+} catch (e) {
+  console.log(`rankings rpi failed (non-fatal): ${e.message}`);
+}
+
+// ESPN.com/USA Softball poll: the API 404s on its two-segment slug, but
+// ncaa.com serves the table server-rendered (probe5) — parse the HTML.
+try {
+  const resp = await fetch('https://www.ncaa.com/rankings/softball/d1/espncom/usa-softball', {
+    headers: {
+      'user-agent':
+        'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36',
+      accept: 'text/html',
+    },
+  });
+  if (!resp.ok) throw new Error(`HTTP ${resp.status}`);
+  const html = await resp.text();
+  const updated = (html.match(/[Tt]hrough [Gg]ames[^<]*/) || [''])[0].trim();
+  const table = html.slice(html.indexOf('<table'));
+  const strip = (s) => s.replace(/<[^>]+>/g, '').replace(/\s+/g, ' ').trim();
+  const rows = [];
+  for (const tr of table.matchAll(/<tr[^>]*>([\s\S]*?)<\/tr>/g)) {
+    const cells = [...tr[1].matchAll(/<td[^>]*>([\s\S]*?)<\/td>/g)].map((m) => strip(m[1]));
+    // RANK, COLLEGE, RECORD, POINTS, PREVIOUS RANK
+    if (cells.length >= 5 && /^t?-?\d/i.test(cells[0])) {
+      rows.push({
+        Rank: cells[0],
+        School: cells[1],
+        Record: cells[2],
+        Points: cells[3],
+        Previous: cells[4],
+      });
+    }
+  }
+  const poll = { title: 'ESPN.com/USA Softball Top 25', updated, data: rows };
+  fs.writeFileSync('scraped/rankings-poll.json', JSON.stringify(poll, null, 1));
+  console.log(`rankings poll: ${rows.length} rows (${updated || 'no date'})`);
+} catch (e) {
+  console.log(`rankings poll failed (non-fatal): ${e.message}`);
 }
 
 // --- 2. kuathletics.com (Sidearm) -------------------------------------------

@@ -271,6 +271,36 @@ TEMPLATE = r"""<!doctype html>
     </div>
   </section>
 
+  <section id="big12Sec" style="display:none">
+    <div class="sec-head">
+      <h2>Big 12</h2>
+      <span class="note" id="big12Note"></span>
+      <div class="rule"></div>
+    </div>
+    <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 12px;">
+      <div class="card tbl-wrap">
+        <h3 style="margin:0 0 8px; font-size:13px; letter-spacing:.08em; text-transform:uppercase; color:var(--muted)">Standings</h3>
+        <table id="standingsTbl">
+          <thead><tr>
+            <th class="lft">Team</th><th>Conf</th><th>Pct</th><th>Overall</th><th>Poll</th><th>RPI</th>
+          </tr></thead>
+          <tbody></tbody>
+        </table>
+        <div class="dim" style="font-size:11.5px; margin-top:8px">Ordered by conference win % — not official Big 12 tiebreakers.</div>
+      </div>
+      <div class="card tbl-wrap" id="pollCard" style="display:none">
+        <h3 id="pollTitle" style="margin:0 0 2px; font-size:13px; letter-spacing:.08em; text-transform:uppercase; color:var(--muted)"></h3>
+        <div class="dim" id="pollUpdated" style="font-size:11.5px; margin-bottom:6px"></div>
+        <table id="pollTbl">
+          <thead><tr>
+            <th class="lft">Rank</th><th class="lft">Team</th><th class="lft"></th><th>Record</th><th>Pts</th>
+          </tr></thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
   <section>
     <div class="sec-head">
       <h2>Roster</h2>
@@ -548,6 +578,43 @@ function hideTip() { tip.style.display = "none"; }
         (g.top.rbi ? ", " + g.top.rbi + " RBI" : "") + "</span>" : '<span class="dim">no box score</span>'}</td>
       <td class="lft"><span class="phase-lbl">${phaseOf(g)}</span></td>
     </tr>`).join("");
+})();
+
+// ---------- Big 12 standings + poll ----------
+(function big12() {
+  const season = games[games.length - 1]?.season;
+  const standings = (DATA.standings || []).filter(s => s.season === season);
+  const poll = (DATA.polls || []).find(p => p.season === season);
+  if (!standings.length && !poll) return;
+  document.getElementById("big12Sec").style.display = "";
+  document.getElementById("big12Note").textContent = season + " season";
+
+  document.querySelector("#standingsTbl tbody").innerHTML = standings.map(s => {
+    const ku = s.seo === "kansas";
+    const confPct = (s.confW + s.confL) ? s.confW / (s.confW + s.confL) : 0;
+    return `<tr${ku ? ' style="font-weight:800; background:var(--win-bg)"' : ""}>
+      <td class="lft">${ku ? "• " : ""}${s.team}</td>
+      <td>${s.confW}-${s.confL}</td>
+      <td>${fAvg(confPct)}</td>
+      <td>${s.overallW}-${s.overallL}</td>
+      <td>${s.nationalRank ? "#" + s.nationalRank : "—"}</td>
+      <td>${s.rpiRank ? "#" + s.rpiRank : "—"}</td>
+    </tr>`;
+  }).join("");
+
+  if (poll && poll.rows?.length) {
+    document.getElementById("pollCard").style.display = "";
+    document.getElementById("pollTitle").textContent = poll.name || "National Poll";
+    document.getElementById("pollUpdated").textContent = poll.updated || "";
+    document.querySelector("#pollTbl tbody").innerHTML = poll.rows.map(r => `
+      <tr>
+        <td class="lft dim">${r.rankLabel || r.rank}</td>
+        <td class="lft"${r.big12 ? ' style="font-weight:700"' : ""}>${r.team}${r.firstPlaceVotes ? ` <span class="dim">(${r.firstPlaceVotes})</span>` : ""}</td>
+        <td class="lft">${r.big12 ? '<span class="chip W" style="font-size:10px">B12</span>' : ""}</td>
+        <td>${r.record || ""}</td>
+        <td class="dim">${r.points || ""}</td>
+      </tr>`).join("");
+  }
 })();
 
 // ---------- roster ----------

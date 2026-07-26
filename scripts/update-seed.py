@@ -16,7 +16,8 @@ the app's Seeder merge is what protects user edits on-device.
 import glob
 import json
 import os
-from datetime import datetime, timezone
+import re
+from datetime import datetime, timedelta, timezone
 
 SEED_PATH = "app/src/main/assets/seed.json"
 
@@ -53,10 +54,14 @@ def innings_to_outs(value):
 
 
 def iso_date(mdy):
-    """Sidearm dates are M/D/YYYY."""
+    """Sidearm dates are M/D/YYYY. Guard against century typos in the source
+    (the 2026 Arkansas box was posted dated 3/1/1926)."""
     try:
         m, d, y = str(mdy).strip().split("/")
-        return f"{y}-{int(m):02d}-{int(d):02d}"
+        year = int(y)
+        while year < 2000:
+            year += 100
+        return f"{year}-{int(m):02d}-{int(d):02d}"
     except (ValueError, AttributeError):
         return None
 
@@ -303,6 +308,227 @@ for entry in load_json("scraped/upcoming.json", []):
         "season": date[:4],
     }
 
+# --- Big 12 standings, computed from the scoreboard sweep -------------------
+# Conference records are derived from the Big 12 games the sweep collects
+# (every scoreboard team carries a conference tag). This also means any season
+# can be rebuilt retroactively, which a live standings endpoint could not do.
+def norm_team(name):
+    """Canonical key for cross-source name matching ('Iowa State'/'Iowa St.')."""
+    n = re.sub(r"\s*\(G\d\)\s*$", "", name or "")     # doubleheader marker
+    n = re.sub(r"\s*\(\d+\)\s*$", "", n).lower()      # poll first-place votes
+    n = n.replace(".", "")
+    n = re.sub(r"\bstate\b", "st", n)
+    return re.sub(r"\s+", " ", n).strip()
+
+
+index = load_json("scraped/ku-index.json", {})
+big12_games = list(index.get("big12Games", {}).values())
+
+# Conference records are regular-season only. Softball's Big 12 tournament
+# carries NO bracket fields on the scoreboard (probe4), so it is fenced by
+# date instead: NCAA-tournament games ARE bracket-flagged, and the conference
+# tournament always sits in the ~10 days before regionals start. Until a
+# season's regionals appear, tournament games briefly count as conference
+# games — standings regenerate nightly, so this self-corrects within days.
+ncaa_start = {}  # season -> date of first bracketed game involving a Big 12 team
+for game in big12_games:
+    if game.get("bracket"):
+        season = game.get("season") or game.get("date", "")[:4]
+        date = game.get("date", "")
+        if season not in ncaa_start or date < ncaa_start[season]:
+            ncaa_start[season] = date
+
+
+def conf_fence(season):
+    start = ncaa_start.get(season)
+    if not start:
+        return None
+    return (datetime.strptime(start, "%Y-%m-%d") - timedelta(days=10)).strftime("%Y-%m-%d")
+
+
+records = {}  # (season, key) -> record dict
+for game in big12_games:
+    season = game.get("season") or game.get("date", "")[:4]
+    fence = conf_fence(season)
+    conf_game = (
+        bool(game.get("conferenceGame"))
+        and not game.get("bracket")
+        and (fence is None or game.get("date", "") < fence)
+    )
+    for side in ("home", "away"):
+        s = game.get(side) or {}
+        if not s.get("inConference") or not s.get("name"):
+            continue  # non-conference opponents get no standings row
+        rec = records.setdefault(
+            (season, norm_team(s["name"])),
+            {
+                "season": season,
+                "team": s["name"],
+                "seo": s.get("seo", ""),
+                "confW": 0, "confL": 0, "overallW": 0, "overallL": 0,
+                "_rankDate": "", "nationalRank": None,
+            },
+        )
+        won = bool(s.get("winner"))
+        rec["overallW" if won else "overallL"] += 1
+        if conf_game:
+            rec["confW" if won else "confL"] += 1
+        # Keep the most recent rank the scoreboard reported that season.
+        if s.get("rank") and game.get("date", "") >= rec["_rankDate"]:
+            rec["_rankDate"] = game["date"]
+            rec["nationalRank"] = s["rank"]
+
+# The NCAA feed misses two KU games the Sidearm seed has (May 7 UCF, the
+# Apr 10 Baylor doubleheader game 2 — see DATA-VALIDATION.md), so records
+# touching KU are patched from the seed, which is authoritative for KU.
+ncaa_ku_keys = set()
+for game in big12_games:
+    for side, other in (("home", "away"), ("away", "home")):
+        if (game.get(side) or {}).get("seo") == "kansas":
+            us, them = game[side], game[other]
+            ncaa_ku_keys.add((game.get("date"), us.get("score"), them.get("score")))
+for game in games.values():
+    if game.get("teamScore") is None:
+        continue
+    key = (game["date"], game["teamScore"], game["opponentScore"])
+    if key in ncaa_ku_keys:
+        continue
+    season = game["season"]
+    fence = conf_fence(season)
+    ku = records.get((season, norm_team("Kansas")))
+    if ku is None:
+        continue  # sweep hasn't run for this season yet
+    opp = records.get((season, norm_team(game["opponent"])))
+    won = game["teamScore"] > game["opponentScore"]
+    conf_game = opp is not None and (fence is None or game["date"] < fence)
+    print(
+        f"  patching NCAA-missing game into standings: {game['date']} vs "
+        f"{game['opponent']} ({'W' if won else 'L'}, {'conference' if conf_game else 'overall only'})"
+    )
+    ku["overallW" if won else "overallL"] += 1
+    if opp is not None:
+        opp["overallL" if won else "overallW"] += 1
+    if conf_game:
+        ku["confW" if won else "confL"] += 1
+        opp["confL" if won else "confW"] += 1
+
+# --- Rankings snapshots (ESPN.com/USA Softball poll + NCAA RPI) --------------
+# Both sources serve only the current snapshot, so each is keyed by the season
+# in its "Through Games JUN. 5, 2026" label (softball seasons sit inside one
+# calendar year; an Aug-Dec label would be a preseason poll for the next one).
+MONTHS = "JAN FEB MAR APR MAY JUN JUL AUG SEP OCT NOV DEC".split()
+
+
+def snapshot_season(payload):
+    label = (payload.get("updated", "") or "").upper()
+    m = re.search(r"\b(" + "|".join(MONTHS) + r")[A-Z]*\.?\s+(\d{1,2}),?\s+(20\d{2})", label)
+    if not m:
+        return None
+    month = MONTHS.index(m.group(1)) + 1
+    year = int(m.group(3))
+    return str(year if month <= 7 else year + 1)
+
+
+def row_value(row, *candidates):
+    """First matching column: sources vary in header capitalization."""
+    lowered = {k.strip().lower(): v for k, v in row.items()}
+    for c in candidates:
+        if c in lowered:
+            return lowered[c]
+    return None
+
+
+polls = []
+poll = load_json("scraped/rankings-poll.json", {})
+rpi = load_json("scraped/rankings-rpi.json", {})
+
+rpi_season = snapshot_season(rpi)
+rpi_by_team = {}
+for row in rpi.get("data", []):
+    if (row_value(row, "conf", "conference") or "") == "Big 12":
+        rpi_by_team[norm_team(row_value(row, "school", "team") or "")] = row
+
+# RPI carries each team's official overall record — fold in the RPI rank and
+# cross-check our computed record against it (a warning, never a failure: the
+# snapshot and our sweep can legitimately sit a game apart mid-season).
+for (season, key), rec in records.items():
+    row = rpi_by_team.get(key)
+    if not row or season != rpi_season:
+        continue
+    rank = str(row_value(row, "rank") or "")
+    rec["rpiRank"] = int(rank) if rank.isdigit() else None
+    official = (row_value(row, "record") or "").strip()
+    ours = f"{rec['overallW']}-{rec['overallL']}"
+    if official and official != ours:
+        print(f"  cross-check: {rec['team']} computed {ours} vs RPI {official}")
+
+poll_season = snapshot_season(poll)
+if poll.get("data") and poll_season:
+    b12_keys = {k for (s, k) in records if s == poll_season}
+    rows = []
+    for row in poll["data"]:
+        label = str(row_value(row, "rank") or "").strip()  # can be a tie, e.g. "T-22"
+        digits = re.search(r"\d+", label)
+        raw_team = (row_value(row, "school", "college", "team") or "").strip()
+        team = re.sub(r"\s*\(\d+\)\s*$", "", raw_team).strip()
+        votes = re.search(r"\((\d+)\)\s*$", raw_team)
+        rows.append({
+            "rank": int(digits.group()) if digits else 0,
+            "rankLabel": label.rstrip("."),
+            "team": team,
+            "record": (row_value(row, "record") or "").strip(),
+            "points": (row_value(row, "points", "total points") or "").strip(),
+            "previous": (row_value(row, "previous", "previous rank", "prev") or "").strip(),
+            "firstPlaceVotes": int(votes.group(1)) if votes else 0,
+            "big12": norm_team(team) in b12_keys,
+        })
+    polls.append({
+        "season": poll_season,
+        "name": poll.get("title") or "ESPN.com/USA Softball Top 25",
+        "updated": (poll.get("updated") or "").strip(),
+        "rows": rows,
+    })
+
+    # The poll is the authoritative ranking. The scoreboard's per-game rank is
+    # only "the rank this team carried in that game", so a team that fell out
+    # of the top 25 would otherwise keep a stale number forever. Where we hold
+    # a poll for the season, it decides: absent from the poll means unranked.
+    poll_rank = {norm_team(r["team"]): r["rank"] for r in rows}
+    restated = 0
+    for (season, key), rec in records.items():
+        if season != poll_season:
+            continue
+        fresh = poll_rank.get(key)
+        if fresh != rec["nationalRank"]:
+            restated += 1
+        rec["nationalRank"] = fresh
+    if restated:
+        print(f"  national ranks restated from the poll for {restated} teams")
+    print(
+        f"  poll {poll_season}: {len(rows)} teams, "
+        f"{sum(1 for r in rows if r['big12'])} from the Big 12"
+    )
+
+# Sorted by conference win %, then conference wins, then overall win % — NOT
+# official Big 12 tiebreakers (those use head-to-head); the UI says as much.
+def standing_sort(rec):
+    conf_games = rec["confW"] + rec["confL"]
+    overall = rec["overallW"] + rec["overallL"]
+    return (
+        -(rec["confW"] / conf_games if conf_games else 0),
+        -rec["confW"],
+        -(rec["overallW"] / overall if overall else 0),
+        rec["team"],
+    )
+
+
+standings = []
+for rec in sorted(records.values(), key=standing_sort):
+    standings.append({k: v for k, v in rec.items() if not k.startswith("_")})
+if standings:
+    seasons = sorted({r["season"] for r in standings})
+    print(f"standings computed for seasons {', '.join(seasons)}: {len(standings)} team rows")
+
 seed = {
     "formatVersion": 1,
     "generatedAt": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
@@ -310,6 +536,12 @@ seed = {
     "players": sorted(players.values(), key=lambda p: p["name"]),
     "games": [games[k] for k in sorted(games)],
 }
+# Additive only: formatVersion stays 1 so already-installed APKs (which reject
+# anything newer) keep syncing, and older seeds without these keys stay valid.
+if standings:
+    seed["standings"] = standings
+if polls:
+    seed["polls"] = polls
 
 os.makedirs(os.path.dirname(SEED_PATH), exist_ok=True)
 

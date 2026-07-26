@@ -1,14 +1,16 @@
 # Data validation — KU Softball, Spring 2026
 
-Result: **PASS**. The full 2026 season (58 games, Feb 6 – May 16, 36-22)
+Result: **PASS**. The full 2026 season (57 games, Feb 6 – May 16, 36-21)
 is retrievable, and per-player batting AND pitching are available with
 clean, internally consistent data — but unlike the ku-wbb app, the primary
 per-game source must be **kuathletics.com box scores**, with the NCAA API
-used for game discovery and cross-validation. Neither source alone covers
-the whole season: the NCAA feed is missing the May 7 Big 12 tournament
-game, and kuathletics has no box score for the Mar 1 Arkansas game (the
-production scrape confirmed both, so the app's seed carries 57 games with
-full lines plus Arkansas as a result-only game). Raw evidence lives in
+used for game discovery and cross-validation. Every game has a Sidearm box
+score; two never reach the NCAA feed (the May 7 Big 12 tournament game is
+stuck in "pre" state, and game 2 of the Apr 10 Baylor doubleheader is
+absent), and the Mar 1 Arkansas box is dated **3/1/1926** in Sidearm's own
+payload — a century typo the seed builder corrects (before the fix it
+produced a phantom 1926 duplicate alongside the NCAA result, which is why
+early builds showed 58 games and a 36-22 record). Raw evidence lives in
 `probe/` (NCAA season sweep) and `probe2/` (Sidearm box scores + NCAA
 gaps), captured by the `probe-data.yml` / `probe2-data.yml` workflows on
 2026-07-19.
@@ -57,10 +59,9 @@ gaps), captured by the `probe-data.yml` / `probe2-data.yml` workflows on
 - **Roster page**: parsed cleanly — 26 players with name / jersey /
   position; every 2026 box-score name resolves to it (`probe/roster.json`).
 - **Season stats page** (`/sports/softball/stats/2026`): carries links to
-  **57 game box scores** (including id 20610 for the May 7 UCF game the
-  NCAA feed is missing). The one gap — found by the first production
-  scrape, not the probe — is the 2026-03-01 Arkansas game, which has no
-  box score on kuathletics; its result comes from the NCAA feed instead.
+  **all 57 game box scores** (including id 20610 for the May 7 UCF game
+  the NCAA feed is missing, and id 20446 for the Mar 1 Arkansas game —
+  which Sidearm serves dated 3/1/1926; see above).
 - **Box score pages embed complete structured data** in the
   `__NUXT_DATA__` JSON payload (devalue format, parsed successfully in
   `probe2/boxscore-*.html`): per-player hitting (AB, R, H, RBI, 2B, 3B,
@@ -108,3 +109,28 @@ wanted in the app they must be entered by hand (the Games tab supports
 manual games + stat lines, and the sync merge never overwrites them). If
 KU ever starts posting fall box scores, the scraper's stats-page sweep
 picks up a new season by adding its year to `SEASONS` in scrape-data.yml.
+
+## Big 12 standings & national rankings (probe4/probe5, 2026-07-26)
+
+Ported from ku-wbb; softball differences validated before building:
+
+- **Conference tags**: every softball scoreboard side carries
+  `conferences[].conferenceSeo` ("big-12"), so conference membership and
+  standings can be computed from the sweep, never a hardcoded team list.
+- **Tournament fencing**: NCAA-tournament games are bracket-flagged on the
+  scoreboard, but **Big 12 tournament games are NOT** (probe4, May 7-8) —
+  so the conference tournament is fenced out of conference records by
+  date: conference games within the 10 days before the season's first
+  bracketed game don't count. Until regionals appear, tournament games
+  briefly count as conference games; standings regenerate nightly, so
+  this self-corrects within days.
+- **Rankings**: softball has no AP poll on ncaa.com. The two sources are
+  the **NCAA RPI** (API slug `ncaa-womens-softball-rpi`, 308 rows,
+  final-2026 snapshot "Through Games Jun. 04 2026") and the
+  **ESPN.com/USA Softball Top 25** — whose JSON endpoint 404s, but whose
+  page (`/rankings/softball/d1/espncom/usa-softball`) is server-rendered
+  HTML with a stable table (probe5), so the scraper parses that. Both
+  serve only the current snapshot; each is keyed by the season in its
+  "Through Games ..." label. RPI also carries official overall records,
+  used as a cross-check on the computed standings — it is what confirmed
+  KU's true 2026 record is 36-21 over 57 games.

@@ -6,10 +6,9 @@ pitching box scores, season aggregates (AVG/OBP/SLG/OPS, ERA/WHIP), and
 team leaderboards — automatically updated through the season. Modeled on
 the [ku-wbb](https://github.com/inspectorgad/ku-wbb) and
 [ku-volleyball](https://github.com/inspectorgad/ku-volleyball) apps and
-seeded with the complete Spring 2026 season (58 games, 36-22, Big 12
-tournament and NCAA regional included — 57 with full box scores, plus
-the Mar 1 Arkansas game as a result-only entry since kuathletics never
-posted its box score).
+seeded with the complete Spring 2026 season (57 games, 36-21, Big 12
+tournament and NCAA regional included, every game with a full box
+score).
 
 ## Features
 
@@ -27,6 +26,10 @@ posted its box score).
   and run margins plus leaderboards for AVG, HR, RBI, hits, runs, SB,
   and OPS on the batting side and ERA, strikeouts, wins, saves, and
   WHIP in the circle.
+- **Big 12** — computed conference standings for every Big 12 team
+  (conference and overall records, poll rank, RPI) with KU's row
+  highlighted, plus the ESPN.com/USA Softball Top 25 with Big 12 teams
+  flagged — refreshed nightly alongside everything else.
 
 Derived stats (AVG/OBP/SLG/OPS, ERA/WHIP, innings from outs) are computed
 automatically from the raw counting stats.
@@ -97,9 +100,10 @@ primary per-game source.
 ## Season dashboard
 
 A colorful single-page dashboard of the whole season — team tiles,
-run-margin chart, leaderboards, every game with its line score, and a
-clickable roster where each player opens their game-by-game batting and
-pitching log — is published on GitHub Pages:
+run-margin chart, leaderboards, Big 12 standings and the national poll,
+every game with its line score, and a clickable roster where each player
+opens their game-by-game batting and pitching log — is published on
+GitHub Pages:
 
 **https://inspectorgad.github.io/ku-sb/**
 
