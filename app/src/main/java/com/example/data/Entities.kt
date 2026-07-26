@@ -5,6 +5,49 @@ import androidx.room.ForeignKey
 import androidx.room.Index
 import androidx.room.PrimaryKey
 
+/**
+ * One team's row in a season's Big 12 standings, computed by the nightly
+ * scrape from every conference team's scoreboard results.
+ */
+@Entity(tableName = "standings", primaryKeys = ["season", "seo"])
+data class ConferenceStanding(
+    val season: String,
+    val seo: String,
+    val team: String,
+    val confW: Int = 0,
+    val confL: Int = 0,
+    val overallW: Int = 0,
+    val overallL: Int = 0,
+    // National poll rank as of the season's latest poll snapshot.
+    val nationalRank: Int? = null,
+    // NCAA RPI — softball's selection metric (basketball uses NET).
+    val rpiRank: Int? = null
+) {
+    val confPct: Double get() = (confW + confL).let { if (it == 0) 0.0 else confW.toDouble() / it }
+    val overallPct: Double get() = (overallW + overallL).let { if (it == 0) 0.0 else overallW.toDouble() / it }
+}
+
+/**
+ * One row of a national poll snapshot (USA Today/NFCA coaches poll). The
+ * endpoint only serves the current poll, so each season keeps the latest
+ * capture — which at season's end is that season's final poll.
+ */
+@Entity(tableName = "poll_entries", primaryKeys = ["season", "team"])
+data class PollEntry(
+    val season: String,
+    val team: String,
+    val rank: Int,
+    // Preserves ties as published, e.g. "T-22".
+    val rankLabel: String,
+    val record: String = "",
+    val points: String = "",
+    val previous: String = "",
+    val firstPlaceVotes: Int = 0,
+    val big12: Boolean = false,
+    val pollName: String = "",
+    val updated: String = ""
+)
+
 @Entity(tableName = "players")
 data class Player(
     @PrimaryKey(autoGenerate = true) val id: Long = 0,
