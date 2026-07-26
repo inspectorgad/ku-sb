@@ -63,8 +63,10 @@ jobs:
 
       - name: Scrape kuathletics + NCAA data
         env:
-          # Season years: 2026 is the Spring 2026 season.
-          SEASONS: '2026'
+          # Season years. 2027 is listed ahead of the season: future dates are
+          # skipped at no cost and its stats page 404s harmlessly, so the first
+          # 2027 games appear on their own once KU posts them.
+          SEASONS: '2026 2027'
         run: node scripts/scrape-ku-sb.mjs
 
       - name: Rebuild seed from scraped data

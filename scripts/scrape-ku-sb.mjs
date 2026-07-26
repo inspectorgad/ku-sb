@@ -21,7 +21,7 @@ import fs from 'fs';
 
 const API = 'https://ncaa-api.henrygd.me';
 // Season years: "2026" is the Spring 2026 season.
-const SEASONS = (process.env.SEASONS || '2026').trim().split(/\s+/);
+const SEASONS = (process.env.SEASONS || '2026 2027').trim().split(/\s+/);
 const TEAM_SEO = 'kansas';
 const CONFERENCE_SEO = 'big-12';
 // Bump to force a one-time full re-sweep of scanned dates (e.g. when the

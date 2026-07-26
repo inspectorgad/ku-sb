@@ -10,7 +10,7 @@ import androidx.sqlite.db.SupportSQLiteDatabase
 @Database(
     entities = [Player::class, Game::class, StatLine::class,
         ConferenceStanding::class, PollEntry::class],
-    version = 2,
+    version = 3,
     exportSchema = false
 )
 abstract class JayhawksDatabase : RoomDatabase() {
@@ -42,13 +42,31 @@ abstract class JayhawksDatabase : RoomDatabase() {
             }
         }
 
+        // v2 -> v3: one-time cleanup of games seeded from a bad source date.
+        // kuathletics served the Mar 1 2026 Arkansas box score dated 3/1/1926;
+        // devices that synced before the scraper's century fix hold a phantom
+        // game that shows up as its own "1926" season everywhere seasons are
+        // listed. Nothing before 2000 can be a real game in this app, and the
+        // corrected seed re-adds the same game under 2026, so dropping these
+        // rows is safe — the seed merge cannot delete them on its own because
+        // it only ever gap-fills.
+        private val MIGRATION_2_3 = object : Migration(2, 3) {
+            override fun migrate(db: SupportSQLiteDatabase) {
+                db.execSQL(
+                    """DELETE FROM stat_lines WHERE gameId IN
+                        (SELECT id FROM games WHERE substr(date, 1, 4) < '2000')"""
+                )
+                db.execSQL("DELETE FROM games WHERE substr(date, 1, 4) < '2000'")
+            }
+        }
+
         fun get(context: Context): JayhawksDatabase =
             instance ?: synchronized(this) {
                 instance ?: Room.databaseBuilder(
                     context.applicationContext,
                     JayhawksDatabase::class.java,
                     "ku_sb.db"
-                ).addMigrations(MIGRATION_1_2).build().also { instance = it }
+                ).addMigrations(MIGRATION_1_2, MIGRATION_2_3).build().also { instance = it }
             }
     }
 }
