@@ -17,8 +17,10 @@ score).
   pitchers with ERA/record/strikeouts), split into current and former
   players. Tap a player for per-season batting and pitching tables,
   career totals, and a full game log.
-- **Games** — every game with result and an inning-by-inning R/H/E line
-  score. Inside a game, every player's batting line (AB, R, H, 2B, 3B,
+- **Games** — the full posted schedule, home and away: played games with
+  their result and an inning-by-inning R/H/E line score, upcoming ones
+  with their first pitch. Opponents read "at" or "vs" (neutral sites are
+  labeled), straight from KU's published schedule. Inside a game, every player's batting line (AB, R, H, 2B, 3B,
   HR, RBI, BB, SO, HBP, SB, CS, SF, SAC) and pitching line (IP, H, R,
   ER, BB, SO, HR, W/L/SV). Games and lines can also be added or edited
   by hand.
@@ -41,9 +43,10 @@ All data is stored locally on the device in a Room (SQLite) database.
 1. `scripts/scrape-ku-sb.mjs` (GitHub Actions, nightly) captures every
    game's box score from kuathletics.com (Sidearm `__NUXT_DATA__`
    payload — the primary source, with complete batting and pitching
-   lines), sweeps the NCAA API daily scoreboard as a results
-   cross-check, and pulls the current roster + upcoming schedule from
-   kuathletics.com. The roster scrape is also what flags departed
+   lines), parses the full published schedule (every game, home and
+   away, with site and first pitch) from the same payload on the
+   schedule page, sweeps the NCAA API daily scoreboard as a results
+   cross-check, and pulls the current roster from kuathletics.com. The roster scrape is also what flags departed
    players as "former."
 2. `scripts/update-seed.py` regenerates `app/src/main/assets/seed.json`
    from the scraped data.

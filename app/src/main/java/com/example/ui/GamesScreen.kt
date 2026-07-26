@@ -23,6 +23,7 @@ import androidx.compose.material3.AlertDialog
 import androidx.compose.material3.Button
 import androidx.compose.material3.Card
 import androidx.compose.material3.ExperimentalMaterial3Api
+import androidx.compose.material3.FilterChip
 import androidx.compose.material3.FloatingActionButton
 import androidx.compose.material3.HorizontalDivider
 import androidx.compose.material3.Icon
@@ -51,6 +52,14 @@ import com.example.data.StatLine
 import com.example.stats.formatInnings
 import com.example.stats.parseInnings
 import com.example.stats.summarize
+
+/**
+ * "at Texas Tech" for away games, "vs Texas Tech" otherwise. Neutral-site
+ * games read "vs" the way box scores and schedules print them; the neutral
+ * flag is surfaced separately where there is room for it.
+ */
+fun opponentLabel(game: Game): String =
+    (if (game.site == "A") "at " else "vs ") + game.opponent
 
 @Composable
 fun GamesScreen(
@@ -87,12 +96,13 @@ fun GamesScreen(
                         ) {
                             Column(modifier = Modifier.weight(1f)) {
                                 Text(
-                                    "vs ${game.opponent}",
+                                    opponentLabel(game),
                                     style = MaterialTheme.typography.titleMedium,
                                     fontWeight = FontWeight.SemiBold
                                 )
                                 Text(
                                     "${game.date} · ${game.season}" +
+                                        (if (game.site == "N") " · neutral" else "") +
                                         if (lineCount > 0) " · $lineCount player${if (lineCount == 1) "" else "s"}" else "",
                                     style = MaterialTheme.typography.bodySmall,
                                     color = MaterialTheme.colorScheme.onSurfaceVariant
@@ -141,8 +151,9 @@ private fun ResultText(game: Game) {
     val us = game.teamScore
     val them = game.opponentScore
     if (us == null || them == null) {
+        // Not played yet: the scheduled first pitch is more useful than "—".
         Text(
-            "No result",
+            game.startTime.ifBlank { "No result" },
             style = MaterialTheme.typography.labelSmall,
             color = MaterialTheme.colorScheme.onSurfaceVariant
         )
@@ -236,6 +247,8 @@ fun GameDialog(
     var teamScore by remember { mutableStateOf(game?.teamScore?.toString() ?: "") }
     var oppScore by remember { mutableStateOf(game?.opponentScore?.toString() ?: "") }
     var inningScores by remember { mutableStateOf(game?.inningScores ?: "") }
+    var site by remember { mutableStateOf(game?.site ?: "") }
+    var startTime by remember { mutableStateOf(game?.startTime ?: "") }
     var teamHits by remember { mutableStateOf(game?.teamHits?.toString() ?: "") }
     var oppHits by remember { mutableStateOf(game?.opponentHits?.toString() ?: "") }
     var teamErrors by remember { mutableStateOf(game?.teamErrors?.toString() ?: "") }
@@ -270,6 +283,25 @@ fun GameDialog(
                     value = season,
                     onValueChange = { season = it },
                     label = { Text("Season (e.g. 2026)") },
+                    singleLine = true,
+                    modifier = Modifier.fillMaxWidth()
+                )
+                Row(
+                    horizontalArrangement = Arrangement.spacedBy(8.dp),
+                    verticalAlignment = Alignment.CenterVertically
+                ) {
+                    listOf("H" to "Home", "A" to "Away", "N" to "Neutral").forEach { (code, label) ->
+                        FilterChip(
+                            selected = site == code,
+                            onClick = { site = if (site == code) "" else code },
+                            label = { Text(label) }
+                        )
+                    }
+                }
+                OutlinedTextField(
+                    value = startTime,
+                    onValueChange = { startTime = it },
+                    label = { Text("First pitch (e.g. 6 p.m. CT)") },
                     singleLine = true,
                     modifier = Modifier.fillMaxWidth()
                 )
@@ -334,6 +366,8 @@ fun GameDialog(
                             date = date,
                             opponent = opponent.trim(),
                             season = season.trim(),
+                            site = site,
+                            startTime = startTime.trim(),
                             teamScore = teamScore.toIntOrNull(),
                             opponentScore = oppScore.toIntOrNull(),
                             inningScores = inningScores.trim().ifBlank { null },
@@ -372,7 +406,7 @@ fun GameDetailScreen(
     Scaffold(
         topBar = {
             TopAppBar(
-                title = { Text("vs ${game.opponent}") },
+                title = { Text(opponentLabel(game)) },
                 navigationIcon = {
                     IconButton(onClick = onBack) {
                         Icon(Icons.AutoMirrored.Filled.ArrowBack, contentDescription = "Back")

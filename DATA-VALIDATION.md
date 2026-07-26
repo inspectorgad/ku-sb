@@ -134,3 +134,27 @@ Ported from ku-wbb; softball differences validated before building:
   "Through Games ..." label. RPI also carries official overall records,
   used as a cross-check on the computed standings — it is what confirmed
   KU's true 2026 record is 36-21 over 57 games.
+
+## Full schedule parsing (probe6, 2026-07-26)
+
+The scraper's original source for not-yet-played games was the site-wide
+"Coming Up" rotator, which only surfaces softball when a game is
+imminent — so a newly-posted season would trickle in rather than appear
+at once. The schedule page carries the whole slate in its
+`__NUXT_DATA__` payload (same mechanism as the box scores), and probe6
+validated a parser against the 2026 page, whose answer is independently
+known:
+
+- **57 events**, matching the 57 games in the seed.
+- **`location_indicator` H=18 / A=18 / N=21**, matching the page's own
+  splits (Home 13-5, Away 9-9, Neutral 14-7) exactly.
+- **24 conference games**, matching KU's 14-10 Big 12 record.
+- 8 games flagged `is_a_doubleheader` — the 4 doubleheaders.
+- Each event's `id` **is** its box score id (e.g. 20426), so schedule
+  rows and captured box scores match without name/date guesswork.
+- `result` carries the score when played; `time` the first pitch.
+
+The scraper now writes `scraped/schedule-<season>.json` per season (the
+page only ever serves one, so per-season files keep 2026's home/away
+data after the site flips to 2027) and the rotator regex survives only
+as a fallback if the payload ever stops parsing.

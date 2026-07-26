@@ -10,6 +10,7 @@ import kotlinx.coroutines.test.runTest
 import org.json.JSONObject
 import org.junit.After
 import org.junit.Assert.assertEquals
+import org.junit.Assert.assertNull
 import org.junit.Before
 import org.junit.Test
 import org.junit.runner.RunWith
@@ -179,6 +180,63 @@ class MergeSyncTest {
             assertEquals(false, byName.getValue("Hand Entered").active)
             assertEquals("99", byName.getValue("Hand Entered").jerseyNumber)
         }
+
+    @Test
+    fun `schedule fields land on new games and fill in on existing ones`() = runTest {
+        val dao = db.dao()
+        // An away game arriving fresh from the schedule scrape, not yet played.
+        Seeder.merge(
+            JSONObject(
+                """{"players": [], "games": [
+                     {"date":"2027-02-05","opponent":"Creighton","season":"2027",
+                      "site":"A","startTime":"6 p.m. CT"}]}"""
+            ),
+            dao
+        )
+        val upcoming = dao.gamesOnce().single()
+        assertEquals("A", upcoming.site)
+        assertEquals("6 p.m. CT", upcoming.startTime)
+        assertNull(upcoming.teamScore)
+
+        // A game recorded before the schedule scrape existed picks up its
+        // site and first pitch without disturbing anything else.
+        dao.insertGame(
+            com.example.data.Game(
+                date = "2026-03-01", opponent = "Arkansas", season = "2026",
+                teamScore = 3, opponentScore = 11
+            )
+        )
+        Seeder.merge(
+            JSONObject(
+                """{"players": [], "games": [
+                     {"date":"2026-03-01","opponent":"Arkansas","season":"2026",
+                      "site":"A","startTime":"1 p.m. CT","teamScore":3,"opponentScore":11}]}"""
+            ),
+            dao
+        )
+        val played = dao.gamesOnce().first { it.date == "2026-03-01" }
+        assertEquals("A", played.site)
+        assertEquals("1 p.m. CT", played.startTime)
+        assertEquals(3, played.teamScore)
+    }
+
+    @Test
+    fun `a hand-set site is never overwritten by the seed`() = runTest {
+        val dao = db.dao()
+        dao.insertGame(
+            com.example.data.Game(
+                date = "2026-04-15", opponent = "Missouri", season = "2026", site = "H"
+            )
+        )
+        Seeder.merge(
+            JSONObject(
+                """{"players": [], "games": [
+                     {"date":"2026-04-15","opponent":"Missouri","season":"2026","site":"N"}]}"""
+            ),
+            dao
+        )
+        assertEquals("H", dao.gamesOnce().single().site)
+    }
 
     @Test
     fun `unknown player in lines is skipped without error`() = runTest {

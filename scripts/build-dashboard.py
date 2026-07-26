@@ -271,6 +271,22 @@ TEMPLATE = r"""<!doctype html>
     </div>
   </section>
 
+  <section id="upcomingSec" style="display:none">
+    <div class="sec-head">
+      <h2 id="upcomingHead">Schedule</h2>
+      <span class="note">posted games not yet played</span>
+      <div class="rule"></div>
+    </div>
+    <div class="card tbl-wrap" style="max-height:420px; overflow-y:auto;">
+      <table id="upcomingTbl">
+        <thead><tr>
+          <th class="lft">Date</th><th class="lft">Opponent</th><th class="lft">Site</th><th class="lft">First pitch</th>
+        </tr></thead>
+        <tbody></tbody>
+      </table>
+    </div>
+  </section>
+
   <section id="big12Sec" style="display:none">
     <div class="sec-head">
       <h2>Big 12</h2>
@@ -569,7 +585,7 @@ function hideTip() { tip.style.display = "none"; }
     <tr>
       <td class="dim">${g.n}</td>
       <td class="lft">${fmtDate(g.date)}</td>
-      <td class="lft"><b>${g.opponent}</b></td>
+      <td class="lft"><b>${g.site === "A" ? "at " : "vs "}${g.opponent}</b></td>
       <td class="lft"><span class="chip ${g.won ? "W" : "L"}">${g.won ? "W" : "L"}</span></td>
       <td><b>${g.teamScore}–${g.opponentScore}</b></td>
       <td class="lft dim">${g.inningScores || ""}</td>
@@ -577,6 +593,26 @@ function hideTip() { tip.style.display = "none"; }
         (g.top.hr ? ", " + (g.top.hr > 1 ? g.top.hr + " HR" : "HR") : "") +
         (g.top.rbi ? ", " + g.top.rbi + " RBI" : "") + "</span>" : '<span class="dim">no box score</span>'}</td>
       <td class="lft"><span class="phase-lbl">${phaseOf(g)}</span></td>
+    </tr>`).join("");
+})();
+
+// ---------- upcoming schedule ----------
+(function upcoming() {
+  const pending = (DATA.games || [])
+    .filter(g => g.teamScore == null)
+    .sort((a, b) => a.date < b.date ? -1 : 1);
+  if (!pending.length) return;
+  document.getElementById("upcomingSec").style.display = "";
+  const seasons = [...new Set(pending.map(g => g.season))].sort();
+  document.getElementById("upcomingHead").textContent =
+    seasons.length === 1 ? `${seasons[0]} schedule` : "Upcoming schedule";
+  const siteLabel = { H: "Home", A: "Away", N: "Neutral" };
+  document.querySelector("#upcomingTbl tbody").innerHTML = pending.map(g => `
+    <tr>
+      <td class="lft">${fmtDate(g.date)}<span class="dim"> ${g.date.slice(0, 4)}</span></td>
+      <td class="lft"><b>${g.site === "A" ? "at " : "vs "}${g.opponent}</b></td>
+      <td class="lft dim">${siteLabel[g.site] || ""}</td>
+      <td class="lft dim">${g.startTime || ""}</td>
     </tr>`).join("");
 })();
 

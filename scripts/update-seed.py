@@ -74,6 +74,15 @@ def flip_name(last_first):
     return (last_first or "").strip()
 
 
+def norm_team(name):
+    """Canonical key for cross-source name matching ('Iowa State'/'Iowa St.')."""
+    n = re.sub(r"\s*\(G\d\)\s*$", "", name or "")     # doubleheader marker
+    n = re.sub(r"\s*\(\d+\)\s*$", "", n).lower()      # poll first-place votes
+    n = n.replace(".", "")
+    n = re.sub(r"\bstate\b", "st", n)
+    return re.sub(r"\s+", " ", n).strip()
+
+
 players = {}  # name.lower() -> {name, jerseyNumber, position}
 games = {}  # (date, opponent.lower()) -> game dict
 
@@ -229,8 +238,8 @@ for game in sidearm_games:
     day_counts[key] = day_counts.get(key, 0) + 1
     if day_counts[key] > 1:
         game["opponent"] = f"{game['opponent']} (G{day_counts[key]})"
-    game.pop("_sidearmId", None)
-    game.pop("_dh", None)
+    # _sidearmId is kept until the schedule pass below can match on it, then
+    # stripped along with _dh before the seed is written.
     games[(game["date"], game["opponent"].lower())] = game
 
 # --- NCAA results as a fallback for games with no Sidearm box ----------------
@@ -292,13 +301,50 @@ for key in list(players):
         if target is not None and not target.get("jerseyNumber"):
             target["jerseyNumber"] = variant.get("jerseyNumber", "")
 
-# --- Upcoming games (no results yet) -----------------------------------------
-today = datetime.now(timezone.utc).strftime("%Y-%m-%d")
-for entry in load_json("scraped/upcoming.json", []):
-    date = entry.get("date", "")
+# --- The posted schedule: home/away for every game, plus unplayed ones -------
+# scraped/schedule-<season>.json holds the full slate as KU publishes it, so a
+# newly-posted season shows up complete (home AND away) before a pitch is
+# thrown. Played games are matched to their box-score-derived entry — by
+# Sidearm id where possible, since that is literally the box score id, and by
+# date + opponent otherwise — and annotated rather than duplicated.
+by_sidearm_id = {}
+for game in games.values():
+    if game.get("_sidearmId"):
+        by_sidearm_id[str(game["_sidearmId"])] = game
+
+schedule_entries = []
+for path in sorted(glob.glob("scraped/schedule-*.json")):
+    schedule_entries.extend(load_json(path, []))
+
+annotated = added = 0
+for entry in schedule_entries:
+    date = (entry.get("date") or "").strip()
     opponent = (entry.get("opponent") or "").strip()
-    if not date or not opponent or date < today:
+    if not re.match(r"^\d{4}-\d{2}-\d{2}$", date) or not opponent:
         continue
+    site = (entry.get("site") or "").strip().upper()[:1]
+    start = (entry.get("time") or "").strip()
+
+    game = by_sidearm_id.get(str(entry.get("sidearmId") or ""))
+    if game is None:
+        # Fall back to date + opponent; doubleheaders share both, so prefer an
+        # entry that hasn't been annotated yet.
+        candidates = [
+            g for g in games.values()
+            if g["date"] == date and norm_team(g["opponent"]) == norm_team(opponent)
+        ]
+        game = next((g for g in candidates if not g.get("site")), None) or \
+            (candidates[0] if candidates else None)
+
+    if game is not None:
+        if site:
+            game["site"] = site
+        if start:
+            game["startTime"] = start
+        annotated += 1
+        continue
+
+    # Not in the seed: an unplayed game (or one whose box score isn't posted).
     key = (date, opponent.lower())
     if key in games:
         continue
@@ -306,21 +352,44 @@ for entry in load_json("scraped/upcoming.json", []):
         "date": date,
         "opponent": opponent,
         "season": date[:4],
+        "site": site,
+        "startTime": start,
     }
+    added += 1
+
+if schedule_entries:
+    print(
+        f"schedule: {len(schedule_entries)} posted games — "
+        f"{annotated} matched to existing entries, {added} added as unplayed"
+    )
+
+# Legacy rotator fallback, used only when no schedule payload was captured.
+today = datetime.now(timezone.utc).strftime("%Y-%m-%d")
+if not schedule_entries:
+    for entry in load_json("scraped/upcoming.json", []):
+        date = entry.get("date", "")
+        opponent = (entry.get("opponent") or "").strip()
+        if not date or not opponent or date < today:
+            continue
+        key = (date, opponent.lower())
+        if key in games:
+            continue
+        games[key] = {
+            "date": date,
+            "opponent": opponent,
+            "season": date[:4],
+            "site": (entry.get("site") or "").strip().upper()[:1],
+        }
+
+# Internal matching keys never reach the seed.
+for game in games.values():
+    game.pop("_sidearmId", None)
+    game.pop("_dh", None)
 
 # --- Big 12 standings, computed from the scoreboard sweep -------------------
 # Conference records are derived from the Big 12 games the sweep collects
 # (every scoreboard team carries a conference tag). This also means any season
 # can be rebuilt retroactively, which a live standings endpoint could not do.
-def norm_team(name):
-    """Canonical key for cross-source name matching ('Iowa State'/'Iowa St.')."""
-    n = re.sub(r"\s*\(G\d\)\s*$", "", name or "")     # doubleheader marker
-    n = re.sub(r"\s*\(\d+\)\s*$", "", n).lower()      # poll first-place votes
-    n = n.replace(".", "")
-    n = re.sub(r"\bstate\b", "st", n)
-    return re.sub(r"\s+", " ", n).strip()
-
-
 index = load_json("scraped/ku-index.json", {})
 big12_games = list(index.get("big12Games", {}).values())
 

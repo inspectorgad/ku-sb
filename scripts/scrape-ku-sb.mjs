@@ -360,34 +360,125 @@ try {
   fs.writeFileSync('scraped/roster.json', JSON.stringify(roster, null, 1));
   console.log(`roster: ${roster.length} players`);
 
-  // 2c. Upcoming games from the site-wide scoreboard rotator:
-  // "Upcoming Event: Softball versus X on February 5, 2027 at 6 p.m. CT"
+  // 2c. The FULL schedule — every game, home and away, played or not — from
+  // the schedule page's __NUXT_DATA__ payload (probe6). This is what makes a
+  // newly-posted season appear immediately, rather than trickling in as the
+  // site-wide "Coming Up" rotator happens to surface games; the rotator is
+  // kept only as a fallback if the payload ever stops parsing.
+  //
+  // The page serves one season at a time, so each capture is written per
+  // season and older files stay committed — otherwise flipping to 2027 would
+  // drop 2026's home/away data on the next seed rebuild.
   const schedPage = await openPage('https://kuathletics.com/sports/softball/schedule', 8000);
+  for (let i = 0; i < 16; i++) {
+    await schedPage.evaluate(() => window.scrollBy(0, 1500));
+    await schedPage.waitForTimeout(250);
+  }
   const schedText = await schedPage.evaluate(() =>
     document.body ? document.body.innerText : ''
   );
+  const schedPayload = await schedPage.evaluate(() => {
+    const el = document.getElementById('__NUXT_DATA__');
+    return el ? el.textContent : null;
+  });
   await schedPage.close();
   fs.writeFileSync('scraped/schedule-page.txt', schedText);
-  const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July',
-    'August', 'September', 'October', 'November', 'December'];
-  const upcoming = [];
-  const re = /Upcoming Event: Softball (versus|at) (.+?) on ([A-Z][a-z]+) (\d{1,2}), (\d{4})/g;
-  for (const m of schedText.matchAll(re)) {
-    const month = months.indexOf(m[3]) + 1;
-    if (month === 0) continue;
-    const date = `${m[5]}-${String(month).padStart(2, '0')}-${String(m[4]).padStart(2, '0')}`;
-    upcoming.push({ date, opponent: m[2].trim(), home: m[1] === 'versus' });
+
+  let events = [];
+  if (schedPayload) {
+    try {
+      const arr = JSON.parse(schedPayload);
+      // The schedule is the largest array of objects carrying the event
+      // signature (date + at_vs + location_indicator + opponent).
+      let bestIdx = -1;
+      let bestLen = 0;
+      for (let i = 0; i < arr.length; i++) {
+        const v = arr[i];
+        if (!Array.isArray(v) || v.length < 1) continue;
+        if (typeof v[0] === 'string' && DEVALUE_TAGS.has(v[0])) continue;
+        const first = arr[v[0]];
+        if (!first || typeof first !== 'object' || Array.isArray(first)) continue;
+        const keys = Object.keys(first);
+        if (['date', 'at_vs', 'location_indicator', 'opponent'].every((k) => keys.includes(k))
+            && v.length > bestLen) {
+          bestIdx = i;
+          bestLen = v.length;
+        }
+      }
+      if (bestIdx >= 0) {
+        for (const raw of resolveDevalue(arr, bestIdx) || []) {
+          const date = String(raw?.date || '').slice(0, 10);
+          const opponent = (raw?.opponent?.title || '').trim();
+          if (!/^\d{4}-\d{2}-\d{2}$/.test(date) || !opponent) continue;
+          const result = raw?.result || null;
+          events.push({
+            date,
+            opponent,
+            // "H" home, "A" away, "N" neutral site.
+            site: String(raw?.location_indicator || '').toUpperCase().slice(0, 1),
+            time: (raw?.time || '').trim(),
+            location: (raw?.location || '').trim(),
+            conference: Boolean(raw?.conference),
+            doubleheader: Boolean(raw?.is_a_doubleheader),
+            tournament: (raw?.tournament || '') || '',
+            // Sidearm's own game id — also the box score id, so schedule rows
+            // and captured box scores line up exactly.
+            sidearmId: raw?.id != null ? String(raw.id) : '',
+            played: Boolean(result && result.team_score !== '' && result.team_score != null),
+            teamScore: result?.team_score ?? null,
+            opponentScore: result?.opponent_score ?? null,
+          });
+        }
+      }
+    } catch (e) {
+      console.log(`schedule payload parse failed: ${e.message}`);
+    }
   }
-  // De-dup (the rotator repeats on every page view)
-  const seen = new Set();
-  const uniqueUpcoming = upcoming.filter((u) => {
-    const k = `${u.date}|${u.opponent}`;
-    if (seen.has(k)) return false;
-    seen.add(k);
-    return true;
-  });
-  fs.writeFileSync('scraped/upcoming.json', JSON.stringify(uniqueUpcoming, null, 1));
-  console.log(`upcoming: ${uniqueUpcoming.length} games`);
+
+  if (events.length) {
+    // Group by season (softball seasons sit inside one calendar year).
+    const bySeason = new Map();
+    for (const ev of events) {
+      const season = ev.date.slice(0, 4);
+      if (!bySeason.has(season)) bySeason.set(season, []);
+      bySeason.get(season).push(ev);
+    }
+    for (const [season, list] of bySeason) {
+      list.sort((a, b) => (a.date + a.sidearmId).localeCompare(b.date + b.sidearmId));
+      fs.writeFileSync(`scraped/schedule-${season}.json`, JSON.stringify(list, null, 1));
+      const counts = list.reduce((acc, e) => {
+        acc[e.site || '?'] = (acc[e.site || '?'] || 0) + 1;
+        return acc;
+      }, {});
+      console.log(
+        `schedule ${season}: ${list.length} games (${Object.entries(counts).map(([k, v]) => k + '=' + v).join(' ')}), ` +
+        `${list.filter((e) => e.played).length} played`
+      );
+    }
+  } else {
+    // Fallback: the site-wide rotator ("Upcoming Event: Softball versus X on
+    // February 5, 2027 at 6 p.m. CT"). Only surfaces imminent games.
+    console.log('schedule payload yielded no events — falling back to the rotator');
+    const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July',
+      'August', 'September', 'October', 'November', 'December'];
+    const upcoming = [];
+    const re = /Upcoming Event: Softball (versus|at) (.+?) on ([A-Z][a-z]+) (\d{1,2}), (\d{4})/g;
+    for (const m of schedText.matchAll(re)) {
+      const month = months.indexOf(m[3]) + 1;
+      if (month === 0) continue;
+      const date = `${m[5]}-${String(month).padStart(2, '0')}-${String(m[4]).padStart(2, '0')}`;
+      upcoming.push({ date, opponent: m[2].trim(), site: m[1] === 'versus' ? 'H' : 'A' });
+    }
+    const seen = new Set();
+    const uniqueUpcoming = upcoming.filter((u) => {
+      const k = `${u.date}|${u.opponent}`;
+      if (seen.has(k)) return false;
+      seen.add(k);
+      return true;
+    });
+    fs.writeFileSync('scraped/upcoming.json', JSON.stringify(uniqueUpcoming, null, 1));
+    console.log(`upcoming (rotator fallback): ${uniqueUpcoming.length} games`);
+  }
 } catch (e) {
   console.log(`kuathletics scrape failed (non-fatal): ${e.message}`);
 }

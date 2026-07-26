@@ -92,6 +92,8 @@ object Seeder {
             val seedTeamScore = if (g.has("teamScore")) g.getInt("teamScore") else null
             val seedOppScore = if (g.has("opponentScore")) g.getInt("opponentScore") else null
             val seedInningScores = g.optString("inningScores").takeIf { it.isNotBlank() }
+            val seedSite = g.optString("site")
+            val seedStartTime = g.optString("startTime")
 
             val existing = gamesByKey[gameKey(date, opponent)]
             val gameId: Long
@@ -101,6 +103,8 @@ object Seeder {
                         date = date,
                         opponent = opponent,
                         season = g.getString("season"),
+                        site = seedSite,
+                        startTime = seedStartTime,
                         teamScore = seedTeamScore,
                         opponentScore = seedOppScore,
                         inningScores = seedInningScores,
@@ -112,25 +116,35 @@ object Seeder {
                 )
             } else {
                 gameId = existing.id
+                // Results only fill in when the game has none, as always. Site
+                // and start time fill in whenever they're still blank — an
+                // already-played game recorded before the schedule scrape
+                // existed still deserves its "at"/"vs" and first pitch.
+                var updated = existing
                 if (existing.teamScore == null && existing.opponentScore == null &&
                     (seedTeamScore != null || seedOppScore != null)
                 ) {
-                    dao.updateGame(
-                        existing.copy(
-                            teamScore = seedTeamScore,
-                            opponentScore = seedOppScore,
-                            inningScores = existing.inningScores ?: seedInningScores,
-                            teamHits = existing.teamHits
-                                ?: if (g.has("teamHits")) g.getInt("teamHits") else null,
-                            opponentHits = existing.opponentHits
-                                ?: if (g.has("opponentHits")) g.getInt("opponentHits") else null,
-                            teamErrors = existing.teamErrors
-                                ?: if (g.has("teamErrors")) g.getInt("teamErrors") else null,
-                            opponentErrors = existing.opponentErrors
-                                ?: if (g.has("opponentErrors")) g.getInt("opponentErrors") else null
-                        )
+                    updated = updated.copy(
+                        teamScore = seedTeamScore,
+                        opponentScore = seedOppScore,
+                        inningScores = existing.inningScores ?: seedInningScores,
+                        teamHits = existing.teamHits
+                            ?: if (g.has("teamHits")) g.getInt("teamHits") else null,
+                        opponentHits = existing.opponentHits
+                            ?: if (g.has("opponentHits")) g.getInt("opponentHits") else null,
+                        teamErrors = existing.teamErrors
+                            ?: if (g.has("teamErrors")) g.getInt("teamErrors") else null,
+                        opponentErrors = existing.opponentErrors
+                            ?: if (g.has("opponentErrors")) g.getInt("opponentErrors") else null
                     )
                 }
+                if (existing.site.isBlank() && seedSite.isNotBlank()) {
+                    updated = updated.copy(site = seedSite)
+                }
+                if (existing.startTime.isBlank() && seedStartTime.isNotBlank()) {
+                    updated = updated.copy(startTime = seedStartTime)
+                }
+                if (updated != existing) dao.updateGame(updated)
             }
 
             if (existing != null && gameId in gamesWithLines) continue
