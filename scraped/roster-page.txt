@@ -595,11 +595,6 @@ Associate Head Coach
 laura.heberling@ku.edu
 Full Bio 
 for Laura Heberling
-Kaitlyn Chiles
-Assistant Coach
-kvslack@ku.edu
-Full Bio 
-for Kaitlyn Chiles
 Justin Lewis
 Assistant Coach
 Justin.lewis@ku.edu.
@@ -610,7 +605,7 @@ Assistant Coach
 Full Bio 
 for Jason Gwyn
 Drake De Angelo
-Graduate Assistant
+Director of Player Development
 drake.deangelo@ku.edu
 Full Bio 
 for Drake De Angelo

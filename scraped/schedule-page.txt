@@ -381,7 +381,6 @@ Box Score
 Recap
 History
 Game Info
-Skip Ad
 Villanova
 
 Joan Joyce Field
@@ -551,7 +550,6 @@ Box Score
 History
 Explore Lawrence
 Game Info
-Skip Ad
 at
 Houston
 
@@ -725,7 +723,6 @@ Box Score
 Recap
 History
 Game Info
-Skip Ad
 vs
 #20/23 Arizona State
 
@@ -911,7 +908,6 @@ Box Score
 Recap
 History
 Game Info
-Skip Ad
 vs
 Iowa State
 
@@ -1076,7 +1072,6 @@ Recap
 Photos
 History
 Game Info
-Skip Ad
 Oklahoma
 
 Love's Field
