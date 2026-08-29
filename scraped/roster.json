@@ -5,28 +5,13 @@
   "position": "OF"
  },
  {
-  "name": "Kennedy Diggs",
-  "jerseyNumber": "2",
-  "position": "RHP/UTL"
- },
- {
   "name": "Blakely Barber",
   "jerseyNumber": "3",
   "position": "P"
  },
  {
-  "name": "Presley Limbaugh",
-  "jerseyNumber": "4",
-  "position": "OF"
- },
- {
   "name": "Kadence Stafford",
   "jerseyNumber": "5",
-  "position": "INF"
- },
- {
-  "name": "Campbell Bagshaw",
-  "jerseyNumber": "6",
   "position": "INF"
  },
  {
@@ -40,11 +25,6 @@
   "position": "P"
  },
  {
-  "name": "Lizzy Ludwig",
-  "jerseyNumber": "11",
-  "position": "RHP/UTL"
- },
- {
   "name": "September Flanagan",
   "jerseyNumber": "12",
   "position": "INF/UTL"
@@ -55,29 +35,14 @@
   "position": "OF"
  },
  {
-  "name": "Karsen Griggs",
-  "jerseyNumber": "14",
-  "position": "INF"
- },
- {
-  "name": "Jaeden Murphy",
-  "jerseyNumber": "15",
-  "position": "C"
- },
- {
   "name": "Kaelee Washington",
   "jerseyNumber": "17",
   "position": "RHP"
  },
  {
-  "name": "Emma Tatum",
-  "jerseyNumber": "20",
-  "position": "INF"
- },
- {
   "name": "Ellie Loveless",
   "jerseyNumber": "21",
-  "position": "P/UTL"
+  "position": "P/INF"
  },
  {
   "name": "Anna Soles",
@@ -113,16 +78,6 @@
   "name": "Madi Hays",
   "jerseyNumber": "36",
   "position": "OF"
- },
- {
-  "name": "Aynslee Linduff",
-  "jerseyNumber": "39",
-  "position": "OF"
- },
- {
-  "name": "Hailey Cripe",
-  "jerseyNumber": "41",
-  "position": "INF"
  },
  {
   "name": "Ella Boyer",
