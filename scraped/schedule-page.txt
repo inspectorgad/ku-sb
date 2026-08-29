@@ -93,9 +93,9 @@ Lincoln, Neb.
 Days
 8
 Hours
-42
+39
 Minutes
-52
+35
 Seconds
 Add To Calendar
 Text Only
@@ -296,7 +296,6 @@ Apr 1
 (Thu)
 
 History
-Skip Ad
 vs
 BYU
 
@@ -394,7 +393,6 @@ Apr 24
 (Sat)
 
 History
-Skip Ad
 vs
 Oklahoma State
 
