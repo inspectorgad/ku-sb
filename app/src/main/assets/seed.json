@@ -1,6 +1,6 @@
 {
  "formatVersion": 1,
- "generatedAt": "2026-07-26T23:44:53Z",
+ "generatedAt": "2026-08-29T20:17:08Z",
  "team": "Kansas Jayhawks Softball",
  "players": [
   {
@@ -24,8 +24,8 @@
   {
    "name": "Aynslee Linduff",
    "jerseyNumber": "39",
-   "position": "OF",
-   "active": true
+   "position": "",
+   "active": false
   },
   {
    "name": "Bailey Amezcua",
@@ -54,8 +54,8 @@
   {
    "name": "Campbell Bagshaw",
    "jerseyNumber": "6",
-   "position": "INF",
-   "active": true
+   "position": "",
+   "active": false
   },
   {
    "name": "Chloe Barber",
@@ -72,26 +72,26 @@
   {
    "name": "Ellie Loveless",
    "jerseyNumber": "21",
-   "position": "P/UTL",
+   "position": "P/INF",
    "active": true
   },
   {
    "name": "Emma Tatum",
    "jerseyNumber": "20",
-   "position": "INF",
-   "active": true
+   "position": "",
+   "active": false
   },
   {
    "name": "Hailey Cripe",
    "jerseyNumber": "41",
-   "position": "INF",
-   "active": true
+   "position": "",
+   "active": false
   },
   {
    "name": "Jaeden Murphy",
    "jerseyNumber": "15",
-   "position": "C",
-   "active": true
+   "position": "",
+   "active": false
   },
   {
    "name": "Kadence Stafford",
@@ -108,14 +108,14 @@
   {
    "name": "Karsen Griggs",
    "jerseyNumber": "14",
-   "position": "INF",
-   "active": true
+   "position": "",
+   "active": false
   },
   {
    "name": "Kennedy Diggs",
    "jerseyNumber": "2",
-   "position": "RHP/UTL",
-   "active": true
+   "position": "",
+   "active": false
   },
   {
    "name": "Lila Partridge",
@@ -126,8 +126,8 @@
   {
    "name": "Lizzy Ludwig",
    "jerseyNumber": "11",
-   "position": "RHP/UTL",
-   "active": true
+   "position": "",
+   "active": false
   },
   {
    "name": "Madi Hays",
@@ -138,8 +138,8 @@
   {
    "name": "Presley Limbaugh",
    "jerseyNumber": "4",
-   "position": "OF",
-   "active": true
+   "position": "",
+   "active": false
   },
   {
    "name": "Sam Claire",
@@ -17201,6 +17201,230 @@
    ],
    "site": "N",
    "startTime": "2 p.m."
+  },
+  {
+   "date": "2026-09-26",
+   "opponent": "Nebraska",
+   "season": "Fall 2026",
+   "site": "A",
+   "startTime": "2:30 pm"
+  },
+  {
+   "date": "2026-10-01",
+   "opponent": "Johnson County CC",
+   "season": "Fall 2026",
+   "site": "H",
+   "startTime": "5:00 pm"
+  },
+  {
+   "date": "2026-10-02",
+   "opponent": "Rockhurst",
+   "season": "Fall 2026",
+   "site": "H",
+   "startTime": "5:00 pm"
+  },
+  {
+   "date": "2026-10-09",
+   "opponent": "Missouri",
+   "season": "Fall 2026",
+   "site": "H",
+   "startTime": "5:00 pm"
+  },
+  {
+   "date": "2026-10-10",
+   "opponent": "Kansas City Diamonds",
+   "season": "Fall 2026",
+   "site": "A",
+   "startTime": "7:00 pm"
+  },
+  {
+   "date": "2026-10-10",
+   "opponent": "Nebraska",
+   "season": "Fall 2026",
+   "site": "N",
+   "startTime": "4:00 pm"
+  },
+  {
+   "date": "2026-10-14",
+   "opponent": "Ottawa",
+   "season": "Fall 2026",
+   "site": "H",
+   "startTime": "5:00 pm"
+  },
+  {
+   "date": "2027-03-12",
+   "opponent": "Texas Tech",
+   "season": "2027",
+   "site": "A",
+   "startTime": ""
+  },
+  {
+   "date": "2027-03-13",
+   "opponent": "Texas Tech",
+   "season": "2027",
+   "site": "A",
+   "startTime": ""
+  },
+  {
+   "date": "2027-03-14",
+   "opponent": "Texas Tech",
+   "season": "2027",
+   "site": "A",
+   "startTime": ""
+  },
+  {
+   "date": "2027-03-26",
+   "opponent": "Utah",
+   "season": "2027",
+   "site": "A",
+   "startTime": ""
+  },
+  {
+   "date": "2027-03-27",
+   "opponent": "Utah",
+   "season": "2027",
+   "site": "A",
+   "startTime": ""
+  },
+  {
+   "date": "2027-03-28",
+   "opponent": "Utah",
+   "season": "2027",
+   "site": "A",
+   "startTime": ""
+  },
+  {
+   "date": "2027-04-01",
+   "opponent": "BYU",
+   "season": "2027",
+   "site": "H",
+   "startTime": ""
+  },
+  {
+   "date": "2027-04-02",
+   "opponent": "BYU",
+   "season": "2027",
+   "site": "H",
+   "startTime": ""
+  },
+  {
+   "date": "2027-04-03",
+   "opponent": "BYU",
+   "season": "2027",
+   "site": "H",
+   "startTime": ""
+  },
+  {
+   "date": "2027-04-09",
+   "opponent": "UCF",
+   "season": "2027",
+   "site": "H",
+   "startTime": ""
+  },
+  {
+   "date": "2027-04-10",
+   "opponent": "UCF",
+   "season": "2027",
+   "site": "H",
+   "startTime": ""
+  },
+  {
+   "date": "2027-04-11",
+   "opponent": "UCF",
+   "season": "2027",
+   "site": "H",
+   "startTime": ""
+  },
+  {
+   "date": "2027-04-15",
+   "opponent": "Iowa State",
+   "season": "2027",
+   "site": "A",
+   "startTime": ""
+  },
+  {
+   "date": "2027-04-16",
+   "opponent": "Iowa State",
+   "season": "2027",
+   "site": "A",
+   "startTime": ""
+  },
+  {
+   "date": "2027-04-17",
+   "opponent": "Iowa State",
+   "season": "2027",
+   "site": "A",
+   "startTime": ""
+  },
+  {
+   "date": "2027-04-23",
+   "opponent": "Oklahoma State",
+   "season": "2027",
+   "site": "H",
+   "startTime": ""
+  },
+  {
+   "date": "2027-04-24",
+   "opponent": "Oklahoma State",
+   "season": "2027",
+   "site": "H",
+   "startTime": ""
+  },
+  {
+   "date": "2027-04-25",
+   "opponent": "Oklahoma State",
+   "season": "2027",
+   "site": "H",
+   "startTime": ""
+  },
+  {
+   "date": "2027-04-30",
+   "opponent": "Arizona",
+   "season": "2027",
+   "site": "A",
+   "startTime": ""
+  },
+  {
+   "date": "2027-05-01",
+   "opponent": "Arizona",
+   "season": "2027",
+   "site": "A",
+   "startTime": ""
+  },
+  {
+   "date": "2027-05-02",
+   "opponent": "Arizona",
+   "season": "2027",
+   "site": "A",
+   "startTime": ""
+  },
+  {
+   "date": "2027-05-07",
+   "opponent": "Houston",
+   "season": "2027",
+   "site": "H",
+   "startTime": ""
+  },
+  {
+   "date": "2027-05-08",
+   "opponent": "Houston",
+   "season": "2027",
+   "site": "H",
+   "startTime": ""
+  },
+  {
+   "date": "2027-05-09",
+   "opponent": "Houston",
+   "season": "2027",
+   "site": "H",
+   "startTime": ""
+  },
+  {
+   "date": "2027-05-13",
+   "opponent": "Big 12 Tournament",
+   "season": "2027",
+   "site": "N",
+   "startTime": ""
   }
  ],
  "standings": [
