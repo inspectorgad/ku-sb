@@ -436,10 +436,17 @@ try {
   }
 
   if (events.length) {
-    // Group by season (softball seasons sit inside one calendar year).
+    // Group by season for per-season files. The championship season sits
+    // inside one calendar year (Feb-Jun), but the SAME page also carries the
+    // preceding fall exhibition slate — e.g. the 2027 page lists Sept/Oct
+    // 2026 games. Those must not be filed as "2026", or they would overwrite
+    // the completed spring 2026 schedule and destroy its home/away data.
+    // Fall gets its own file, matching update-seed.py's "Fall <year>" label.
     const bySeason = new Map();
     for (const ev of events) {
-      const season = ev.date.slice(0, 4);
+      const year = ev.date.slice(0, 4);
+      const month = Number(ev.date.slice(5, 7));
+      const season = month >= 8 ? `${year}-fall` : year;
       if (!bySeason.has(season)) bySeason.set(season, []);
       bySeason.get(season).push(ev);
     }
