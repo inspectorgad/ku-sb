@@ -332,6 +332,12 @@ for path in sorted(glob.glob("scraped/schedule-*.json")):
     schedule_entries.extend(load_json(path, []))
 
 annotated = added = 0
+# A doubleheader publishes two schedule rows with the same date and opponent
+# (KU's Sept 26 2026 trip to Nebraska is 12:00 and 2:30). Each row must land
+# on its own game: without tracking what a row has already claimed, the
+# second row re-matches the first row's game and overwrites its start time,
+# silently losing a game from the schedule.
+claimed = set()
 for entry in schedule_entries:
     date = (entry.get("date") or "").strip()
     opponent = (entry.get("opponent") or "").strip()
@@ -342,16 +348,20 @@ for entry in schedule_entries:
 
     game = by_sidearm_id.get(str(entry.get("sidearmId") or ""))
     if game is None:
-        # Fall back to date + opponent; doubleheaders share both, so prefer an
-        # entry that hasn't been annotated yet.
+        # Fall back to date + opponent, preferring a game no schedule row has
+        # claimed yet and that isn't already annotated.
         candidates = [
             g for g in games.values()
             if g["date"] == date and norm_team(g["opponent"]) == norm_team(opponent)
         ]
-        game = next((g for g in candidates if not g.get("site")), None) or \
-            (candidates[0] if candidates else None)
+        unclaimed = [g for g in candidates if id(g) not in claimed]
+        game = next((g for g in unclaimed if not g.get("site")), None) or \
+            (unclaimed[0] if unclaimed else None)
+    elif id(game) in claimed:
+        game = None
 
     if game is not None:
+        claimed.add(id(game))
         if site:
             game["site"] = site
         if start:
@@ -360,16 +370,23 @@ for entry in schedule_entries:
         continue
 
     # Not in the seed: an unplayed game (or one whose box score isn't posted).
-    key = (date, opponent.lower())
-    if key in games:
-        continue
+    # Later games of a doubleheader take the same "(G2)" suffix the played
+    # box-score path uses, so both survive as distinct games.
+    label = opponent
+    key = (date, label.lower())
+    dup = 1
+    while key in games:
+        dup += 1
+        label = f"{opponent} (G{dup})"
+        key = (date, label.lower())
     games[key] = {
         "date": date,
-        "opponent": opponent,
+        "opponent": label,
         "season": season_of(date),
         "site": site,
         "startTime": start,
     }
+    claimed.add(id(games[key]))
     added += 1
 
 if schedule_entries:
