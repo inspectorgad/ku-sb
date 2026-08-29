@@ -53,6 +53,21 @@ def innings_to_outs(value):
     return whole * 3 + min(frac, 2)
 
 
+def season_of(date):
+    """Season label for an ISO date.
+
+    D1 softball's championship season runs February to June inside one
+    calendar year, so those games are labeled by that year ("2026"). Fall
+    games (August-December) are pre-season exhibitions belonging to the
+    NEXT spring season and do not count toward any official record, so they
+    get their own label ("Fall 2026") — that keeps them out of the season's
+    W-L, batting, and pitching totals while still showing up in the app as
+    their own selectable season.
+    """
+    year, month = int(date[:4]), int(date[5:7])
+    return f"Fall {year}" if month >= 8 else str(year)
+
+
 def iso_date(mdy):
     """Sidearm dates are M/D/YYYY. Guard against century typos in the source
     (the 2026 Arkansas box was posted dated 3/1/1926)."""
@@ -163,7 +178,7 @@ def parse_sidearm_game(data):
     game = {
         "date": date,
         "opponent": (opp.get("name") or "Unknown").strip(),
-        "season": date[:4],
+        "season": season_of(date),
         "teamScore": to_int(ku_sum.get("runs") if ku_sum.get("runs") is not None else ku.get("score")),
         "opponentScore": to_int(opp_sum.get("runs") if opp_sum.get("runs") is not None else opp.get("score")),
         "inningScores": inning_scores,
@@ -266,7 +281,7 @@ for game_id, meta in sorted((index.get("ncaaGames") or {}).items()):
     games[gkey] = {
         "date": date,
         "opponent": opponent,
-        "season": date[:4],
+        "season": season_of(date),
         "teamScore": to_int(meta.get("kuScore")),
         "opponentScore": to_int(meta.get("oppScore")),
     }
@@ -351,7 +366,7 @@ for entry in schedule_entries:
     games[key] = {
         "date": date,
         "opponent": opponent,
-        "season": date[:4],
+        "season": season_of(date),
         "site": site,
         "startTime": start,
     }
@@ -377,7 +392,7 @@ if not schedule_entries:
         games[key] = {
             "date": date,
             "opponent": opponent,
-            "season": date[:4],
+            "season": season_of(date),
             "site": (entry.get("site") or "").strip().upper()[:1],
         }
 
