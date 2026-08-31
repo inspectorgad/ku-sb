@@ -2,6 +2,7 @@
 Skip to main content
 Pause All Rotators
 University of Kansas Athletics
+Skip Ad
 Skip Scoreboard
 Scoreboard
 Coming Up
@@ -89,13 +90,13 @@ Lincoln, Neb.
 
 12:00 pm
 
-27
+25
 Days
-8
+12
 Hours
-39
+15
 Minutes
-35
+55
 Seconds
 Add To Calendar
 Text Only
