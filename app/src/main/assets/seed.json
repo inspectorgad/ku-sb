@@ -1,6 +1,6 @@
 {
  "formatVersion": 1,
- "generatedAt": "2026-08-29T20:18:42Z",
+ "generatedAt": "2026-09-07T14:48:38Z",
  "team": "Kansas Jayhawks Softball",
  "players": [
   {
@@ -64,6 +64,12 @@
    "active": true
   },
   {
+   "name": "Daniella Gloria",
+   "jerseyNumber": "66",
+   "position": "P",
+   "active": true
+  },
+  {
    "name": "Ella Boyer",
    "jerseyNumber": "75",
    "position": "C",
@@ -82,6 +88,12 @@
    "active": false
   },
   {
+   "name": "Grace Thompson",
+   "jerseyNumber": "4",
+   "position": "INF",
+   "active": true
+  },
+  {
    "name": "Hailey Cripe",
    "jerseyNumber": "41",
    "position": "",
@@ -92,6 +104,18 @@
    "jerseyNumber": "15",
    "position": "",
    "active": false
+  },
+  {
+   "name": "Jazmin Ramirez",
+   "jerseyNumber": "32",
+   "position": "INF",
+   "active": true
+  },
+  {
+   "name": "Jocelyn Alatorre",
+   "jerseyNumber": "77",
+   "position": "INF",
+   "active": true
   },
   {
    "name": "Kadence Stafford",
@@ -118,6 +142,12 @@
    "active": false
   },
   {
+   "name": "Kynleigh Ball",
+   "jerseyNumber": "33",
+   "position": "INF",
+   "active": true
+  },
+  {
    "name": "Lila Partridge",
    "jerseyNumber": "10",
    "position": "P",
@@ -128,6 +158,12 @@
    "jerseyNumber": "11",
    "position": "",
    "active": false
+  },
+  {
+   "name": "Mackenna Jackson",
+   "jerseyNumber": "8",
+   "position": "INF",
+   "active": true
   },
   {
    "name": "Madi Hays",
@@ -154,9 +190,27 @@
    "active": true
   },
   {
+   "name": "Shelbi Stevens",
+   "jerseyNumber": "6",
+   "position": "C",
+   "active": true
+  },
+  {
+   "name": "Sienna Mayer",
+   "jerseyNumber": "11",
+   "position": "INF",
+   "active": true
+  },
+  {
    "name": "Tehya Pitts",
    "jerseyNumber": "1",
    "position": "OF",
+   "active": true
+  },
+  {
+   "name": "Timber Hensley",
+   "jerseyNumber": "2",
+   "position": "INF/U",
    "active": true
   }
  ],
