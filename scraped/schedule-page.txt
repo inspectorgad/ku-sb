@@ -90,13 +90,13 @@ Lincoln, Neb.
 
 12:00 pm
 
-25
+18
 Days
-12
+14
 Hours
-15
+11
 Minutes
-55
+22
 Seconds
 Add To Calendar
 Text Only
@@ -297,6 +297,7 @@ Apr 1
 (Thu)
 
 History
+Skip Ad
 vs
 BYU
 
@@ -394,6 +395,7 @@ Apr 24
 (Sat)
 
 History
+Skip Ad
 vs
 Oklahoma State
 

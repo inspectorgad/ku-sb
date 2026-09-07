@@ -5,9 +5,19 @@
   "position": "OF"
  },
  {
+  "name": "Timber Hensley",
+  "jerseyNumber": "2",
+  "position": "INF/U"
+ },
+ {
   "name": "Blakely Barber",
   "jerseyNumber": "3",
   "position": "P"
+ },
+ {
+  "name": "Grace Thompson",
+  "jerseyNumber": "4",
+  "position": "INF"
  },
  {
   "name": "Kadence Stafford",
@@ -15,14 +25,29 @@
   "position": "INF"
  },
  {
+  "name": "Shelbi Stevens",
+  "jerseyNumber": "6",
+  "position": "C"
+ },
+ {
   "name": "Ava Wallace",
   "jerseyNumber": "7",
   "position": "OF"
  },
  {
+  "name": "Mackenna Jackson",
+  "jerseyNumber": "8",
+  "position": "INF"
+ },
+ {
   "name": "Lila Partridge",
   "jerseyNumber": "10",
   "position": "P"
+ },
+ {
+  "name": "Sienna Mayer",
+  "jerseyNumber": "11",
+  "position": "INF"
  },
  {
   "name": "September Flanagan",
@@ -75,13 +100,33 @@
   "position": "OF"
  },
  {
+  "name": "Jazmin Ramirez",
+  "jerseyNumber": "32",
+  "position": "INF"
+ },
+ {
+  "name": "Kynleigh Ball",
+  "jerseyNumber": "33",
+  "position": "INF"
+ },
+ {
   "name": "Madi Hays",
   "jerseyNumber": "36",
   "position": "OF"
  },
  {
+  "name": "Daniella Gloria",
+  "jerseyNumber": "66",
+  "position": "P"
+ },
+ {
   "name": "Ella Boyer",
   "jerseyNumber": "75",
   "position": "C"
+ },
+ {
+  "name": "Jocelyn Alatorre",
+  "jerseyNumber": "77",
+  "position": "INF"
  }
 ]

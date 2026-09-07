@@ -1,7 +1,8 @@
-2026 Softball Roster - University of Kansas
+2027 Softball Roster - University of Kansas
 Skip to main content
 Pause All Rotators
 University of Kansas Athletics
+Skip Ad
 Skip Scoreboard
 Scoreboard
 Coming Up
@@ -75,8 +76,8 @@ News
 Tickets
 Team Info 
 Facility Info 
-2026 Softball Roster
-2026
+2027 Softball Roster
+2027
 Jersey
 Jump to Coaches
 View
@@ -103,6 +104,20 @@ Full Bio
 for Tehya Pitts
 Expand for more info about Tehya Pitts
 Jersey Number
+2
+Timber Hensley
+Position
+INF/U 
+Academic Year
+ So.
+Hometown
+Durant, Okla.
+Last School
+Texas Tech
+Full Bio 
+for Timber Hensley
+Expand for more info about Timber Hensley
+Jersey Number
 3
 Blakely Barber
 Position
@@ -120,6 +135,20 @@ Rouse High School
 Full Bio 
 for Blakely Barber
 Expand for more info about Blakely Barber
+Jersey Number
+4
+Grace Thompson
+Position
+INF 
+Academic Year
+ Sr.
+Hometown
+Beaumont, TX
+Last School
+Ole Miss
+Full Bio 
+for Grace Thompson
+Expand for more info about Grace Thompson
 Jersey Number
 5
 Kadence Stafford
@@ -139,6 +168,18 @@ Full Bio
 for Kadence Stafford
 Expand for more info about Kadence Stafford
 Jersey Number
+6
+Shelbi Stevens
+Position
+C 
+Academic Year
+ Fr.
+Hometown
+Seguin, TX
+Full Bio 
+for Shelbi Stevens
+Expand for more info about Shelbi Stevens
+Jersey Number
 7
 Ava Wallace
 Position
@@ -156,6 +197,18 @@ Rockwall High School
 Full Bio 
 for Ava Wallace
 Expand for more info about Ava Wallace
+Jersey Number
+8
+Mackenna Jackson
+Position
+INF 
+Academic Year
+ Fr.
+Hometown
+Keller, TX
+Full Bio 
+for Mackenna Jackson
+Expand for more info about Mackenna Jackson
 Jersey Number
 10
 Lila Partridge
@@ -175,12 +228,26 @@ Full Bio
 for Lila Partridge
 Expand for more info about Lila Partridge
 Jersey Number
+11
+Sienna Mayer
+Position
+INF 
+Academic Year
+ So.
+Hometown
+El Segundo, Calif.
+Last School
+North Texas
+Full Bio 
+for Sienna Mayer
+Expand for more info about Sienna Mayer
+Jersey Number
 12
 September Flanagan
 Position
 INF/UTL 
 Academic Year
- Sr.
+ Gr.
 Height
  5' 9'' 
 Custom Field 1
@@ -288,7 +355,7 @@ Bailey Amezcua
 Position
 C 
 Academic Year
- So.
+ Jr.
 Height
  5' 3'' 
 Custom Field 1
@@ -324,7 +391,7 @@ Brinley Ramirez
 Position
 OF 
 Academic Year
- So.
+ Jr.
 Custom Field 1
 L/R
 Hometown
@@ -340,7 +407,7 @@ Audri Youngblood
 Position
 OF 
 Academic Year
- So.
+ Jr.
 Height
  5' 9'' 
 Custom Field 1
@@ -352,6 +419,30 @@ Monroe City High School
 Full Bio 
 for Audri Youngblood
 Expand for more info about Audri Youngblood
+Jersey Number
+32
+Jazmin Ramirez
+Position
+INF 
+Academic Year
+ So.
+Hometown
+Chandler, AZ
+Full Bio 
+for Jazmin Ramirez
+Expand for more info about Jazmin Ramirez
+Jersey Number
+33
+Kynleigh Ball
+Position
+INF 
+Academic Year
+ Fr.
+Hometown
+Georgetown, TX
+Full Bio 
+for Kynleigh Ball
+Expand for more info about Kynleigh Ball
 Jersey Number
 36
 Madi Hays
@@ -371,6 +462,18 @@ Full Bio
 for Madi Hays
 Expand for more info about Madi Hays
 Jersey Number
+66
+Daniella Gloria
+Position
+P 
+Academic Year
+ Fr.
+Hometown
+Apache Junction, Ariz.
+Full Bio 
+for Daniella Gloria
+Expand for more info about Daniella Gloria
+Jersey Number
 75
 Ella Boyer
 Position
@@ -388,70 +491,18 @@ Oak Ridge High School
 Full Bio 
 for Ella Boyer
 Expand for more info about Ella Boyer
+Jersey Number
+77
 Jocelyn Alatorre
+Position
+INF 
 Academic Year
-Rs.
+ Fr.
 Hometown
 Orange, CA
 Full Bio 
 for Jocelyn Alatorre
 Expand for more info about Jocelyn Alatorre
-Daniella Gloria
-Academic Year
-Rs.
-Full Bio 
-for Daniella Gloria
-Expand for more info about Daniella Gloria
-Kynleigh Ball
-Academic Year
-Rs.
-Hometown
-Georgetown, TX
-Full Bio 
-for Kynleigh Ball
-Expand for more info about Kynleigh Ball
-Mackenna Jackson
-Academic Year
-Rs.
-Hometown
-Keller, TX
-Full Bio 
-for Mackenna Jackson
-Expand for more info about Mackenna Jackson
-Shelbi Stevens
-Academic Year
-Rs.
-Hometown
-Seguin, TX
-Full Bio 
-for Shelbi Stevens
-Expand for more info about Shelbi Stevens
-Jazmin Ramirez
-Academic Year
-Rs.
-Hometown
-Chandler, AZ
-Full Bio 
-for Jazmin Ramirez
-Expand for more info about Jazmin Ramirez
-Sienna Mayer
-Academic Year
-Rs.
-Full Bio 
-for Sienna Mayer
-Expand for more info about Sienna Mayer
-Timber Hensley
-Academic Year
-Rs.
-Full Bio 
-for Timber Hensley
-Expand for more info about Timber Hensley
-Grace Thompson
-Academic Year
-Rs.
-Full Bio 
-for Grace Thompson
-Expand for more info about Grace Thompson
 Coaching Staff
 Jennifer McFalls
 Head Coach
