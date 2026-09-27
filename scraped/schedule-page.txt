@@ -8,18 +8,6 @@ Scoreboard
 Coming Up
 View Calendar 
 Skip Ad
-Upcoming Event: Softball at Nebraska on September 26, 2026 at 12:00 pm
-Sat. 09/26/26
--
-12:00 pm
-Softball
-at Nebraska
-Upcoming Event: Softball at Nebraska on September 26, 2026 at 2:30 pm
-Sat. 09/26/26
--
-2:30 pm
-Softball
-at Nebraska
 Upcoming Event: Softball versus Johnson County CC on October 1, 2026 at 5:00 pm
 Thu. 10/01/26
 -
@@ -64,6 +52,14 @@ Upcoming Event: Softball at Texas Tech on March 13, 2027
 Sat. 03/13/27
 Softball
 at Texas Tech
+Upcoming Event: Softball at Texas Tech on March 14, 2027
+Sun. 03/14/27
+Softball
+at Texas Tech
+Upcoming Event: Softball at Utah on March 26, 2027
+Fri. 03/26/27
+Softball
+at Utah
 MENU
 Toggle Navigation
 , Opens in new window
@@ -80,23 +76,23 @@ Facility Info
 
 University of Kansas
 
-at
+vs
 
-Nebraska
+Johnson County CC
 
-Saturday, September 26
+Thursday, October 1
 
-Lincoln, Neb.
+Lawrence, Kansas
 
-12:00 pm
+5:00 pm
 
-4
+3
 Days
-13
+8
 Hours
-19
+11
 Minutes
-5
+51
 Seconds
 Add To Calendar
 Text Only
