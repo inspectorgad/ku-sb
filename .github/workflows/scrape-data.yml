@@ -10,7 +10,6 @@ on:
   push:
     branches:
       - main
-      - claude/ku-softball-stats-app-07iqli
     paths:
       - 'scrape-trigger.txt'
       - 'scripts/scrape-ku-sb.mjs'

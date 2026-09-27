@@ -12,7 +12,6 @@ on:
   push:
     branches:
       - main
-      - claude/ku-softball-stats-app-07iqli
     paths:
       - 'docs/**'
       - 'scripts/build-dashboard.py'
