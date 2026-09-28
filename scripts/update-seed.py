@@ -395,6 +395,44 @@ if schedule_entries:
         f"{annotated} matched to existing entries, {added} added as unplayed"
     )
 
+# --- Results KU never publishes (fall exhibitions) ---------------------------
+# Fall ball results don't appear anywhere on kuathletics (no box score, no
+# schedule result, no recap) and the NCAA feed carries no fall softball at
+# all — but opponents post them. scraped/fall-results.json records those,
+# each with its source, and they are applied here by date + scheduled start,
+# which is what tells the halves of a doubleheader apart. A game that later
+# gains a real box score keeps the scraped version: this only fills a score
+# that is still missing.
+fall_results = load_json("scraped/fall-results.json", [])
+applied = unmatched = 0
+for entry in fall_results:
+    date = (entry.get("date") or "").strip()
+    start = (entry.get("startTime") or "").strip()
+    opponent = (entry.get("opponent") or "").strip()
+    match = next(
+        (
+            g for g in games.values()
+            if g["date"] == date
+            and g.get("startTime", "") == start
+            and norm_team(g["opponent"]) == norm_team(opponent)
+        ),
+        None,
+    )
+    if match is None:
+        unmatched += 1
+        print(f"  fall result unmatched (no scheduled game): {date} {start} vs {opponent}")
+        continue
+    if match.get("teamScore") is not None:
+        continue  # a published box score won; never overwrite it
+    match["teamScore"] = to_int(entry.get("teamScore"))
+    match["opponentScore"] = to_int(entry.get("opponentScore"))
+    applied += 1
+if fall_results:
+    print(
+        f"fall results: {applied} applied from opponent sources"
+        + (f", {unmatched} unmatched" if unmatched else "")
+    )
+
 # Legacy rotator fallback, used only when no schedule payload was captured.
 today = datetime.now(timezone.utc).strftime("%Y-%m-%d")
 if not schedule_entries:

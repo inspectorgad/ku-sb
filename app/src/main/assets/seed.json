@@ -1,6 +1,6 @@
 {
  "formatVersion": 1,
- "generatedAt": "2026-09-07T14:48:38Z",
+ "generatedAt": "2026-09-28T10:18:15Z",
  "team": "Kansas Jayhawks Softball",
  "players": [
   {
@@ -17261,14 +17261,18 @@
    "opponent": "Nebraska",
    "season": "Fall 2026",
    "site": "A",
-   "startTime": "12:00 pm"
+   "startTime": "12:00 pm",
+   "teamScore": 0,
+   "opponentScore": 6
   },
   {
    "date": "2026-09-26",
    "opponent": "Nebraska (G2)",
    "season": "Fall 2026",
    "site": "A",
-   "startTime": "2:30 pm"
+   "startTime": "2:30 pm",
+   "teamScore": 0,
+   "opponentScore": 7
   },
   {
    "date": "2026-10-01",

@@ -1,0 +1,20 @@
+[
+ {
+  "date": "2026-09-26",
+  "startTime": "12:00 pm",
+  "opponent": "Nebraska",
+  "teamScore": 0,
+  "opponentScore": 6,
+  "source": "https://huskers.com/sports/softball/schedule",
+  "note": "Fall exhibition. KU does not publish fall results; Nebraska's schedule page lists both games as FINAL. Game order (12:00 then 2:30) follows the order the two finals appear there."
+ },
+ {
+  "date": "2026-09-26",
+  "startTime": "2:30 pm",
+  "opponent": "Nebraska",
+  "teamScore": 0,
+  "opponentScore": 7,
+  "source": "https://huskers.com/sports/softball/schedule",
+  "note": "Fall exhibition. Second game of the doubleheader."
+ }
+]
