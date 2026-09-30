@@ -15,8 +15,6 @@ on:
       - 'scripts/build-dashboard.py'
       - '.github/workflows/deploy-pages.yml'
 
-# Deploy test: verifying main can deploy to the github-pages environment.
-
 permissions:
   contents: read
   pages: write
