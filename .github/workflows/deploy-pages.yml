@@ -2,13 +2,11 @@ name: Deploy dashboard to GitHub Pages
 
 on:
   workflow_dispatch:
-  # The workflow token can deploy to Pages but cannot CREATE the Pages
-  # site ("Resource not accessible by integration"), so Pages needs one
-  # manual enable: repo Settings -> Pages -> Source: "GitHub Actions".
-  # This hourly schedule publishes automatically once that's done; it can
-  # be removed after the first green deploy (pushes also trigger deploys).
-  schedule:
-    - cron: '25 * * * *'
+  # NOTE: this deploys only once GitHub Pages is enabled on the repo
+  # (Settings -> Pages -> Source: "GitHub Actions"). Until then the job
+  # fails at setup, because the github-pages environment doesn't exist.
+  # It runs on pushes that change the dashboard, and the nightly scrape
+  # dispatches it explicitly when the season data changes.
   push:
     branches:
       - main
