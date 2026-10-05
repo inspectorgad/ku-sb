@@ -519,7 +519,6 @@ fun GameDialog(
     )
 }
 
-@OptIn(ExperimentalMaterial3Api::class)
 /**
  * A player's name as a box score prints it: everything after the first name,
  * so "Ada Van Dyke" stays "Van Dyke" rather than becoming "Dyke".
@@ -664,6 +663,7 @@ private fun SectionLabel(text: String) {
     Spacer(modifier = Modifier.height(2.dp))
 }
 
+@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun GameDetailScreen(
     game: Game,
