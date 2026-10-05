@@ -111,13 +111,22 @@ abstract class JayhawksDatabase : RoomDatabase() {
             }
         }
 
+        /**
+         * Every migration in order. Exposed so MigrationTest can drive them
+         * against a hand-built old database — the schema is not exported, so
+         * this is the only guard that an upgrade on a phone holding real data
+         * actually works.
+         */
+        fun migrations(): List<Migration> =
+            listOf(MIGRATION_1_2, MIGRATION_2_3, MIGRATION_3_4, MIGRATION_4_5)
+
         fun get(context: Context): JayhawksDatabase =
             instance ?: synchronized(this) {
                 instance ?: Room.databaseBuilder(
                     context.applicationContext,
                     JayhawksDatabase::class.java,
                     "ku_sb.db"
-                ).addMigrations(MIGRATION_1_2, MIGRATION_2_3, MIGRATION_3_4, MIGRATION_4_5)
+                ).addMigrations(*migrations().toTypedArray())
                     .build().also { instance = it }
             }
     }
