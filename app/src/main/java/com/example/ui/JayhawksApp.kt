@@ -7,6 +7,7 @@ import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.List
 import androidx.compose.material.icons.filled.EmojiEvents
 import androidx.compose.material.icons.filled.Groups
+import androidx.compose.material.icons.filled.Insights
 import androidx.compose.material.icons.filled.Leaderboard
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
@@ -30,7 +31,7 @@ import androidx.lifecycle.viewmodel.compose.viewModel
 import com.example.JayhawksViewModel
 
 enum class Tab(val label: String) {
-    Roster("Roster"), Games("Games"), Leaders("Leaders"), Big12("Big 12")
+    Roster("Roster"), Games("Games"), Season("Season"), Leaders("Leaders"), Big12("Big 12")
 }
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -103,6 +104,7 @@ fun JayhawksApp(viewModel: JayhawksViewModel = viewModel()) {
                                     imageVector = when (tab) {
                                         Tab.Roster -> Icons.Default.Groups
                                         Tab.Games -> Icons.AutoMirrored.Filled.List
+                                        Tab.Season -> Icons.Default.Insights
                                         Tab.Leaders -> Icons.Default.EmojiEvents
                                         Tab.Big12 -> Icons.Default.Leaderboard
                                     },
@@ -135,6 +137,13 @@ fun JayhawksApp(viewModel: JayhawksViewModel = viewModel()) {
                         statLines = statLines,
                         onSaveGame = { game -> viewModel.saveGame(game) { openGameId = it } },
                         onOpenGame = { openGameId = it.id }
+                    )
+
+                    Tab.Season -> SeasonScreen(
+                        players = players,
+                        games = games,
+                        statLines = statLines,
+                        standings = standings
                     )
 
                     Tab.Leaders -> LeadersScreen(
