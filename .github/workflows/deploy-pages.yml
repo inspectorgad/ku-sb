@@ -13,6 +13,7 @@ on:
     paths:
       - 'docs/**'
       - 'scripts/build-dashboard.py'
+      - 'scripts/ask_pack.py'
       - '.github/workflows/deploy-pages.yml'
 
 permissions:
@@ -37,6 +38,11 @@ jobs:
       # even if docs/ and seed.json ever get out of sync.
       - name: Build dashboard
         run: python3 scripts/build-dashboard.py
+
+      # Same reason: "Ask about the team" reads ask-data.json from this site,
+      # so it is rebuilt here rather than trusted to be current in the commit.
+      - name: Build the Ask data pack
+        run: python3 scripts/ask_pack.py
 
       - name: Configure Pages
         uses: actions/configure-pages@v5

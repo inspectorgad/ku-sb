@@ -93,6 +93,12 @@ jobs:
           cp app/src/main/assets/seed.json season-data.json
           gh release upload latest-apk season-data.json \
             --repo "$GITHUB_REPOSITORY" --clobber
+          # And the tables behind "Ask about the team", so the app can reach
+          # them without naming a branch in a raw.githubusercontent URL.
+          python3 scripts/ask_pack.py
+          cp docs/ask-data.json ask-data.json
+          gh release upload latest-apk ask-data.json \
+            --repo "$GITHUB_REPOSITORY" --clobber
           # Play Store bundle: download this and upload it to the Play
           # Console (internal testing) whenever the app code changes.
           gh release upload latest-apk app/build/outputs/bundle/release/app-release.aab \
