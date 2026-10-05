@@ -1,14 +1,8 @@
 {
  "formatVersion": 1,
- "generatedAt": "2026-10-05T19:44:14Z",
+ "generatedAt": "2026-10-05T20:49:51Z",
  "team": "Kansas Jayhawks Softball",
  "players": [
-  {
-   "name": "A. Linduff",
-   "jerseyNumber": "39",
-   "position": "",
-   "active": false
-  },
   {
    "name": "Anna Soles",
    "jerseyNumber": "22",
@@ -92,12 +86,6 @@
    "active": true
   },
   {
-   "name": "C. Bagshaw",
-   "jerseyNumber": "6",
-   "position": "",
-   "active": false
-  },
-  {
    "name": "Campbell Bagshaw",
    "jerseyNumber": "6",
    "position": "",
@@ -121,12 +109,6 @@
    "academicYear": "Fr.",
    "hometown": "Apache Junction, Ariz.",
    "active": true
-  },
-  {
-   "name": "E. Tatum",
-   "jerseyNumber": "20",
-   "position": "",
-   "active": false
   },
   {
    "name": "Ella Boyer",
@@ -166,12 +148,6 @@
    "active": true
   },
   {
-   "name": "H. Cripe",
-   "jerseyNumber": "41",
-   "position": "",
-   "active": false
-  },
-  {
    "name": "Hailey Cripe",
    "jerseyNumber": "41",
    "position": "",
@@ -198,18 +174,6 @@
    "academicYear": "Fr.",
    "hometown": "Orange, CA",
    "active": true
-  },
-  {
-   "name": "K. Diggs",
-   "jerseyNumber": "2",
-   "position": "",
-   "active": false
-  },
-  {
-   "name": "K. Griggs",
-   "jerseyNumber": "14",
-   "position": "",
-   "active": false
   },
   {
    "name": "Kadence Stafford",
@@ -254,12 +218,6 @@
    "active": true
   },
   {
-   "name": "L. Ludwig",
-   "jerseyNumber": "11",
-   "position": "",
-   "active": false
-  },
-  {
    "name": "Lila Partridge",
    "jerseyNumber": "10",
    "position": "P",
@@ -294,12 +252,6 @@
    "hometown": "Bellevue, Neb.",
    "lastSchool": "Millard South High School",
    "active": true
-  },
-  {
-   "name": "P. Limbaugh",
-   "jerseyNumber": "4",
-   "position": "",
-   "active": false
   },
   {
    "name": "Presley Limbaugh",
@@ -7303,7 +7255,7 @@
    "opponentErrors": 0,
    "lines": [
     {
-     "player": "P. Limbaugh",
+     "player": "Presley Limbaugh",
      "gs": 1,
      "spot": 1,
      "pos": "cf",
@@ -7325,7 +7277,7 @@
      "po": 1
     },
     {
-     "player": "A. Linduff",
+     "player": "Aynslee Linduff",
      "gs": 1,
      "spot": 2,
      "pos": "rf",
@@ -7393,7 +7345,7 @@
      "po": 7
     },
     {
-     "player": "H. Cripe",
+     "player": "Hailey Cripe",
      "gs": 1,
      "spot": 4,
      "pos": "ss",
@@ -7439,7 +7391,7 @@
      "ao": 1
     },
     {
-     "player": "C. Bagshaw",
+     "player": "Campbell Bagshaw",
      "gs": 1,
      "spot": 6,
      "pos": "2b",
@@ -7976,7 +7928,7 @@
    "opponentErrors": 1,
    "lines": [
     {
-     "player": "P. Limbaugh",
+     "player": "Presley Limbaugh",
      "gs": 1,
      "spot": 1,
      "pos": "cf",
@@ -8021,7 +7973,7 @@
      "po": 2
     },
     {
-     "player": "A. Linduff",
+     "player": "Aynslee Linduff",
      "gs": 1,
      "spot": 2,
      "pos": "rf",
@@ -8063,7 +8015,7 @@
      "sh": 0
     },
     {
-     "player": "H. Cripe",
+     "player": "Hailey Cripe",
      "gs": 1,
      "spot": 3,
      "pos": "ss",
@@ -8152,7 +8104,7 @@
      "sh": 0
     },
     {
-     "player": "K. Griggs",
+     "player": "Karsen Griggs",
      "gs": 0,
      "spot": 5,
      "pos": "1b",
@@ -8196,7 +8148,7 @@
      "ao": 1
     },
     {
-     "player": "E. Tatum",
+     "player": "Emma Tatum",
      "gs": 1,
      "spot": 7,
      "pos": "2b",
@@ -8288,7 +8240,7 @@
      "a": 1
     },
     {
-     "player": "L. Ludwig",
+     "player": "Lizzy Ludwig",
      "gs": 1,
      "spot": 10,
      "pos": "p",
@@ -8568,7 +8520,7 @@
    "opponentErrors": 0,
    "lines": [
     {
-     "player": "P. Limbaugh",
+     "player": "Presley Limbaugh",
      "gs": 1,
      "spot": 1,
      "pos": "cf",
@@ -8590,7 +8542,7 @@
      "ao": 1
     },
     {
-     "player": "A. Linduff",
+     "player": "Aynslee Linduff",
      "gs": 1,
      "spot": 2,
      "pos": "rf",
@@ -8637,7 +8589,7 @@
      "dp": 1
     },
     {
-     "player": "H. Cripe",
+     "player": "Hailey Cripe",
      "gs": 1,
      "spot": 4,
      "pos": "ss",
@@ -8682,7 +8634,7 @@
      "ao": 2
     },
     {
-     "player": "C. Bagshaw",
+     "player": "Campbell Bagshaw",
      "gs": 1,
      "spot": 6,
      "pos": "2b",
@@ -8774,7 +8726,7 @@
      "a": 1
     },
     {
-     "player": "E. Tatum",
+     "player": "Emma Tatum",
      "gs": 1,
      "spot": 9,
      "pos": "3b",
@@ -8832,7 +8784,7 @@
      "oab": 19
     },
     {
-     "player": "K. Diggs",
+     "player": "Kennedy Diggs",
      "gs": 0,
      "spot": 10,
      "pos": "p",
@@ -9100,7 +9052,7 @@
    "opponentErrors": 0,
    "lines": [
     {
-     "player": "P. Limbaugh",
+     "player": "Presley Limbaugh",
      "gs": 1,
      "spot": 1,
      "pos": "cf",
@@ -9123,7 +9075,7 @@
      "po": 1
     },
     {
-     "player": "A. Linduff",
+     "player": "Aynslee Linduff",
      "gs": 1,
      "spot": 2,
      "pos": "rf",
@@ -9144,7 +9096,7 @@
      "go": 2
     },
     {
-     "player": "H. Cripe",
+     "player": "Hailey Cripe",
      "gs": 1,
      "spot": 3,
      "pos": "ss",
@@ -9238,7 +9190,7 @@
      "go": 1
     },
     {
-     "player": "C. Bagshaw",
+     "player": "Campbell Bagshaw",
      "gs": 1,
      "spot": 7,
      "pos": "2b",
@@ -9260,7 +9212,7 @@
      "e": 1
     },
     {
-     "player": "E. Tatum",
+     "player": "Emma Tatum",
      "gs": 1,
      "spot": 8,
      "pos": "3b",
@@ -9339,7 +9291,7 @@
      "oab": 9
     },
     {
-     "player": "K. Diggs",
+     "player": "Kennedy Diggs",
      "gs": 0,
      "spot": 10,
      "pos": "p",
@@ -9563,7 +9515,7 @@
    "opponentErrors": 2,
    "lines": [
     {
-     "player": "P. Limbaugh",
+     "player": "Presley Limbaugh",
      "gs": 1,
      "spot": 1,
      "pos": "cf",
@@ -9586,7 +9538,7 @@
      "po": 1
     },
     {
-     "player": "A. Linduff",
+     "player": "Aynslee Linduff",
      "gs": 1,
      "spot": 2,
      "pos": "rf",
@@ -9609,7 +9561,7 @@
      "po": 1
     },
     {
-     "player": "H. Cripe",
+     "player": "Hailey Cripe",
      "gs": 1,
      "spot": 3,
      "pos": "ss",
@@ -9694,7 +9646,7 @@
      "sh": 0
     },
     {
-     "player": "E. Tatum",
+     "player": "Emma Tatum",
      "gs": 1,
      "spot": 6,
      "pos": "2b",

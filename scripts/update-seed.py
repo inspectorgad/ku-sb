@@ -25,7 +25,10 @@ SEED_PATH = "app/src/main/assets/seed.json"
 # Pure parsing helpers, kept apart so they can be tested without this
 # script running its whole job on import. See scripts/seed_helpers.py.
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from seed_helpers import decision, to_int, umpire_crew  # noqa: E402
+from seed_helpers import (  # noqa: E402
+    canonical_name as _canonical_name, decision, fold_variant_names,
+    to_int, umpire_crew,
+)
 
 
 def load_json(path, default):
@@ -133,25 +136,6 @@ for entry in roster:
         prefer=True,
         detail=entry,
     )
-
-
-def canonical_name(name):
-    """Aligns a box-score name with the roster spelling where possible:
-    exact (case-insensitive) match first, then unique last-name +
-    first-initial match ("Samantha Claire" -> roster "Sam Claire")."""
-    if name.lower() in players:
-        return players[name.lower()]["name"]
-    parts = name.split()
-    if len(parts) >= 2:
-        first, last = parts[0], parts[-1]
-        matches = [
-            r for r in roster_names
-            if r.split()[-1].lower() == last.lower()
-            and r.split()[0][:1].lower() == first[:1].lower()
-        ]
-        if len(matches) == 1:
-            return matches[0]
-    return name
 
 
 # --- Games from Sidearm box scores (primary source) --------------------------
@@ -496,9 +480,24 @@ for key, player in players.items():
 
 # Align stat-line names with canonical roster spellings so the app can match
 # them up, folding any variant-name player entries into the canonical one.
+# Skipped when the roster scrape came back short, since there would be
+# nothing trustworthy to align against.
+def canonical_name(name):
+    if not roster_valid:
+        return name
+    return _canonical_name(name, players, roster_names)
+
+
+folded = {}
 for game in games.values():
     for line in game.get("lines", []):
-        line["player"] = canonical_name(line["player"])
+        canon = canonical_name(line["player"])
+        if canon != line["player"]:
+            folded[line["player"]] = canon
+        line["player"] = canon
+if folded:
+    print("box-score names folded into the roster spelling: "
+          + ", ".join(f"{k} -> {v}" for k, v in sorted(folded.items())))
 for key in list(players):
     canon = canonical_name(players[key]["name"])
     if canon.lower() != key:
@@ -506,6 +505,24 @@ for key in list(players):
         target = players.get(canon.lower())
         if target is not None and not target.get("jerseyNumber"):
             target["jerseyNumber"] = variant.get("jerseyNumber", "")
+
+# The roster settles a name only while the player is still on it. For those
+# who have left, two spellings of one player are folded together on the
+# evidence both rows carry: same surname, same first initial, same jersey.
+variants = fold_variant_names({p["name"]: p for p in players.values()})
+if variants:
+    print("variant spellings folded: "
+          + ", ".join(f"{k} -> {v}" for k, v in sorted(variants.items())))
+    for game in games.values():
+        for line in game.get("lines", []):
+            line["player"] = variants.get(line["player"], line["player"])
+    for old_name, keep in variants.items():
+        variant = players.pop(old_name.lower(), None)
+        target = players.get(keep.lower())
+        if variant and target:
+            for field in ("jerseyNumber", "position"):
+                if not target.get(field):
+                    target[field] = variant.get(field, "")
 
 # --- The posted schedule: home/away for every game, plus unplayed ones -------
 # scraped/schedule-<season>.json holds the full slate as KU publishes it, so a
