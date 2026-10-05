@@ -62,6 +62,22 @@ fun pitchingValues(t: PitchingTotals): List<String> = listOf(
     formatEra(t.walksAndHitsPerInning)
 )
 
+// The three tables of a softball box score. Deliberately narrower than the
+// season tables above: a box score is read a row at a time, and every extra
+// column pushes the ones that matter off the side of a phone. The richer
+// fields the scrape now keeps (pitch count, K-looking, GIDP) stay one tap
+// away in the stat-line detail rather than crowding these.
+val BOX_BATTING_COLUMNS = listOf(
+    "AB" to 40, "R" to 36, "H" to 36, "RBI" to 44, "BB" to 36, "SO" to 36
+)
+val BOX_PITCHING_COLUMNS = listOf(
+    "IP" to 48, "H" to 36, "R" to 36, "ER" to 40, "BB" to 36, "SO" to 36,
+    "NP" to 40, "BF" to 40
+)
+val BOX_FIELDING_COLUMNS = listOf(
+    "PO" to 40, "A" to 36, "E" to 36, "DP" to 40
+)
+
 /**
  * A horizontally scrollable stats table. Each row is a label (e.g. season
  * name) plus pre-formatted cell values matching [columns]. The label column

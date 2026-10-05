@@ -158,6 +158,8 @@ TEMPLATE = r"""<!doctype html>
   .phase-lbl { font-size: 10.5px; letter-spacing: .1em; color: var(--muted); text-transform: uppercase; }
   /* Exhibitions sit in the same table but count toward nothing, so they read
      as a quieter tier rather than as more season. */
+  /* A ranked opponent is the one thing a score alone never tells you. */
+  .oppRank { color: var(--crimson); font-weight: 700; }
   tr.exhib { opacity: .62; }
   tr.exhib td:first-child { color: var(--muted); }
 
@@ -620,7 +622,11 @@ function hideTip() { tip.style.display = "none"; }
     <tr${isExhibition(g) ? ' class="exhib"' : ""}>
       <td class="dim">${g.n || "–"}</td>
       <td class="lft">${fmtDate(g.date)}</td>
-      <td class="lft"><b>${g.site === "A" ? "at " : "vs "}${g.opponent}</b></td>
+      <td class="lft"><b>${g.site === "A" ? "at " : "vs "}${
+        g.opponentRank ? '<span class="oppRank">#' + g.opponentRank + "</span> " : ""
+      }${g.opponent}</b>${
+        g.opponentRecord ? ' <span class="dim">(' + g.opponentRecord + ")</span>" : ""
+      }</td>
       <td class="lft"><span class="chip ${g.won ? "W" : "L"}">${g.won ? "W" : "L"}</span></td>
       <td><b>${g.teamScore}–${g.opponentScore}</b></td>
       <td class="lft dim">${g.inningScores || ""}</td>

@@ -92,7 +92,13 @@ data class Game(
     // How every run scored, as a compact encoded list — one play per line:
     // "inning|ku(1/0)|usScore|themScore|narrative". Stored denormalised
     // because it is display-only and always read whole with its game.
-    val scoringSummary: String = ""
+    val scoringSummary: String = "",
+    // Who the opponent was on the day: their overall record including this
+    // game ("36-13", "" if unreported) and their national rank at the time
+    // (0 = unranked). Both describe THIS game rather than how the opponent's
+    // season finished, which is what makes a result readable years later.
+    val opponentRecord: String = "",
+    val opponentRank: Int = 0
 )
 
 /**

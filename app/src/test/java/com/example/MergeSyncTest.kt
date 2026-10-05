@@ -250,6 +250,7 @@ class MergeSyncTest {
                  "games": [{"date": "2026-04-17", "opponent": "UCF", "season": "2026",
                    "teamScore": 3, "opponentScore": 6,
                    "venue": "Lawrence, Kan.", "attendance": 1807,
+                   "opponentRecord": "34-11-1", "opponentRank": 20,
                    "boxScoreUrl": "https://kuathletics.com/box/20500",
                    "scoring": [
                      {"inn": 1, "ku": false, "text": "B. Damon doubled, RBI; A. Evans scored.", "us": 0, "them": 1},
@@ -267,6 +268,9 @@ class MergeSyncTest {
         assertEquals("Lawrence, Kan.", game.venue)
         assertEquals(1807, game.attendance)
         assertEquals("https://kuathletics.com/box/20500", game.boxScoreUrl)
+        // Who UCF were on the day, not how their season finished.
+        assertEquals("34-11-1", game.opponentRecord)
+        assertEquals(20, game.opponentRank)
         // Encoded one play per line: inning|ku|us|them|narrative
         val rows = game.scoringSummary.split("\n")
         assertEquals(2, rows.size)
@@ -296,7 +300,8 @@ class MergeSyncTest {
         // A game recorded before any of these columns existed.
         dao.insertGame(
             Game(date = "2026-04-17", opponent = "UCF", season = "2026",
-                teamScore = 3, opponentScore = 6, venue = "Hand-typed Park")
+                teamScore = 3, opponentScore = 6, venue = "Hand-typed Park",
+                opponentRecord = "hand-typed record")
         )
         Seeder.merge(
             JSONObject(
@@ -304,6 +309,7 @@ class MergeSyncTest {
                 {"players": [], "games": [{"date": "2026-04-17", "opponent": "UCF", "season": "2026",
                   "teamScore": 3, "opponentScore": 6,
                   "venue": "Scraped Stadium", "attendance": 900,
+                  "opponentRecord": "34-11-1", "opponentRank": 20,
                   "boxScoreUrl": "https://kuathletics.com/box/20500",
                   "scoring": [{"inn": 2, "ku": true, "text": "Cripe homered.", "us": 1, "them": 0}]}]}
                 """
@@ -314,6 +320,8 @@ class MergeSyncTest {
         assertEquals("Hand-typed Park", game.venue)   // never overwritten
         assertEquals(900, game.attendance)            // filled, was blank
         assertEquals("https://kuathletics.com/box/20500", game.boxScoreUrl)
+        assertEquals("hand-typed record", game.opponentRecord)  // never overwritten
+        assertEquals(20, game.opponentRank)                     // filled, was 0
         assertTrue(game.scoringSummary.startsWith("2|1|1|0|Cripe homered."))
     }
 

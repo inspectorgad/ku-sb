@@ -73,6 +73,23 @@ val GLOSSARY: Map<String, String> = mapOf(
     "WHIP" to "Walks and hits per inning pitched: (BB + H) / IP. How many runners a " +
         "pitcher puts on per inning, regardless of whether they score. Around 1.00 is excellent.",
 
+    // Fielding — exactly the BOX_FIELDING_COLUMNS headings. Softball's third
+    // stat category, and the one neither sibling app has an equivalent for.
+    "PO" to "Putouts — outs this fielder personally recorded: catching a fly ball, " +
+        "tagging a runner, or standing on the base for a force.",
+    "A" to "Assists — throws or deflections that led to an out someone else recorded. " +
+        "A shortstop's throw to first is an assist for her, a putout for the first baseman.",
+    "E" to "Errors — a misplay that let a batter or runner advance when ordinary " +
+        "effort would have got the out. Runs that score afterwards are usually unearned.",
+    "DP" to "Double plays this fielder took part in, whether she started it, turned it " +
+        "or caught the final throw.",
+
+    // Pitching detail kept from the box score
+    "NP" to "Number of pitches thrown. The honest measure of a pitcher's workload — " +
+        "innings hide a long inning, a pitch count does not.",
+    "BF" to "Batters faced — every hitter who came to the plate against this pitcher, " +
+        "including those who walked or were hit, which at-bats leave out.",
+
     // Standings and rankings
     "Conf" to "Record against Big 12 opponents in the regular season. The conference " +
         "tournament is not counted.",

@@ -203,6 +203,23 @@ def parse_sidearm_game(data):
     if data.get("url"):
         game["boxScoreUrl"] = data["url"]
 
+    # Who the opponent was at the time, which is the half of a result that the
+    # score alone never tells you: beating a 36-13 team is not the same game as
+    # beating a 9-40 one. Both fields are as the box score reported them on the
+    # day, so they describe THIS game rather than how the opponent's season
+    # finished — which is the version worth keeping, and the only one available.
+    #
+    # The record field packs a conference record after a comma, and that half is
+    # unreliable: it comes through duplicated ("29-11, 29-11") and as a bare "0".
+    # Only the overall record ahead of the comma is kept, and only when it really
+    # looks like one.
+    overall = (opp.get("record") or "").split(",")[0].strip()
+    if re.fullmatch(r"\d+-\d+(-\d+)?", overall):
+        game["opponentRecord"] = overall
+    opp_rank = to_int(opp.get("rank"))
+    if opp_rank:
+        game["opponentRank"] = opp_rank
+
     # How every run scored. Stored compactly: inning, whether KU scored it, the
     # narrative, and the score after the play from KU's perspective.
     scoring = []
@@ -238,7 +255,13 @@ def parse_sidearm_game(data):
         pos = (p.get("position") or "").strip()
         if pos:
             line["pos"] = pos
-        if p.get("substitute"):
+        # The payload's "substitute" is a substitution SEQUENCE, not a flag:
+        # "0" for a starter, "1" for the first player into that slot, "2" for
+        # the next. It arrives as a string, so a plain truth test called every
+        # one of them a substitute — which it did, for all 816 lines. Anything
+        # above zero is a substitute; which substitute is recoverable from row
+        # order, since the payload lists them in the order they entered.
+        if to_int(p.get("substitute")) > 0:
             line["sub"] = 1
         h = hitting or {}
         line.update({

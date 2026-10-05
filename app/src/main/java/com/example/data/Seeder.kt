@@ -115,7 +115,9 @@ object Seeder {
                         venue = g.optString("venue"),
                         attendance = g.optInt("attendance"),
                         boxScoreUrl = g.optString("boxScoreUrl"),
-                        scoringSummary = encodeScoring(g.optJSONArray("scoring"))
+                        scoringSummary = encodeScoring(g.optJSONArray("scoring")),
+                        opponentRecord = g.optString("opponentRecord"),
+                        opponentRank = g.optInt("opponentRank")
                     )
                 )
             } else {
@@ -164,6 +166,14 @@ object Seeder {
                 val seedScoring = encodeScoring(g.optJSONArray("scoring"))
                 if (seedScoring.isNotEmpty() && existing.scoringSummary.isBlank()) {
                     updated = updated.copy(scoringSummary = seedScoring)
+                }
+                val seedOppRecord = g.optString("opponentRecord")
+                if (seedOppRecord.isNotBlank() && existing.opponentRecord.isBlank()) {
+                    updated = updated.copy(opponentRecord = seedOppRecord)
+                }
+                val seedOppRank = g.optInt("opponentRank")
+                if (seedOppRank > 0 && existing.opponentRank == 0) {
+                    updated = updated.copy(opponentRank = seedOppRank)
                 }
                 if (existing.startTime.isBlank() && seedStartTime.isNotBlank()) {
                     updated = updated.copy(startTime = seedStartTime)

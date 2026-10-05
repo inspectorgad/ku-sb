@@ -101,7 +101,7 @@ class MigrationTest {
         db.query(sql).use { if (it.moveToFirst()) it.getInt(0) else -1 }
 
     @Test
-    fun `a v1 database with real data survives every migration to v5`() {
+    fun `a v1 database with real data survives every migration to the current version`() {
         val db = openV1()
         db.execSQL("INSERT INTO players VALUES (1, 'Ada Alpha', '7', 'P', 1)")
         db.execSQL(
@@ -130,7 +130,10 @@ class MigrationTest {
         }
         // ...and every column each migration promised now exists.
         val gameCols = columns(db, "games")
-        for (c in listOf("site", "startTime", "venue", "attendance", "boxScoreUrl", "scoringSummary")) {
+        for (c in listOf(
+            "site", "startTime", "venue", "attendance", "boxScoreUrl", "scoringSummary",
+            "opponentRecord", "opponentRank"
+        )) {
             assertTrue("games is missing $c", c in gameCols)
         }
         val lineCols = columns(db, "stat_lines")
@@ -190,8 +193,15 @@ class MigrationTest {
         )
     }
 
+    /**
+     * The target is read off the @Database annotation rather than written out
+     * here, so bumping the schema without adding a migration fails this test
+     * instead of quietly needing the number updated in two places.
+     */
     @Test
     fun `migrations are contiguous from 1 to the current version`() {
+        val declared = JayhawksDatabase::class.java
+            .getAnnotation(androidx.room.Database::class.java)!!.version
         val steps = JayhawksDatabase.migrations().sortedBy { it.startVersion }
         var expected = 1
         for (m in steps) {
@@ -199,6 +209,6 @@ class MigrationTest {
             assertEquals("migration ${m.startVersion} should step by one", expected + 1, m.endVersion)
             expected = m.endVersion
         }
-        assertEquals("migrations must reach the database version", 5, expected)
+        assertEquals("migrations must reach the database version", declared, expected)
     }
 }

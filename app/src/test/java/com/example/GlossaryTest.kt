@@ -1,6 +1,9 @@
 package com.example
 
 import com.example.ui.BATTING_COLUMNS
+import com.example.ui.BOX_BATTING_COLUMNS
+import com.example.ui.BOX_FIELDING_COLUMNS
+import com.example.ui.BOX_PITCHING_COLUMNS
 import com.example.ui.GLOSSARY
 import com.example.ui.PITCHING_COLUMNS
 import com.example.ui.explain
@@ -26,6 +29,20 @@ class GlossaryTest {
     @Test
     fun `every pitching column has a definition`() {
         val missing = PITCHING_COLUMNS.map { it.first }.filter { explain(it) == null }
+        assertTrue("no definition for: $missing", missing.isEmpty())
+    }
+
+    /**
+     * The box score has its own, narrower column sets. They are listed here
+     * explicitly rather than folded into the two tests above because a label
+     * can be in a box table and no season table (PO, A, E, DP, NP, BF) — the
+     * fielding line in particular exists nowhere else.
+     */
+    @Test
+    fun `every box score column has a definition`() {
+        val labels = (BOX_BATTING_COLUMNS + BOX_PITCHING_COLUMNS + BOX_FIELDING_COLUMNS)
+            .map { it.first }
+        val missing = labels.filter { explain(it) == null }
         assertTrue("no definition for: $missing", missing.isEmpty())
     }
 

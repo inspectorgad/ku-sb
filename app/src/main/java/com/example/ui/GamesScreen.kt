@@ -64,7 +64,9 @@ import com.example.stats.summarize
  * flag is surfaced separately where there is room for it.
  */
 fun opponentLabel(game: Game): String =
-    (if (game.site == "A") "at " else "vs ") + game.opponent
+    (if (game.site == "A") "at " else "vs ") +
+        (if (game.opponentRank > 0) "#${game.opponentRank} " else "") +
+        game.opponent
 
 @Composable
 fun GamesScreen(
@@ -261,12 +263,21 @@ private data class ScoringPlay(
     val narrative: String
 )
 
-/** Venue, announced crowd, and a link out to the official box score. */
+/**
+ * Venue, announced crowd, who the opponent was on the day, and a link out to
+ * the official box score.
+ */
 @Composable
 private fun GameContext(game: Game) {
     val bits = buildList {
         if (game.venue.isNotBlank()) add(game.venue)
         if (game.attendance > 0) add("${"%,d".format(game.attendance)} fans")
+        // The opponent's record through this game. Shown only for a played
+        // game: before first pitch the scrape has no record to report, and a
+        // blank would read as "0-0" rather than "not known yet".
+        if (game.opponentRecord.isNotBlank() && game.teamScore != null) {
+            add("${game.opponent} were ${game.opponentRecord}")
+        }
     }
     if (bits.isEmpty() && game.boxScoreUrl.isBlank()) return
     val uriHandler = LocalUriHandler.current
@@ -509,6 +520,150 @@ fun GameDialog(
 }
 
 @OptIn(ExperimentalMaterial3Api::class)
+/**
+ * A player's name as a box score prints it: everything after the first name,
+ * so "Ada Van Dyke" stays "Van Dyke" rather than becoming "Dyke".
+ */
+private fun boxName(full: String): String {
+    val rest = full.substringAfter(' ', "").trim()
+    return if (rest.isEmpty()) full else rest
+}
+
+/**
+ * The box score, in the order the game was actually played rather than in
+ * roster order: batters by lineup slot with substitutes indented under the
+ * starter whose spot they took, then every pitcher who threw, then the
+ * fielding line.
+ *
+ * Lineup order is the whole point — a box score sorted by surname tells you
+ * nothing about who led off or who the game was handed to in the seventh.
+ * Players who appear with no slot (a pinch runner a source never numbered)
+ * sort to the end rather than being dropped.
+ */
+@Composable
+private fun BoxScore(players: List<Player>, lines: List<StatLine>) {
+    val byId = players.associateBy { it.id }
+    val named = lines.mapNotNull { line -> byId[line.playerId]?.let { it to line } }
+    if (named.isEmpty()) return
+
+    // Row id is insertion order, which is the order the box score listed the
+    // players — so it is appearance order, and it is the only thing that is.
+    // Every pitcher shares lineup slot 10 (softball's FLEX), so without this
+    // they would tie and fall back to something arbitrary: sorting the
+    // pitching line by surname would claim the wrong starter.
+    val inOrder = named.sortedWith(
+        compareBy(
+            { it.second.lineupSpot == 0 },      // unnumbered last
+            { it.second.lineupSpot },
+            { it.second.substitute },           // starter above the sub in the slot
+            { it.second.id }
+        )
+    )
+
+    fun label(player: Player, line: StatLine): String {
+        val slot = if (line.lineupSpot > 0 && !line.substitute) "${line.lineupSpot} " else "  "
+        val pos = if (line.position.isNotBlank()) " ${line.position}" else ""
+        return slot + boxName(player.name) + pos
+    }
+
+    val batters = inOrder.filter { (_, l) ->
+        l.atBats > 0 || l.walks > 0 || l.hitByPitch > 0 || l.runs > 0 ||
+            l.sacrificeFlies > 0 || l.sacrificeHits > 0 || l.stolenBases > 0 ||
+            (l.lineupSpot > 0 && !l.pitched)
+    }
+    val pitchers = inOrder.filter { it.second.pitched }
+    val fielders = inOrder.filter { (_, l) ->
+        l.putouts > 0 || l.assists > 0 || l.errors > 0 || l.doublePlaysTurned > 0
+    }
+
+    Card(modifier = Modifier.fillMaxWidth()) {
+        Column(modifier = Modifier.padding(12.dp)) {
+            Text(
+                "Box score",
+                style = MaterialTheme.typography.titleSmall,
+                fontWeight = FontWeight.SemiBold
+            )
+            Text(
+                "Batting order · press and hold a heading for what it means",
+                style = MaterialTheme.typography.bodySmall,
+                color = MaterialTheme.colorScheme.onSurfaceVariant
+            )
+            Spacer(modifier = Modifier.height(6.dp))
+
+            if (batters.isNotEmpty()) {
+                StatsTable(
+                    columns = BOX_BATTING_COLUMNS,
+                    rows = batters.map { (p, l) ->
+                        label(p, l) to listOf(
+                            l.atBats.toString(), l.runs.toString(), l.hits.toString(),
+                            l.runsBattedIn.toString(), l.walks.toString(), l.strikeouts.toString()
+                        )
+                    },
+                    labelWidth = 132
+                )
+                val totals = batters.map { it.second }
+                Text(
+                    "Totals: ${totals.sumOf { it.hits }}-for-${totals.sumOf { it.atBats }}, " +
+                        "${totals.sumOf { it.runsBattedIn }} RBI",
+                    style = MaterialTheme.typography.bodySmall,
+                    color = MaterialTheme.colorScheme.onSurfaceVariant,
+                    modifier = Modifier.padding(top = 2.dp)
+                )
+            }
+
+            if (pitchers.isNotEmpty()) {
+                SectionLabel("Pitching")
+                StatsTable(
+                    columns = BOX_PITCHING_COLUMNS,
+                    rows = pitchers.map { (p, l) ->
+                        val decision = when {
+                            l.win -> " (W)"
+                            l.loss -> " (L)"
+                            l.save -> " (S)"
+                            else -> ""
+                        }
+                        (boxName(p.name) + decision) to listOf(
+                            formatInnings(l.outsPitched), l.hitsAllowed.toString(),
+                            l.runsAllowed.toString(), l.earnedRuns.toString(),
+                            l.walksAllowed.toString(), l.pitcherStrikeouts.toString(),
+                            // The scrape does not always carry these; a dash
+                            // says "not reported", which a 0 would misstate.
+                            if (l.pitchCount > 0) l.pitchCount.toString() else "–",
+                            if (l.battersFaced > 0) l.battersFaced.toString() else "–"
+                        )
+                    },
+                    labelWidth = 132
+                )
+            }
+
+            if (fielders.isNotEmpty()) {
+                SectionLabel("Fielding")
+                StatsTable(
+                    columns = BOX_FIELDING_COLUMNS,
+                    rows = fielders.map { (p, l) ->
+                        boxName(p.name) to listOf(
+                            l.putouts.toString(), l.assists.toString(),
+                            l.errors.toString(), l.doublePlaysTurned.toString()
+                        )
+                    },
+                    labelWidth = 132
+                )
+            }
+        }
+    }
+}
+
+@Composable
+private fun SectionLabel(text: String) {
+    Spacer(modifier = Modifier.height(10.dp))
+    Text(
+        text,
+        style = MaterialTheme.typography.titleSmall,
+        fontWeight = FontWeight.SemiBold
+    )
+    Spacer(modifier = Modifier.height(2.dp))
+}
+
 @Composable
 fun GameDetailScreen(
     game: Game,
@@ -568,13 +723,12 @@ fun GameDetailScreen(
                         LineScore(game)
                         ScoringSummary(game)
                         GameContext(game)
-                        Text(
-                            "Tap a player below to enter their batting and pitching line.",
-                            style = MaterialTheme.typography.bodySmall,
-                            color = MaterialTheme.colorScheme.onSurfaceVariant
-                        )
                     }
                 }
+            }
+
+            if (gameLines.isNotEmpty()) {
+                item { BoxScore(players, gameLines) }
             }
 
             if (players.isEmpty()) {
@@ -587,7 +741,28 @@ fun GameDetailScreen(
             } else {
                 // Former players only clutter stat entry unless they actually
                 // played in this game (e.g. seeded past-season box scores).
-                val relevant = players.filter { it.active || it.id in linesByPlayer }
+                val relevant = players
+                    .filter { it.active || it.id in linesByPlayer }
+                    // Same order as the box score above, so the two readings of
+                    // the game agree: whoever hit leadoff is first in both.
+                    .sortedWith(
+                        compareBy(
+                            { (linesByPlayer[it.id]?.lineupSpot ?: 0) == 0 },
+                            { linesByPlayer[it.id]?.lineupSpot ?: 0 },
+                            { linesByPlayer[it.id]?.substitute ?: false },
+                            { it.name }
+                        )
+                    )
+                item {
+                    Text(
+                        if (gameLines.isEmpty())
+                            "Tap a player to enter their batting and pitching line."
+                        else "Tap a player to edit their line.",
+                        style = MaterialTheme.typography.bodySmall,
+                        color = MaterialTheme.colorScheme.onSurfaceVariant,
+                        modifier = Modifier.padding(top = 4.dp)
+                    )
+                }
                 items(relevant, key = { it.id }) { player ->
                     val line = linesByPlayer[player.id]
                     Card(
