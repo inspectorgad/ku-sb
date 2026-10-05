@@ -47,10 +47,14 @@ import androidx.compose.ui.unit.sp
 import com.example.data.Game
 import com.example.data.Player
 import com.example.data.StatLine
+import com.example.stats.FormWindow
 import com.example.stats.aggregateBatting
 import com.example.stats.aggregatePitching
 import com.example.stats.formatAvg
+import com.example.stats.formDelta
 import com.example.stats.formatEra
+import com.example.stats.formatInnings
+import com.example.stats.playerForm
 import com.example.stats.summarize
 
 @Composable
@@ -273,6 +277,90 @@ fun PlayerDialog(
     )
 }
 
+/**
+ * Recent form: the player's last few appearances with the season underneath,
+ * because a window only means something next to what it is a departure from.
+ *
+ * A window too thin for a rate shows its counting line and a dash where the
+ * average would be. Printing ".000" off two at-bats would not be a slump, it
+ * would be a rounding artifact given the same weight as a season.
+ */
+@Composable
+private fun FormCard(season: String, windows: List<FormWindow>) {
+    val seasonRow = windows.last()
+    Card(modifier = Modifier.fillMaxWidth()) {
+        Column(modifier = Modifier.padding(12.dp)) {
+            Text(
+                "Recent form — $season",
+                style = MaterialTheme.typography.titleSmall,
+                fontWeight = FontWeight.Bold
+            )
+            windows.firstOrNull()?.let { latest ->
+                formDelta(latest, seasonRow)?.let { delta ->
+                    val direction = when {
+                        delta > 0.005 -> "up"
+                        delta < -0.005 -> "down"
+                        else -> "level"
+                    }
+                    Text(
+                        "${latest.label.lowercase()}: $direction on the season" +
+                            if (direction == "level") "" else " (${formatDelta(delta)})",
+                        style = MaterialTheme.typography.bodySmall,
+                        color = MaterialTheme.colorScheme.onSurfaceVariant
+                    )
+                }
+            }
+            Spacer(modifier = Modifier.height(8.dp))
+            StatsTable(
+                columns = FORM_BATTING_COLUMNS,
+                rows = windows.map { w ->
+                    w.label to listOf(
+                        w.games.toString(),
+                        w.batting.atBats.toString(),
+                        w.batting.hits.toString(),
+                        rateOrDash(w.battingQualified) { formatAvg(w.batting.battingAverage) },
+                        rateOrDash(w.battingQualified) { formatAvg(w.batting.onBasePercentage) },
+                        rateOrDash(w.battingQualified) { formatAvg(w.batting.sluggingPercentage) },
+                        rateOrDash(w.battingQualified) { formatAvg(w.batting.onBasePlusSlugging) }
+                    )
+                },
+                labelWidth = 72
+            )
+            if (windows.any { it.pitching.appearances > 0 }) {
+                Spacer(modifier = Modifier.height(10.dp))
+                StatsTable(
+                    columns = FORM_PITCHING_COLUMNS,
+                    rows = windows
+                        .filter { it.pitching.appearances > 0 }
+                        .map { w ->
+                            w.label to listOf(
+                                w.pitching.appearances.toString(),
+                                formatInnings(w.pitching.outsPitched),
+                                w.pitching.earnedRuns.toString(),
+                                w.pitching.strikeouts.toString(),
+                                rateOrDash(w.pitchingQualified) {
+                                    formatEra(w.pitching.earnedRunAverage)
+                                },
+                                rateOrDash(w.pitchingQualified) {
+                                    formatEra(w.pitching.walksAndHitsPerInning)
+                                }
+                            )
+                        },
+                    labelWidth = 72
+                )
+            }
+        }
+    }
+}
+
+/** A rate, or an em dash when there is not enough of it to be one. */
+private inline fun rateOrDash(qualified: Boolean, rate: () -> String): String =
+    if (qualified) rate() else "—"
+
+/** A batting-average difference with its sign kept: "+.045", "-.112". */
+private fun formatDelta(delta: Double): String =
+    (if (delta >= 0) "+" else "-") + formatAvg(kotlin.math.abs(delta))
+
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun PlayerDetailScreen(
@@ -365,6 +453,18 @@ fun PlayerDetailScreen(
                             StatsTable(columns = PITCHING_COLUMNS, rows = rows)
                         }
                     }
+                }
+            }
+
+            // Form belongs to the season being played, so it follows the most
+            // recent one the player actually appeared in rather than today's
+            // date — which in October would be an empty window.
+            val currentSeason = seasonsPlayed.firstOrNull()
+            if (currentSeason != null) {
+                val form = playerForm(player.id, games, statLines, currentSeason)
+                // One row is just the season totals again, already shown above.
+                if (form.size > 1) {
+                    item { FormCard(currentSeason, form) }
                 }
             }
 

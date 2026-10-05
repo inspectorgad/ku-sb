@@ -78,6 +78,17 @@ val BOX_FIELDING_COLUMNS = listOf(
     "PO" to 40, "A" to 36, "E" to 36, "DP" to 40
 )
 
+// Recent-form tables. Narrow on purpose: a form window is read against the
+// season row directly beneath it, and anything wider than a phone defeats the
+// comparison. Every label here is also a season-table label, so the
+// press-and-hold definitions already cover them.
+val FORM_BATTING_COLUMNS = listOf(
+    "GP" to 36, "AB" to 44, "H" to 36, "AVG" to 52, "OBP" to 52, "SLG" to 52, "OPS" to 56
+)
+val FORM_PITCHING_COLUMNS = listOf(
+    "APP" to 44, "IP" to 52, "ER" to 40, "SO" to 40, "ERA" to 52, "WHIP" to 56
+)
+
 /**
  * A horizontally scrollable stats table. Each row is a label (e.g. season
  * name) plus pre-formatted cell values matching [columns]. The label column
