@@ -146,16 +146,25 @@ object Seeder {
                     updated = updated.copy(site = seedSite)
                 }
                 // Scraper-owned game context: fill whenever still blank. Never
-                // overwritten, so a hand-entered venue survives.
-                g.optString("venue").takeIf { it.isNotBlank() && existing.venue.isBlank() }
-                    ?.let { updated = updated.copy(venue = it) }
-                g.optInt("attendance").takeIf { it > 0 && existing.attendance == 0 }
-                    ?.let { updated = updated.copy(attendance = it) }
-                g.optString("boxScoreUrl").takeIf { it.isNotBlank() && existing.boxScoreUrl.isBlank() }
-                    ?.let { updated = updated.copy(boxScoreUrl = it) }
-                encodeScoring(g.optJSONArray("scoring"))
-                    .takeIf { it.isNotEmpty() && existing.scoringSummary.isBlank() }
-                    ?.let { updated = updated.copy(scoringSummary = it) }
+                // overwritten, so a hand-entered venue survives. Plain ifs,
+                // not let-chains: `updated` is a captured var and smart casts
+                // do not reach inside a lambda.
+                val seedVenue = g.optString("venue")
+                if (seedVenue.isNotBlank() && existing.venue.isBlank()) {
+                    updated = updated.copy(venue = seedVenue)
+                }
+                val seedAttendance = g.optInt("attendance")
+                if (seedAttendance > 0 && existing.attendance == 0) {
+                    updated = updated.copy(attendance = seedAttendance)
+                }
+                val seedBoxUrl = g.optString("boxScoreUrl")
+                if (seedBoxUrl.isNotBlank() && existing.boxScoreUrl.isBlank()) {
+                    updated = updated.copy(boxScoreUrl = seedBoxUrl)
+                }
+                val seedScoring = encodeScoring(g.optJSONArray("scoring"))
+                if (seedScoring.isNotEmpty() && existing.scoringSummary.isBlank()) {
+                    updated = updated.copy(scoringSummary = seedScoring)
+                }
                 if (existing.startTime.isBlank() && seedStartTime.isNotBlank()) {
                     updated = updated.copy(startTime = seedStartTime)
                 }

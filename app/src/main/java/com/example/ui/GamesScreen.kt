@@ -175,11 +175,6 @@ private fun ResultText(game: Game) {
 }
 
 /**
- * Traditional R/H/E line score: one column per inning plus runs, hits, and
- * errors totals, KU row first. Built from [Game.inningScores] ("0-1, 2-0, …").
- */
-@Composable
-/**
  * "How the runs scored": one row per scoring play, from [Game.scoringSummary]
  * (`inning|ku|us|them|narrative` per line). Softball-native — neither sibling
  * app has an equivalent, because neither sport's feed carries one.
@@ -298,6 +293,11 @@ private fun GameContext(game: Game) {
     }
 }
 
+/**
+ * Traditional R/H/E line score: one column per inning plus runs, hits, and
+ * errors totals, KU row first. Built from [Game.inningScores] ("0-1, 2-0, …").
+ */
+@Composable
 private fun LineScore(game: Game) {
     val innings = (game.inningScores ?: "")
         .split(",")
