@@ -1,6 +1,6 @@
 {
  "formatVersion": 1,
- "generatedAt": "2026-10-05T11:05:06Z",
+ "generatedAt": "2026-10-05T12:10:52Z",
  "team": "Kansas Jayhawks Softball",
  "players": [
   {
@@ -25781,6 +25781,114 @@
      "previous": "NR",
      "firstPlaceVotes": 0,
      "big12": false
+    }
+   ]
+  }
+ ],
+ "rankingHistory": [
+  {
+   "date": "2026-06-04",
+   "source": "rpi",
+   "season": "2026",
+   "label": "Through Games Jun. 04 2026",
+   "teams": [
+    {
+     "team": "Texas Tech",
+     "rank": 7,
+     "record": "61-10"
+    },
+    {
+     "team": "Oklahoma St.",
+     "rank": 13,
+     "record": "41-17"
+    },
+    {
+     "team": "Arizona St.",
+     "rank": 17,
+     "record": "45-18"
+    },
+    {
+     "team": "Arizona",
+     "rank": 19,
+     "record": "37-18"
+    },
+    {
+     "team": "UCF",
+     "rank": 20,
+     "record": "41-19"
+    },
+    {
+     "team": "Kansas",
+     "rank": 37,
+     "record": "36-21"
+    },
+    {
+     "team": "Baylor",
+     "rank": 39,
+     "record": "30-28"
+    },
+    {
+     "team": "Iowa St.",
+     "rank": 61,
+     "record": "32-23"
+    },
+    {
+     "team": "Utah",
+     "rank": 65,
+     "record": "35-20"
+    },
+    {
+     "team": "Houston",
+     "rank": 91,
+     "record": "20-31"
+    },
+    {
+     "team": "BYU",
+     "rank": 98,
+     "record": "18-33"
+    }
+   ]
+  },
+  {
+   "date": "2026-06-05",
+   "source": "poll",
+   "season": "2026",
+   "label": "Through Games JUN. 5, 2026",
+   "teams": [
+    {
+     "team": "Texas Tech",
+     "rank": 2,
+     "record": "61-10",
+     "points": "597",
+     "firstPlaceVotes": 0
+    },
+    {
+     "team": "Arizona State",
+     "rank": 13,
+     "record": "45-18",
+     "points": "311",
+     "firstPlaceVotes": 0
+    },
+    {
+     "team": "Oklahoma State",
+     "rank": 14,
+     "record": "41-17",
+     "points": "307",
+     "firstPlaceVotes": 0
+    },
+    {
+     "team": "UCF",
+     "rank": 16,
+     "record": "41-19-1",
+     "points": "232",
+     "firstPlaceVotes": 0
+    },
+    {
+     "team": "Arizona",
+     "rank": 21,
+     "record": "37-18",
+     "points": "138",
+     "firstPlaceVotes": 0
     }
    ]
   }

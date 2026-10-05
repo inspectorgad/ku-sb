@@ -148,15 +148,44 @@ for (const season of SEASONS) {
 console.log(`big12 games captured: ${Object.keys(index.big12Games).length}`);
 
 // --- 1b. Rankings snapshots (best effort; never fail the run) ---------------
-// Both sources serve only the CURRENT snapshot — no per-season history — so
-// each run overwrites its file and update-seed.py keys it by the season in
-// the "Through Games ..." label.
+// Both sources serve only the CURRENT snapshot — there is no per-season
+// history to ask either of them for — so the history has to be accumulated
+// here: each run overwrites the latest file AND files a dated copy under
+// scraped/rankings/. A rank is only interesting next to the ranks around it,
+// and once a week has rolled over, that week is gone from the source for good.
+
+/** The snapshot's own date, from its label. Two sources, two spellings:
+ *  "Through Games Jun. 04 2026" (RPI) and "Through Games JUN. 5, 2026" (poll).
+ *  An unparseable label falls back to the run date, which keeps the archive
+ *  moving rather than dropping the week. */
+function snapshotDate(label) {
+  const MONTHS = ['jan', 'feb', 'mar', 'apr', 'may', 'jun',
+                  'jul', 'aug', 'sep', 'oct', 'nov', 'dec'];
+  const m = String(label || '').toLowerCase()
+    .match(/([a-z]{3})[a-z]*\.?\s+(\d{1,2}),?\s+(\d{4})/);
+  const month = m ? MONTHS.indexOf(m[1]) : -1;
+  if (!m || month < 0) return new Date().toISOString().slice(0, 10);
+  return `${m[3]}-${String(month + 1).padStart(2, '0')}-${m[2].padStart(2, '0')}`;
+}
+
+/** Writes the dated copy. Re-scraping the same week rewrites identical bytes,
+ *  so git sees no change and the nightly run does not churn the archive. */
+function archiveRanking(kind, label, payload) {
+  fs.mkdirSync('scraped/rankings', { recursive: true });
+  const date = snapshotDate(label);
+  const path = `scraped/rankings/${kind}-${date}.json`;
+  const body = JSON.stringify(payload, null, 1);
+  const existed = fs.existsSync(path);
+  fs.writeFileSync(path, body);
+  console.log(`rankings archive: ${path} (${existed ? 'refreshed' : 'new week'})`);
+}
 
 // NCAA RPI (softball's selection metric): plain JSON via the API.
 try {
   const data = await getJson(`${API}/rankings/softball/d1/ncaa-womens-softball-rpi`);
   fs.writeFileSync('scraped/rankings-rpi.json', JSON.stringify(data, null, 1));
   console.log(`rankings rpi: ${data.data?.length ?? 0} rows (${data.updated ?? 'no date'})`);
+  archiveRanking('rpi', data.updated, data);
 } catch (e) {
   console.log(`rankings rpi failed (non-fatal): ${e.message}`);
 }
@@ -193,6 +222,8 @@ try {
   const poll = { title: 'ESPN.com/USA Softball Top 25', updated, data: rows };
   fs.writeFileSync('scraped/rankings-poll.json', JSON.stringify(poll, null, 1));
   console.log(`rankings poll: ${rows.length} rows (${updated || 'no date'})`);
+  // An empty parse is a parser break, not a quiet week — do not file it as one.
+  if (rows.length) archiveRanking('poll', updated, poll);
 } catch (e) {
   console.log(`rankings poll failed (non-fatal): ${e.message}`);
 }

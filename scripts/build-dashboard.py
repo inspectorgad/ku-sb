@@ -116,6 +116,7 @@ TEMPLATE = r"""<!doctype html>
   .card { background: var(--surface); border-radius: 12px; box-shadow: var(--shadow); padding: 18px 20px; }
 
   #marginChart { display: block; width: 100%; height: auto; }
+  #rankTrend { display: block; width: 100%; height: auto; }
   .chart-legend { display: flex; gap: 18px; font-size: 12px; color: var(--muted); margin-top: 8px; flex-wrap: wrap; }
   .chart-legend .k { display: inline-flex; align-items: center; gap: 6px; }
   .swatch { width: 10px; height: 10px; border-radius: 3px; display: inline-block; }
@@ -312,6 +313,11 @@ TEMPLATE = r"""<!doctype html>
           <tbody></tbody>
         </table>
         <div class="dim" style="font-size:11.5px; margin-top:8px">Ordered by conference win % — not official Big 12 tiebreakers.</div>
+      </div>
+      <div class="card" id="rankTrendCard" style="display:none">
+        <h3 style="margin:0 0 2px; font-size:13px; letter-spacing:.08em; text-transform:uppercase; color:var(--muted)">Kansas in the RPI</h3>
+        <div class="dim" id="rankTrendSub" style="font-size:11.5px; margin-bottom:6px"></div>
+        <svg id="rankTrend" viewBox="0 0 1000 300" role="img" aria-label="Kansas RPI rank by week"></svg>
       </div>
       <div class="card tbl-wrap" id="pollCard" style="display:none">
         <h3 id="pollTitle" style="margin:0 0 2px; font-size:13px; letter-spacing:.08em; text-transform:uppercase; color:var(--muted)"></h3>
@@ -644,6 +650,63 @@ function hideTip() { tip.style.display = "none"; }
       <td class="lft dim">${siteLabel[g.site] || ""}</td>
       <td class="lft dim">${g.startTime || ""}</td>
     </tr>`).join("");
+})();
+
+// ---------- Kansas in the RPI, week by week ----------
+// Neither ranking source serves a past week, so this draws whatever the
+// nightly scrape has filed away since archiving started. One point is not a
+// trend, so the card stays hidden until a second week lands — which means it
+// appears on its own partway into a season rather than needing a change here.
+(function rankTrend() {
+  const season = games[games.length - 1]?.season;
+  const weeks = (DATA.rankingHistory || [])
+    .filter(h => h.source === "rpi" && h.season === season)
+    .map(h => ({ date: h.date, ku: h.teams.find(t => t.team === "Kansas") }))
+    .filter(w => w.ku && w.ku.rank)
+    .sort((a, b) => a.date < b.date ? -1 : 1);
+  if (weeks.length < 2) return;
+  document.getElementById("rankTrendCard").style.display = "";
+
+  const W = 1000, H = 300, padL = 42, padR = 14, padT = 22, padB = 30;
+  const ranks = weeks.map(w => w.ku.rank);
+  // A better rank is a smaller number, so the axis is inverted: up is better.
+  // The band is padded by a tenth of its own height so the best and worst
+  // weeks do not sit flat against the frame.
+  const best = Math.min(...ranks), worst = Math.max(...ranks);
+  const pad = Math.max(Math.round((worst - best) * 0.1), 2);
+  const lo = Math.max(best - pad, 1), hi = worst + pad;
+  const y = r => padT + (r - lo) / (hi - lo) * (H - padT - padB);
+  const x = i => padL + (weeks.length === 1 ? 0 : i / (weeks.length - 1)) * (W - padL - padR);
+
+  let el = "";
+  const step = Math.max(Math.ceil((hi - lo) / 5), 1);
+  for (let r = Math.ceil(lo / step) * step; r <= hi; r += step) {
+    el += `<line x1="${padL}" x2="${W - padR}" y1="${y(r)}" y2="${y(r)}" stroke="var(--chart-grid)" stroke-width="1"/>`;
+    el += `<text x="${padL - 7}" y="${y(r) + 4}" text-anchor="end" font-size="11" fill="var(--muted)">#${r}</text>`;
+  }
+  // Top 25 is the line that matters in softball — at large bids come from
+  // around there — so it is drawn whenever the season crosses it.
+  if (lo <= 25 && hi >= 25) {
+    el += `<line x1="${padL}" x2="${W - padR}" y1="${y(25)}" y2="${y(25)}" stroke="var(--crimson)" stroke-width="1.5" stroke-dasharray="5 4"/>`;
+    el += `<text x="${W - padR}" y="${y(25) - 6}" text-anchor="end" font-size="10.5" letter-spacing="1" fill="var(--crimson)">TOP 25</text>`;
+  }
+  el += `<polyline fill="none" stroke="var(--blue)" stroke-width="3" stroke-linejoin="round" points="${
+    weeks.map((w, i) => `${x(i)},${y(w.ku.rank)}`).join(" ")}"/>`;
+  weeks.forEach((w, i) => {
+    el += `<circle cx="${x(i)}" cy="${y(w.ku.rank)}" r="5" fill="var(--blue)"><title>${
+      fmtDate(w.date)}: RPI #${w.ku.rank} (${w.ku.record})</title></circle>`;
+  });
+  // Only the ends get a date label; a weekly season would otherwise collide.
+  el += `<text x="${padL}" y="${H - 8}" font-size="11" fill="var(--muted)">${fmtDate(weeks[0].date)}</text>`;
+  el += `<text x="${W - padR}" y="${H - 8}" text-anchor="end" font-size="11" fill="var(--muted)">${
+    fmtDate(weeks[weeks.length - 1].date)}</text>`;
+  document.getElementById("rankTrend").innerHTML = el;
+
+  const first = weeks[0].ku.rank, last = weeks[weeks.length - 1].ku.rank;
+  const move = first === last ? "level over" :
+    `${first > last ? "up" : "down"} ${Math.abs(first - last)} spots over`;
+  document.getElementById("rankTrendSub").textContent =
+    `#${last} · ${move} ${weeks.length} weekly snapshots`;
 })();
 
 // ---------- Big 12 standings + poll ----------

@@ -59,17 +59,22 @@ results, no working poll JSON endpoint, no AP poll for softball.
 
 ## 3. Phased roadmap
 
-### Phase 1 — Cheap wins, mostly already-paid-for (effort S)
+### Phase 1 — Cheap wins, mostly already-paid-for (effort S) — **done**
 
-| Item | What you get | Source | Notes |
+| Item | What you get | Source | Status |
 |---|---|---|---|
-| **Glossary / explainable stats** | Tap any stat label for a plain-English definition | none needed | Direct port of the mechanism; new softball vocabulary |
-| **PWA install + offline** | Dashboard installs to a phone home screen, works offline | none needed | `manifest.json`, `sw.js`, icons — simpler than volleyball's |
-| **ICS calendar feed** | Subscribe to the schedule in any calendar app | `schedule-*.json` | Needs 4 softball tweaks (doubleheaders, TBA times, neutral sites) |
-| **Streaks** | Current and longest W/L runs | existing games | Sport-neutral |
-| **Rankings archive** | Keep every weekly poll/RPI snapshot, not just the latest | existing scrape | Today each run overwrites; archiving is the missing half |
-| **Icon generation scripts** | Reproducible icon set | none | Sport-agnostic plumbing |
-| **Room migration tests** | Catch a bad migration before it ships | none | ku-sb is at schema v4 with zero migration tests |
+| **Glossary / explainable stats** | Tap any stat label for a plain-English definition | none needed | Done — `ui/Glossary.kt`; shared abbreviations name both readings |
+| **PWA install + offline** | Dashboard installs to a phone home screen, works offline | none needed | Done — `docs/manifest.json`, `docs/sw.js`, generated icons |
+| **ICS calendar feed** | Subscribe to the schedule in any calendar app | `schedule-*.json` | Done — `docs/ku-sb.ics`, rewritten by the nightly scrape |
+| **Streaks** | Current and longest W/L runs | existing games | Done — `stats/Streaks.kt`, doubleheader-safe ordering |
+| **Rankings archive** | Keep every weekly poll/RPI snapshot, not just the latest | existing scrape | Done — `scraped/rankings/`, surfaced as an RPI trend once a second week lands |
+| **Icon generation scripts** | Reproducible icon set | none | Done — `scripts/make-web-icons.py` |
+| **Room migration tests** | Catch a bad migration before it ships | none | Done — `MigrationTest.kt`, v1 through v5 |
+
+Fixed in passing: the dashboard had been folding the two fall exhibition
+losses into the official record (36-23 over 59 games rather than 36-21 over
+57) and, because the Big 12 block keys off the last game's season, rendering
+its standings and poll tables empty.
 
 ### Phase 2 — Harvest the discarded data (effort S–M, highest leverage)
 

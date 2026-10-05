@@ -722,6 +722,69 @@ if poll.get("data") and poll_season:
         f"{sum(1 for r in rows if r['big12'])} from the Big 12"
     )
 
+# --- Ranking history --------------------------------------------------------
+# Neither source serves a past week, so the scrape files a dated copy of every
+# snapshot it sees under scraped/rankings/ and the history is read back from
+# there. A rank on its own says little; a rank next to the eight before it is
+# the story of a season, and a week not captured while it was current cannot
+# be recovered later.
+#
+# Only Kansas and the Big 12 are carried through to the seed. A full top-25
+# poll plus a 300-row RPI table every week would outgrow the rest of the seed
+# within a season, and nothing in the app or dashboard asks about the others.
+def ranking_history():
+    history = []
+    b12_keys = {key for (_season, key) in records}
+    wanted = b12_keys | {norm_team("Kansas")}
+    for path in sorted(glob.glob("scraped/rankings/*.json")):
+        name = os.path.basename(path)
+        match = re.match(r"(poll|rpi)-(\d{4}-\d{2}-\d{2})\.json$", name)
+        if not match:
+            print(f"  skipping unrecognised ranking archive: {name}")
+            continue
+        source, date = match.group(1), match.group(2)
+        snap = load_json(path, {})
+        teams = []
+        for row in snap.get("data", []):
+            raw = (row_value(row, "school", "college", "team") or "").strip()
+            # The poll writes first-place votes into the team cell, e.g.
+            # "Texas (25)"; RPI does not. Strip before matching either way.
+            team = re.sub(r"\s*\(\d+\)\s*$", "", raw).strip()
+            if norm_team(team) not in wanted:
+                continue
+            label = str(row_value(row, "rank") or "").strip()
+            digits = re.search(r"\d+", label)
+            entry = {
+                "team": team,
+                "rank": int(digits.group()) if digits else None,
+                "record": (row_value(row, "record") or "").strip(),
+            }
+            if source == "poll":
+                votes = re.search(r"\((\d+)\)\s*$", raw)
+                entry["points"] = (row_value(row, "points", "total points") or "").strip()
+                entry["firstPlaceVotes"] = int(votes.group(1)) if votes else 0
+            teams.append(entry)
+        if not teams:
+            continue
+        history.append({
+            "date": date,
+            "source": source,
+            "season": snapshot_season(snap) or date[:4],
+            "label": (snap.get("updated") or "").strip(),
+            "teams": sorted(teams, key=lambda t: (t["rank"] is None, t["rank"] or 0, t["team"])),
+        })
+    history.sort(key=lambda h: (h["date"], h["source"]))
+    return history
+
+
+rankings = ranking_history()
+if rankings:
+    weeks = len({h["date"] for h in rankings})
+    ku = sum(1 for h in rankings
+             if any(norm_team(t["team"]) == norm_team("Kansas") for t in h["teams"]))
+    print(f"ranking history: {len(rankings)} snapshots over {weeks} dates "
+          f"({ku} carrying a Kansas row)")
+
 # Sorted by conference win %, then conference wins, then overall win % — NOT
 # official Big 12 tiebreakers (those use head-to-head); the UI says as much.
 def standing_sort(rec):
@@ -755,6 +818,8 @@ if standings:
     seed["standings"] = standings
 if polls:
     seed["polls"] = polls
+if rankings:
+    seed["rankingHistory"] = rankings
 
 os.makedirs(os.path.dirname(SEED_PATH), exist_ok=True)
 
