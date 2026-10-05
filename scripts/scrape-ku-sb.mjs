@@ -27,6 +27,9 @@ const CONFERENCE_SEO = 'big-12';
 // Bump to force a one-time full re-sweep of scanned dates (e.g. when the
 // sweep starts collecting something new, like v2's big12Games).
 const INDEX_VERSION = 2;
+// Bump when scrapeBoxScore starts keeping MORE of the Sidearm box node, so
+// already-captured games are re-fetched once instead of staying thin forever.
+const BOX_VERSION = 2;
 
 fs.mkdirSync('scraped', { recursive: true });
 
@@ -247,6 +250,10 @@ function trimTeam(team) {
       scoreByInnings: team.scoringSummary.scoreByInnings,
     },
     totals: team.totals && { hitting: team.totals.hitting, pitching: team.totals.pitching },
+    // Rank at game time -> "vs #20 UCF" badges; boxscoreUrl -> deep link.
+    rank: team.rank || '',
+    conferenceRecord: team.conferenceRecord || '',
+    boxscoreUrl: team.boxscoreUrl || '',
     players: (team.players || []).map((p) => ({
       name: p.name,
       uniform: p.uniform,
@@ -257,6 +264,8 @@ function trimTeam(team) {
       substitute: p.substitute,
       hitting: p.hitting,
       pitching: p.pitching,
+      // Third stat category, present in the payload and previously discarded.
+      fielding: p.fielding,
     })),
   };
 }
@@ -291,7 +300,25 @@ async function scrapeBoxScore(url, sidearmId) {
         location: box.venue.location,
         attendance: box.venue.attendance,
         doubleHeaderGame: box.venue.doubleHeaderGame,
+        // Game-info panel + run-rule detection (scheduledInnings < innings played).
+        stadium: box.venue.stadium,
+        start: box.venue.start,
+        duration: box.venue.duration,
+        weather: box.venue.weather,
+        umpires: box.venue.umpires,
+        scheduledInnings: box.venue.scheduledInnings,
+        tournamentName: box.venue.tournamentName,
       },
+      // How every run scored: inning, narrative, and the score after the play.
+      scoringSummaryPlays: (box.scoringSummaryPlays || []).map((x) => ({
+        teamName: x.teamName,
+        inningNumber: x.inningNumber,
+        playNarrative: x.playNarrative,
+        visitingScore: x.visitingScore,
+        homeScore: x.homeScore,
+        isVisitingTeam: x.isVisitingTeam,
+      })),
+      pdfDoc: box.pdfDoc || '',
       homeTeam: trimTeam(box.homeTeam),
       visitingTeam: trimTeam(box.visitingTeam),
     };
@@ -323,10 +350,11 @@ try {
     }
     console.log(`stats ${season}: ${ids.size} box score links`);
     for (const [id, href] of ids) {
-      if (index.sidearmGames[id]?.captured) continue;
+      const prior = index.sidearmGames[id];
+      if (prior?.captured && (prior.boxVersion ?? 1) >= BOX_VERSION) continue;
       try {
         await scrapeBoxScore(href, id);
-        index.sidearmGames[id] = { captured: true, season, url: href };
+        index.sidearmGames[id] = { captured: true, boxVersion: BOX_VERSION, season, url: href };
         console.log(`captured sidearm box ${id}`);
       } catch (e) {
         console.log(`sidearm box ${id}: ${e.message}`);
