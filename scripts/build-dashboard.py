@@ -229,6 +229,20 @@ TEMPLATE = r"""<!doctype html>
   .pcard .mini span { display: block; font-size: 10px; font-weight: 700; color: var(--muted); letter-spacing: .08em; }
   .spark { margin-top: 10px; display: block; width: 100%; height: 26px; }
   .former-head { grid-column: 1 / -1; font-size: 12px; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); margin-top: 10px; }
+  .pcard .bio { font-size: 11.5px; color: var(--muted); margin-top: 9px; line-height: 1.5; }
+
+  .split-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 12px; }
+  .split-card h3 { margin: 0 0 6px; font-size: 13px; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); }
+  .split-card table { font-size: 13px; }
+  .split-card th, .split-card td { padding: 5px 7px; }
+  .split-card tbody tr:last-child { border-bottom: none; }
+  #inningChart { display: block; width: 100%; height: auto; }
+  .hl-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(215px, 1fr)); gap: 12px; }
+  .hl-card .t { font-size: 10.5px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); }
+  .hl-card .v { font-size: 20px; font-weight: 800; margin-top: 4px; letter-spacing: -.01em; }
+  .hl-card .d { font-size: 12px; color: var(--muted); margin-top: 4px; }
+  /* How a game ended, when that is not simply "as scheduled". */
+  .ending { display: block; font-size: 10px; letter-spacing: .06em; text-transform: uppercase; color: var(--muted); }
 
   dialog#pmodal {
     border: none; border-radius: 14px; padding: 0;
@@ -332,6 +346,40 @@ TEMPLATE = r"""<!doctype html>
         <span class="k dim">Full results in the table below</span>
       </div>
     </div>
+  </section>
+
+  <section id="splitsSec" hidden>
+    <div class="sec-head">
+      <h2>Splits</h2>
+      <span class="note">the same season, cut four ways</span>
+      <div class="rule"></div>
+    </div>
+    <div class="split-grid" id="splits"></div>
+  </section>
+
+  <section id="inningSec" hidden>
+    <div class="sec-head">
+      <h2>Runs by inning</h2>
+      <span class="note">scored and allowed, every game added up</span>
+      <div class="rule"></div>
+    </div>
+    <div class="card">
+      <svg id="inningChart" viewBox="0 0 1000 260" role="img" aria-label="Runs scored and allowed in each inning"></svg>
+      <div class="chart-legend">
+        <span class="k"><span class="swatch" style="background:var(--blue)"></span>Kansas scored</span>
+        <span class="k"><span class="swatch" style="background:var(--crimson)"></span>Opponents scored</span>
+        <span class="k dim">Innings a team did not bat are left out of its total</span>
+      </div>
+    </div>
+  </section>
+
+  <section id="highlightSec" hidden>
+    <div class="sec-head">
+      <h2>Season highlights</h2>
+      <span class="note">derived from the box scores, not written down</span>
+      <div class="rule"></div>
+    </div>
+    <div class="hl-grid" id="highlights"></div>
   </section>
 
   <section>
@@ -493,12 +541,61 @@ for (const g of exhibitions) {
   g.won = g.margin > 0;
 }
 
-const B12 = new Set(["arizona state","byu","baylor","houston","iowa state","oklahoma state","texas tech","ucf","utah"]);
+// Canonical key for matching a team across sources, which spell the same
+// school differently: "Iowa State" in a schedule, "Iowa St." in the standings.
+// Deliberately conservative — "Utah State" must not collapse into "Utah",
+// which is a different school and, in 2026, the difference between a
+// conference game and a non-conference one. Mirrors teamKey() in Splits.kt
+// and norm_team() in update-seed.py; the three have to agree or the app, the
+// seed and this page would disagree about who Kansas played.
+const teamKey = s => String(s || "")
+  .replace(/\s*\(G\d\)\s*$/i, "")
+  .replace(/\s*\(\d+\)\s*$/, "")
+  .toLowerCase()
+  .replace(/\./g, "")
+  .replace(/\bstate\b/g, "st")
+  .replace(/\s+/g, " ")
+  .trim();
+const oppName = s => String(s || "").replace(/\s*\(G\d\)\s*$/i, "").trim();
+const esc = s => String(s == null ? "" : s)
+  .replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
+
+const SEASON = games.length ? games[games.length - 1].season : "";
+// The conference is read off the standings rather than kept as a literal here,
+// so realignment arrives with the data instead of needing an edit. The list
+// this replaced had nine teams in it and was already missing Arizona.
+const conference = new Set(
+  (DATA.standings || [])
+    .filter(s => !SEASON || s.season === SEASON)
+    .map(s => teamKey(s.team)));
+// Standings are computed by the scrape and can be empty early in a season;
+// an empty set would silently call every game non-conference.
+if (!conference.size) {
+  ["arizona","arizona st","byu","baylor","houston","iowa st",
+   "oklahoma st","texas tech","ucf","utah"].forEach(t => conference.add(t));
+}
+conference.delete(teamKey("Kansas"));
+const inConference = g => conference.has(teamKey(g.opponent));
 function phaseOf(g) {
   if (g.date >= "2026-05-10" && g.date <= "2026-05-31") return "NCAA Regional";
   if (g.date >= "2026-05-06" && g.date <= "2026-05-09") return "Big 12 Tourney";
-  const opp = g.opponent.toLowerCase().replace(/\s*\(g\d\)$/, "");
-  return B12.has(opp) ? "Big 12" : "Non-conference";
+  return inConference(g) ? "Big 12" : "Non-conference";
+}
+
+// How a game ended, where that is not simply "after seven innings". Softball
+// stops a game when a team leads by eight after five, and 19 of 2026's 57
+// ended that way. Both halves are required: without the scheduled length a
+// run-rule win and a game called for weather look identical, since both are
+// five innings with a winner. Mirrors GameShape.kt.
+const inningsPlayed = g => String(g.inningScores || "").split(",").filter(s => s.trim()).length;
+function endingPhrase(g) {
+  const played = inningsPlayed(g), sched = g.scheduledInnings || 0;
+  if (!played || !sched || g.teamScore == null || g.opponentScore == null) return "";
+  if (played > sched) return played + " innings";
+  if (played === sched) return "";
+  return played >= 5 && Math.abs(g.teamScore - g.opponentScore) >= 8
+    ? "Run rule · " + played + " inn"
+    : "Shortened · " + played + " inn";
 }
 const fmtDate = iso => {
   const [y, m, d] = iso.split("-").map(Number);
@@ -665,6 +762,184 @@ function hideTip() { tip.style.display = "none"; }
   svg.addEventListener("mouseleave", hideTip);
 })();
 
+// ---------- splits ----------
+// A season average is one number and hides everything interesting. The same
+// 2026 team hit .349 with a 3.04 ERA against unranked opponents and .244 with
+// a 7.89 ERA against ranked ones, and only a split says so.
+function aggregate(gs) {
+  const b = { ab:0, h:0, d2:0, d3:0, hr:0, bb:0, hbp:0, sf:0 };
+  const p = { outs:0, er:0, ha:0, bba:0 };
+  let w = 0, l = 0, rf = 0, ra = 0;
+  for (const g of gs) {
+    rf += g.teamScore; ra += g.opponentScore;
+    // A tie is neither, so w + l can be short of gs.length. Softball does play
+    // them — weather shortens a game and it stands — and calling one a loss
+    // would quietly misstate the record.
+    if (g.teamScore > g.opponentScore) w++;
+    else if (g.teamScore < g.opponentScore) l++;
+    for (const ln of g.lines || []) {
+      b.ab += ln.ab || 0; b.h += ln.h || 0; b.d2 += ln["2b"] || 0; b.d3 += ln["3b"] || 0;
+      b.hr += ln.hr || 0; b.bb += ln.bb || 0; b.hbp += ln.hbp || 0; b.sf += ln.sf || 0;
+      if (ln.p) {
+        p.outs += ln.outs || 0; p.er += ln.er || 0;
+        p.ha += ln.ha || 0; p.bba += ln.bba || 0;
+      }
+    }
+  }
+  return { n: gs.length, w, l, rf, ra, b, p };
+}
+
+(function splits() {
+  const absM = g => Math.abs(g.margin);
+  const groups = [
+    ["Where", [
+      ["Home", g => g.site === "H"],
+      ["Away", g => g.site === "A"],
+      ["Neutral", g => g.site === "N"],
+    ]],
+    // Counts every meeting with a conference team, the conference tournament
+    // included — which the standings' own conference record excludes. The
+    // label says "opponents" rather than "record" for exactly that reason.
+    ["Who", [
+      ["Big 12 opponents", inConference],
+      ["Non-conference", g => !inConference(g)],
+    ]],
+    ["Quality of opponent", [
+      ["vs ranked", g => (g.opponentRank || 0) > 0],
+      ["vs unranked", g => !(g.opponentRank || 0)],
+    ]],
+    ["How close", [
+      ["One-run games", g => absM(g) === 1],
+      ["Decided by 2–4", g => absM(g) >= 2 && absM(g) <= 4],
+      ["Decided by 5+", g => absM(g) >= 5],
+    ]],
+  ];
+
+  const cards = groups.map(([title, buckets]) => {
+    // Buckets no game fell into are dropped — an empty "Neutral" row early in
+    // a season is noise, not information.
+    const rows = buckets
+      .map(([label, match]) => [label, aggregate(games.filter(match))])
+      .filter(([, s]) => s.n > 0);
+    if (!rows.length) return "";
+    return `<div class="card split-card"><h3>${esc(title)}</h3>
+      <table>
+        <thead><tr><th class="lft">&nbsp;</th><th>W–L</th><th>R/G</th>
+          <th>AVG</th><th>OPS</th><th>ERA</th><th>WHIP</th></tr></thead>
+        <tbody>${rows.map(([label, s]) => `
+          <tr><td class="lft"><b>${esc(label)}</b> <span class="dim">${s.n}</span></td>
+            <td><b>${s.w}–${s.l}</b></td>
+            <td>${f1(s.rf / s.n)}<span class="dim">–${f1(s.ra / s.n)}</span></td>
+            <td>${fAvg(avg(s.b))}</td><td>${fAvg(ops(s.b))}</td>
+            <td>${f2(era(s.p))}</td><td>${f2(whip(s.p))}</td></tr>`).join("")}
+        </tbody>
+      </table></div>`;
+  }).filter(Boolean);
+
+  if (!cards.length) return;
+  document.getElementById("splits").innerHTML = cards.join("");
+  document.getElementById("splitsSec").hidden = false;
+})();
+
+// ---------- runs by inning ----------
+(function inningChart() {
+  const scored = new Map(), allowed = new Map();
+  for (const g of games) {
+    String(g.inningScores || "").split(",").forEach((raw, i) => {
+      const part = raw.trim();
+      if (!part) return;
+      const halves = part.split("-");
+      if (halves.length !== 2) return;
+      // "X" marks a half-inning never batted — the home team was already
+      // ahead. It is not a zero, so it is left out rather than averaged in.
+      const inn = i + 1;
+      const us = parseInt(halves[0], 10), them = parseInt(halves[1], 10);
+      if (Number.isFinite(us)) scored.set(inn, (scored.get(inn) || 0) + us);
+      if (Number.isFinite(them)) allowed.set(inn, (allowed.get(inn) || 0) + them);
+    });
+  }
+  const innings = [...new Set([...scored.keys(), ...allowed.keys()])].sort((a, b) => a - b);
+  if (!innings.length) return;
+
+  const W = 1000, H = 260, padL = 36, padR = 8, padT = 16, padB = 34;
+  const max = Math.max(...innings.map(i => Math.max(scored.get(i) || 0, allowed.get(i) || 0)));
+  const plot = H - padT - padB;
+  const slot = (W - padL - padR) / innings.length;
+  const bw = Math.min(slot * 0.36, 44);
+  let el = "";
+  for (let t = 0; t <= 4; t++) {
+    const v = Math.round(max * t / 4), y = padT + plot - (max ? v / max * plot : 0);
+    el += `<line x1="${padL}" x2="${W - padR}" y1="${y}" y2="${y}" stroke="var(--chart-grid)" stroke-width="1"/>` +
+          `<text x="${padL - 6}" y="${y + 4}" text-anchor="end" font-size="11" fill="var(--muted)">${v}</text>`;
+  }
+  innings.forEach((inn, i) => {
+    const cx = padL + slot * i + slot / 2;
+    const pair = [[scored.get(inn) || 0, "blue", -1], [allowed.get(inn) || 0, "crimson", 1]];
+    for (const [v, color, side] of pair) {
+      const h = max ? v / max * plot : 0;
+      const x = cx + (side < 0 ? -bw - 1.5 : 1.5);
+      el += `<rect x="${x}" y="${padT + plot - h}" width="${bw}" height="${h}" rx="2" fill="var(--${color})"/>`;
+      if (v) el += `<text x="${x + bw / 2}" y="${padT + plot - h - 4}" text-anchor="middle" font-size="10.5" fill="var(--muted)">${v}</text>`;
+    }
+    el += `<text x="${cx}" y="${H - padB + 17}" text-anchor="middle" font-size="12" fill="var(--muted)">${inn}</text>`;
+  });
+  el += `<text x="${W / 2}" y="${H - 4}" text-anchor="middle" font-size="11" fill="var(--muted)">Inning</text>`;
+  document.getElementById("inningChart").innerHTML = el;
+  document.getElementById("inningSec").hidden = false;
+})();
+
+// ---------- season highlights ----------
+// Each entry is derived rather than written down, and skipped when the season
+// has nothing to say about it — so an empty list is the right answer in
+// February rather than a screen of zeroes. Mirrors Highlights.kt.
+(function highlights() {
+  const where = g => (g.site === "A" ? "at " : "vs ") + oppName(g.opponent) + " · " + fmtDate(g.date);
+  const best = (pred, score) => {
+    let top = null;
+    for (const g of games) for (const l of g.lines || []) {
+      if (!pred(l)) continue;
+      const s = score(l);
+      if (!top || s > top.s) top = { g, l, s };
+    }
+    return top;
+  };
+  const out = [];
+  const push = (t, v, d) => out.push({ t, v, d });
+
+  const mostRuns = games.reduce((a, g) => !a || g.teamScore > a.teamScore ? g : a, null);
+  if (mostRuns) push("Most runs scored", mostRuns.teamScore + " runs", where(mostRuns));
+
+  const biggest = games.reduce((a, g) => !a || g.margin > a.margin ? g : a, null);
+  if (biggest && biggest.margin > 0) {
+    push("Biggest win", biggest.teamScore + "–" + biggest.opponentScore, where(biggest));
+  }
+  // Hits first, RBI only to break a tie — four hits is a bigger day than
+  // three hits that happened to drive in more.
+  const hits = best(l => (l.h || 0) > 0, l => (l.h || 0) * 100 + (l.rbi || 0));
+  if (hits) push("Most hits in a game", hits.l.player + " — " + hits.l.h + "-for-" + hits.l.ab, where(hits.g));
+
+  const rbi = best(l => (l.rbi || 0) > 0, l => l.rbi);
+  if (rbi) push("Most RBI in a game", rbi.l.player + " — " + rbi.l.rbi + " RBI", where(rbi.g));
+
+  const ks = best(l => l.p && (l.ks || 0) > 0, l => l.ks);
+  if (ks) push("Most strikeouts in a game", ks.l.player + " — " + ks.l.ks + " K", where(ks.g));
+
+  const crowd = games.filter(g => g.attendance > 0)
+    .reduce((a, g) => !a || g.attendance > a.attendance ? g : a, null);
+  if (crowd) push("Biggest crowd", crowd.attendance.toLocaleString("en-US"), where(crowd));
+
+  let run = 0, bestRun = 0;
+  for (const g of games) { run = g.won ? run + 1 : 0; if (run > bestRun) bestRun = run; }
+  if (bestRun >= 2) push("Longest winning streak", bestRun + " straight", "");
+
+  if (!out.length) return;
+  document.getElementById("highlights").innerHTML = out.map(h =>
+    `<div class="card hl-card"><div class="t">${esc(h.t)}</div>` +
+    `<div class="v">${esc(h.v)}</div>` +
+    (h.d ? `<div class="d">${esc(h.d)}</div>` : "") + "</div>").join("");
+  document.getElementById("highlightSec").hidden = false;
+})();
+
 // ---------- leaders ----------
 (function leaders() {
   const minAB = games.length * 2;
@@ -704,7 +979,9 @@ function hideTip() { tip.style.display = "none"; }
         g.opponentRecord ? ' <span class="dim">(' + g.opponentRecord + ")</span>" : ""
       }</td>
       <td class="lft"><span class="chip ${g.won ? "W" : "L"}">${g.won ? "W" : "L"}</span></td>
-      <td><b>${g.teamScore}–${g.opponentScore}</b></td>
+      <td><b>${g.teamScore}–${g.opponentScore}</b>${
+        endingPhrase(g) ? '<span class="ending">' + endingPhrase(g) + "</span>" : ""
+      }</td>
       <td class="lft dim">${g.inningScores || ""}</td>
       <td class="lft">${g.top ? g.top.name + ' <span class="dim">' + g.top.h + "-" + g.top.ab +
         (g.top.hr ? ", " + (g.top.hr > 1 ? g.top.hr + " HR" : "HR") : "") +
@@ -853,6 +1130,17 @@ function sparkSVG(p, w = 200, h = 26) {
   const bench = [...players.values()].filter(p => p.t.g === 0 && p.active)
     .sort((a, b) => a.name.localeCompare(b.name));
 
+  // Roster-page detail, which only the current roster carries — a former
+  // player simply has none, and the line is dropped rather than left blank.
+  const bio = p => {
+    const line1 = [p.academicYear, p.height, p.batsThrows && "B/T " + p.batsThrows].filter(Boolean);
+    const line2 = [p.hometown, p.lastSchool].filter(Boolean);
+    if (!line1.length && !line2.length) return "";
+    return `<div class="bio">${esc(line1.join(" · "))}` +
+      (line1.length && line2.length ? "<br>" : "") +
+      `${esc(line2.join(" — "))}</div>`;
+  };
+
   const card = (p, isFormer) => {
     const pitcher = isPitcherPrimary(p);
     const mini = pitcher ? `
@@ -872,6 +1160,7 @@ function sparkSVG(p, w = 200, h = 26) {
       </div>
       <div class="mini">${mini}</div>
       ${sparkSVG(p)}
+      ${bio(p)}
     </button>`;
   };
 
@@ -884,6 +1173,7 @@ function sparkSVG(p, w = 200, h = 26) {
           <span class="jersey">${p.jerseyNumber || "–"}</span>
           <span><span class="nm">${p.name}</span><br><span class="pos">${p.position || ""}</span></span>
         </div>
+        ${bio(p)}
       </div>`).join("");
   }
   if (former.length) {
