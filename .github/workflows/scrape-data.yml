@@ -74,6 +74,11 @@ jobs:
       - name: Rebuild dashboard from seed
         run: python3 scripts/build-dashboard.py
 
+      - name: Rebuild the calendar feed from seed
+        run: |
+          python3 scripts/test_ics_feed.py
+          python3 scripts/ics_feed.py
+
       - name: Commit scraped data, seed, and dashboard updates
         id: commit
         run: |

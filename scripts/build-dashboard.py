@@ -29,7 +29,12 @@ TEMPLATE = r"""<!doctype html>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>KU Softball 2026</title>
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%A5%8E%3C/text%3E%3C/svg%3E">
+<link rel="icon" href="icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="icon-180.png">
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#0051BA">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="KU Softball">
 <style>
   :root {
     --ground: #F5F6F9;
@@ -150,6 +155,10 @@ TEMPLATE = r"""<!doctype html>
   .chip.L { color: var(--loss); background: var(--loss-bg); }
   .dim { color: var(--muted); }
   .phase-lbl { font-size: 10.5px; letter-spacing: .1em; color: var(--muted); text-transform: uppercase; }
+  /* Exhibitions sit in the same table but count toward nothing, so they read
+     as a quieter tier rather than as more season. */
+  tr.exhib { opacity: .62; }
+  tr.exhib td:first-child { color: var(--muted); }
 
   .roster-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); gap: 12px; }
   .pcard {
@@ -385,8 +394,20 @@ TEMPLATE = r"""<!doctype html>
 const DATA = __DATA__;
 
 // ---------- derived data ----------
-const games = DATA.games.filter(g => g.teamScore != null);
+// Fall games are exhibitions that count toward no official record, so they
+// are kept out of the record, the tiles, the margin chart and the leaders —
+// exactly as the app does. Without this split the two fall losses turned a
+// 36-21 championship season into "36-23 over 59 games" in the header.
+const isExhibition = g => String(g.season || "").startsWith("Fall");
+const games = DATA.games.filter(g => g.teamScore != null && !isExhibition(g));
 games.sort((a, b) => a.date < b.date ? -1 : 1);
+const exhibitions = DATA.games.filter(g => g.teamScore != null && isExhibition(g));
+// The aggregation loop below only walks `games`, so exhibitions never get the
+// two fields the games table reads off each row.
+for (const g of exhibitions) {
+  g.margin = g.teamScore - g.opponentScore;
+  g.won = g.margin > 0;
+}
 
 const B12 = new Set(["arizona state","byu","baylor","houston","iowa state","oklahoma state","texas tech","ucf","utah"]);
 function phaseOf(g) {
@@ -470,7 +491,12 @@ const wins = games.filter(g => g.won).length, losses = games.length - wins;
 
 // ---------- header + tiles ----------
 document.getElementById("recNum").textContent = wins + "–" + losses;
-document.getElementById("recSub").textContent = games.length + " games · NCAA Regional";
+document.getElementById("recSub").textContent =
+  games.length + " games · NCAA Regional" +
+  (exhibitions.length
+    ? " · plus " + exhibitions.length + " fall exhibition" +
+      (exhibitions.length === 1 ? "" : "s")
+    : "");
 document.getElementById("gamesHead").textContent = "All " + games.length + " games";
 
 const teamBat = { ab: team.ab, h: team.h, d2: team.d2, d3: team.d3, hr: team.hr,
@@ -581,9 +607,12 @@ function hideTip() { tip.style.display = "none"; }
 
 // ---------- games table ----------
 (function gamesTable() {
-  document.querySelector("#gamesTbl tbody").innerHTML = games.map(g => `
-    <tr>
-      <td class="dim">${g.n}</td>
+  // Exhibitions are listed after the season, dimmed and without a game
+  // number, so the fall results stay visible without being countable.
+  const rows = [...games, ...exhibitions.slice().sort((a, b) => a.date < b.date ? -1 : 1)];
+  document.querySelector("#gamesTbl tbody").innerHTML = rows.map(g => `
+    <tr${isExhibition(g) ? ' class="exhib"' : ""}>
+      <td class="dim">${g.n || "–"}</td>
       <td class="lft">${fmtDate(g.date)}</td>
       <td class="lft"><b>${g.site === "A" ? "at " : "vs "}${g.opponent}</b></td>
       <td class="lft"><span class="chip ${g.won ? "W" : "L"}">${g.won ? "W" : "L"}</span></td>
@@ -592,7 +621,8 @@ function hideTip() { tip.style.display = "none"; }
       <td class="lft">${g.top ? g.top.name + ' <span class="dim">' + g.top.h + "-" + g.top.ab +
         (g.top.hr ? ", " + (g.top.hr > 1 ? g.top.hr + " HR" : "HR") : "") +
         (g.top.rbi ? ", " + g.top.rbi + " RBI" : "") + "</span>" : '<span class="dim">no box score</span>'}</td>
-      <td class="lft"><span class="phase-lbl">${phaseOf(g)}</span></td>
+      <td class="lft"><span class="phase-lbl">${
+        isExhibition(g) ? g.season + " exhibition" : phaseOf(g)}</span></td>
     </tr>`).join("");
 })();
 
@@ -833,6 +863,15 @@ function openPlayer(name) {
   modal.showModal();
   modal.querySelector(".m-body").scrollTop = 0;
 }
+</script>
+
+<script>
+  // Progressive enhancement: the dashboard is a plain page without this.
+  if ("serviceWorker" in navigator) {
+    addEventListener("load", () => {
+      navigator.serviceWorker.register("sw.js").catch(() => {});
+    });
+  }
 </script>
 
 </body></html>
