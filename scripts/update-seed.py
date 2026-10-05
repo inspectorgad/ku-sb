@@ -191,6 +191,37 @@ def parse_sidearm_game(data):
         "_dh": to_int((data.get("venue") or {}).get("doubleHeaderGame")),
     }
 
+    # Game context the payload always carried: where it was played, how many
+    # people saw it, and a link to the official box score.
+    venue = data.get("venue") or {}
+    where = (venue.get("location") or "").strip()
+    if where:
+        game["venue"] = where
+    attendance = to_int(venue.get("attendance"))
+    if attendance:
+        game["attendance"] = attendance
+    if data.get("url"):
+        game["boxScoreUrl"] = data["url"]
+
+    # How every run scored. Stored compactly: inning, whether KU scored it, the
+    # narrative, and the score after the play from KU's perspective.
+    scoring = []
+    for play in data.get("scoringSummaryPlays") or []:
+        narrative = (play.get("playNarrative") or "").strip()
+        if not narrative:
+            continue
+        visiting = to_int(play.get("visitingScore"))
+        home = to_int(play.get("homeScore"))
+        scoring.append({
+            "inn": to_int(play.get("inningNumber")),
+            "ku": bool(play.get("isVisitingTeam")) != bool(ku_home),
+            "text": narrative,
+            "us": home if ku_home else visiting,
+            "them": visiting if ku_home else home,
+        })
+    if scoring:
+        game["scoring"] = scoring
+
     for p in ku.get("players") or []:
         hitting = p.get("hitting")
         pitching = p.get("pitching")
@@ -199,6 +230,16 @@ def parse_sidearm_game(data):
         name = flip_name(p.get("name"))
         add_player(name, str(p.get("uniform") or ""), "")
         line = {"player": name, "gs": 1 if to_int(p.get("gameStarted")) else 0}
+        # Lineup slot and the position played in THIS game, so a box score can
+        # be shown in batting order with starters separated from the bench.
+        spot = to_int(p.get("spot"))
+        if spot:
+            line["spot"] = spot
+        pos = (p.get("position") or "").strip()
+        if pos:
+            line["pos"] = pos
+        if p.get("substitute"):
+            line["sub"] = 1
         h = hitting or {}
         line.update({
             "ab": to_int(h.get("atBats")),
@@ -216,6 +257,27 @@ def parse_sidearm_game(data):
             "sf": to_int(h.get("sacrificeFlies")),
             "sh": to_int(h.get("sacrificeHits")),
         })
+        # Advanced hitting detail the payload always carried and the seed threw
+        # away. Sparse by design: a zero is the overwhelming common case, so
+        # only non-zero values are written.
+        for key, src in (
+            ("kl", "strikeoutsLooking"), ("roe", "reachedOnError"),
+            ("fc", "reachesOnAFieldersChoice"), ("go", "groundOuts"),
+            ("ao", "flyOuts"), ("gidp", "groundedIntoDoublePlay"),
+            ("ibb", "intentionalWalks"), ("pko", "pickedOff"),
+        ):
+            v = to_int(h.get(src))
+            if v:
+                line[key] = v
+        f = p.get("fielding") or {}
+        for key, src in (
+            ("po", "putouts"), ("a", "assists"), ("e", "errors"),
+            ("pb", "passedBalls"), ("sba", "stolenBasesAgainst"),
+            ("csb", "caughtStealingBy"), ("dp", "involvedInDoublePlays"),
+        ):
+            v = to_int(f.get(src))
+            if v:
+                line[key] = v
         if pitching:
             line.update({
                 "p": 1,
@@ -230,6 +292,18 @@ def parse_sidearm_game(data):
                 "l": decision(pitching.get("losses")),
                 "sv": decision(pitching.get("saves")),
             })
+            # Workload and efficiency detail: pitch count and batters faced are
+            # what make rest-day and pitches-per-batter analysis possible.
+            for key, src in (
+                ("np", "pitches"), ("bf", "battersFaced"), ("wp", "wildPitches"),
+                ("hbA", "hitBatters"), ("bk", "balks"), ("ir", "inheritedRunners"),
+                ("irs", "inheritedRunnersThatScored"), ("cg", "gamesCompleted"),
+                ("sho", "shutouts"), ("gsp", "gamesStarted"),
+                ("ksl", "strikeoutsLooking"), ("oab", "opponentAtBats"),
+            ):
+                v = to_int(pitching.get(src))
+                if v:
+                    line[key] = v
         game["lines"].append(line)
     return game
 

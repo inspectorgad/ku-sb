@@ -83,7 +83,16 @@ data class Game(
     val teamHits: Int? = null,
     val opponentHits: Int? = null,
     val teamErrors: Int? = null,
-    val opponentErrors: Int? = null
+    val opponentErrors: Int? = null,
+    // Game context from the box score: where it was played, the announced
+    // crowd (0 = not reported) and a link to the official box score.
+    val venue: String = "",
+    val attendance: Int = 0,
+    val boxScoreUrl: String = "",
+    // How every run scored, as a compact encoded list — one play per line:
+    // "inning|ku(1/0)|usScore|themScore|narrative". Stored denormalised
+    // because it is display-only and always read whole with its game.
+    val scoringSummary: String = ""
 )
 
 /**
@@ -144,5 +153,41 @@ data class StatLine(
     val homeRunsAllowed: Int = 0,
     val win: Boolean = false,
     val loss: Boolean = false,
-    val save: Boolean = false
+    val save: Boolean = false,
+    // Where this player hit in the order (1-9; 0 when not in the lineup) and
+    // the position played in THIS game, so a box score can be shown in
+    // batting order with substitutes marked.
+    val lineupSpot: Int = 0,
+    val position: String = "",
+    val substitute: Boolean = false,
+    // Advanced hitting detail. Sparse — the common value is zero.
+    val strikeoutsLooking: Int = 0,
+    val reachedOnError: Int = 0,
+    val fieldersChoice: Int = 0,
+    val groundOuts: Int = 0,
+    val flyOuts: Int = 0,
+    val groundedIntoDoublePlay: Int = 0,
+    val intentionalWalks: Int = 0,
+    val pickedOff: Int = 0,
+    // Fielding — the third stat category, alongside hitting and pitching.
+    val putouts: Int = 0,
+    val assists: Int = 0,
+    val errors: Int = 0,
+    val passedBalls: Int = 0,
+    val stolenBasesAgainst: Int = 0,
+    val caughtStealingBy: Int = 0,
+    val doublePlaysTurned: Int = 0,
+    // Pitching workload and efficiency.
+    val pitchCount: Int = 0,
+    val battersFaced: Int = 0,
+    val wildPitches: Int = 0,
+    val battersHit: Int = 0,
+    val balks: Int = 0,
+    val inheritedRunners: Int = 0,
+    val inheritedRunnersScored: Int = 0,
+    val completeGames: Int = 0,
+    val shutouts: Int = 0,
+    val gamesStartedPitching: Int = 0,
+    val pitcherStrikeoutsLooking: Int = 0,
+    val opponentAtBats: Int = 0
 )

@@ -3,6 +3,7 @@ package com.example
 import android.content.Context
 import androidx.room.Room
 import androidx.test.core.app.ApplicationProvider
+import com.example.data.Game
 import com.example.data.JayhawksDatabase
 import com.example.data.Seeder
 import com.example.data.StatLine
@@ -11,6 +12,7 @@ import org.json.JSONObject
 import org.junit.After
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertNull
+import org.junit.Assert.assertTrue
 import org.junit.Before
 import org.junit.Test
 import org.junit.runner.RunWith
@@ -236,6 +238,94 @@ class MergeSyncTest {
             dao
         )
         assertEquals("H", dao.gamesOnce().single().site)
+    }
+
+    @Test
+    fun `harvested box-score detail lands on games and lines`() = runTest {
+        val dao = db.dao()
+        Seeder.merge(
+            JSONObject(
+                """
+                {"players": [{"name": "Ada Alpha", "jerseyNumber": "1", "position": "P"}],
+                 "games": [{"date": "2026-04-17", "opponent": "UCF", "season": "2026",
+                   "teamScore": 3, "opponentScore": 6,
+                   "venue": "Lawrence, Kan.", "attendance": 1807,
+                   "boxScoreUrl": "https://kuathletics.com/box/20500",
+                   "scoring": [
+                     {"inn": 1, "ku": false, "text": "B. Damon doubled, RBI; A. Evans scored.", "us": 0, "them": 1},
+                     {"inn": 3, "ku": true, "text": "Soles flied out to rf, SF, RBI; Limbaugh scored.", "us": 2, "them": 1}
+                   ],
+                   "lines": [{"player": "Ada Alpha", "gs": 1, "spot": 3, "pos": "ss", "ab": 4, "h": 2,
+                              "kl": 1, "roe": 1, "go": 2, "ao": 1, "gidp": 1,
+                              "po": 2, "a": 3, "e": 1, "dp": 1,
+                              "p": 1, "outs": 18, "np": 97, "bf": 27, "wp": 2, "cg": 1}]}]}
+                """
+            ),
+            dao
+        )
+        val game = dao.gamesOnce().single()
+        assertEquals("Lawrence, Kan.", game.venue)
+        assertEquals(1807, game.attendance)
+        assertEquals("https://kuathletics.com/box/20500", game.boxScoreUrl)
+        // Encoded one play per line: inning|ku|us|them|narrative
+        val rows = game.scoringSummary.split("\n")
+        assertEquals(2, rows.size)
+        assertTrue(rows[0].startsWith("1|0|0|1|"))
+        assertTrue(rows[1].startsWith("3|1|2|1|"))
+        assertTrue(rows[1].endsWith("Limbaugh scored."))
+
+        val line = dao.statLinesOnce().single()
+        assertEquals(3, line.lineupSpot)
+        assertEquals("ss", line.position)
+        assertEquals(1, line.strikeoutsLooking)
+        assertEquals(1, line.reachedOnError)
+        assertEquals(2, line.groundOuts)
+        assertEquals(1, line.groundedIntoDoublePlay)
+        assertEquals(2, line.putouts)
+        assertEquals(3, line.assists)
+        assertEquals(1, line.errors)
+        assertEquals(97, line.pitchCount)
+        assertEquals(27, line.battersFaced)
+        assertEquals(2, line.wildPitches)
+        assertEquals(1, line.completeGames)
+    }
+
+    @Test
+    fun `game context fills in on an existing game but never overwrites it`() = runTest {
+        val dao = db.dao()
+        // A game recorded before any of these columns existed.
+        dao.insertGame(
+            Game(date = "2026-04-17", opponent = "UCF", season = "2026",
+                teamScore = 3, opponentScore = 6, venue = "Hand-typed Park")
+        )
+        Seeder.merge(
+            JSONObject(
+                """
+                {"players": [], "games": [{"date": "2026-04-17", "opponent": "UCF", "season": "2026",
+                  "teamScore": 3, "opponentScore": 6,
+                  "venue": "Scraped Stadium", "attendance": 900,
+                  "boxScoreUrl": "https://kuathletics.com/box/20500",
+                  "scoring": [{"inn": 2, "ku": true, "text": "Cripe homered.", "us": 1, "them": 0}]}]}
+                """
+            ),
+            dao
+        )
+        val game = dao.gamesOnce().single()
+        assertEquals("Hand-typed Park", game.venue)   // never overwritten
+        assertEquals(900, game.attendance)            // filled, was blank
+        assertEquals("https://kuathletics.com/box/20500", game.boxScoreUrl)
+        assertTrue(game.scoringSummary.startsWith("2|1|1|0|Cripe homered."))
+    }
+
+    @Test
+    fun `a seed with no scoring summary leaves the stored one alone`() = runTest {
+        val dao = db.dao()
+        Seeder.merge(seedJson(), dao)
+        val before = dao.gamesOnce().single()
+        assertEquals("", before.scoringSummary)
+        // Older payloads simply omit the key; that must not throw or clobber.
+        Seeder.merge(seedJson(), dao)
+        assertEquals("", dao.gamesOnce().single().scoringSummary)
     }
 
     @Test

@@ -10,7 +10,7 @@ import androidx.sqlite.db.SupportSQLiteDatabase
 @Database(
     entities = [Player::class, Game::class, StatLine::class,
         ConferenceStanding::class, PollEntry::class],
-    version = 4,
+    version = 5,
     exportSchema = false
 )
 abstract class JayhawksDatabase : RoomDatabase() {
@@ -69,13 +69,55 @@ abstract class JayhawksDatabase : RoomDatabase() {
             }
         }
 
+        // v4 -> v5: the box-score detail the scrape always downloaded and the
+        // seed used to discard — advanced hitting, fielding, pitching workload,
+        // lineup slot — plus per-game context and the scoring summary.
+        private val MIGRATION_4_5 = object : Migration(4, 5) {
+            override fun migrate(db: SupportSQLiteDatabase) {
+                db.execSQL("ALTER TABLE games ADD COLUMN `venue` TEXT NOT NULL DEFAULT ''")
+                db.execSQL("ALTER TABLE games ADD COLUMN `attendance` INTEGER NOT NULL DEFAULT 0")
+                db.execSQL("ALTER TABLE games ADD COLUMN `boxScoreUrl` TEXT NOT NULL DEFAULT ''")
+                db.execSQL("ALTER TABLE games ADD COLUMN `scoringSummary` TEXT NOT NULL DEFAULT ''")
+                db.execSQL("ALTER TABLE stat_lines ADD COLUMN `lineupSpot` INTEGER NOT NULL DEFAULT 0")
+                db.execSQL("ALTER TABLE stat_lines ADD COLUMN `position` TEXT NOT NULL DEFAULT ''")
+                db.execSQL("ALTER TABLE stat_lines ADD COLUMN `substitute` INTEGER NOT NULL DEFAULT 0")
+                db.execSQL("ALTER TABLE stat_lines ADD COLUMN `strikeoutsLooking` INTEGER NOT NULL DEFAULT 0")
+                db.execSQL("ALTER TABLE stat_lines ADD COLUMN `reachedOnError` INTEGER NOT NULL DEFAULT 0")
+                db.execSQL("ALTER TABLE stat_lines ADD COLUMN `fieldersChoice` INTEGER NOT NULL DEFAULT 0")
+                db.execSQL("ALTER TABLE stat_lines ADD COLUMN `groundOuts` INTEGER NOT NULL DEFAULT 0")
+                db.execSQL("ALTER TABLE stat_lines ADD COLUMN `flyOuts` INTEGER NOT NULL DEFAULT 0")
+                db.execSQL("ALTER TABLE stat_lines ADD COLUMN `groundedIntoDoublePlay` INTEGER NOT NULL DEFAULT 0")
+                db.execSQL("ALTER TABLE stat_lines ADD COLUMN `intentionalWalks` INTEGER NOT NULL DEFAULT 0")
+                db.execSQL("ALTER TABLE stat_lines ADD COLUMN `pickedOff` INTEGER NOT NULL DEFAULT 0")
+                db.execSQL("ALTER TABLE stat_lines ADD COLUMN `putouts` INTEGER NOT NULL DEFAULT 0")
+                db.execSQL("ALTER TABLE stat_lines ADD COLUMN `assists` INTEGER NOT NULL DEFAULT 0")
+                db.execSQL("ALTER TABLE stat_lines ADD COLUMN `errors` INTEGER NOT NULL DEFAULT 0")
+                db.execSQL("ALTER TABLE stat_lines ADD COLUMN `passedBalls` INTEGER NOT NULL DEFAULT 0")
+                db.execSQL("ALTER TABLE stat_lines ADD COLUMN `stolenBasesAgainst` INTEGER NOT NULL DEFAULT 0")
+                db.execSQL("ALTER TABLE stat_lines ADD COLUMN `caughtStealingBy` INTEGER NOT NULL DEFAULT 0")
+                db.execSQL("ALTER TABLE stat_lines ADD COLUMN `doublePlaysTurned` INTEGER NOT NULL DEFAULT 0")
+                db.execSQL("ALTER TABLE stat_lines ADD COLUMN `pitchCount` INTEGER NOT NULL DEFAULT 0")
+                db.execSQL("ALTER TABLE stat_lines ADD COLUMN `battersFaced` INTEGER NOT NULL DEFAULT 0")
+                db.execSQL("ALTER TABLE stat_lines ADD COLUMN `wildPitches` INTEGER NOT NULL DEFAULT 0")
+                db.execSQL("ALTER TABLE stat_lines ADD COLUMN `battersHit` INTEGER NOT NULL DEFAULT 0")
+                db.execSQL("ALTER TABLE stat_lines ADD COLUMN `balks` INTEGER NOT NULL DEFAULT 0")
+                db.execSQL("ALTER TABLE stat_lines ADD COLUMN `inheritedRunners` INTEGER NOT NULL DEFAULT 0")
+                db.execSQL("ALTER TABLE stat_lines ADD COLUMN `inheritedRunnersScored` INTEGER NOT NULL DEFAULT 0")
+                db.execSQL("ALTER TABLE stat_lines ADD COLUMN `completeGames` INTEGER NOT NULL DEFAULT 0")
+                db.execSQL("ALTER TABLE stat_lines ADD COLUMN `shutouts` INTEGER NOT NULL DEFAULT 0")
+                db.execSQL("ALTER TABLE stat_lines ADD COLUMN `gamesStartedPitching` INTEGER NOT NULL DEFAULT 0")
+                db.execSQL("ALTER TABLE stat_lines ADD COLUMN `pitcherStrikeoutsLooking` INTEGER NOT NULL DEFAULT 0")
+                db.execSQL("ALTER TABLE stat_lines ADD COLUMN `opponentAtBats` INTEGER NOT NULL DEFAULT 0")
+            }
+        }
+
         fun get(context: Context): JayhawksDatabase =
             instance ?: synchronized(this) {
                 instance ?: Room.databaseBuilder(
                     context.applicationContext,
                     JayhawksDatabase::class.java,
                     "ku_sb.db"
-                ).addMigrations(MIGRATION_1_2, MIGRATION_2_3, MIGRATION_3_4)
+                ).addMigrations(MIGRATION_1_2, MIGRATION_2_3, MIGRATION_3_4, MIGRATION_4_5)
                     .build().also { instance = it }
             }
     }

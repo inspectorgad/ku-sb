@@ -111,7 +111,11 @@ object Seeder {
                         teamHits = if (g.has("teamHits")) g.getInt("teamHits") else null,
                         opponentHits = if (g.has("opponentHits")) g.getInt("opponentHits") else null,
                         teamErrors = if (g.has("teamErrors")) g.getInt("teamErrors") else null,
-                        opponentErrors = if (g.has("opponentErrors")) g.getInt("opponentErrors") else null
+                        opponentErrors = if (g.has("opponentErrors")) g.getInt("opponentErrors") else null,
+                        venue = g.optString("venue"),
+                        attendance = g.optInt("attendance"),
+                        boxScoreUrl = g.optString("boxScoreUrl"),
+                        scoringSummary = encodeScoring(g.optJSONArray("scoring"))
                     )
                 )
             } else {
@@ -141,6 +145,17 @@ object Seeder {
                 if (existing.site.isBlank() && seedSite.isNotBlank()) {
                     updated = updated.copy(site = seedSite)
                 }
+                // Scraper-owned game context: fill whenever still blank. Never
+                // overwritten, so a hand-entered venue survives.
+                g.optString("venue").takeIf { it.isNotBlank() && existing.venue.isBlank() }
+                    ?.let { updated = updated.copy(venue = it) }
+                g.optInt("attendance").takeIf { it > 0 && existing.attendance == 0 }
+                    ?.let { updated = updated.copy(attendance = it) }
+                g.optString("boxScoreUrl").takeIf { it.isNotBlank() && existing.boxScoreUrl.isBlank() }
+                    ?.let { updated = updated.copy(boxScoreUrl = it) }
+                encodeScoring(g.optJSONArray("scoring"))
+                    .takeIf { it.isNotEmpty() && existing.scoringSummary.isBlank() }
+                    ?.let { updated = updated.copy(scoringSummary = it) }
                 if (existing.startTime.isBlank() && seedStartTime.isNotBlank()) {
                     updated = updated.copy(startTime = seedStartTime)
                 }
@@ -181,7 +196,37 @@ object Seeder {
                         homeRunsAllowed = l.optInt("hra"),
                         win = l.optInt("w") == 1,
                         loss = l.optInt("l") == 1,
-                        save = l.optInt("sv") == 1
+                        save = l.optInt("sv") == 1,
+                        lineupSpot = l.optInt("spot"),
+                        position = l.optString("pos"),
+                        substitute = l.optInt("sub") == 1,
+                        strikeoutsLooking = l.optInt("kl"),
+                        reachedOnError = l.optInt("roe"),
+                        fieldersChoice = l.optInt("fc"),
+                        groundOuts = l.optInt("go"),
+                        flyOuts = l.optInt("ao"),
+                        groundedIntoDoublePlay = l.optInt("gidp"),
+                        intentionalWalks = l.optInt("ibb"),
+                        pickedOff = l.optInt("pko"),
+                        putouts = l.optInt("po"),
+                        assists = l.optInt("a"),
+                        errors = l.optInt("e"),
+                        passedBalls = l.optInt("pb"),
+                        stolenBasesAgainst = l.optInt("sba"),
+                        caughtStealingBy = l.optInt("csb"),
+                        doublePlaysTurned = l.optInt("dp"),
+                        pitchCount = l.optInt("np"),
+                        battersFaced = l.optInt("bf"),
+                        wildPitches = l.optInt("wp"),
+                        battersHit = l.optInt("hbA"),
+                        balks = l.optInt("bk"),
+                        inheritedRunners = l.optInt("ir"),
+                        inheritedRunnersScored = l.optInt("irs"),
+                        completeGames = l.optInt("cg"),
+                        shutouts = l.optInt("sho"),
+                        gamesStartedPitching = l.optInt("gsp"),
+                        pitcherStrikeoutsLooking = l.optInt("ksl"),
+                        opponentAtBats = l.optInt("oab")
                     )
                 )
             }
@@ -197,6 +242,28 @@ object Seeder {
      * because no field here is ever user-entered. Seeds that omit these keys
      * (older payloads) leave whatever is already stored untouched.
      */
+    /**
+     * Packs the seed's scoring summary into one string, one play per line:
+     * `inning|ku(1/0)|usScore|themScore|narrative`. The narrative comes last
+     * so a stray pipe inside it cannot break the earlier fields.
+     */
+    private fun encodeScoring(arr: org.json.JSONArray?): String {
+        if (arr == null || arr.length() == 0) return ""
+        val sb = StringBuilder()
+        for (i in 0 until arr.length()) {
+            val p = arr.optJSONObject(i) ?: continue
+            val text = p.optString("text").replace("\n", " ").trim()
+            if (text.isEmpty()) continue
+            if (sb.isNotEmpty()) sb.append('\n')
+            sb.append(p.optInt("inn")).append('|')
+                .append(if (p.optBoolean("ku")) 1 else 0).append('|')
+                .append(p.optInt("us")).append('|')
+                .append(p.optInt("them")).append('|')
+                .append(text)
+        }
+        return sb.toString()
+    }
+
     private suspend fun mergeStandings(root: JSONObject, dao: JayhawksDao) {
         root.optJSONArray("standings")?.let { arr ->
             val bySeason = mutableMapOf<String, MutableList<ConferenceStanding>>()
