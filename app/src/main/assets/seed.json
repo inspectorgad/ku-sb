@@ -1,8 +1,14 @@
 {
  "formatVersion": 1,
- "generatedAt": "2026-10-05T10:41:04Z",
+ "generatedAt": "2026-10-05T11:05:06Z",
  "team": "Kansas Jayhawks Softball",
  "players": [
+  {
+   "name": "A. Linduff",
+   "jerseyNumber": "39",
+   "position": "",
+   "active": false
+  },
   {
    "name": "Anna Soles",
    "jerseyNumber": "22",
@@ -52,6 +58,12 @@
    "active": true
   },
   {
+   "name": "C. Bagshaw",
+   "jerseyNumber": "6",
+   "position": "",
+   "active": false
+  },
+  {
    "name": "Campbell Bagshaw",
    "jerseyNumber": "6",
    "position": "",
@@ -68,6 +80,12 @@
    "jerseyNumber": "66",
    "position": "P",
    "active": true
+  },
+  {
+   "name": "E. Tatum",
+   "jerseyNumber": "20",
+   "position": "",
+   "active": false
   },
   {
    "name": "Ella Boyer",
@@ -94,6 +112,12 @@
    "active": true
   },
   {
+   "name": "H. Cripe",
+   "jerseyNumber": "41",
+   "position": "",
+   "active": false
+  },
+  {
    "name": "Hailey Cripe",
    "jerseyNumber": "41",
    "position": "",
@@ -116,6 +140,18 @@
    "jerseyNumber": "77",
    "position": "INF",
    "active": true
+  },
+  {
+   "name": "K. Diggs",
+   "jerseyNumber": "2",
+   "position": "",
+   "active": false
+  },
+  {
+   "name": "K. Griggs",
+   "jerseyNumber": "14",
+   "position": "",
+   "active": false
   },
   {
    "name": "Kadence Stafford",
@@ -148,6 +184,12 @@
    "active": true
   },
   {
+   "name": "L. Ludwig",
+   "jerseyNumber": "11",
+   "position": "",
+   "active": false
+  },
+  {
    "name": "Lila Partridge",
    "jerseyNumber": "10",
    "position": "P",
@@ -170,6 +212,12 @@
    "jerseyNumber": "36",
    "position": "OF",
    "active": true
+  },
+  {
+   "name": "P. Limbaugh",
+   "jerseyNumber": "4",
+   "position": "",
+   "active": false
   },
   {
    "name": "Presley Limbaugh",
@@ -247,7 +295,8 @@
      "cs": 0,
      "sf": 0,
      "sh": 0,
-     "ao": 1
+     "ao": 1,
+     "po": 1
     },
     {
      "player": "Jaeden Murphy",
@@ -311,7 +360,8 @@
      "sb": 1,
      "cs": 0,
      "sf": 0,
-     "sh": 0
+     "sh": 0,
+     "po": 1
     },
     {
      "player": "Hailey Cripe",
@@ -355,7 +405,9 @@
      "cs": 0,
      "sf": 0,
      "sh": 0,
-     "ao": 1
+     "ao": 1,
+     "po": 5,
+     "dp": 1
     },
     {
      "player": "Ava Wallace",
@@ -376,7 +428,8 @@
      "sb": 0,
      "cs": 0,
      "sf": 0,
-     "sh": 0
+     "sh": 0,
+     "po": 1
     },
     {
      "player": "Campbell Bagshaw",
@@ -397,7 +450,10 @@
      "sb": 0,
      "cs": 0,
      "sf": 0,
-     "sh": 0
+     "sh": 0,
+     "po": 1,
+     "a": 1,
+     "dp": 1
     },
     {
      "player": "September Flanagan",
@@ -419,7 +475,8 @@
      "cs": 0,
      "sf": 1,
      "sh": 0,
-     "ao": 1
+     "ao": 1,
+     "a": 1
     },
     {
      "player": "Ella Boyer",
@@ -440,7 +497,9 @@
      "sb": 0,
      "cs": 0,
      "sf": 0,
-     "sh": 0
+     "sh": 0,
+     "po": 4,
+     "sba": 2
     },
     {
      "player": "Bailey Amezcua",
@@ -505,7 +564,10 @@
      "sb": 0,
      "cs": 0,
      "sf": 0,
-     "sh": 0
+     "sh": 0,
+     "po": 2,
+     "a": 2,
+     "dp": 1
     },
     {
      "player": "Emma Tatum",
@@ -592,6 +654,7 @@
      "cs": 0,
      "sf": 0,
      "sh": 0,
+     "a": 1,
      "p": 1,
      "outs": 6,
      "ha": 1,
@@ -628,6 +691,8 @@
      "cs": 0,
      "sf": 0,
      "sh": 0,
+     "a": 1,
+     "sba": 2,
      "p": 1,
      "outs": 6,
      "ha": 1,
@@ -681,6 +746,71 @@
    ],
    "venue": "Tampa, Fla.",
    "boxScoreUrl": "https://kuathletics.com/sports/softball/stats/2026/bethune-cookman/boxscore/20426",
+   "scoring": [
+    {
+     "inn": 1,
+     "ku": true,
+     "text": "Linduff tripled to left center, RBI (0-0); Limbaugh scored.",
+     "us": 1,
+     "them": 0
+    },
+    {
+     "inn": 1,
+     "ku": true,
+     "text": "Cripe flied out to cf, SF, RBI (1-1 BK); Linduff scored.",
+     "us": 2,
+     "them": 0
+    },
+    {
+     "inn": 1,
+     "ku": true,
+     "text": "Bagshaw doubled down the lf line, RBI (2-0 BB); Soles scored.",
+     "us": 3,
+     "them": 0
+    },
+    {
+     "inn": 1,
+     "ku": true,
+     "text": "Boyer homered to left field, 2 RBI (2-2 BFFB); Bagshaw scored.",
+     "us": 5,
+     "them": 0
+    },
+    {
+     "inn": 1,
+     "ku": true,
+     "text": "Limbaugh singled to left field, RBI (1-2 KKB); Pitts out at third lf to 3b; Stafford scored.",
+     "us": 6,
+     "them": 0
+    },
+    {
+     "inn": 2,
+     "ku": true,
+     "text": "Cripe doubled to right field, RBI (1-0 B); Linduff scored.",
+     "us": 7,
+     "them": 0
+    },
+    {
+     "inn": 2,
+     "ku": true,
+     "text": "Boyer singled to left field, RBI (2-2 BKBK); Bagshaw advanced to third; Cripe scored.",
+     "us": 8,
+     "them": 0
+    },
+    {
+     "inn": 2,
+     "ku": true,
+     "text": "Amezcua homered to left field, 3 RBI (0-1 K); Boyer scored; Bagshaw scored.",
+     "us": 11,
+     "them": 0
+    },
+    {
+     "inn": 3,
+     "ku": true,
+     "text": "Flanagan flied out to lf, SF, RBI (3-2 BFBKFB); Hays scored.",
+     "us": 12,
+     "them": 0
+    }
+   ],
    "site": "N",
    "startTime": "8 a.m. CT"
   },
@@ -761,7 +891,10 @@
      "sb": 0,
      "cs": 0,
      "sf": 0,
-     "sh": 0
+     "sh": 0,
+     "po": 1,
+     "a": 2,
+     "dp": 1
     },
     {
      "player": "Hailey Cripe",
@@ -783,7 +916,9 @@
      "cs": 0,
      "sf": 0,
      "sh": 0,
-     "go": 1
+     "go": 1,
+     "a": 2,
+     "dp": 1
     },
     {
      "player": "Emma Tatum",
@@ -826,7 +961,9 @@
      "cs": 0,
      "sf": 0,
      "sh": 0,
-     "go": 1
+     "go": 1,
+     "po": 5,
+     "dp": 1
     },
     {
      "player": "Ava Wallace",
@@ -847,7 +984,8 @@
      "sb": 0,
      "cs": 0,
      "sf": 0,
-     "sh": 0
+     "sh": 0,
+     "po": 1
     },
     {
      "player": "Ella Boyer",
@@ -912,7 +1050,8 @@
      "sb": 0,
      "cs": 0,
      "sf": 0,
-     "sh": 0
+     "sh": 0,
+     "po": 1
     },
     {
      "player": "Bailey Weber",
@@ -957,7 +1096,10 @@
      "sf": 1,
      "sh": 0,
      "go": 1,
-     "ao": 1
+     "ao": 1,
+     "po": 5,
+     "a": 2,
+     "pb": 1
     },
     {
      "player": "Kadence Stafford",
@@ -979,7 +1121,10 @@
      "cs": 0,
      "sf": 0,
      "sh": 0,
-     "ao": 1
+     "ao": 1,
+     "po": 1,
+     "a": 1,
+     "e": 1
     },
     {
      "player": "Tehya Pitts",
@@ -1001,7 +1146,8 @@
      "cs": 0,
      "sf": 0,
      "sh": 0,
-     "ao": 1
+     "ao": 1,
+     "po": 1
     },
     {
      "player": "Madi Hays",
@@ -1102,6 +1248,113 @@
    ],
    "venue": "Tampa, Fla.",
    "boxScoreUrl": "https://kuathletics.com/sports/softball/stats/2026/illinois-state/boxscore/20427",
+   "scoring": [
+    {
+     "inn": 1,
+     "ku": true,
+     "text": "Soles doubled to right center, RBI (3-1 BBFB); Cripe scored.",
+     "us": 1,
+     "them": 0
+    },
+    {
+     "inn": 1,
+     "ku": true,
+     "text": "Bagshaw singled to right field, RBI (0-0); Boyer advanced to second, advanced to third on a fielding error by rf; Soles scored.",
+     "us": 2,
+     "them": 0
+    },
+    {
+     "inn": 1,
+     "ku": false,
+     "text": "Larson, Juli advanced to third; Wolford, Tat scored on a passed ball, unearned.",
+     "us": 2,
+     "them": 1
+    },
+    {
+     "inn": 4,
+     "ku": true,
+     "text": "Pitts singled through the right side, RBI (1-1 BS); Stafford advanced to second; Amezcua advanced to third; Bagshaw scored.",
+     "us": 3,
+     "them": 1
+    },
+    {
+     "inn": 4,
+     "ku": true,
+     "text": "Pitts advanced to second; Stafford advanced to third; Amezcua scored on a wild pitch.",
+     "us": 4,
+     "them": 1
+    },
+    {
+     "inn": 4,
+     "ku": true,
+     "text": "Linduff doubled to center field, ground-rule, 2 RBI (2-2 KKBB); Pitts scored; Stafford scored.",
+     "us": 6,
+     "them": 1
+    },
+    {
+     "inn": 4,
+     "ku": true,
+     "text": "Cripe doubled to left center, RBI (3-2 BBFFBFF); Linduff scored.",
+     "us": 7,
+     "them": 1
+    },
+    {
+     "inn": 4,
+     "ku": true,
+     "text": "Bagshaw singled to left field, RBI (1-1 KB); Boyer advanced to second; Soles advanced to third; Cripe scored.",
+     "us": 8,
+     "them": 1
+    },
+    {
+     "inn": 4,
+     "ku": true,
+     "text": "Amezcua flied out to lf, SAC, RBI (0-1 K); Soles scored.",
+     "us": 9,
+     "them": 1
+    },
+    {
+     "inn": 4,
+     "ku": true,
+     "text": "Stafford homered to left center, 3 RBI (1-1 FB); Weber scored; Youngblood scored.",
+     "us": 12,
+     "them": 1
+    },
+    {
+     "inn": 5,
+     "ku": true,
+     "text": "Flanagan homered to left center, RBI (0-0).",
+     "us": 13,
+     "them": 1
+    },
+    {
+     "inn": 5,
+     "ku": false,
+     "text": "Wolford, Tat singled to third base, RBI (2-2 BKKFB); Boyer, Ella advanced to second; Moffett, Mar scored.",
+     "us": 13,
+     "them": 2
+    },
+    {
+     "inn": 5,
+     "ku": false,
+     "text": "Atkinson, Be singled to left field, advanced to second on the throw, RBI (0-0); Wolford, Tat advanced to third; Boyer, Ella scored.",
+     "us": 13,
+     "them": 3
+    },
+    {
+     "inn": 5,
+     "ku": false,
+     "text": "Calhoun, Mor singled up the middle, RBI (0-0); Atkinson, Be advanced to third; Wolford, Tat scored.",
+     "us": 13,
+     "them": 4
+    },
+    {
+     "inn": 5,
+     "ku": false,
+     "text": "Liebelt, Tay reached on a fielding error by ss (1-2 KKB); Calhoun, Mor advanced to second; Atkinson, Be scored, unearned.",
+     "us": 13,
+     "them": 5
+    }
+   ],
    "site": "N",
    "startTime": "1 p.m. CT"
   },
@@ -1138,7 +1391,8 @@
      "sf": 0,
      "sh": 0,
      "go": 1,
-     "ao": 1
+     "ao": 1,
+     "po": 2
     },
     {
      "player": "Aynslee Linduff",
@@ -1184,7 +1438,8 @@
      "sf": 0,
      "sh": 0,
      "go": 2,
-     "ao": 1
+     "ao": 1,
+     "po": 2
     },
     {
      "player": "Anna Soles",
@@ -1206,7 +1461,8 @@
      "cs": 0,
      "sf": 0,
      "sh": 0,
-     "ao": 2
+     "ao": 2,
+     "po": 5
     },
     {
      "player": "Ella Boyer",
@@ -1250,7 +1506,9 @@
      "cs": 0,
      "sf": 0,
      "sh": 0,
-     "ao": 1
+     "ao": 1,
+     "po": 2,
+     "dp": 1
     },
     {
      "player": "Madi Hays",
@@ -1293,7 +1551,13 @@
      "cs": 0,
      "sf": 0,
      "sh": 0,
-     "ao": 2
+     "ao": 2,
+     "po": 6,
+     "a": 1,
+     "e": 1,
+     "sba": 1,
+     "csb": 1,
+     "dp": 1
     },
     {
      "player": "Audri Youngblood",
@@ -1358,7 +1622,8 @@
      "cs": 0,
      "sf": 0,
      "sh": 0,
-     "go": 1
+     "go": 1,
+     "e": 1
     },
     {
      "player": "Kaelee Washington",
@@ -1380,6 +1645,9 @@
      "cs": 0,
      "sf": 0,
      "sh": 0,
+     "a": 3,
+     "sba": 1,
+     "csb": 1,
      "p": 1,
      "outs": 13,
      "ha": 4,
@@ -1474,6 +1742,78 @@
    "venue": "Tampa, Fla.",
    "attendance": 1807,
    "boxScoreUrl": "https://kuathletics.com/sports/softball/stats/2026/south-florida/boxscore/20428",
+   "scoring": [
+    {
+     "inn": 1,
+     "ku": true,
+     "text": "Soles homered to right field, 2 RBI (3-2 BKBBF); Limbaugh scored.",
+     "us": 2,
+     "them": 0
+    },
+    {
+     "inn": 4,
+     "ku": true,
+     "text": "Pitts tripled to right center, 2 RBI (1-1 BK); Stafford scored; Youngblood scored.",
+     "us": 4,
+     "them": 0
+    },
+    {
+     "inn": 5,
+     "ku": false,
+     "text": "J. WILKES singled to left field, RBI (0-1 K); G. CHIN advanced to second; D BROOKS scored.",
+     "us": 4,
+     "them": 1
+    },
+    {
+     "inn": 5,
+     "ku": false,
+     "text": "O. ELLIOTT singled through the right side, advanced to second on the throw, RBI (0-0); T. FULTON advanced to third; G. CHIN scored.",
+     "us": 4,
+     "them": 2
+    },
+    {
+     "inn": 5,
+     "ku": false,
+     "text": "A. WILKES hit by pitch, RBI (3-2 BFKBB); GARCIA-SOTO advanced to second; O. ELLIOTT advanced to third; T. FULTON scored.",
+     "us": 4,
+     "them": 3
+    },
+    {
+     "inn": 6,
+     "ku": false,
+     "text": "T. FULTON homered to left field, 3 RBI (0-0); K. STROTT scored; D BROOKS scored.",
+     "us": 4,
+     "them": 6
+    },
+    {
+     "inn": 6,
+     "ku": false,
+     "text": "A GALLIGANI reached on a fielder's choice, SAC, bunt, RBI (1-0 B); GARCIA-SOTO advanced to second; O. ELLIOTT scored.",
+     "us": 4,
+     "them": 7
+    },
+    {
+     "inn": 6,
+     "ku": false,
+     "text": "K. PIERCE walked, RBI (3-2 KBBFBB); A. WILKES advanced to second; A GALLIGANI advanced to third; GARCIA-SOTO scored, unearned.",
+     "us": 4,
+     "them": 8
+    },
+    {
+     "inn": 6,
+     "ku": false,
+     "text": "D BROOKS singled up the middle, 2 RBI (2-2 BSBS); K. PIERCE advanced to second; A. WILKES scored, unearned; A GALLIGANI scored, unearned.",
+     "us": 4,
+     "them": 10
+    },
+    {
+     "inn": 6,
+     "ku": false,
+     "text": "K. STROTT tripled to right field, 2 RBI (0-0); D BROOKS scored, unearned; S. WALZ scored, unearned.",
+     "us": 4,
+     "them": 12
+    }
+   ],
    "site": "A",
    "startTime": "1 p.m. CT"
   },
@@ -1509,7 +1849,8 @@
      "cs": 0,
      "sf": 0,
      "sh": 0,
-     "kl": 1
+     "kl": 1,
+     "po": 1
     },
     {
      "player": "Aynslee Linduff",
@@ -1532,7 +1873,8 @@
      "sf": 0,
      "sh": 0,
      "kl": 1,
-     "ao": 2
+     "ao": 2,
+     "po": 1
     },
     {
      "player": "Anna Soles",
@@ -1554,7 +1896,8 @@
      "cs": 0,
      "sf": 0,
      "sh": 0,
-     "ao": 1
+     "ao": 1,
+     "po": 12
     },
     {
      "player": "Madi Hays",
@@ -1620,7 +1963,8 @@
      "cs": 0,
      "sf": 0,
      "sh": 0,
-     "ao": 2
+     "ao": 2,
+     "a": 2
     },
     {
      "player": "September Flanagan",
@@ -1642,7 +1986,9 @@
      "cs": 0,
      "sf": 0,
      "sh": 0,
-     "go": 2
+     "go": 2,
+     "po": 1,
+     "a": 1
     },
     {
      "player": "Hailey Cripe",
@@ -1665,7 +2011,9 @@
      "sf": 0,
      "sh": 0,
      "kl": 2,
-     "ao": 1
+     "ao": 1,
+     "po": 1,
+     "a": 5
     },
     {
      "player": "Bailey Amezcua",
@@ -1687,7 +2035,8 @@
      "cs": 0,
      "sf": 0,
      "sh": 0,
-     "ao": 2
+     "ao": 2,
+     "po": 3
     },
     {
      "player": "Tehya Pitts",
@@ -1710,7 +2059,8 @@
      "sf": 0,
      "sh": 0,
      "go": 1,
-     "ao": 1
+     "ao": 1,
+     "po": 2
     },
     {
      "player": "Kaelee Washington",
@@ -1732,6 +2082,7 @@
      "cs": 0,
      "sf": 0,
      "sh": 0,
+     "a": 1,
      "p": 1,
      "outs": 15,
      "ha": 8,
@@ -1805,6 +2156,7 @@
      "cs": 0,
      "sf": 0,
      "sh": 0,
+     "a": 1,
      "p": 1,
      "outs": 5,
      "ha": 5,
@@ -1825,6 +2177,71 @@
    "venue": "Tampa, Fla.",
    "attendance": 2053,
    "boxScoreUrl": "https://kuathletics.com/sports/softball/stats/2026/florida/boxscore/20430",
+   "scoring": [
+    {
+     "inn": 3,
+     "ku": false,
+     "text": "J. Erickson grounded out to 1b unassisted, RBI (2-1 BKB); T. Shumaker advanced to third; G. Comia scored.",
+     "us": 0,
+     "them": 1
+    },
+    {
+     "inn": 5,
+     "ku": false,
+     "text": "T. Shumaker homered to center field, 2 RBI (2-1 BBK); G. Comia scored.",
+     "us": 0,
+     "them": 3
+    },
+    {
+     "inn": 5,
+     "ku": false,
+     "text": "C. McLellan doubled to right center, 2 RBI (3-2 KBBKB); K. Grover scored; J. Erickson scored.",
+     "us": 0,
+     "them": 5
+    },
+    {
+     "inn": 5,
+     "ku": false,
+     "text": "K. Cahalan doubled to right center, advanced to third on the throw, 2 RBI (0-0); A. Brown scored; C. McLellan scored.",
+     "us": 0,
+     "them": 7
+    },
+    {
+     "inn": 6,
+     "ku": true,
+     "text": "Soles tripled to left center, RBI (1-1 BF); Limbaugh scored.",
+     "us": 1,
+     "them": 7
+    },
+    {
+     "inn": 6,
+     "ku": true,
+     "text": "Boyer flied out to cf, SF, RBI (0-0); Soles scored.",
+     "us": 2,
+     "them": 7
+    },
+    {
+     "inn": 7,
+     "ku": false,
+     "text": "A. Brown homered to left field, 2 RBI (0-2 KK); C. McLellan scored.",
+     "us": 2,
+     "them": 9
+    },
+    {
+     "inn": 7,
+     "ku": false,
+     "text": "K. Cahalan homered to right field, RBI (0-0).",
+     "us": 2,
+     "them": 10
+    },
+    {
+     "inn": 7,
+     "ku": false,
+     "text": "T. Shumaker grounded out to p, RBI (1-2 KBK); T. Thomas advanced to second; G. Comia advanced to third; Wesolowski scored.",
+     "us": 2,
+     "them": 11
+    }
+   ],
    "site": "N",
    "startTime": "11 a.m. CT"
   },
@@ -1861,7 +2278,8 @@
      "sf": 0,
      "sh": 0,
      "kl": 2,
-     "go": 1
+     "go": 1,
+     "po": 3
     },
     {
      "player": "Aynslee Linduff",
@@ -1970,7 +2388,9 @@
      "cs": 0,
      "sf": 0,
      "sh": 0,
-     "ao": 1
+     "ao": 1,
+     "po": 9,
+     "sba": 2
     },
     {
      "player": "Audri Youngblood",
@@ -2014,7 +2434,8 @@
      "sf": 0,
      "sh": 0,
      "go": 2,
-     "ao": 1
+     "ao": 1,
+     "po": 4
     },
     {
      "player": "Hailey Cripe",
@@ -2037,7 +2458,8 @@
      "sf": 0,
      "sh": 0,
      "kl": 1,
-     "ao": 2
+     "ao": 2,
+     "a": 1
     },
     {
      "player": "September Flanagan",
@@ -2059,7 +2481,9 @@
      "cs": 0,
      "sf": 0,
      "sh": 0,
-     "ao": 1
+     "ao": 1,
+     "a": 2,
+     "e": 1
     },
     {
      "player": "Tehya Pitts",
@@ -2081,7 +2505,8 @@
      "cs": 0,
      "sf": 0,
      "sh": 0,
-     "ao": 1
+     "ao": 1,
+     "po": 2
     },
     {
      "player": "Kadence Stafford",
@@ -2105,7 +2530,8 @@
      "sh": 0,
      "kl": 1,
      "go": 1,
-     "ao": 1
+     "ao": 1,
+     "a": 1
     },
     {
      "player": "Chloe Barber",
@@ -2127,6 +2553,7 @@
      "cs": 0,
      "sf": 0,
      "sh": 0,
+     "sba": 2,
      "p": 1,
      "outs": 17,
      "ha": 5,
@@ -2186,6 +2613,50 @@
    "venue": "Tampa, Fla.",
    "attendance": 1853,
    "boxScoreUrl": "https://kuathletics.com/sports/softball/stats/2026/michigan/boxscore/20429",
+   "scoring": [
+    {
+     "inn": 1,
+     "ku": true,
+     "text": "Boyer singled through the left side, RBI (1-2 KFB); Soles advanced to second; Linduff scored.",
+     "us": 1,
+     "them": 0
+    },
+    {
+     "inn": 1,
+     "ku": false,
+     "text": "Conway homered to right center, RBI (2-0 BB).",
+     "us": 1,
+     "them": 1
+    },
+    {
+     "inn": 5,
+     "ku": true,
+     "text": "Cripe flied out to lf (2-2 BKFB); Bagshaw advanced to second on the throw; Youngblood advanced to third on the throw; Ramirez scored on a fielding error by p, unearned.",
+     "us": 2,
+     "them": 1
+    },
+    {
+     "inn": 6,
+     "ku": false,
+     "text": "Putz homered to right center, RBI (2-2 BBFK).",
+     "us": 2,
+     "them": 2
+    },
+    {
+     "inn": 6,
+     "ku": false,
+     "text": "Hoehn singled to right field, RBI (1-0 B); Stephenson scored.",
+     "us": 2,
+     "them": 3
+    },
+    {
+     "inn": 6,
+     "ku": false,
+     "text": "Fantucci singled to center field, RBI (1-0 B); Snyder advanced to second; Dellamonica scored.",
+     "us": 2,
+     "them": 4
+    }
+   ],
    "site": "N",
    "startTime": "8:30 a.m. CT"
   },
@@ -2221,7 +2692,9 @@
      "cs": 0,
      "sf": 0,
      "sh": 0,
-     "go": 1
+     "go": 1,
+     "po": 1,
+     "a": 1
     },
     {
      "player": "September Flanagan",
@@ -2243,7 +2716,10 @@
      "cs": 0,
      "sf": 0,
      "sh": 0,
-     "go": 1
+     "go": 1,
+     "po": 4,
+     "a": 2,
+     "e": 1
     },
     {
      "player": "Bailey Weber",
@@ -2264,7 +2740,8 @@
      "sb": 0,
      "cs": 0,
      "sf": 0,
-     "sh": 0
+     "sh": 0,
+     "po": 1
     },
     {
      "player": "Kennedy Diggs",
@@ -2321,7 +2798,9 @@
      "cs": 0,
      "sf": 0,
      "sh": 0,
-     "ao": 2
+     "ao": 2,
+     "a": 3,
+     "e": 1
     },
     {
      "player": "Anna Soles",
@@ -2344,7 +2823,8 @@
      "sf": 0,
      "sh": 0,
      "go": 2,
-     "ao": 2
+     "ao": 2,
+     "po": 7
     },
     {
      "player": "Bailey Amezcua",
@@ -2366,7 +2846,9 @@
      "cs": 0,
      "sf": 0,
      "sh": 0,
-     "ao": 1
+     "ao": 1,
+     "po": 2,
+     "a": 1
     },
     {
      "player": "Chloe Barber",
@@ -2388,6 +2870,7 @@
      "cs": 0,
      "sf": 0,
      "sh": 0,
+     "po": 1,
      "p": 1,
      "outs": 9,
      "ha": 2,
@@ -2426,6 +2909,7 @@
      "cs": 0,
      "sf": 0,
      "sh": 0,
+     "a": 1,
      "p": 1,
      "outs": 6,
      "ha": 1,
@@ -2461,7 +2945,8 @@
      "cs": 0,
      "sf": 0,
      "sh": 0,
-     "ao": 1
+     "ao": 1,
+     "po": 1
     },
     {
      "player": "Presley Limbaugh",
@@ -2504,7 +2989,9 @@
      "sb": 0,
      "cs": 0,
      "sf": 0,
-     "sh": 0
+     "sh": 0,
+     "po": 1,
+     "a": 2
     },
     {
      "player": "Campbell Bagshaw",
@@ -2548,12 +3035,57 @@
      "cs": 0,
      "sf": 0,
      "sh": 0,
-     "go": 1
+     "go": 1,
+     "po": 3
     }
    ],
    "venue": "Fort Myers, Fla.",
    "attendance": 157,
    "boxScoreUrl": "https://kuathletics.com/sports/softball/stats/2026/fgcu/boxscore/20431",
+   "scoring": [
+    {
+     "inn": 2,
+     "ku": true,
+     "text": "Cripe,Hailey homered to left center, 1st of season, 2RBI (2-0 BB); Bagshaw,Campbell scored from second base.",
+     "us": 2,
+     "them": 0
+    },
+    {
+     "inn": 2,
+     "ku": false,
+     "text": "Thompson,Ally singled to center field (2-2 BKFFB); Meek,Tiffany advanced from first base, scored on play and an error by Tatum,Emma (E5), unearned; Thompson,Ally advanced to second base.",
+     "us": 2,
+     "them": 1
+    },
+    {
+     "inn": 3,
+     "ku": true,
+     "text": "Flanagan,September singled through the left side of the infield, 2RBI (0-0); Limbaugh,Presley scored, unearned; Linduff,Aynslee scored from second base, unearned; Bagshaw,Campbell advanced to second base.",
+     "us": 4,
+     "them": 1
+    },
+    {
+     "inn": 5,
+     "ku": false,
+     "text": "Daniels,KiKi homered to deep center field, 1st of season, RBI (0-0).",
+     "us": 4,
+     "them": 2
+    },
+    {
+     "inn": 5,
+     "ku": false,
+     "text": "Wiggs,Parris doubled to left center, RBI (0-2 FF); Gibson,Nikki scored from first base; Wiggs,Parris out at second base, lf to c to ss to 3b to 2b.",
+     "us": 4,
+     "them": 3
+    },
+    {
+     "inn": 6,
+     "ku": true,
+     "text": "Cripe,Hailey homered to deep center field, 2nd of season, RBI (1-0 B).",
+     "us": 5,
+     "them": 3
+    }
+   ],
    "site": "A",
    "startTime": "4 p.m. CT"
   },
@@ -2590,7 +3122,8 @@
      "sf": 0,
      "sh": 0,
      "go": 1,
-     "ao": 1
+     "ao": 1,
+     "po": 1
     },
     {
      "player": "Aynslee Linduff",
@@ -2635,7 +3168,9 @@
      "sf": 0,
      "sh": 1,
      "go": 2,
-     "ao": 1
+     "ao": 1,
+     "po": 12,
+     "dp": 1
     },
     {
      "player": "Anna Soles",
@@ -2680,7 +3215,9 @@
      "cs": 0,
      "sf": 0,
      "sh": 0,
-     "ao": 1
+     "ao": 1,
+     "a": 2,
+     "dp": 1
     },
     {
      "player": "Hailey Cripe",
@@ -2703,7 +3240,10 @@
      "sf": 0,
      "sh": 0,
      "go": 1,
-     "ao": 2
+     "ao": 2,
+     "po": 2,
+     "a": 5,
+     "dp": 1
     },
     {
      "player": "Bailey Amezcua",
@@ -2725,7 +3265,9 @@
      "cs": 0,
      "sf": 0,
      "sh": 0,
-     "go": 2
+     "go": 2,
+     "po": 2,
+     "e": 1
     },
     {
      "player": "Madi Hays",
@@ -2769,7 +3311,8 @@
      "sf": 0,
      "sh": 0,
      "go": 1,
-     "ao": 1
+     "ao": 1,
+     "a": 3
     },
     {
      "player": "Emma Tatum",
@@ -2813,7 +3356,8 @@
      "sf": 0,
      "sh": 0,
      "go": 1,
-     "ao": 1
+     "ao": 1,
+     "po": 1
     },
     {
      "player": "Kaelee Washington",
@@ -2835,6 +3379,8 @@
      "cs": 0,
      "sf": 0,
      "sh": 0,
+     "a": 4,
+     "csb": 1,
      "p": 1,
      "outs": 15,
      "ha": 2,
@@ -2892,6 +3438,36 @@
    "venue": "Tampa, Fla.",
    "attendance": 709,
    "boxScoreUrl": "https://kuathletics.com/sports/softball/stats/2026/boston-college/boxscore/20433",
+   "scoring": [
+    {
+     "inn": 1,
+     "ku": true,
+     "text": "Flanagan doubled to right center, 2 RBI (3-1 BBKB); Linduff scored; Limbaugh scored.",
+     "us": 2,
+     "them": 0
+    },
+    {
+     "inn": 3,
+     "ku": false,
+     "text": "Riddell homered to right field, RBI (2-1 BBK).",
+     "us": 2,
+     "them": 1
+    },
+    {
+     "inn": 6,
+     "ku": false,
+     "text": "Espinoza reached on a throwing error by c, SAC, bunt, scored (1-0 B); Horn scored.",
+     "us": 2,
+     "them": 3
+    },
+    {
+     "inn": 6,
+     "ku": false,
+     "text": "Martinez flied out to lf, SF, RBI (2-2 BBFF); Rossi scored, unearned.",
+     "us": 2,
+     "them": 4
+    }
+   ],
    "site": "N",
    "startTime": "2 p.m. CT"
   },
@@ -2927,7 +3503,8 @@
      "cs": 0,
      "sf": 0,
      "sh": 0,
-     "go": 1
+     "go": 1,
+     "po": 2
     },
     {
      "player": "Madi Hays",
@@ -3014,7 +3591,9 @@
      "cs": 0,
      "sf": 0,
      "sh": 0,
-     "ao": 1
+     "ao": 1,
+     "po": 3,
+     "e": 1
     },
     {
      "player": "Ava Wallace",
@@ -3036,7 +3615,9 @@
      "cs": 0,
      "sf": 0,
      "sh": 0,
-     "ao": 1
+     "ao": 1,
+     "po": 5,
+     "e": 1
     },
     {
      "player": "Anna Soles",
@@ -3059,6 +3640,8 @@
      "sf": 0,
      "sh": 0,
      "ao": 1,
+     "a": 2,
+     "sba": 3,
      "p": 1,
      "outs": 9,
      "ha": 3,
@@ -3095,7 +3678,9 @@
      "cs": 0,
      "sf": 1,
      "sh": 0,
-     "ao": 1
+     "ao": 1,
+     "po": 1,
+     "a": 2
     },
     {
      "player": "Hailey Cripe",
@@ -3138,7 +3723,8 @@
      "cs": 0,
      "sf": 0,
      "sh": 0,
-     "ao": 1
+     "ao": 1,
+     "e": 1
     },
     {
      "player": "Bailey Amezcua",
@@ -3160,7 +3746,8 @@
      "cs": 0,
      "sf": 0,
      "sh": 0,
-     "ao": 1
+     "ao": 1,
+     "po": 6
     },
     {
      "player": "Ella Boyer",
@@ -3181,7 +3768,10 @@
      "sb": 0,
      "cs": 0,
      "sf": 0,
-     "sh": 0
+     "sh": 0,
+     "po": 3,
+     "e": 1,
+     "sba": 3
     },
     {
      "player": "Kadence Stafford",
@@ -3203,7 +3793,9 @@
      "cs": 0,
      "sf": 0,
      "sh": 0,
-     "ao": 2
+     "ao": 2,
+     "po": 1,
+     "a": 3
     },
     {
      "player": "Tehya Pitts",
@@ -3290,6 +3882,78 @@
    "venue": "Tampa, Fla.",
    "attendance": 709,
    "boxScoreUrl": "https://kuathletics.com/sports/softball/stats/2026/indiana-state/boxscore/20432",
+   "scoring": [
+    {
+     "inn": 1,
+     "ku": false,
+     "text": "Hannah Welch flied out to cf, SF, RBI (2-1 BBF); Claire Conne advanced to second; Madison Poul advanced to third; Morgan Goodr scored, unearned.",
+     "us": 0,
+     "them": 1
+    },
+    {
+     "inn": 1,
+     "ku": true,
+     "text": "Linduff singled up the middle, advanced to second on the throw, RBI (2-2 FKBFBFF); Limbaugh scored.",
+     "us": 1,
+     "them": 1
+    },
+    {
+     "inn": 1,
+     "ku": true,
+     "text": "Bagshaw singled through the left side, RBI (2-2 KBFB); Linduff scored.",
+     "us": 2,
+     "them": 1
+    },
+    {
+     "inn": 1,
+     "ku": true,
+     "text": "Flanagan flied out to cf, SF, RBI (2-2 SBFB); Bagshaw scored.",
+     "us": 3,
+     "them": 1
+    },
+    {
+     "inn": 2,
+     "ku": true,
+     "text": "Linduff homered to center field, 3 RBI (1-1 BF); Limbaugh scored; Pitts scored.",
+     "us": 6,
+     "them": 1
+    },
+    {
+     "inn": 2,
+     "ku": true,
+     "text": "Flanagan homered to left center, 3 RBI (1-1 BF); Soles scored; Bagshaw scored.",
+     "us": 9,
+     "them": 1
+    },
+    {
+     "inn": 2,
+     "ku": true,
+     "text": "Stafford doubled to left center, RBI (2-2 FFBBF); Cripe scored.",
+     "us": 10,
+     "them": 1
+    },
+    {
+     "inn": 3,
+     "ku": false,
+     "text": "Claire Conne doubled to right center, RBI (0-0); Morgan Goodr scored.",
+     "us": 10,
+     "them": 2
+    },
+    {
+     "inn": 4,
+     "ku": false,
+     "text": "Lauren Marsi hit by pitch, RBI (1-2 FSFB); Ireland Rile advanced to second; Jordan Thatc advanced to third; Brailey Mill scored, unearned.",
+     "us": 10,
+     "them": 3
+    },
+    {
+     "inn": 5,
+     "ku": false,
+     "text": "Brailey Mill stole second, advanced to third on the error; Hannah Welch stole third, scored on a throwing error by c, unearned.",
+     "us": 10,
+     "them": 4
+    }
+   ],
    "site": "N",
    "startTime": "11:30 a.m. CT"
   },
@@ -3326,7 +3990,8 @@
      "sf": 0,
      "sh": 0,
      "kl": 1,
-     "ao": 1
+     "ao": 1,
+     "po": 2
     },
     {
      "player": "Aynslee Linduff",
@@ -3349,7 +4014,8 @@
      "sf": 0,
      "sh": 0,
      "go": 2,
-     "gidp": 1
+     "gidp": 1,
+     "po": 1
     },
     {
      "player": "Bailey Weber",
@@ -3392,7 +4058,10 @@
      "cs": 0,
      "sf": 0,
      "sh": 0,
-     "ao": 2
+     "ao": 2,
+     "po": 3,
+     "a": 2,
+     "e": 1
     },
     {
      "player": "Emma Tatum",
@@ -3480,7 +4149,8 @@
      "sh": 1,
      "kl": 1,
      "go": 1,
-     "ao": 1
+     "ao": 1,
+     "po": 6
     },
     {
      "player": "Hailey Cripe",
@@ -3503,7 +4173,8 @@
      "sf": 0,
      "sh": 0,
      "go": 1,
-     "gidp": 1
+     "gidp": 1,
+     "a": 2
     },
     {
      "player": "Ella Boyer",
@@ -3525,7 +4196,8 @@
      "cs": 0,
      "sf": 0,
      "sh": 0,
-     "ao": 1
+     "ao": 1,
+     "po": 6
     },
     {
      "player": "Kadence Stafford",
@@ -3547,7 +4219,8 @@
      "cs": 0,
      "sf": 0,
      "sh": 0,
-     "go": 1
+     "go": 1,
+     "a": 1
     },
     {
      "player": "Tehya Pitts",
@@ -3570,7 +4243,8 @@
      "sf": 0,
      "sh": 0,
      "kl": 1,
-     "go": 1
+     "go": 1,
+     "po": 3
     },
     {
      "player": "Chloe Barber",
@@ -3592,6 +4266,7 @@
      "cs": 0,
      "sf": 0,
      "sh": 0,
+     "a": 1,
      "p": 1,
      "outs": 15,
      "ha": 5,
@@ -3649,6 +4324,50 @@
    "venue": "Tampa, Fla.",
    "attendance": 1014,
    "boxScoreUrl": "https://kuathletics.com/sports/softball/stats/2026/south-florida/boxscore/20434",
+   "scoring": [
+    {
+     "inn": 2,
+     "ku": false,
+     "text": "A. WILKES homered to left center, RBI (0-0).",
+     "us": 0,
+     "them": 1
+    },
+    {
+     "inn": 4,
+     "ku": true,
+     "text": "Boyer singled to left field, RBI (3-2 BBFBF); Cripe advanced to third, out at home lf to 3b to c; Hays scored.",
+     "us": 1,
+     "them": 1
+    },
+    {
+     "inn": 4,
+     "ku": true,
+     "text": "Limbaugh singled to center field, 2 RBI (0-1 K); Pitts advanced to second; Stafford scored, unearned; Boyer scored, unearned.",
+     "us": 3,
+     "them": 1
+    },
+    {
+     "inn": 4,
+     "ku": false,
+     "text": "A. WILKES homered down the lf line, RBI (2-1 BKB).",
+     "us": 3,
+     "them": 2
+    },
+    {
+     "inn": 7,
+     "ku": true,
+     "text": "Tatum singled to pitcher, advanced to second on the throw, RBI (0-1 F); Weber scored.",
+     "us": 4,
+     "them": 2
+    },
+    {
+     "inn": 7,
+     "ku": true,
+     "text": "Cripe homered to left field, 3 RBI (2-1 BSB); Soles scored; Tatum scored.",
+     "us": 7,
+     "them": 2
+    }
+   ],
    "site": "A",
    "startTime": "3:35 p.m. CT"
   },
@@ -3684,7 +4403,8 @@
      "cs": 0,
      "sf": 0,
      "sh": 0,
-     "ao": 1
+     "ao": 1,
+     "po": 1
     },
     {
      "player": "Aynslee Linduff",
@@ -3768,7 +4488,9 @@
      "sb": 0,
      "cs": 0,
      "sf": 0,
-     "sh": 0
+     "sh": 0,
+     "po": 2,
+     "a": 1
     },
     {
      "player": "Hailey Cripe",
@@ -3789,7 +4511,9 @@
      "sb": 0,
      "cs": 0,
      "sf": 0,
-     "sh": 0
+     "sh": 0,
+     "po": 3,
+     "a": 2
     },
     {
      "player": "Ella Boyer",
@@ -3834,7 +4558,8 @@
      "cs": 0,
      "sf": 0,
      "sh": 0,
-     "ao": 1
+     "ao": 1,
+     "po": 1
     },
     {
      "player": "Brinley Ramirez",
@@ -3877,7 +4602,9 @@
      "cs": 0,
      "sf": 0,
      "sh": 0,
-     "ao": 3
+     "ao": 3,
+     "po": 1,
+     "a": 1
     },
     {
      "player": "Karsen Griggs",
@@ -3899,7 +4626,8 @@
      "cs": 0,
      "sf": 0,
      "sh": 0,
-     "ao": 1
+     "ao": 1,
+     "po": 1
     },
     {
      "player": "Bailey Amezcua",
@@ -3921,7 +4649,10 @@
      "cs": 0,
      "sf": 0,
      "sh": 0,
-     "ao": 1
+     "ao": 1,
+     "po": 4,
+     "a": 2,
+     "csb": 1
     },
     {
      "player": "Tehya Pitts",
@@ -3943,7 +4674,8 @@
      "cs": 0,
      "sf": 0,
      "sh": 1,
-     "go": 2
+     "go": 2,
+     "po": 1
     },
     {
      "player": "Audri Youngblood",
@@ -3965,7 +4697,8 @@
      "cs": 0,
      "sf": 0,
      "sh": 0,
-     "go": 2
+     "go": 2,
+     "po": 1
     },
     {
      "player": "Kennedy Diggs",
@@ -3987,6 +4720,7 @@
      "cs": 0,
      "sf": 0,
      "sh": 0,
+     "csb": 1,
      "p": 1,
      "outs": 15,
      "ha": 4,
@@ -4009,6 +4743,57 @@
    "venue": "Tampa, Fla.",
    "attendance": 958,
    "boxScoreUrl": "https://kuathletics.com/sports/softball/stats/2026/depaul/boxscore/20435",
+   "scoring": [
+    {
+     "inn": 1,
+     "ku": true,
+     "text": "Linduff singled down the rf line, RBI (3-1 FBBB); Limbaugh scored.",
+     "us": 1,
+     "them": 0
+    },
+    {
+     "inn": 2,
+     "ku": true,
+     "text": "Soles homered to center field, 3 RBI (1-0 B); Linduff scored; Amezcua scored.",
+     "us": 4,
+     "them": 0
+    },
+    {
+     "inn": 4,
+     "ku": true,
+     "text": "Soles tripled to center field, 2 RBI (3-2 BBKFB); Linduff scored; Limbaugh scored.",
+     "us": 6,
+     "them": 0
+    },
+    {
+     "inn": 4,
+     "ku": true,
+     "text": "Boyer homered to right field, 2 RBI (2-2 BKBF); Soles scored.",
+     "us": 8,
+     "them": 0
+    },
+    {
+     "inn": 5,
+     "ku": true,
+     "text": "Cripe walked, RBI (3-2 BFBBFB); Soles advanced to second; Weber advanced to third; Limbaugh scored, unearned.",
+     "us": 9,
+     "them": 0
+    },
+    {
+     "inn": 5,
+     "ku": true,
+     "text": "Boyer hit by pitch, RBI (0-0); Cripe advanced to second; Soles advanced to third; Weber scored.",
+     "us": 10,
+     "them": 0
+    },
+    {
+     "inn": 5,
+     "ku": true,
+     "text": "Ramirez walked, RBI (3-0 BBBB); Boyer advanced to second; Cripe advanced to third; Soles scored.",
+     "us": 11,
+     "them": 0
+    }
+   ],
    "site": "N",
    "startTime": "8 a.m. CT"
   },
@@ -4108,7 +4893,8 @@
      "cs": 0,
      "sf": 0,
      "sh": 0,
-     "go": 2
+     "go": 2,
+     "po": 5
     },
     {
      "player": "Bailey Weber",
@@ -4174,7 +4960,8 @@
      "cs": 0,
      "sf": 0,
      "sh": 0,
-     "ao": 1
+     "ao": 1,
+     "a": 2
     },
     {
      "player": "Ella Boyer",
@@ -4196,7 +4983,8 @@
      "cs": 0,
      "sf": 0,
      "sh": 0,
-     "ao": 4
+     "ao": 4,
+     "po": 9
     },
     {
      "player": "Campbell Bagshaw",
@@ -4218,7 +5006,8 @@
      "cs": 0,
      "sf": 0,
      "sh": 0,
-     "ao": 1
+     "ao": 1,
+     "e": 1
     },
     {
      "player": "Bailey Amezcua",
@@ -4283,7 +5072,9 @@
      "cs": 0,
      "sf": 0,
      "sh": 0,
-     "go": 1
+     "go": 1,
+     "po": 1,
+     "a": 1
     },
     {
      "player": "Jaeden Murphy",
@@ -4443,6 +5234,7 @@
      "cs": 0,
      "sf": 0,
      "sh": 0,
+     "a": 1,
      "p": 1,
      "outs": 3,
      "ha": 1,
@@ -4462,6 +5254,78 @@
    "venue": "Tampa, Fla.",
    "attendance": 1012,
    "boxScoreUrl": "https://kuathletics.com/sports/softball/stats/2026/yale/boxscore/20436",
+   "scoring": [
+    {
+     "inn": 1,
+     "ku": true,
+     "text": "Soles grounded out to 2b, RBI (2-2 BKBFF); Linduff advanced to third; Limbaugh scored.",
+     "us": 1,
+     "them": 0
+    },
+    {
+     "inn": 1,
+     "ku": true,
+     "text": "Cripe doubled to right center, RBI (1-2 KBF); Linduff scored.",
+     "us": 2,
+     "them": 0
+    },
+    {
+     "inn": 1,
+     "ku": true,
+     "text": "Bagshaw singled to right field, RBI (1-0 B); Cripe scored.",
+     "us": 3,
+     "them": 0
+    },
+    {
+     "inn": 2,
+     "ku": true,
+     "text": "Limbaugh doubled down the lf line, RBI (3-1 BBBK); Pitts scored.",
+     "us": 4,
+     "them": 0
+    },
+    {
+     "inn": 2,
+     "ku": true,
+     "text": "Linduff flied out to cf, SF, RBI (0-0); Limbaugh scored.",
+     "us": 5,
+     "them": 0
+    },
+    {
+     "inn": 3,
+     "ku": true,
+     "text": "Bagshaw singled to center field, advanced to second on the throw, RBI (0-0); Cripe scored.",
+     "us": 6,
+     "them": 0
+    },
+    {
+     "inn": 3,
+     "ku": true,
+     "text": "Pitts flied out to cf, SF, RBI (0-0); Stafford advanced to second; Amezcua advanced to third; Bagshaw scored, unearned.",
+     "us": 7,
+     "them": 0
+    },
+    {
+     "inn": 3,
+     "ku": true,
+     "text": "Limbaugh singled through the left side, advanced to second on the throw, 2 RBI (0-2 KF); Stafford scored, unearned; Amezcua scored, unearned.",
+     "us": 9,
+     "them": 0
+    },
+    {
+     "inn": 4,
+     "ku": true,
+     "text": "Ramirez singled to right center, 2 RBI (2-1 BBS); Wallace advanced to third; Bagshaw scored; Cripe scored.",
+     "us": 11,
+     "them": 0
+    },
+    {
+     "inn": 4,
+     "ku": true,
+     "text": "Hays singled to left field, RBI (2-2 SBBS); Ramirez advanced to second; Wallace scored.",
+     "us": 12,
+     "them": 0
+    }
+   ],
    "site": "N",
    "startTime": "10:30 a.m. CT"
   },
@@ -4478,7 +5342,7 @@
    "opponentErrors": 0,
    "lines": [
     {
-     "player": "Presley Limbaugh",
+     "player": "P. Limbaugh",
      "gs": 1,
      "spot": 1,
      "pos": "cf",
@@ -4497,10 +5361,11 @@
      "cs": 0,
      "sf": 0,
      "sh": 0,
-     "go": 2
+     "go": 2,
+     "po": 1
     },
     {
-     "player": "Aynslee Linduff",
+     "player": "A. Linduff",
      "gs": 1,
      "spot": 2,
      "pos": "rf",
@@ -4521,7 +5386,8 @@
      "sh": 0,
      "go": 1,
      "ao": 2,
-     "gidp": 1
+     "gidp": 1,
+     "po": 3
     },
     {
      "player": "Audri Youngblood",
@@ -4565,10 +5431,11 @@
      "sf": 0,
      "sh": 0,
      "go": 2,
-     "ao": 2
+     "ao": 2,
+     "po": 7
     },
     {
-     "player": "Hailey Cripe",
+     "player": "H. Cripe",
      "gs": 1,
      "spot": 4,
      "pos": "ss",
@@ -4589,7 +5456,9 @@
      "sh": 0,
      "kl": 1,
      "go": 1,
-     "ao": 1
+     "ao": 1,
+     "po": 1,
+     "a": 3
     },
     {
      "player": "Ella Boyer",
@@ -4614,7 +5483,7 @@
      "ao": 1
     },
     {
-     "player": "Campbell Bagshaw",
+     "player": "C. Bagshaw",
      "gs": 1,
      "spot": 6,
      "pos": "2b",
@@ -4634,7 +5503,9 @@
      "sf": 0,
      "sh": 0,
      "go": 1,
-     "ao": 1
+     "ao": 1,
+     "po": 1,
+     "a": 2
     },
     {
      "player": "Bailey Amezcua",
@@ -4655,7 +5526,10 @@
      "sb": 0,
      "cs": 0,
      "sf": 0,
-     "sh": 0
+     "sh": 0,
+     "po": 2,
+     "pb": 1,
+     "sba": 1
     },
     {
      "player": "Madi Hays",
@@ -4699,7 +5573,10 @@
      "sf": 0,
      "sh": 1,
      "go": 1,
-     "ao": 2
+     "ao": 2,
+     "po": 1,
+     "a": 1,
+     "e": 1
     },
     {
      "player": "Tehya Pitts",
@@ -4721,7 +5598,9 @@
      "cs": 0,
      "sf": 0,
      "sh": 0,
-     "ao": 2
+     "ao": 2,
+     "po": 4,
+     "e": 1
     },
     {
      "player": "Ava Wallace",
@@ -4764,6 +5643,7 @@
      "cs": 0,
      "sf": 0,
      "sh": 0,
+     "sba": 1,
      "p": 1,
      "outs": 6,
      "ha": 2,
@@ -4800,6 +5680,7 @@
      "cs": 0,
      "sf": 0,
      "sh": 0,
+     "a": 1,
      "p": 1,
      "outs": 12,
      "ha": 6,
@@ -4856,6 +5737,71 @@
    "venue": "Boca Raton, FL",
    "attendance": 424,
    "boxScoreUrl": "https://kuathletics.com/sports/softball/stats/2026/florida-atlantic/boxscore/20437",
+   "scoring": [
+    {
+     "inn": 1,
+     "ku": true,
+     "text": "H. Cripe singled to center field, RBI; P. Limbaugh scored.",
+     "us": 1,
+     "them": 0
+    },
+    {
+     "inn": 1,
+     "ku": true,
+     "text": "C. Bagshaw singled up the middle, RBI; E. Boyer advanced to third; H. Cripe scored.",
+     "us": 2,
+     "them": 0
+    },
+    {
+     "inn": 1,
+     "ku": false,
+     "text": "M. Inscoe singled through the left side, 2 RBI; J. Mora scored, unearned; K. Hammonds scored, unearned.",
+     "us": 2,
+     "them": 2
+    },
+    {
+     "inn": 3,
+     "ku": true,
+     "text": "E. Boyer homered to left field, RBI.",
+     "us": 3,
+     "them": 2
+    },
+    {
+     "inn": 3,
+     "ku": false,
+     "text": "M. Inscoe singled to left field, advanced to second on the throw, advanced to third on a throwing error by lf, RBI; J. Mora scored.",
+     "us": 3,
+     "them": 3
+    },
+    {
+     "inn": 4,
+     "ku": false,
+     "text": "K. Hammonds singled to shortstop, advanced to second on the throw, RBI; D. Johns scored.",
+     "us": 3,
+     "them": 4
+    },
+    {
+     "inn": 5,
+     "ku": true,
+     "text": "E. Boyer doubled to left center, RBI; A. Youngbloo scored.",
+     "us": 4,
+     "them": 4
+    },
+    {
+     "inn": 6,
+     "ku": true,
+     "text": "A. Wallace singled up the middle, advanced to second on the throw, RBI; B. Amezcua scored.",
+     "us": 5,
+     "them": 4
+    },
+    {
+     "inn": 7,
+     "ku": false,
+     "text": "D. Johns singled through the left side, 2 RBI; K. Davey advanced to second; C. Gibson scored; C. Orland scored.",
+     "us": 5,
+     "them": 6
+    }
+   ],
    "site": "A",
    "startTime": "5 p.m. CT"
   },
@@ -4872,7 +5818,7 @@
    "opponentErrors": 1,
    "lines": [
     {
-     "player": "Presley Limbaugh",
+     "player": "P. Limbaugh",
      "gs": 1,
      "spot": 1,
      "pos": "cf",
@@ -4914,10 +5860,11 @@
      "cs": 0,
      "sf": 0,
      "sh": 0,
-     "ao": 1
+     "ao": 1,
+     "po": 2
     },
     {
-     "player": "Aynslee Linduff",
+     "player": "A. Linduff",
      "gs": 1,
      "spot": 2,
      "pos": "rf",
@@ -4960,7 +5907,7 @@
      "sh": 0
     },
     {
-     "player": "Hailey Cripe",
+     "player": "H. Cripe",
      "gs": 1,
      "spot": 3,
      "pos": "ss",
@@ -4979,7 +5926,8 @@
      "cs": 0,
      "sf": 0,
      "sh": 0,
-     "go": 1
+     "go": 1,
+     "a": 3
     },
     {
      "player": "Ella Boyer",
@@ -5002,7 +5950,10 @@
      "sf": 0,
      "sh": 0,
      "go": 1,
-     "ao": 1
+     "ao": 1,
+     "po": 3,
+     "a": 2,
+     "csb": 1
     },
     {
      "player": "Anna Soles",
@@ -5023,7 +5974,8 @@
      "sb": 0,
      "cs": 0,
      "sf": 0,
-     "sh": 0
+     "sh": 0,
+     "po": 9
     },
     {
      "player": "Audri Youngblood",
@@ -5047,7 +5999,7 @@
      "sh": 0
     },
     {
-     "player": "Karsen Griggs",
+     "player": "K. Griggs",
      "gs": 0,
      "spot": 5,
      "pos": "1b",
@@ -5065,7 +6017,8 @@
      "sb": 0,
      "cs": 0,
      "sf": 0,
-     "sh": 0
+     "sh": 0,
+     "po": 1
     },
     {
      "player": "Ava Wallace",
@@ -5091,7 +6044,7 @@
      "ao": 1
     },
     {
-     "player": "Emma Tatum",
+     "player": "E. Tatum",
      "gs": 1,
      "spot": 7,
      "pos": "2b",
@@ -5111,7 +6064,9 @@
      "sf": 0,
      "sh": 0,
      "go": 1,
-     "ao": 2
+     "ao": 2,
+     "po": 1,
+     "a": 2
     },
     {
      "player": "Kadence Stafford",
@@ -5133,7 +6088,10 @@
      "cs": 0,
      "sf": 0,
      "sh": 0,
-     "go": 1
+     "go": 1,
+     "po": 1,
+     "a": 3,
+     "e": 1
     },
     {
      "player": "Tehya Pitts",
@@ -5176,10 +6134,12 @@
      "cs": 0,
      "sf": 0,
      "sh": 0,
-     "go": 1
+     "go": 1,
+     "po": 1,
+     "a": 1
     },
     {
-     "player": "Lizzy Ludwig",
+     "player": "L. Ludwig",
      "gs": 1,
      "spot": 10,
      "pos": "p",
@@ -5198,6 +6158,7 @@
      "cs": 0,
      "sf": 0,
      "sh": 0,
+     "a": 1,
      "p": 1,
      "outs": 12,
      "ha": 2,
@@ -5235,6 +6196,8 @@
      "cs": 0,
      "sf": 0,
      "sh": 0,
+     "a": 1,
+     "csb": 1,
      "p": 1,
      "outs": 6,
      "ha": 3,
@@ -5253,6 +6216,57 @@
    ],
    "venue": "Boca Raton, Florida",
    "boxScoreUrl": "https://kuathletics.com/sports/softball/stats/2026/southern-ind-/boxscore/20439",
+   "scoring": [
+    {
+     "inn": 3,
+     "ku": true,
+     "text": "A. Linduff doubled down the rf line, RBI; T. Pitts scored.",
+     "us": 1,
+     "them": 0
+    },
+    {
+     "inn": 4,
+     "ku": true,
+     "text": "K. Stafford singled to second base, RBI; E. Tatum advanced to third; A. Youngbloo scored.",
+     "us": 2,
+     "them": 0
+    },
+    {
+     "inn": 4,
+     "ku": true,
+     "text": "T. Pitts singled to shortstop, RBI; K. Stafford advanced to third; E. Tatum scored.",
+     "us": 3,
+     "them": 0
+    },
+    {
+     "inn": 4,
+     "ku": true,
+     "text": "A. Linduff singled to left field, 2 RBI; T. Pitts scored; K. Stafford scored.",
+     "us": 5,
+     "them": 0
+    },
+    {
+     "inn": 4,
+     "ku": true,
+     "text": "H. Cripe homered to left center, 2 RBI; A. Linduff scored.",
+     "us": 7,
+     "them": 0
+    },
+    {
+     "inn": 5,
+     "ku": false,
+     "text": "A. Booher singled down the lf line, RBI, out at second lf to 2b; A. Mumaw scored, unearned.",
+     "us": 7,
+     "them": 1
+    },
+    {
+     "inn": 6,
+     "ku": true,
+     "text": "E. Boyer doubled to right center, 2 RBI; H. Cripe scored; B. Ramierz scored.",
+     "us": 9,
+     "them": 1
+    }
+   ],
    "site": "N",
    "startTime": "2:45 p.m. CT"
   },
@@ -5269,7 +6283,7 @@
    "opponentErrors": 0,
    "lines": [
     {
-     "player": "Presley Limbaugh",
+     "player": "P. Limbaugh",
      "gs": 1,
      "spot": 1,
      "pos": "cf",
@@ -5292,7 +6306,7 @@
      "ao": 1
     },
     {
-     "player": "Aynslee Linduff",
+     "player": "A. Linduff",
      "gs": 1,
      "spot": 2,
      "pos": "rf",
@@ -5312,7 +6326,8 @@
      "sf": 0,
      "sh": 0,
      "go": 1,
-     "ao": 1
+     "ao": 1,
+     "po": 3
     },
     {
      "player": "Anna Soles",
@@ -5335,10 +6350,12 @@
      "sf": 0,
      "sh": 0,
      "go": 1,
-     "ao": 2
+     "ao": 2,
+     "po": 6,
+     "dp": 1
     },
     {
-     "player": "Hailey Cripe",
+     "player": "H. Cripe",
      "gs": 1,
      "spot": 4,
      "pos": "ss",
@@ -5357,7 +6374,10 @@
      "cs": 0,
      "sf": 0,
      "sh": 0,
-     "go": 2
+     "go": 2,
+     "po": 2,
+     "a": 3,
+     "dp": 1
     },
     {
      "player": "Ella Boyer",
@@ -5382,7 +6402,7 @@
      "ao": 2
     },
     {
-     "player": "Campbell Bagshaw",
+     "player": "C. Bagshaw",
      "gs": 1,
      "spot": 6,
      "pos": "2b",
@@ -5402,7 +6422,10 @@
      "sf": 0,
      "sh": 0,
      "kl": 1,
-     "ao": 1
+     "ao": 1,
+     "po": 2,
+     "a": 1,
+     "dp": 1
     },
     {
      "player": "Bailey Amezcua",
@@ -5424,7 +6447,8 @@
      "cs": 0,
      "sf": 0,
      "sh": 0,
-     "ao": 1
+     "ao": 1,
+     "po": 5
     },
     {
      "player": "Kadence Stafford",
@@ -5446,7 +6470,8 @@
      "cs": 0,
      "sf": 0,
      "sh": 0,
-     "ao": 2
+     "ao": 2,
+     "po": 1
     },
     {
      "player": "Ava Wallace",
@@ -5467,10 +6492,12 @@
      "sb": 0,
      "cs": 0,
      "sf": 0,
-     "sh": 0
+     "sh": 0,
+     "po": 1,
+     "a": 1
     },
     {
-     "player": "Emma Tatum",
+     "player": "E. Tatum",
      "gs": 1,
      "spot": 9,
      "pos": "3b",
@@ -5489,7 +6516,8 @@
      "cs": 0,
      "sf": 0,
      "sh": 0,
-     "go": 1
+     "go": 1,
+     "po": 1
     },
     {
      "player": "Blakely Barber",
@@ -5529,7 +6557,7 @@
      "oab": 19
     },
     {
-     "player": "Kennedy Diggs",
+     "player": "K. Diggs",
      "gs": 0,
      "spot": 10,
      "pos": "p",
@@ -5548,6 +6576,7 @@
      "cs": 0,
      "sf": 0,
      "sh": 0,
+     "a": 1,
      "p": 1,
      "outs": 6,
      "ha": 0,
@@ -5567,6 +6596,50 @@
    ],
    "venue": "Boca Raton, FL",
    "boxScoreUrl": "https://kuathletics.com/sports/softball/stats/2026/villanova/boxscore/20438",
+   "scoring": [
+    {
+     "inn": 1,
+     "ku": true,
+     "text": "A. Linduff homered to center field, RBI.",
+     "us": 1,
+     "them": 0
+    },
+    {
+     "inn": 3,
+     "ku": false,
+     "text": "M. Runco homered to center field, RBI.",
+     "us": 1,
+     "them": 1
+    },
+    {
+     "inn": 4,
+     "ku": true,
+     "text": "H. Cripe homered to left field, RBI.",
+     "us": 2,
+     "them": 1
+    },
+    {
+     "inn": 5,
+     "ku": true,
+     "text": "A. Linduff doubled down the rf line, 2 RBI; P. Limbaugh scored; E. Tatum scored.",
+     "us": 4,
+     "them": 1
+    },
+    {
+     "inn": 5,
+     "ku": true,
+     "text": "H. Cripe singled to center field, RBI; A. Soles advanced to second; A. Linduff scored.",
+     "us": 5,
+     "them": 1
+    },
+    {
+     "inn": 5,
+     "ku": true,
+     "text": "E. Boyer homered to left field, 3 RBI; H. Cripe scored; A. Soles scored.",
+     "us": 8,
+     "them": 1
+    }
+   ],
    "site": "N",
    "startTime": "10:15 a.m. CT"
   },
@@ -5583,7 +6656,7 @@
    "opponentErrors": 0,
    "lines": [
     {
-     "player": "Presley Limbaugh",
+     "player": "P. Limbaugh",
      "gs": 1,
      "spot": 1,
      "pos": "cf",
@@ -5603,10 +6676,11 @@
      "sf": 0,
      "sh": 0,
      "kl": 1,
-     "go": 1
+     "go": 1,
+     "po": 1
     },
     {
-     "player": "Aynslee Linduff",
+     "player": "A. Linduff",
      "gs": 1,
      "spot": 2,
      "pos": "rf",
@@ -5628,7 +6702,7 @@
      "go": 2
     },
     {
-     "player": "Hailey Cripe",
+     "player": "H. Cripe",
      "gs": 1,
      "spot": 3,
      "pos": "ss",
@@ -5648,7 +6722,9 @@
      "sf": 0,
      "sh": 0,
      "go": 1,
-     "ao": 1
+     "ao": 1,
+     "a": 1,
+     "e": 1
     },
     {
      "player": "Ella Boyer",
@@ -5671,7 +6747,10 @@
      "sf": 0,
      "sh": 0,
      "go": 1,
-     "ao": 1
+     "ao": 1,
+     "po": 6,
+     "pb": 1,
+     "sba": 3
     },
     {
      "player": "Anna Soles",
@@ -5693,7 +6772,9 @@
      "cs": 0,
      "sf": 0,
      "sh": 0,
-     "go": 1
+     "go": 1,
+     "po": 4,
+     "e": 1
     },
     {
      "player": "Ava Wallace",
@@ -5719,7 +6800,7 @@
      "go": 1
     },
     {
-     "player": "Campbell Bagshaw",
+     "player": "C. Bagshaw",
      "gs": 1,
      "spot": 7,
      "pos": "2b",
@@ -5738,10 +6819,11 @@
      "cs": 0,
      "sf": 0,
      "sh": 0,
-     "ao": 2
+     "ao": 2,
+     "e": 1
     },
     {
-     "player": "Emma Tatum",
+     "player": "E. Tatum",
      "gs": 1,
      "spot": 8,
      "pos": "3b",
@@ -5760,7 +6842,8 @@
      "cs": 0,
      "sf": 0,
      "sh": 0,
-     "go": 1
+     "go": 1,
+     "a": 2
     },
     {
      "player": "Tehya Pitts",
@@ -5782,7 +6865,8 @@
      "cs": 0,
      "sf": 0,
      "sh": 0,
-     "go": 1
+     "go": 1,
+     "po": 1
     },
     {
      "player": "Chloe Barber",
@@ -5821,7 +6905,7 @@
      "oab": 9
     },
     {
-     "player": "Kennedy Diggs",
+     "player": "K. Diggs",
      "gs": 0,
      "spot": 10,
      "pos": "p",
@@ -5840,6 +6924,7 @@
      "cs": 0,
      "sf": 0,
      "sh": 0,
+     "sba": 3,
      "p": 1,
      "outs": 7,
      "ha": 3,
@@ -5859,6 +6944,43 @@
    ],
    "venue": "Boca Raton, FL",
    "boxScoreUrl": "https://kuathletics.com/sports/softball/stats/2026/massachusetts/boxscore/20440",
+   "scoring": [
+    {
+     "inn": 2,
+     "ku": false,
+     "text": "R. Keefe singled to center field, RBI; E. Raposo advanced to second; T. Walsh advanced to third; L. Woodworth scored.",
+     "us": 0,
+     "them": 1
+    },
+    {
+     "inn": 2,
+     "ku": false,
+     "text": "B. Musch doubled to left field, 3 RBI; R. Keefe scored; E. Raposo scored; T. Walsh scored.",
+     "us": 0,
+     "them": 4
+    },
+    {
+     "inn": 2,
+     "ku": false,
+     "text": "B. Musch scored on a wild pitch.",
+     "us": 0,
+     "them": 5
+    },
+    {
+     "inn": 3,
+     "ku": false,
+     "text": "O. Packard reached first on an error by 2b, 2 RBI; L. Woodworth scored, unearned; R. Kairer scored, unearned.",
+     "us": 0,
+     "them": 7
+    },
+    {
+     "inn": 4,
+     "ku": false,
+     "text": "R. Kairer singled to right field, RBI; O. Torres scored, unearned.",
+     "us": 0,
+     "them": 8
+    }
+   ],
    "site": "N",
    "startTime": "8 a.m. CT"
   },
@@ -5875,7 +6997,7 @@
    "opponentErrors": 2,
    "lines": [
     {
-     "player": "Presley Limbaugh",
+     "player": "P. Limbaugh",
      "gs": 1,
      "spot": 1,
      "pos": "cf",
@@ -5895,10 +7017,11 @@
      "sf": 0,
      "sh": 0,
      "go": 1,
-     "ao": 1
+     "ao": 1,
+     "po": 1
     },
     {
-     "player": "Aynslee Linduff",
+     "player": "A. Linduff",
      "gs": 1,
      "spot": 2,
      "pos": "rf",
@@ -5918,10 +7041,11 @@
      "sf": 1,
      "sh": 0,
      "go": 1,
-     "ao": 2
+     "ao": 2,
+     "po": 1
     },
     {
-     "player": "Hailey Cripe",
+     "player": "H. Cripe",
      "gs": 1,
      "spot": 3,
      "pos": "ss",
@@ -5962,7 +7086,8 @@
      "cs": 0,
      "sf": 0,
      "sh": 0,
-     "ao": 2
+     "ao": 2,
+     "po": 8
     },
     {
      "player": "Ava Wallace",
@@ -6008,7 +7133,7 @@
      "sh": 0
     },
     {
-     "player": "Emma Tatum",
+     "player": "E. Tatum",
      "gs": 1,
      "spot": 6,
      "pos": "2b",
@@ -6027,7 +7152,8 @@
      "cs": 0,
      "sf": 0,
      "sh": 0,
-     "ao": 1
+     "ao": 1,
+     "a": 2
     },
     {
      "player": "Bailey Amezcua",
@@ -6050,7 +7176,8 @@
      "sf": 0,
      "sh": 0,
      "go": 1,
-     "ao": 1
+     "ao": 1,
+     "po": 7
     },
     {
      "player": "Kadence Stafford",
@@ -6072,7 +7199,8 @@
      "cs": 0,
      "sf": 0,
      "sh": 0,
-     "ao": 1
+     "ao": 1,
+     "a": 4
     },
     {
      "player": "Tehya Pitts",
@@ -6095,7 +7223,8 @@
      "sf": 0,
      "sh": 0,
      "go": 1,
-     "ao": 2
+     "ao": 2,
+     "po": 4
     },
     {
      "player": "Kaelee Washington",
@@ -6117,6 +7246,7 @@
      "cs": 0,
      "sf": 0,
      "sh": 0,
+     "a": 2,
      "p": 1,
      "outs": 21,
      "ha": 3,
@@ -6139,6 +7269,36 @@
    ],
    "venue": "Boca Raton, FL",
    "boxScoreUrl": "https://kuathletics.com/sports/softball/stats/2026/villanova/boxscore/20441",
+   "scoring": [
+    {
+     "inn": 2,
+     "ku": false,
+     "text": "E. Gray singled to right field, RBI; J. Morra scored.",
+     "us": 0,
+     "them": 1
+    },
+    {
+     "inn": 2,
+     "ku": true,
+     "text": "E. Tatum tripled to right center, RBI; A. Wallace scored.",
+     "us": 1,
+     "them": 1
+    },
+    {
+     "inn": 5,
+     "ku": true,
+     "text": "H. Cripe doubled to left field, RBI; P. Limbaugh scored.",
+     "us": 2,
+     "them": 1
+    },
+    {
+     "inn": 6,
+     "ku": true,
+     "text": "K. Stafford homered, 2 RBI; B. Amezcua scored, unearned.",
+     "us": 4,
+     "them": 1
+    }
+   ],
    "site": "N",
    "startTime": "10:15 a.m. CT"
   },
@@ -6174,7 +7334,8 @@
      "cs": 0,
      "sf": 0,
      "sh": 0,
-     "ao": 1
+     "ao": 1,
+     "po": 1
     },
     {
      "player": "Aynslee Linduff",
@@ -6196,7 +7357,8 @@
      "cs": 0,
      "sf": 0,
      "sh": 1,
-     "go": 1
+     "go": 1,
+     "po": 2
     },
     {
      "player": "Anna Soles",
@@ -6217,7 +7379,10 @@
      "sb": 0,
      "cs": 0,
      "sf": 0,
-     "sh": 0
+     "sh": 0,
+     "po": 6,
+     "a": 1,
+     "dp": 2
     },
     {
      "player": "Ella Boyer",
@@ -6239,7 +7404,10 @@
      "cs": 0,
      "sf": 0,
      "sh": 0,
-     "go": 1
+     "go": 1,
+     "po": 5,
+     "a": 2,
+     "dp": 1
     },
     {
      "player": "Brinley Ramirez",
@@ -6284,7 +7452,9 @@
      "sh": 0,
      "go": 2,
      "ao": 1,
-     "gidp": 1
+     "gidp": 1,
+     "po": 2,
+     "a": 1
     },
     {
      "player": "Ava Wallace",
@@ -6350,7 +7520,9 @@
      "sf": 0,
      "sh": 0,
      "go": 1,
-     "ao": 1
+     "ao": 1,
+     "po": 2,
+     "a": 1
     },
     {
      "player": "Emma Tatum",
@@ -6371,7 +7543,10 @@
      "sb": 1,
      "cs": 0,
      "sf": 0,
-     "sh": 0
+     "sh": 0,
+     "po": 2,
+     "a": 2,
+     "dp": 1
     },
     {
      "player": "Tehya Pitts",
@@ -6393,7 +7568,8 @@
      "cs": 0,
      "sf": 0,
      "sh": 0,
-     "ao": 2
+     "ao": 2,
+     "po": 1
     },
     {
      "player": "Blakely Barber",
@@ -6470,6 +7646,29 @@
    ],
    "venue": "Fayetteville, Ark.",
    "boxScoreUrl": "https://kuathletics.com/sports/softball/stats/2026/boise-state/boxscore/20444",
+   "scoring": [
+    {
+     "inn": 3,
+     "ku": false,
+     "text": "SOUTHERLAND doubled to left center, RBI (1-1 KB); FLINDT, M advanced to third; PENBERTHY, K scored.",
+     "us": 0,
+     "them": 1
+    },
+    {
+     "inn": 4,
+     "ku": true,
+     "text": "Stafford homered to right center, 2 RBI (3-1 BBBK); Hays scored.",
+     "us": 2,
+     "them": 1
+    },
+    {
+     "inn": 5,
+     "ku": true,
+     "text": "Soles homered to right field, 2 RBI (0-1 K); Limbaugh scored.",
+     "us": 4,
+     "them": 1
+    }
+   ],
    "site": "N",
    "startTime": "12:15 p.m. CT"
   },
@@ -6505,7 +7704,8 @@
      "cs": 0,
      "sf": 0,
      "sh": 0,
-     "go": 1
+     "go": 1,
+     "po": 2
     },
     {
      "player": "Aynslee Linduff",
@@ -6527,7 +7727,8 @@
      "cs": 0,
      "sf": 0,
      "sh": 0,
-     "ao": 2
+     "ao": 2,
+     "po": 1
     },
     {
      "player": "Bailey Weber",
@@ -6570,7 +7771,8 @@
      "cs": 0,
      "sf": 0,
      "sh": 0,
-     "go": 1
+     "go": 1,
+     "po": 1
     },
     {
      "player": "Anna Soles",
@@ -6592,7 +7794,8 @@
      "cs": 0,
      "sf": 0,
      "sh": 0,
-     "go": 1
+     "go": 1,
+     "po": 5
     },
     {
      "player": "Ella Boyer",
@@ -6659,7 +7862,9 @@
      "cs": 0,
      "sf": 0,
      "sh": 0,
-     "ao": 1
+     "ao": 1,
+     "po": 8,
+     "a": 1
     },
     {
      "player": "Ava Wallace",
@@ -6723,7 +7928,10 @@
      "cs": 0,
      "sf": 0,
      "sh": 0,
-     "ao": 1
+     "ao": 1,
+     "po": 2,
+     "a": 2,
+     "dp": 1
     },
     {
      "player": "Tehya Pitts",
@@ -6746,7 +7954,8 @@
      "sf": 0,
      "sh": 0,
      "go": 1,
-     "ao": 1
+     "ao": 1,
+     "po": 2
     },
     {
      "player": "Kaelee Washington",
@@ -6768,6 +7977,7 @@
      "cs": 0,
      "sf": 0,
      "sh": 0,
+     "a": 1,
      "p": 1,
      "outs": 15,
      "ha": 7,
@@ -6826,6 +8036,57 @@
    ],
    "venue": "Fayetteville, Ark.",
    "boxScoreUrl": "https://kuathletics.com/sports/softball/stats/2026/omaha/boxscore/20442",
+   "scoring": [
+    {
+     "inn": 1,
+     "ku": false,
+     "text": "K. Johnson doubled to center field, RBI (0-1 K); B. Sample scored.",
+     "us": 0,
+     "them": 1
+    },
+    {
+     "inn": 1,
+     "ku": true,
+     "text": "Soles doubled to right center, 2 RBI (3-1 BBFB); Cripe scored; Limbaugh scored.",
+     "us": 2,
+     "them": 1
+    },
+    {
+     "inn": 3,
+     "ku": false,
+     "text": "B. Sample homered to left center, 2 RBI (2-2 BFBSF); R. Groff scored.",
+     "us": 2,
+     "them": 3
+    },
+    {
+     "inn": 4,
+     "ku": true,
+     "text": "Stafford singled through the left side, RBI (0-0); Amezcua scored, unearned.",
+     "us": 3,
+     "them": 3
+    },
+    {
+     "inn": 4,
+     "ku": true,
+     "text": "Cripe singled down the rf line, RBI (0-0); Limbaugh advanced to second; Pitts advanced to third; Stafford scored.",
+     "us": 4,
+     "them": 3
+    },
+    {
+     "inn": 4,
+     "ku": true,
+     "text": "Boyer singled to second base, 2 RBI (1-0 B); Cripe advanced to third; Limbaugh scored, unearned; Pitts scored, unearned.",
+     "us": 6,
+     "them": 3
+    },
+    {
+     "inn": 6,
+     "ku": false,
+     "text": "A. Edwards doubled to center field, 2 RBI (2-2 BKSFBFFF); A. Rongisch advanced to third; S. Schmidt scored; M. Cramer scored.",
+     "us": 6,
+     "them": 5
+    }
+   ],
    "site": "N",
    "startTime": "10 a.m. CT"
   },
@@ -6861,7 +8122,8 @@
      "cs": 0,
      "sf": 0,
      "sh": 0,
-     "go": 2
+     "go": 2,
+     "po": 3
     },
     {
      "player": "Madi Hays",
@@ -6905,7 +8167,8 @@
      "sf": 0,
      "sh": 0,
      "go": 1,
-     "ao": 1
+     "ao": 1,
+     "po": 1
     },
     {
      "player": "Audri Youngblood",
@@ -6927,7 +8190,8 @@
      "cs": 0,
      "sf": 0,
      "sh": 0,
-     "go": 1
+     "go": 1,
+     "po": 1
     },
     {
      "player": "Anna Soles",
@@ -6950,7 +8214,8 @@
      "sf": 0,
      "sh": 0,
      "go": 1,
-     "ao": 1
+     "ao": 1,
+     "po": 2
     },
     {
      "player": "Ella Boyer",
@@ -7013,7 +8278,9 @@
      "sb": 0,
      "cs": 0,
      "sf": 0,
-     "sh": 0
+     "sh": 0,
+     "po": 3,
+     "a": 1
     },
     {
      "player": "Campbell Bagshaw",
@@ -7036,7 +8303,8 @@
      "sf": 0,
      "sh": 0,
      "go": 1,
-     "ao": 1
+     "ao": 1,
+     "po": 1
     },
     {
      "player": "Kadence Stafford",
@@ -7058,7 +8326,9 @@
      "cs": 0,
      "sf": 0,
      "sh": 0,
-     "ao": 1
+     "ao": 1,
+     "po": 2,
+     "a": 1
     },
     {
      "player": "Bailey Amezcua",
@@ -7080,7 +8350,9 @@
      "cs": 0,
      "sf": 0,
      "sh": 0,
-     "go": 1
+     "go": 1,
+     "po": 1,
+     "sba": 1
     },
     {
      "player": "Karsen Griggs",
@@ -7167,6 +8439,8 @@
      "cs": 0,
      "sf": 0,
      "sh": 0,
+     "po": 1,
+     "sba": 1,
      "p": 1,
      "outs": 15,
      "ha": 2,
@@ -7187,6 +8461,50 @@
    ],
    "venue": "Fayetteville, Ark.",
    "boxScoreUrl": "https://kuathletics.com/sports/softball/stats/2026/boise-state/boxscore/20445",
+   "scoring": [
+    {
+     "inn": 1,
+     "ku": true,
+     "text": "Boyer homered to center field, 2 RBI (1-1 BK); Linduff scored.",
+     "us": 2,
+     "them": 0
+    },
+    {
+     "inn": 2,
+     "ku": true,
+     "text": "Amezcua singled up the middle, advanced to second on the throw, RBI (2-2 BBKF); Stafford scored.",
+     "us": 3,
+     "them": 0
+    },
+    {
+     "inn": 3,
+     "ku": true,
+     "text": "Bagshaw homered to center field, 4 RBI (0-0); Cripe scored; Ramirez scored; Soles scored.",
+     "us": 7,
+     "them": 0
+    },
+    {
+     "inn": 3,
+     "ku": true,
+     "text": "Limbaugh stole second; Pitts stole home, unearned.",
+     "us": 8,
+     "them": 0
+    },
+    {
+     "inn": 4,
+     "ku": true,
+     "text": "Cripe tripled down the rf line, scored on a throwing error by 2b, RBI (0-0); Boyer scored.",
+     "us": 10,
+     "them": 0
+    },
+    {
+     "inn": 5,
+     "ku": false,
+     "text": "VIEIRA, K homered to left center, RBI (0-2 KF).",
+     "us": 10,
+     "them": 1
+    }
+   ],
    "site": "N",
    "startTime": "12:15 p.m. CT"
   },
@@ -7222,7 +8540,8 @@
      "cs": 0,
      "sf": 0,
      "sh": 0,
-     "go": 1
+     "go": 1,
+     "po": 1
     },
     {
      "player": "Aynslee Linduff",
@@ -7289,7 +8608,9 @@
      "sf": 1,
      "sh": 0,
      "go": 1,
-     "ao": 1
+     "ao": 1,
+     "po": 5,
+     "a": 1
     },
     {
      "player": "Ella Boyer",
@@ -7311,7 +8632,8 @@
      "cs": 0,
      "sf": 0,
      "sh": 0,
-     "go": 1
+     "go": 1,
+     "po": 7
     },
     {
      "player": "Audri Youngblood",
@@ -7355,7 +8677,9 @@
      "sf": 0,
      "sh": 0,
      "kl": 1,
-     "ao": 1
+     "ao": 1,
+     "po": 1,
+     "a": 1
     },
     {
      "player": "Kadence Stafford",
@@ -7377,7 +8701,9 @@
      "cs": 0,
      "sf": 0,
      "sh": 0,
-     "go": 1
+     "go": 1,
+     "po": 1,
+     "a": 1
     },
     {
      "player": "Campbell Bagshaw",
@@ -7399,7 +8725,9 @@
      "cs": 0,
      "sf": 0,
      "sh": 0,
-     "go": 1
+     "go": 1,
+     "po": 2,
+     "a": 2
     },
     {
      "player": "Ava Wallace",
@@ -7463,7 +8791,8 @@
      "cs": 0,
      "sf": 0,
      "sh": 0,
-     "go": 1
+     "go": 1,
+     "po": 1
     },
     {
      "player": "Emma Tatum",
@@ -7542,6 +8871,7 @@
      "cs": 0,
      "sf": 0,
      "sh": 0,
+     "a": 1,
      "p": 1,
      "outs": 9,
      "ha": 3,
@@ -7598,6 +8928,106 @@
    "venue": "Fayetteville, Ark.",
    "attendance": 347,
    "boxScoreUrl": "https://kuathletics.com/sports/softball/stats/2026/charlotte/boxscore/20443",
+   "scoring": [
+    {
+     "inn": 1,
+     "ku": false,
+     "text": "Ritchie homered to left center, 4 RBI (1-0 B); Lord scored; Keller scored; Williams scored.",
+     "us": 0,
+     "them": 4
+    },
+    {
+     "inn": 2,
+     "ku": true,
+     "text": "Bagshaw singled through the left side, RBI (0-1 F); Stafford advanced to third; Cripe scored.",
+     "us": 1,
+     "them": 4
+    },
+    {
+     "inn": 2,
+     "ku": true,
+     "text": "Wallace singled up the middle, RBI (1-0 B); Bagshaw advanced to second; Stafford scored.",
+     "us": 2,
+     "them": 4
+    },
+    {
+     "inn": 2,
+     "ku": true,
+     "text": "Limbaugh grounded out to 2b, RBI (1-2 KFB); Wallace advanced to third; Bagshaw scored.",
+     "us": 3,
+     "them": 4
+    },
+    {
+     "inn": 2,
+     "ku": true,
+     "text": "Linduff advanced to second; Wallace scored on a wild pitch.",
+     "us": 4,
+     "them": 4
+    },
+    {
+     "inn": 2,
+     "ku": true,
+     "text": "Soles homered to center field, 2 RBI (3-2 BKFBBF); Linduff scored.",
+     "us": 6,
+     "them": 4
+    },
+    {
+     "inn": 3,
+     "ku": true,
+     "text": "Wallace singled up the middle, RBI (2-2 FFBFB); Stafford scored.",
+     "us": 7,
+     "them": 4
+    },
+    {
+     "inn": 4,
+     "ku": true,
+     "text": "Wallace walked, RBI (3-1 FBBBB); Bagshaw advanced to second; Stafford advanced to third; Cripe scored.",
+     "us": 8,
+     "them": 4
+    },
+    {
+     "inn": 5,
+     "ku": true,
+     "text": "Soles doubled down the lf line, RBI (1-1 BS); Limbaugh scored.",
+     "us": 9,
+     "them": 4
+    },
+    {
+     "inn": 5,
+     "ku": true,
+     "text": "Boyer doubled down the lf line, RBI (1-1 KB); Soles scored.",
+     "us": 10,
+     "them": 4
+    },
+    {
+     "inn": 5,
+     "ku": true,
+     "text": "Cripe out at first c to ss to 1b, caught stealing; Boyer scored.",
+     "us": 11,
+     "them": 4
+    },
+    {
+     "inn": 6,
+     "ku": true,
+     "text": "Bagshaw homered to right center, RBI (1-1 FB).",
+     "us": 12,
+     "them": 4
+    },
+    {
+     "inn": 6,
+     "ku": true,
+     "text": "Soles lined out to lf, SF, RBI (1-1 KB); Weber advanced to second; Limbaugh advanced to third on the throw; Tatum scored.",
+     "us": 13,
+     "them": 4
+    },
+    {
+     "inn": 6,
+     "ku": true,
+     "text": "Boyer singled up the middle, 2 RBI (1-2 KBF); Weber scored; Limbaugh scored.",
+     "us": 15,
+     "them": 4
+    }
+   ],
    "site": "N",
    "startTime": "7 p.m. CT"
   },
@@ -7634,7 +9064,8 @@
      "sf": 0,
      "sh": 0,
      "go": 1,
-     "ao": 1
+     "ao": 1,
+     "po": 1
     },
     {
      "player": "Aynslee Linduff",
@@ -7657,7 +9088,8 @@
      "sf": 0,
      "sh": 0,
      "kl": 1,
-     "go": 1
+     "go": 1,
+     "po": 1
     },
     {
      "player": "Anna Soles",
@@ -7680,7 +9112,8 @@
      "sf": 0,
      "sh": 0,
      "go": 1,
-     "ao": 1
+     "ao": 1,
+     "po": 3
     },
     {
      "player": "Ella Boyer",
@@ -7702,7 +9135,8 @@
      "cs": 0,
      "sf": 0,
      "sh": 0,
-     "ao": 1
+     "ao": 1,
+     "a": 1
     },
     {
      "player": "Brinley Ramirez",
@@ -7744,7 +9178,10 @@
      "sb": 0,
      "cs": 0,
      "sf": 0,
-     "sh": 0
+     "sh": 0,
+     "po": 2,
+     "a": 3,
+     "dp": 1
     },
     {
      "player": "Kadence Stafford",
@@ -7765,7 +9202,8 @@
      "sb": 0,
      "cs": 0,
      "sf": 0,
-     "sh": 0
+     "sh": 0,
+     "po": 1
     },
     {
      "player": "Campbell Bagshaw",
@@ -7787,7 +9225,10 @@
      "cs": 0,
      "sf": 0,
      "sh": 0,
-     "ao": 1
+     "ao": 1,
+     "po": 1,
+     "a": 1,
+     "dp": 1
     },
     {
      "player": "Ava Wallace",
@@ -7851,7 +9292,8 @@
      "cs": 0,
      "sf": 0,
      "sh": 0,
-     "go": 1
+     "go": 1,
+     "po": 4
     },
     {
      "player": "Lila Partridge",
@@ -7963,6 +9405,78 @@
    "venue": "Fayetteville, Ark.",
    "attendance": 2405,
    "boxScoreUrl": "https://kuathletics.com/sports/softball/stats/2026/arkansas/boxscore/20446",
+   "scoring": [
+    {
+     "inn": 1,
+     "ku": false,
+     "text": "Kennedy homered to center field, RBI (2-2 KSBB).",
+     "us": 0,
+     "them": 1
+    },
+    {
+     "inn": 1,
+     "ku": false,
+     "text": "Wyckoff singled down the rf line, RBI (1-0 B); Bain advanced to third; McDowell scored.",
+     "us": 0,
+     "them": 2
+    },
+    {
+     "inn": 1,
+     "ku": false,
+     "text": "Davison homered to left field, 3 RBI (2-2 FBKB); Wyckoff scored; Bain scored.",
+     "us": 0,
+     "them": 5
+    },
+    {
+     "inn": 2,
+     "ku": false,
+     "text": "Kennedy homered to right field, 2 RBI (1-1 KB); Johnson, Rea scored.",
+     "us": 0,
+     "them": 7
+    },
+    {
+     "inn": 3,
+     "ku": false,
+     "text": "Wyckoff out at second c to ss; Bain scored.",
+     "us": 0,
+     "them": 8
+    },
+    {
+     "inn": 4,
+     "ku": true,
+     "text": "Cripe doubled to center field, RBI (3-1 BBKB); Ramirez scored.",
+     "us": 1,
+     "them": 8
+    },
+    {
+     "inn": 4,
+     "ku": true,
+     "text": "Stafford doubled to left center, RBI (3-2 FBBFFBFF); Cripe scored.",
+     "us": 2,
+     "them": 8
+    },
+    {
+     "inn": 4,
+     "ku": true,
+     "text": "Wallace doubled to left center, RBI (3-1 BBFB); Stafford scored.",
+     "us": 3,
+     "them": 8
+    },
+    {
+     "inn": 4,
+     "ku": false,
+     "text": "Kennedy homered to left center, 2 RBI (2-0 BB); Johnson, Rea scored.",
+     "us": 3,
+     "them": 10
+    },
+    {
+     "inn": 5,
+     "ku": false,
+     "text": "Rijo doubled down the lf line, RBI (0-1 K); Del Duca scored.",
+     "us": 3,
+     "them": 11
+    }
+   ],
    "site": "A",
    "startTime": "12:15 p.m. CT"
   },
@@ -7998,7 +9512,8 @@
      "cs": 0,
      "sf": 0,
      "sh": 0,
-     "go": 1
+     "go": 1,
+     "a": 4
     },
     {
      "player": "Presley Limbaugh",
@@ -8019,7 +9534,8 @@
      "sb": 0,
      "cs": 0,
      "sf": 0,
-     "sh": 0
+     "sh": 0,
+     "po": 3
     },
     {
      "player": "Anna Soles",
@@ -8040,7 +9556,8 @@
      "sb": 0,
      "cs": 0,
      "sf": 0,
-     "sh": 0
+     "sh": 0,
+     "po": 4
     },
     {
      "player": "Ava Wallace",
@@ -8187,7 +9704,9 @@
      "sf": 0,
      "sh": 0,
      "go": 1,
-     "ao": 1
+     "ao": 1,
+     "po": 2,
+     "a": 1
     },
     {
      "player": "Campbell Bagshaw",
@@ -8208,7 +9727,8 @@
      "sb": 0,
      "cs": 0,
      "sf": 0,
-     "sh": 0
+     "sh": 0,
+     "po": 2
     },
     {
      "player": "Tehya Pitts",
@@ -8231,7 +9751,8 @@
      "sf": 0,
      "sh": 0,
      "ao": 1,
-     "gidp": 1
+     "gidp": 1,
+     "po": 2
     },
     {
      "player": "Ella Boyer",
@@ -8254,12 +9775,71 @@
      "sf": 0,
      "sh": 0,
      "go": 1,
-     "gidp": 1
+     "gidp": 1,
+     "po": 2
     }
    ],
    "venue": "Wichita, Kan.",
    "attendance": 713,
    "boxScoreUrl": "https://kuathletics.com/sports/softball/stats/2026/wichita-state/boxscore/20447",
+   "scoring": [
+    {
+     "inn": 1,
+     "ku": true,
+     "text": "Boyer,Ella homered to deep center field, 6th of season, 2RBI (1-0 B); Soles,Anna scored from first base.",
+     "us": 2,
+     "them": 0
+    },
+    {
+     "inn": 1,
+     "ku": true,
+     "text": "Cripe,Hailey homered, 6th of season, RBI (0-0).",
+     "us": 3,
+     "them": 0
+    },
+    {
+     "inn": 2,
+     "ku": true,
+     "text": "Limbaugh,Presley singled to short, RBI (1-0 B); Bagshaw,Campbell scored from second base, unearned.",
+     "us": 4,
+     "them": 0
+    },
+    {
+     "inn": 3,
+     "ku": false,
+     "text": "Moore,Ausha homered to deep center field, 5th of season, RBI (2-1 BKB).",
+     "us": 4,
+     "them": 1
+    },
+    {
+     "inn": 5,
+     "ku": true,
+     "text": "Boyer,Ella homered to deep right field, 7th of season, 2RBI (1-1 KB); Soles,Anna scored from first base.",
+     "us": 6,
+     "them": 1
+    },
+    {
+     "inn": 5,
+     "ku": true,
+     "text": "Stafford,Kadence tripled down the left field line, RBI (0-1 S); Cripe,Hailey scored from second base.",
+     "us": 7,
+     "them": 1
+    },
+    {
+     "inn": 5,
+     "ku": true,
+     "text": "Bagshaw,Campbell singled to right center, RBI (0-0); Stafford,Kadence scored.",
+     "us": 8,
+     "them": 1
+    },
+    {
+     "inn": 5,
+     "ku": true,
+     "text": "Limbaugh,Presley infield singled through the left side of the infield, RBI (1-2 BKF); Wallace,Ava scored, unearned; Tatum,Emma advanced to third base.",
+     "us": 9,
+     "them": 1
+    }
+   ],
    "site": "A",
    "startTime": "6 p.m. CT"
   },
@@ -8317,7 +9897,8 @@
      "cs": 0,
      "sf": 0,
      "sh": 0,
-     "ao": 1
+     "ao": 1,
+     "po": 2
     },
     {
      "player": "Anna Soles",
@@ -8340,7 +9921,8 @@
      "sf": 0,
      "sh": 0,
      "go": 1,
-     "ao": 1
+     "ao": 1,
+     "po": 1
     },
     {
      "player": "Ava Wallace",
@@ -8408,7 +9990,8 @@
      "sf": 0,
      "sh": 0,
      "go": 1,
-     "ao": 1
+     "ao": 1,
+     "po": 1
     },
     {
      "player": "Kadence Stafford",
@@ -8429,7 +10012,8 @@
      "sb": 1,
      "cs": 0,
      "sf": 0,
-     "sh": 0
+     "sh": 0,
+     "po": 2
     },
     {
      "player": "Campbell Bagshaw",
@@ -8451,7 +10035,8 @@
      "cs": 0,
      "sf": 0,
      "sh": 0,
-     "go": 2
+     "go": 2,
+     "po": 1
     },
     {
      "player": "Tehya Pitts",
@@ -8473,7 +10058,8 @@
      "cs": 0,
      "sf": 0,
      "sh": 0,
-     "go": 1
+     "go": 1,
+     "po": 1
     },
     {
      "player": "Chloe Barber",
@@ -8555,11 +10141,64 @@
      "sf": 0,
      "sh": 0,
      "go": 1,
-     "ao": 1
+     "ao": 1,
+     "po": 13,
+     "a": 1
     }
    ],
    "venue": "Lawrence, KS",
    "boxScoreUrl": "https://kuathletics.com/sports/softball/stats/2026/utah-state/boxscore/20448",
+   "scoring": [
+    {
+     "inn": 2,
+     "ku": true,
+     "text": "Stafford,Kadence homered to deep left field, RBI (0-0).",
+     "us": 1,
+     "them": 0
+    },
+    {
+     "inn": 3,
+     "ku": true,
+     "text": "Linduff,Aynslee homered to deep left field, RBI (1-2 KKB).",
+     "us": 2,
+     "them": 0
+    },
+    {
+     "inn": 4,
+     "ku": true,
+     "text": "Limbaugh,Presley homered to deep center field, RBI (1-2 FKFBF).",
+     "us": 3,
+     "them": 0
+    },
+    {
+     "inn": 5,
+     "ku": true,
+     "text": "Soles,Anna homered to center field, RBI (2-0 BB).",
+     "us": 4,
+     "them": 0
+    },
+    {
+     "inn": 5,
+     "ku": true,
+     "text": "Cripe,Hailey homered to deep right field, RBI (3-1 BKBB).",
+     "us": 5,
+     "them": 0
+    },
+    {
+     "inn": 5,
+     "ku": true,
+     "text": "Bagshaw,Campbell homered to deep left field, 2RBI (1-1 BK); Stafford,Kadence scored from second base.",
+     "us": 7,
+     "them": 0
+    },
+    {
+     "inn": 6,
+     "ku": false,
+     "text": "PRATT,Kya singled to left center, RBI (3-2 BFSBFBFFFF); OLSEN,Kenzee scored from second base; RAMIREZ,Jazmin advanced to second base.",
+     "us": 7,
+     "them": 1
+    }
+   ],
    "site": "H",
    "startTime": "1 p.m. CT"
   },
@@ -8595,7 +10234,8 @@
      "cs": 0,
      "sf": 0,
      "sh": 0,
-     "ao": 1
+     "ao": 1,
+     "po": 1
     },
     {
      "player": "Presley Limbaugh",
@@ -8617,7 +10257,8 @@
      "cs": 0,
      "sf": 0,
      "sh": 0,
-     "ao": 2
+     "ao": 2,
+     "po": 1
     },
     {
      "player": "Jaeden Murphy",
@@ -8660,7 +10301,8 @@
      "cs": 0,
      "sf": 0,
      "sh": 0,
-     "go": 1
+     "go": 1,
+     "po": 7
     },
     {
      "player": "Anna Soles",
@@ -8681,7 +10323,8 @@
      "sb": 0,
      "cs": 0,
      "sf": 0,
-     "sh": 0
+     "sh": 0,
+     "po": 2
     },
     {
      "player": "Ava Wallace",
@@ -8703,7 +10346,8 @@
      "cs": 0,
      "sf": 0,
      "sh": 0,
-     "ao": 1
+     "ao": 1,
+     "po": 1
     },
     {
      "player": "Emma Tatum",
@@ -8766,7 +10410,8 @@
      "sb": 0,
      "cs": 0,
      "sf": 0,
-     "sh": 0
+     "sh": 0,
+     "po": 1
     },
     {
      "player": "Kadence Stafford",
@@ -8787,7 +10432,9 @@
      "sb": 0,
      "cs": 0,
      "sf": 0,
-     "sh": 0
+     "sh": 0,
+     "po": 1,
+     "a": 1
     },
     {
      "player": "Campbell Bagshaw",
@@ -8808,7 +10455,8 @@
      "sb": 0,
      "cs": 0,
      "sf": 0,
-     "sh": 0
+     "sh": 0,
+     "po": 1
     },
     {
      "player": "Karsen Griggs",
@@ -8874,6 +10522,7 @@
      "cs": 0,
      "sf": 0,
      "sh": 0,
+     "e": 1,
      "p": 1,
      "outs": 12,
      "ha": 4,
@@ -8973,6 +10622,99 @@
    ],
    "venue": "Lawrence, KS",
    "boxScoreUrl": "https://kuathletics.com/sports/softball/stats/2026/utah-state/boxscore/20449",
+   "scoring": [
+    {
+     "inn": 1,
+     "ku": false,
+     "text": "RAMIREZ,Jazmin singled to left field, RBI (0-1 K); MATEJ,Grace scored; KROENING,Faith advanced to second base.",
+     "us": 0,
+     "them": 1
+    },
+    {
+     "inn": 1,
+     "ku": false,
+     "text": "BUNTON,Alex reached on a fielder's choice hit through the left side of the infield, RBI (0-1 K); RAMIREZ,Jazmin scored; PRATT,Kya out at second base, 3b to ss.",
+     "us": 0,
+     "them": 2
+    },
+    {
+     "inn": 1,
+     "ku": true,
+     "text": "Soles,Anna singled to left field, RBI (3-1 BBFB); Linduff,Aynslee scored.",
+     "us": 1,
+     "them": 2
+    },
+    {
+     "inn": 1,
+     "ku": true,
+     "text": "Cripe,Hailey singled to right center, RBI (2-2 KKBFFFB); Soles,Anna scored from second base; Boyer,Ella advanced from first base to third base.",
+     "us": 2,
+     "them": 2
+    },
+    {
+     "inn": 2,
+     "ku": true,
+     "text": "Linduff,Aynslee doubled to center field, RBI (1-1 BK); Limbaugh,Presley scored from first base.",
+     "us": 3,
+     "them": 2
+    },
+    {
+     "inn": 2,
+     "ku": true,
+     "text": "Boyer,Ella homered to right field, 3RBI (3-2 BBKBK); Linduff,Aynslee scored from second base; Soles,Anna scored from first base.",
+     "us": 6,
+     "them": 2
+    },
+    {
+     "inn": 2,
+     "ku": true,
+     "text": "Bagshaw,Campbell singled to center field, RBI (1-0 B); Cripe,Hailey scored from second base; Stafford,Kadence advanced from first base to third base.",
+     "us": 7,
+     "them": 2
+    },
+    {
+     "inn": 3,
+     "ku": true,
+     "text": "Boyer,Ella singled to left field, RBI (0-0); Weber,Bailey scored from second base, unearned; Soles,Anna advanced to second base.",
+     "us": 8,
+     "them": 2
+    },
+    {
+     "inn": 3,
+     "ku": true,
+     "text": "Bagshaw,Campbell singled to center field, 2RBI (0-0); Soles,Anna scored; Boyer,Ella scored from second base; Stafford,Kadence advanced from first base to third base.",
+     "us": 10,
+     "them": 2
+    },
+    {
+     "inn": 3,
+     "ku": true,
+     "text": "Wallace,Ava reached on an error by GOUSHA,Keely (E4) (0-2 KK); Stafford,Kadence scored, unearned; Bagshaw,Campbell advanced to second base.",
+     "us": 11,
+     "them": 2
+    },
+    {
+     "inn": 3,
+     "ku": true,
+     "text": "Limbaugh,Presley singled to left field, RBI (0-2 KSF); Bagshaw,Campbell scored; Wallace,Ava advanced to third base; Amezcua,Bailey advanced to second base.",
+     "us": 12,
+     "them": 2
+    },
+    {
+     "inn": 4,
+     "ku": true,
+     "text": "Tatum,Emma singled to shallow right field, 2RBI (1-0 B); Hays,Madi scored; Boyer,Ella scored from second base; Cripe,Hailey advanced from first base to third base.",
+     "us": 14,
+     "them": 2
+    },
+    {
+     "inn": 4,
+     "ku": true,
+     "text": "Amezcua,Bailey homered to deep center field, 4RBI (3-1 BBKB); Cripe,Hailey scored; Tatum,Emma scored from second base; Youngblood,Audri scored from first base.",
+     "us": 18,
+     "them": 2
+    }
+   ],
    "site": "H",
    "startTime": "3:30 p.m CT"
   },
@@ -9008,7 +10750,8 @@
      "cs": 0,
      "sf": 0,
      "sh": 0,
-     "ao": 2
+     "ao": 2,
+     "po": 3
     },
     {
      "player": "Presley Limbaugh",
@@ -9073,7 +10816,8 @@
      "sf": 0,
      "sh": 0,
      "go": 1,
-     "ao": 1
+     "ao": 1,
+     "po": 4
     },
     {
      "player": "Anna Soles",
@@ -9094,7 +10838,8 @@
      "sb": 0,
      "cs": 0,
      "sf": 0,
-     "sh": 0
+     "sh": 0,
+     "po": 3
     },
     {
      "player": "Ava Wallace",
@@ -9171,7 +10916,9 @@
      "sb": 0,
      "cs": 0,
      "sf": 0,
-     "sh": 0
+     "sh": 0,
+     "po": 1,
+     "a": 1
     },
     {
      "player": "Madi Hays",
@@ -9214,6 +10961,8 @@
      "cs": 0,
      "sf": 0,
      "sh": 0,
+     "po": 1,
+     "a": 1,
      "p": 1,
      "outs": 6,
      "ha": 0,
@@ -9272,7 +11021,8 @@
      "sf": 0,
      "sh": 0,
      "ao": 1,
-     "gidp": 1
+     "gidp": 1,
+     "a": 3
     },
     {
      "player": "Campbell Bagshaw",
@@ -9316,7 +11066,8 @@
      "sb": 0,
      "cs": 0,
      "sf": 0,
-     "sh": 0
+     "sh": 0,
+     "po": 3
     },
     {
      "player": "Bailey Weber",
@@ -9479,6 +11230,71 @@
    "venue": "Lawrence, KS",
    "attendance": 105,
    "boxScoreUrl": "https://kuathletics.com/sports/softball/stats/2026/utah-state/boxscore/20450",
+   "scoring": [
+    {
+     "inn": 1,
+     "ku": true,
+     "text": "Linduff,Aynslee doubled to left field, RBI (3-2 BBKKBF); Limbaugh,Presley scored from second base.",
+     "us": 1,
+     "them": 0
+    },
+    {
+     "inn": 1,
+     "ku": true,
+     "text": "Cripe,Hailey singled through the left side of the infield, RBI (1-1 BK); Linduff,Aynslee scored; Soles,Anna advanced to third base; Boyer,Ella advanced to second base.",
+     "us": 2,
+     "them": 0
+    },
+    {
+     "inn": 1,
+     "ku": true,
+     "text": "Stafford,Kadence doubled to left center, 2RBI (0-0); Soles,Anna scored; Boyer,Ella scored from second base; Cripe,Hailey advanced from first base to third base.",
+     "us": 4,
+     "them": 0
+    },
+    {
+     "inn": 1,
+     "ku": true,
+     "text": "Wallace,Ava homered to deep right field, 3RBI (2-1 BKB); Cripe,Hailey scored; Stafford,Kadence scored from second base.",
+     "us": 7,
+     "them": 0
+    },
+    {
+     "inn": 1,
+     "ku": true,
+     "text": "Linduff,Aynslee homered to deep right field, 2RBI (1-0 B); Limbaugh,Presley scored from first base.",
+     "us": 9,
+     "them": 0
+    },
+    {
+     "inn": 1,
+     "ku": true,
+     "text": "Boyer,Ella doubled to center field, RBI (1-1 BK); Soles,Anna scored from first base.",
+     "us": 10,
+     "them": 0
+    },
+    {
+     "inn": 3,
+     "ku": true,
+     "text": "Hays,Madi homered to deep left field, RBI (2-2 FBFBFFF).",
+     "us": 11,
+     "them": 0
+    },
+    {
+     "inn": 3,
+     "ku": true,
+     "text": "Soles,Anna homered to deep right field, 2RBI (2-2 BKFBF); Weber,Bailey scored from first base.",
+     "us": 13,
+     "them": 0
+    },
+    {
+     "inn": 4,
+     "ku": true,
+     "text": "Murphy,Jaeden doubled to right center, RBI (2-0 BB); Tatum,Emma scored from first base.",
+     "us": 14,
+     "them": 0
+    }
+   ],
    "site": "H",
    "startTime": "2 p.m. CT"
   },
@@ -9515,7 +11331,10 @@
      "sf": 0,
      "sh": 0,
      "go": 1,
-     "ao": 1
+     "ao": 1,
+     "po": 3,
+     "a": 1,
+     "dp": 1
     },
     {
      "player": "Presley Limbaugh",
@@ -9537,7 +11356,8 @@
      "cs": 0,
      "sf": 0,
      "sh": 1,
-     "go": 2
+     "go": 2,
+     "po": 2
     },
     {
      "player": "Anna Soles",
@@ -9560,7 +11380,10 @@
      "sf": 0,
      "sh": 0,
      "go": 2,
-     "ao": 2
+     "ao": 2,
+     "po": 4,
+     "e": 1,
+     "dp": 1
     },
     {
      "player": "Ava Wallace",
@@ -9605,6 +11428,7 @@
      "cs": 0,
      "sf": 0,
      "sh": 0,
+     "a": 1,
      "p": 1,
      "outs": 6,
      "ha": 4,
@@ -9683,6 +11507,7 @@
      "cs": 0,
      "sf": 0,
      "sh": 0,
+     "a": 2,
      "p": 1,
      "outs": 11,
      "ha": 8,
@@ -9721,7 +11546,8 @@
      "sf": 0,
      "sh": 0,
      "go": 2,
-     "ao": 1
+     "ao": 1,
+     "po": 1
     },
     {
      "player": "Kadence Stafford",
@@ -9743,7 +11569,9 @@
      "cs": 0,
      "sf": 0,
      "sh": 0,
-     "ao": 2
+     "ao": 2,
+     "po": 2,
+     "a": 1
     },
     {
      "player": "Campbell Bagshaw",
@@ -9765,7 +11593,10 @@
      "cs": 0,
      "sf": 0,
      "sh": 0,
-     "ao": 2
+     "ao": 2,
+     "po": 1,
+     "a": 2,
+     "dp": 1
     },
     {
      "player": "Bailey Weber",
@@ -9808,7 +11639,8 @@
      "cs": 0,
      "sf": 0,
      "sh": 1,
-     "go": 2
+     "go": 2,
+     "po": 6
     },
     {
      "player": "Lila Partridge",
@@ -9925,12 +11757,100 @@
      "sb": 0,
      "cs": 0,
      "sf": 0,
-     "sh": 0
+     "sh": 0,
+     "po": 4,
+     "pb": 1
     }
    ],
    "venue": "Houston, TX",
    "attendance": 525,
    "boxScoreUrl": "https://kuathletics.com/sports/softball/stats/2026/houston/boxscore/20454",
+   "scoring": [
+    {
+     "inn": 1,
+     "ku": true,
+     "text": "Boyer,Ella homered to deep left field, 2RBI (0-1 K); Linduff,Aynslee scored from first base.",
+     "us": 2,
+     "them": 0
+    },
+    {
+     "inn": 1,
+     "ku": false,
+     "text": "Mitchael,Madox advanced to second base on a wild pitch; Gardner,RyLee advanced to third base on a wild pitch; Mitchell,Makenna scored on a wild pitch.",
+     "us": 2,
+     "them": 1
+    },
+    {
+     "inn": 4,
+     "ku": false,
+     "text": "Hartley,Maddie singled down the right field line, RBI (1-0 B); Esman,Mandy scored from second base; Taylor,Shelby advanced from first base to third base.",
+     "us": 2,
+     "them": 2
+    },
+    {
+     "inn": 5,
+     "ku": true,
+     "text": "Limbaugh,Presley stole second base; Youngblood,Audri scored on a throwing error by Cintron,Isabel (E2).",
+     "us": 3,
+     "them": 2
+    },
+    {
+     "inn": 5,
+     "ku": false,
+     "text": "Redmond,Ariel advanced to second base on a passed ball; Esman,Mandy advanced to third base on a passed ball; Cintron,Isabel scored on a passed ball.",
+     "us": 3,
+     "them": 3
+    },
+    {
+     "inn": 5,
+     "ku": false,
+     "text": "Mitchell,Makenna singled through the left side of the infield, 2RBI (0-0); Esman,Mandy scored; Redmond,Ariel scored from second base, unearned; Hartley,Maddie advanced from first base to third base on the throw; Mitchell,Makenna advanced to second base on the throw.",
+     "us": 3,
+     "them": 5
+    },
+    {
+     "inn": 6,
+     "ku": true,
+     "text": "Stafford,Kadence homered to deep center field, 3RBI (0-2 SFF); Boyer,Ella scored; Cripe,Hailey scored from first base.",
+     "us": 6,
+     "them": 5
+    },
+    {
+     "inn": 6,
+     "ku": true,
+     "text": "Limbaugh,Presley advanced to second base on a wild pitch; Pitts,Tehya scored on a wild pitch, unearned.",
+     "us": 7,
+     "them": 5
+    },
+    {
+     "inn": 7,
+     "ku": true,
+     "text": "Cripe,Hailey homered to deep center field, 2RBI (0-0); Boyer,Ella scored from first base.",
+     "us": 9,
+     "them": 5
+    },
+    {
+     "inn": 7,
+     "ku": false,
+     "text": "Hartley,Maddie singled to left center, RBI (1-1 BF); Aguilar,Bethany scored; Redmond,Ariel advanced to second base.",
+     "us": 9,
+     "them": 6
+    },
+    {
+     "inn": 7,
+     "ku": false,
+     "text": "Mitchell,Makenna homered to deep center field, 3RBI (2-1 BKB); Redmond,Ariel scored from second base, unearned; Hartley,Maddie scored from first base, unearned.",
+     "us": 9,
+     "them": 9
+    },
+    {
+     "inn": 8,
+     "ku": false,
+     "text": "Mitchell,Makenna walked, walk off, RBI (3-0 BBBB); Cintron,Isabel scored; Redmond,Ariel advanced to third base; Hartley,Maddie advanced to second base.",
+     "us": 9,
+     "them": 10
+    }
+   ],
    "site": "A",
    "startTime": "6 p.m."
   },
@@ -9966,7 +11886,9 @@
      "cs": 0,
      "sf": 0,
      "sh": 0,
-     "ao": 2
+     "ao": 2,
+     "po": 1,
+     "a": 2
     },
     {
      "player": "Presley Limbaugh",
@@ -9987,7 +11909,8 @@
      "sb": 1,
      "cs": 1,
      "sf": 0,
-     "sh": 0
+     "sh": 0,
+     "po": 1
     },
     {
      "player": "Anna Soles",
@@ -10009,7 +11932,9 @@
      "cs": 0,
      "sf": 0,
      "sh": 0,
-     "go": 2
+     "go": 2,
+     "po": 6,
+     "a": 1
     },
     {
      "player": "Ava Wallace",
@@ -10117,7 +12042,9 @@
      "cs": 0,
      "sf": 0,
      "sh": 0,
-     "ao": 2
+     "ao": 2,
+     "po": 1,
+     "a": 1
     },
     {
      "player": "Campbell Bagshaw",
@@ -10140,7 +12067,9 @@
      "sf": 0,
      "sh": 0,
      "go": 1,
-     "ao": 1
+     "ao": 1,
+     "a": 2,
+     "e": 1
     },
     {
      "player": "Karsen Griggs",
@@ -10203,7 +12132,8 @@
      "sb": 0,
      "cs": 0,
      "sf": 0,
-     "sh": 0
+     "sh": 0,
+     "po": 1
     },
     {
      "player": "Tehya Pitts",
@@ -10224,7 +12154,8 @@
      "sb": 0,
      "cs": 0,
      "sf": 0,
-     "sh": 0
+     "sh": 0,
+     "po": 1
     },
     {
      "player": "Blakely Barber",
@@ -10246,6 +12177,7 @@
      "cs": 0,
      "sf": 0,
      "sh": 0,
+     "po": 1,
      "p": 1,
      "outs": 15,
      "ha": 3,
@@ -10283,12 +12215,79 @@
      "cs": 0,
      "sf": 0,
      "sh": 0,
-     "ao": 1
+     "ao": 1,
+     "po": 3,
+     "pb": 1
     }
    ],
    "venue": "Houston, TX",
    "attendance": 480,
    "boxScoreUrl": "https://kuathletics.com/sports/softball/stats/2026/houston/boxscore/20455",
+   "scoring": [
+    {
+     "inn": 2,
+     "ku": false,
+     "text": "Aguilar,Bethany grounded out to first base, 1b to p, RBI (2-2 BBFF); Cintron,Isabel scored.",
+     "us": 0,
+     "them": 1
+    },
+    {
+     "inn": 3,
+     "ku": true,
+     "text": "Boyer,Ella homered to deep center field, 3RBI (2-0 BB); Pitts,Tehya scored; Limbaugh,Presley scored from second base.",
+     "us": 3,
+     "them": 1
+    },
+    {
+     "inn": 3,
+     "ku": true,
+     "text": "Stafford,Kadence homered to deep left field, 3RBI (1-0 B); Soles,Anna scored; Linduff,Aynslee scored from second base.",
+     "us": 6,
+     "them": 1
+    },
+    {
+     "inn": 4,
+     "ku": true,
+     "text": "Soles,Anna singled down the right field line, RBI (0-1 K); Boyer,Ella scored from second base; Cripe,Hailey advanced from first base to third base.",
+     "us": 7,
+     "them": 1
+    },
+    {
+     "inn": 4,
+     "ku": true,
+     "text": "Linduff,Aynslee homered to deep left field, 3RBI (1-2 BKFF); Cripe,Hailey scored; Soles,Anna scored from first base.",
+     "us": 10,
+     "them": 1
+    },
+    {
+     "inn": 4,
+     "ku": true,
+     "text": "Bagshaw,Campbell homered to deep left field, 3RBI (0-0); Wallace,Ava scored from second base; Stafford,Kadence scored from first base.",
+     "us": 13,
+     "them": 1
+    },
+    {
+     "inn": 4,
+     "ku": true,
+     "text": "Pitts,Tehya homered to right center, RBI (0-1 K).",
+     "us": 14,
+     "them": 1
+    },
+    {
+     "inn": 4,
+     "ku": true,
+     "text": "Boyer,Ella homered to right field, 2RBI (2-2 KBSB); Limbaugh,Presley scored from first base.",
+     "us": 16,
+     "them": 1
+    },
+    {
+     "inn": 5,
+     "ku": true,
+     "text": "Flanagan,September homered to deep center field, 2RBI (2-1 KBB); Weber,Bailey scored from first base.",
+     "us": 18,
+     "them": 1
+    }
+   ],
    "site": "A",
    "startTime": "3 p.m. CT"
   },
@@ -10324,7 +12323,9 @@
      "cs": 0,
      "sf": 0,
      "sh": 1,
-     "gidp": 1
+     "gidp": 1,
+     "po": 1,
+     "a": 2
     },
     {
      "player": "Presley Limbaugh",
@@ -10346,7 +12347,8 @@
      "cs": 1,
      "sf": 0,
      "sh": 0,
-     "ao": 2
+     "ao": 2,
+     "po": 2
     },
     {
      "player": "Anna Soles",
@@ -10368,7 +12370,8 @@
      "cs": 0,
      "sf": 0,
      "sh": 0,
-     "ao": 1
+     "ao": 1,
+     "po": 5
     },
     {
      "player": "Ava Wallace",
@@ -10433,7 +12436,8 @@
      "cs": 0,
      "sf": 0,
      "sh": 0,
-     "ao": 1
+     "ao": 1,
+     "po": 3
     },
     {
      "player": "Kadence Stafford",
@@ -10456,7 +12460,9 @@
      "sf": 0,
      "sh": 1,
      "go": 1,
-     "ao": 1
+     "ao": 1,
+     "a": 3,
+     "e": 1
     },
     {
      "player": "Campbell Bagshaw",
@@ -10478,7 +12484,9 @@
      "cs": 0,
      "sf": 1,
      "sh": 0,
-     "ao": 2
+     "ao": 2,
+     "po": 1,
+     "a": 2
     },
     {
      "player": "September Flanagan",
@@ -10542,7 +12550,8 @@
      "cs": 0,
      "sf": 0,
      "sh": 0,
-     "go": 1
+     "go": 1,
+     "po": 3
     },
     {
      "player": "Lila Partridge",
@@ -10564,6 +12573,8 @@
      "cs": 0,
      "sf": 0,
      "sh": 0,
+     "po": 1,
+     "a": 1,
      "p": 1,
      "outs": 18,
      "ha": 5,
@@ -10638,12 +12649,99 @@
      "sf": 0,
      "sh": 0,
      "go": 1,
-     "ao": 1
+     "ao": 1,
+     "po": 5
     }
    ],
    "venue": "Houston, TX",
    "attendance": 546,
    "boxScoreUrl": "https://kuathletics.com/sports/softball/stats/2026/houston/boxscore/20456",
+   "scoring": [
+    {
+     "inn": 3,
+     "ku": true,
+     "text": "Bagshaw,Campbell homered, RBI (1-1 BK).",
+     "us": 1,
+     "them": 0
+    },
+    {
+     "inn": 4,
+     "ku": true,
+     "text": "Bagshaw,Campbell sacrifice fly in third base side foul territory putout by lf, RBI (2-1 BSB); Weber,Bailey scored.",
+     "us": 2,
+     "them": 0
+    },
+    {
+     "inn": 4,
+     "ku": false,
+     "text": "Mitchael,Madox sacrifice fly to lf, RBI (0-1 F); Mitchell,Makenna scored.",
+     "us": 2,
+     "them": 1
+    },
+    {
+     "inn": 5,
+     "ku": true,
+     "text": "Cripe,Hailey homered to deep center field, 2RBI (0-1 K); Hays,Madi scored from first base.",
+     "us": 4,
+     "them": 1
+    },
+    {
+     "inn": 6,
+     "ku": true,
+     "text": "Pitts,Tehya doubled down the right field line, RBI (0-2 SS); Stafford,Kadence scored from second base; Pitts,Tehya advanced to third base on the throw.",
+     "us": 5,
+     "them": 1
+    },
+    {
+     "inn": 6,
+     "ku": true,
+     "text": "Limbaugh,Presley singled to center field, RBI (0-1 S); Pitts,Tehya scored.",
+     "us": 6,
+     "them": 1
+    },
+    {
+     "inn": 6,
+     "ku": true,
+     "text": "Linduff,Aynslee homered to deep center field, 4RBI (2-0 BB); Limbaugh,Presley scored; Cripe,Hailey scored from second base; Soles,Anna scored from first base.",
+     "us": 10,
+     "them": 1
+    },
+    {
+     "inn": 6,
+     "ku": false,
+     "text": "Hartley,Maddie homered to deep center field, RBI (1-0 B).",
+     "us": 10,
+     "them": 2
+    },
+    {
+     "inn": 6,
+     "ku": false,
+     "text": "Mitchael,Madox doubled down the left field line, RBI (0-1 F); Mitchell,Makenna scored from second base.",
+     "us": 10,
+     "them": 3
+    },
+    {
+     "inn": 6,
+     "ku": false,
+     "text": "Rawls,Gabby singled to center field, RBI (1-0 B); Mitchael,Madox scored from second base; Rawls,Gabby advanced to second base on the throw.",
+     "us": 10,
+     "them": 4
+    },
+    {
+     "inn": 7,
+     "ku": true,
+     "text": "Flanagan,September homered to deep center field, RBI (1-0 B).",
+     "us": 11,
+     "them": 4
+    },
+    {
+     "inn": 7,
+     "ku": false,
+     "text": "Luther,Savanna homered to deep center field, 4RBI (0-2 KF); Hartley,Maddie scored, unearned; Mitchell,Makenna scored from second base, unearned; Redmond,Ariel scored from first base, unearned.",
+     "us": 11,
+     "them": 8
+    }
+   ],
    "site": "A",
    "startTime": "11 a.m. CT"
   },
@@ -10680,7 +12778,10 @@
      "sf": 0,
      "sh": 0,
      "go": 1,
-     "ao": 1
+     "ao": 1,
+     "po": 2,
+     "a": 3,
+     "e": 1
     },
     {
      "player": "Presley Limbaugh",
@@ -10703,7 +12804,8 @@
      "sf": 0,
      "sh": 0,
      "go": 1,
-     "ao": 1
+     "ao": 1,
+     "po": 3
     },
     {
      "player": "Bailey Amezcua",
@@ -10746,7 +12848,8 @@
      "sb": 0,
      "cs": 0,
      "sf": 0,
-     "sh": 0
+     "sh": 0,
+     "po": 9
     },
     {
      "player": "Ava Wallace",
@@ -10768,7 +12871,8 @@
      "cs": 0,
      "sf": 0,
      "sh": 0,
-     "ao": 2
+     "ao": 2,
+     "po": 1
     },
     {
      "player": "Kaelee Washington",
@@ -10790,6 +12894,8 @@
      "cs": 0,
      "sf": 0,
      "sh": 0,
+     "po": 1,
+     "a": 1,
      "p": 1,
      "outs": 9,
      "ha": 2,
@@ -10826,7 +12932,9 @@
      "sf": 0,
      "sh": 0,
      "go": 2,
-     "gidp": 2
+     "gidp": 2,
+     "po": 2,
+     "e": 1
     },
     {
      "player": "Kadence Stafford",
@@ -10848,7 +12956,8 @@
      "cs": 0,
      "sf": 0,
      "sh": 0,
-     "ao": 2
+     "ao": 2,
+     "a": 3
     },
     {
      "player": "Campbell Bagshaw",
@@ -10870,7 +12979,9 @@
      "cs": 0,
      "sf": 0,
      "sh": 0,
-     "go": 1
+     "go": 1,
+     "po": 1,
+     "a": 2
     },
     {
      "player": "September Flanagan",
@@ -10913,7 +13024,8 @@
      "sb": 0,
      "cs": 0,
      "sf": 0,
-     "sh": 0
+     "sh": 0,
+     "po": 1
     },
     {
      "player": "Blakely Barber",
@@ -10992,11 +13104,56 @@
      "sb": 0,
      "cs": 0,
      "sf": 0,
-     "sh": 0
+     "sh": 0,
+     "po": 1
     }
    ],
    "venue": "Lawrence, Kan.",
    "boxScoreUrl": "https://kuathletics.com/sports/softball/stats/2026/south-dakota/boxscore/20566",
+   "scoring": [
+    {
+     "inn": 3,
+     "ku": false,
+     "text": "Carey,Brooke grounded out to third base, 3b to 1b, RBI (2-1 BBS); Iversen,Autumn scored; Iburg,Sara advanced to second base.",
+     "us": 0,
+     "them": 1
+    },
+    {
+     "inn": 3,
+     "ku": false,
+     "text": "Johnson,Kiya singled to center field, RBI (1-0 B); Iburg,Sara scored from second base, unearned; Johnson,Kiya advanced to second base on the throw.",
+     "us": 0,
+     "them": 2
+    },
+    {
+     "inn": 4,
+     "ku": true,
+     "text": "Cripe,Hailey singled to center field (3-2 BFBBS); Amezcua,Bailey scored from second base; Cripe,Hailey out at second base, cf to 1b to 2b.",
+     "us": 1,
+     "them": 2
+    },
+    {
+     "inn": 5,
+     "ku": true,
+     "text": "Flanagan,September doubled to right center, 2RBI (1-2 FFB); Wallace,Ava scored; Stafford,Kadence scored from second base.",
+     "us": 3,
+     "them": 2
+    },
+    {
+     "inn": 7,
+     "ku": false,
+     "text": "Iburg,Sara homered to deep center field, RBI (3-1 BFBB).",
+     "us": 3,
+     "them": 3
+    },
+    {
+     "inn": 7,
+     "ku": true,
+     "text": "Bagshaw,Campbell homered to deep left field, walk off, RBI (2-2 KBKB).",
+     "us": 4,
+     "them": 3
+    }
+   ],
    "site": "H",
    "startTime": "12 p.m. CT"
   },
@@ -11032,7 +13189,10 @@
      "cs": 0,
      "sf": 0,
      "sh": 0,
-     "ao": 2
+     "ao": 2,
+     "po": 6,
+     "a": 1,
+     "dp": 1
     },
     {
      "player": "Presley Limbaugh",
@@ -11077,7 +13237,10 @@
      "sf": 0,
      "sh": 0,
      "go": 2,
-     "ao": 1
+     "ao": 1,
+     "po": 10,
+     "e": 1,
+     "dp": 1
     },
     {
      "player": "Ava Wallace",
@@ -11122,6 +13285,7 @@
      "cs": 0,
      "sf": 0,
      "sh": 0,
+     "a": 3,
      "p": 1,
      "outs": 15,
      "ha": 5,
@@ -11179,7 +13343,8 @@
      "cs": 0,
      "sf": 0,
      "sh": 0,
-     "go": 2
+     "go": 2,
+     "po": 1
     },
     {
      "player": "Kadence Stafford",
@@ -11201,7 +13366,8 @@
      "cs": 0,
      "sf": 0,
      "sh": 0,
-     "ao": 1
+     "ao": 1,
+     "po": 1
     },
     {
      "player": "Campbell Bagshaw",
@@ -11223,7 +13389,9 @@
      "cs": 0,
      "sf": 0,
      "sh": 0,
-     "ao": 1
+     "ao": 1,
+     "a": 5,
+     "dp": 1
     },
     {
      "player": "September Flanagan",
@@ -11245,7 +13413,9 @@
      "cs": 0,
      "sf": 0,
      "sh": 0,
-     "go": 1
+     "go": 1,
+     "po": 1,
+     "a": 3
     },
     {
      "player": "Bailey Weber",
@@ -11364,12 +13534,59 @@
      "sh": 0,
      "go": 1,
      "ao": 1,
-     "ibb": 1
+     "ibb": 1,
+     "po": 2,
+     "a": 1,
+     "csb": 1
     }
    ],
    "venue": "Lawrence, KS",
    "attendance": 52,
    "boxScoreUrl": "https://kuathletics.com/sports/softball/stats/2026/utah/boxscore/20459",
+   "scoring": [
+    {
+     "inn": 1,
+     "ku": false,
+     "text": "Passi,Shonty singled to third base, RBI (1-1 KB); Gomez,Mia scored; Proctor,Kennedy advanced to second base.",
+     "us": 0,
+     "them": 1
+    },
+    {
+     "inn": 2,
+     "ku": false,
+     "text": "Wilson,Danika walked, RBI (3-2 KBBFBB); Lee,Reese scored; White,Hailee advanced to third base; Gomez,Mia advanced to second base.",
+     "us": 0,
+     "them": 2
+    },
+    {
+     "inn": 2,
+     "ku": false,
+     "text": "Lyon,Kayla singled to left center, 2RBI (0-2 KK); White,Hailee scored; Gomez,Mia scored from second base; Wilson,Danika advanced to second base.",
+     "us": 0,
+     "them": 4
+    },
+    {
+     "inn": 2,
+     "ku": false,
+     "text": "Passi,Shonty advanced to second base on a wild pitch; Lyon,Kayla advanced to third base on a wild pitch; Wilson,Danika scored on a wild pitch.",
+     "us": 0,
+     "them": 5
+    },
+    {
+     "inn": 5,
+     "ku": true,
+     "text": "Boyer,Ella homered to deep center field, 3RBI (0-1 F); Flanagan,September scored from second base; Limbaugh,Presley scored from first base.",
+     "us": 3,
+     "them": 5
+    },
+    {
+     "inn": 6,
+     "ku": true,
+     "text": "Cripe,Hailey homered to left center, 4RBI (1-1 BF); Bagshaw,Campbell scored; Limbaugh,Presley scored from second base; Boyer,Ella scored from first base.",
+     "us": 7,
+     "them": 5
+    }
+   ],
    "site": "H",
    "startTime": "5 p.m. CT"
   },
@@ -11405,7 +13622,9 @@
      "cs": 0,
      "sf": 0,
      "sh": 0,
-     "go": 3
+     "go": 3,
+     "po": 3,
+     "a": 2
     },
     {
      "player": "Presley Limbaugh",
@@ -11427,7 +13646,8 @@
      "cs": 0,
      "sf": 0,
      "sh": 0,
-     "go": 2
+     "go": 2,
+     "po": 1
     },
     {
      "player": "Anna Soles",
@@ -11449,7 +13669,9 @@
      "cs": 0,
      "sf": 0,
      "sh": 0,
-     "go": 2
+     "go": 2,
+     "po": 4,
+     "dp": 1
     },
     {
      "player": "Ava Wallace",
@@ -11513,6 +13735,7 @@
      "cs": 0,
      "sf": 0,
      "sh": 0,
+     "po": 1,
      "p": 1,
      "outs": 21,
      "ha": 5,
@@ -11551,7 +13774,8 @@
      "cs": 0,
      "sf": 0,
      "sh": 1,
-     "go": 2
+     "go": 2,
+     "po": 2
     },
     {
      "player": "Kadence Stafford",
@@ -11594,7 +13818,8 @@
      "sb": 0,
      "cs": 0,
      "sf": 0,
-     "sh": 0
+     "sh": 0,
+     "po": 2
     },
     {
      "player": "September Flanagan",
@@ -11617,7 +13842,10 @@
      "sf": 0,
      "sh": 0,
      "go": 1,
-     "ao": 1
+     "ao": 1,
+     "po": 3,
+     "a": 3,
+     "dp": 1
     },
     {
      "player": "Bailey Weber",
@@ -11638,7 +13866,8 @@
      "sb": 0,
      "cs": 0,
      "sf": 0,
-     "sh": 0
+     "sh": 0,
+     "po": 2
     },
     {
      "player": "Audri Youngblood",
@@ -11682,12 +13911,39 @@
      "sf": 0,
      "sh": 0,
      "go": 1,
-     "ao": 1
+     "ao": 1,
+     "po": 3,
+     "a": 1,
+     "pb": 1,
+     "csb": 1
     }
    ],
    "venue": "Lawrence, KS",
    "attendance": 582,
    "boxScoreUrl": "https://kuathletics.com/sports/softball/stats/2026/utah/boxscore/20460",
+   "scoring": [
+    {
+     "inn": 1,
+     "ku": false,
+     "text": "Passi,Shonty advanced to second base on a passed ball; Lyon,Kayla advanced to third base on a passed ball; Wilson,Danika scored on a passed ball, unearned.",
+     "us": 0,
+     "them": 1
+    },
+    {
+     "inn": 4,
+     "ku": true,
+     "text": "Soles,Anna homered to deep right field, RBI (2-0 BB).",
+     "us": 1,
+     "them": 1
+    },
+    {
+     "inn": 6,
+     "ku": false,
+     "text": "Passi,Shonty reached on a fielder's choice hit to second base (1-0 B); Proctor,Kennedy scored; Wilson,Danika out at second base, 2b unassisted.",
+     "us": 1,
+     "them": 2
+    }
+   ],
    "site": "H",
    "startTime": "2 p.m. CT"
   },
@@ -11723,7 +13979,10 @@
      "cs": 0,
      "sf": 0,
      "sh": 0,
-     "ao": 1
+     "ao": 1,
+     "po": 3,
+     "a": 7,
+     "dp": 2
     },
     {
      "player": "Presley Limbaugh",
@@ -11745,7 +14004,8 @@
      "cs": 1,
      "sf": 0,
      "sh": 0,
-     "go": 1
+     "go": 1,
+     "po": 1
     },
     {
      "player": "Bailey Amezcua",
@@ -11767,7 +14027,8 @@
      "cs": 0,
      "sf": 0,
      "sh": 0,
-     "ao": 1
+     "ao": 1,
+     "po": 4
     },
     {
      "player": "Anna Soles",
@@ -11789,7 +14050,9 @@
      "cs": 0,
      "sf": 0,
      "sh": 0,
-     "go": 1
+     "go": 1,
+     "po": 10,
+     "dp": 2
     },
     {
      "player": "Lizzy Ludwig",
@@ -11868,7 +14131,8 @@
      "cs": 0,
      "sf": 0,
      "sh": 0,
-     "ao": 1
+     "ao": 1,
+     "po": 1
     },
     {
      "player": "Kadence Stafford",
@@ -11890,7 +14154,8 @@
      "cs": 0,
      "sf": 0,
      "sh": 0,
-     "ao": 1
+     "ao": 1,
+     "po": 1
     },
     {
      "player": "Campbell Bagshaw",
@@ -11912,7 +14177,10 @@
      "cs": 0,
      "sf": 0,
      "sh": 0,
-     "go": 1
+     "go": 1,
+     "po": 1,
+     "a": 3,
+     "dp": 1
     },
     {
      "player": "September Flanagan",
@@ -12043,6 +14311,71 @@
    "venue": "Lawrence, KS",
    "attendance": 456,
    "boxScoreUrl": "https://kuathletics.com/sports/softball/stats/2026/utah/boxscore/20461",
+   "scoring": [
+    {
+     "inn": 1,
+     "ku": true,
+     "text": "Flanagan,September singled to center field, RBI (0-0); Boyer,Ella scored; Cripe,Hailey advanced to third base; Soles,Anna advanced to second base.",
+     "us": 1,
+     "them": 0
+    },
+    {
+     "inn": 1,
+     "ku": true,
+     "text": "Stafford,Kadence doubled to right center, 3RBI (2-2 BFSFB); Soles,Anna scored; Flanagan,September scored from second base; Bagshaw,Campbell scored from first base; Stafford,Kadence advanced to third base on the throw.",
+     "us": 4,
+     "them": 0
+    },
+    {
+     "inn": 3,
+     "ku": true,
+     "text": "Stafford,Kadence doubled, 2RBI (2-2 BFBFF); Cripe,Hailey scored, unearned; Soles,Anna scored from second base, unearned.",
+     "us": 6,
+     "them": 0
+    },
+    {
+     "inn": 3,
+     "ku": true,
+     "text": "Amezcua,Bailey singled, RBI (0-0); Stafford,Kadence scored, unearned.",
+     "us": 7,
+     "them": 0
+    },
+    {
+     "inn": 4,
+     "ku": false,
+     "text": "Capobianco,Emily singled to right center, 2RBI (3-2 KFBBB); Passi,Shonty scored; Crank,Payton scored from second base.",
+     "us": 7,
+     "them": 2
+    },
+    {
+     "inn": 5,
+     "ku": false,
+     "text": "Wilson,Danika homered to right field, 2RBI (2-0 BB); Proctor,Kennedy scored from first base.",
+     "us": 7,
+     "them": 4
+    },
+    {
+     "inn": 5,
+     "ku": true,
+     "text": "Amezcua,Bailey singled to shallow right field, RBI (1-2 FBK); Bagshaw,Campbell scored; Stafford,Kadence advanced to third base.",
+     "us": 8,
+     "them": 4
+    },
+    {
+     "inn": 5,
+     "ku": true,
+     "text": "Linduff,Aynslee doubled to right center, 2RBI (1-0 B); Stafford,Kadence scored; Hays,Madi scored from second base.",
+     "us": 10,
+     "them": 4
+    },
+    {
+     "inn": 7,
+     "ku": false,
+     "text": "Crank,Payton singled down the right field line, RBI (2-1 FBB); Wilson,Danika scored; Blunt,kate advanced to third base; Passi,Shonty advanced to second base.",
+     "us": 10,
+     "them": 5
+    }
+   ],
    "site": "H",
    "startTime": "12 p.m. CT"
   },
@@ -12077,7 +14410,9 @@
      "sb": 0,
      "cs": 0,
      "sf": 0,
-     "sh": 0
+     "sh": 0,
+     "po": 5,
+     "a": 4
     },
     {
      "player": "Presley Limbaugh",
@@ -12100,7 +14435,8 @@
      "sf": 0,
      "sh": 0,
      "kl": 1,
-     "ao": 2
+     "ao": 2,
+     "po": 1
     },
     {
      "player": "Bailey Amezcua",
@@ -12121,7 +14457,11 @@
      "sb": 0,
      "cs": 0,
      "sf": 0,
-     "sh": 0
+     "sh": 0,
+     "po": 3,
+     "a": 1,
+     "sba": 1,
+     "csb": 1
     },
     {
      "player": "Anna Soles",
@@ -12142,7 +14482,9 @@
      "sb": 0,
      "cs": 0,
      "sf": 0,
-     "sh": 0
+     "sh": 0,
+     "po": 9,
+     "a": 1
     },
     {
      "player": "Lizzy Ludwig",
@@ -12164,6 +14506,7 @@
      "cs": 0,
      "sf": 0,
      "sh": 0,
+     "a": 2,
      "p": 1,
      "outs": 7,
      "ha": 5,
@@ -12223,7 +14566,8 @@
      "cs": 0,
      "sf": 0,
      "sh": 0,
-     "go": 2
+     "go": 2,
+     "po": 2
     },
     {
      "player": "Kadence Stafford",
@@ -12245,7 +14589,8 @@
      "cs": 0,
      "sf": 0,
      "sh": 0,
-     "go": 1
+     "go": 1,
+     "po": 1
     },
     {
      "player": "Campbell Bagshaw",
@@ -12270,7 +14615,8 @@
      "kl": 1,
      "go": 1,
      "ao": 1,
-     "gidp": 1
+     "gidp": 1,
+     "a": 4
     },
     {
      "player": "September Flanagan",
@@ -12292,7 +14638,9 @@
      "cs": 0,
      "sf": 0,
      "sh": 0,
-     "go": 1
+     "go": 1,
+     "a": 2,
+     "e": 1
     },
     {
      "player": "Bailey Weber",
@@ -12335,6 +14683,7 @@
      "cs": 0,
      "sf": 0,
      "sh": 0,
+     "a": 1,
      "p": 1,
      "outs": 12,
      "ha": 3,
@@ -12435,6 +14784,64 @@
    "venue": "Provo, UT",
    "attendance": 805,
    "boxScoreUrl": "https://kuathletics.com/sports/softball/stats/2026/byu/boxscore/20465",
+   "scoring": [
+    {
+     "inn": 2,
+     "ku": true,
+     "text": "Amezcua,Bailey singled, 2RBI (3-2 BKBBF); Soles,Anna scored; Flanagan,September scored from second base; Stafford,Kadence scored from first base on play and a fielding error by Owens,Lily (E7); Amezcua,Bailey advanced to first base on play and error.",
+     "us": 3,
+     "them": 0
+    },
+    {
+     "inn": 2,
+     "ku": true,
+     "text": "Limbaugh,Presley singled, RBI (1-2 FSB); Amezcua,Bailey scored.",
+     "us": 4,
+     "them": 0
+    },
+    {
+     "inn": 5,
+     "ku": true,
+     "text": "Cripe,Hailey homered to deep center field, RBI (2-1 BKB).",
+     "us": 5,
+     "them": 0
+    },
+    {
+     "inn": 5,
+     "ku": true,
+     "text": "Hays,Madi scored from first base on a throwing error by Fabela,Kaiya (E2), unearned.",
+     "us": 6,
+     "them": 0
+    },
+    {
+     "inn": 5,
+     "ku": false,
+     "text": "Acosta,Danica out caught stealing at second base, c to ss to 1b to 2b to ss; Turlington,Tristen stole home, scored.",
+     "us": 6,
+     "them": 1
+    },
+    {
+     "inn": 6,
+     "ku": false,
+     "text": "Townsend,Bre singled to left center, RBI (3-1 BKBB); Morrow,Hailey scored; Tavita,Rita advanced to second base.",
+     "us": 6,
+     "them": 2
+    },
+    {
+     "inn": 7,
+     "ku": false,
+     "text": "Owens,Lily doubled down the left field line, RBI (1-1 BK); Acosta,Danica scored from second base.",
+     "us": 6,
+     "them": 3
+    },
+    {
+     "inn": 7,
+     "ku": false,
+     "text": "Shuler,Hailey singled through the right side of the infield, RBI (1-2 BKK); Owens,Lily scored from second base.",
+     "us": 6,
+     "them": 4
+    }
+   ],
    "site": "A",
    "startTime": "7 p.m. CT"
   },
@@ -12470,7 +14877,10 @@
      "cs": 0,
      "sf": 0,
      "sh": 0,
-     "go": 2
+     "go": 2,
+     "po": 2,
+     "a": 2,
+     "dp": 1
     },
     {
      "player": "Presley Limbaugh",
@@ -12514,7 +14924,10 @@
      "sf": 0,
      "sh": 1,
      "go": 1,
-     "ao": 1
+     "ao": 1,
+     "po": 4,
+     "a": 1,
+     "dp": 1
     },
     {
      "player": "Anna Soles",
@@ -12536,7 +14949,10 @@
      "cs": 0,
      "sf": 0,
      "sh": 0,
-     "ao": 1
+     "ao": 1,
+     "po": 8,
+     "a": 1,
+     "dp": 1
     },
     {
      "player": "Ava Wallace",
@@ -12580,6 +14996,7 @@
      "cs": 0,
      "sf": 0,
      "sh": 0,
+     "a": 1,
      "p": 1,
      "outs": 3,
      "ha": 3,
@@ -12638,7 +15055,8 @@
      "sb": 0,
      "cs": 0,
      "sf": 0,
-     "sh": 0
+     "sh": 0,
+     "po": 2
     },
     {
      "player": "Campbell Bagshaw",
@@ -12661,7 +15079,10 @@
      "sf": 0,
      "sh": 0,
      "go": 3,
-     "gidp": 1
+     "gidp": 1,
+     "po": 3,
+     "a": 1,
+     "dp": 1
     },
     {
      "player": "September Flanagan",
@@ -12683,7 +15104,10 @@
      "cs": 0,
      "sf": 0,
      "sh": 0,
-     "ao": 1
+     "ao": 1,
+     "po": 1,
+     "a": 3,
+     "e": 1
     },
     {
      "player": "Bailey Weber",
@@ -12770,6 +15194,36 @@
    "venue": "Provo, UT",
    "attendance": 1112,
    "boxScoreUrl": "https://kuathletics.com/sports/softball/stats/2026/byu/boxscore/20462",
+   "scoring": [
+    {
+     "inn": 1,
+     "ku": false,
+     "text": "Morrow,Hailey homered down the right field line, 3RBI (0-1 K); Shuler,Hailey scored from second base; Brittingham,Ilovea scored from first base.",
+     "us": 0,
+     "them": 3
+    },
+    {
+     "inn": 4,
+     "ku": true,
+     "text": "Soles,Anna reached on a fielder's choice hit to second base, RBI (0-2 SF); Limbaugh,Presley scored from second base on play and a fielding error by Townsend,Bre (E3), unearned; Cripe,Hailey out at second base, 2b to ss.",
+     "us": 1,
+     "them": 3
+    },
+    {
+     "inn": 6,
+     "ku": true,
+     "text": "Boyer,Ella homered to left field, 2RBI (0-0); Limbaugh,Presley scored from first base.",
+     "us": 3,
+     "them": 3
+    },
+    {
+     "inn": 7,
+     "ku": false,
+     "text": "Acosta,Danica homered to right center, walk off, RBI (2-0 BB).",
+     "us": 3,
+     "them": 4
+    }
+   ],
    "site": "A",
    "startTime": "7 p.m. CT"
   },
@@ -12805,7 +15259,8 @@
      "cs": 0,
      "sf": 0,
      "sh": 0,
-     "ao": 1
+     "ao": 1,
+     "po": 3
     },
     {
      "player": "Presley Limbaugh",
@@ -12828,7 +15283,8 @@
      "sf": 0,
      "sh": 0,
      "go": 1,
-     "ao": 1
+     "ao": 1,
+     "po": 3
     },
     {
      "player": "Bailey Amezcua",
@@ -12872,7 +15328,8 @@
      "cs": 0,
      "sf": 0,
      "sh": 0,
-     "go": 3
+     "go": 3,
+     "po": 2
     },
     {
      "player": "Ava Wallace",
@@ -12994,7 +15451,8 @@
      "cs": 0,
      "sf": 0,
      "sh": 0,
-     "go": 2
+     "go": 2,
+     "po": 2
     },
     {
      "player": "Kadence Stafford",
@@ -13016,7 +15474,8 @@
      "cs": 0,
      "sf": 0,
      "sh": 0,
-     "go": 1
+     "go": 1,
+     "po": 4
     },
     {
      "player": "Campbell Bagshaw",
@@ -13059,7 +15518,9 @@
      "cs": 0,
      "sf": 0,
      "sh": 0,
-     "go": 2
+     "go": 2,
+     "po": 2,
+     "a": 1
     },
     {
      "player": "Bailey Weber",
@@ -13160,12 +15621,92 @@
      "cs": 0,
      "sf": 0,
      "sh": 0,
-     "ao": 1
+     "ao": 1,
+     "po": 5
     }
    ],
    "venue": "Provo, UT",
    "attendance": 852,
    "boxScoreUrl": "https://kuathletics.com/sports/softball/stats/2026/byu/boxscore/20463",
+   "scoring": [
+    {
+     "inn": 2,
+     "ku": false,
+     "text": "Acosta,Danica singled, RBI (0-2 FF); Morrow,Hailey scored; UdallWoolley,Maddie advanced to third base; Fabela,Kaiya advanced to second base.",
+     "us": 0,
+     "them": 1
+    },
+    {
+     "inn": 3,
+     "ku": true,
+     "text": "Boyer,Ella homered to deep right field, 2RBI (0-1 K); Limbaugh,Presley scored from first base.",
+     "us": 2,
+     "them": 1
+    },
+    {
+     "inn": 3,
+     "ku": true,
+     "text": "Cripe,Hailey homered to left center, RBI (2-1 SBB).",
+     "us": 3,
+     "them": 1
+    },
+    {
+     "inn": 3,
+     "ku": false,
+     "text": "Townsend,Bre sacrifice fly to lf, RBI (0-2 FFF); Brittingham,Ilovea scored.",
+     "us": 3,
+     "them": 2
+    },
+    {
+     "inn": 4,
+     "ku": true,
+     "text": "Bagshaw,Campbell homered to right center, RBI (1-0 B).",
+     "us": 4,
+     "them": 2
+    },
+    {
+     "inn": 4,
+     "ku": true,
+     "text": "Limbaugh,Presley singled through the left side of the infield, RBI (1-1 KB); Stafford,Kadence scored.",
+     "us": 5,
+     "them": 2
+    },
+    {
+     "inn": 6,
+     "ku": true,
+     "text": "Limbaugh,Presley doubled down the left field line, RBI (0-1 K); Youngblood,Audri scored from second base.",
+     "us": 6,
+     "them": 2
+    },
+    {
+     "inn": 6,
+     "ku": true,
+     "text": "Cripe,Hailey doubled down the left field line, RBI (0-0); Limbaugh,Presley scored from second base.",
+     "us": 7,
+     "them": 2
+    },
+    {
+     "inn": 6,
+     "ku": true,
+     "text": "Soles,Anna singled to second base, RBI (0-2 KK); Cripe,Hailey scored from second base.",
+     "us": 8,
+     "them": 2
+    },
+    {
+     "inn": 6,
+     "ku": true,
+     "text": "Flanagan,September homered to left center, 2RBI (3-1 BBKB); Soles,Anna scored from first base.",
+     "us": 10,
+     "them": 2
+    },
+    {
+     "inn": 6,
+     "ku": false,
+     "text": "Acosta,Danica homered to center field, RBI (3-1 BBKB).",
+     "us": 10,
+     "them": 3
+    }
+   ],
    "site": "A",
    "startTime": "12:30  p.m. CT"
   },
@@ -13202,7 +15743,10 @@
      "sf": 0,
      "sh": 0,
      "go": 1,
-     "ao": 1
+     "ao": 1,
+     "po": 3,
+     "a": 3,
+     "dp": 1
     },
     {
      "player": "Presley Limbaugh",
@@ -13225,7 +15769,8 @@
      "sf": 0,
      "sh": 0,
      "go": 2,
-     "ao": 1
+     "ao": 1,
+     "po": 3
     },
     {
      "player": "Bailey Amezcua",
@@ -13247,7 +15792,9 @@
      "cs": 0,
      "sf": 0,
      "sh": 0,
-     "go": 1
+     "go": 1,
+     "po": 3,
+     "a": 2
     },
     {
      "player": "Anna Soles",
@@ -13270,7 +15817,9 @@
      "sf": 0,
      "sh": 0,
      "go": 1,
-     "ao": 1
+     "ao": 1,
+     "po": 6,
+     "dp": 1
     },
     {
      "player": "Lizzy Ludwig",
@@ -13330,7 +15879,8 @@
      "sf": 0,
      "sh": 0,
      "go": 1,
-     "ao": 1
+     "ao": 1,
+     "po": 1
     },
     {
      "player": "Kadence Stafford",
@@ -13352,7 +15902,9 @@
      "cs": 0,
      "sf": 1,
      "sh": 0,
-     "ao": 2
+     "ao": 2,
+     "po": 2,
+     "a": 1
     },
     {
      "player": "Campbell Bagshaw",
@@ -13375,7 +15927,10 @@
      "sf": 0,
      "sh": 0,
      "kl": 1,
-     "go": 1
+     "go": 1,
+     "po": 1,
+     "a": 3,
+     "dp": 1
     },
     {
      "player": "September Flanagan",
@@ -13397,7 +15952,9 @@
      "cs": 0,
      "sf": 0,
      "sh": 0,
-     "ao": 2
+     "ao": 2,
+     "po": 2,
+     "e": 1
     },
     {
      "player": "Bailey Weber",
@@ -13478,6 +16035,7 @@
      "cs": 0,
      "sf": 0,
      "sh": 0,
+     "a": 1,
      "p": 1,
      "outs": 11,
      "ha": 6,
@@ -13540,6 +16098,99 @@
    ],
    "venue": "Lawrence, Kan.",
    "boxScoreUrl": "https://kuathletics.com/sports/softball/stats/2026/arizona-state/boxscore/20466",
+   "scoring": [
+    {
+     "inn": 1,
+     "ku": true,
+     "text": "Boyer,Ella homered to deep center field, RBI (3-2 BKBFB).",
+     "us": 1,
+     "them": 0
+    },
+    {
+     "inn": 4,
+     "ku": false,
+     "text": "Brown,Ryan singled down the left field line, RBI (1-0 B); Chester,Katie scored; Swan,Samantha advanced to second base.",
+     "us": 1,
+     "them": 1
+    },
+    {
+     "inn": 4,
+     "ku": false,
+     "text": "Ulrich,Brooklyn singled to deep center field, RBI (1-0 B); Swan,Samantha scored from second base; Brown,Ryan advanced from first base to third base; Ulrich,Brooklyn advanced to second base.",
+     "us": 1,
+     "them": 2
+    },
+    {
+     "inn": 4,
+     "ku": false,
+     "text": "Motroni,Avery sacrifice fly to rf, RBI (2-2 BKKFB); Brown,Ryan scored; Ulrich,Brooklyn advanced to third base.",
+     "us": 1,
+     "them": 3
+    },
+    {
+     "inn": 4,
+     "ku": false,
+     "text": "Pond,Kaylee singled to center field, RBI (1-2 KBF); Ulrich,Brooklyn scored.",
+     "us": 1,
+     "them": 4
+    },
+    {
+     "inn": 4,
+     "ku": true,
+     "text": "Soles,Anna doubled to left field, RBI (0-1 K); Boyer,Ella scored from second base; Cripe,Hailey advanced from first base to third base.",
+     "us": 2,
+     "them": 4
+    },
+    {
+     "inn": 4,
+     "ku": true,
+     "text": "Flanagan,September singled to right field, RBI (0-1 F); Cripe,Hailey scored; Soles,Anna advanced to third base.",
+     "us": 3,
+     "them": 4
+    },
+    {
+     "inn": 4,
+     "ku": true,
+     "text": "Stafford,Kadence sacrifice fly to cf, RBI (1-1 KB); Soles,Anna scored; Flanagan,September advanced to third base.",
+     "us": 4,
+     "them": 4
+    },
+    {
+     "inn": 4,
+     "ku": true,
+     "text": "Amezcua,Bailey doubled down the left field line, RBI (1-1 KB); Flanagan,September scored.",
+     "us": 5,
+     "them": 4
+    },
+    {
+     "inn": 5,
+     "ku": false,
+     "text": "Ulrich,Brooklyn grounded out to short, ss to 2b to 1b, RBI (1-2 KFBF); Swan,Samantha scored, unearned; Brown,Ryan advanced to third base; HoChing,Tiare out at 2B on the play, ss to 2b, in a double play.",
+     "us": 5,
+     "them": 5
+    },
+    {
+     "inn": 6,
+     "ku": false,
+     "text": "Chester,Katie singled to left center, RBI (2-1 BKB); Shull,Corie scored from second base; Schepp,Emily out at third base, lf to c to 3b.",
+     "us": 5,
+     "them": 6
+    },
+    {
+     "inn": 7,
+     "ku": false,
+     "text": "Ulrich,Brooklyn doubled to left center, RBI (0-0); HoChing,Tiare scored from first base.",
+     "us": 5,
+     "them": 7
+    },
+    {
+     "inn": 7,
+     "ku": false,
+     "text": "Pond,Kaylee grounded out to short, ss to 1b, RBI (3-2 BBBKK); Lewis,Nehanda scored; Acuna,Yannixa advanced to second base.",
+     "us": 5,
+     "them": 8
+    }
+   ],
    "site": "H",
    "startTime": "3 p.m. CT"
   },
@@ -13577,7 +16228,10 @@
      "sh": 0,
      "kl": 1,
      "go": 1,
-     "ao": 1
+     "ao": 1,
+     "po": 2,
+     "a": 2,
+     "e": 1
     },
     {
      "player": "Presley Limbaugh",
@@ -13598,7 +16252,8 @@
      "sb": 0,
      "cs": 0,
      "sf": 0,
-     "sh": 0
+     "sh": 0,
+     "po": 3
     },
     {
      "player": "Bailey Amezcua",
@@ -13641,7 +16296,8 @@
      "sb": 0,
      "cs": 0,
      "sf": 0,
-     "sh": 0
+     "sh": 0,
+     "po": 7
     },
     {
      "player": "Ava Wallace",
@@ -13726,6 +16382,7 @@
      "cs": 0,
      "sf": 0,
      "sh": 0,
+     "a": 1,
      "p": 1,
      "outs": 8,
      "ha": 5,
@@ -13783,7 +16440,8 @@
      "sb": 1,
      "cs": 0,
      "sf": 0,
-     "sh": 0
+     "sh": 0,
+     "po": 2
     },
     {
      "player": "Campbell Bagshaw",
@@ -13805,7 +16463,8 @@
      "cs": 0,
      "sf": 0,
      "sh": 0,
-     "go": 1
+     "go": 1,
+     "a": 1
     },
     {
      "player": "September Flanagan",
@@ -13827,7 +16486,8 @@
      "cs": 0,
      "sf": 1,
      "sh": 0,
-     "ao": 2
+     "ao": 2,
+     "a": 3
     },
     {
      "player": "Bailey Weber",
@@ -13908,12 +16568,100 @@
      "sb": 0,
      "cs": 0,
      "sf": 0,
-     "sh": 0
+     "sh": 0,
+     "po": 7,
+     "pb": 2
     }
    ],
    "venue": "Lawrence, Kan.",
    "attendance": 442,
    "boxScoreUrl": "https://kuathletics.com/sports/softball/stats/2026/arizona-state/boxscore/20578",
+   "scoring": [
+    {
+     "inn": 1,
+     "ku": false,
+     "text": "Pond,Kaylee homered to deep center field, RBI (0-1 K).",
+     "us": 0,
+     "them": 1
+    },
+    {
+     "inn": 1,
+     "ku": true,
+     "text": "Soles,Anna doubled to center field, 2RBI (1-2 FKBF); Limbaugh,Presley scored; Boyer,Ella scored from second base; Cripe,Hailey advanced from first base to third base.",
+     "us": 2,
+     "them": 1
+    },
+    {
+     "inn": 1,
+     "ku": true,
+     "text": "Flanagan,September sacrifice fly to right center putout by rf, RBI (0-1 F); Cripe,Hailey scored; Soles,Anna advanced to third base.",
+     "us": 3,
+     "them": 1
+    },
+    {
+     "inn": 2,
+     "ku": true,
+     "text": "Boyer,Ella singled to left field, RBI (1-1 BK); Linduff,Aynslee scored; Limbaugh,Presley advanced to second base.",
+     "us": 4,
+     "them": 1
+    },
+    {
+     "inn": 2,
+     "ku": true,
+     "text": "Soles,Anna homered to deep right field, 3RBI (0-0); Limbaugh,Presley scored from second base, unearned; Boyer,Ella scored from first base, unearned.",
+     "us": 7,
+     "them": 1
+    },
+    {
+     "inn": 4,
+     "ku": true,
+     "text": "Boyer,Ella homered to deep right field, 2RBI (0-1 F); Limbaugh,Presley scored from first base.",
+     "us": 9,
+     "them": 1
+    },
+    {
+     "inn": 5,
+     "ku": false,
+     "text": "Mejia,Ashleigh singled to right field, RBI (0-0); Acuna,Yannixa scored from second base.",
+     "us": 9,
+     "them": 2
+    },
+    {
+     "inn": 5,
+     "ku": false,
+     "text": "Chester,Katie homered to deep right field, 3RBI (0-1 F); Shull,Corie scored from second base; Schepp,Emily scored from first base.",
+     "us": 9,
+     "them": 5
+    },
+    {
+     "inn": 5,
+     "ku": true,
+     "text": "Limbaugh,Presley reached on a fielding error fielding by ss by Ulrich,Brooklyn (E6), RBI (1-2 BFK); Stafford,Kadence scored, unearned; Hays,Madi advanced to third base.",
+     "us": 10,
+     "them": 5
+    },
+    {
+     "inn": 5,
+     "ku": true,
+     "text": "Boyer,Ella singled (2-2 KFBB); Hays,Madi scored, unearned; Limbaugh,Presley advanced to second base.",
+     "us": 11,
+     "them": 5
+    },
+    {
+     "inn": 6,
+     "ku": false,
+     "text": "Pond,Kaylee doubled to right field, RBI (2-2 BBKK); Ulrich,Brooklyn scored from first base.",
+     "us": 11,
+     "them": 6
+    },
+    {
+     "inn": 6,
+     "ku": false,
+     "text": "Schepp,Emily singled to short, RBI (0-0); Pond,Kaylee scored from second base.",
+     "us": 11,
+     "them": 7
+    }
+   ],
    "site": "H",
    "startTime": "5:30 p.m. CT"
   },
@@ -13949,7 +16697,10 @@
      "cs": 0,
      "sf": 0,
      "sh": 0,
-     "go": 2
+     "go": 2,
+     "po": 1,
+     "a": 2,
+     "dp": 1
     },
     {
      "player": "Presley Limbaugh",
@@ -13970,7 +16721,8 @@
      "sb": 0,
      "cs": 0,
      "sf": 0,
-     "sh": 0
+     "sh": 0,
+     "po": 1
     },
     {
      "player": "Bailey Amezcua",
@@ -13992,7 +16744,10 @@
      "cs": 0,
      "sf": 0,
      "sh": 1,
-     "go": 2
+     "go": 2,
+     "po": 4,
+     "a": 1,
+     "pb": 3
     },
     {
      "player": "Anna Soles",
@@ -14013,7 +16768,10 @@
      "sb": 0,
      "cs": 0,
      "sf": 0,
-     "sh": 0
+     "sh": 0,
+     "po": 8,
+     "a": 1,
+     "dp": 1
     },
     {
      "player": "Madi Hays",
@@ -14091,7 +16849,8 @@
      "cs": 0,
      "sf": 0,
      "sh": 0,
-     "ao": 1
+     "ao": 1,
+     "po": 1
     },
     {
      "player": "Kadence Stafford",
@@ -14113,7 +16872,9 @@
      "cs": 0,
      "sf": 0,
      "sh": 0,
-     "ao": 1
+     "ao": 1,
+     "po": 2,
+     "e": 1
     },
     {
      "player": "Campbell Bagshaw",
@@ -14135,7 +16896,11 @@
      "cs": 0,
      "sf": 0,
      "sh": 0,
-     "go": 1
+     "go": 1,
+     "po": 2,
+     "a": 1,
+     "e": 1,
+     "dp": 1
     },
     {
      "player": "September Flanagan",
@@ -14179,7 +16944,8 @@
      "cs": 0,
      "sf": 0,
      "sh": 0,
-     "go": 1
+     "go": 1,
+     "po": 1
     },
     {
      "player": "Blakely Barber",
@@ -14271,6 +17037,8 @@
      "cs": 0,
      "sf": 0,
      "sh": 0,
+     "po": 1,
+     "a": 1,
      "p": 1,
      "outs": 12,
      "ha": 3,
@@ -14335,6 +17103,50 @@
    "venue": "Lawrence, KS",
    "attendance": 453,
    "boxScoreUrl": "https://kuathletics.com/sports/softball/stats/2026/arizona-state/boxscore/20468",
+   "scoring": [
+    {
+     "inn": 1,
+     "ku": true,
+     "text": "Boyer,Ella homered to deep right field, 2RBI (1-1 BK); Limbaugh,Presley scored from first base.",
+     "us": 2,
+     "them": 0
+    },
+    {
+     "inn": 3,
+     "ku": false,
+     "text": "Swan,Samatha doubled to center field, 2RBI (1-2 KBF); Schepp,Emily scored, unearned; Chester,Katie scored from second base, unearned.",
+     "us": 2,
+     "them": 2
+    },
+    {
+     "inn": 3,
+     "ku": true,
+     "text": "Soles,Anna reached on a fielding error fielding by 3b by Schepp,Emily (E5), RBI (0-1 K); Hays,Madi scored, unearned.",
+     "us": 3,
+     "them": 2
+    },
+    {
+     "inn": 3,
+     "ku": true,
+     "text": "Bagshaw,Campbell homered to right field, 2RBI (0-0); Soles,Anna scored from second base, unearned.",
+     "us": 5,
+     "them": 2
+    },
+    {
+     "inn": 5,
+     "ku": false,
+     "text": "Swan,Samatha singled to third base, RBI (0-2 KF); Schepp,Emily scored, unearned; Chester,Katie advanced to third base.",
+     "us": 5,
+     "them": 3
+    },
+    {
+     "inn": 5,
+     "ku": false,
+     "text": "Motroni,Avery singled to right field, RBI (0-0); Chester,Katie scored, unearned; Swan,Samatha advanced from first base to third base.",
+     "us": 5,
+     "them": 4
+    }
+   ],
    "site": "H",
    "startTime": "12 p.m. CT"
   },
@@ -14370,7 +17182,9 @@
      "cs": 0,
      "sf": 0,
      "sh": 0,
-     "ao": 3
+     "ao": 3,
+     "po": 1,
+     "a": 4
     },
     {
      "player": "Presley Limbaugh",
@@ -14392,7 +17206,8 @@
      "cs": 0,
      "sf": 0,
      "sh": 1,
-     "go": 2
+     "go": 2,
+     "po": 1
     },
     {
      "player": "Bailey Amezcua",
@@ -14415,7 +17230,12 @@
      "sf": 0,
      "sh": 0,
      "kl": 1,
-     "ao": 1
+     "ao": 1,
+     "po": 2,
+     "a": 1,
+     "e": 1,
+     "pb": 1,
+     "sba": 1
     },
     {
      "player": "Anna Soles",
@@ -14437,7 +17257,9 @@
      "cs": 0,
      "sf": 1,
      "sh": 0,
-     "ao": 2
+     "ao": 2,
+     "po": 10,
+     "e": 2
     },
     {
      "player": "Lizzy Ludwig",
@@ -14539,6 +17361,7 @@
      "cs": 0,
      "sf": 0,
      "sh": 0,
+     "a": 1,
      "p": 1,
      "outs": 3,
      "ha": 2,
@@ -14575,7 +17398,8 @@
      "cs": 0,
      "sf": 0,
      "sh": 0,
-     "ao": 2
+     "ao": 2,
+     "po": 2
     },
     {
      "player": "Kadence Stafford",
@@ -14597,7 +17421,9 @@
      "cs": 0,
      "sf": 0,
      "sh": 0,
-     "ao": 2
+     "ao": 2,
+     "po": 3,
+     "a": 1
     },
     {
      "player": "Campbell Bagshaw",
@@ -14619,7 +17445,9 @@
      "cs": 0,
      "sf": 0,
      "sh": 0,
-     "ao": 4
+     "ao": 4,
+     "po": 1,
+     "a": 3
     },
     {
      "player": "September Flanagan",
@@ -14642,7 +17470,10 @@
      "sf": 0,
      "sh": 0,
      "kl": 1,
-     "ao": 1
+     "ao": 1,
+     "po": 1,
+     "a": 1,
+     "e": 2
     },
     {
      "player": "Bailey Weber",
@@ -14729,6 +17560,99 @@
    ],
    "venue": "Lawrence, KS",
    "boxScoreUrl": "https://kuathletics.com/sports/softball/stats/2026/baylor/boxscore/20469",
+   "scoring": [
+    {
+     "inn": 1,
+     "ku": false,
+     "text": "Cran,Leah doubled to shallow center field, RBI (2-0 BB); Jones,SaMya scored from second base.",
+     "us": 0,
+     "them": 1
+    },
+    {
+     "inn": 1,
+     "ku": true,
+     "text": "Soles,Anna doubled down the left field line, 2RBI (0-1 S); Boyer,Ella scored; Cripe,Hailey scored from first base.",
+     "us": 2,
+     "them": 1
+    },
+    {
+     "inn": 2,
+     "ku": false,
+     "text": "Waddell,Averie sacrifice fly to cf, RBI (2-2 BKBS); Marshall,Kaygen scored, unearned.",
+     "us": 2,
+     "them": 2
+    },
+    {
+     "inn": 2,
+     "ku": true,
+     "text": "Linduff,Aynslee advanced to third base on a passed ball; Hays,Madi scored on a passed ball.",
+     "us": 3,
+     "them": 2
+    },
+    {
+     "inn": 2,
+     "ku": true,
+     "text": "Soles,Anna doubled down the left field line, 2RBI (1-1 BF); Linduff,Aynslee scored; Boyer,Ella scored from first base.",
+     "us": 5,
+     "them": 2
+    },
+    {
+     "inn": 4,
+     "ku": false,
+     "text": "Gusman,Gianna walked, RBI (3-2 BBBKKB); Piper,Faith scored, unearned; Lindsey,Gigi advanced to third base; Waddell,Averie advanced to second base.",
+     "us": 5,
+     "them": 3
+    },
+    {
+     "inn": 4,
+     "ku": false,
+     "text": "Carter,Brooklyn reached on a fielding error fielding by 1b by Soles,Anna (E3) (2-2 BBKF); Lindsey,Gigi scored, unearned; Tovar,Kaislynn advanced to third base; Gusman,Gianna advanced to second base.",
+     "us": 5,
+     "them": 4
+    },
+    {
+     "inn": 4,
+     "ku": false,
+     "text": "Jones,SaMya sacrifice fly to rf, RBI (1-1 BF); Tovar,Kaislynn scored, unearned; Gusman,Gianna advanced to third base.",
+     "us": 5,
+     "them": 5
+    },
+    {
+     "inn": 4,
+     "ku": false,
+     "text": "Carter,Brooklyn advanced to second base on error; Gusman,Gianna scored on a muffed throw by Soles,Anna (E3), unearned.",
+     "us": 5,
+     "them": 6
+    },
+    {
+     "inn": 4,
+     "ku": true,
+     "text": "Soles,Anna sacrifice fly to lf, RBI (2-1 BBK); Limbaugh,Presley scored.",
+     "us": 6,
+     "them": 6
+    },
+    {
+     "inn": 5,
+     "ku": true,
+     "text": "Stafford,Kadence homered to deep right field, 7th of season, RBI (1-1 FB).",
+     "us": 7,
+     "them": 6
+    },
+    {
+     "inn": 7,
+     "ku": false,
+     "text": "Carter,Brooklyn scored on a wild pitch, unearned.",
+     "us": 7,
+     "them": 7
+    },
+    {
+     "inn": 7,
+     "ku": false,
+     "text": "Piper,Faith doubled to left center, RBI (1-0 B); Cran,Leah scored from first base, unearned.",
+     "us": 7,
+     "them": 8
+    }
+   ],
    "site": "H",
    "startTime": "2 p.m. CT"
   },
@@ -14765,7 +17689,9 @@
      "sf": 0,
      "sh": 0,
      "kl": 1,
-     "ao": 2
+     "ao": 2,
+     "po": 4,
+     "a": 1
     },
     {
      "player": "Presley Limbaugh",
@@ -14788,7 +17714,8 @@
      "sf": 0,
      "sh": 0,
      "kl": 1,
-     "ao": 1
+     "ao": 1,
+     "po": 4
     },
     {
      "player": "Bailey Amezcua",
@@ -14832,7 +17759,9 @@
      "cs": 0,
      "sf": 0,
      "sh": 0,
-     "go": 2
+     "go": 2,
+     "po": 8,
+     "dp": 1
     },
     {
      "player": "Ava Wallace",
@@ -14854,7 +17783,8 @@
      "cs": 0,
      "sf": 0,
      "sh": 0,
-     "ao": 1
+     "ao": 1,
+     "po": 2
     },
     {
      "player": "Madi Hays",
@@ -14920,7 +17850,10 @@
      "cs": 0,
      "sf": 1,
      "sh": 0,
-     "ao": 2
+     "ao": 2,
+     "po": 1,
+     "a": 2,
+     "dp": 1
     },
     {
      "player": "Campbell Bagshaw",
@@ -14942,7 +17875,9 @@
      "cs": 0,
      "sf": 0,
      "sh": 0,
-     "ao": 1
+     "ao": 1,
+     "po": 1,
+     "a": 3
     },
     {
      "player": "Bailey Weber",
@@ -14985,6 +17920,7 @@
      "cs": 0,
      "sf": 0,
      "sh": 0,
+     "a": 2,
      "p": 1,
      "outs": 21,
      "ha": 4,
@@ -15023,12 +17959,24 @@
      "cs": 0,
      "sf": 0,
      "sh": 0,
-     "go": 1
+     "go": 1,
+     "po": 1,
+     "a": 1,
+     "csb": 1
     }
    ],
    "venue": "Lawrence, KS",
    "attendance": 436,
    "boxScoreUrl": "https://kuathletics.com/sports/softball/stats/2026/baylor/boxscore/20470",
+   "scoring": [
+    {
+     "inn": 6,
+     "ku": true,
+     "text": "Stafford,Kadence sacrifice fly to cf, RBI (0-0); Hays,Madi scored.",
+     "us": 1,
+     "them": 0
+    }
+   ],
    "site": "H",
    "startTime": "4:30  p.m. CT"
   },
@@ -15064,7 +18012,10 @@
      "cs": 0,
      "sf": 0,
      "sh": 0,
-     "ao": 2
+     "ao": 2,
+     "po": 2,
+     "a": 4,
+     "dp": 1
     },
     {
      "player": "Presley Limbaugh",
@@ -15110,7 +18061,11 @@
      "sf": 0,
      "sh": 0,
      "kl": 1,
-     "go": 1
+     "go": 1,
+     "po": 5,
+     "a": 1,
+     "sba": 1,
+     "csb": 1
     },
     {
      "player": "Anna Soles",
@@ -15132,7 +18087,9 @@
      "cs": 0,
      "sf": 0,
      "sh": 0,
-     "ao": 2
+     "ao": 2,
+     "po": 7,
+     "dp": 1
     },
     {
      "player": "Ava Wallace",
@@ -15154,7 +18111,8 @@
      "cs": 0,
      "sf": 0,
      "sh": 0,
-     "ao": 1
+     "ao": 1,
+     "po": 3
     },
     {
      "player": "Lizzy Ludwig",
@@ -15176,6 +18134,7 @@
      "cs": 0,
      "sf": 0,
      "sh": 0,
+     "a": 1,
      "p": 1,
      "outs": 4,
      "ha": 3,
@@ -15269,7 +18228,8 @@
      "cs": 0,
      "sf": 0,
      "sh": 0,
-     "ao": 2
+     "ao": 2,
+     "po": 1
     },
     {
      "player": "Kadence Stafford",
@@ -15292,7 +18252,8 @@
      "sf": 0,
      "sh": 0,
      "ao": 2,
-     "gidp": 1
+     "gidp": 1,
+     "a": 1
     },
     {
      "player": "Campbell Bagshaw",
@@ -15313,7 +18274,9 @@
      "sb": 0,
      "cs": 0,
      "sf": 0,
-     "sh": 0
+     "sh": 0,
+     "po": 3,
+     "a": 1
     },
     {
      "player": "September Flanagan",
@@ -15419,6 +18382,71 @@
    "venue": "Lawrence, KS",
    "attendance": 790,
    "boxScoreUrl": "https://kuathletics.com/sports/softball/stats/2026/baylor/boxscore/20471",
+   "scoring": [
+    {
+     "inn": 2,
+     "ku": false,
+     "text": "Marshall,Kaygen homered to deep center field, 8th of season, RBI (1-1 BK).",
+     "us": 0,
+     "them": 1
+    },
+    {
+     "inn": 2,
+     "ku": false,
+     "text": "Carter,Brooklyn singled to deep center field, RBI (2-1 FBB); Gusman,Gianna scored from second base.",
+     "us": 0,
+     "them": 2
+    },
+    {
+     "inn": 2,
+     "ku": true,
+     "text": "Cripe,Hailey homered to deep left field, 13th of season, RBI (3-1 BFBB).",
+     "us": 1,
+     "them": 2
+    },
+    {
+     "inn": 2,
+     "ku": true,
+     "text": "Wallace,Ava homered to deep center field, 2nd of season, RBI (0-1 K).",
+     "us": 2,
+     "them": 2
+    },
+    {
+     "inn": 3,
+     "ku": false,
+     "text": "Marshall,Kaygen singled to left center, RBI (3-1 BBBK); Toven,Amber scored; Cran,Leah advanced to third base; Marshall,Kaygen advanced to second base on the throw.",
+     "us": 2,
+     "them": 3
+    },
+    {
+     "inn": 5,
+     "ku": true,
+     "text": "Cripe,Hailey infield fly to second base (2-0 BB); Boyer,Ella scored on a fielding error by Piper,Faith (E4), unearned; Youngblood,Audri advanced to third base; Stafford,Kadence advanced to second base.",
+     "us": 3,
+     "them": 3
+    },
+    {
+     "inn": 5,
+     "ku": true,
+     "text": "Bagshaw,Campbell reached on a fielder's choice hit to third base (1-1 SB); Youngblood,Audri out at third base, 3b to c; Stafford,Kadence scored from second base, unearned; Bagshaw,Campbell advanced to second base.",
+     "us": 4,
+     "them": 3
+    },
+    {
+     "inn": 6,
+     "ku": false,
+     "text": "Waddell,Averie homered to deep left field, 3rd of season, RBI (1-0 B).",
+     "us": 4,
+     "them": 4
+    },
+    {
+     "inn": 7,
+     "ku": true,
+     "text": "Flanagan,September singled down the right field line, walk off, RBI (1-1 BK); Stafford,Kadence scored; Cripe,Hailey advanced to second base.",
+     "us": 5,
+     "them": 4
+    }
+   ],
    "site": "H",
    "startTime": "2 p.m. CT"
   },
@@ -15455,7 +18483,9 @@
      "sf": 0,
      "sh": 0,
      "kl": 1,
-     "go": 1
+     "go": 1,
+     "po": 1,
+     "a": 1
     },
     {
      "player": "Presley Limbaugh",
@@ -15477,7 +18507,8 @@
      "cs": 0,
      "sf": 0,
      "sh": 0,
-     "go": 2
+     "go": 2,
+     "po": 3
     },
     {
      "player": "Bailey Amezcua",
@@ -15500,7 +18531,9 @@
      "sf": 0,
      "sh": 0,
      "go": 1,
-     "ao": 1
+     "ao": 1,
+     "po": 7,
+     "sba": 1
     },
     {
      "player": "Anna Soles",
@@ -15522,7 +18555,9 @@
      "cs": 0,
      "sf": 0,
      "sh": 0,
-     "go": 2
+     "go": 2,
+     "po": 5,
+     "a": 2
     },
     {
      "player": "Ava Wallace",
@@ -15622,7 +18657,8 @@
      "cs": 0,
      "sf": 0,
      "sh": 0,
-     "go": 1
+     "go": 1,
+     "po": 2
     },
     {
      "player": "Kadence Stafford",
@@ -15645,7 +18681,8 @@
      "sf": 0,
      "sh": 0,
      "kl": 1,
-     "ao": 2
+     "ao": 2,
+     "a": 3
     },
     {
      "player": "Campbell Bagshaw",
@@ -15666,7 +18703,9 @@
      "sb": 0,
      "cs": 0,
      "sf": 0,
-     "sh": 0
+     "sh": 0,
+     "po": 3,
+     "a": 1
     },
     {
      "player": "September Flanagan",
@@ -15804,6 +18843,7 @@
      "cs": 0,
      "sf": 0,
      "sh": 0,
+     "a": 1,
      "p": 1,
      "outs": 7,
      "ha": 1,
@@ -15846,6 +18886,36 @@
    "venue": "Lawrence, KS",
    "attendance": 789,
    "boxScoreUrl": "https://kuathletics.com/sports/softball/stats/2026/missouri/boxscore/20472",
+   "scoring": [
+    {
+     "inn": 1,
+     "ku": false,
+     "text": "Forrester,Sidney singled to center field, RBI (3-2 SBBFB); Carr,Abby scored; Hay,Abby advanced from first base to third base; Forrester,Sidney advanced to second base on the throw.",
+     "us": 0,
+     "them": 1
+    },
+    {
+     "inn": 2,
+     "ku": false,
+     "text": "Abruscato,Stefania sacrifice fly to cf, RBI (0-1 K); Cahalan,Claire scored.",
+     "us": 0,
+     "them": 2
+    },
+    {
+     "inn": 6,
+     "ku": true,
+     "text": "Soles,Anna tripled down the left field line, 2RBI (0-0); Weber,Bailey scored; Limbaugh,Presley scored from second base.",
+     "us": 2,
+     "them": 2
+    },
+    {
+     "inn": 7,
+     "ku": false,
+     "text": "Hay,Abby homered to deep right field, 5th of season, 2RBI (3-1 BBBK); Carr,Abby scored from first base.",
+     "us": 2,
+     "them": 4
+    }
+   ],
    "site": "H",
    "startTime": "5 p.m. CT"
   },
@@ -15881,7 +18951,8 @@
      "cs": 0,
      "sf": 0,
      "sh": 1,
-     "ao": 2
+     "ao": 2,
+     "po": 1
     },
     {
      "player": "Ella Boyer",
@@ -15927,7 +18998,9 @@
      "sf": 0,
      "sh": 0,
      "go": 1,
-     "ao": 1
+     "ao": 1,
+     "po": 1,
+     "a": 5
     },
     {
      "player": "Anna Soles",
@@ -15949,7 +19022,8 @@
      "cs": 0,
      "sf": 1,
      "sh": 0,
-     "ao": 2
+     "ao": 2,
+     "po": 8
     },
     {
      "player": "Hailey Cripe",
@@ -15971,7 +19045,9 @@
      "cs": 0,
      "sf": 0,
      "sh": 0,
-     "ao": 1
+     "ao": 1,
+     "po": 2,
+     "a": 1
     },
     {
      "player": "Aynslee Linduff",
@@ -16038,7 +19114,8 @@
      "sf": 0,
      "sh": 0,
      "kl": 1,
-     "ao": 1
+     "ao": 1,
+     "po": 3
     },
     {
      "player": "Campbell Bagshaw",
@@ -16060,7 +19137,9 @@
      "cs": 0,
      "sf": 0,
      "sh": 0,
-     "go": 3
+     "go": 3,
+     "po": 4,
+     "a": 1
     },
     {
      "player": "Bailey Amezcua",
@@ -16083,7 +19162,11 @@
      "sf": 0,
      "sh": 0,
      "kl": 1,
-     "ao": 1
+     "ao": 1,
+     "po": 3,
+     "a": 2,
+     "pb": 1,
+     "csb": 1
     },
     {
      "player": "Emma Tatum",
@@ -16126,6 +19209,9 @@
      "cs": 0,
      "sf": 0,
      "sh": 0,
+     "po": 1,
+     "a": 1,
+     "csb": 1,
      "p": 1,
      "outs": 18,
      "ha": 5,
@@ -16185,6 +19271,57 @@
    "venue": "UCF Softball Complex",
    "attendance": 850,
    "boxScoreUrl": "https://kuathletics.com/sports/softball/stats/2026/ucf/boxscore/20500",
+   "scoring": [
+    {
+     "inn": 1,
+     "ku": false,
+     "text": "B. Damon doubled down the lf line, RBI (0-0); K. Yarnell advanced to third; A. Evans scored.",
+     "us": 0,
+     "them": 1
+    },
+    {
+     "inn": 2,
+     "ku": true,
+     "text": "Wallace singled up the middle, RBI, advanced to second (0-1 K); Cripe advanced to third, out at home cf to c; Soles scored.",
+     "us": 1,
+     "them": 1
+    },
+    {
+     "inn": 3,
+     "ku": true,
+     "text": "Soles flied out to rf, SF, RBI (0-0); Limbaugh scored.",
+     "us": 2,
+     "them": 1
+    },
+    {
+     "inn": 3,
+     "ku": true,
+     "text": "Cripe singled to center field, RBI (3-2 BBKBKF); Stafford advanced to third; Boyer scored.",
+     "us": 3,
+     "them": 1
+    },
+    {
+     "inn": 4,
+     "ku": false,
+     "text": "Z. Calvez singled up the middle, RBI (0-2 KF); K. Birkensto scored.",
+     "us": 3,
+     "them": 2
+    },
+    {
+     "inn": 6,
+     "ku": false,
+     "text": "S. Rey singled to first base, RBI (0-0); C. Jaimes scored.",
+     "us": 3,
+     "them": 3
+    },
+    {
+     "inn": 8,
+     "ku": false,
+     "text": "K. Yarnell homered to center field, 3 RBI (1-2 KBS); I. Mertes scored; Z. Calvez scored.",
+     "us": 3,
+     "them": 6
+    }
+   ],
    "site": "A",
    "startTime": "5 p.m. CT"
   },
@@ -16221,7 +19358,8 @@
      "sf": 0,
      "sh": 0,
      "go": 1,
-     "ao": 1
+     "ao": 1,
+     "po": 2
     },
     {
      "player": "Ella Boyer",
@@ -16243,7 +19381,11 @@
      "cs": 0,
      "sf": 0,
      "sh": 0,
-     "go": 1
+     "go": 1,
+     "po": 1,
+     "a": 2,
+     "sba": 1,
+     "csb": 2
     },
     {
      "player": "Hailey Cripe",
@@ -16265,7 +19407,9 @@
      "cs": 0,
      "sf": 0,
      "sh": 0,
-     "ao": 2
+     "ao": 2,
+     "po": 2,
+     "a": 2
     },
     {
      "player": "Anna Soles",
@@ -16287,7 +19431,9 @@
      "cs": 0,
      "sf": 0,
      "sh": 0,
-     "ao": 1
+     "ao": 1,
+     "po": 8,
+     "e": 1
     },
     {
      "player": "Kadence Stafford",
@@ -16309,7 +19455,8 @@
      "cs": 0,
      "sf": 0,
      "sh": 0,
-     "go": 1
+     "go": 1,
+     "a": 2
     },
     {
      "player": "Emma Tatum",
@@ -16354,7 +19501,8 @@
      "cs": 0,
      "sf": 0,
      "sh": 0,
-     "go": 2
+     "go": 2,
+     "po": 1
     },
     {
      "player": "Ava Wallace",
@@ -16376,7 +19524,8 @@
      "cs": 0,
      "sf": 0,
      "sh": 0,
-     "go": 3
+     "go": 3,
+     "po": 2
     },
     {
      "player": "Campbell Bagshaw",
@@ -16398,7 +19547,9 @@
      "cs": 0,
      "sf": 0,
      "sh": 0,
-     "ao": 2
+     "ao": 2,
+     "po": 2,
+     "a": 3
     },
     {
      "player": "Madi Hays",
@@ -16441,6 +19592,7 @@
      "cs": 0,
      "sf": 0,
      "sh": 0,
+     "csb": 1,
      "p": 1,
      "outs": 7,
      "ha": 4,
@@ -16512,6 +19664,7 @@
      "cs": 0,
      "sf": 0,
      "sh": 0,
+     "csb": 1,
      "p": 1,
      "outs": 6,
      "ha": 3,
@@ -16549,6 +19702,7 @@
      "cs": 0,
      "sf": 0,
      "sh": 0,
+     "sba": 1,
      "p": 1,
      "outs": 5,
      "ha": 3,
@@ -16571,6 +19725,71 @@
    "venue": "UCF Softball Complex",
    "attendance": 803,
    "boxScoreUrl": "https://kuathletics.com/sports/softball/stats/2026/ucf/boxscore/20501",
+   "scoring": [
+    {
+     "inn": 1,
+     "ku": false,
+     "text": "B. Damon singled to right center, RBI (3-2 KBFBB); A. Evans scored.",
+     "us": 0,
+     "them": 1
+    },
+    {
+     "inn": 2,
+     "ku": true,
+     "text": "Wallace reached on a fielder's choice to second base, RBI (1-0 B); Linduff out at second 2b to ss; Stafford scored.",
+     "us": 1,
+     "them": 1
+    },
+    {
+     "inn": 3,
+     "ku": false,
+     "text": "A. Evans homered to left field, RBI (1-2 KKB).",
+     "us": 1,
+     "them": 2
+    },
+    {
+     "inn": 3,
+     "ku": false,
+     "text": "S. Humphreys singled to right field, RBI (1-1 KB); B. Damon advanced to second; K. Yarnell advanced to third; I. Mertes scored.",
+     "us": 1,
+     "them": 3
+    },
+    {
+     "inn": 3,
+     "ku": false,
+     "text": "A. Griffin singled to center field, 2 RBI (1-2 KBF); S. Humphreys advanced to second; B. Damon scored; K. Yarnell scored.",
+     "us": 1,
+     "them": 5
+    },
+    {
+     "inn": 4,
+     "ku": true,
+     "text": "Soles homered to right center, RBI (0-0).",
+     "us": 2,
+     "them": 5
+    },
+    {
+     "inn": 5,
+     "ku": false,
+     "text": "K. Yarnell homered to left center, 2 RBI (0-2 KK); I. Mertes scored.",
+     "us": 2,
+     "them": 7
+    },
+    {
+     "inn": 5,
+     "ku": false,
+     "text": "M. Miles grounded out to ss, RBI (2-2 SFBFB); T. Kittleman advanced to third; A. Durant scored.",
+     "us": 2,
+     "them": 8
+    },
+    {
+     "inn": 5,
+     "ku": false,
+     "text": "Z. Calvez singled to left field, RBI (2-1 KBB); T. Kittleman scored.",
+     "us": 2,
+     "them": 9
+    }
+   ],
    "site": "A",
    "startTime": "4 p.m. CT"
   },
@@ -16606,7 +19825,8 @@
      "cs": 1,
      "sf": 0,
      "sh": 0,
-     "go": 1
+     "go": 1,
+     "po": 3
     },
     {
      "player": "Ella Boyer",
@@ -16672,7 +19892,9 @@
      "cs": 0,
      "sf": 0,
      "sh": 0,
-     "ao": 2
+     "ao": 2,
+     "po": 1,
+     "a": 4
     },
     {
      "player": "Anna Soles",
@@ -16694,7 +19916,8 @@
      "cs": 0,
      "sf": 0,
      "sh": 0,
-     "go": 1
+     "go": 1,
+     "po": 7
     },
     {
      "player": "Kadence Stafford",
@@ -16717,7 +19940,9 @@
      "sf": 0,
      "sh": 1,
      "go": 1,
-     "ao": 1
+     "ao": 1,
+     "po": 1,
+     "a": 4
     },
     {
      "player": "Aynslee Linduff",
@@ -16739,7 +19964,8 @@
      "cs": 0,
      "sf": 0,
      "sh": 0,
-     "go": 1
+     "go": 1,
+     "po": 4
     },
     {
      "player": "Karsen Griggs",
@@ -16782,7 +20008,8 @@
      "sb": 0,
      "cs": 0,
      "sf": 0,
-     "sh": 0
+     "sh": 0,
+     "po": 1
     },
     {
      "player": "Ava Wallace",
@@ -16849,7 +20076,9 @@
      "cs": 0,
      "sf": 0,
      "sh": 0,
-     "go": 1
+     "go": 1,
+     "po": 2,
+     "e": 1
     },
     {
      "player": "Bailey Amezcua",
@@ -16871,7 +20100,8 @@
      "cs": 0,
      "sf": 0,
      "sh": 1,
-     "kl": 1
+     "kl": 1,
+     "po": 2
     },
     {
      "player": "Audri Youngblood",
@@ -16937,6 +20167,36 @@
    "venue": "UCF Softball Complex",
    "attendance": 650,
    "boxScoreUrl": "https://kuathletics.com/sports/softball/stats/2026/ucf/boxscore/20502",
+   "scoring": [
+    {
+     "inn": 3,
+     "ku": true,
+     "text": "Youngblood stole second; Bagshaw scored on a throwing error by c, unearned.",
+     "us": 1,
+     "them": 0
+    },
+    {
+     "inn": 3,
+     "ku": true,
+     "text": "Cripe homered to left field, 3 RBI (3-2 BFFFBFB); Boyer scored; Youngblood scored.",
+     "us": 4,
+     "them": 0
+    },
+    {
+     "inn": 6,
+     "ku": false,
+     "text": "S. Rey singled to shortstop, RBI (1-2 BKK); C. Jaimes advanced to third; S. Humphreys scored.",
+     "us": 4,
+     "them": 1
+    },
+    {
+     "inn": 7,
+     "ku": false,
+     "text": "B. Damon grounded out to ss, RBI (0-0); I. Mertes scored.",
+     "us": 4,
+     "them": 2
+    }
+   ],
    "site": "A",
    "startTime": "10 a.m. CT"
   },
@@ -16973,7 +20233,9 @@
      "sf": 0,
      "sh": 0,
      "kl": 1,
-     "ao": 1
+     "ao": 1,
+     "po": 1,
+     "a": 1
     },
     {
      "player": "Presley Limbaugh",
@@ -16994,7 +20256,8 @@
      "sb": 0,
      "cs": 0,
      "sf": 0,
-     "sh": 0
+     "sh": 0,
+     "po": 3
     },
     {
      "player": "Jaeden Murphy",
@@ -17038,7 +20301,8 @@
      "cs": 0,
      "sf": 0,
      "sh": 0,
-     "ao": 1
+     "ao": 1,
+     "po": 2
     },
     {
      "player": "Anna Soles",
@@ -17060,7 +20324,8 @@
      "cs": 0,
      "sf": 0,
      "sh": 0,
-     "go": 1
+     "go": 1,
+     "po": 3
     },
     {
      "player": "Ava Wallace",
@@ -17082,7 +20347,8 @@
      "cs": 0,
      "sf": 0,
      "sh": 0,
-     "go": 1
+     "go": 1,
+     "po": 5
     },
     {
      "player": "Aynslee Linduff",
@@ -17104,7 +20370,8 @@
      "cs": 0,
      "sf": 0,
      "sh": 0,
-     "ao": 1
+     "ao": 1,
+     "po": 1
     },
     {
      "player": "Kadence Stafford",
@@ -17127,7 +20394,9 @@
      "sf": 0,
      "sh": 0,
      "go": 1,
-     "ao": 1
+     "ao": 1,
+     "a": 1,
+     "e": 1
     },
     {
      "player": "Campbell Bagshaw",
@@ -17149,7 +20418,8 @@
      "cs": 0,
      "sf": 0,
      "sh": 0,
-     "go": 1
+     "go": 1,
+     "e": 1
     },
     {
      "player": "Bailey Weber",
@@ -17255,6 +20525,85 @@
    ],
    "venue": "Lawrence, KS",
    "boxScoreUrl": "https://kuathletics.com/sports/softball/stats/2026/iowa-state/boxscore/20503",
+   "scoring": [
+    {
+     "inn": 1,
+     "ku": false,
+     "text": "Ford,Karlee sacrifice fly to lf, RBI (0-0); Clemons,Jessie scored, unearned; Bartholomew,Reagan advanced to third base; Shepherd,Kadence advanced to second base.",
+     "us": 0,
+     "them": 1
+    },
+    {
+     "inn": 1,
+     "ku": true,
+     "text": "Stafford,Kadence walked, RBI (3-1 BBKBB); Limbaugh,Presley scored; Boyer,Ella advanced to third base; Soles,Anna advanced to second base.",
+     "us": 1,
+     "them": 1
+    },
+    {
+     "inn": 1,
+     "ku": true,
+     "text": "Bagshaw,Campbell doubled to right field, 2RBI (1-1 BF); Boyer,Ella scored; Soles,Anna scored from second base; Stafford,Kadence advanced from first base to third base.",
+     "us": 3,
+     "them": 1
+    },
+    {
+     "inn": 1,
+     "ku": true,
+     "text": "Linduff,Aynslee reached on a fielder's choice hit to third base, RBI (3-2 BBFBK); Stafford,Kadence scored; Bagshaw,Campbell advanced to third base.",
+     "us": 4,
+     "them": 1
+    },
+    {
+     "inn": 1,
+     "ku": true,
+     "text": "Wallace,Ava grounded out to first base, unassisted, RBI (3-1 BFBB); Bagshaw,Campbell scored; Linduff,Aynslee advanced to second base.",
+     "us": 5,
+     "them": 1
+    },
+    {
+     "inn": 2,
+     "ku": true,
+     "text": "Soles,Anna homered to deep right field, 10th of season, 2RBI (2-1 BKB); Limbaugh,Presley scored from first base.",
+     "us": 7,
+     "them": 1
+    },
+    {
+     "inn": 3,
+     "ku": false,
+     "text": "Ford,Karlee reached on a fielding error fielding by 3b by Stafford,Kadence (E5) (2-2 BBFF); Johnson,Tatum scored; Shepherd,Kadence advanced to second base.",
+     "us": 7,
+     "them": 2
+    },
+    {
+     "inn": 3,
+     "ku": true,
+     "text": "Limbaugh,Presley singled to left field, RBI (2-1 BBK); Bagshaw,Campbell scored; Wallace,Ava advanced to third base; Amezcua,Bailey advanced to second base.",
+     "us": 8,
+     "them": 2
+    },
+    {
+     "inn": 3,
+     "ku": true,
+     "text": "Boyer,Ella walked, RBI (3-1 SBBBB); Wallace,Ava scored; Amezcua,Bailey advanced to third base; Limbaugh,Presley advanced to second base.",
+     "us": 9,
+     "them": 2
+    },
+    {
+     "inn": 3,
+     "ku": true,
+     "text": "Soles,Anna grounded out to short, ss to 1b, RBI (0-1 K); Amezcua,Bailey scored; Limbaugh,Presley advanced to third base; Youngblood,Audri advanced to second base.",
+     "us": 10,
+     "them": 2
+    },
+    {
+     "inn": 3,
+     "ku": true,
+     "text": "Cripe,Hailey singled up the middle, 2RBI (2-0 BB); Limbaugh,Presley scored; Youngblood,Audri scored from second base.",
+     "us": 12,
+     "them": 2
+    }
+   ],
    "site": "H",
    "startTime": "3 p.m. CT"
   },
@@ -17290,7 +20639,10 @@
      "cs": 0,
      "sf": 0,
      "sh": 0,
-     "ao": 2
+     "ao": 2,
+     "po": 1,
+     "a": 2,
+     "dp": 1
     },
     {
      "player": "Presley Limbaugh",
@@ -17313,7 +20665,8 @@
      "sf": 0,
      "sh": 0,
      "go": 1,
-     "ao": 2
+     "ao": 2,
+     "po": 2
     },
     {
      "player": "Bailey Amezcua",
@@ -17358,7 +20711,9 @@
      "sh": 0,
      "go": 2,
      "ao": 1,
-     "gidp": 1
+     "gidp": 1,
+     "po": 6,
+     "dp": 1
     },
     {
      "player": "Ava Wallace",
@@ -17380,7 +20735,8 @@
      "cs": 0,
      "sf": 0,
      "sh": 0,
-     "ao": 1
+     "ao": 1,
+     "po": 1
     },
     {
      "player": "Emma Tatum",
@@ -17424,7 +20780,8 @@
      "cs": 0,
      "sf": 0,
      "sh": 0,
-     "ao": 1
+     "ao": 1,
+     "po": 1
     },
     {
      "player": "Kadence Stafford",
@@ -17446,7 +20803,10 @@
      "cs": 0,
      "sf": 0,
      "sh": 0,
-     "ao": 2
+     "ao": 2,
+     "po": 1,
+     "a": 1,
+     "e": 1
     },
     {
      "player": "Campbell Bagshaw",
@@ -17468,7 +20828,10 @@
      "cs": 0,
      "sf": 0,
      "sh": 0,
-     "ao": 2
+     "ao": 2,
+     "po": 4,
+     "a": 2,
+     "dp": 1
     },
     {
      "player": "Kennedy Diggs",
@@ -17526,6 +20889,7 @@
      "cs": 0,
      "sf": 0,
      "sh": 0,
+     "e": 1,
      "p": 1,
      "outs": 11,
      "ha": 2,
@@ -17565,12 +20929,44 @@
      "cs": 0,
      "sf": 0,
      "sh": 0,
-     "ao": 1
+     "ao": 1,
+     "po": 5,
+     "sba": 1
     }
    ],
    "venue": "Lawrence, KS",
    "attendance": 894,
    "boxScoreUrl": "https://kuathletics.com/sports/softball/stats/2026/iowa-state/boxscore/20505",
+   "scoring": [
+    {
+     "inn": 3,
+     "ku": false,
+     "text": "Johnson,Tatum sacrifice fly to rf, RBI (3-2 BBKSB); Andrews,McKenna scored; Clemons,Jessie advanced to third base.",
+     "us": 0,
+     "them": 1
+    },
+    {
+     "inn": 4,
+     "ku": false,
+     "text": "Clemons,Jessie singled to center field, 2RBI (2-0 BB); Malott,Sydney scored; Oliver,Hayleigh scored from second base; Andrews,McKenna advanced to second base.",
+     "us": 0,
+     "them": 3
+    },
+    {
+     "inn": 6,
+     "ku": false,
+     "text": "Clemons,Jessie reached on a fielding error fielding by 3b by Stafford,Kadence (E5) (1-1 BK); Andrews,McKenna scored from second base, unearned; Clemons,Jessie advanced to second base.",
+     "us": 0,
+     "them": 4
+    },
+    {
+     "inn": 6,
+     "ku": true,
+     "text": "Bagshaw,Campbell homered to deep left field, 9th of season, RBI (0-1 K).",
+     "us": 1,
+     "them": 4
+    }
+   ],
    "site": "H",
    "startTime": "5:30 p.m. CT"
   },
@@ -17606,7 +21002,9 @@
      "cs": 0,
      "sf": 0,
      "sh": 0,
-     "go": 2
+     "go": 2,
+     "po": 3,
+     "a": 2
     },
     {
      "player": "Presley Limbaugh",
@@ -17628,7 +21026,9 @@
      "cs": 0,
      "sf": 0,
      "sh": 0,
-     "ao": 3
+     "ao": 3,
+     "po": 1,
+     "a": 1
     },
     {
      "player": "Bailey Amezcua",
@@ -17651,7 +21051,10 @@
      "sf": 0,
      "sh": 0,
      "go": 1,
-     "ao": 1
+     "ao": 1,
+     "po": 2,
+     "a": 1,
+     "csb": 1
     },
     {
      "player": "Anna Soles",
@@ -17673,7 +21076,8 @@
      "cs": 0,
      "sf": 0,
      "sh": 0,
-     "ao": 2
+     "ao": 2,
+     "po": 9
     },
     {
      "player": "Lizzy Ludwig",
@@ -17695,6 +21099,7 @@
      "cs": 0,
      "sf": 0,
      "sh": 0,
+     "a": 1,
      "p": 1,
      "outs": 8,
      "ha": 2,
@@ -17811,7 +21216,8 @@
      "sf": 0,
      "sh": 0,
      "go": 1,
-     "ao": 1
+     "ao": 1,
+     "po": 1
     },
     {
      "player": "Kadence Stafford",
@@ -17834,7 +21240,8 @@
      "sf": 0,
      "sh": 1,
      "go": 1,
-     "ao": 1
+     "ao": 1,
+     "po": 3
     },
     {
      "player": "Campbell Bagshaw",
@@ -17857,7 +21264,9 @@
      "sf": 0,
      "sh": 0,
      "go": 1,
-     "ao": 1
+     "ao": 1,
+     "po": 2,
+     "a": 1
     },
     {
      "player": "September Flanagan",
@@ -17879,7 +21288,9 @@
      "cs": 0,
      "sf": 0,
      "sh": 0,
-     "ao": 2
+     "ao": 2,
+     "po": 3,
+     "a": 4
     },
     {
      "player": "Bailey Weber",
@@ -17988,6 +21399,43 @@
    "venue": "Lawrence, KS",
    "attendance": 984,
    "boxScoreUrl": "https://kuathletics.com/sports/softball/stats/2026/iowa-state/boxscore/20504",
+   "scoring": [
+    {
+     "inn": 1,
+     "ku": false,
+     "text": "Johnson,Tatum homered to deep left field, 11th of season, RBI (0-1 K).",
+     "us": 0,
+     "them": 1
+    },
+    {
+     "inn": 4,
+     "ku": false,
+     "text": "Malott,Sydney doubled to right center, RBI (0-0); Shepherd,Kadence scored from second base.",
+     "us": 0,
+     "them": 2
+    },
+    {
+     "inn": 6,
+     "ku": true,
+     "text": "Cripe,Hailey singled to right field, RBI (3-1 FBBB); Stafford,Kadence scored from second base; Tatum,Emma advanced from first base to third base.",
+     "us": 1,
+     "them": 2
+    },
+    {
+     "inn": 6,
+     "ku": true,
+     "text": "Bagshaw,Campbell singled to left field, RBI (1-1 KB); Tatum,Emma scored; Hays,Madi out at home, lf to c.",
+     "us": 2,
+     "them": 2
+    },
+    {
+     "inn": 8,
+     "ku": true,
+     "text": "Soles,Anna homered to deep right field, walk off, 11th of season, 2RBI (1-0 B); Boyer,Ella scored from first base.",
+     "us": 4,
+     "them": 2
+    }
+   ],
    "site": "H",
    "startTime": "2 p.m. CT"
   },
@@ -18022,7 +21470,9 @@
      "sb": 0,
      "cs": 0,
      "sf": 0,
-     "sh": 0
+     "sh": 0,
+     "po": 1,
+     "a": 1
     },
     {
      "player": "Presley Limbaugh",
@@ -18044,7 +21494,8 @@
      "cs": 0,
      "sf": 0,
      "sh": 0,
-     "go": 1
+     "go": 1,
+     "po": 2
     },
     {
      "player": "Bailey Amezcua",
@@ -18065,7 +21516,8 @@
      "sb": 0,
      "cs": 0,
      "sf": 0,
-     "sh": 0
+     "sh": 0,
+     "po": 3
     },
     {
      "player": "Anna Soles",
@@ -18087,7 +21539,9 @@
      "cs": 0,
      "sf": 0,
      "sh": 0,
-     "go": 1
+     "go": 1,
+     "po": 3,
+     "dp": 1
     },
     {
      "player": "Emma Tatum",
@@ -18153,7 +21607,8 @@
      "cs": 0,
      "sf": 0,
      "sh": 0,
-     "go": 2
+     "go": 2,
+     "po": 1
     },
     {
      "player": "Kadence Stafford",
@@ -18175,7 +21630,8 @@
      "cs": 0,
      "sf": 0,
      "sh": 0,
-     "ao": 1
+     "ao": 1,
+     "po": 1
     },
     {
      "player": "Campbell Bagshaw",
@@ -18197,7 +21653,10 @@
      "cs": 0,
      "sf": 0,
      "sh": 0,
-     "ao": 1
+     "ao": 1,
+     "po": 2,
+     "a": 2,
+     "dp": 1
     },
     {
      "player": "September Flanagan",
@@ -18219,7 +21678,10 @@
      "cs": 0,
      "sf": 0,
      "sh": 0,
-     "go": 2
+     "go": 2,
+     "po": 1,
+     "a": 1,
+     "dp": 1
     },
     {
      "player": "Lila Partridge",
@@ -18241,6 +21703,7 @@
      "cs": 0,
      "sf": 0,
      "sh": 0,
+     "po": 1,
      "p": 1,
      "outs": 15,
      "ha": 3,
@@ -18306,6 +21769,64 @@
    "venue": "Lawrence, Kan.",
    "attendance": 436,
    "boxScoreUrl": "https://kuathletics.com/sports/softball/stats/2026/wichita-state/boxscore/20506",
+   "scoring": [
+    {
+     "inn": 1,
+     "ku": true,
+     "text": "Soles,Anna homered to deep center field, 12th of season, 2RBI (1-2 KFB); Limbaugh,Presley scored from first base.",
+     "us": 2,
+     "them": 0
+    },
+    {
+     "inn": 1,
+     "ku": true,
+     "text": "Bagshaw,Campbell singled up the middle, RBI (3-2 BKBFBF); Cripe,Hailey scored from second base; Boyer,Ella advanced to second base.",
+     "us": 3,
+     "them": 0
+    },
+    {
+     "inn": 1,
+     "ku": true,
+     "text": "Linduff,Aynslee grounded out to short, ss to 1b, RBI (0-0); Boyer,Ella scored.",
+     "us": 4,
+     "them": 0
+    },
+    {
+     "inn": 1,
+     "ku": true,
+     "text": "Amezcua,Bailey doubled to right center, RBI (3-2 FBBBK); Bagshaw,Campbell scored from second base.",
+     "us": 5,
+     "them": 0
+    },
+    {
+     "inn": 2,
+     "ku": true,
+     "text": "Cripe,Hailey homered to deep right field, 15th of season, RBI (1-0 B).",
+     "us": 6,
+     "them": 0
+    },
+    {
+     "inn": 4,
+     "ku": true,
+     "text": "Limbaugh,Presley reached on a fielding error fielding by p by Fakes,Gabby (E1) (1-2 FKB); Hays,Madi scored; Stafford,Kadence advanced to third base.",
+     "us": 7,
+     "them": 0
+    },
+    {
+     "inn": 4,
+     "ku": true,
+     "text": "Cripe,Hailey doubled to right center, 2RBI (0-1 F); Stafford,Kadence scored, unearned; Limbaugh,Presley scored from second base, unearned.",
+     "us": 9,
+     "them": 0
+    },
+    {
+     "inn": 4,
+     "ku": true,
+     "text": "Bagshaw,Campbell singled through the left side of the infield, RBI (0-2 FKFFF); Cripe,Hailey scored; Youngblood,Audri advanced to third base.",
+     "us": 10,
+     "them": 0
+    }
+   ],
    "site": "H",
    "startTime": "5 p.m. CT"
   },
@@ -18342,7 +21863,8 @@
      "sf": 0,
      "sh": 0,
      "kl": 1,
-     "go": 1
+     "go": 1,
+     "po": 4
     },
     {
      "player": "Presley Limbaugh",
@@ -18365,7 +21887,8 @@
      "sf": 0,
      "sh": 0,
      "kl": 1,
-     "go": 1
+     "go": 1,
+     "po": 2
     },
     {
      "player": "Bailey Amezcua",
@@ -18387,7 +21910,9 @@
      "cs": 0,
      "sf": 0,
      "sh": 1,
-     "go": 1
+     "go": 1,
+     "po": 6,
+     "sba": 1
     },
     {
      "player": "Anna Soles",
@@ -18408,7 +21933,8 @@
      "sb": 0,
      "cs": 0,
      "sf": 0,
-     "sh": 0
+     "sh": 0,
+     "po": 6
     },
     {
      "player": "Lizzy Ludwig",
@@ -18510,7 +22036,8 @@
      "cs": 0,
      "sf": 0,
      "sh": 0,
-     "go": 2
+     "go": 2,
+     "a": 2
     },
     {
      "player": "September Flanagan",
@@ -18534,7 +22061,8 @@
      "sh": 0,
      "go": 2,
      "ao": 1,
-     "gidp": 1
+     "gidp": 1,
+     "a": 3
     },
     {
      "player": "Sam Claire",
@@ -18635,6 +22163,57 @@
    "venue": "Stillwater, Okla.",
    "attendance": 1549,
    "boxScoreUrl": "https://kuathletics.com/sports/softball/stats/2026/oklahoma-state/boxscore/20507",
+   "scoring": [
+    {
+     "inn": 4,
+     "ku": false,
+     "text": "Warsop,Tia singled to right field, 2RBI (0-0); Davis,Rosie scored; Castillo,Gabby scored from second base; Hasler,Amanda advanced from first base to third base.",
+     "us": 0,
+     "them": 2
+    },
+    {
+     "inn": 4,
+     "ku": false,
+     "text": "Schneidmiller,Audrey singled to left field, 2RBI (2-1 BBK); Graf,Macy scored; Warsop,Tia scored from second base.",
+     "us": 0,
+     "them": 4
+    },
+    {
+     "inn": 5,
+     "ku": false,
+     "text": "Timm,Claire homered to right field, 8th of season, RBI (0-0).",
+     "us": 0,
+     "them": 5
+    },
+    {
+     "inn": 5,
+     "ku": false,
+     "text": "Davis,Rosie homered, 11th of season, RBI (2-1 BFB).",
+     "us": 0,
+     "them": 6
+    },
+    {
+     "inn": 6,
+     "ku": true,
+     "text": "Soles,Anna doubled to left center, RBI (2-2 FSBBF); Stafford,Kadence scored from second base.",
+     "us": 1,
+     "them": 6
+    },
+    {
+     "inn": 6,
+     "ku": false,
+     "text": "Hoffman,Madison homered to left center, 3rd of season, RBI (3-2 KBBSB).",
+     "us": 1,
+     "them": 7
+    },
+    {
+     "inn": 6,
+     "ku": false,
+     "text": "Jones,Aubrey homered to left center, 4th of season, RBI (1-0 B).",
+     "us": 1,
+     "them": 8
+    }
+   ],
    "site": "A",
    "startTime": "6 p.m. CT"
   },
@@ -18692,7 +22271,8 @@
      "cs": 0,
      "sf": 0,
      "sh": 0,
-     "ao": 1
+     "ao": 1,
+     "po": 2
     },
     {
      "player": "Anna Soles",
@@ -18714,7 +22294,8 @@
      "cs": 0,
      "sf": 0,
      "sh": 0,
-     "ao": 1
+     "ao": 1,
+     "po": 7
     },
     {
      "player": "Ava Wallace",
@@ -18781,7 +22362,8 @@
      "sf": 0,
      "sh": 0,
      "kl": 1,
-     "ao": 1
+     "ao": 1,
+     "po": 1
     },
     {
      "player": "Campbell Bagshaw",
@@ -18803,7 +22385,8 @@
      "cs": 0,
      "sf": 0,
      "sh": 1,
-     "go": 1
+     "go": 1,
+     "a": 2
     },
     {
      "player": "September Flanagan",
@@ -18826,7 +22409,8 @@
      "sf": 0,
      "sh": 0,
      "kl": 1,
-     "go": 1
+     "go": 1,
+     "a": 1
     },
     {
      "player": "Bailey Weber",
@@ -18847,7 +22431,8 @@
      "sb": 0,
      "cs": 0,
      "sf": 0,
-     "sh": 0
+     "sh": 0,
+     "po": 1
     },
     {
      "player": "Lila Partridge",
@@ -18869,6 +22454,7 @@
      "cs": 0,
      "sf": 0,
      "sh": 0,
+     "a": 1,
      "p": 1,
      "outs": 15,
      "ha": 2,
@@ -18927,12 +22513,78 @@
      "cs": 0,
      "sf": 0,
      "sh": 0,
-     "ao": 1
+     "ao": 1,
+     "po": 4
     }
    ],
    "venue": "Stillwater, Okla.",
    "attendance": 1691,
    "boxScoreUrl": "https://kuathletics.com/sports/softball/stats/2026/oklahoma-state/boxscore/20508",
+   "scoring": [
+    {
+     "inn": 1,
+     "ku": true,
+     "text": "Cripe,Hailey singled to shallow left field, RBI (3-1 KBBB); Limbaugh,Presley scored; Soles,Anna advanced to third base.",
+     "us": 1,
+     "them": 0
+    },
+    {
+     "inn": 1,
+     "ku": true,
+     "text": "Boyer,Ella singled to shallow left field, RBI (2-2 BBSK); Soles,Anna scored; Cripe,Hailey advanced to second base.",
+     "us": 2,
+     "them": 0
+    },
+    {
+     "inn": 1,
+     "ku": true,
+     "text": "Bagshaw,Campbell singled to right center, RBI (3-2 KBKBBF); Cripe,Hailey scored from second base; Boyer,Ella advanced from first base to third base.",
+     "us": 3,
+     "them": 0
+    },
+    {
+     "inn": 1,
+     "ku": true,
+     "text": "Linduff,Aynslee singled to third base, 2RBI (2-2 KBFB); Boyer,Ella scored; Bagshaw,Campbell scored from second base; Linduff,Aynslee advanced to second base on the throw.",
+     "us": 5,
+     "them": 0
+    },
+    {
+     "inn": 1,
+     "ku": false,
+     "text": "Davis,Rosie homered to center field, 12th of season, RBI (3-1 BBFB).",
+     "us": 5,
+     "them": 1
+    },
+    {
+     "inn": 2,
+     "ku": true,
+     "text": "Linduff,Aynslee singled through the right side of the infield, RBI (0-0); Cripe,Hailey scored; Youngblood,Audri advanced to third base; Flanagan,September advanced to second base.",
+     "us": 6,
+     "them": 1
+    },
+    {
+     "inn": 3,
+     "ku": true,
+     "text": "Boyer,Ella homered to right center, 18th of season, 2RBI (1-2 SBS); Cripe,Hailey scored from first base.",
+     "us": 8,
+     "them": 1
+    },
+    {
+     "inn": 3,
+     "ku": true,
+     "text": "Bagshaw,Campbell homered to left field, 10th of season, RBI (2-2 FBFFBFF).",
+     "us": 9,
+     "them": 1
+    },
+    {
+     "inn": 4,
+     "ku": true,
+     "text": "Limbaugh,Presley doubled to left center, RBI (1-2 BFK); Linduff,Aynslee scored from second base.",
+     "us": 10,
+     "them": 1
+    }
+   ],
    "site": "A",
    "startTime": "2 p.m. CT"
   },
@@ -18968,7 +22620,11 @@
      "cs": 0,
      "sf": 0,
      "sh": 0,
-     "go": 2
+     "go": 2,
+     "po": 2,
+     "a": 3,
+     "e": 1,
+     "dp": 2
     },
     {
      "player": "Presley Limbaugh",
@@ -18991,7 +22647,8 @@
      "sf": 0,
      "sh": 0,
      "go": 1,
-     "ao": 1
+     "ao": 1,
+     "po": 2
     },
     {
      "player": "Anna Soles",
@@ -19013,7 +22670,9 @@
      "cs": 0,
      "sf": 0,
      "sh": 0,
-     "ao": 2
+     "ao": 2,
+     "po": 5,
+     "dp": 1
     },
     {
      "player": "Ava Wallace",
@@ -19078,7 +22737,10 @@
      "cs": 0,
      "sf": 0,
      "sh": 0,
-     "ao": 1
+     "ao": 1,
+     "po": 1,
+     "a": 1,
+     "dp": 1
     },
     {
      "player": "Kadence Stafford",
@@ -19100,7 +22762,8 @@
      "cs": 0,
      "sf": 0,
      "sh": 0,
-     "kl": 1
+     "kl": 1,
+     "po": 1
     },
     {
      "player": "Campbell Bagshaw",
@@ -19122,7 +22785,9 @@
      "cs": 0,
      "sf": 0,
      "sh": 0,
-     "ao": 1
+     "ao": 1,
+     "po": 1,
+     "a": 1
     },
     {
      "player": "September Flanagan",
@@ -19145,7 +22810,10 @@
      "sf": 0,
      "sh": 0,
      "kl": 1,
-     "ao": 1
+     "ao": 1,
+     "po": 3,
+     "a": 1,
+     "dp": 2
     },
     {
      "player": "Blakely Barber",
@@ -19204,6 +22872,8 @@
      "cs": 0,
      "sf": 0,
      "sh": 0,
+     "a": 1,
+     "dp": 1,
      "p": 1,
      "outs": 7,
      "ha": 5,
@@ -19276,12 +22946,45 @@
      "cs": 0,
      "sf": 0,
      "sh": 0,
-     "go": 2
+     "go": 2,
+     "po": 3,
+     "a": 3,
+     "dp": 1
     }
    ],
    "venue": "Stillwater, Okla.",
    "attendance": 1594,
    "boxScoreUrl": "https://kuathletics.com/sports/softball/stats/2026/oklahoma-state/boxscore/20509",
+   "scoring": [
+    {
+     "inn": 1,
+     "ku": false,
+     "text": "Davis,Rosie reached on a fielder's choice, RBI (2-0 BB); Timm,Claire scored.",
+     "us": 0,
+     "them": 1
+    },
+    {
+     "inn": 2,
+     "ku": false,
+     "text": "Schneidmiller,Audrey homered to left field, 4th of season, 2RBI (0-1 K); Hasler,Amanda scored from second base.",
+     "us": 0,
+     "them": 3
+    },
+    {
+     "inn": 3,
+     "ku": false,
+     "text": "Davis,Rosie homered to left field, 13th of season, 2RBI (3-2 BBBKK); Godwin,Karli scored from first base.",
+     "us": 0,
+     "them": 5
+    },
+    {
+     "inn": 5,
+     "ku": false,
+     "text": "Hoffman,Madison homered down the right field line, 2RBI (3-1 SBBB); Warsop,Tia scored from first base.",
+     "us": 0,
+     "them": 7
+    }
+   ],
    "site": "A",
    "startTime": "1 p.m. CT"
   },
@@ -19318,7 +23021,9 @@
      "sf": 0,
      "sh": 1,
      "go": 1,
-     "ao": 2
+     "ao": 2,
+     "a": 2,
+     "e": 1
     },
     {
      "player": "Presley Limbaugh",
@@ -19340,7 +23045,8 @@
      "cs": 0,
      "sf": 0,
      "sh": 0,
-     "ao": 1
+     "ao": 1,
+     "po": 2
     },
     {
      "player": "Bailey Amezcua",
@@ -19363,7 +23069,9 @@
      "sf": 0,
      "sh": 0,
      "go": 1,
-     "ao": 3
+     "ao": 3,
+     "po": 3,
+     "sba": 1
     },
     {
      "player": "Anna Soles",
@@ -19385,7 +23093,10 @@
      "cs": 0,
      "sf": 1,
      "sh": 0,
-     "ao": 1
+     "ao": 1,
+     "po": 6,
+     "a": 1,
+     "dp": 1
     },
     {
      "player": "Ava Wallace",
@@ -19408,7 +23119,8 @@
      "sf": 0,
      "sh": 1,
      "go": 1,
-     "ao": 1
+     "ao": 1,
+     "po": 4
     },
     {
      "player": "Emma Tatum",
@@ -19492,7 +23204,10 @@
      "sb": 0,
      "cs": 0,
      "sf": 0,
-     "sh": 0
+     "sh": 0,
+     "po": 2,
+     "a": 2,
+     "dp": 1
     },
     {
      "player": "Campbell Bagshaw",
@@ -19514,7 +23229,9 @@
      "cs": 0,
      "sf": 0,
      "sh": 0,
-     "ao": 2
+     "ao": 2,
+     "po": 3,
+     "a": 1
     },
     {
      "player": "September Flanagan",
@@ -19556,7 +23273,8 @@
      "sb": 0,
      "cs": 0,
      "sf": 0,
-     "sh": 0
+     "sh": 0,
+     "po": 1
     },
     {
      "player": "Lila Partridge",
@@ -19578,6 +23296,7 @@
      "cs": 0,
      "sf": 0,
      "sh": 0,
+     "e": 1,
      "p": 1,
      "outs": 15,
      "ha": 8,
@@ -19678,6 +23397,64 @@
    ],
    "venue": "Oklahoma City",
    "boxScoreUrl": "https://kuathletics.com/sports/softball/stats/2026/ucf/boxscore/20610",
+   "scoring": [
+    {
+     "inn": 1,
+     "ku": false,
+     "text": "Damon,Beth homered to deep left field, 2RBI (2-1 BFB); Yarnell,Kendall scored from first base.",
+     "us": 0,
+     "them": 2
+    },
+    {
+     "inn": 2,
+     "ku": false,
+     "text": "Yarnell,Kendall reached on an error by Cripe,Hailey (E6), RBI (2-1 BKB); Griffin,Ashleigh scored, unearned; Rey,Samantha scored from first base, unearned.",
+     "us": 0,
+     "them": 4
+    },
+    {
+     "inn": 3,
+     "ku": true,
+     "text": "Soles,Anna sacrifice fly to 3b, RBI (2-2 BFSBF); Stafford,Kadence scored, unearned; Limbaugh,Presley advanced to third base.",
+     "us": 1,
+     "them": 4
+    },
+    {
+     "inn": 4,
+     "ku": true,
+     "text": "Wallace,Ava homered to deep right field, 2RBI (1-1 BK); Weber,Bailey scored from first base.",
+     "us": 3,
+     "them": 4
+    },
+    {
+     "inn": 5,
+     "ku": true,
+     "text": "Boyer,Ella sacrifice fly to left center putout by cf, RBI (1-0 B); Limbaugh,Presley scored.",
+     "us": 4,
+     "them": 4
+    },
+    {
+     "inn": 5,
+     "ku": false,
+     "text": "Griffin,Ashleigh sacrifice fly to lf, RBI (0-1 K); Mertes,Izzy scored.",
+     "us": 4,
+     "them": 5
+    },
+    {
+     "inn": 6,
+     "ku": true,
+     "text": "Stafford,Kadence singled, RBI (0-0); Hays,Madi scored from second base; Stafford,Kadence advanced to second base on the throw.",
+     "us": 5,
+     "them": 5
+    },
+    {
+     "inn": 7,
+     "ku": true,
+     "text": "Bagshaw,Campbell singled up the middle, RBI (1-1 KB); Soles,Anna scored from second base; Boyer,Ella advanced to second base.",
+     "us": 6,
+     "them": 5
+    }
+   ],
    "site": "N",
    "startTime": "11 a.m. CT"
   },
@@ -19713,7 +23490,10 @@
      "cs": 0,
      "sf": 0,
      "sh": 0,
-     "ao": 1
+     "ao": 1,
+     "po": 1,
+     "a": 2,
+     "e": 1
     },
     {
      "player": "Presley Limbaugh",
@@ -19734,7 +23514,8 @@
      "sb": 0,
      "cs": 0,
      "sf": 0,
-     "sh": 0
+     "sh": 0,
+     "po": 1
     },
     {
      "player": "Anna Soles",
@@ -19755,7 +23536,8 @@
      "sb": 0,
      "cs": 0,
      "sf": 0,
-     "sh": 0
+     "sh": 0,
+     "po": 4
     },
     {
      "player": "Ava Wallace",
@@ -19777,7 +23559,8 @@
      "cs": 0,
      "sf": 0,
      "sh": 0,
-     "ao": 1
+     "ao": 1,
+     "po": 2
     },
     {
      "player": "Kaelee Washington",
@@ -19856,7 +23639,8 @@
      "cs": 0,
      "sf": 0,
      "sh": 0,
-     "ao": 1
+     "ao": 1,
+     "a": 1
     },
     {
      "player": "Campbell Bagshaw",
@@ -19878,7 +23662,9 @@
      "cs": 0,
      "sf": 0,
      "sh": 0,
-     "ao": 2
+     "ao": 2,
+     "po": 2,
+     "a": 2
     },
     {
      "player": "September Flanagan",
@@ -20049,11 +23835,77 @@
      "cs": 0,
      "sf": 0,
      "sh": 0,
-     "ao": 1
+     "ao": 1,
+     "po": 2
     }
    ],
    "venue": "Oklahoma City, Okla.",
    "boxScoreUrl": "https://kuathletics.com/sports/softball/stats/2026/texas-tech/boxscore/20611",
+   "scoring": [
+    {
+     "inn": 1,
+     "ku": false,
+     "text": "Burns,Jasmyn homered to deep right field, 17th of season, 3RBI (1-1 KB); Williams,Mia scored from second base; Lis,Jackie scored from first base.",
+     "us": 0,
+     "them": 3
+    },
+    {
+     "inn": 3,
+     "ku": false,
+     "text": "Lis,Jackie homered to deep left field, 17th of season, RBI (1-2 KKFFB).",
+     "us": 0,
+     "them": 4
+    },
+    {
+     "inn": 3,
+     "ku": false,
+     "text": "Pannell,Taylor homered to deep left field, 9th of season, 3RBI (0-2 SF); Terry,Kaitlyn scored from second base; Allred,Lauren scored from first base.",
+     "us": 0,
+     "them": 7
+    },
+    {
+     "inn": 3,
+     "ku": false,
+     "text": "Spearman,Desirae homered to deep left field, 13th of season, RBI (3-0 BBB).",
+     "us": 0,
+     "them": 8
+    },
+    {
+     "inn": 4,
+     "ku": false,
+     "text": "Terry,Kaitlyn singled through the right side of the infield, RBI (3-2 KKBFBB); Garcia,Makayla scored from second base.",
+     "us": 0,
+     "them": 9
+    },
+    {
+     "inn": 4,
+     "ku": false,
+     "text": "Pannell,Taylor reached on a throwing error throwing by ss by Cripe,Hailey (E6), RBI (2-2 BKBF); Terry,Kaitlyn scored from second base; Allred,Lauren advanced from first base to third base.",
+     "us": 0,
+     "them": 10
+    },
+    {
+     "inn": 4,
+     "ku": false,
+     "text": "Spearman,Desirae singled down the left field line, RBI (2-1 BFB); Allred,Lauren scored; Pannell,Taylor advanced to second base.",
+     "us": 0,
+     "them": 11
+    },
+    {
+     "inn": 4,
+     "ku": false,
+     "text": "Davis,Mihyia tripled, 2RBI (2-0 BB); Pannell,Taylor scored from second base, unearned; Spearman,Desirae scored from first base.",
+     "us": 0,
+     "them": 13
+    },
+    {
+     "inn": 4,
+     "ku": false,
+     "text": "Williams,Mia doubled down the left field line, RBI (2-2 BFBF); Davis,Mihyia scored.",
+     "us": 0,
+     "them": 14
+    }
+   ],
    "site": "N",
    "startTime": "3 p.m. CT"
   },
@@ -20090,7 +23942,8 @@
      "sf": 0,
      "sh": 0,
      "go": 2,
-     "ao": 1
+     "ao": 1,
+     "po": 3
     },
     {
      "player": "Anna Soles",
@@ -20114,7 +23967,8 @@
      "sh": 0,
      "kl": 1,
      "go": 1,
-     "ao": 1
+     "ao": 1,
+     "po": 10
     },
     {
      "player": "Hailey Cripe",
@@ -20137,7 +23991,9 @@
      "sf": 0,
      "sh": 0,
      "go": 1,
-     "ao": 1
+     "ao": 1,
+     "po": 2,
+     "a": 2
     },
     {
      "player": "Ella Boyer",
@@ -20160,7 +24016,8 @@
      "sf": 0,
      "sh": 0,
      "kl": 1,
-     "ao": 1
+     "ao": 1,
+     "po": 3
     },
     {
      "player": "Madi Hays",
@@ -20203,7 +24060,8 @@
      "cs": 0,
      "sf": 0,
      "sh": 0,
-     "ao": 2
+     "ao": 2,
+     "a": 4
     },
     {
      "player": "Aynslee Linduff",
@@ -20225,7 +24083,8 @@
      "cs": 0,
      "sf": 0,
      "sh": 0,
-     "ao": 4
+     "ao": 4,
+     "po": 1
     },
     {
      "player": "Bailey Weber",
@@ -20268,7 +24127,8 @@
      "cs": 0,
      "sf": 0,
      "sh": 0,
-     "go": 1
+     "go": 1,
+     "po": 2
     },
     {
      "player": "Audri Youngblood",
@@ -20333,7 +24193,9 @@
      "sb": 0,
      "cs": 0,
      "sf": 0,
-     "sh": 0
+     "sh": 0,
+     "po": 2,
+     "a": 3
     },
     {
      "player": "Lila Partridge",
@@ -20355,6 +24217,8 @@
      "cs": 0,
      "sf": 0,
      "sh": 0,
+     "po": 1,
+     "a": 1,
      "p": 1,
      "outs": 24,
      "ha": 6,
@@ -20378,6 +24242,15 @@
    "venue": "Norman, Okla.",
    "attendance": 4036,
    "boxScoreUrl": "https://kuathletics.com/sports/softball/stats/2026/michigan/boxscore/20612",
+   "scoring": [
+    {
+     "inn": 8,
+     "ku": true,
+     "text": "Wallace singled to left center, RBI (1-2 KBS); Bagshaw advanced to second; Boyer advanced to third; Cripe scored.",
+     "us": 1,
+     "them": 0
+    }
+   ],
    "site": "N",
    "startTime": "5 p.m. CT"
   },
@@ -20414,7 +24287,8 @@
      "sf": 0,
      "sh": 0,
      "go": 2,
-     "ao": 1
+     "ao": 1,
+     "po": 1
     },
     {
      "player": "Anna Soles",
@@ -20437,7 +24311,8 @@
      "sf": 0,
      "sh": 0,
      "go": 1,
-     "ao": 1
+     "ao": 1,
+     "po": 4
     },
     {
      "player": "Hailey Cripe",
@@ -20459,7 +24334,9 @@
      "cs": 0,
      "sf": 0,
      "sh": 0,
-     "ao": 2
+     "ao": 2,
+     "po": 1,
+     "a": 1
     },
     {
      "player": "Ella Boyer",
@@ -20480,7 +24357,10 @@
      "sb": 0,
      "cs": 0,
      "sf": 0,
-     "sh": 0
+     "sh": 0,
+     "po": 6,
+     "e": 1,
+     "pb": 1
     },
     {
      "player": "Audri Youngblood",
@@ -20569,7 +24449,8 @@
      "cs": 0,
      "sf": 0,
      "sh": 0,
-     "kl": 1
+     "kl": 1,
+     "po": 2
     },
     {
      "player": "Aynslee Linduff",
@@ -20591,7 +24472,8 @@
      "cs": 0,
      "sf": 0,
      "sh": 0,
-     "ao": 1
+     "ao": 1,
+     "po": 2
     },
     {
      "player": "Emma Tatum",
@@ -20635,7 +24517,9 @@
      "cs": 0,
      "sf": 1,
      "sh": 0,
-     "ao": 3
+     "ao": 3,
+     "po": 1,
+     "a": 2
     },
     {
      "player": "Bailey Weber",
@@ -20656,7 +24540,8 @@
      "sb": 0,
      "cs": 0,
      "sf": 0,
-     "sh": 0
+     "sh": 0,
+     "po": 1
     },
     {
      "player": "Lila Partridge",
@@ -20715,6 +24600,7 @@
      "cs": 0,
      "sf": 0,
      "sh": 0,
+     "a": 1,
      "p": 1,
      "outs": 5,
      "ha": 3,
@@ -20788,6 +24674,7 @@
      "cs": 0,
      "sf": 0,
      "sh": 0,
+     "a": 1,
      "p": 1,
      "outs": 12,
      "ha": 3,
@@ -20809,6 +24696,113 @@
    "venue": "Norman, Okla.",
    "attendance": 4235,
    "boxScoreUrl": "https://kuathletics.com/sports/softball/stats/2026/michigan/boxscore/20616",
+   "scoring": [
+    {
+     "inn": 1,
+     "ku": true,
+     "text": "Boyer homered to left field, 3 RBI (1-2 FFBF); Soles scored; Limbaugh scored.",
+     "us": 3,
+     "them": 0
+    },
+    {
+     "inn": 1,
+     "ku": false,
+     "text": "Stephenson singled through the left side, RBI (1-0 B); Putz advanced to third; Langford scored.",
+     "us": 3,
+     "them": 1
+    },
+    {
+     "inn": 1,
+     "ku": false,
+     "text": "Conway singled down the rf line, RBI (2-2 BBKFF); Stephenson advanced to third; Putz scored.",
+     "us": 3,
+     "them": 2
+    },
+    {
+     "inn": 1,
+     "ku": false,
+     "text": "Conway advanced to second on a wild pitch, scored on a throwing error by c; Stephenson scored on a wild pitch.",
+     "us": 3,
+     "them": 4
+    },
+    {
+     "inn": 1,
+     "ku": false,
+     "text": "Vallimont homered to left field, RBI (3-2 BBKBK).",
+     "us": 3,
+     "them": 5
+    },
+    {
+     "inn": 2,
+     "ku": false,
+     "text": "Stephenson flied out to cf, SF, RBI (1-2 FKFB); Putz advanced to third; Carr scored.",
+     "us": 3,
+     "them": 6
+    },
+    {
+     "inn": 2,
+     "ku": false,
+     "text": "Putz scored on a passed ball.",
+     "us": 3,
+     "them": 7
+    },
+    {
+     "inn": 2,
+     "ku": false,
+     "text": "Hoehn singled down the rf line, RBI (1-2 FBF); Vallimont advanced to third; Conway scored.",
+     "us": 3,
+     "them": 8
+    },
+    {
+     "inn": 3,
+     "ku": true,
+     "text": "Bagshaw singled to left field, 2 RBI (3-2 SKBBB); Boyer advanced to second; Cripe scored; Soles scored.",
+     "us": 5,
+     "them": 8
+    },
+    {
+     "inn": 3,
+     "ku": false,
+     "text": "Carr singled up the middle, RBI (2-0 BB); Dellamonica scored.",
+     "us": 5,
+     "them": 9
+    },
+    {
+     "inn": 4,
+     "ku": true,
+     "text": "Bagshaw walked, RBI (3-2 BSSBFBB); Boyer advanced to second; Soles advanced to third; Limbaugh scored.",
+     "us": 6,
+     "them": 9
+    },
+    {
+     "inn": 6,
+     "ku": true,
+     "text": "Flanagan singled to right field, RBI (3-2 KBBFB); Youngblood advanced to third; Cripe scored.",
+     "us": 7,
+     "them": 9
+    },
+    {
+     "inn": 6,
+     "ku": true,
+     "text": "Linduff doubled down the lf line, 2 RBI (0-1 K); Wallace advanced to third; Flanagan scored; Youngblood scored.",
+     "us": 9,
+     "them": 9
+    },
+    {
+     "inn": 6,
+     "ku": true,
+     "text": "Stafford flied out to lf to left center, SF, RBI (1-2 KKBF); Wallace scored.",
+     "us": 10,
+     "them": 9
+    },
+    {
+     "inn": 6,
+     "ku": false,
+     "text": "Conway homered to left center, 3 RBI (1-2 BKK); Stephenson scored; Putz scored.",
+     "us": 10,
+     "them": 12
+    }
+   ],
    "site": "N",
    "startTime": "07:10 PM"
   },
@@ -20844,7 +24838,8 @@
      "cs": 0,
      "sf": 0,
      "sh": 0,
-     "ao": 1
+     "ao": 1,
+     "po": 3
     },
     {
      "player": "Anna Soles",
@@ -20866,7 +24861,8 @@
      "cs": 0,
      "sf": 0,
      "sh": 0,
-     "ao": 1
+     "ao": 1,
+     "po": 1
     },
     {
      "player": "Hailey Cripe",
@@ -20909,7 +24905,8 @@
      "cs": 0,
      "sf": 0,
      "sh": 0,
-     "go": 2
+     "go": 2,
+     "po": 2
     },
     {
      "player": "Campbell Bagshaw",
@@ -20931,7 +24928,8 @@
      "cs": 0,
      "sf": 0,
      "sh": 0,
-     "go": 1
+     "go": 1,
+     "po": 1
     },
     {
      "player": "September Flanagan",
@@ -20976,7 +24974,8 @@
      "cs": 0,
      "sf": 0,
      "sh": 0,
-     "go": 1
+     "go": 1,
+     "po": 4
     },
     {
      "player": "Aynslee Linduff",
@@ -20999,7 +24998,8 @@
      "sf": 0,
      "sh": 0,
      "kl": 1,
-     "go": 1
+     "go": 1,
+     "po": 1
     },
     {
      "player": "Kadence Stafford",
@@ -21020,7 +25020,8 @@
      "sb": 0,
      "cs": 0,
      "sf": 0,
-     "sh": 0
+     "sh": 0,
+     "a": 1
     },
     {
      "player": "Chloe Barber",
@@ -21079,6 +25080,7 @@
      "cs": 0,
      "sf": 0,
      "sh": 0,
+     "a": 1,
      "p": 1,
      "outs": 3,
      "ha": 2,
@@ -21101,6 +25103,57 @@
    ],
    "venue": "Norman, Okla.",
    "boxScoreUrl": "https://kuathletics.com/sports/softball/stats/2026/oklahoma-sooners/boxscore/20613",
+   "scoring": [
+    {
+     "inn": 2,
+     "ku": false,
+     "text": "Pickering, K homered to right field, 2 RBI (2-2 KBKB); Garcia, G. scored.",
+     "us": 0,
+     "them": 2
+    },
+    {
+     "inn": 2,
+     "ku": false,
+     "text": "Emerling, I. homered to center field, RBI (0-0).",
+     "us": 0,
+     "them": 3
+    },
+    {
+     "inn": 4,
+     "ku": false,
+     "text": "Emerling, I. doubled down the lf line, RBI (0-0); Pickering, K scored.",
+     "us": 0,
+     "them": 4
+    },
+    {
+     "inn": 4,
+     "ku": false,
+     "text": "Dayton, A. doubled to right center, RBI (2-1 BKB); Emerling, I. scored.",
+     "us": 0,
+     "them": 5
+    },
+    {
+     "inn": 4,
+     "ku": false,
+     "text": "Minor, K. singled through the left side, RBI (1-2 BKF); Barker, S. advanced to second; Dayton, A. scored.",
+     "us": 0,
+     "them": 6
+    },
+    {
+     "inn": 4,
+     "ku": false,
+     "text": "Garcia, G. singled to center field, 2 RBI (0-1 K); Wells, K. advanced to second; Minor, K. scored; Barker, S. scored.",
+     "us": 0,
+     "them": 8
+    },
+    {
+     "inn": 4,
+     "ku": false,
+     "text": "Pickering, K advanced to second on a wild pitch; Garcia, G. advanced to third on a wild pitch; Helton, C. scored on a wild pitch.",
+     "us": 0,
+     "them": 9
+    }
+   ],
    "site": "N",
    "startTime": "2 p.m."
   },
@@ -21121,13 +25174,6 @@
    "startTime": "2:30 pm",
    "teamScore": 0,
    "opponentScore": 7
-  },
-  {
-   "date": "2026-10-01",
-   "opponent": "Johnson County CC",
-   "season": "Fall 2026",
-   "site": "H",
-   "startTime": "5:00 pm"
   },
   {
    "date": "2026-10-02",
@@ -21156,6 +25202,13 @@
    "season": "Fall 2026",
    "site": "N",
    "startTime": "4:00 pm"
+  },
+  {
+   "date": "2026-10-13",
+   "opponent": "Johnson County CC",
+   "season": "Fall 2026",
+   "site": "H",
+   "startTime": "5:00 pm"
   },
   {
    "date": "2026-10-14",
