@@ -1,0 +1,54 @@
+name: Plan a game-day watch
+
+# Checks a few times a day, in season, whether KU plays within the next few
+# hours, and starts the watcher if so.
+#
+# The basketball project does this from its scrape, which runs every four
+# hours — so a scrape always falls inside the watcher's window. This one
+# scrapes once a night at 09:00 UTC, which is four in the morning in Lawrence
+# and never within four and a half hours of a first pitch. Wiring the plan
+# step into that scrape would have produced a watcher that could never fire.
+#
+# So the planning runs on its own cadence instead. It is a checkout and one
+# node process reading the committed seed — seconds, no browser, no network
+# beyond GitHub — which is why it can run five times a day for the cost of
+# the scrape running once more.
+
+on:
+  workflow_dispatch:
+  schedule:
+    # Through the Central afternoon and evening, February to June only, which
+    # is the whole D1 softball season. The spread covers a first pitch from
+    # about nine in the morning to nine at night Central; the watcher's own
+    # window is four and a half hours, so neighbouring slots overlap and a
+    # single missed or delayed cron delivery does not lose the day.
+    - cron: '7 14,16,18,20,22 * 2-6 *'
+
+permissions:
+  contents: read
+  actions: write
+
+jobs:
+  plan:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Is there a game to watch?
+        id: plan
+        run: node scripts/game-night-watch.mjs plan
+
+      # Fall games are filtered out by the script, not here: the NCAA's D1
+      # scoreboard carries no fall softball, so there is nothing to poll.
+      - name: Start the watcher
+        if: steps.plan.outputs.watch == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh workflow run game-night.yml \
+            --repo "$GITHUB_REPOSITORY" \
+            --ref "$GITHUB_REF_NAME" \
+            -f date="${{ steps.plan.outputs.date }}"

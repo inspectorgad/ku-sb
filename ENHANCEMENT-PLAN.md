@@ -76,7 +76,7 @@ losses into the official record (36-23 over 59 games rather than 36-21 over
 57) and, because the Big 12 block keys off the last game's season, rendering
 its standings and poll tables empty.
 
-### Phase 2 — Harvest the discarded data (effort S–M, highest leverage)
+### Phase 2 — Harvest the discarded data (effort S–M, highest leverage) — **done**
 
 This is the phase that makes everything later possible. One pass over
 `update-seed.py` to stop discarding fields, plus a Room migration.
@@ -90,7 +90,7 @@ This is the phase that makes everything later possible. One pass over
 Implies: seed schema additions (additive, `formatVersion` stays 1), Room v4→v5
 migration, `MergeSyncTest` updates.
 
-### Phase 3 — The analytical surfaces (effort M–L)
+### Phase 3 — The analytical surfaces (effort M–L) — **done**
 
 | Item | Softball adaptation |
 |---|---|
@@ -101,7 +101,7 @@ migration, `MergeSyncTest` updates.
 | **Opponents screen + detail** | Per-opponent record, run differential, who hit well against them. Fits softball *better* than basketball because of series play |
 | **Season screen** | Season-at-a-glance narrative card set |
 
-### Phase 4 — Ask (effort L–XL)
+### Phase 4 — Ask (effort L–XL) — **done**
 
 The natural-language question feature. The engine (`AskEngine.kt`,
 `AskKeyStore.kt`) is sport-agnostic and ports nearly verbatim; the work is the
@@ -109,11 +109,25 @@ The natural-language question feature. The engine (`AskEngine.kt`,
 (`ask_pack.py` → `docs/ask-data.json` → `docs/ask.js`). Do this after Phase 2 so
 the pack is built on the rich stat set rather than the thin one.
 
-### Phase 5 — Live game night (effort L)
+### Phase 5 — Live game night (effort L) — **done**
 
-Port `game-night-watch.mjs`: on game day, poll for results and push an update
-when the game goes final. Needs four softball rewrites (doubleheaders, run-rule
-innings, no fall coverage, pitching decisions).
+Done — `scripts/game-night-watch.mjs`, driven by `game-day-plan.yml` and
+`game-night.yml`. Five rewrites rather than the four anticipated: doubleheaders
+(the whole day must go final, not the first game), the run rule (a game can end
+after five innings, so polling starts at seventy minutes rather than at the
+length of a full game), fall ball (a season here, and absent from the D1
+scoreboard entirely), pitching decisions (assigned when the box score is
+written, after the final out, so the settle is longer) — and the published
+times, which read "5:00 pm" and are missing from most of the schedule.
+
+A sixth difference is in the plumbing rather than the sport: basketball plans
+the watch from its scrape, which runs every four hours, so a scrape always
+falls inside the watcher's window. This project scrapes once a night at four in
+the morning Central and never would, so planning runs on its own cheap cron
+through the season instead.
+
+Untested against a live game until February — there has not been one since this
+was written. The decision logic is covered by 17 unit tests.
 
 ---
 

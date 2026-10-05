@@ -1,0 +1,42 @@
+name: Game day
+
+# Started by game-day-plan.yml when KU's first pitch is within a few hours
+# (see scripts/game-night-watch.mjs). Waits for every game that day to go
+# final and then dispatches the scrape, so results land the same afternoon
+# instead of whenever the next nightly run comes round.
+run-name: game day ${{ inputs.date }}
+
+on:
+  workflow_dispatch:
+    inputs:
+      date:
+        description: 'Game date, YYYY-MM-DD (Central)'
+        required: true
+
+permissions:
+  contents: read
+  actions: write
+
+# One watcher per date, not per game: a doubleheader is watched as a single
+# stretch. Not cancelled on a repeat — the one already waiting is the one that
+# knows how long it has waited.
+concurrency:
+  group: game-day-${{ inputs.date }}
+  cancel-in-progress: false
+
+jobs:
+  watch:
+    runs-on: ubuntu-latest
+    # The script hands over to a fresh run at 340 minutes, inside GitHub's
+    # six-hour cap. A doubleheader can outlast one job: game two starts about
+    # two and a half hours after game one and takes two more.
+    timeout-minutes: 355
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - name: Wait for the finals, then scrape
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: node scripts/game-night-watch.mjs watch "${{ inputs.date }}"
