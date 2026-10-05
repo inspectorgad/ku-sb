@@ -48,6 +48,28 @@ data class PollEntry(
     val updated: String = ""
 )
 
+/**
+ * One team's place in one weekly ranking snapshot.
+ *
+ * Neither ranking source serves a past week, so the history is accumulated by
+ * the scrape rather than fetched — which is why it is worth storing. A rank on
+ * its own says little; a rank beside the eight weeks before it is the shape of
+ * a season.
+ *
+ * Keyed by the snapshot's date, its source and the team, so re-syncing the same
+ * week replaces that week rather than stacking a second copy of it.
+ */
+@Entity(tableName = "ranking_snapshots", primaryKeys = ["date", "source", "team"])
+data class RankingSnapshot(
+    val date: String,
+    /** "rpi" or "poll". */
+    val source: String,
+    val season: String,
+    val team: String,
+    val rank: Int,
+    val record: String = ""
+)
+
 @Entity(tableName = "players")
 data class Player(
     @PrimaryKey(autoGenerate = true) val id: Long = 0,

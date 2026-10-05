@@ -453,6 +453,52 @@ class MergeSyncTest {
         assertEquals(GameEnding.RUN_RULE, gameEnding(game))
     }
 
+    /**
+     * The ranking history shipped in the seed for weeks and nothing read it,
+     * so every sync imported the season and discarded the archive. This is
+     * the test that would have caught that.
+     */
+    @Test
+    fun `the weekly ranking history is imported`() = runTest {
+        val dao = db.dao()
+        Seeder.merge(
+            JSONObject(
+                """
+                {"players": [], "games": [],
+                 "rankingHistory": [
+                   {"date": "2026-06-04", "source": "rpi", "season": "2026",
+                    "teams": [{"team": "Kansas", "rank": 37, "record": "36-21"},
+                              {"team": "Texas Tech", "rank": 7, "record": "61-10"},
+                              {"team": "Nobody", "rank": 0}]},
+                   {"date": "2026-05-28", "source": "rpi", "season": "2026",
+                    "teams": [{"team": "Kansas", "rank": 41, "record": "34-20"}]}
+                 ]}
+                """
+            ),
+            dao
+        )
+        val rows = dao.rankingSnapshotsOnce()
+        // The unranked team is not a row: storing a zero would draw it at the
+        // top of a trend line.
+        assertEquals(3, rows.size)
+        val ku = rows.filter { it.team == "Kansas" }.sortedBy { it.date }
+        assertEquals(listOf(41, 37), ku.map { it.rank })
+        assertEquals("36-21", ku.last().record)
+    }
+
+    @Test
+    fun `re-syncing a week replaces it rather than stacking a copy`() = runTest {
+        val dao = db.dao()
+        val json = """
+            {"players": [], "games": [],
+             "rankingHistory": [{"date": "2026-06-04", "source": "rpi", "season": "2026",
+               "teams": [{"team": "Kansas", "rank": 37, "record": "36-21"}]}]}
+        """
+        Seeder.merge(JSONObject(json), dao)
+        Seeder.merge(JSONObject(json), dao)
+        assertEquals(1, dao.rankingSnapshotsOnce().size)
+    }
+
     @Test
     fun `unknown player in lines is skipped without error`() = runTest {
         val json = seedJson().apply {

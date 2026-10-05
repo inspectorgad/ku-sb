@@ -157,6 +157,11 @@ class MigrationTest {
         // The v2 tables exist and are queryable; their contents are covered
         // by the dedicated test below.
         assertEquals(0, count(db, "SELECT COUNT(*) FROM standings"))
+        // The v9 table for the weekly ranking snapshots.
+        assertEquals(0, count(db, "SELECT COUNT(*) FROM ranking_snapshots"))
+        for (c in listOf("date", "source", "season", "team", "rank", "record")) {
+            assertTrue("ranking_snapshots is missing $c", c in columns(db, "ranking_snapshots"))
+        }
         // The v7 table for the opposing side of a box score.
         assertEquals(0, count(db, "SELECT COUNT(*) FROM opponent_stat_lines"))
         for (c in listOf("gameId", "playerName", "lineupSpot", "outsPitched", "pitchCount")) {

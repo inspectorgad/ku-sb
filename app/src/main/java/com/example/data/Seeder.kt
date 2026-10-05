@@ -363,6 +363,41 @@ object Seeder {
         }
 
         mergeStandings(root, dao)
+        mergeRankings(root, dao)
+    }
+
+    /**
+     * The weekly ranking snapshots. Flattened from the seed's
+     * `[{date, source, season, teams: [...]}]` into one row per team per week,
+     * which is the shape a trend line wants.
+     *
+     * Upserted rather than replaced wholesale: the archive only grows, and a
+     * week that is re-scraped unchanged simply rewrites itself.
+     */
+    private suspend fun mergeRankings(root: JSONObject, dao: JayhawksDao) {
+        val arr = root.optJSONArray("rankingHistory") ?: return
+        val rows = mutableListOf<RankingSnapshot>()
+        for (i in 0 until arr.length()) {
+            val snap = arr.optJSONObject(i) ?: continue
+            val date = snap.optString("date")
+            val source = snap.optString("source")
+            val season = snap.optString("season")
+            if (date.isBlank() || source.isBlank()) continue
+            val teams = snap.optJSONArray("teams") ?: continue
+            for (j in 0 until teams.length()) {
+                val t = teams.optJSONObject(j) ?: continue
+                val team = t.optString("team")
+                val rank = t.optInt("rank")
+                // A team with no rank in a snapshot is not in it; storing a
+                // zero would draw it onto a trend line at the top.
+                if (team.isBlank() || rank <= 0) continue
+                rows += RankingSnapshot(
+                    date = date, source = source, season = season,
+                    team = team, rank = rank, record = t.optString("record")
+                )
+            }
+        }
+        if (rows.isNotEmpty()) dao.upsertRankingSnapshots(rows)
     }
 
     /**

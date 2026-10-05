@@ -70,6 +70,16 @@ interface JayhawksDao {
     @Insert
     suspend fun insertOpponentStatLines(lines: List<OpponentStatLine>)
 
+    // Weekly ranking snapshots. Scraper-owned; a re-sync replaces a week.
+    @Query("SELECT * FROM ranking_snapshots ORDER BY date")
+    fun observeRankingSnapshots(): Flow<List<RankingSnapshot>>
+
+    @Query("SELECT * FROM ranking_snapshots")
+    suspend fun rankingSnapshotsOnce(): List<RankingSnapshot>
+
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
+    suspend fun upsertRankingSnapshots(rows: List<RankingSnapshot>)
+
     // Big 12 standings and poll snapshots. Scraper-owned derived data with no
     // user-entered fields, so each sync replaces a season's rows outright —
     // otherwise a team dropping out of the conference would linger forever.

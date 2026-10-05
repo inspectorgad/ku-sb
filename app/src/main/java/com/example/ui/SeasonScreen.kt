@@ -1,11 +1,14 @@
 package com.example.ui
 
+import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.horizontalScroll
 import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
@@ -13,6 +16,7 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Card
 import androidx.compose.material3.FilterChip
 import androidx.compose.material3.HorizontalDivider
@@ -177,6 +181,10 @@ fun SeasonScreen(
                     }
                 }
             }
+
+            // Every game's run margin, wins above the line and losses below —
+            // the dashboard's chart, which the app had no equivalent of.
+            item { MarginChart(played) }
 
             val highlights = seasonHighlights(played, players, lines)
             if (highlights.isNotEmpty()) {
@@ -380,6 +388,97 @@ private fun InningRow(label: String, scored: Int, allowed: Int, peak: Int, note:
                     maxLines = 1
                 )
             }
+        }
+    }
+}
+
+
+/**
+ * Run margin, one bar per game, in the order they were played.
+ *
+ * Bars grow up from a centre line for a win and down for a loss, so the shape
+ * of a season is readable at a glance: a run of tall bars is a hot streak, a
+ * cluster below the line is the weekend that got away.
+ *
+ * Scrolls horizontally rather than compressing: 57 games across a phone gives
+ * each bar about four pixels, which is a texture rather than a chart.
+ */
+@Composable
+private fun MarginChart(games: List<Game>) {
+    val ordered = games.sortedWith(compareBy({ it.date }, { it.startTime }, { it.id }))
+    if (ordered.isEmpty()) return
+    val widest = ordered.maxOf { kotlin.math.abs((it.teamScore ?: 0) - (it.opponentScore ?: 0)) }
+        .coerceAtLeast(1)
+
+    Card(modifier = Modifier.fillMaxWidth()) {
+        Column(modifier = Modifier.padding(12.dp)) {
+            Text(
+                "Game by game",
+                style = MaterialTheme.typography.titleSmall,
+                fontWeight = FontWeight.Bold
+            )
+            Text(
+                "Run margin · ${ordered.size} games, in order",
+                style = MaterialTheme.typography.bodySmall,
+                color = MaterialTheme.colorScheme.onSurfaceVariant
+            )
+            Spacer(modifier = Modifier.height(8.dp))
+            Row(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .height(132.dp)
+                    .horizontalScroll(rememberScrollState()),
+                horizontalArrangement = Arrangement.spacedBy(2.dp)
+            ) {
+                ordered.forEach { game ->
+                    val margin = (game.teamScore ?: 0) - (game.opponentScore ?: 0)
+                    val share = kotlin.math.abs(margin).toFloat() / widest
+                    Column(modifier = Modifier.width(9.dp).fillMaxHeight()) {
+                        // Top half: a win grows upward from the centre.
+                        Box(
+                            modifier = Modifier.weight(1f).fillMaxWidth(),
+                            contentAlignment = Alignment.BottomCenter
+                        ) {
+                            if (margin > 0) {
+                                Box(
+                                    modifier = Modifier
+                                        .fillMaxWidth()
+                                        .fillMaxHeight(share.coerceIn(0.05f, 1f))
+                                        .background(
+                                            MaterialTheme.colorScheme.primary,
+                                            RoundedCornerShape(topStart = 2.dp, topEnd = 2.dp)
+                                        )
+                                )
+                            }
+                        }
+                        HorizontalDivider()
+                        // Bottom half: a loss grows downward.
+                        Box(
+                            modifier = Modifier.weight(1f).fillMaxWidth(),
+                            contentAlignment = Alignment.TopCenter
+                        ) {
+                            if (margin < 0) {
+                                Box(
+                                    modifier = Modifier
+                                        .fillMaxWidth()
+                                        .fillMaxHeight(share.coerceIn(0.05f, 1f))
+                                        .background(
+                                            MaterialTheme.colorScheme.error,
+                                            RoundedCornerShape(bottomStart = 2.dp, bottomEnd = 2.dp)
+                                        )
+                                )
+                            }
+                        }
+                    }
+                }
+            }
+            Spacer(modifier = Modifier.height(4.dp))
+            Text(
+                "Blue above the line is a win, red below is a loss; height is the margin " +
+                    "(widest was $widest runs). Scroll for the whole season.",
+                style = MaterialTheme.typography.labelSmall,
+                color = MaterialTheme.colorScheme.onSurfaceVariant
+            )
         }
     }
 }

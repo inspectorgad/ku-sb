@@ -60,6 +60,7 @@ import com.example.stats.formatInnings
 import com.example.stats.opponentName
 import com.example.stats.parseInnings
 import com.example.stats.summarize
+import com.example.stats.topPerformer
 
 /**
  * "at Texas Tech" for away games, "vs Texas Tech" otherwise. Neutral-site
@@ -75,10 +76,13 @@ fun opponentLabel(game: Game): String =
 fun GamesScreen(
     games: List<Game>,
     statLines: List<StatLine>,
+    players: List<Player>,
     onSaveGame: (Game) -> Unit,
     onOpenGame: (Game) -> Unit,
     modifier: Modifier = Modifier
 ) {
+    val nameById = players.associate { it.id to it.name }
+    val linesByGame = statLines.groupBy { it.gameId }
     var showAddDialog by remember { mutableStateOf(false) }
 
     Box(modifier = modifier.fillMaxSize()) {
@@ -94,7 +98,9 @@ fun GamesScreen(
                 verticalArrangement = Arrangement.spacedBy(8.dp)
             ) {
                 items(games, key = { it.id }) { game ->
-                    val lineCount = statLines.count { it.gameId == game.id }
+                    val gameLines = linesByGame[game.id].orEmpty()
+                    val lineCount = gameLines.size
+                    val best = topPerformer(gameLines)
                     Card(
                         modifier = Modifier
                             .fillMaxWidth()
@@ -117,6 +123,15 @@ fun GamesScreen(
                                     style = MaterialTheme.typography.bodySmall,
                                     color = MaterialTheme.colorScheme.onSurfaceVariant
                                 )
+                                // Who had the day, the same pick the dashboard
+                                // makes in its "Top Jayhawk" column.
+                                if (best != null) {
+                                    Text(
+                                        "${nameById[best.playerId] ?: "Unknown"} — ${best.summary}",
+                                        style = MaterialTheme.typography.bodySmall,
+                                        color = MaterialTheme.colorScheme.onSurfaceVariant
+                                    )
+                                }
                                 game.inningScores?.let {
                                     Text(
                                         it,

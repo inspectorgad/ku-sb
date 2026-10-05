@@ -9,8 +9,8 @@ import androidx.sqlite.db.SupportSQLiteDatabase
 
 @Database(
     entities = [Player::class, Game::class, StatLine::class,
-        ConferenceStanding::class, PollEntry::class, OpponentStatLine::class],
-    version = 8,
+        ConferenceStanding::class, PollEntry::class, OpponentStatLine::class, RankingSnapshot::class],
+    version = 9,
     exportSchema = false
 )
 abstract class JayhawksDatabase : RoomDatabase() {
@@ -195,13 +195,35 @@ abstract class JayhawksDatabase : RoomDatabase() {
         }
 
         /**
+         * The weekly ranking snapshots the scrape had been archiving since
+         * October. They were already in the seed and shipped inside the APK;
+         * nothing read them, so every sync imported the season and threw the
+         * history away.
+         */
+        private val MIGRATION_8_9 = object : Migration(8, 9) {
+            override fun migrate(db: SupportSQLiteDatabase) {
+                db.execSQL(
+                    """CREATE TABLE IF NOT EXISTS `ranking_snapshots` (
+                        `date` TEXT NOT NULL,
+                        `source` TEXT NOT NULL,
+                        `season` TEXT NOT NULL,
+                        `team` TEXT NOT NULL,
+                        `rank` INTEGER NOT NULL,
+                        `record` TEXT NOT NULL,
+                        PRIMARY KEY(`date`, `source`, `team`)
+                    )"""
+                )
+            }
+        }
+
+        /**
          * Every migration in order. Exposed so MigrationTest can drive them
          * against a hand-built old database — the schema is not exported, so
          * this is the only guard that an upgrade on a phone holding real data
          * actually works.
          */
         fun migrations(): List<Migration> =
-            listOf(MIGRATION_1_2, MIGRATION_2_3, MIGRATION_3_4, MIGRATION_4_5, MIGRATION_5_6, MIGRATION_6_7, MIGRATION_7_8)
+            listOf(MIGRATION_1_2, MIGRATION_2_3, MIGRATION_3_4, MIGRATION_4_5, MIGRATION_5_6, MIGRATION_6_7, MIGRATION_7_8, MIGRATION_8_9)
 
         fun get(context: Context): JayhawksDatabase =
             instance ?: synchronized(this) {

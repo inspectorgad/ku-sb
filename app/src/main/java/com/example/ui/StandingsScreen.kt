@@ -1,10 +1,13 @@
 package com.example.ui
 
+import androidx.compose.foundation.background
 import androidx.compose.foundation.horizontalScroll
 import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
@@ -32,6 +35,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.data.ConferenceStanding
 import com.example.data.PollEntry
+import com.example.data.RankingSnapshot
 import com.example.stats.formatAvg
 
 private const val KU_SEO = "kansas"
@@ -40,6 +44,7 @@ private const val KU_SEO = "kansas"
 fun StandingsScreen(
     standings: List<ConferenceStanding>,
     pollEntries: List<PollEntry>,
+    rankingSnapshots: List<RankingSnapshot> = emptyList(),
     modifier: Modifier = Modifier
 ) {
     val seasons = (standings.map { it.season } + pollEntries.map { it.season })
@@ -87,10 +92,20 @@ fun StandingsScreen(
             }
         }
 
+        // KU's week-by-week RPI. Hidden until a second week lands — one point
+        // is not a trend — which means it appears on its own partway into a
+        // season rather than needing a change here.
+        val trend = rankingSnapshots
+            .filter { it.source == "rpi" && it.season == season && it.team == "Kansas" }
+            .sortedBy { it.date }
+
         LazyColumn(
             contentPadding = ListContentPadding,
             verticalArrangement = Arrangement.spacedBy(8.dp)
         ) {
+            if (trend.size >= 2) {
+                item { RpiTrend(trend) }
+            }
             item {
                 Card(modifier = Modifier.fillMaxWidth()) {
                     Column(modifier = Modifier.padding(12.dp)) {
@@ -278,5 +293,98 @@ private fun PollRow(entry: PollEntry) {
             style = MaterialTheme.typography.bodySmall,
             color = MaterialTheme.colorScheme.onSurfaceVariant
         )
+    }
+}
+
+
+/**
+ * Kansas week by week in the RPI, drawn with the axis inverted so up is
+ * better — a smaller number is a better rank, and a line that falls as the
+ * team improves reads backwards.
+ *
+ * Bars rather than a polyline: Compose has no path primitive here that is
+ * worth the risk, and a column per week says the same thing. Each bar's
+ * height is how far above the worst week it sits, so the tallest bar is the
+ * best rank of the season.
+ */
+@Composable
+private fun RpiTrend(weeks: List<RankingSnapshot>) {
+    val best = weeks.minOf { it.rank }
+    val worst = weeks.maxOf { it.rank }
+    val span = (worst - best).coerceAtLeast(1)
+    Card(modifier = Modifier.fillMaxWidth()) {
+        Column(modifier = Modifier.padding(12.dp)) {
+            Text(
+                "Kansas in the RPI",
+                style = MaterialTheme.typography.titleSmall,
+                fontWeight = FontWeight.Bold
+            )
+            val first = weeks.first().rank
+            val last = weeks.last().rank
+            val move = when {
+                first > last -> "up ${first - last} spots"
+                first < last -> "down ${last - first} spots"
+                else -> "level"
+            }
+            Text(
+                "#$last · $move over ${weeks.size} weekly snapshots",
+                style = MaterialTheme.typography.bodySmall,
+                color = MaterialTheme.colorScheme.onSurfaceVariant
+            )
+            Spacer(modifier = Modifier.height(10.dp))
+            Row(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .height(120.dp),
+                verticalAlignment = Alignment.Bottom,
+                horizontalArrangement = Arrangement.spacedBy(3.dp)
+            ) {
+                weeks.forEach { week ->
+                    val share = (worst - week.rank).toFloat() / span
+                    Column(
+                        modifier = Modifier.weight(1f).fillMaxHeight(),
+                        verticalArrangement = Arrangement.Bottom,
+                        horizontalAlignment = Alignment.CenterHorizontally
+                    ) {
+                        Text(
+                            "${week.rank}",
+                            style = MaterialTheme.typography.labelSmall,
+                            color = MaterialTheme.colorScheme.onSurfaceVariant,
+                            maxLines = 1
+                        )
+                        Box(
+                            modifier = Modifier
+                                .fillMaxWidth()
+                                // A floor of 6% so the worst week is still a
+                                // bar rather than nothing at all.
+                                .fillMaxHeight((0.06f + 0.84f * share).coerceIn(0.06f, 0.9f))
+                                .background(
+                                    MaterialTheme.colorScheme.primary,
+                                    RoundedCornerShape(3.dp)
+                                )
+                        )
+                    }
+                }
+            }
+            Spacer(modifier = Modifier.height(4.dp))
+            Row(modifier = Modifier.fillMaxWidth()) {
+                Text(
+                    weeks.first().date,
+                    style = MaterialTheme.typography.labelSmall,
+                    color = MaterialTheme.colorScheme.onSurfaceVariant,
+                    modifier = Modifier.weight(1f)
+                )
+                Text(
+                    weeks.last().date,
+                    style = MaterialTheme.typography.labelSmall,
+                    color = MaterialTheme.colorScheme.onSurfaceVariant
+                )
+            }
+            Text(
+                "Taller is better — the axis is inverted, because a lower RPI number is a better rank.",
+                style = MaterialTheme.typography.labelSmall,
+                color = MaterialTheme.colorScheme.onSurfaceVariant
+            )
+        }
     }
 }
