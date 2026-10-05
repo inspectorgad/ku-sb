@@ -1,6 +1,7 @@
 package com.example
 
 import android.content.Context
+import androidx.room.Room
 import androidx.sqlite.db.SupportSQLiteDatabase
 import androidx.sqlite.db.SupportSQLiteOpenHelper
 import androidx.sqlite.db.framework.FrameworkSQLiteOpenHelperFactory
@@ -194,14 +195,26 @@ class MigrationTest {
     }
 
     /**
-     * The target is read off the @Database annotation rather than written out
-     * here, so bumping the schema without adding a migration fails this test
-     * instead of quietly needing the number updated in two places.
+     * The target is the version Room itself reports rather than a number
+     * written out here, so bumping the schema without adding a migration fails
+     * this test instead of quietly needing the number remembered in two places.
+     *
+     * It comes from opening a database and reading PRAGMA user_version, which
+     * Room sets from @Database. Reflection does not work: that annotation is
+     * not retained at runtime, so asking the class for it returns null.
      */
     @Test
     fun `migrations are contiguous from 1 to the current version`() {
-        val declared = JayhawksDatabase::class.java
-            .getAnnotation(androidx.room.Database::class.java)!!.version
+        val context = ApplicationProvider.getApplicationContext<Context>()
+        val fresh = Room.inMemoryDatabaseBuilder(context, JayhawksDatabase::class.java)
+            .allowMainThreadQueries()
+            .build()
+        val declared = try {
+            fresh.openHelper.writableDatabase.version
+        } finally {
+            fresh.close()
+        }
+        assertTrue("Room reported no schema version", declared > 0)
         val steps = JayhawksDatabase.migrations().sortedBy { it.startVersion }
         var expected = 1
         for (m in steps) {
