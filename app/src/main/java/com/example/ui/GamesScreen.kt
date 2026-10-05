@@ -55,6 +55,7 @@ import com.example.data.Game
 import com.example.data.OpponentStatLine
 import com.example.data.Player
 import com.example.data.StatLine
+import com.example.stats.endingPhrase
 import com.example.stats.formatInnings
 import com.example.stats.opponentName
 import com.example.stats.parseInnings
@@ -266,12 +267,14 @@ private data class ScoringPlay(
 )
 
 /**
- * Venue, announced crowd, who the opponent was on the day, and a link out to
- * the official box score.
+ * Everything around the result: where it was played and in front of how many,
+ * how long it took and in what weather, who the opponent was on the day, who
+ * umpired, and links out to the official box scores.
  */
 @Composable
 private fun GameContext(game: Game) {
     val bits = buildList {
+        if (game.stadium.isNotBlank()) add(game.stadium)
         if (game.venue.isNotBlank()) add(game.venue)
         if (game.attendance > 0) add("${"%,d".format(game.attendance)} fans")
         // The opponent's record through this game. Shown only for a played
@@ -281,9 +284,28 @@ private fun GameContext(game: Game) {
             add("${game.opponent} were ${game.opponentRecord}")
         }
     }
-    if (bits.isEmpty() && game.boxScoreUrl.isBlank()) return
+    // The second line: how the game went, rather than where it was.
+    val detail = buildList {
+        endingPhrase(game)?.let { add(it) }
+        if (game.firstPitch.isNotBlank()) add("First pitch ${game.firstPitch}")
+        if (game.duration.isNotBlank()) add("${game.duration} long")
+        if (game.weather.isNotBlank()) add(game.weather)
+    }
+    if (bits.isEmpty() && detail.isEmpty() &&
+        game.boxScoreUrl.isBlank() && game.pdfUrl.isBlank()
+    ) {
+        return
+    }
     val uriHandler = LocalUriHandler.current
     Spacer(modifier = Modifier.height(2.dp))
+    if (game.event.isNotBlank()) {
+        Text(
+            game.event,
+            style = MaterialTheme.typography.bodySmall,
+            fontWeight = FontWeight.SemiBold,
+            color = MaterialTheme.colorScheme.onSurfaceVariant
+        )
+    }
     Row(verticalAlignment = Alignment.CenterVertically) {
         if (bits.isNotEmpty()) {
             Text(
@@ -297,12 +319,36 @@ private fun GameContext(game: Game) {
         }
         if (game.boxScoreUrl.isNotBlank()) {
             Text(
-                "Official box score",
+                "Box score",
                 style = MaterialTheme.typography.bodySmall,
                 color = MaterialTheme.colorScheme.primary,
                 modifier = Modifier.clickable { uriHandler.openUri(game.boxScoreUrl) }
             )
         }
+        if (game.pdfUrl.isNotBlank()) {
+            Text(
+                "PDF",
+                style = MaterialTheme.typography.bodySmall,
+                color = MaterialTheme.colorScheme.primary,
+                modifier = Modifier
+                    .padding(start = 10.dp)
+                    .clickable { uriHandler.openUri(game.pdfUrl) }
+            )
+        }
+    }
+    if (detail.isNotEmpty()) {
+        Text(
+            detail.joinToString(" · "),
+            style = MaterialTheme.typography.bodySmall,
+            color = MaterialTheme.colorScheme.onSurfaceVariant
+        )
+    }
+    if (game.umpires.isNotBlank()) {
+        Text(
+            game.umpires,
+            style = MaterialTheme.typography.labelSmall,
+            color = MaterialTheme.colorScheme.onSurfaceVariant
+        )
     }
 }
 

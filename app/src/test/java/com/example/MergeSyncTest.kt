@@ -4,6 +4,8 @@ import android.content.Context
 import androidx.room.Room
 import androidx.test.core.app.ApplicationProvider
 import com.example.data.Game
+import com.example.stats.gameEnding
+import com.example.stats.GameEnding
 import com.example.data.JayhawksDatabase
 import com.example.data.Seeder
 import com.example.data.StatLine
@@ -391,6 +393,64 @@ class MergeSyncTest {
         Seeder.merge(JSONObject(json), dao)
         Seeder.merge(JSONObject(json), dao)
         assertEquals(1, dao.opponentStatLinesOnce().size)
+    }
+
+    @Test
+    fun `roster detail arrives and a blank never erases it`() = runTest {
+        val dao = db.dao()
+        Seeder.merge(
+            JSONObject(
+                """
+                {"players": [{"name": "Tehya Pitts", "jerseyNumber": "1", "position": "OF",
+                  "academicYear": "Sr.", "height": "5' 4''", "batsThrows": "L/L",
+                  "hometown": "Corinth, Texas", "lastSchool": "McLennan Community College"}],
+                 "games": []}
+                """
+            ),
+            dao
+        )
+        val pitts = dao.playersOnce().single()
+        assertEquals("Sr.", pitts.academicYear)
+        assertEquals("L/L", pitts.batsThrows)
+        assertEquals("Corinth, Texas", pitts.hometown)
+
+        // A later sync from a page that no longer lists her — she graduated —
+        // must not blank the class year she had.
+        Seeder.merge(
+            JSONObject("""{"players": [{"name": "Tehya Pitts", "active": false}], "games": []}"""),
+            dao
+        )
+        val after = dao.playersOnce().single()
+        assertEquals("Sr.", after.academicYear)
+        assertEquals("Corinth, Texas", after.hometown)
+        assertTrue(!after.active)
+    }
+
+    @Test
+    fun `game context lands, including the scheduled innings`() = runTest {
+        val dao = db.dao()
+        Seeder.merge(
+            JSONObject(
+                """
+                {"players": [], "games": [{"date": "2026-02-06", "opponent": "Bethune-Cookman",
+                  "season": "2026", "teamScore": 12, "opponentScore": 0,
+                  "inningScores": "6-0, 0-0, 2-0, 0-0, 4-0",
+                  "stadium": "USF Softball Stadium", "firstPitch": "9 am",
+                  "duration": "1:51", "weather": "Sunny and 45",
+                  "umpires": "Home Plate: Brady Sanderson", "event": "USF-Rawlings Invitational",
+                  "pdfUrl": "https://example.test/box.pdf", "scheduledInnings": 7}]}
+                """
+            ),
+            dao
+        )
+        val game = dao.gamesOnce().single()
+        assertEquals("USF Softball Stadium", game.stadium)
+        assertEquals("1:51", game.duration)
+        assertEquals("USF-Rawlings Invitational", game.event)
+        assertEquals(7, game.scheduledInnings)
+        assertTrue(game.umpires.startsWith("Home Plate"))
+        // Five innings of a scheduled seven, won by twelve: the run rule.
+        assertEquals(GameEnding.RUN_RULE, gameEnding(game))
     }
 
     @Test

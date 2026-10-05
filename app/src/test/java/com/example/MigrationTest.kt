@@ -130,10 +130,15 @@ class MigrationTest {
             assertEquals(5, it.getInt(2))
         }
         // ...and every column each migration promised now exists.
+        val playerCols = columns(db, "players")
+        for (c in listOf("academicYear", "height", "batsThrows", "hometown", "lastSchool")) {
+            assertTrue("players is missing $c", c in playerCols)
+        }
         val gameCols = columns(db, "games")
         for (c in listOf(
             "site", "startTime", "venue", "attendance", "boxScoreUrl", "scoringSummary",
-            "opponentRecord", "opponentRank"
+            "opponentRecord", "opponentRank", "stadium", "firstPitch", "duration",
+            "weather", "umpires", "event", "pdfUrl", "scheduledInnings"
         )) {
             assertTrue("games is missing $c", c in gameCols)
         }

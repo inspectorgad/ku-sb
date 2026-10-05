@@ -18,6 +18,7 @@
 // scores so nightly runs only touch new games.
 import { chromium } from 'playwright';
 import fs from 'fs';
+import { parseRoster } from './roster-parser.mjs';
 
 const API = 'https://ncaa-api.henrygd.me';
 // Season years: "2026" is the Spring 2026 season.
@@ -404,20 +405,15 @@ try {
   );
   await rosterPage.close();
   fs.writeFileSync('scraped/roster-page.txt', rosterText);
-  const rosterLines = rosterText.split('\n').map((l) => l.trim());
-  const roster = [];
-  for (let i = 0; i < rosterLines.length; i++) {
-    if (rosterLines[i] !== 'Jersey Number') continue;
-    const number = rosterLines[i + 1] || '';
-    const name = rosterLines[i + 2] || '';
-    let position = '';
-    if (rosterLines[i + 3] === 'Position') position = (rosterLines[i + 4] || '').trim();
-    if (/^\d{1,2}$/.test(number) && /^[A-Za-z'.-]+( [A-Za-z'.-]+)+$/.test(name)) {
-      roster.push({ name, jerseyNumber: number, position });
-    }
-  }
+  // Parsed by scripts/roster-parser.mjs, which is tested against a committed
+  // copy of this page. The old parser read fixed offsets from the jersey
+  // number and could only ever find the position, so the roster carried three
+  // of the seven fields the page publishes.
+  const roster = parseRoster(rosterText);
   fs.writeFileSync('scraped/roster.json', JSON.stringify(roster, null, 1));
-  console.log(`roster: ${roster.length} players`);
+  const withHeight = roster.filter((p) => p.height).length;
+  console.log(`roster: ${roster.length} players (${withHeight} with a height, ` +
+    `${roster.filter((p) => p.batsThrows).length} with bats/throws)`);
 
   // 2c. The FULL schedule — every game, home and away, played or not — from
   // the schedule page's __NUXT_DATA__ payload (probe6). This is what makes a

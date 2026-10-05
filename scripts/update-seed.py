@@ -102,18 +102,30 @@ players = {}  # name.lower() -> {name, jerseyNumber, position}
 games = {}  # (date, opponent.lower()) -> game dict
 
 
-def add_player(name, jersey, position, prefer=False):
+# Roster detail beyond name, number and position. Only the current roster page
+# carries these, so a player who last appeared in an earlier season keeps
+# whatever was recorded then and gains nothing new — which is correct: her
+# class year was what it was.
+ROSTER_DETAIL = ("academicYear", "height", "batsThrows", "hometown", "lastSchool")
+
+
+def add_player(name, jersey, position, prefer=False, detail=None):
     if not name:
         return
     existing = players.get(name.lower())
     if existing is None:
-        players[name.lower()] = {"name": name, "jerseyNumber": jersey, "position": position}
+        existing = {"name": name, "jerseyNumber": jersey, "position": position}
+        players[name.lower()] = existing
     elif prefer:
         existing["name"] = name
         if jersey:
             existing["jerseyNumber"] = jersey
         if position:
             existing["position"] = position
+    for key in ROSTER_DETAIL:
+        value = ((detail or {}).get(key) or "").strip()
+        if value:
+            existing[key] = value
 
 
 # --- Current roster first (canonical names, numbers, positions) --------------
@@ -127,6 +139,7 @@ for entry in roster:
         str(entry.get("jerseyNumber") or ""),
         (entry.get("position") or "").strip(),
         prefer=True,
+        detail=entry,
     )
 
 
@@ -202,6 +215,39 @@ def parse_sidearm_game(data):
         game["attendance"] = attendance
     if data.get("url"):
         game["boxScoreUrl"] = data["url"]
+    if data.get("pdfDoc"):
+        game["pdfUrl"] = data["pdfDoc"]
+
+    # The game-info panel: what it was like to be there. All of this was
+    # already captured and none of it was kept.
+    stadium = (venue.get("stadium") or "").strip()
+    if stadium:
+        game["stadium"] = stadium
+    for key, src in (("firstPitch", "start"), ("duration", "duration"),
+                     ("weather", "weather")):
+        v = (venue.get(src) or "").strip()
+        if v:
+            game[key] = v
+    # Umpires arrive as {"Home Plate": "...", "First": "..."}; flattened to
+    # "Home Plate: Craig Hyde · First: Joshua Fo..." in the order a box score
+    # prints them, since nothing needs them separately.
+    crew = venue.get("umpires") or {}
+    if isinstance(crew, dict):
+        order = ["Home Plate", "First", "Second Base", "Third Base",
+                 "Left Field", "Right Field"]
+        named = [f"{k}: {crew[k]}" for k in order if (crew.get(k) or "").strip()]
+        named += [f"{k}: {v}" for k, v in crew.items()
+                  if k not in order and (v or "").strip()]
+        if named:
+            game["umpires"] = " · ".join(named)
+
+    # How long the game was scheduled to be, which is the only way to know a
+    # short game was a run-rule rather than one that was called. Softball ends
+    # after five innings when a team leads by eight, and the app could not
+    # tell that from a rain-shortened game.
+    scheduled = to_int(venue.get("scheduledInnings"))
+    if scheduled:
+        game["scheduledInnings"] = scheduled
 
     # Who the opponent was at the time, which is the half of a result that the
     # score alone never tells you: beating a 36-13 team is not the same game as
@@ -506,6 +552,11 @@ for entry in schedule_entries:
         continue
     site = (entry.get("site") or "").strip().upper()[:1]
     start = (entry.get("time") or "").strip()
+    # The event a game belonged to, named by the schedule rather than guessed
+    # from its date. Trailing space is in the source: "USF-Rawlings
+    # Invitational ".
+    tournament = ((entry.get("tournament") or {}).get("title") or "").strip() \
+        if isinstance(entry.get("tournament"), dict) else ""
 
     game = by_sidearm_id.get(str(entry.get("sidearmId") or ""))
     if game is None:
@@ -527,6 +578,8 @@ for entry in schedule_entries:
             game["site"] = site
         if start:
             game["startTime"] = start
+        if tournament:
+            game["event"] = tournament
         annotated += 1
         continue
 
@@ -547,6 +600,8 @@ for entry in schedule_entries:
         "site": site,
         "startTime": start,
     }
+    if tournament:
+        games[key]["event"] = tournament
     claimed.add(id(games[key]))
     added += 1
 

@@ -114,6 +114,15 @@ DEFINITIONS = {
                     "is marked '(G2)' in the opponent name; strip that suffix to group "
                     "a series",
     "attendance": "announced crowd, 0 when not reported",
+    "scheduled_innings / innings_played": "how long the game was meant to be and how "
+        "long it was. A game short of its scheduled length that was won by eight or "
+        "more from the fifth inning on ended by the run rule, which is ordinary in "
+        "softball — 19 of the 57 games in 2026. One short of its length with a close "
+        "score was called for weather or darkness instead. Do not treat a run-rule "
+        "game as an anomaly or a blowout worth remarking on by itself",
+    "event": "the tournament or series the game belonged to, as the schedule names it",
+    "duration": "how long the game took, as h:mm",
+    "batsThrows": "which hand the player bats with and which she throws with, as L/R",
     "opponent_batting / opponent_pitching": "the other side's box score lines. These "
         "cover only the games that team played against Kansas — two or three in a "
         "weekend series — so they are a record of those meetings and not of that "
@@ -137,6 +146,7 @@ How to answer:
 - A missing half-inning is not a scoreless one. The home team does not bat in the last inning of a game it leads, and a run-rule game ends early; the innings table marks this with batted. Never average an unbatted half-inning as a zero.
 - Doubleheaders share a date and an opponent; the second game is marked "(G2)". Strip that suffix before grouping a series, and keep the two games distinct when counting.
 - Softball can tie, so a record is not simply wins and games-minus-wins. Check for result "T".
+- A game shorter than its scheduled_innings usually ended by the run rule, not early for weather. That is routine — a third of the 2026 season — so do not present it as remarkable without being asked.
 - Use softball conventions: averages as .328, ERA to two decimals, records as 36-21, innings as 7.2.
 - The Big 12 record in the standings table excludes the conference tournament; the conference flag on games does not. Say which you used when it changes the answer.
 - Name small samples plainly (for example "only 3 games", or "one weekend series").
@@ -292,7 +302,17 @@ def build_pack(seed):
                       "inning_scores": g.get("inningScores"),
                       "venue": g.get("venue") or None,
                       "attendance": g.get("attendance") or None,
-                      "box_score_url": g.get("boxScoreUrl") or None})
+                      "stadium": g.get("stadium") or None,
+                      "event": g.get("event") or None,
+                      "first_pitch": g.get("firstPitch") or None,
+                      "duration": g.get("duration") or None,
+                      "weather": g.get("weather") or None,
+                      "umpires": g.get("umpires") or None,
+                      "scheduled_innings": g.get("scheduledInnings") or None,
+                      "innings_played": len([x for x in (g.get("inningScores") or "").split(",")
+                                             if x.strip()]) or None,
+                      "box_score_url": g.get("boxScoreUrl") or None,
+                      "pdf_url": g.get("pdfUrl") or None})
         innings += _innings(base, g.get("inningScores"))
         for play in g.get("scoring") or []:
             scoring.append({**base, "inning": play.get("inn"),
@@ -372,7 +392,9 @@ def build_pack(seed):
                       "season": h.get("season"), "team": t.get("team"),
                       "rank": t.get("rank"), "record": t.get("record")}
                      for h in seed.get("rankingHistory", []) for t in h.get("teams", [])],
-        "roster": [{k: p.get(k) for k in ("name", "jerseyNumber", "position", "active")}
+        "roster": [{k: p.get(k) for k in
+                    ("name", "jerseyNumber", "position", "academicYear", "height",
+                     "batsThrows", "hometown", "lastSchool", "active")}
                    for p in seed.get("players", [])],
     }
     pack["system_prompt"] = system_prompt(pack)

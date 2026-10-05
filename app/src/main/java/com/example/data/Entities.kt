@@ -54,6 +54,15 @@ data class Player(
     val name: String,
     val jerseyNumber: String = "",
     val position: String = "",
+    // Roster-page detail, blank for anyone not on the current roster — only
+    // that page carries it, so a player who last appeared in an earlier
+    // season keeps whatever was recorded then. "batsThrows" is which hand
+    // she bats and throws with, as "L/R".
+    val academicYear: String = "",
+    val height: String = "",
+    val batsThrows: String = "",
+    val hometown: String = "",
+    val lastSchool: String = "",
     // On the current roster. Maintained by the nightly roster scrape; former
     // players keep their stats but are shown in a separate roster section.
     val active: Boolean = true
@@ -98,7 +107,22 @@ data class Game(
     // (0 = unranked). Both describe THIS game rather than how the opponent's
     // season finished, which is what makes a result readable years later.
     val opponentRecord: String = "",
-    val opponentRank: Int = 0
+    val opponentRank: Int = 0,
+    // What it was like to be there, from the box score's own header.
+    val stadium: String = "",
+    val firstPitch: String = "",
+    val duration: String = "",
+    val weather: String = "",
+    // The crew, flattened: "Home Plate: … · First: …".
+    val umpires: String = "",
+    // The event this game belonged to, named by the schedule rather than
+    // guessed from its date ("USF-Rawlings Invitational").
+    val event: String = "",
+    // A link to the official PDF box score, alongside the HTML one.
+    val pdfUrl: String = "",
+    // How long the game was scheduled to be, which is the only way to tell a
+    // run-rule ending from a game that was called. 0 when unknown.
+    val scheduledInnings: Int = 0
 )
 
 /**

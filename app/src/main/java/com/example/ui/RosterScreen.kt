@@ -151,10 +151,26 @@ private fun PlayerCard(
                     style = MaterialTheme.typography.titleMedium,
                     fontWeight = FontWeight.SemiBold
                 )
-                if (player.position.isNotBlank()) {
+                // Position, class year, height and which hand she bats and
+                // throws with — the line a printed roster carries.
+                val line = listOfNotNull(
+                    player.position.takeIf { it.isNotBlank() },
+                    player.academicYear.takeIf { it.isNotBlank() },
+                    player.height.takeIf { it.isNotBlank() },
+                    player.batsThrows.takeIf { it.isNotBlank() }
+                )
+                if (line.isNotEmpty()) {
                     Text(
-                        player.position,
+                        line.joinToString(" · "),
                         style = MaterialTheme.typography.bodySmall,
+                        color = MaterialTheme.colorScheme.onSurfaceVariant
+                    )
+                }
+                if (player.hometown.isNotBlank()) {
+                    Text(
+                        player.hometown +
+                            (if (player.lastSchool.isNotBlank()) " · ${player.lastSchool}" else ""),
+                        style = MaterialTheme.typography.labelSmall,
                         color = MaterialTheme.colorScheme.onSurfaceVariant
                     )
                 }

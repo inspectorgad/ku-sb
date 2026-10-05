@@ -2,131 +2,236 @@
  {
   "name": "Tehya Pitts",
   "jerseyNumber": "1",
-  "position": "OF"
+  "position": "OF",
+  "academicYear": "Sr.",
+  "height": "5' 4''",
+  "batsThrows": "L/L",
+  "hometown": "Corinth, Texas",
+  "lastSchool": "McLennan Community College"
  },
  {
   "name": "Timber Hensley",
   "jerseyNumber": "2",
-  "position": "INF/U"
+  "position": "INF/U",
+  "academicYear": "So.",
+  "hometown": "Durant, Okla.",
+  "lastSchool": "Texas Tech"
  },
  {
   "name": "Blakely Barber",
   "jerseyNumber": "3",
-  "position": "P"
+  "position": "P",
+  "academicYear": "So.",
+  "height": "5' 7''",
+  "batsThrows": "R/R",
+  "hometown": "Georgetown, Texas",
+  "lastSchool": "Rouse High School"
  },
  {
   "name": "Grace Thompson",
   "jerseyNumber": "4",
-  "position": "INF"
+  "position": "INF",
+  "academicYear": "Sr.",
+  "hometown": "Beaumont, TX",
+  "lastSchool": "Ole Miss"
  },
  {
   "name": "Kadence Stafford",
   "jerseyNumber": "5",
-  "position": "INF"
+  "position": "INF",
+  "academicYear": "Sr.",
+  "height": "5' 9''",
+  "batsThrows": "R/R",
+  "hometown": "Bentonville, Ark.",
+  "lastSchool": "Bentonville High School"
  },
  {
   "name": "Shelbi Stevens",
   "jerseyNumber": "6",
-  "position": "C"
+  "position": "C",
+  "academicYear": "Fr.",
+  "hometown": "Seguin, TX"
  },
  {
   "name": "Ava Wallace",
   "jerseyNumber": "7",
-  "position": "OF"
+  "position": "OF",
+  "academicYear": "Jr.",
+  "height": "5' 8''",
+  "batsThrows": "L/L",
+  "hometown": "Rockwall, Texas",
+  "lastSchool": "Rockwall High School"
  },
  {
   "name": "Mackenna Jackson",
   "jerseyNumber": "8",
-  "position": "INF"
+  "position": "INF",
+  "academicYear": "Fr.",
+  "hometown": "Keller, TX"
  },
  {
   "name": "Lila Partridge",
   "jerseyNumber": "10",
-  "position": "P"
+  "position": "P",
+  "academicYear": "So.",
+  "height": "6' 0''",
+  "batsThrows": "R/R",
+  "hometown": "Petaluma, Calif.",
+  "lastSchool": "Casa Grande High School"
  },
  {
   "name": "Sienna Mayer",
   "jerseyNumber": "11",
-  "position": "INF"
+  "position": "INF",
+  "academicYear": "So.",
+  "hometown": "El Segundo, Calif.",
+  "lastSchool": "North Texas"
  },
  {
   "name": "September Flanagan",
   "jerseyNumber": "12",
-  "position": "INF/UTL"
+  "position": "INF/UTL",
+  "academicYear": "Gr.",
+  "height": "5' 9''",
+  "batsThrows": "R/R",
+  "hometown": "Morrison, Okla.",
+  "lastSchool": "Morrison High School"
  },
  {
   "name": "Bailey Weber",
   "jerseyNumber": "13",
-  "position": "OF"
+  "position": "OF",
+  "academicYear": "Jr.",
+  "height": "5' 6''",
+  "batsThrows": "L/R",
+  "hometown": "Overland Park, Kan.",
+  "lastSchool": "Blue Valley Southwest High School"
  },
  {
   "name": "Kaelee Washington",
   "jerseyNumber": "17",
-  "position": "RHP"
+  "position": "RHP",
+  "academicYear": "Jr.",
+  "height": "5' 10''",
+  "batsThrows": "R/R",
+  "hometown": "Topeka, Kan.",
+  "lastSchool": "Santa Fe Trail High School"
  },
  {
   "name": "Ellie Loveless",
   "jerseyNumber": "21",
-  "position": "P/INF"
+  "position": "P/INF",
+  "academicYear": "Sr.",
+  "height": "5' 8''",
+  "batsThrows": "R/R",
+  "hometown": "Washington, Oklahoma",
+  "lastSchool": "McLennan Community College"
  },
  {
   "name": "Anna Soles",
   "jerseyNumber": "22",
-  "position": "LHP/UTL"
+  "position": "LHP/UTL",
+  "academicYear": "Sr.",
+  "height": "5' 8''",
+  "batsThrows": "L/L",
+  "hometown": "League City, Texas",
+  "lastSchool": "Clear Springs High School"
  },
  {
   "name": "Sam Claire",
   "jerseyNumber": "24",
-  "position": "P"
+  "position": "P",
+  "academicYear": "So.",
+  "height": "5' 10''",
+  "batsThrows": "R/R",
+  "hometown": "Eudora, Kan.",
+  "lastSchool": "Eudora, High School"
  },
  {
   "name": "Bailey Amezcua",
   "jerseyNumber": "25",
-  "position": "C"
+  "position": "C",
+  "academicYear": "Jr.",
+  "height": "5' 3''",
+  "batsThrows": "R/R",
+  "hometown": "Lee's Summit, Mo.",
+  "lastSchool": "Lee Summit West High School"
  },
  {
   "name": "Chloe Barber",
   "jerseyNumber": "26",
-  "position": "P"
+  "position": "P",
+  "academicYear": "Sr.",
+  "height": "5' 11''",
+  "batsThrows": "R/R",
+  "hometown": "Lino Lakes, Minn.",
+  "lastSchool": "Wichita State"
  },
  {
   "name": "Brinley Ramirez",
   "jerseyNumber": "29",
-  "position": "OF"
+  "position": "OF",
+  "academicYear": "Jr.",
+  "batsThrows": "L/R",
+  "hometown": "Shiner, Texas",
+  "lastSchool": "Shiner High School"
  },
  {
   "name": "Audri Youngblood",
   "jerseyNumber": "31",
-  "position": "OF"
+  "position": "OF",
+  "academicYear": "Jr.",
+  "height": "5' 9''",
+  "batsThrows": "R/R",
+  "hometown": "Monroe City, Mo.",
+  "lastSchool": "Monroe City High School"
  },
  {
   "name": "Jazmin Ramirez",
   "jerseyNumber": "32",
-  "position": "INF"
+  "position": "INF",
+  "academicYear": "So.",
+  "hometown": "Chandler, AZ"
  },
  {
   "name": "Kynleigh Ball",
   "jerseyNumber": "33",
-  "position": "INF"
+  "position": "INF",
+  "academicYear": "Fr.",
+  "hometown": "Georgetown, TX"
  },
  {
   "name": "Madi Hays",
   "jerseyNumber": "36",
-  "position": "OF"
+  "position": "OF",
+  "academicYear": "Sr.",
+  "height": "5' 4''",
+  "batsThrows": "R/R",
+  "hometown": "Bellevue, Neb.",
+  "lastSchool": "Millard South High School"
  },
  {
   "name": "Daniella Gloria",
   "jerseyNumber": "66",
-  "position": "P"
+  "position": "P",
+  "academicYear": "Fr.",
+  "hometown": "Apache Junction, Ariz."
  },
  {
   "name": "Ella Boyer",
   "jerseyNumber": "75",
-  "position": "C"
+  "position": "C",
+  "academicYear": "So.",
+  "height": "5' 4''",
+  "batsThrows": "R/R",
+  "hometown": "Spring, Texas",
+  "lastSchool": "Oak Ridge High School"
  },
  {
   "name": "Jocelyn Alatorre",
   "jerseyNumber": "77",
-  "position": "INF"
+  "position": "INF",
+  "academicYear": "Fr.",
+  "hometown": "Orange, CA"
  }
 ]

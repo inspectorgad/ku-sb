@@ -1,6 +1,6 @@
 {
  "formatVersion": 1,
- "generatedAt": "2026-10-05T15:29:52Z",
+ "generatedAt": "2026-10-05T16:22:57Z",
  "team": "Kansas Jayhawks Softball",
  "players": [
   {
@@ -13,18 +13,33 @@
    "name": "Anna Soles",
    "jerseyNumber": "22",
    "position": "LHP/UTL",
+   "academicYear": "Sr.",
+   "height": "5' 8''",
+   "batsThrows": "L/L",
+   "hometown": "League City, Texas",
+   "lastSchool": "Clear Springs High School",
    "active": true
   },
   {
    "name": "Audri Youngblood",
    "jerseyNumber": "31",
    "position": "OF",
+   "academicYear": "Jr.",
+   "height": "5' 9''",
+   "batsThrows": "R/R",
+   "hometown": "Monroe City, Mo.",
+   "lastSchool": "Monroe City High School",
    "active": true
   },
   {
    "name": "Ava Wallace",
    "jerseyNumber": "7",
    "position": "OF",
+   "academicYear": "Jr.",
+   "height": "5' 8''",
+   "batsThrows": "L/L",
+   "hometown": "Rockwall, Texas",
+   "lastSchool": "Rockwall High School",
    "active": true
   },
   {
@@ -37,24 +52,43 @@
    "name": "Bailey Amezcua",
    "jerseyNumber": "25",
    "position": "C",
+   "academicYear": "Jr.",
+   "height": "5' 3''",
+   "batsThrows": "R/R",
+   "hometown": "Lee's Summit, Mo.",
+   "lastSchool": "Lee Summit West High School",
    "active": true
   },
   {
    "name": "Bailey Weber",
    "jerseyNumber": "13",
    "position": "OF",
+   "academicYear": "Jr.",
+   "height": "5' 6''",
+   "batsThrows": "L/R",
+   "hometown": "Overland Park, Kan.",
+   "lastSchool": "Blue Valley Southwest High School",
    "active": true
   },
   {
    "name": "Blakely Barber",
    "jerseyNumber": "3",
    "position": "P",
+   "academicYear": "So.",
+   "height": "5' 7''",
+   "batsThrows": "R/R",
+   "hometown": "Georgetown, Texas",
+   "lastSchool": "Rouse High School",
    "active": true
   },
   {
    "name": "Brinley Ramirez",
    "jerseyNumber": "29",
    "position": "OF",
+   "academicYear": "Jr.",
+   "batsThrows": "L/R",
+   "hometown": "Shiner, Texas",
+   "lastSchool": "Shiner High School",
    "active": true
   },
   {
@@ -73,12 +107,19 @@
    "name": "Chloe Barber",
    "jerseyNumber": "26",
    "position": "P",
+   "academicYear": "Sr.",
+   "height": "5' 11''",
+   "batsThrows": "R/R",
+   "hometown": "Lino Lakes, Minn.",
+   "lastSchool": "Wichita State",
    "active": true
   },
   {
    "name": "Daniella Gloria",
    "jerseyNumber": "66",
    "position": "P",
+   "academicYear": "Fr.",
+   "hometown": "Apache Junction, Ariz.",
    "active": true
   },
   {
@@ -91,12 +132,22 @@
    "name": "Ella Boyer",
    "jerseyNumber": "75",
    "position": "C",
+   "academicYear": "So.",
+   "height": "5' 4''",
+   "batsThrows": "R/R",
+   "hometown": "Spring, Texas",
+   "lastSchool": "Oak Ridge High School",
    "active": true
   },
   {
    "name": "Ellie Loveless",
    "jerseyNumber": "21",
    "position": "P/INF",
+   "academicYear": "Sr.",
+   "height": "5' 8''",
+   "batsThrows": "R/R",
+   "hometown": "Washington, Oklahoma",
+   "lastSchool": "McLennan Community College",
    "active": true
   },
   {
@@ -109,6 +160,9 @@
    "name": "Grace Thompson",
    "jerseyNumber": "4",
    "position": "INF",
+   "academicYear": "Sr.",
+   "hometown": "Beaumont, TX",
+   "lastSchool": "Ole Miss",
    "active": true
   },
   {
@@ -133,12 +187,16 @@
    "name": "Jazmin Ramirez",
    "jerseyNumber": "32",
    "position": "INF",
+   "academicYear": "So.",
+   "hometown": "Chandler, AZ",
    "active": true
   },
   {
    "name": "Jocelyn Alatorre",
    "jerseyNumber": "77",
    "position": "INF",
+   "academicYear": "Fr.",
+   "hometown": "Orange, CA",
    "active": true
   },
   {
@@ -157,12 +215,22 @@
    "name": "Kadence Stafford",
    "jerseyNumber": "5",
    "position": "INF",
+   "academicYear": "Sr.",
+   "height": "5' 9''",
+   "batsThrows": "R/R",
+   "hometown": "Bentonville, Ark.",
+   "lastSchool": "Bentonville High School",
    "active": true
   },
   {
    "name": "Kaelee Washington",
    "jerseyNumber": "17",
    "position": "RHP",
+   "academicYear": "Jr.",
+   "height": "5' 10''",
+   "batsThrows": "R/R",
+   "hometown": "Topeka, Kan.",
+   "lastSchool": "Santa Fe Trail High School",
    "active": true
   },
   {
@@ -181,6 +249,8 @@
    "name": "Kynleigh Ball",
    "jerseyNumber": "33",
    "position": "INF",
+   "academicYear": "Fr.",
+   "hometown": "Georgetown, TX",
    "active": true
   },
   {
@@ -193,6 +263,11 @@
    "name": "Lila Partridge",
    "jerseyNumber": "10",
    "position": "P",
+   "academicYear": "So.",
+   "height": "6' 0''",
+   "batsThrows": "R/R",
+   "hometown": "Petaluma, Calif.",
+   "lastSchool": "Casa Grande High School",
    "active": true
   },
   {
@@ -205,12 +280,19 @@
    "name": "Mackenna Jackson",
    "jerseyNumber": "8",
    "position": "INF",
+   "academicYear": "Fr.",
+   "hometown": "Keller, TX",
    "active": true
   },
   {
    "name": "Madi Hays",
    "jerseyNumber": "36",
    "position": "OF",
+   "academicYear": "Sr.",
+   "height": "5' 4''",
+   "batsThrows": "R/R",
+   "hometown": "Bellevue, Neb.",
+   "lastSchool": "Millard South High School",
    "active": true
   },
   {
@@ -229,36 +311,59 @@
    "name": "Sam Claire",
    "jerseyNumber": "24",
    "position": "P",
+   "academicYear": "So.",
+   "height": "5' 10''",
+   "batsThrows": "R/R",
+   "hometown": "Eudora, Kan.",
+   "lastSchool": "Eudora, High School",
    "active": true
   },
   {
    "name": "September Flanagan",
    "jerseyNumber": "12",
    "position": "INF/UTL",
+   "academicYear": "Gr.",
+   "height": "5' 9''",
+   "batsThrows": "R/R",
+   "hometown": "Morrison, Okla.",
+   "lastSchool": "Morrison High School",
    "active": true
   },
   {
    "name": "Shelbi Stevens",
    "jerseyNumber": "6",
    "position": "C",
+   "academicYear": "Fr.",
+   "hometown": "Seguin, TX",
    "active": true
   },
   {
    "name": "Sienna Mayer",
    "jerseyNumber": "11",
    "position": "INF",
+   "academicYear": "So.",
+   "hometown": "El Segundo, Calif.",
+   "lastSchool": "North Texas",
    "active": true
   },
   {
    "name": "Tehya Pitts",
    "jerseyNumber": "1",
    "position": "OF",
+   "academicYear": "Sr.",
+   "height": "5' 4''",
+   "batsThrows": "L/L",
+   "hometown": "Corinth, Texas",
+   "lastSchool": "McLennan Community College",
    "active": true
   },
   {
    "name": "Timber Hensley",
    "jerseyNumber": "2",
    "position": "INF/U",
+   "academicYear": "So.",
+   "hometown": "Durant, Okla.",
+   "lastSchool": "Texas Tech",
    "active": true
   }
  ],
@@ -736,6 +841,13 @@
    ],
    "venue": "Tampa, Fla.",
    "boxScoreUrl": "https://kuathletics.com/sports/softball/stats/2026/bethune-cookman/boxscore/20426",
+   "pdfUrl": "https://dxbhsrqyrr690.cloudfront.net/sidearm.nextgen.sites/ukansas.sidearmsports.com/stats/softball/2026/pdf/20260206100729-KU01.pdf",
+   "stadium": "USF Softball Stadium",
+   "firstPitch": "9 am",
+   "duration": "1:51",
+   "weather": "Sunny and 45",
+   "umpires": "Home Plate: Brady Sanderson \u00b7 First: Michael Hernandez \u00b7 Second Base: 0 \u00b7 Third Base: Budda Ewald \u00b7 Left Field: 0 \u00b7 Right Field: 0",
+   "scheduledInnings": 7,
    "opponentRecord": "0-2",
    "scoring": [
     {
@@ -946,7 +1058,8 @@
     }
    ],
    "site": "N",
-   "startTime": "8 a.m. CT"
+   "startTime": "8 a.m. CT",
+   "event": "USF-Rawlings Invitational"
   },
   {
    "date": "2026-02-06",
@@ -1372,6 +1485,13 @@
    ],
    "venue": "Tampa, Fla.",
    "boxScoreUrl": "https://kuathletics.com/sports/softball/stats/2026/illinois-state/boxscore/20427",
+   "pdfUrl": "https://dxbhsrqyrr690.cloudfront.net/sidearm.nextgen.sites/ukansas.sidearmsports.com/stats/softball/2026/pdf/20260206091548-KU02.pdf",
+   "stadium": "USF Softball Stadium",
+   "firstPitch": "2:06 PM",
+   "duration": "2:17",
+   "weather": "Sunny and 61",
+   "umpires": "Home Plate: Michael Hernandez \u00b7 First: Bubba Ewald \u00b7 Second Base: 0 \u00b7 Third Base: Brady Sanderson \u00b7 Left Field: 0 \u00b7 Right Field: 0",
+   "scheduledInnings": 7,
    "opponentRecord": "2-1",
    "scoring": [
     {
@@ -1664,7 +1784,8 @@
     }
    ],
    "site": "N",
-   "startTime": "1 p.m. CT"
+   "startTime": "1 p.m. CT",
+   "event": "USF-Rawlings Invitational"
   },
   {
    "date": "2026-02-07",
@@ -2040,6 +2161,13 @@
    "venue": "Tampa, Fla.",
    "attendance": 1807,
    "boxScoreUrl": "https://kuathletics.com/sports/softball/stats/2026/south-florida/boxscore/20428",
+   "pdfUrl": "https://dxbhsrqyrr690.cloudfront.net/sidearm.nextgen.sites/ukansas.sidearmsports.com/stats/softball/2026/pdf/20260208073532-KU03.pdf",
+   "stadium": "USF Softball Stadium",
+   "firstPitch": "2:05 pm",
+   "duration": "2:18",
+   "weather": "Sunny and 70",
+   "umpires": "Home Plate: Perry Owens \u00b7 First: Jerry Jones \u00b7 Second Base: 0 \u00b7 Third Base: Bubba Ewald \u00b7 Left Field: 0 \u00b7 Right Field: 0",
+   "scheduledInnings": 7,
    "opponentRecord": "1-2",
    "scoring": [
     {
@@ -2291,7 +2419,8 @@
     }
    ],
    "site": "A",
-   "startTime": "1 p.m. CT"
+   "startTime": "1 p.m. CT",
+   "event": "USF-Rawlings Invitational"
   },
   {
    "date": "2026-02-08",
@@ -2643,6 +2772,13 @@
    "venue": "Tampa, Fla.",
    "attendance": 2053,
    "boxScoreUrl": "https://kuathletics.com/sports/softball/stats/2026/florida/boxscore/20430",
+   "pdfUrl": "https://dxbhsrqyrr690.cloudfront.net/sidearm.nextgen.sites/ukansas.sidearmsports.com/stats/softball/2026/pdf/20260208024457-KU05.pdf",
+   "stadium": "USF Softball Stadium",
+   "firstPitch": "12 pm",
+   "duration": "2:38",
+   "weather": "Sunny and 66",
+   "umpires": "Home Plate: Chad Stears \u00b7 First: Perry Owens \u00b7 Second Base: 0 \u00b7 Third Base: Jerry Jones \u00b7 Left Field: 0 \u00b7 Right Field: 0",
+   "scheduledInnings": 7,
    "opponentRecord": "4-0",
    "scoring": [
     {
@@ -2881,7 +3017,8 @@
     }
    ],
    "site": "N",
-   "startTime": "11 a.m. CT"
+   "startTime": "11 a.m. CT",
+   "event": "USF-Rawlings Invitational"
   },
   {
    "date": "2026-02-08",
@@ -3241,6 +3378,13 @@
    "venue": "Tampa, Fla.",
    "attendance": 1853,
    "boxScoreUrl": "https://kuathletics.com/sports/softball/stats/2026/michigan/boxscore/20429",
+   "pdfUrl": "https://dxbhsrqyrr690.cloudfront.net/sidearm.nextgen.sites/ukansas.sidearmsports.com/stats/softball/2026/pdf/20260208114213-KU04.pdf",
+   "stadium": "USF Softball Stadium",
+   "firstPitch": "9:30 am",
+   "duration": "2:23",
+   "weather": "Sunny and 53",
+   "umpires": "Home Plate: Michael Hernandez \u00b7 First: Brady Sanderson \u00b7 Second Base: 0 \u00b7 Third Base: Bubba Ewald \u00b7 Left Field: 0 \u00b7 Right Field: 0",
+   "scheduledInnings": 7,
    "opponentRecord": "4-1",
    "scoring": [
     {
@@ -3467,7 +3611,8 @@
     }
    ],
    "site": "N",
-   "startTime": "8:30 a.m. CT"
+   "startTime": "8:30 a.m. CT",
+   "event": "USF-Rawlings Invitational"
   },
   {
    "date": "2026-02-10",
@@ -3842,6 +3987,13 @@
    "venue": "Fort Myers, Fla.",
    "attendance": 157,
    "boxScoreUrl": "https://kuathletics.com/sports/softball/stats/2026/fgcu/boxscore/20431",
+   "pdfUrl": "https://dxbhsrqyrr690.cloudfront.net/sidearm.nextgen.sites/ukansas.sidearmsports.com/stats/softball/2026/pdf/20260210071041-KU06.pdf",
+   "stadium": "FGCU Softball Complex",
+   "firstPitch": "5:06 PM",
+   "duration": "2:15",
+   "weather": "Conditions: Sunny and Clear, Wind: SW, 9 mph; Temp: 74F",
+   "umpires": "Home Plate: Anthony Small \u00b7 First: William O Lopez Pellot \u00b7 Third Base: Jose Chaparro",
+   "scheduledInnings": 7,
    "opponentRecord": "2-3",
    "scoring": [
     {
@@ -4399,6 +4551,13 @@
    "venue": "Tampa, Fla.",
    "attendance": 709,
    "boxScoreUrl": "https://kuathletics.com/sports/softball/stats/2026/boston-college/boxscore/20433",
+   "pdfUrl": "https://dxbhsrqyrr690.cloudfront.net/sidearm.nextgen.sites/ukansas.sidearmsports.com/stats/softball/2026/pdf/20260212062334-KU08.pdf",
+   "stadium": "USF Softball Stadium",
+   "firstPitch": "3:20 PM",
+   "duration": "2:00",
+   "weather": "Sunny and 76",
+   "umpires": "Home Plate: Troy Kuykendall \u00b7 First: Terrell Guidry \u00b7 Second Base: 0 \u00b7 Third Base: Chad Spliter \u00b7 Left Field: 0 \u00b7 Right Field: 0",
+   "scheduledInnings": 7,
    "opponentRecord": "3-3",
    "scoring": [
     {
@@ -4577,7 +4736,8 @@
     }
    ],
    "site": "N",
-   "startTime": "2 p.m. CT"
+   "startTime": "2 p.m. CT",
+   "event": "Fonseca Memorial Tournament"
   },
   {
    "date": "2026-02-12",
@@ -4980,6 +5140,13 @@
    "venue": "Tampa, Fla.",
    "attendance": 709,
    "boxScoreUrl": "https://kuathletics.com/sports/softball/stats/2026/indiana-state/boxscore/20432",
+   "pdfUrl": "https://dxbhsrqyrr690.cloudfront.net/sidearm.nextgen.sites/ukansas.sidearmsports.com/stats/softball/2026/pdf/20260212044218-KU07.pdf",
+   "stadium": "USF Softball Stadium",
+   "firstPitch": "12:30 pm",
+   "duration": "2:22",
+   "weather": "Sunny and 73",
+   "umpires": "Home Plate: Anthony Small \u00b7 First: Bobby Martinez \u00b7 Second Base: 0 \u00b7 Third Base: Jonathan Hand \u00b7 Left Field: 0 \u00b7 Right Field: 0",
+   "scheduledInnings": 7,
    "opponentRecord": "2-4",
    "scoring": [
     {
@@ -5244,7 +5411,8 @@
     }
    ],
    "site": "N",
-   "startTime": "11:30 a.m. CT"
+   "startTime": "11:30 a.m. CT",
+   "event": "Fonseca Memorial Tournament"
   },
   {
    "date": "2026-02-13",
@@ -5603,6 +5771,13 @@
    "venue": "Tampa, Fla.",
    "attendance": 1014,
    "boxScoreUrl": "https://kuathletics.com/sports/softball/stats/2026/south-florida/boxscore/20434",
+   "pdfUrl": "https://dxbhsrqyrr690.cloudfront.net/sidearm.nextgen.sites/ukansas.sidearmsports.com/stats/softball/2026/pdf/20260213074533-KU09.pdf",
+   "stadium": "USF Softball Stadium",
+   "firstPitch": "4:35 pm",
+   "duration": "2:10",
+   "weather": "Sunny and 76",
+   "umpires": "Home Plate: Anthony Small \u00b7 First: Bobby Martinez \u00b7 Second Base: 0 \u00b7 Third Base: Jonathan Hand \u00b7 Left Field: 0 \u00b7 Right Field: 0",
+   "scheduledInnings": 7,
    "opponentRecord": "5-4",
    "scoring": [
     {
@@ -5800,7 +5975,8 @@
     }
    ],
    "site": "A",
-   "startTime": "3:35 p.m. CT"
+   "startTime": "3:35 p.m. CT",
+   "event": "Fonseca Memorial Tournament"
   },
   {
    "date": "2026-02-14",
@@ -6164,6 +6340,13 @@
    "venue": "Tampa, Fla.",
    "attendance": 958,
    "boxScoreUrl": "https://kuathletics.com/sports/softball/stats/2026/depaul/boxscore/20435",
+   "pdfUrl": "https://dxbhsrqyrr690.cloudfront.net/sidearm.nextgen.sites/ukansas.sidearmsports.com/stats/softball/2026/pdf/20260214011144-KU10.pdf",
+   "stadium": "USF Softball Stadium",
+   "firstPitch": "9 am",
+   "duration": "1:50",
+   "weather": "Sunny and 59",
+   "umpires": "Home Plate: Bobby Martinez \u00b7 First: Jonathan Hand \u00b7 Second Base: 0 \u00b7 Third Base: Anthony Small \u00b7 Left Field: 0 \u00b7 Right Field: 0",
+   "scheduledInnings": 7,
    "opponentRecord": "6-3",
    "scoring": [
     {
@@ -6416,7 +6599,8 @@
     }
    ],
    "site": "N",
-   "startTime": "8 a.m. CT"
+   "startTime": "8 a.m. CT",
+   "event": "Fonseca Memorial Tournament"
   },
   {
    "date": "2026-02-14",
@@ -6865,6 +7049,13 @@
    "venue": "Tampa, Fla.",
    "attendance": 1012,
    "boxScoreUrl": "https://kuathletics.com/sports/softball/stats/2026/yale/boxscore/20436",
+   "pdfUrl": "https://dxbhsrqyrr690.cloudfront.net/sidearm.nextgen.sites/ukansas.sidearmsports.com/stats/softball/2026/pdf/20260214011303-KU11.pdf",
+   "stadium": "USF Softball Stadium",
+   "firstPitch": "11:30 am",
+   "duration": "1:41",
+   "weather": "Sunny and 73",
+   "umpires": "Home Plate: Terrell Guidry \u00b7 First: Chad Spitler \u00b7 Second Base: 0 \u00b7 Third Base: Troy Kuykendall \u00b7 Left Field: 0 \u00b7 Right Field: 0",
+   "scheduledInnings": 7,
    "opponentRecord": "1-2",
    "scoring": [
     {
@@ -7096,7 +7287,8 @@
     }
    ],
    "site": "N",
-   "startTime": "10:30 a.m. CT"
+   "startTime": "10:30 a.m. CT",
+   "event": "Fonseca Memorial Tournament"
   },
   {
    "date": "2026-02-19",
@@ -7496,6 +7688,13 @@
    "venue": "Boca Raton, FL",
    "attendance": 424,
    "boxScoreUrl": "https://kuathletics.com/sports/softball/stats/2026/florida-atlantic/boxscore/20437",
+   "pdfUrl": "https://dxbhsrqyrr690.cloudfront.net/sidearm.nextgen.sites/ukansas.sidearmsports.com/stats/softball/2026/pdf/20260219083050-KU12.pdf",
+   "stadium": "FAU Softball Stadium",
+   "firstPitch": "6:00 PM",
+   "duration": "2:36",
+   "weather": "78, Sunny",
+   "umpires": "Home Plate: Matt Johnson \u00b7 First: Bill Gottuso \u00b7 Second Base: 0 \u00b7 Third Base: Jason Kemper \u00b7 Left Field: 0 \u00b7 Right Field: 0",
+   "scheduledInnings": 7,
    "opponentRecord": "7-5",
    "scoring": [
     {
@@ -7761,7 +7960,8 @@
     }
    ],
    "site": "A",
-   "startTime": "5 p.m. CT"
+   "startTime": "5 p.m. CT",
+   "event": "Joan Joyce Classic"
   },
   {
    "date": "2026-02-20",
@@ -8164,6 +8364,13 @@
    ],
    "venue": "Boca Raton, Florida",
    "boxScoreUrl": "https://kuathletics.com/sports/softball/stats/2026/southern-ind-/boxscore/20439",
+   "pdfUrl": "https://dxbhsrqyrr690.cloudfront.net/sidearm.nextgen.sites/ukansas.sidearmsports.com/stats/softball/2026/pdf/20260220055125-KU14.pdf",
+   "stadium": "Joan Joyce Field",
+   "firstPitch": "2:45 PM",
+   "duration": "1:29",
+   "weather": "81 degrees, sunny",
+   "umpires": "Home Plate: Jason Kemper \u00b7 First: Matt Johnson \u00b7 Second Base: 0 \u00b7 Third Base: Bill Gottuso \u00b7 Left Field: 0 \u00b7 Right Field: 0",
+   "scheduledInnings": 7,
    "opponentRecord": "1-7",
    "scoring": [
     {
@@ -8345,7 +8552,8 @@
     }
    ],
    "site": "N",
-   "startTime": "2:45 p.m. CT"
+   "startTime": "2:45 p.m. CT",
+   "event": "Joan Joyce Classic"
   },
   {
    "date": "2026-02-20",
@@ -8663,6 +8871,13 @@
    ],
    "venue": "Boca Raton, FL",
    "boxScoreUrl": "https://kuathletics.com/sports/softball/stats/2026/villanova/boxscore/20438",
+   "pdfUrl": "https://dxbhsrqyrr690.cloudfront.net/sidearm.nextgen.sites/ukansas.sidearmsports.com/stats/softball/2026/pdf/20260220050133-KU13.pdf",
+   "stadium": "FAU Softball Stadium",
+   "firstPitch": "11:15 AM",
+   "duration": "1:43",
+   "weather": "80, Sunny",
+   "umpires": "Home Plate: Bill Gottuso \u00b7 First: Jason Kemper \u00b7 Second Base: 0 \u00b7 Third Base: Matt Johnson \u00b7 Left Field: 0 \u00b7 Right Field: 0",
+   "scheduledInnings": 7,
    "opponentRecord": "0-12",
    "scoring": [
     {
@@ -8869,7 +9084,8 @@
     }
    ],
    "site": "N",
-   "startTime": "10:15 a.m. CT"
+   "startTime": "10:15 a.m. CT",
+   "event": "Joan Joyce Classic"
   },
   {
    "date": "2026-02-21",
@@ -9162,6 +9378,13 @@
    ],
    "venue": "Boca Raton, FL",
    "boxScoreUrl": "https://kuathletics.com/sports/softball/stats/2026/massachusetts/boxscore/20440",
+   "pdfUrl": "https://dxbhsrqyrr690.cloudfront.net/sidearm.nextgen.sites/ukansas.sidearmsports.com/stats/softball/2026/pdf/20260221010005-KU15.pdf",
+   "stadium": "FAU Softball Stadium",
+   "firstPitch": "9:00 AM",
+   "duration": "1:19",
+   "weather": "69, Partly Cloudy",
+   "umpires": "Home Plate: Matt Johnson \u00b7 First: Bill Gottuso \u00b7 Second Base: 0 \u00b7 Third Base: Jason Kemper \u00b7 Left Field: 0 \u00b7 Right Field: 0",
+   "scheduledInnings": 7,
    "opponentRecord": "6-7",
    "scoring": [
     {
@@ -9324,7 +9547,8 @@
     }
    ],
    "site": "N",
-   "startTime": "8 a.m. CT"
+   "startTime": "8 a.m. CT",
+   "event": "Joan Joyce Classic"
   },
   {
    "date": "2026-02-21",
@@ -9601,6 +9825,12 @@
    ],
    "venue": "Boca Raton, FL",
    "boxScoreUrl": "https://kuathletics.com/sports/softball/stats/2026/villanova/boxscore/20441",
+   "pdfUrl": "https://dxbhsrqyrr690.cloudfront.net/sidearm.nextgen.sites/ukansas.sidearmsports.com/stats/softball/2026/pdf/20260221010146-KU16.pdf",
+   "firstPitch": "10:50 AM",
+   "duration": "1:36",
+   "weather": "79, Mostly Sunny",
+   "umpires": "Home Plate: Brandon Jacobson \u00b7 First: Young-Daniel Abanathey \u00b7 Second Base: 0 \u00b7 Third Base: Bryce Welsh \u00b7 Left Field: 0 \u00b7 Right Field: 0",
+   "scheduledInnings": 7,
    "opponentRecord": "0-13",
    "scoring": [
     {
@@ -9750,7 +9980,8 @@
     }
    ],
    "site": "N",
-   "startTime": "10:15 a.m. CT"
+   "startTime": "10:15 a.m. CT",
+   "event": "Joan Joyce Classic"
   },
   {
    "date": "2026-02-27",
@@ -10086,6 +10317,13 @@
    ],
    "venue": "Fayetteville, Ark.",
    "boxScoreUrl": "https://kuathletics.com/sports/softball/stats/2026/boise-state/boxscore/20444",
+   "pdfUrl": "https://dxbhsrqyrr690.cloudfront.net/sidearm.nextgen.sites/ukansas.sidearmsports.com/stats/softball/2026/pdf/20260227025145-KU18.pdf",
+   "stadium": "Bogle Park",
+   "firstPitch": "12:35 PM",
+   "duration": "2:05",
+   "weather": "70 degrees sunny",
+   "umpires": "Home Plate: Kevin Conder \u00b7 First: E. Hammerschmidt \u00b7 Second Base: 0 \u00b7 Third Base: Terry Holt \u00b7 Left Field: 0 \u00b7 Right Field: 0",
+   "scheduledInnings": 7,
    "opponentRecord": "8-9",
    "scoring": [
     {
@@ -10271,7 +10509,8 @@
     }
    ],
    "site": "N",
-   "startTime": "12:15 p.m. CT"
+   "startTime": "12:15 p.m. CT",
+   "event": "Wooo Pig Classic"
   },
   {
    "date": "2026-02-27",
@@ -10627,6 +10866,13 @@
    ],
    "venue": "Fayetteville, Ark.",
    "boxScoreUrl": "https://kuathletics.com/sports/softball/stats/2026/omaha/boxscore/20442",
+   "pdfUrl": "https://dxbhsrqyrr690.cloudfront.net/sidearm.nextgen.sites/ukansas.sidearmsports.com/stats/softball/2026/pdf/20260227125647-KU17.pdf",
+   "stadium": "Bogle Park",
+   "firstPitch": "10:00 AM",
+   "duration": "1:57",
+   "weather": "62 degrees sunny",
+   "umpires": "Home Plate: Whitney Folven \u00b7 First: Mike Burwell \u00b7 Second Base: 0 \u00b7 Third Base: E. Hammerschmidt \u00b7 Left Field: 0 \u00b7 Right Field: 0",
+   "scheduledInnings": 7,
    "opponentRecord": "12-3",
    "scoring": [
     {
@@ -10822,7 +11068,8 @@
     }
    ],
    "site": "N",
-   "startTime": "10 a.m. CT"
+   "startTime": "10 a.m. CT",
+   "event": "Wooo Pig Classic"
   },
   {
    "date": "2026-02-28",
@@ -11185,6 +11432,13 @@
    ],
    "venue": "Fayetteville, Ark.",
    "boxScoreUrl": "https://kuathletics.com/sports/softball/stats/2026/boise-state/boxscore/20445",
+   "pdfUrl": "https://dxbhsrqyrr690.cloudfront.net/sidearm.nextgen.sites/ukansas.sidearmsports.com/stats/softball/2026/pdf/20260303121105-KU19.pdf",
+   "stadium": "Bogle Park",
+   "firstPitch": "1:09 pm",
+   "duration": "1:35",
+   "weather": "Mostly Clear",
+   "umpires": "Home Plate: Kevin Conder \u00b7 First: E. Hammerschmidt \u00b7 Second Base: 0 \u00b7 Third Base: Terry Holt \u00b7 Left Field: 0 \u00b7 Right Field: 0",
+   "scheduledInnings": 7,
    "opponentRecord": "8-12",
    "scoring": [
     {
@@ -11374,7 +11628,8 @@
     }
    ],
    "site": "N",
-   "startTime": "12:15 p.m. CT"
+   "startTime": "12:15 p.m. CT",
+   "event": "Wooo Pig Classic"
   },
   {
    "date": "2026-02-28",
@@ -11786,6 +12041,13 @@
    "venue": "Fayetteville, Ark.",
    "attendance": 347,
    "boxScoreUrl": "https://kuathletics.com/sports/softball/stats/2026/charlotte/boxscore/20443",
+   "pdfUrl": "https://dxbhsrqyrr690.cloudfront.net/sidearm.nextgen.sites/ukansas.sidearmsports.com/stats/softball/2026/pdf/20260228103319-KU20.pdf",
+   "stadium": "Bogle Park",
+   "firstPitch": "7:50 PM",
+   "duration": "2:23",
+   "weather": "69 degrees",
+   "umpires": "Home Plate: Terry Holt \u00b7 First: Kevin Conder \u00b7 Second Base: 0 \u00b7 Third Base: Mike Burwell \u00b7 Left Field: 0 \u00b7 Right Field: 0",
+   "scheduledInnings": 7,
    "opponentRecord": "12-9",
    "scoring": [
     {
@@ -12050,7 +12312,8 @@
     }
    ],
    "site": "N",
-   "startTime": "7 p.m. CT"
+   "startTime": "7 p.m. CT",
+   "event": "Wooo Pig Classic"
   },
   {
    "date": "2026-03-01",
@@ -12416,6 +12679,13 @@
    "venue": "Fayetteville, Ark.",
    "attendance": 2405,
    "boxScoreUrl": "https://kuathletics.com/sports/softball/stats/2026/arkansas/boxscore/20446",
+   "pdfUrl": "https://dxbhsrqyrr690.cloudfront.net/sidearm.nextgen.sites/ukansas.sidearmsports.com/stats/softball/2026/pdf/20260301044544-KU21.pdf",
+   "stadium": "Bogle Park",
+   "firstPitch": "12:40 PM",
+   "duration": "1:34",
+   "weather": "72 degrees",
+   "umpires": "Home Plate: Kevin Conder \u00b7 First: E. Hammerschmidt \u00b7 Second Base: 0 \u00b7 Third Base: Terry Holt \u00b7 Left Field: 0 \u00b7 Right Field: 0",
+   "scheduledInnings": 7,
    "opponentRecord": "19-1",
    "opponentRank": 8,
    "scoring": [
@@ -12657,7 +12927,8 @@
     }
    ],
    "site": "A",
-   "startTime": "12:15 p.m. CT"
+   "startTime": "12:15 p.m. CT",
+   "event": "Wooo Pig Classic"
   },
   {
    "date": "2026-03-04",
@@ -12953,6 +13224,13 @@
    "venue": "Wichita, Kan.",
    "attendance": 713,
    "boxScoreUrl": "https://kuathletics.com/sports/softball/stats/2026/wichita-state/boxscore/20447",
+   "pdfUrl": "https://dxbhsrqyrr690.cloudfront.net/sidearm.nextgen.sites/ukansas.sidearmsports.com/stats/softball/2026/pdf/20260304084040-KU22.pdf",
+   "stadium": "Wilkins Stadium",
+   "firstPitch": "6:05 PM",
+   "duration": "1:56",
+   "weather": "Temp: 48F",
+   "umpires": "Home Plate: Chelsea Clark \u00b7 First: Chad Spitler \u00b7 Third Base: Troy Kuykendall",
+   "scheduledInnings": 7,
    "opponentRecord": "10-8",
    "scoring": [
     {
@@ -13454,6 +13732,13 @@
    ],
    "venue": "Lawrence, KS",
    "boxScoreUrl": "https://kuathletics.com/sports/softball/stats/2026/utah-state/boxscore/20448",
+   "pdfUrl": "https://dxbhsrqyrr690.cloudfront.net/sidearm.nextgen.sites/ukansas.sidearmsports.com/stats/softball/2026/pdf/20260306073555-UTAH_STATE_vs_Kansas_01.pdf",
+   "stadium": "Arrocha Ballpark at Rock Chalk Park",
+   "firstPitch": "2:14 PM",
+   "duration": "2:00",
+   "weather": "Conditions: Windy; Temp: 68F",
+   "umpires": "Home Plate: Joshua Forburger \u00b7 First: Charles McManus \u00b7 Third Base: Craig Hyde",
+   "scheduledInnings": 7,
    "opponentRecord": "10-11",
    "scoring": [
     {
@@ -14095,6 +14380,12 @@
    ],
    "venue": "Lawrence, KS",
    "boxScoreUrl": "https://kuathletics.com/sports/softball/stats/2026/utah-state/boxscore/20449",
+   "pdfUrl": "https://dxbhsrqyrr690.cloudfront.net/sidearm.nextgen.sites/ukansas.sidearmsports.com/stats/softball/2026/pdf/20260306074216-UTAH_STATE_vs_Kansas_02.pdf",
+   "stadium": "Arrocha Ballpark at Rock Chalk Park",
+   "firstPitch": "4:51 PM",
+   "weather": "Conditions: Windy; Temp: 68F",
+   "umpires": "Home Plate: Charles McManus \u00b7 First: Craig Hyde \u00b7 Second Base: Joshua Forburger",
+   "scheduledInnings": 7,
    "opponentRecord": "10-12",
    "scoring": [
     {
@@ -14884,6 +15175,12 @@
    "venue": "Lawrence, KS",
    "attendance": 105,
    "boxScoreUrl": "https://kuathletics.com/sports/softball/stats/2026/utah-state/boxscore/20450",
+   "pdfUrl": "https://dxbhsrqyrr690.cloudfront.net/sidearm.nextgen.sites/ukansas.sidearmsports.com/stats/softball/2026/pdf/20260307035651-UTAH_STATE_vs_Kansas_03_07_2026 (1).pdf",
+   "stadium": "Arrocha Ballpark at Rock Chalk Park",
+   "firstPitch": "2:05 PM",
+   "weather": "Temp: 45F",
+   "umpires": "Home Plate: Craig Hyde \u00b7 First: Joshua Forburger \u00b7 Third Base: Charles McManus",
+   "scheduledInnings": 7,
    "opponentRecord": "10-13",
    "scoring": [
     {
@@ -15576,6 +15873,13 @@
    "venue": "Houston, TX",
    "attendance": 525,
    "boxScoreUrl": "https://kuathletics.com/sports/softball/stats/2026/houston/boxscore/20454",
+   "pdfUrl": "https://dxbhsrqyrr690.cloudfront.net/sidearm.nextgen.sites/ukansas.sidearmsports.com/stats/softball/2026/pdf/20260313104414-KU26.pdf",
+   "stadium": "Cougar Softball Stadium",
+   "firstPitch": "6:04 PM",
+   "duration": "3:17",
+   "weather": "Conditions: Sunny; Temp: 74F",
+   "umpires": "Home Plate: Brett Higgins \u00b7 First: Donald Brown \u00b7 Third Base: Todd Foy",
+   "scheduledInnings": 7,
    "opponentRecord": "17-10",
    "scoring": [
     {
@@ -16209,6 +16513,12 @@
    "venue": "Houston, TX",
    "attendance": 480,
    "boxScoreUrl": "https://kuathletics.com/sports/softball/stats/2026/houston/boxscore/20455",
+   "pdfUrl": "https://dxbhsrqyrr690.cloudfront.net/sidearm.nextgen.sites/ukansas.sidearmsports.com/stats/softball/2026/pdf/20260314062042-KU27.pdf",
+   "stadium": "Cougar Softball Stadium",
+   "firstPitch": "3:04 PM",
+   "duration": "1:56",
+   "umpires": "Home Plate: Donald Brown \u00b7 First: Todd Foy \u00b7 Third Base: Brett Higgins",
+   "scheduledInnings": 7,
    "opponentRecord": "17-11",
    "scoring": [
     {
@@ -16818,6 +17128,12 @@
    "venue": "Houston, TX",
    "attendance": 546,
    "boxScoreUrl": "https://kuathletics.com/sports/softball/stats/2026/houston/boxscore/20456",
+   "pdfUrl": "https://dxbhsrqyrr690.cloudfront.net/sidearm.nextgen.sites/ukansas.sidearmsports.com/stats/softball/2026/pdf/20260315033759-KU28.pdf",
+   "stadium": "Cougar Softball Stadium",
+   "firstPitch": "11:04 AM",
+   "duration": "2:29",
+   "umpires": "Home Plate: Todd Foy \u00b7 First: Brett Higgins \u00b7 Third Base: Donald Brown",
+   "scheduledInnings": 7,
    "opponentRecord": "17-12",
    "scoring": [
     {
@@ -17483,6 +17799,13 @@
    ],
    "venue": "Lawrence, Kan.",
    "boxScoreUrl": "https://kuathletics.com/sports/softball/stats/2026/south-dakota/boxscore/20566",
+   "pdfUrl": "https://dxbhsrqyrr690.cloudfront.net/sidearm.nextgen.sites/ukansas.sidearmsports.com/stats/softball/2026/pdf/20260318022804-KU29.pdf",
+   "stadium": "Arrocha Ballpark",
+   "firstPitch": "12:03 PM",
+   "duration": "1:43",
+   "weather": "Conditions: Sunny; Temp: 56F",
+   "umpires": "Home Plate: Michael Parker \u00b7 First: Perry Owens \u00b7 Third Base: Brent Hardin",
+   "scheduledInnings": 7,
    "opponentRecord": "8-21-1",
    "scoring": [
     {
@@ -18077,6 +18400,13 @@
    "venue": "Lawrence, KS",
    "attendance": 52,
    "boxScoreUrl": "https://kuathletics.com/sports/softball/stats/2026/utah/boxscore/20459",
+   "pdfUrl": "https://dxbhsrqyrr690.cloudfront.net/sidearm.nextgen.sites/ukansas.sidearmsports.com/stats/softball/2026/pdf/20260320081020-Utah_vs_Kansas_03_20_2026 (1).pdf",
+   "stadium": "Arrocha Ballpark at Rock Chalk Park",
+   "firstPitch": "5:05 PM",
+   "duration": "2:09",
+   "weather": "Conditions: Sunny; Temp: 94F",
+   "umpires": "Home Plate: Michael Hernandez \u00b7 First: Frederick Ewald \u00b7 Third Base: Jonathan Dewhirst",
+   "scheduledInnings": 7,
    "opponentRecord": "23-7",
    "scoring": [
     {
@@ -18615,6 +18945,13 @@
    "venue": "Lawrence, KS",
    "attendance": 582,
    "boxScoreUrl": "https://kuathletics.com/sports/softball/stats/2026/utah/boxscore/20460",
+   "pdfUrl": "https://dxbhsrqyrr690.cloudfront.net/sidearm.nextgen.sites/ukansas.sidearmsports.com/stats/softball/2026/pdf/20260321045028-Utah_vs_Kansas_03_21_2026.pdf",
+   "stadium": "Arrocha Ballpark at Rock Chalk Park",
+   "firstPitch": "2:05 PM",
+   "duration": "1:59",
+   "weather": "Conditions: Sunny; Temp: 91F",
+   "umpires": "Home Plate: Frederick Ewald \u00b7 First: Jonathan Dewhirst \u00b7 Third Base: Michael Hernandez",
+   "scheduledInnings": 7,
    "opponentRecord": "24-7",
    "scoring": [
     {
@@ -19126,6 +19463,13 @@
    "venue": "Lawrence, KS",
    "attendance": 456,
    "boxScoreUrl": "https://kuathletics.com/sports/softball/stats/2026/utah/boxscore/20461",
+   "pdfUrl": "https://dxbhsrqyrr690.cloudfront.net/sidearm.nextgen.sites/ukansas.sidearmsports.com/stats/softball/2026/pdf/20260323075441-Utah_vs_Kansas_03_22_2026 (2).pdf",
+   "stadium": "Arrocha Ballpark at Rock Chalk Park",
+   "firstPitch": "12:05 PM",
+   "duration": "2:31",
+   "weather": "Temp: 73F",
+   "umpires": "Home Plate: Jonathan Dewhirst \u00b7 First: Michael Hernandez \u00b7 Third Base: Frederick Ewald",
+   "scheduledInnings": 7,
    "opponentRecord": "24-8",
    "scoring": [
     {
@@ -19769,6 +20113,12 @@
    "venue": "Provo, UT",
    "attendance": 805,
    "boxScoreUrl": "https://kuathletics.com/sports/softball/stats/2026/byu/boxscore/20465",
+   "pdfUrl": "https://dxbhsrqyrr690.cloudfront.net/sidearm.nextgen.sites/ukansas.sidearmsports.com/stats/softball/2026/pdf/20260404024228-Kansas_vs_BYU_Game1.pdf",
+   "stadium": "Gail Miller Field",
+   "firstPitch": "6:10 PM",
+   "duration": "2:45",
+   "umpires": "Home Plate: Matt Diall \u00b7 First: Briasn Crochet \u00b7 Third Base: Robert Gonzalez",
+   "scheduledInnings": 7,
    "opponentRecord": "10-21",
    "scoring": [
     {
@@ -20330,6 +20680,13 @@
    "venue": "Provo, UT",
    "attendance": 1112,
    "boxScoreUrl": "https://kuathletics.com/sports/softball/stats/2026/byu/boxscore/20462",
+   "pdfUrl": "https://dxbhsrqyrr690.cloudfront.net/sidearm.nextgen.sites/ukansas.sidearmsports.com/stats/softball/2026/pdf/20260404024307-Kansas_vs_BYU_Game2.pdf",
+   "stadium": "Gail Miller Field",
+   "firstPitch": "6:09 PM",
+   "duration": "2:05",
+   "weather": "Conditions: Cloudy; Temp: 69F",
+   "umpires": "Home Plate: Brian Crochet \u00b7 First: Robert Gonzalez \u00b7 Third Base: Matt Diall",
+   "scheduledInnings": 7,
    "opponentRecord": "11-21",
    "scoring": [
     {
@@ -20875,6 +21232,13 @@
    "venue": "Provo, UT",
    "attendance": 852,
    "boxScoreUrl": "https://kuathletics.com/sports/softball/stats/2026/byu/boxscore/20463",
+   "pdfUrl": "https://dxbhsrqyrr690.cloudfront.net/sidearm.nextgen.sites/ukansas.sidearmsports.com/stats/softball/2026/pdf/20260404024355-Kansas_vs_BYU_Game3.pdf",
+   "stadium": "Gail Miller Field",
+   "firstPitch": "11:37 AM",
+   "duration": "2:42",
+   "weather": "Temp: 60F",
+   "umpires": "Home Plate: Robert Gonzalez \u00b7 First: Matt Diall \u00b7 Third Base: Brian Crochet",
+   "scheduledInnings": 7,
    "opponentRecord": "11-22",
    "scoring": [
     {
@@ -21513,6 +21877,13 @@
    ],
    "venue": "Lawrence, Kan.",
    "boxScoreUrl": "https://kuathletics.com/sports/softball/stats/2026/arizona-state/boxscore/20466",
+   "pdfUrl": "https://dxbhsrqyrr690.cloudfront.net/sidearm.nextgen.sites/ukansas.sidearmsports.com/stats/softball/2026/pdf/20260402052857-Arizona_State_vs_Kansas_04_02_2026 (1).pdf",
+   "stadium": "Arrocha Ballpark",
+   "firstPitch": "3:03 PM",
+   "duration": "2:19",
+   "weather": "Temp: 66F",
+   "umpires": "Home Plate: Jonathan Hand \u00b7 First: Riley Cobb \u00b7 Third Base: Chelsea Clark",
+   "scheduledInnings": 7,
    "opponentRecord": "29-9",
    "opponentRank": 20,
    "scoring": [
@@ -22172,6 +22543,13 @@
    "venue": "Lawrence, Kan.",
    "attendance": 442,
    "boxScoreUrl": "https://kuathletics.com/sports/softball/stats/2026/arizona-state/boxscore/20578",
+   "pdfUrl": "https://dxbhsrqyrr690.cloudfront.net/sidearm.nextgen.sites/ukansas.sidearmsports.com/stats/softball/2026/pdf/20260402092807-Arizona_State_vs_Kansas_04_02_2026 (2).pdf",
+   "stadium": "Arrocha Ballpark",
+   "firstPitch": "5:56 PM",
+   "duration": "2:17",
+   "weather": "Temp: 62F",
+   "umpires": "Home Plate: Riley Cobb \u00b7 First: Chelsea Clark \u00b7 Third Base: Jonathan Hand",
+   "scheduledInnings": 7,
    "opponentRecord": "29-10",
    "opponentRank": 20,
    "scoring": [
@@ -22859,6 +23237,13 @@
    "venue": "Lawrence, KS",
    "attendance": 453,
    "boxScoreUrl": "https://kuathletics.com/sports/softball/stats/2026/arizona-state/boxscore/20468",
+   "pdfUrl": "https://dxbhsrqyrr690.cloudfront.net/sidearm.nextgen.sites/ukansas.sidearmsports.com/stats/softball/2026/pdf/20260404025305-Arizona_State_vs_Kansas_04_04_2026 (1).pdf",
+   "stadium": "Arrocha Ballpark at Rock Chalk Park",
+   "firstPitch": "12:04 PM",
+   "duration": "2:18",
+   "weather": "Temp: 47F",
+   "umpires": "Home Plate: Chelsea Clark \u00b7 First: Jonathan Hand \u00b7 Third Base: Riley Cobb",
+   "scheduledInnings": 7,
    "opponentRecord": "29-11",
    "opponentRank": 20,
    "scoring": [
@@ -23462,6 +23847,13 @@
    ],
    "venue": "Lawrence, KS",
    "boxScoreUrl": "https://kuathletics.com/sports/softball/stats/2026/baylor/boxscore/20469",
+   "pdfUrl": "https://dxbhsrqyrr690.cloudfront.net/sidearm.nextgen.sites/ukansas.sidearmsports.com/stats/softball/2026/pdf/20260410052227-Baylor_vs_Kansas_04_10_2026_1.pdf",
+   "stadium": "Arrocha Ballpark at Rock Chalk Park",
+   "firstPitch": "2:05 PM",
+   "duration": "2:23",
+   "weather": "Temp: 53F",
+   "umpires": "Home Plate: Megan Rabin \u00b7 First: Ron Burkhart \u00b7 Third Base: Shane Jackson",
+   "scheduledInnings": 7,
    "opponentRecord": "24-16",
    "scoring": [
     {
@@ -24025,6 +24417,13 @@
    "venue": "Lawrence, KS",
    "attendance": 436,
    "boxScoreUrl": "https://kuathletics.com/sports/softball/stats/2026/baylor/boxscore/20470",
+   "pdfUrl": "https://dxbhsrqyrr690.cloudfront.net/sidearm.nextgen.sites/ukansas.sidearmsports.com/stats/softball/2026/pdf/20260410064239-Baylor_vs_Kansas_04_10_2026 (1).pdf",
+   "stadium": "Arrocha Ballpark at Rock Chalk Park",
+   "firstPitch": "5:03 PM",
+   "duration": "1:36",
+   "weather": "Temp: 53F",
+   "umpires": "Home Plate: Ron Burkhart \u00b7 First: Shane Jackson \u00b7 Third Base: Megan Rabin",
+   "scheduledInnings": 7,
    "opponentRecord": "24-17",
    "scoring": [
     {
@@ -24553,6 +24952,13 @@
    "venue": "Lawrence, KS",
    "attendance": 790,
    "boxScoreUrl": "https://kuathletics.com/sports/softball/stats/2026/baylor/boxscore/20471",
+   "pdfUrl": "https://dxbhsrqyrr690.cloudfront.net/sidearm.nextgen.sites/ukansas.sidearmsports.com/stats/softball/2026/pdf/20260411043551-Baylor_vs_Kansas_04_11_2026.pdf",
+   "stadium": "Arrocha Ballpark at Rock Chalk Park",
+   "firstPitch": "2:05 PM",
+   "duration": "2:26",
+   "weather": "Temp: 71F",
+   "umpires": "Home Plate: Shane Jackson \u00b7 First: Megan Rabin \u00b7 Third Base: Ron Burkhart",
+   "scheduledInnings": 7,
    "opponentRecord": "24-18",
    "scoring": [
     {
@@ -25213,6 +25619,13 @@
    "venue": "Lawrence, KS",
    "attendance": 789,
    "boxScoreUrl": "https://kuathletics.com/sports/softball/stats/2026/missouri/boxscore/20472",
+   "pdfUrl": "https://dxbhsrqyrr690.cloudfront.net/sidearm.nextgen.sites/ukansas.sidearmsports.com/stats/softball/2026/pdf/20260415071526-Missouri_vs_Kansas_04_15_2026.pdf",
+   "stadium": "Arrocha Ballpark at Rock Chalk Park",
+   "firstPitch": "5:04 PM",
+   "duration": "2:08",
+   "weather": "Temp: 71F",
+   "umpires": "Home Plate: Chelsea Clark \u00b7 First: Scott Wagner \u00b7 Third Base: Anita Robinett",
+   "scheduledInnings": 7,
    "opponentRecord": "23-22",
    "scoring": [
     {
@@ -25758,6 +26171,13 @@
    "venue": "UCF Softball Complex",
    "attendance": 850,
    "boxScoreUrl": "https://kuathletics.com/sports/softball/stats/2026/ucf/boxscore/20500",
+   "pdfUrl": "https://dxbhsrqyrr690.cloudfront.net/sidearm.nextgen.sites/ukansas.sidearmsports.com/stats/softball/2026/pdf/20260417092733-UCF46.pdf",
+   "stadium": "Orlando, Fla.",
+   "firstPitch": "6:05pm",
+   "duration": "2:47",
+   "weather": "Sunny, 87 degrees",
+   "umpires": "Home Plate: Matt Dial \u00b7 First: Garrett Knowles \u00b7 Second Base: 0 \u00b7 Third Base: Robert Gonzalez \u00b7 Left Field: 0 \u00b7 Right Field: 0",
+   "scheduledInnings": 7,
    "opponentRecord": "34-11-1",
    "opponentRank": 20,
    "scoring": [
@@ -26355,6 +26775,13 @@
    "venue": "UCF Softball Complex",
    "attendance": 803,
    "boxScoreUrl": "https://kuathletics.com/sports/softball/stats/2026/ucf/boxscore/20501",
+   "pdfUrl": "https://dxbhsrqyrr690.cloudfront.net/sidearm.nextgen.sites/ukansas.sidearmsports.com/stats/softball/2026/pdf/20260418073601-UCF47.pdf",
+   "stadium": "Orlando, Fla.",
+   "firstPitch": "5:05pm",
+   "duration": "2:24",
+   "weather": "Partly cloudy, 90 degrees",
+   "umpires": "Home Plate: Matt Dial \u00b7 First: Garrett Knowles \u00b7 Second Base: 0 \u00b7 Third Base: Robert Gonzalez \u00b7 Left Field: 0 \u00b7 Right Field: 0",
+   "scheduledInnings": 7,
    "opponentRecord": "35-11-1",
    "opponentRank": 20,
    "scoring": [
@@ -26962,6 +27389,13 @@
    "venue": "UCF Softball Complex",
    "attendance": 650,
    "boxScoreUrl": "https://kuathletics.com/sports/softball/stats/2026/ucf/boxscore/20502",
+   "pdfUrl": "https://dxbhsrqyrr690.cloudfront.net/sidearm.nextgen.sites/ukansas.sidearmsports.com/stats/softball/2026/pdf/20260419125450-UCF48.pdf",
+   "stadium": "Orlando, Fla.",
+   "firstPitch": "11:05am",
+   "duration": "2:35",
+   "weather": "Cloudy, 74 degrees",
+   "umpires": "Home Plate: Garrett Knowles \u00b7 First: Robert Gonzalez \u00b7 Second Base: 0 \u00b7 Third Base: Matt Dial \u00b7 Left Field: 0 \u00b7 Right Field: 0",
+   "scheduledInnings": 7,
    "opponentRecord": "35-12-1",
    "opponentRank": 20,
    "scoring": [
@@ -27484,6 +27918,13 @@
    ],
    "venue": "Lawrence, KS",
    "boxScoreUrl": "https://kuathletics.com/sports/softball/stats/2026/iowa-state/boxscore/20503",
+   "pdfUrl": "https://dxbhsrqyrr690.cloudfront.net/sidearm.nextgen.sites/ukansas.sidearmsports.com/stats/softball/2026/pdf/20260424050021-Iowa_State_vs_Kansas_04_24_2026 (1).pdf",
+   "stadium": "Arrocha Ballpark at Rock Chalk Park",
+   "firstPitch": "3:04 PM",
+   "duration": "1:33",
+   "weather": "Conditions: Sunny; Temp: 65F",
+   "umpires": "Home Plate: Megan Rabin \u00b7 First: Kelli Demianew \u00b7 Third Base: Terrell Guidry",
+   "scheduledInnings": 7,
    "opponentRecord": "27-20",
    "scoring": [
     {
@@ -28034,6 +28475,13 @@
    "venue": "Lawrence, KS",
    "attendance": 894,
    "boxScoreUrl": "https://kuathletics.com/sports/softball/stats/2026/iowa-state/boxscore/20505",
+   "pdfUrl": "https://dxbhsrqyrr690.cloudfront.net/sidearm.nextgen.sites/ukansas.sidearmsports.com/stats/softball/2026/pdf/20260424072556-Iowa_State_vs_Kansas_04_24_2026xgame2x.pdf",
+   "stadium": "Arrocha Ballpark at Rock Chalk Park",
+   "firstPitch": "5:13 PM",
+   "duration": "2:00",
+   "weather": "Temp: 72F",
+   "umpires": "Home Plate: Kelli Demianew \u00b7 First: Terrell Guidry \u00b7 Third Base: Megan Rabin",
+   "scheduledInnings": 7,
    "opponentRecord": "28-20",
    "scoring": [
     {
@@ -28632,6 +29080,13 @@
    "venue": "Lawrence, KS",
    "attendance": 984,
    "boxScoreUrl": "https://kuathletics.com/sports/softball/stats/2026/iowa-state/boxscore/20504",
+   "pdfUrl": "https://dxbhsrqyrr690.cloudfront.net/sidearm.nextgen.sites/ukansas.sidearmsports.com/stats/softball/2026/pdf/20260425044953-Iowa_State_vs_Kansas_04_25_2026.pdf",
+   "stadium": "Arrocha Ballpark at Rock Chalk Park",
+   "firstPitch": "2:04 PM",
+   "duration": "2:25",
+   "weather": "Temp: 75F",
+   "umpires": "Home Plate: Terrell Guidry \u00b7 First: Megan Rabin \u00b7 Third Base: Kelli Demianew",
+   "scheduledInnings": 7,
    "opponentRecord": "28-21",
    "scoring": [
     {
@@ -29157,6 +29612,13 @@
    "venue": "Lawrence, Kan.",
    "attendance": 436,
    "boxScoreUrl": "https://kuathletics.com/sports/softball/stats/2026/wichita-state/boxscore/20506",
+   "pdfUrl": "https://dxbhsrqyrr690.cloudfront.net/sidearm.nextgen.sites/ukansas.sidearmsports.com/stats/softball/2026/pdf/20260428065246-Wichita_State_vs_Kansas_04_28_2026.pdf",
+   "stadium": "Arrocha Ballpark",
+   "firstPitch": "5:03 PM",
+   "duration": "1:33",
+   "weather": "Temp: 54F",
+   "umpires": "Home Plate: Chad Stears \u00b7 First: Austin Mezzacasa \u00b7 Third Base: Jason Kemper",
+   "scheduledInnings": 7,
    "opponentRecord": "32-16",
    "scoring": [
     {
@@ -29686,6 +30148,13 @@
    "venue": "Stillwater, Okla.",
    "attendance": 1549,
    "boxScoreUrl": "https://kuathletics.com/sports/softball/stats/2026/oklahoma-state/boxscore/20507",
+   "pdfUrl": "https://dxbhsrqyrr690.cloudfront.net/sidearm.nextgen.sites/ukansas.sidearmsports.com/stats/softball/2026/pdf/20260501084204-Kansas_vs_Oklahoma_State_05_01_2026.pdf",
+   "stadium": "Cowgirl Stadium",
+   "firstPitch": "6:05 PM",
+   "duration": "1:58",
+   "weather": "Temp: 67F",
+   "umpires": "Home Plate: Dustin Douglass \u00b7 First: Keith Kearney \u00b7 Third Base: Garrett Knowles",
+   "scheduledInnings": 7,
    "opponentRecord": "36-13",
    "opponentRank": 13,
    "scoring": [
@@ -30229,6 +30698,13 @@
    "venue": "Stillwater, Okla.",
    "attendance": 1691,
    "boxScoreUrl": "https://kuathletics.com/sports/softball/stats/2026/oklahoma-state/boxscore/20508",
+   "pdfUrl": "https://dxbhsrqyrr690.cloudfront.net/sidearm.nextgen.sites/ukansas.sidearmsports.com/stats/softball/2026/pdf/20260502044524-Kansas_vs_Oklahoma_State_05_02_2026 (1).pdf",
+   "stadium": "Cowgirl Stadium",
+   "firstPitch": "2:06 PM",
+   "duration": "1:41",
+   "weather": "Conditions: Sunny; Temp: 69F",
+   "umpires": "Home Plate: Keith Kearney \u00b7 First: Garrett Knowles \u00b7 Third Base: Dustin Douglass",
+   "scheduledInnings": 7,
    "opponentRecord": "36-14",
    "opponentRank": 13,
    "scoring": [
@@ -30805,6 +31281,13 @@
    "venue": "Stillwater, Okla.",
    "attendance": 1594,
    "boxScoreUrl": "https://kuathletics.com/sports/softball/stats/2026/oklahoma-state/boxscore/20509",
+   "pdfUrl": "https://dxbhsrqyrr690.cloudfront.net/sidearm.nextgen.sites/ukansas.sidearmsports.com/stats/softball/2026/pdf/20260503041655-Kansas_vs_Oklahoma_State_05_03_2026_2.pdf",
+   "stadium": "Cowgirl Stadium",
+   "firstPitch": "1:05 PM",
+   "duration": "2:03",
+   "weather": "Temp: 81F",
+   "umpires": "Home Plate: Garrett Knowles \u00b7 First: Dustin Douglass \u00b7 Third Base: Keith Kearney",
+   "scheduledInnings": 7,
    "opponentRecord": "37-14",
    "opponentRank": 13,
    "scoring": [
@@ -31394,6 +31877,13 @@
    ],
    "venue": "Oklahoma City",
    "boxScoreUrl": "https://kuathletics.com/sports/softball/stats/2026/ucf/boxscore/20610",
+   "pdfUrl": "https://dxbhsrqyrr690.cloudfront.net/sidearm.nextgen.sites/ukansas.sidearmsports.com/stats/softball/2026/pdf/20260507024236-KansasvsUCF.pdf",
+   "stadium": "Devon Park",
+   "firstPitch": "11:07 AM",
+   "duration": "2:45",
+   "weather": "Conditions: Sunny",
+   "umpires": "Home Plate: Garret Knowles \u00b7 First: Chad Stears \u00b7 Third Base: Bubba Ewald",
+   "scheduledInnings": 7,
    "opponentRecord": "38-16-1",
    "scoring": [
     {
@@ -31628,7 +32118,8 @@
     }
    ],
    "site": "N",
-   "startTime": "11 a.m. CT"
+   "startTime": "11 a.m. CT",
+   "event": "2026 Big 12 Softball Tournament"
   },
   {
    "date": "2026-05-08",
@@ -32003,6 +32494,13 @@
    ],
    "venue": "Oklahoma City, Okla.",
    "boxScoreUrl": "https://kuathletics.com/sports/softball/stats/2026/texas-tech/boxscore/20611",
+   "pdfUrl": "https://dxbhsrqyrr690.cloudfront.net/sidearm.nextgen.sites/ukansas.sidearmsports.com/stats/softball/2026/pdf/20260508051524-Kansas_vs_Texas_Tech_05_08_2026 (1).pdf",
+   "stadium": "Devon Park",
+   "firstPitch": "3:05 PM",
+   "duration": "1:44",
+   "weather": "Conditions: Sunny; Temp: 80F",
+   "umpires": "Home Plate: Bubba Ewald \u00b7 First: Matt Dial \u00b7 Third Base: Brett Higgins",
+   "scheduledInnings": 7,
    "opponentRecord": "52-5",
    "opponentRank": 3,
    "scoring": [
@@ -32227,7 +32725,8 @@
     }
    ],
    "site": "N",
-   "startTime": "3 p.m. CT"
+   "startTime": "3 p.m. CT",
+   "event": "2026 Big 12 Softball Tournament"
   },
   {
    "date": "2026-05-15",
@@ -32552,6 +33051,13 @@
    "venue": "Norman, Okla.",
    "attendance": 4036,
    "boxScoreUrl": "https://kuathletics.com/sports/softball/stats/2026/michigan/boxscore/20612",
+   "pdfUrl": "https://dxbhsrqyrr690.cloudfront.net/sidearm.nextgen.sites/ukansas.sidearmsports.com/stats/softball/2026/pdf/20260515084941-G2_KU_UM.pdf",
+   "stadium": "Love's Field",
+   "firstPitch": "5 pm",
+   "duration": "2:26",
+   "weather": "88 degrees, w 22 mph S",
+   "umpires": "Home Plate: Kalee Young \u00b7 First: John Schaefer \u00b7 Second Base: Mark Craver \u00b7 Third Base: Ron Burkhart \u00b7 Left Field: 0 \u00b7 Right Field: 0",
+   "scheduledInnings": 7,
    "opponentRecord": "34-21",
    "scoring": [
     {
@@ -32692,7 +33198,8 @@
     }
    ],
    "site": "N",
-   "startTime": "5 p.m. CT"
+   "startTime": "5 p.m. CT",
+   "event": "NCAA Regionals"
   },
   {
    "date": "2026-05-16",
@@ -33126,6 +33633,13 @@
    "venue": "Norman, Okla.",
    "attendance": 4235,
    "boxScoreUrl": "https://kuathletics.com/sports/softball/stats/2026/michigan/boxscore/20616",
+   "pdfUrl": "https://dxbhsrqyrr690.cloudfront.net/sidearm.nextgen.sites/ukansas.sidearmsports.com/stats/softball/2026/pdf/20260516105326-G5_KU_UM.pdf",
+   "stadium": "Love's Field",
+   "firstPitch": "7:10 pm",
+   "duration": "2:53",
+   "weather": "84 degrees, 20 mph, S",
+   "umpires": "Home Plate: Mark Craver \u00b7 First: Kalee Young \u00b7 Second Base: Robert Gonzalez \u00b7 Third Base: John Schaefer \u00b7 Left Field: 0 \u00b7 Right Field: 0",
+   "scheduledInnings": 7,
    "opponentRecord": "36-21",
    "scoring": [
     {
@@ -33442,7 +33956,8 @@
     }
    ],
    "site": "N",
-   "startTime": "07:10 PM"
+   "startTime": "07:10 PM",
+   "event": "NCAA Regionals"
   },
   {
    "date": "2026-05-16",
@@ -33731,6 +34246,13 @@
    ],
    "venue": "Norman, Okla.",
    "boxScoreUrl": "https://kuathletics.com/sports/softball/stats/2026/oklahoma-sooners/boxscore/20613",
+   "pdfUrl": "https://dxbhsrqyrr690.cloudfront.net/sidearm.nextgen.sites/ukansas.sidearmsports.com/stats/softball/2026/pdf/20260516040013-Kansas_vs_Oklahoma_Sooners_05_16_2026.pdf",
+   "stadium": "Love's Field",
+   "firstPitch": "2 pm",
+   "duration": "1:37",
+   "weather": "85 degrees, 19 mph S",
+   "umpires": "Home Plate: Robert Gonzalez \u00b7 First: Mark Craver \u00b7 Second Base: Ron Burkhart \u00b7 Third Base: Kalee Young \u00b7 Left Field: 0 \u00b7 Right Field: 0",
+   "scheduledInnings": 7,
    "opponentRecord": "50-8",
    "opponentRank": 3,
    "scoring": [
@@ -33924,7 +34446,8 @@
     }
    ],
    "site": "N",
-   "startTime": "2 p.m."
+   "startTime": "2 p.m.",
+   "event": "NCAA Regionals"
   },
   {
    "date": "2026-09-26",

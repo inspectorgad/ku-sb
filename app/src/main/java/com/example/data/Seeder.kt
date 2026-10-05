@@ -61,6 +61,11 @@ object Seeder {
                             name = name,
                             jerseyNumber = jersey,
                             position = position,
+                            academicYear = p.optString("academicYear"),
+                            height = p.optString("height"),
+                            batsThrows = p.optString("batsThrows"),
+                            hometown = p.optString("hometown"),
+                            lastSchool = p.optString("lastSchool"),
                             active = active
                         )
                     )
@@ -71,6 +76,16 @@ object Seeder {
                     val updated = existing.copy(
                         jerseyNumber = jersey.ifBlank { existing.jerseyNumber },
                         position = position.ifBlank { existing.position },
+                        // Only the current roster page carries these, so a
+                        // blank means "this page does not say" rather than
+                        // "this is no longer true" — a graduated player keeps
+                        // the class year she had.
+                        academicYear = p.optString("academicYear")
+                            .ifBlank { existing.academicYear },
+                        height = p.optString("height").ifBlank { existing.height },
+                        batsThrows = p.optString("batsThrows").ifBlank { existing.batsThrows },
+                        hometown = p.optString("hometown").ifBlank { existing.hometown },
+                        lastSchool = p.optString("lastSchool").ifBlank { existing.lastSchool },
                         active = active
                     )
                     if (updated != existing) dao.updatePlayer(updated)
@@ -117,7 +132,15 @@ object Seeder {
                         boxScoreUrl = g.optString("boxScoreUrl"),
                         scoringSummary = encodeScoring(g.optJSONArray("scoring")),
                         opponentRecord = g.optString("opponentRecord"),
-                        opponentRank = g.optInt("opponentRank")
+                        opponentRank = g.optInt("opponentRank"),
+                        stadium = g.optString("stadium"),
+                        firstPitch = g.optString("firstPitch"),
+                        duration = g.optString("duration"),
+                        weather = g.optString("weather"),
+                        umpires = g.optString("umpires"),
+                        event = g.optString("event"),
+                        pdfUrl = g.optString("pdfUrl"),
+                        scheduledInnings = g.optInt("scheduledInnings")
                     )
                 )
             } else {
@@ -174,6 +197,38 @@ object Seeder {
                 val seedOppRank = g.optInt("opponentRank")
                 if (seedOppRank > 0 && existing.opponentRank == 0) {
                     updated = updated.copy(opponentRank = seedOppRank)
+                }
+                // Game-info detail: fill whenever still blank, never overwrite.
+                if (existing.stadium.isBlank()) {
+                    g.optString("stadium").takeIf { it.isNotBlank() }
+                        ?.let { updated = updated.copy(stadium = it) }
+                }
+                if (existing.firstPitch.isBlank()) {
+                    g.optString("firstPitch").takeIf { it.isNotBlank() }
+                        ?.let { updated = updated.copy(firstPitch = it) }
+                }
+                if (existing.duration.isBlank()) {
+                    g.optString("duration").takeIf { it.isNotBlank() }
+                        ?.let { updated = updated.copy(duration = it) }
+                }
+                if (existing.weather.isBlank()) {
+                    g.optString("weather").takeIf { it.isNotBlank() }
+                        ?.let { updated = updated.copy(weather = it) }
+                }
+                if (existing.umpires.isBlank()) {
+                    g.optString("umpires").takeIf { it.isNotBlank() }
+                        ?.let { updated = updated.copy(umpires = it) }
+                }
+                if (existing.event.isBlank()) {
+                    g.optString("event").takeIf { it.isNotBlank() }
+                        ?.let { updated = updated.copy(event = it) }
+                }
+                if (existing.pdfUrl.isBlank()) {
+                    g.optString("pdfUrl").takeIf { it.isNotBlank() }
+                        ?.let { updated = updated.copy(pdfUrl = it) }
+                }
+                if (existing.scheduledInnings == 0 && g.optInt("scheduledInnings") > 0) {
+                    updated = updated.copy(scheduledInnings = g.optInt("scheduledInnings"))
                 }
                 if (existing.startTime.isBlank() && seedStartTime.isNotBlank()) {
                     updated = updated.copy(startTime = seedStartTime)
