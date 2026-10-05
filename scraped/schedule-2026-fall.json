@@ -28,20 +28,6 @@
   "opponentScore": null
  },
  {
-  "date": "2026-10-01",
-  "opponent": "Johnson County CC",
-  "site": "H",
-  "time": "5:00 pm",
-  "location": "Lawrence, Kansas",
-  "conference": false,
-  "doubleheader": false,
-  "tournament": "",
-  "sidearmId": "20788",
-  "played": false,
-  "teamScore": null,
-  "opponentScore": null
- },
- {
   "date": "2026-10-02",
   "opponent": "Rockhurst",
   "site": "H",
@@ -93,6 +79,20 @@
   "doubleheader": false,
   "tournament": "",
   "sidearmId": "20792",
+  "played": false,
+  "teamScore": null,
+  "opponentScore": null
+ },
+ {
+  "date": "2026-10-13",
+  "opponent": "Johnson County CC",
+  "site": "H",
+  "time": "5:00 pm",
+  "location": "Lawrence, Kansas",
+  "conference": false,
+  "doubleheader": false,
+  "tournament": "",
+  "sidearmId": "20788",
   "played": false,
   "teamScore": null,
   "opponentScore": null

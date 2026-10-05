@@ -6,8 +6,113 @@
   "date": "04/24/2026",
   "location": "Lawrence, KS",
   "attendance": "",
-  "doubleHeaderGame": "1"
+  "doubleHeaderGame": "1",
+  "stadium": "Arrocha Ballpark at Rock Chalk Park",
+  "start": "3:04 PM",
+  "duration": "1:33",
+  "weather": "Conditions: Sunny; Temp: 65F",
+  "umpires": {
+   "Home Plate": "Megan Rabin",
+   "First": "Kelli Demianew",
+   "Second Base": "",
+   "Third Base": "Terrell Guidry",
+   "Left Field": "",
+   "Right Field": ""
+  },
+  "scheduledInnings": "7",
+  "tournamentName": null
  },
+ "scoringSummaryPlays": [
+  {
+   "teamName": "Iowa State",
+   "inningNumber": "1",
+   "playNarrative": "Ford,Karlee sacrifice fly to lf, RBI (0-0); Clemons,Jessie scored, unearned; Bartholomew,Reagan advanced to third base; Shepherd,Kadence advanced to second base.",
+   "visitingScore": "1",
+   "homeScore": "0",
+   "isVisitingTeam": true
+  },
+  {
+   "teamName": "Kansas",
+   "inningNumber": "1",
+   "playNarrative": "Stafford,Kadence walked, RBI (3-1 BBKBB); Limbaugh,Presley scored; Boyer,Ella advanced to third base; Soles,Anna advanced to second base.",
+   "visitingScore": "1",
+   "homeScore": "1",
+   "isVisitingTeam": false
+  },
+  {
+   "teamName": "Kansas",
+   "inningNumber": "1",
+   "playNarrative": "Bagshaw,Campbell doubled to right field, 2RBI (1-1 BF); Boyer,Ella scored; Soles,Anna scored from second base; Stafford,Kadence advanced from first base to third base.",
+   "visitingScore": "1",
+   "homeScore": "3",
+   "isVisitingTeam": false
+  },
+  {
+   "teamName": "Kansas",
+   "inningNumber": "1",
+   "playNarrative": "Linduff,Aynslee reached on a fielder's choice hit to third base, RBI (3-2 BBFBK); Stafford,Kadence scored; Bagshaw,Campbell advanced to third base.",
+   "visitingScore": "1",
+   "homeScore": "4",
+   "isVisitingTeam": false
+  },
+  {
+   "teamName": "Kansas",
+   "inningNumber": "1",
+   "playNarrative": "Wallace,Ava grounded out to first base, unassisted, RBI (3-1 BFBB); Bagshaw,Campbell scored; Linduff,Aynslee advanced to second base.",
+   "visitingScore": "1",
+   "homeScore": "5",
+   "isVisitingTeam": false
+  },
+  {
+   "teamName": "Kansas",
+   "inningNumber": "2",
+   "playNarrative": "Soles,Anna homered to deep right field, 10th of season, 2RBI (2-1 BKB); Limbaugh,Presley scored from first base.",
+   "visitingScore": "1",
+   "homeScore": "7",
+   "isVisitingTeam": false
+  },
+  {
+   "teamName": "Iowa State",
+   "inningNumber": "3",
+   "playNarrative": "Ford,Karlee reached on a fielding error fielding by 3b by Stafford,Kadence (E5) (2-2 BBFF); Johnson,Tatum scored; Shepherd,Kadence advanced to second base.",
+   "visitingScore": "2",
+   "homeScore": "7",
+   "isVisitingTeam": true
+  },
+  {
+   "teamName": "Kansas",
+   "inningNumber": "3",
+   "playNarrative": "Limbaugh,Presley singled to left field, RBI (2-1 BBK); Bagshaw,Campbell scored; Wallace,Ava advanced to third base; Amezcua,Bailey advanced to second base.",
+   "visitingScore": "2",
+   "homeScore": "8",
+   "isVisitingTeam": false
+  },
+  {
+   "teamName": "Kansas",
+   "inningNumber": "3",
+   "playNarrative": "Boyer,Ella walked, RBI (3-1 SBBBB); Wallace,Ava scored; Amezcua,Bailey advanced to third base; Limbaugh,Presley advanced to second base.",
+   "visitingScore": "2",
+   "homeScore": "9",
+   "isVisitingTeam": false
+  },
+  {
+   "teamName": "Kansas",
+   "inningNumber": "3",
+   "playNarrative": "Soles,Anna grounded out to short, ss to 1b, RBI (0-1 K); Amezcua,Bailey scored; Limbaugh,Presley advanced to third base; Youngblood,Audri advanced to second base.",
+   "visitingScore": "2",
+   "homeScore": "10",
+   "isVisitingTeam": false
+  },
+  {
+   "teamName": "Kansas",
+   "inningNumber": "3",
+   "playNarrative": "Cripe,Hailey singled up the middle, 2RBI (2-0 BB); Limbaugh,Presley scored; Youngblood,Audri scored from second base.",
+   "visitingScore": "2",
+   "homeScore": "12",
+   "isVisitingTeam": false
+  }
+ ],
+ "pdfDoc": "https://dxbhsrqyrr690.cloudfront.net/sidearm.nextgen.sites/ukansas.sidearmsports.com/stats/softball/2026/pdf/20260424050021-Iowa_State_vs_Kansas_04_24_2026 (1).pdf",
  "homeTeam": {
   "name": "Kansas",
   "score": "12",
@@ -85,6 +190,9 @@
     "pickoff": "0"
    }
   },
+  "rank": "",
+  "conferenceRecord": "12-7",
+  "boxscoreUrl": "",
   "players": [
    {
     "name": "Cripe, Hailey",
@@ -121,7 +229,20 @@
      "doublePlaysHitInto": "0",
      "triplePlaysHitInto": "0"
     },
-    "pitching": null
+    "pitching": null,
+    "fielding": {
+     "putouts": "1",
+     "assists": "1",
+     "errors": "0",
+     "passedBalls": "0",
+     "catchersInterference": "0",
+     "stolenBasesAgainst": "0",
+     "caughtStealingBy": "0",
+     "involvedInDoublePlays": "0",
+     "involvedInTriplePlays": "0",
+     "totalChances": "2",
+     "fieldingPercentage": "1.000"
+    }
    },
    {
     "name": "Limbaugh, Presley",
@@ -158,7 +279,20 @@
      "doublePlaysHitInto": "0",
      "triplePlaysHitInto": "0"
     },
-    "pitching": null
+    "pitching": null,
+    "fielding": {
+     "putouts": "3",
+     "assists": "0",
+     "errors": "0",
+     "passedBalls": "0",
+     "catchersInterference": "0",
+     "stolenBasesAgainst": "0",
+     "caughtStealingBy": "0",
+     "involvedInDoublePlays": "0",
+     "involvedInTriplePlays": "0",
+     "totalChances": "3",
+     "fieldingPercentage": "1.000"
+    }
    },
    {
     "name": "Murphy, Jaeden",
@@ -195,7 +329,20 @@
      "doublePlaysHitInto": "0",
      "triplePlaysHitInto": "0"
     },
-    "pitching": null
+    "pitching": null,
+    "fielding": {
+     "putouts": "0",
+     "assists": "0",
+     "errors": "0",
+     "passedBalls": "0",
+     "catchersInterference": "0",
+     "stolenBasesAgainst": "0",
+     "caughtStealingBy": "0",
+     "involvedInDoublePlays": "0",
+     "involvedInTriplePlays": "0",
+     "totalChances": "0",
+     "fieldingPercentage": "0.000"
+    }
    },
    {
     "name": "Amezcua, Bailey",
@@ -232,7 +379,20 @@
      "doublePlaysHitInto": "0",
      "triplePlaysHitInto": "0"
     },
-    "pitching": null
+    "pitching": null,
+    "fielding": {
+     "putouts": "2",
+     "assists": "0",
+     "errors": "0",
+     "passedBalls": "0",
+     "catchersInterference": "0",
+     "stolenBasesAgainst": "0",
+     "caughtStealingBy": "0",
+     "involvedInDoublePlays": "0",
+     "involvedInTriplePlays": "0",
+     "totalChances": "2",
+     "fieldingPercentage": "1.000"
+    }
    },
    {
     "name": "Soles, Anna",
@@ -269,7 +429,20 @@
      "doublePlaysHitInto": "0",
      "triplePlaysHitInto": "0"
     },
-    "pitching": null
+    "pitching": null,
+    "fielding": {
+     "putouts": "3",
+     "assists": "0",
+     "errors": "0",
+     "passedBalls": "0",
+     "catchersInterference": "0",
+     "stolenBasesAgainst": "0",
+     "caughtStealingBy": "0",
+     "involvedInDoublePlays": "0",
+     "involvedInTriplePlays": "0",
+     "totalChances": "3",
+     "fieldingPercentage": "1.000"
+    }
    },
    {
     "name": "Wallace, Ava",
@@ -306,7 +479,20 @@
      "doublePlaysHitInto": "0",
      "triplePlaysHitInto": "0"
     },
-    "pitching": null
+    "pitching": null,
+    "fielding": {
+     "putouts": "5",
+     "assists": "0",
+     "errors": "0",
+     "passedBalls": "0",
+     "catchersInterference": "0",
+     "stolenBasesAgainst": "0",
+     "caughtStealingBy": "0",
+     "involvedInDoublePlays": "0",
+     "involvedInTriplePlays": "0",
+     "totalChances": "5",
+     "fieldingPercentage": "1.000"
+    }
    },
    {
     "name": "Linduff, Aynslee",
@@ -343,7 +529,20 @@
      "doublePlaysHitInto": "0",
      "triplePlaysHitInto": "0"
     },
-    "pitching": null
+    "pitching": null,
+    "fielding": {
+     "putouts": "1",
+     "assists": "0",
+     "errors": "0",
+     "passedBalls": "0",
+     "catchersInterference": "0",
+     "stolenBasesAgainst": "0",
+     "caughtStealingBy": "0",
+     "involvedInDoublePlays": "0",
+     "involvedInTriplePlays": "0",
+     "totalChances": "1",
+     "fieldingPercentage": "1.000"
+    }
    },
    {
     "name": "Stafford, Kadence",
@@ -380,7 +579,20 @@
      "doublePlaysHitInto": "0",
      "triplePlaysHitInto": "0"
     },
-    "pitching": null
+    "pitching": null,
+    "fielding": {
+     "putouts": "0",
+     "assists": "1",
+     "errors": "1",
+     "passedBalls": "0",
+     "catchersInterference": "0",
+     "stolenBasesAgainst": "0",
+     "caughtStealingBy": "0",
+     "involvedInDoublePlays": "0",
+     "involvedInTriplePlays": "0",
+     "totalChances": "2",
+     "fieldingPercentage": ".500"
+    }
    },
    {
     "name": "Bagshaw, Campbell",
@@ -417,7 +629,20 @@
      "doublePlaysHitInto": "0",
      "triplePlaysHitInto": "0"
     },
-    "pitching": null
+    "pitching": null,
+    "fielding": {
+     "putouts": "0",
+     "assists": "0",
+     "errors": "1",
+     "passedBalls": "0",
+     "catchersInterference": "0",
+     "stolenBasesAgainst": "0",
+     "caughtStealingBy": "0",
+     "involvedInDoublePlays": "0",
+     "involvedInTriplePlays": "0",
+     "totalChances": "1",
+     "fieldingPercentage": ".000"
+    }
    },
    {
     "name": "Weber, Bailey",
@@ -454,7 +679,20 @@
      "doublePlaysHitInto": "0",
      "triplePlaysHitInto": "0"
     },
-    "pitching": null
+    "pitching": null,
+    "fielding": {
+     "putouts": "0",
+     "assists": "0",
+     "errors": "0",
+     "passedBalls": "0",
+     "catchersInterference": "0",
+     "stolenBasesAgainst": "0",
+     "caughtStealingBy": "0",
+     "involvedInDoublePlays": "0",
+     "involvedInTriplePlays": "0",
+     "totalChances": "0",
+     "fieldingPercentage": "0.000"
+    }
    },
    {
     "name": "Partridge, Lila",
@@ -501,6 +739,19 @@
      "teamUnearnedRuns": "0",
      "saveRecord": "0",
      "pickoff": "0"
+    },
+    "fielding": {
+     "putouts": "0",
+     "assists": "0",
+     "errors": "0",
+     "passedBalls": "0",
+     "catchersInterference": "0",
+     "stolenBasesAgainst": "0",
+     "caughtStealingBy": "0",
+     "involvedInDoublePlays": "0",
+     "involvedInTriplePlays": "0",
+     "totalChances": "0",
+     "fieldingPercentage": "0.000"
     }
    },
    {
@@ -538,7 +789,20 @@
      "doublePlaysHitInto": "0",
      "triplePlaysHitInto": "0"
     },
-    "pitching": null
+    "pitching": null,
+    "fielding": {
+     "putouts": "0",
+     "assists": "0",
+     "errors": "0",
+     "passedBalls": "0",
+     "catchersInterference": "0",
+     "stolenBasesAgainst": "0",
+     "caughtStealingBy": "0",
+     "involvedInDoublePlays": "0",
+     "involvedInTriplePlays": "0",
+     "totalChances": "0",
+     "fieldingPercentage": "0.000"
+    }
    },
    {
     "name": "Boyer, Ella",
@@ -575,7 +839,20 @@
      "doublePlaysHitInto": "0",
      "triplePlaysHitInto": "0"
     },
-    "pitching": null
+    "pitching": null,
+    "fielding": {
+     "putouts": "0",
+     "assists": "0",
+     "errors": "0",
+     "passedBalls": "0",
+     "catchersInterference": "0",
+     "stolenBasesAgainst": "0",
+     "caughtStealingBy": "0",
+     "involvedInDoublePlays": "0",
+     "involvedInTriplePlays": "0",
+     "totalChances": "0",
+     "fieldingPercentage": "0.000"
+    }
    },
    {
     "name": "Ludwig, Lizzy",
@@ -586,7 +863,8 @@
     "gameStarted": "0",
     "substitute": "0",
     "hitting": null,
-    "pitching": null
+    "pitching": null,
+    "fielding": null
    },
    {
     "name": "Tatum, Emma",
@@ -597,7 +875,8 @@
     "gameStarted": "0",
     "substitute": "0",
     "hitting": null,
-    "pitching": null
+    "pitching": null,
+    "fielding": null
    },
    {
     "name": "Hays, Madi",
@@ -608,7 +887,8 @@
     "gameStarted": "0",
     "substitute": "0",
     "hitting": null,
-    "pitching": null
+    "pitching": null,
+    "fielding": null
    },
    {
     "name": "Washington, Kaelee",
@@ -619,7 +899,8 @@
     "gameStarted": "0",
     "substitute": "0",
     "hitting": null,
-    "pitching": null
+    "pitching": null,
+    "fielding": null
    },
    {
     "name": "Griggs, Karsen",
@@ -630,7 +911,8 @@
     "gameStarted": "0",
     "substitute": "0",
     "hitting": null,
-    "pitching": null
+    "pitching": null,
+    "fielding": null
    },
    {
     "name": "Flanagan, September",
@@ -641,7 +923,8 @@
     "gameStarted": "0",
     "substitute": "0",
     "hitting": null,
-    "pitching": null
+    "pitching": null,
+    "fielding": null
    },
    {
     "name": "Diggs, Kennedy",
@@ -652,7 +935,8 @@
     "gameStarted": "0",
     "substitute": "0",
     "hitting": null,
-    "pitching": null
+    "pitching": null,
+    "fielding": null
    },
    {
     "name": "Pitts, Tehya",
@@ -663,7 +947,8 @@
     "gameStarted": "0",
     "substitute": "0",
     "hitting": null,
-    "pitching": null
+    "pitching": null,
+    "fielding": null
    },
    {
     "name": "Barber , Blakely",
@@ -674,7 +959,8 @@
     "gameStarted": "0",
     "substitute": "0",
     "hitting": null,
-    "pitching": null
+    "pitching": null,
+    "fielding": null
    },
    {
     "name": "Loveless, Ellie",
@@ -685,7 +971,8 @@
     "gameStarted": "0",
     "substitute": "0",
     "hitting": null,
-    "pitching": null
+    "pitching": null,
+    "fielding": null
    },
    {
     "name": "Claire, Sam",
@@ -696,7 +983,8 @@
     "gameStarted": "0",
     "substitute": "0",
     "hitting": null,
-    "pitching": null
+    "pitching": null,
+    "fielding": null
    },
    {
     "name": "Barber, Chloe",
@@ -707,7 +995,8 @@
     "gameStarted": "0",
     "substitute": "0",
     "hitting": null,
-    "pitching": null
+    "pitching": null,
+    "fielding": null
    },
    {
     "name": "Ramirez, Brinley",
@@ -718,7 +1007,8 @@
     "gameStarted": "0",
     "substitute": "0",
     "hitting": null,
-    "pitching": null
+    "pitching": null,
+    "fielding": null
    }
   ]
  },
@@ -799,6 +1089,9 @@
     "pickoff": "0"
    }
   },
+  "rank": "",
+  "conferenceRecord": "7-12",
+  "boxscoreUrl": "",
   "players": [
    {
     "name": "Mullen, Ava",
@@ -845,6 +1138,19 @@
      "teamUnearnedRuns": "0",
      "saveRecord": "0",
      "pickoff": "0"
+    },
+    "fielding": {
+     "putouts": "0",
+     "assists": "0",
+     "errors": "0",
+     "passedBalls": "0",
+     "catchersInterference": "0",
+     "stolenBasesAgainst": "0",
+     "caughtStealingBy": "0",
+     "involvedInDoublePlays": "0",
+     "involvedInTriplePlays": "0",
+     "totalChances": "0",
+     "fieldingPercentage": "0.000"
     }
    },
    {
@@ -882,7 +1188,20 @@
      "doublePlaysHitInto": "0",
      "triplePlaysHitInto": "0"
     },
-    "pitching": null
+    "pitching": null,
+    "fielding": {
+     "putouts": "0",
+     "assists": "2",
+     "errors": "0",
+     "passedBalls": "0",
+     "catchersInterference": "0",
+     "stolenBasesAgainst": "0",
+     "caughtStealingBy": "0",
+     "involvedInDoublePlays": "0",
+     "involvedInTriplePlays": "0",
+     "totalChances": "2",
+     "fieldingPercentage": "1.000"
+    }
    },
    {
     "name": "Ford, Karlee",
@@ -919,7 +1238,20 @@
      "doublePlaysHitInto": "0",
      "triplePlaysHitInto": "0"
     },
-    "pitching": null
+    "pitching": null,
+    "fielding": {
+     "putouts": "2",
+     "assists": "0",
+     "errors": "0",
+     "passedBalls": "0",
+     "catchersInterference": "0",
+     "stolenBasesAgainst": "0",
+     "caughtStealingBy": "0",
+     "involvedInDoublePlays": "0",
+     "involvedInTriplePlays": "0",
+     "totalChances": "2",
+     "fieldingPercentage": "1.000"
+    }
    },
    {
     "name": "Holtz, Hailey",
@@ -966,6 +1298,19 @@
      "teamUnearnedRuns": "0",
      "saveRecord": "0",
      "pickoff": "0"
+    },
+    "fielding": {
+     "putouts": "0",
+     "assists": "0",
+     "errors": "0",
+     "passedBalls": "0",
+     "catchersInterference": "0",
+     "stolenBasesAgainst": "0",
+     "caughtStealingBy": "0",
+     "involvedInDoublePlays": "0",
+     "involvedInTriplePlays": "0",
+     "totalChances": "0",
+     "fieldingPercentage": "0.000"
     }
    },
    {
@@ -1003,7 +1348,20 @@
      "doublePlaysHitInto": "0",
      "triplePlaysHitInto": "0"
     },
-    "pitching": null
+    "pitching": null,
+    "fielding": {
+     "putouts": "0",
+     "assists": "0",
+     "errors": "0",
+     "passedBalls": "0",
+     "catchersInterference": "0",
+     "stolenBasesAgainst": "0",
+     "caughtStealingBy": "0",
+     "involvedInDoublePlays": "0",
+     "involvedInTriplePlays": "0",
+     "totalChances": "0",
+     "fieldingPercentage": "0.000"
+    }
    },
    {
     "name": "Oliver, Hayleigh",
@@ -1040,7 +1398,20 @@
      "doublePlaysHitInto": "0",
      "triplePlaysHitInto": "0"
     },
-    "pitching": null
+    "pitching": null,
+    "fielding": {
+     "putouts": "3",
+     "assists": "0",
+     "errors": "0",
+     "passedBalls": "0",
+     "catchersInterference": "0",
+     "stolenBasesAgainst": "0",
+     "caughtStealingBy": "0",
+     "involvedInDoublePlays": "0",
+     "involvedInTriplePlays": "0",
+     "totalChances": "3",
+     "fieldingPercentage": "1.000"
+    }
    },
    {
     "name": "Prado, Victoria",
@@ -1077,7 +1448,20 @@
      "doublePlaysHitInto": "0",
      "triplePlaysHitInto": "0"
     },
-    "pitching": null
+    "pitching": null,
+    "fielding": {
+     "putouts": "0",
+     "assists": "0",
+     "errors": "0",
+     "passedBalls": "0",
+     "catchersInterference": "0",
+     "stolenBasesAgainst": "0",
+     "caughtStealingBy": "0",
+     "involvedInDoublePlays": "0",
+     "involvedInTriplePlays": "0",
+     "totalChances": "0",
+     "fieldingPercentage": "0.000"
+    }
    },
    {
     "name": "Wilmes, Ava",
@@ -1114,7 +1498,20 @@
      "doublePlaysHitInto": "0",
      "triplePlaysHitInto": "0"
     },
-    "pitching": null
+    "pitching": null,
+    "fielding": {
+     "putouts": "4",
+     "assists": "0",
+     "errors": "0",
+     "passedBalls": "0",
+     "catchersInterference": "0",
+     "stolenBasesAgainst": "0",
+     "caughtStealingBy": "0",
+     "involvedInDoublePlays": "0",
+     "involvedInTriplePlays": "0",
+     "totalChances": "4",
+     "fieldingPercentage": "1.000"
+    }
    },
    {
     "name": "Shepherd, Kadence",
@@ -1151,7 +1548,20 @@
      "doublePlaysHitInto": "0",
      "triplePlaysHitInto": "0"
     },
-    "pitching": null
+    "pitching": null,
+    "fielding": {
+     "putouts": "0",
+     "assists": "0",
+     "errors": "0",
+     "passedBalls": "0",
+     "catchersInterference": "0",
+     "stolenBasesAgainst": "0",
+     "caughtStealingBy": "0",
+     "involvedInDoublePlays": "0",
+     "involvedInTriplePlays": "0",
+     "totalChances": "0",
+     "fieldingPercentage": "0.000"
+    }
    },
    {
     "name": "Johnson, Tatum",
@@ -1188,7 +1598,20 @@
      "doublePlaysHitInto": "0",
      "triplePlaysHitInto": "0"
     },
-    "pitching": null
+    "pitching": null,
+    "fielding": {
+     "putouts": "0",
+     "assists": "0",
+     "errors": "0",
+     "passedBalls": "0",
+     "catchersInterference": "0",
+     "stolenBasesAgainst": "0",
+     "caughtStealingBy": "0",
+     "involvedInDoublePlays": "0",
+     "involvedInTriplePlays": "0",
+     "totalChances": "0",
+     "fieldingPercentage": "0.000"
+    }
    },
    {
     "name": "Bartholomew, Reagan",
@@ -1225,7 +1648,20 @@
      "doublePlaysHitInto": "0",
      "triplePlaysHitInto": "0"
     },
-    "pitching": null
+    "pitching": null,
+    "fielding": {
+     "putouts": "1",
+     "assists": "2",
+     "errors": "0",
+     "passedBalls": "0",
+     "catchersInterference": "0",
+     "stolenBasesAgainst": "0",
+     "caughtStealingBy": "0",
+     "involvedInDoublePlays": "0",
+     "involvedInTriplePlays": "0",
+     "totalChances": "3",
+     "fieldingPercentage": "1.000"
+    }
    },
    {
     "name": "Malott, Sydney",
@@ -1262,7 +1698,20 @@
      "doublePlaysHitInto": "0",
      "triplePlaysHitInto": "0"
     },
-    "pitching": null
+    "pitching": null,
+    "fielding": {
+     "putouts": "2",
+     "assists": "0",
+     "errors": "0",
+     "passedBalls": "0",
+     "catchersInterference": "0",
+     "stolenBasesAgainst": "0",
+     "caughtStealingBy": "0",
+     "involvedInDoublePlays": "0",
+     "involvedInTriplePlays": "0",
+     "totalChances": "2",
+     "fieldingPercentage": "1.000"
+    }
    },
    {
     "name": "Schurman, Lauren",
@@ -1309,6 +1758,19 @@
      "teamUnearnedRuns": "0",
      "saveRecord": "0",
      "pickoff": "0"
+    },
+    "fielding": {
+     "putouts": "0",
+     "assists": "0",
+     "errors": "0",
+     "passedBalls": "0",
+     "catchersInterference": "0",
+     "stolenBasesAgainst": "0",
+     "caughtStealingBy": "0",
+     "involvedInDoublePlays": "0",
+     "involvedInTriplePlays": "0",
+     "totalChances": "0",
+     "fieldingPercentage": "0.000"
     }
    },
    {
@@ -1320,7 +1782,8 @@
     "gameStarted": "0",
     "substitute": "0",
     "hitting": null,
-    "pitching": null
+    "pitching": null,
+    "fielding": null
    },
    {
     "name": "Palumbo, Olivia",
@@ -1331,7 +1794,8 @@
     "gameStarted": "0",
     "substitute": "0",
     "hitting": null,
-    "pitching": null
+    "pitching": null,
+    "fielding": null
    },
    {
     "name": "Buss, Ireland",
@@ -1342,7 +1806,8 @@
     "gameStarted": "0",
     "substitute": "0",
     "hitting": null,
-    "pitching": null
+    "pitching": null,
+    "fielding": null
    },
    {
     "name": "Zender, Paige",
@@ -1353,7 +1818,8 @@
     "gameStarted": "0",
     "substitute": "0",
     "hitting": null,
-    "pitching": null
+    "pitching": null,
+    "fielding": null
    },
    {
     "name": "Nosan, Isabelle",
@@ -1364,7 +1830,8 @@
     "gameStarted": "0",
     "substitute": "0",
     "hitting": null,
-    "pitching": null
+    "pitching": null,
+    "fielding": null
    },
    {
     "name": "Espinoza, Kylee",
@@ -1375,7 +1842,8 @@
     "gameStarted": "0",
     "substitute": "0",
     "hitting": null,
-    "pitching": null
+    "pitching": null,
+    "fielding": null
    },
    {
     "name": "Kane, Kasey",
@@ -1386,7 +1854,8 @@
     "gameStarted": "0",
     "substitute": "0",
     "hitting": null,
-    "pitching": null
+    "pitching": null,
+    "fielding": null
    },
    {
     "name": "Poole, Tiana",
@@ -1397,7 +1866,8 @@
     "gameStarted": "0",
     "substitute": "0",
     "hitting": null,
-    "pitching": null
+    "pitching": null,
+    "fielding": null
    },
    {
     "name": "Nakashima, Paige",
@@ -1408,7 +1878,8 @@
     "gameStarted": "0",
     "substitute": "0",
     "hitting": null,
-    "pitching": null
+    "pitching": null,
+    "fielding": null
    },
    {
     "name": "Ralston, Jaiden",
@@ -1419,7 +1890,8 @@
     "gameStarted": "0",
     "substitute": "0",
     "hitting": null,
-    "pitching": null
+    "pitching": null,
+    "fielding": null
    },
    {
     "name": "Minor, Ashley",
@@ -1430,7 +1902,8 @@
     "gameStarted": "0",
     "substitute": "0",
     "hitting": null,
-    "pitching": null
+    "pitching": null,
+    "fielding": null
    },
    {
     "name": "Potvin, Sami",
@@ -1441,7 +1914,8 @@
     "gameStarted": "0",
     "substitute": "0",
     "hitting": null,
-    "pitching": null
+    "pitching": null,
+    "fielding": null
    }
   ]
  }

@@ -8,18 +8,6 @@ Scoreboard
 Coming Up
 View Calendar 
 Skip Ad
-Upcoming Event: Softball versus Johnson County CC on October 1, 2026 at 5:00 pm
-Thu. 10/01/26
--
-5:00 pm
-Softball
-vs Johnson County CC
-Upcoming Event: Softball versus Rockhurst on October 2, 2026 at 5:00 pm
-Fri. 10/02/26
--
-5:00 pm
-Softball
-vs Rockhurst
 Upcoming Event: Softball versus Missouri on October 9, 2026 at 5:00 pm
 Fri. 10/09/26
 -
@@ -38,6 +26,12 @@ Sat. 10/10/26
 7:00 pm
 Softball
 at Kansas City Diamonds
+Upcoming Event: Softball versus Johnson County CC on October 13, 2026 at 5:00 pm
+Tue. 10/13/26
+-
+5:00 pm
+Softball
+vs Johnson County CC
 Upcoming Event: Softball versus Ottawa on October 14, 2026 at 5:00 pm
 Wed. 10/14/26
 -
@@ -60,6 +54,10 @@ Upcoming Event: Softball at Utah on March 26, 2027
 Fri. 03/26/27
 Softball
 at Utah
+Upcoming Event: Softball at Utah on March 27, 2027
+Sat. 03/27/27
+Softball
+at Utah
 MENU
 Toggle Navigation
 , Opens in new window
@@ -78,21 +76,21 @@ University of Kansas
 
 vs
 
-Johnson County CC
+Missouri
 
-Thursday, October 1
+Friday, October 9
 
 Lawrence, Kansas
 
 5:00 pm
 
-2
+3
 Days
-11
+17
 Hours
-37
+54
 Minutes
-36
+54
 Seconds
 Add To Calendar
 Text Only
@@ -157,18 +155,6 @@ Sep 26
 
 History
 vs
-Johnson County CC
-
-Arrocha Ballpark
-Lawrence, Kansas
-
-Oct 1
-(Thu)
-
-5:00 pm
-
-History
-vs
 Rockhurst
 
 Arrocha Ballpark
@@ -192,7 +178,6 @@ Oct 9
 5:00 pm
 
 History
-Skip Ad
 vs
 Nebraska
 
@@ -205,6 +190,7 @@ Oct 10
 4:00 pm
 
 History
+Skip Ad
 at
 Kansas City Diamonds
 
@@ -215,6 +201,18 @@ Oct 10
 (Sat)
 
 7:00 pm
+
+History
+vs
+Johnson County CC
+
+Arrocha Ballpark
+Lawrence, Kansas
+
+Oct 13
+(Tue)
+
+5:00 pm
 
 History
 vs

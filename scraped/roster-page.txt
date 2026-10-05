@@ -8,18 +8,6 @@ Scoreboard
 Coming Up
 View Calendar 
 Skip Ad
-Upcoming Event: Softball versus Johnson County CC on October 1, 2026 at 5:00 pm
-Thu. 10/01/26
--
-5:00 pm
-Softball
-vs Johnson County CC
-Upcoming Event: Softball versus Rockhurst on October 2, 2026 at 5:00 pm
-Fri. 10/02/26
--
-5:00 pm
-Softball
-vs Rockhurst
 Upcoming Event: Softball versus Missouri on October 9, 2026 at 5:00 pm
 Fri. 10/09/26
 -
@@ -38,6 +26,12 @@ Sat. 10/10/26
 7:00 pm
 Softball
 at Kansas City Diamonds
+Upcoming Event: Softball versus Johnson County CC on October 13, 2026 at 5:00 pm
+Tue. 10/13/26
+-
+5:00 pm
+Softball
+vs Johnson County CC
 Upcoming Event: Softball versus Ottawa on October 14, 2026 at 5:00 pm
 Wed. 10/14/26
 -
@@ -58,6 +52,10 @@ Softball
 at Texas Tech
 Upcoming Event: Softball at Utah on March 26, 2027
 Fri. 03/26/27
+Softball
+at Utah
+Upcoming Event: Softball at Utah on March 27, 2027
+Sat. 03/27/27
 Softball
 at Utah
 MENU
