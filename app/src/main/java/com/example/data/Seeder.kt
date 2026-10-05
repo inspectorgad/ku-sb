@@ -199,33 +199,36 @@ object Seeder {
                     updated = updated.copy(opponentRank = seedOppRank)
                 }
                 // Game-info detail: fill whenever still blank, never overwrite.
-                if (existing.stadium.isBlank()) {
-                    g.optString("stadium").takeIf { it.isNotBlank() }
-                        ?.let { updated = updated.copy(stadium = it) }
+                // Plain ifs for the same reason the block above uses them —
+                // `updated` is a captured var, so a smart cast does not reach
+                // inside a `let`.
+                val seedStadium = g.optString("stadium")
+                if (seedStadium.isNotBlank() && existing.stadium.isBlank()) {
+                    updated = updated.copy(stadium = seedStadium)
                 }
-                if (existing.firstPitch.isBlank()) {
-                    g.optString("firstPitch").takeIf { it.isNotBlank() }
-                        ?.let { updated = updated.copy(firstPitch = it) }
+                val seedFirstPitch = g.optString("firstPitch")
+                if (seedFirstPitch.isNotBlank() && existing.firstPitch.isBlank()) {
+                    updated = updated.copy(firstPitch = seedFirstPitch)
                 }
-                if (existing.duration.isBlank()) {
-                    g.optString("duration").takeIf { it.isNotBlank() }
-                        ?.let { updated = updated.copy(duration = it) }
+                val seedDuration = g.optString("duration")
+                if (seedDuration.isNotBlank() && existing.duration.isBlank()) {
+                    updated = updated.copy(duration = seedDuration)
                 }
-                if (existing.weather.isBlank()) {
-                    g.optString("weather").takeIf { it.isNotBlank() }
-                        ?.let { updated = updated.copy(weather = it) }
+                val seedWeather = g.optString("weather")
+                if (seedWeather.isNotBlank() && existing.weather.isBlank()) {
+                    updated = updated.copy(weather = seedWeather)
                 }
-                if (existing.umpires.isBlank()) {
-                    g.optString("umpires").takeIf { it.isNotBlank() }
-                        ?.let { updated = updated.copy(umpires = it) }
+                val seedUmpires = g.optString("umpires")
+                if (seedUmpires.isNotBlank() && existing.umpires.isBlank()) {
+                    updated = updated.copy(umpires = seedUmpires)
                 }
-                if (existing.event.isBlank()) {
-                    g.optString("event").takeIf { it.isNotBlank() }
-                        ?.let { updated = updated.copy(event = it) }
+                val seedEvent = g.optString("event")
+                if (seedEvent.isNotBlank() && existing.event.isBlank()) {
+                    updated = updated.copy(event = seedEvent)
                 }
-                if (existing.pdfUrl.isBlank()) {
-                    g.optString("pdfUrl").takeIf { it.isNotBlank() }
-                        ?.let { updated = updated.copy(pdfUrl = it) }
+                val seedPdf = g.optString("pdfUrl")
+                if (seedPdf.isNotBlank() && existing.pdfUrl.isBlank()) {
+                    updated = updated.copy(pdfUrl = seedPdf)
                 }
                 if (existing.scheduledInnings == 0 && g.optInt("scheduledInnings") > 0) {
                     updated = updated.copy(scheduledInnings = g.optInt("scheduledInnings"))
