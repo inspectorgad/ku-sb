@@ -4,10 +4,52 @@ Internal testing distributes the app through the Play Store itself to up to
 100 named testers — no sideloading, so Advanced Protection and Play Protect
 never interfere, and updates install automatically.
 
-CI already produces the signed Play bundle. Every build attaches
-`app-release.aab` to the rolling release:
+**Before any of this, you need an upload key.** CI no longer builds the Play
+bundle and the repository holds no signing key, because the app has never been
+published and the key it used to carry sat in a public repository signing an
+AAB nobody downloaded. Step 0 below creates a fresh one.
 
-    https://github.com/inspectorgad/ku-sb/releases/latest/download/app-release.aab
+## Step 0 — create an upload key and give it to CI
+
+On your own machine, with a JDK installed:
+
+    keytool -genkeypair -v \
+      -keystore upload.keystore -storetype PKCS12 \
+      -alias upload -keyalg RSA -keysize 4096 -validity 10000 \
+      -dname "CN=KU Softball, O=SPST, C=US" \
+      -storepass 'A-LONG-RANDOM-PASSWORD' -keypass 'THE-SAME-PASSWORD'
+
+Use a generated password, not a memorable one — it only ever lives in GitHub's
+secret store. Then encode the keystore:
+
+    base64 -w0 upload.keystore            # Linux
+    base64 -i upload.keystore | tr -d '\n'   # macOS
+
+In the repository: **Settings → Secrets and variables → Actions → New
+repository secret**, three of them:
+
+| Secret | Value |
+|---|---|
+| `UPLOAD_KEYSTORE_BASE64` | the base64 output above |
+| `UPLOAD_STORE_PASSWORD` | the password |
+| `UPLOAD_KEY_PASSWORD` | the same password |
+
+Keep `upload.keystore` itself somewhere safe and off the repository. Losing it
+is recoverable once the app is on Play (Google can reset an upload key), but
+only then.
+
+Finally, put the bundle back into `.github/workflows/build-apk.yml`: restore
+the keystore from the secret before the build, add `:app:bundleRelease` to the
+Gradle call, and attach `app-release.aab` to the release.
+
+    - name: Restore upload keystore
+      env:
+        UPLOAD_KEYSTORE_BASE64: ${{ secrets.UPLOAD_KEYSTORE_BASE64 }}
+      run: echo "$UPLOAD_KEYSTORE_BASE64" | base64 -d > upload.keystore
+
+The build reads `KEYSTORE_PATH`, `STORE_PASSWORD` and `KEY_PASSWORD` from the
+environment; with none of them set it simply builds the release unsigned,
+which is why CI is happy today.
 
 ## One-time setup (about 30 minutes, $25)
 
@@ -59,12 +101,17 @@ from the release link and upload it as a new internal-testing release
 
 ## Notes
 
-- The upload keystore (`upload.keystore.base64`, password
-  `kuvb-upload-2026`) is committed to this public repo for CI
-  self-containment, mirroring the debug keystore. This is tolerable only
-  because Play App Signing holds the real key and upload keys are
-  resettable — but moving both to GitHub Actions secrets is better
-  hygiene if the app ever goes beyond internal testing.
+- The upload keystore used to be committed to this public repo, with its
+  password in `app/build.gradle.kts`. Both are gone. It was tolerable only
+  while Play App Signing held the real key, and since the app was never
+  published there was no such arrangement — it signed an AAB that was built
+  on every CI run and downloaded zero times. Step 0 above generates a fresh
+  one if and when it is needed.
+- The debug keystore (`debug.keystore.base64`) stays committed, and that is
+  deliberate. Its password is `android`, the value every Android debug
+  keystore uses, so there is no secret in it; and a fixed debug identity is
+  what lets `adb install -r` replace an installed build rather than
+  demanding an uninstall that would delete any hand-entered stat lines.
 - "KU"/Jayhawks trademarks: fine for a private internal-testing app;
   a public Play listing would need a rename (e.g. "Rock Chalk Volleyball
   Stats") to survive review.

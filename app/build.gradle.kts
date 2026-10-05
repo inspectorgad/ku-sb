@@ -26,16 +26,28 @@ android {
   }
 
   signingConfigs {
-    create("release") {
-      // Play App Signing upload key. Google re-signs with the app signing
-      // key it holds, and a leaked upload key can be reset from the Play
-      // Console, which is what makes the committed-keystore setup tolerable.
-      val keystorePath = System.getenv("KEYSTORE_PATH") ?: "${rootDir}/upload.keystore"
-      storeFile = file(keystorePath)
-      storePassword = System.getenv("STORE_PASSWORD") ?: "kuvb-upload-2026"
-      keyAlias = "upload"
-      keyPassword = System.getenv("KEY_PASSWORD") ?: "kuvb-upload-2026"
+    // The upload key is supplied by the environment or not at all. It used to
+    // be a keystore committed to this public repository with its password in
+    // this file, which was defensible only while Play App Signing held the
+    // real key — and this app has never been published, so it signed an AAB
+    // nobody ever downloaded. The keystore is gone; see PLAY-SETUP.md for
+    // generating a fresh one when the app does go to Play.
+    val uploadKeystore = System.getenv("KEYSTORE_PATH")
+    val uploadStorePassword = System.getenv("STORE_PASSWORD")
+    val uploadKeyPassword = System.getenv("KEY_PASSWORD")
+    if (uploadKeystore != null && uploadStorePassword != null && uploadKeyPassword != null) {
+      create("release") {
+        storeFile = file(uploadKeystore)
+        storePassword = uploadStorePassword
+        keyAlias = System.getenv("KEY_ALIAS") ?: "upload"
+        keyPassword = uploadKeyPassword
+      }
     }
+    // The debug keystore stays committed on purpose. Its password is
+    // "android", the value every Android debug keystore in the world uses, so
+    // it is not a secret — and keeping one fixed debug identity is what lets
+    // `adb install -r` replace an installed build instead of demanding an
+    // uninstall that would take the reader's hand-entered stat lines with it.
     create("debugConfig") {
       storeFile = file("${rootDir}/debug.keystore")
       storePassword = "android"
@@ -49,7 +61,11 @@ android {
       isCrunchPngs = false
       isMinifyEnabled = false
       proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
-      signingConfig = signingConfigs.getByName("release")
+      // Signed only when the upload key was supplied by the environment.
+      // Without it the release build is simply unsigned — it still compiles,
+      // it just cannot be uploaded anywhere, which is the honest outcome
+      // rather than signing with a key published in this repository.
+      signingConfigs.findByName("release")?.let { signingConfig = it }
     }
     debug {
       signingConfig = signingConfigs.getByName("debugConfig")
