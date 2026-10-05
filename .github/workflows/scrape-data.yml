@@ -88,7 +88,20 @@ jobs:
             git commit -m "Update season data from nightly scrape [skip ci]"
             echo "seed_changed=true" >> "$GITHUB_OUTPUT"
           fi
-          git push
+          # Rebase onto whatever landed while the scrape was running. Without
+          # this a single human push during the run makes `git push` lose the
+          # race and silently discard the whole scrape — which is exactly what
+          # happened on 2026-10-05, throwing away a full 57-game re-capture.
+          for attempt in 1 2 3 4 5; do
+            if git push; then
+              exit 0
+            fi
+            echo "push rejected (attempt $attempt) — rebasing onto origin/main"
+            git pull --rebase --autostash origin "${GITHUB_REF_NAME}" || exit 1
+            sleep $((attempt * 5))
+          done
+          echo "push still failing after 5 attempts"
+          exit 1
 
       # Pushes made with GITHUB_TOKEN never trigger push workflows (GitHub's
       # recursion guard), so the APK rebuild and Pages deploy must be
