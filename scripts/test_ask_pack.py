@@ -197,6 +197,42 @@ check("builds", empty["games"] == [] and empty["batting"] == [])
 check("still has a prompt", len(system_prompt(empty)) > 100)
 
 print()
+print("the clients and the pack agree on what tables exist")
+# The table list is written in three places — the pack, the dashboard's
+# ask.js, and the app's AskEngine. A name that drifts does not fail loudly:
+# Claude is simply offered a table that does not exist, or never told about
+# one that does, and quietly answers worse.
+import re as _re  # noqa: E402
+
+PACK_TABLES = sorted(k for k, v in PACK.items()
+                     if k not in ("about", "generated_at", "system_prompt"))
+
+
+def listed(path, pattern):
+    try:
+        with open(path) as f:
+            text = f.read()
+    except OSError:
+        return None
+    m = _re.search(pattern, text, _re.S)
+    return sorted(_re.findall(r'"([a-z_]+)"', m.group(1))) if m else None
+
+
+for path, pattern in [
+    ("docs/ask.js", r"const TABLES = \[(.*?)\];"),
+    ("app/src/main/java/com/example/data/AskEngine.kt", r"val ASK_TABLES = listOf\((.*?)\)"),
+]:
+    found = listed(path, pattern)
+    if found is None:
+        print(f"  --   {path} not present yet; skipped")
+        continue
+    check(f"{path} lists the pack's tables", found == PACK_TABLES,
+          f"\n       pack: {PACK_TABLES}\n       file: {found}")
+# The prompt must name them too, or Claude never learns they are there.
+for t in PACK_TABLES:
+    check(f"the prompt mentions {t}", t in PACK["system_prompt"])
+
+print()
 if failures:
     print(f"{len(failures)} FAILED")
     sys.exit(1)
