@@ -85,6 +85,12 @@ val BOX_FIELDING_COLUMNS = listOf(
 val FORM_BATTING_COLUMNS = listOf(
     "GP" to 36, "AB" to 44, "H" to 36, "AVG" to 52, "OBP" to 52, "SLG" to 52, "OPS" to 56
 )
+// A head-to-head is a handful of games, so this stays on counting stats with
+// one rate at the end: "8-for-12" is the fact, ".667" is only its shorthand,
+// and over three games the fact is the part worth leading with.
+val OPPONENT_BATTING_COLUMNS = listOf(
+    "AB" to 44, "H" to 36, "2B" to 40, "3B" to 40, "HR" to 40, "RBI" to 44, "AVG" to 52
+)
 val FORM_PITCHING_COLUMNS = listOf(
     "APP" to 44, "IP" to 52, "ER" to 40, "SO" to 40, "ERA" to 52, "WHIP" to 56
 )

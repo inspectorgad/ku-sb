@@ -1,5 +1,6 @@
 package com.example.ui
 
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.horizontalScroll
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -48,6 +49,7 @@ import com.example.stats.opponentRecords
 import com.example.stats.seasonHighlights
 import com.example.stats.siteSplits
 import com.example.stats.streakPhrase
+import com.example.stats.teamKey
 
 /**
  * The season read sideways: what the record is made of, rather than what it is.
@@ -63,6 +65,7 @@ fun SeasonScreen(
     games: List<Game>,
     statLines: List<StatLine>,
     standings: List<ConferenceStanding>,
+    onOpenOpponent: (opponentKey: String, season: String) -> Unit,
     modifier: Modifier = Modifier
 ) {
     val seasons = games.sortedByDescending { it.date }.map { it.season }.distinct()
@@ -236,7 +239,11 @@ fun SeasonScreen(
                 item { SectionHeading("Opponents") }
                 items(opponents.size) { index ->
                     val o = opponents[index]
-                    Card(modifier = Modifier.fillMaxWidth()) {
+                    Card(
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .clickable { onOpenOpponent(teamKey(o.name), season) }
+                    ) {
                         Row(
                             modifier = Modifier.padding(12.dp),
                             verticalAlignment = Alignment.CenterVertically

@@ -41,6 +41,10 @@ fun JayhawksApp(viewModel: JayhawksViewModel = viewModel()) {
     // Detail overlays: at most one is open at a time; back closes it.
     var openPlayerId by rememberSaveable { mutableStateOf<Long?>(null) }
     var openGameId by rememberSaveable { mutableStateOf<Long?>(null) }
+    // An opponent is identified by its name key plus the season, because the
+    // same school is a different head-to-head in a different year.
+    var openOpponentKey by rememberSaveable { mutableStateOf<String?>(null) }
+    var openOpponentSeason by rememberSaveable { mutableStateOf("") }
 
     val players by viewModel.players.collectAsStateWithLifecycle()
     val games by viewModel.games.collectAsStateWithLifecycle()
@@ -55,10 +59,12 @@ fun JayhawksApp(viewModel: JayhawksViewModel = viewModel()) {
         viewModel.syncMessages.collect { snackbarHostState.showSnackbar(it) }
     }
 
-    val showingDetail = openPlayerId != null || openGameId != null
+    val showingDetail =
+        openPlayerId != null || openGameId != null || openOpponentKey != null
     BackHandler(enabled = showingDetail) {
         openPlayerId = null
         openGameId = null
+        openOpponentKey = null
     }
 
     val openPlayer = openPlayerId?.let { id -> players.firstOrNull { it.id == id } }
@@ -75,6 +81,15 @@ fun JayhawksApp(viewModel: JayhawksViewModel = viewModel()) {
                 openPlayerId = null
             },
             onBack = { openPlayerId = null }
+        )
+
+        openOpponentKey != null -> OpponentDetailScreen(
+            opponentKey = openOpponentKey!!,
+            season = openOpponentSeason,
+            players = players,
+            games = games,
+            statLines = statLines,
+            onBack = { openOpponentKey = null }
         )
 
         openGame != null -> GameDetailScreen(
@@ -143,7 +158,11 @@ fun JayhawksApp(viewModel: JayhawksViewModel = viewModel()) {
                         players = players,
                         games = games,
                         statLines = statLines,
-                        standings = standings
+                        standings = standings,
+                        onOpenOpponent = { key, season ->
+                            openOpponentKey = key
+                            openOpponentSeason = season
+                        }
                     )
 
                     Tab.Leaders -> LeadersScreen(
