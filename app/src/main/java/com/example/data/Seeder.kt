@@ -43,6 +43,13 @@ object Seeder {
 
     /** Also used by [SeasonSync] for network-fetched season data. */
     suspend fun merge(root: JSONObject, dao: JayhawksDao) {
+        // Before anything is read: repair any player this device is holding
+        // as two people. The seed no longer produces that split, but a device
+        // that synced before the fix keeps it, because the stat-line loop
+        // below skips a game that already has lines. A no-op once there is
+        // nothing left to fold, so it costs one query on every later sync.
+        foldDuplicatePlayers(dao)
+
         val existingByName = dao.playersOnce().associateBy { it.name }
         val playerIdsByName = existingByName.mapValues { it.value.id }.toMutableMap()
 
