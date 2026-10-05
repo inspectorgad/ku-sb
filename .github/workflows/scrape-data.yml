@@ -15,6 +15,7 @@ on:
       - 'scripts/scrape-ku-sb.mjs'
       - 'scripts/update-seed.py'
       - 'scripts/ask_pack.py'
+      - 'scripts/game-night-watch.mjs'
       - '.github/workflows/scrape-data.yml'
 
 permissions:
@@ -84,6 +85,11 @@ jobs:
         run: |
           python3 scripts/test_ask_pack.py
           python3 scripts/ask_pack.py
+
+      # The game-day watcher reads this seed to decide whether to spend a job
+      # waiting on a game, so its tests belong next to the seed that changed.
+      - name: Test the game-day watcher
+        run: node --test scripts/game-night-watch.test.mjs
 
       - name: Commit scraped data, seed, and dashboard updates
         id: commit

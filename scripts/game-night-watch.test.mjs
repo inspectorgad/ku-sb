@@ -11,6 +11,10 @@
 // Run with:  node --test scripts/*.test.mjs
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
+import { spawnSync } from 'node:child_process';
+import { mkdtempSync, mkdirSync, writeFileSync, readFileSync } from 'node:fs';
+import { tmpdir } from 'node:os';
+import { join } from 'node:path';
 import {
   centralToUtc, centralDate, parseFirstPitch, plan, kuGames, allFinal,
   isExhibition, giveUpAfter, PLAN_WINDOW,
@@ -18,6 +22,22 @@ import {
 
 const iso = (t) => new Date(t).toISOString();
 const HOUR = 3600_000;
+
+// The workflow gates the watcher on steps.plan.outputs.watch. Nothing else
+// checks that the script writes that file in the shape the workflow reads, and
+// a silent mismatch there looks exactly like "no game today" — the workflow
+// would skip the watcher every day of the season and never once error.
+function runPlan(games) {
+  const dir = mkdtempSync(join(tmpdir(), 'plan-'));
+  const seedDir = join(dir, 'app/src/main/assets');
+  mkdirSync(seedDir, { recursive: true });
+  writeFileSync(join(seedDir, 'seed.json'), JSON.stringify({ games }));
+  const out = join(dir, 'output');
+  writeFileSync(out, '');
+  const r = spawnSync(process.execPath, [join(import.meta.dirname, 'game-night-watch.mjs'), 'plan'],
+    { cwd: dir, env: { ...process.env, GITHUB_OUTPUT: out }, encoding: 'utf8' });
+  return { status: r.status, stdout: r.stdout, output: readFileSync(out, 'utf8') };
+}
 
 // A softball season opens in February on CST and ends in June on CDT, so both
 // offsets fall inside one season and the change lands mid-conference-play.
@@ -187,4 +207,35 @@ test('a scoreboard listing more games than expected is still judged on their sta
   // one of them is live.
   assert.equal(allFinal([ku('final'), ku('final'), ku('live')], 2), false);
   assert.equal(allFinal([ku('final'), ku('final'), ku('final')], 2), true);
+});
+
+// --- the contract the workflow actually reads -----------------------------
+
+test('a quiet day writes watch=false and no date', () => {
+  const r = runPlan([{ date: '1999-01-01', opponent: 'Nobody', season: '1999' }]);
+  assert.equal(r.status, 0);
+  assert.match(r.output, /^watch=false\n$/);
+  assert.match(r.stdout, /no watch:/);
+});
+
+test('a game day writes watch=true and the date the watcher needs', () => {
+  const today = centralDate(Date.now());
+  const r = runPlan([
+    { date: today, opponent: 'Baylor', season: '2026', site: 'H', startTime: '12:00 pm' },
+    { date: today, opponent: 'Baylor (G2)', season: '2026', site: 'H', startTime: '2:30 pm' },
+  ]);
+  assert.equal(r.status, 0);
+  // Both lines, in the order the workflow reads them.
+  assert.match(r.output, new RegExp(`^watch=true\\ndate=${today}\\n$`));
+  assert.match(r.stdout, /Baylor \(G2\)/, 'both games are named, not just the first');
+});
+
+test('a missing seed fails loudly rather than reporting a quiet day', () => {
+  // Writing watch=false on a broken checkout would skip the watcher all season
+  // without ever failing a run.
+  const dir = mkdtempSync(join(tmpdir(), 'plan-'));
+  const r = spawnSync(process.execPath,
+    [join(import.meta.dirname, 'game-night-watch.mjs'), 'plan'],
+    { cwd: dir, encoding: 'utf8' });
+  assert.notEqual(r.status, 0);
 });
