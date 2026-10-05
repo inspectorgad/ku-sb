@@ -992,8 +992,13 @@ function aggregate(gs) {
     ["OPS (min " + minAB + " AB)", p => ops(p.t), fAvg, p => p.t.ab >= minAB],
     ["Home runs", p => p.t.hr, v => v, p => p.t.hr > 0],
     ["Runs batted in", p => p.t.rbi, v => v, p => p.t.rbi > 0],
+    ["Hits", p => p.t.h, v => v, p => p.t.h > 0],
+    ["Runs scored", p => p.t.r, v => v, p => p.t.r > 0],
+    ["Stolen bases", p => p.t.sb, v => v, p => p.t.sb > 0],
     ["ERA (min " + Math.floor(minOuts / 3) + " IP, lower is better)", p => era(p.pt), f2, p => p.pt.outs >= minOuts, true],
     ["Strikeouts (pitching)", p => p.pt.ks, v => v, p => p.pt.ks > 0],
+    ["Wins", p => p.pt.w, v => v, p => p.pt.w > 0],
+    ["Saves", p => p.pt.sv, v => v, p => p.pt.sv > 0],
   ];
   document.getElementById("leaders").innerHTML = cats.map(([title, val, fmt, qual, asc]) => {
     let rows = played.filter(qual).map(p => [p, val(p)]).sort((a, b) => asc ? a[1] - b[1] : b[1] - a[1]).slice(0, 5);
@@ -1079,19 +1084,26 @@ function boxHTML(lines, who) {
   const dec = l => l.w ? "W" : l.l ? "L" : l.sv ? "S" : "";
   const n = v => v || 0;
 
+  // Double plays turned are only on Kansas lines, and only in the minority of
+  // games where one happened, so the column appears when there is one to show
+  // rather than standing empty in every other box score.
+  const anyDP = lines.some(l => (l.dp || 0) > 0);
+
   let html = "";
   if (batters.length) {
     html += `<div class="tbl-wrap"><table>
       <thead><tr><th class="lft">${esc(who)} batting</th><th class="lft">Pos</th>
         <th>AB</th><th>R</th><th>H</th><th>2B</th><th>3B</th><th>HR</th><th>RBI</th>
-        <th>BB</th><th>SO</th><th>HBP</th><th>SB</th><th>PO</th><th>A</th><th>E</th></tr></thead>
+        <th>BB</th><th>SO</th><th>HBP</th><th>SB</th><th>PO</th><th>A</th><th>E</th>${
+          anyDP ? "<th>DP</th>" : ""}</tr></thead>
       <tbody>${batters.map(l => `<tr>
         <td class="lft">${(l.spot && !l.sub) ? '<span class="dim">' + l.spot + "</span> " : ""}${nm(l)}</td>
         <td class="lft dim">${esc(l.pos || "")}</td>
         <td>${n(l.ab)}</td><td>${n(l.r)}</td><td><b>${n(l.h)}</b></td>
         <td>${n(l["2b"])}</td><td>${n(l["3b"])}</td><td>${n(l.hr)}</td><td>${n(l.rbi)}</td>
         <td>${n(l.bb)}</td><td>${n(l.so)}</td><td>${n(l.hbp)}</td><td>${n(l.sb)}</td>
-        <td class="dim">${n(l.po)}</td><td class="dim">${n(l.a)}</td><td class="dim">${n(l.e)}</td>
+        <td class="dim">${n(l.po)}</td><td class="dim">${n(l.a)}</td><td class="dim">${n(l.e)}</td>${
+          anyDP ? `<td class="dim">${n(l.dp)}</td>` : ""}
       </tr>`).join("")}</tbody></table></div>`;
   }
   if (pitchers.length) {
