@@ -18,6 +18,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.TextStyle
+import androidx.compose.ui.text.font.FontStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.text.style.TextAlign
@@ -173,6 +174,22 @@ fun NumberField(
         singleLine = true,
         textStyle = TextStyle(fontSize = 14.sp, textAlign = TextAlign.Center),
         keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number)
+    )
+}
+
+/**
+ * A quiet italic aside under something, for the sentence that explains what it
+ * is or what it costs. Smaller and softer than body text so it reads as a note
+ * rather than as part of the content.
+ */
+@Composable
+fun Explanation(text: String) {
+    Text(
+        text,
+        style = MaterialTheme.typography.labelSmall,
+        fontStyle = FontStyle.Italic,
+        color = MaterialTheme.colorScheme.onSurfaceVariant,
+        modifier = Modifier.padding(top = 6.dp)
     )
 }
 

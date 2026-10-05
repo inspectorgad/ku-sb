@@ -45,6 +45,7 @@ fun JayhawksApp(viewModel: JayhawksViewModel = viewModel()) {
     // same school is a different head-to-head in a different year.
     var openOpponentKey by rememberSaveable { mutableStateOf<String?>(null) }
     var openOpponentSeason by rememberSaveable { mutableStateOf("") }
+    var askOpen by rememberSaveable { mutableStateOf(false) }
 
     val players by viewModel.players.collectAsStateWithLifecycle()
     val games by viewModel.games.collectAsStateWithLifecycle()
@@ -60,11 +61,12 @@ fun JayhawksApp(viewModel: JayhawksViewModel = viewModel()) {
     }
 
     val showingDetail =
-        openPlayerId != null || openGameId != null || openOpponentKey != null
+        openPlayerId != null || openGameId != null || openOpponentKey != null || askOpen
     BackHandler(enabled = showingDetail) {
         openPlayerId = null
         openGameId = null
         openOpponentKey = null
+        askOpen = false
     }
 
     val openPlayer = openPlayerId?.let { id -> players.firstOrNull { it.id == id } }
@@ -82,6 +84,8 @@ fun JayhawksApp(viewModel: JayhawksViewModel = viewModel()) {
             },
             onBack = { openPlayerId = null }
         )
+
+        askOpen -> AskScreen(onBack = { askOpen = false })
 
         openOpponentKey != null -> OpponentDetailScreen(
             opponentKey = openOpponentKey!!,
@@ -162,7 +166,8 @@ fun JayhawksApp(viewModel: JayhawksViewModel = viewModel()) {
                         onOpenOpponent = { key, season ->
                             openOpponentKey = key
                             openOpponentSeason = season
-                        }
+                        },
+                        onOpenAsk = { askOpen = true }
                     )
 
                     Tab.Leaders -> LeadersScreen(

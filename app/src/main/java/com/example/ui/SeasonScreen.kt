@@ -66,6 +66,7 @@ fun SeasonScreen(
     statLines: List<StatLine>,
     standings: List<ConferenceStanding>,
     onOpenOpponent: (opponentKey: String, season: String) -> Unit,
+    onOpenAsk: (() -> Unit)? = null,
     modifier: Modifier = Modifier
 ) {
     val seasons = games.sortedByDescending { it.date }.map { it.season }.distinct()
@@ -143,6 +144,37 @@ fun SeasonScreen(
                             GlanceStat("OPS", formatAvg(batting.onBasePlusSlugging))
                             GlanceStat("ERA", formatEra(pitching.earnedRunAverage))
                             GlanceStat("WHIP", formatEra(pitching.walksAndHitsPerInning))
+                        }
+                    }
+                }
+            }
+
+            // Offered here rather than as a sixth tab: this is already the
+            // screen for questions about the season that the other tabs do
+            // not answer, and Ask is the same thing without a fixed shape.
+            onOpenAsk?.let { open ->
+                item {
+                    Card(
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .clickable(onClick = open)
+                    ) {
+                        Column(modifier = Modifier.padding(12.dp)) {
+                            Text(
+                                "Ask about the team \u203a",
+                                style = MaterialTheme.typography.titleSmall,
+                                fontWeight = FontWeight.Bold
+                            )
+                            Text(
+                                "Type a question — \"which inning do we score most of our runs " +
+                                    "in?\" — and get an answer worked out from the season data.",
+                                style = MaterialTheme.typography.bodyMedium
+                            )
+                            Explanation(
+                                "Answered by Claude, Anthropic's AI, using your own Anthropic " +
+                                    "API key. Each question usually costs a few cents on your " +
+                                    "Anthropic account."
+                            )
                         }
                     }
                 }
