@@ -1,5 +1,7 @@
 package com.example.ui
 
+import androidx.compose.foundation.clickable
+import androidx.compose.foundation.horizontalScroll
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -9,10 +11,12 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.rememberScrollState
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.ArrowBack
 import androidx.compose.material3.Card
 import androidx.compose.material3.ExperimentalMaterial3Api
+import androidx.compose.material3.FilterChip
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
@@ -20,6 +24,10 @@ import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.material3.TopAppBar
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.saveable.rememberSaveable
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.font.FontWeight
@@ -34,7 +42,112 @@ import com.example.stats.formatAvg
 import com.example.stats.formatEra
 import com.example.stats.formatInnings
 import com.example.stats.opponentName
+import com.example.stats.opponentRecords
 import com.example.stats.teamKey
+
+/**
+ * Who Kansas played, and how the series went.
+ *
+ * Softball schedules weekend series, so this is a list of two- and three-game
+ * sets rather than of single meetings — which is why it earns a tab here and
+ * would not in a sport that plays each opponent once.
+ *
+ * Every figure is Kansas's, stated from Kansas's side: "2-1" means KU won two.
+ * The caption says so outright, because a bare record beside a school's name
+ * reads just as naturally as that school's own, and the two are opposites.
+ */
+@Composable
+fun OpponentsScreen(
+    games: List<Game>,
+    onOpenOpponent: (opponentKey: String, season: String) -> Unit,
+    modifier: Modifier = Modifier
+) {
+    val seasons = games
+        .filter { it.teamScore != null }
+        .sortedByDescending { it.date }
+        .map { it.season }
+        .distinct()
+    var selectedSeason by rememberSaveable { mutableStateOf<String?>(null) }
+    val season = selectedSeason?.takeIf { it in seasons } ?: seasons.firstOrNull() ?: ""
+    val opponents = opponentRecords(games.filter { it.season == season })
+
+    Column(modifier = modifier.fillMaxSize()) {
+        if (seasons.size > 1) {
+            Row(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .horizontalScroll(rememberScrollState())
+                    .padding(horizontal = 16.dp, vertical = 8.dp),
+                horizontalArrangement = Arrangement.spacedBy(8.dp)
+            ) {
+                seasons.forEach { s ->
+                    FilterChip(
+                        selected = season == s,
+                        onClick = { selectedSeason = s },
+                        label = { Text(s) }
+                    )
+                }
+            }
+        }
+
+        if (opponents.isEmpty()) {
+            EmptyState(
+                title = "No opponents yet",
+                subtitle = "Each team Kansas has played appears here once a game has a result."
+            )
+            return@Column
+        }
+
+        LazyColumn(
+            contentPadding = ListContentPadding,
+            verticalArrangement = Arrangement.spacedBy(8.dp)
+        ) {
+            item {
+                Text(
+                    "Records are Kansas's against each opponent in $season — not that " +
+                        "opponent's own season. The two halves of a doubleheader count as " +
+                        "two games.",
+                    style = MaterialTheme.typography.bodySmall,
+                    color = MaterialTheme.colorScheme.onSurfaceVariant
+                )
+            }
+            items(opponents.size) { index ->
+                val o = opponents[index]
+                Card(
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .clickable { onOpenOpponent(teamKey(o.name), season) }
+                ) {
+                    Row(
+                        modifier = Modifier.padding(12.dp),
+                        verticalAlignment = Alignment.CenterVertically
+                    ) {
+                        Column(modifier = Modifier.weight(1f)) {
+                            Text(
+                                if (o.bestRank > 0) "#${o.bestRank} ${o.name}" else o.name,
+                                style = MaterialTheme.typography.titleMedium,
+                                fontWeight = FontWeight.SemiBold
+                            )
+                            Text(
+                                "${o.games} game${if (o.games == 1) "" else "s"} · " +
+                                    "${o.runsFor}-${o.runsAgainst} on runs " +
+                                    "(${if (o.runDifferential >= 0) "+" else ""}" +
+                                    "${o.runDifferential})",
+                                style = MaterialTheme.typography.bodySmall,
+                                color = MaterialTheme.colorScheme.onSurfaceVariant
+                            )
+                        }
+                        Text(
+                            o.record,
+                            style = MaterialTheme.typography.titleMedium,
+                            fontWeight = FontWeight.Bold
+                        )
+                    }
+                }
+            }
+        }
+    }
+}
 
 /**
  * Everything one opponent did to this season, and everything done back.

@@ -9,6 +9,7 @@ import androidx.compose.material.icons.filled.EmojiEvents
 import androidx.compose.material.icons.filled.Groups
 import androidx.compose.material.icons.filled.Insights
 import androidx.compose.material.icons.filled.Leaderboard
+import androidx.compose.material.icons.filled.Shield
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
 import androidx.compose.material3.NavigationBar
@@ -31,7 +32,8 @@ import androidx.lifecycle.viewmodel.compose.viewModel
 import com.example.JayhawksViewModel
 
 enum class Tab(val label: String) {
-    Roster("Roster"), Games("Games"), Season("Season"), Leaders("Leaders"), Big12("Big 12")
+    Roster("Roster"), Games("Games"), Season("Season"),
+    Leaders("Leaders"), Opponents("Opponents"), Big12("Big 12")
 }
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -125,6 +127,7 @@ fun JayhawksApp(viewModel: JayhawksViewModel = viewModel()) {
                                         Tab.Games -> Icons.AutoMirrored.Filled.List
                                         Tab.Season -> Icons.Default.Insights
                                         Tab.Leaders -> Icons.Default.EmojiEvents
+                                        Tab.Opponents -> Icons.Default.Shield
                                         Tab.Big12 -> Icons.Default.Leaderboard
                                     },
                                     contentDescription = tab.label
@@ -163,10 +166,6 @@ fun JayhawksApp(viewModel: JayhawksViewModel = viewModel()) {
                         games = games,
                         statLines = statLines,
                         standings = standings,
-                        onOpenOpponent = { key, season ->
-                            openOpponentKey = key
-                            openOpponentSeason = season
-                        },
                         onOpenAsk = { askOpen = true }
                     )
 
@@ -175,6 +174,14 @@ fun JayhawksApp(viewModel: JayhawksViewModel = viewModel()) {
                         games = games,
                         statLines = statLines,
                         dataUpdatedAt = dataUpdatedAt
+                    )
+
+                    Tab.Opponents -> OpponentsScreen(
+                        games = games,
+                        onOpenOpponent = { key, season ->
+                            openOpponentKey = key
+                            openOpponentSeason = season
+                        }
                     )
 
                     Tab.Big12 -> StandingsScreen(

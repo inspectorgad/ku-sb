@@ -45,11 +45,9 @@ import com.example.stats.formatEra
 import com.example.stats.inningSplits
 import com.example.stats.marginSplits
 import com.example.stats.opponentQualitySplits
-import com.example.stats.opponentRecords
 import com.example.stats.seasonHighlights
 import com.example.stats.siteSplits
 import com.example.stats.streakPhrase
-import com.example.stats.teamKey
 
 /**
  * The season read sideways: what the record is made of, rather than what it is.
@@ -57,7 +55,8 @@ import com.example.stats.teamKey
  * A record and a batting average are two numbers for five months of softball.
  * Everything here exists to break one of them apart — by where the game was
  * played, who it was against, how close it was, which inning the runs came in,
- * and which single games were worth remembering.
+ * and which single games were worth remembering. Head-to-head records moved to
+ * their own tab once this screen grew long enough to bury them.
  */
 @Composable
 fun SeasonScreen(
@@ -65,7 +64,6 @@ fun SeasonScreen(
     games: List<Game>,
     statLines: List<StatLine>,
     standings: List<ConferenceStanding>,
-    onOpenOpponent: (opponentKey: String, season: String) -> Unit,
     onOpenAsk: (() -> Unit)? = null,
     modifier: Modifier = Modifier
 ) {
@@ -266,44 +264,6 @@ fun SeasonScreen(
                 }
             }
 
-            val opponents = opponentRecords(played)
-            if (opponents.isNotEmpty()) {
-                item { SectionHeading("Opponents") }
-                items(opponents.size) { index ->
-                    val o = opponents[index]
-                    Card(
-                        modifier = Modifier
-                            .fillMaxWidth()
-                            .clickable { onOpenOpponent(teamKey(o.name), season) }
-                    ) {
-                        Row(
-                            modifier = Modifier.padding(12.dp),
-                            verticalAlignment = Alignment.CenterVertically
-                        ) {
-                            Column(modifier = Modifier.weight(1f)) {
-                                Text(
-                                    if (o.bestRank > 0) "#${o.bestRank} ${o.name}" else o.name,
-                                    style = MaterialTheme.typography.bodyLarge,
-                                    fontWeight = FontWeight.SemiBold
-                                )
-                                Text(
-                                    "${o.games} game${if (o.games == 1) "" else "s"} · " +
-                                        "${o.runsFor}-${o.runsAgainst} on runs " +
-                                        "(${if (o.runDifferential >= 0) "+" else ""}" +
-                                        "${o.runDifferential})",
-                                    style = MaterialTheme.typography.bodySmall,
-                                    color = MaterialTheme.colorScheme.onSurfaceVariant
-                                )
-                            }
-                            Text(
-                                o.record,
-                                style = MaterialTheme.typography.titleMedium,
-                                fontWeight = FontWeight.Bold
-                            )
-                        }
-                    }
-                }
-            }
         }
     }
 }
