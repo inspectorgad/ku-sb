@@ -60,7 +60,14 @@ data class PitchingTotals(
     val homeRunsAllowed: Int = 0,
     val wins: Int = 0,
     val losses: Int = 0,
-    val saves: Int = 0
+    val saves: Int = 0,
+    /**
+     * At-bats against her — the denominator for batting average against, and
+     * not the same as batters faced: a walk, a hit batter and a sacrifice are
+     * all plate appearances that are not at-bats. Across 2026 the difference
+     * was 240 of 1659.
+     */
+    val opponentAtBats: Int = 0
 ) {
     // Softball ERA is per 7 innings: ER * 7 / IP, with IP = outs/3.
     val earnedRunAverage: Double
@@ -71,6 +78,14 @@ data class PitchingTotals(
 
     val strikeoutsPerSeven: Double
         get() = if (outsPitched == 0) 0.0 else strikeouts * 21.0 / outsPitched
+
+    /**
+     * What opposing hitters batted against her. ERA says how many scored;
+     * this says how often they hit her at all, which separates a pitcher who
+     * was unlucky from one who was hit hard.
+     */
+    val battingAverageAgainst: Double
+        get() = if (opponentAtBats == 0) 0.0 else hitsAllowed.toDouble() / opponentAtBats
 }
 
 /** Sums the batting side of a set of stat lines into one totals row. */
@@ -107,7 +122,8 @@ fun aggregatePitching(lines: Collection<StatLine>): PitchingTotals {
         homeRunsAllowed = pitched.sumOf { it.homeRunsAllowed },
         wins = pitched.count { it.win },
         losses = pitched.count { it.loss },
-        saves = pitched.count { it.save }
+        saves = pitched.count { it.save },
+        opponentAtBats = pitched.sumOf { it.opponentAtBats }
     )
 }
 

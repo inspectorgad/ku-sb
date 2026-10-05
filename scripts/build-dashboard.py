@@ -675,6 +675,11 @@ const f2 = v => v.toFixed(2);
 const ip = outs => Math.floor(outs / 3) + "." + (outs % 3);
 const era = t => t.outs ? t.er * 21 / t.outs : 0;
 const whip = t => t.outs ? (t.ha + t.bba) * 3 / t.outs : 0;
+// What opposing hitters batted off her. ERA says how many of them scored;
+// this says how often they hit her at all. The denominator is at-bats
+// against, which is not batters faced — a walk, a hit batter and a sacrifice
+// are plate appearances that are not at-bats, 240 of 1659 across 2026.
+const baa = t => t.oab ? t.ha / t.oab : 0;
 const avg = t => t.ab ? t.h / t.ab : 0;
 const obp = t => { const d = t.ab + t.bb + t.hbp + t.sf; return d ? (t.h + t.bb + t.hbp) / d : 0; };
 const tb = t => t.h + t.d2 + 2 * t.d3 + 3 * t.hr;
@@ -686,7 +691,7 @@ const players = new Map();
 for (const p of DATA.players) {
   players.set(p.name, { ...p, log: [],
     t: { g:0, gs:0, ab:0, r:0, h:0, d2:0, d3:0, hr:0, rbi:0, bb:0, so:0, hbp:0, sb:0, cs:0, sf:0, sh:0 },
-    pt: { app:0, outs:0, ha:0, ra:0, er:0, bba:0, ks:0, hra:0, w:0, l:0, sv:0 } });
+    pt: { app:0, outs:0, ha:0, ra:0, er:0, bba:0, ks:0, hra:0, w:0, l:0, sv:0, oab:0 } });
 }
 games.forEach((g, gi) => {
   g.n = gi + 1;
@@ -698,7 +703,7 @@ games.forEach((g, gi) => {
     if (!p) {
       p = { name: l.player, jerseyNumber: "", position: "", active: false, log: [],
         t: { g:0, gs:0, ab:0, r:0, h:0, d2:0, d3:0, hr:0, rbi:0, bb:0, so:0, hbp:0, sb:0, cs:0, sf:0, sh:0 },
-        pt: { app:0, outs:0, ha:0, ra:0, er:0, bba:0, ks:0, hra:0, w:0, l:0, sv:0 } };
+        pt: { app:0, outs:0, ha:0, ra:0, er:0, bba:0, ks:0, hra:0, w:0, l:0, sv:0, oab:0 } };
       players.set(l.player, p);
     }
     p.log.push({ g, l });
@@ -712,6 +717,7 @@ games.forEach((g, gi) => {
       pt.app++; pt.outs += l.outs || 0; pt.ha += l.ha || 0; pt.ra += l.ra || 0;
       pt.er += l.er || 0; pt.bba += l.bba || 0; pt.ks += l.ks || 0; pt.hra += l.hra || 0;
       pt.w += l.w || 0; pt.l += l.l || 0; pt.sv += l.sv || 0;
+      pt.oab += l.oab || 0;
     }
     const ltb = (l.h || 0) + (l["2b"] || 0) + 2 * (l["3b"] || 0) + 3 * (l.hr || 0);
     const score = ltb * 10 + (l.rbi || 0);
@@ -725,7 +731,7 @@ const played = [...players.values()].filter(p => p.t.g > 0);
 const isPitcherPrimary = p => p.pt.outs > 0 && p.pt.outs >= p.t.ab;
 
 // team totals
-const team = { rf: 0, ra: 0, ab:0, h:0, d2:0, d3:0, hr:0, bb:0, hbp:0, sf:0, sb:0, outs:0, er:0, ks:0, ha:0, bba:0 };
+const team = { rf: 0, ra: 0, ab:0, h:0, d2:0, d3:0, hr:0, bb:0, hbp:0, sf:0, sb:0, outs:0, er:0, ks:0, ha:0, bba:0, oab:0 };
 for (const g of games) {
   team.rf += g.teamScore; team.ra += g.opponentScore;
   for (const l of g.lines || []) {
@@ -733,7 +739,7 @@ for (const g of games) {
     team.hr += l.hr || 0; team.bb += l.bb || 0; team.hbp += l.hbp || 0; team.sf += l.sf || 0;
     team.sb += l.sb || 0;
     if (l.p) { team.outs += l.outs || 0; team.er += l.er || 0; team.ks += l.ks || 0;
-               team.ha += l.ha || 0; team.bba += l.bba || 0; }
+               team.ha += l.ha || 0; team.bba += l.bba || 0; team.oab += l.oab || 0; }
   }
 }
 const wins = games.filter(g => g.won).length, losses = games.length - wins;
@@ -750,13 +756,14 @@ document.getElementById("gamesHead").textContent = "All " + games.length + " gam
 
 const teamBat = { ab: team.ab, h: team.h, d2: team.d2, d3: team.d3, hr: team.hr,
                   bb: team.bb, hbp: team.hbp, sf: team.sf };
-const teamPit = { outs: team.outs, er: team.er, ha: team.ha, bba: team.bba };
+const teamPit = { outs: team.outs, er: team.er, ha: team.ha, bba: team.bba, oab: team.oab };
 const tiles = [
   ["Runs / game", f1(team.rf / games.length), "opponents " + f1(team.ra / games.length), 0],
   ["Team batting avg", fAvg(avg(teamBat)), team.h + " hits", 0],
   ["Home runs", team.hr, f1(slg(teamBat)) + " team SLG", 1],
   ["Stolen bases", team.sb, team.bb + " walks drawn", 0],
   ["Team ERA", f2(era(teamPit)), ip(team.outs) + " innings", 1],
+  ["Opponent batting avg", fAvg(baa(team)), team.ha + " hits allowed", 1],
   ["Strikeouts thrown", team.ks, f2(whip(teamPit)) + " WHIP", 1],
 ];
 document.getElementById("teamTiles").innerHTML = tiles.map(([l, v, d, alt]) =>
@@ -1022,6 +1029,8 @@ function aggregate(gs) {
     ["Stolen bases", p => p.t.sb, v => v, p => p.t.sb > 0],
     ["ERA (min " + Math.floor(minOuts / 3) + " IP, lower is better)", p => era(p.pt), f2, p => p.pt.outs >= minOuts, true],
     ["Strikeouts (pitching)", p => p.pt.ks, v => v, p => p.pt.ks > 0],
+    ["Avg against (min " + Math.floor(minOuts / 3) + " IP, lower is better)",
+     p => baa(p.pt), fAvg, p => p.pt.outs >= minOuts && p.pt.oab > 0, true],
     ["Wins", p => p.pt.w, v => v, p => p.pt.w > 0],
     ["Saves", p => p.pt.sv, v => v, p => p.pt.sv > 0],
   ];
@@ -1113,6 +1122,9 @@ function boxHTML(lines, who) {
   // games where one happened, so the column appears when there is one to show
   // rather than standing empty in every other box score.
   const anyDP = lines.some(l => (l.dp || 0) > 0);
+  // At-bats against is only recorded on Kansas pitching lines. A column of
+  // zeroes beside a pitcher who faced fifteen batters would read as a fact.
+  const anyAB = lines.some(l => (l.oab || 0) > 0);
 
   let html = "";
   if (batters.length) {
@@ -1134,11 +1146,11 @@ function boxHTML(lines, who) {
   if (pitchers.length) {
     html += `<div class="tbl-wrap" style="margin-top:10px"><table>
       <thead><tr><th class="lft">${esc(who)} pitching</th><th class="lft">Dec</th>
-        <th>IP</th><th>H</th><th>R</th><th>ER</th><th>BB</th><th>SO</th><th>HR</th>
-        <th>BF</th><th>NP</th></tr></thead>
+        <th>IP</th>${anyAB ? "<th>AB</th>" : ""}<th>H</th><th>R</th><th>ER</th><th>BB</th>
+        <th>SO</th><th>HR</th><th>BF</th><th>NP</th></tr></thead>
       <tbody>${pitchers.map(l => `<tr>
         <td class="lft">${esc(l.player)}</td><td class="lft"><b>${dec(l)}</b></td>
-        <td>${ip(n(l.outs))}</td><td>${n(l.ha)}</td><td>${n(l.ra)}</td><td>${n(l.er)}</td>
+        <td>${ip(n(l.outs))}</td>${anyAB ? `<td class="dim">${n(l.oab)}</td>` : ""}<td>${n(l.ha)}</td><td>${n(l.ra)}</td><td>${n(l.er)}</td>
         <td>${n(l.bba)}</td><td><b>${n(l.ks)}</b></td><td>${n(l.hra)}</td>
         <td class="dim">${n(l.bf)}</td><td class="dim">${n(l.np)}</td>
       </tr>`).join("")}</tbody></table></div>`;
@@ -1625,7 +1637,8 @@ function openPlayer(name) {
   }
   if (pt.app) {
     mt.push(["ERA", f2(era(pt))], ["W–L", pt.w + "–" + pt.l], ["SV", pt.sv],
-      ["IP", ip(pt.outs)], ["K", pt.ks], ["WHIP", f2(whip(pt))]);
+      ["IP", ip(pt.outs)], ["K", pt.ks], ["WHIP", f2(whip(pt))],
+      ["BAA", fAvg(baa(pt))]);
   }
   document.getElementById("mTiles").innerHTML = mt.map(([l, v], i) =>
     `<div class="tile${i % 2 ? " alt" : ""}"><div class="v">${v}</div><div class="l">${l}</div></div>`).join("");

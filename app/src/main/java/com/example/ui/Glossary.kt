@@ -72,6 +72,9 @@ val GLOSSARY: Map<String, String> = mapOf(
         "ERA is built on these, not on total runs.",
     "WHIP" to "Walks and hits per inning pitched: (BB + H) / IP. How many runners a " +
         "pitcher puts on per inning, regardless of whether they score. Around 1.00 is excellent.",
+    "BAA" to "Batting average against: what opposing hitters batted off this pitcher. " +
+        "ERA says how many of them scored; this says how often they got a hit at all, " +
+        "which tells a pitcher who was unlucky from one who was hit hard.",
 
     // Fielding — exactly the BOX_FIELDING_COLUMNS headings. Softball's third
     // stat category, and the one neither sibling app has an equivalent for.

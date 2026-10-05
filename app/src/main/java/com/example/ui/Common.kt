@@ -52,7 +52,7 @@ fun battingValues(t: BattingTotals): List<String> = listOf(
 val PITCHING_COLUMNS = listOf(
     "APP" to 44, "W" to 36, "L" to 36, "SV" to 40, "ERA" to 52, "IP" to 52,
     "H" to 40, "R" to 40, "ER" to 40, "BB" to 40, "SO" to 40, "HR" to 40,
-    "WHIP" to 56
+    "WHIP" to 56, "BAA" to 52
 )
 
 fun pitchingValues(t: PitchingTotals): List<String> = listOf(
@@ -60,7 +60,7 @@ fun pitchingValues(t: PitchingTotals): List<String> = listOf(
     t.saves.toString(), formatEra(t.earnedRunAverage), formatInnings(t.outsPitched),
     t.hitsAllowed.toString(), t.runsAllowed.toString(), t.earnedRuns.toString(),
     t.walksAllowed.toString(), t.strikeouts.toString(), t.homeRunsAllowed.toString(),
-    formatEra(t.walksAndHitsPerInning)
+    formatEra(t.walksAndHitsPerInning), formatAvg(t.battingAverageAgainst)
 )
 
 // The three tables of a softball box score. Deliberately narrower than the
