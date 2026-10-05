@@ -31,9 +31,12 @@ import com.example.stats.BattingTotals
 import com.example.stats.PitchingTotals
 import com.example.stats.aggregateBatting
 import com.example.stats.aggregatePitching
+import com.example.stats.currentStreak
 import com.example.stats.formatAvg
 import com.example.stats.formatEra
 import com.example.stats.formatPerGame
+import com.example.stats.longestStreak
+import com.example.stats.streakPhrase
 
 private const val ALL_SEASONS = "All"
 
@@ -125,6 +128,20 @@ fun LeadersScreen(
                                 " · ${formatPerGame(rpg)} R/G / ${formatPerGame(oppRpg)} allowed",
                             style = MaterialTheme.typography.bodyMedium
                         )
+                        // Current run, and the season's best if it is behind us.
+                        val streak = currentStreak(seasonGames)
+                        val best = longestStreak(seasonGames, wins = true)
+                        val streakBits = listOfNotNull(
+                            streakPhrase(streak),
+                            if (best >= 2 && best > streak) "Best run: $best wins" else null
+                        )
+                        if (streakBits.isNotEmpty()) {
+                            Text(
+                                streakBits.joinToString(" · "),
+                                style = MaterialTheme.typography.bodySmall,
+                                color = MaterialTheme.colorScheme.onSurfaceVariant
+                            )
+                        }
                         Text(
                             "Team ${formatAvg(teamBatting.battingAverage)} AVG · " +
                                 "${teamBatting.homeRuns} HR · " +
