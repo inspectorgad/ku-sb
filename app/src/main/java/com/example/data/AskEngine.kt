@@ -262,8 +262,9 @@ class AskEngine(
         // Named ASK_TABLES rather than TABLES so the pack's own test can find
         // this list and fail when it drifts from what ask_pack.py builds.
         val ASK_TABLES = listOf(
-            "batting", "definitions", "fielding", "games", "innings", "pitching",
-            "poll", "rankings", "roster", "scoring_plays", "standings", "upcoming"
+            "batting", "definitions", "fielding", "games", "innings",
+            "opponent_batting", "opponent_pitching", "pitching", "poll", "rankings",
+            "roster", "scoring_plays", "standings", "upcoming"
         )
 
         /**

@@ -56,6 +56,20 @@ interface JayhawksDao {
     @Delete
     suspend fun deleteStatLine(line: StatLine)
 
+    // The opposing side of a box score. Scraper-owned and never user-entered,
+    // so a sync replaces a game's rows outright rather than gap-filling them.
+    @Query("SELECT * FROM opponent_stat_lines")
+    fun observeOpponentStatLines(): Flow<List<OpponentStatLine>>
+
+    @Query("SELECT * FROM opponent_stat_lines")
+    suspend fun opponentStatLinesOnce(): List<OpponentStatLine>
+
+    @Query("DELETE FROM opponent_stat_lines WHERE gameId = :gameId")
+    suspend fun deleteOpponentStatLines(gameId: Long)
+
+    @Insert
+    suspend fun insertOpponentStatLines(lines: List<OpponentStatLine>)
+
     // Big 12 standings and poll snapshots. Scraper-owned derived data with no
     // user-entered fields, so each sync replaces a season's rows outright —
     // otherwise a team dropping out of the conference would linger forever.

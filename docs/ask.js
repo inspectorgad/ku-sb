@@ -35,7 +35,8 @@ const DEFAULT_MODEL = "claude-opus-5-5";
 // Round trips per question: pause_turn resumptions plus get_table answers.
 const MAX_HOPS = 16;
 const TABLES = ["games", "innings", "batting", "pitching", "fielding", "scoring_plays",
-  "upcoming", "standings", "poll", "rankings", "roster", "definitions"];
+  "opponent_batting", "opponent_pitching", "upcoming", "standings", "poll", "rankings",
+  "roster", "definitions"];
 const TOOLS = [
   { type: "code_execution_20260120", name: "code_execution" },
   {

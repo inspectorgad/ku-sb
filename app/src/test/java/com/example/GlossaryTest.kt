@@ -7,6 +7,7 @@ import com.example.ui.BOX_PITCHING_COLUMNS
 import com.example.ui.FORM_BATTING_COLUMNS
 import com.example.ui.FORM_PITCHING_COLUMNS
 import com.example.ui.OPPONENT_BATTING_COLUMNS
+import com.example.ui.OPPONENT_PLAYER_COLUMNS
 import com.example.ui.GLOSSARY
 import com.example.ui.PITCHING_COLUMNS
 import com.example.ui.explain
@@ -45,7 +46,8 @@ class GlossaryTest {
     fun `every box score column has a definition`() {
         val labels = (
             BOX_BATTING_COLUMNS + BOX_PITCHING_COLUMNS + BOX_FIELDING_COLUMNS +
-                FORM_BATTING_COLUMNS + FORM_PITCHING_COLUMNS + OPPONENT_BATTING_COLUMNS
+                FORM_BATTING_COLUMNS + FORM_PITCHING_COLUMNS + OPPONENT_BATTING_COLUMNS +
+                OPPONENT_PLAYER_COLUMNS
             ).map { it.first }
         val missing = labels.filter { explain(it) == null }
         assertTrue("no definition for: $missing", missing.isEmpty())

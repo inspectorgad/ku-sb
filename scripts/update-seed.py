@@ -328,6 +328,70 @@ def parse_sidearm_game(data):
                 if v:
                     line[key] = v
         game["lines"].append(line)
+
+    # The other side's box score, downloaded with every game and until now
+    # thrown away. Stored flat rather than through the player table: these are
+    # not KU players and must never reach the roster, the leaderboards or a
+    # career total.
+    #
+    # Deliberately a smaller set of columns than KU's lines carry. This exists
+    # so an opposing box score can be read — who hit, who pitched, who made the
+    # plays — not so anyone can compute an opponent's season advanced metrics
+    # from the handful of games they played against Kansas, which would be a
+    # sample of two or three and worse than no number at all.
+    opponent_lines = []
+    for p in opp.get("players") or []:
+        hitting = p.get("hitting")
+        pitching = p.get("pitching")
+        fielding = p.get("fielding") or {}
+        if not hitting and not pitching:
+            continue
+        name = flip_name(p.get("name"))
+        if not name:
+            continue
+        row = {"player": name, "number": str(p.get("uniform") or "").strip()}
+        pos = (p.get("position") or "").strip()
+        if pos:
+            row["pos"] = pos
+        spot = to_int(p.get("spot"))
+        if spot:
+            row["spot"] = spot
+        if to_int(p.get("gameStarted")):
+            row["gs"] = 1
+        if to_int(p.get("substitute")) > 0:
+            row["sub"] = 1
+        h = hitting or {}
+        for key, src in (
+            ("ab", "atBats"), ("r", "runsScored"), ("h", "hits"),
+            ("2b", "doubles"), ("3b", "triples"), ("hr", "homeRuns"),
+            ("rbi", "runsBattedIn"), ("bb", "walks"), ("so", "strikeouts"),
+            ("hbp", "hitByPitch"), ("sb", "stolenBases"),
+        ):
+            v = to_int(h.get(src))
+            if v:
+                row[key] = v
+        for key, src in (("po", "putouts"), ("a", "assists"), ("e", "errors")):
+            v = to_int(fielding.get(src))
+            if v:
+                row[key] = v
+        if pitching:
+            row["p"] = 1
+            row["outs"] = innings_to_outs(pitching.get("inningsPitched"))
+            for key, src in (
+                ("ha", "hitsAllowed"), ("ra", "runsAllowed"),
+                ("er", "earnedRunsAllowed"), ("bba", "walksAllowed"),
+                ("ks", "strikeouts"), ("hra", "homerunsAllowed"),
+                ("np", "pitches"), ("bf", "battersFaced"),
+            ):
+                v = to_int(pitching.get(src))
+                if v:
+                    row[key] = v
+            for key, src in (("w", "wins"), ("l", "losses"), ("sv", "saves")):
+                if decision(pitching.get(src)):
+                    row[key] = 1
+        opponent_lines.append(row)
+    if opponent_lines:
+        game["opponentLines"] = opponent_lines
     return game
 
 

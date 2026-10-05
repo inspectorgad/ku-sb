@@ -52,6 +52,7 @@ fun JayhawksApp(viewModel: JayhawksViewModel = viewModel()) {
     val players by viewModel.players.collectAsStateWithLifecycle()
     val games by viewModel.games.collectAsStateWithLifecycle()
     val statLines by viewModel.statLines.collectAsStateWithLifecycle()
+    val opponentStatLines by viewModel.opponentStatLines.collectAsStateWithLifecycle()
     val standings by viewModel.standings.collectAsStateWithLifecycle()
     val pollEntries by viewModel.pollEntries.collectAsStateWithLifecycle()
     val isSyncing by viewModel.isSyncing.collectAsStateWithLifecycle()
@@ -95,6 +96,7 @@ fun JayhawksApp(viewModel: JayhawksViewModel = viewModel()) {
             players = players,
             games = games,
             statLines = statLines,
+            opponentStatLines = opponentStatLines,
             onBack = { openOpponentKey = null }
         )
 
@@ -102,6 +104,7 @@ fun JayhawksApp(viewModel: JayhawksViewModel = viewModel()) {
             game = openGame,
             players = players,
             statLines = statLines,
+            opponentStatLines = opponentStatLines,
             onSaveGame = { viewModel.saveGame(it) },
             onDeleteGame = {
                 viewModel.deleteGame(it)

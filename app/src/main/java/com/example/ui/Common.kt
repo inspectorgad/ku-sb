@@ -92,6 +92,13 @@ val FORM_BATTING_COLUMNS = listOf(
 val OPPONENT_BATTING_COLUMNS = listOf(
     "AB" to 44, "H" to 36, "2B" to 40, "3B" to 40, "HR" to 40, "RBI" to 44, "AVG" to 52
 )
+// An opposing batting line across a series. Counting stats with one rate at
+// the end, same as the head-to-head table: over three games "5-for-11" is the
+// fact and ".455" is only its shorthand.
+val OPPONENT_PLAYER_COLUMNS = listOf(
+    "GP" to 36, "AB" to 44, "R" to 36, "H" to 36, "2B" to 40, "3B" to 40,
+    "HR" to 40, "RBI" to 44, "BB" to 36, "SO" to 36, "AVG" to 52
+)
 val FORM_PITCHING_COLUMNS = listOf(
     "APP" to 44, "IP" to 52, "ER" to 40, "SO" to 40, "ERA" to 52, "WHIP" to 56
 )

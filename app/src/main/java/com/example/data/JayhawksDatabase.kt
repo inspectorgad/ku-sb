@@ -9,8 +9,8 @@ import androidx.sqlite.db.SupportSQLiteDatabase
 
 @Database(
     entities = [Player::class, Game::class, StatLine::class,
-        ConferenceStanding::class, PollEntry::class],
-    version = 6,
+        ConferenceStanding::class, PollEntry::class, OpponentStatLine::class],
+    version = 7,
     exportSchema = false
 )
 abstract class JayhawksDatabase : RoomDatabase() {
@@ -120,13 +120,69 @@ abstract class JayhawksDatabase : RoomDatabase() {
         }
 
         /**
+         * The opposing side of every box score, which the scrape had always
+         * downloaded and the seed had always discarded. Its own table because
+         * these are not Kansas players: they must never reach the roster, a
+         * leaderboard, or a career total, and there is nothing to join them to.
+         */
+        private val MIGRATION_6_7 = object : Migration(6, 7) {
+            override fun migrate(db: SupportSQLiteDatabase) {
+                db.execSQL(
+                    """CREATE TABLE IF NOT EXISTS `opponent_stat_lines` (
+                        `id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
+                        `gameId` INTEGER NOT NULL,
+                        `playerName` TEXT NOT NULL,
+                        `jerseyNumber` TEXT NOT NULL,
+                        `position` TEXT NOT NULL,
+                        `lineupSpot` INTEGER NOT NULL,
+                        `started` INTEGER NOT NULL,
+                        `substitute` INTEGER NOT NULL,
+                        `atBats` INTEGER NOT NULL,
+                        `runs` INTEGER NOT NULL,
+                        `hits` INTEGER NOT NULL,
+                        `doubles` INTEGER NOT NULL,
+                        `triples` INTEGER NOT NULL,
+                        `homeRuns` INTEGER NOT NULL,
+                        `runsBattedIn` INTEGER NOT NULL,
+                        `walks` INTEGER NOT NULL,
+                        `strikeouts` INTEGER NOT NULL,
+                        `hitByPitch` INTEGER NOT NULL,
+                        `stolenBases` INTEGER NOT NULL,
+                        `putouts` INTEGER NOT NULL,
+                        `assists` INTEGER NOT NULL,
+                        `errors` INTEGER NOT NULL,
+                        `pitched` INTEGER NOT NULL,
+                        `outsPitched` INTEGER NOT NULL,
+                        `hitsAllowed` INTEGER NOT NULL,
+                        `runsAllowed` INTEGER NOT NULL,
+                        `earnedRuns` INTEGER NOT NULL,
+                        `walksAllowed` INTEGER NOT NULL,
+                        `pitcherStrikeouts` INTEGER NOT NULL,
+                        `homeRunsAllowed` INTEGER NOT NULL,
+                        `pitchCount` INTEGER NOT NULL,
+                        `battersFaced` INTEGER NOT NULL,
+                        `win` INTEGER NOT NULL,
+                        `loss` INTEGER NOT NULL,
+                        `save` INTEGER NOT NULL,
+                        FOREIGN KEY(`gameId`) REFERENCES `games`(`id`)
+                            ON UPDATE NO ACTION ON DELETE CASCADE
+                    )"""
+                )
+                db.execSQL(
+                    "CREATE INDEX IF NOT EXISTS `index_opponent_stat_lines_gameId` " +
+                        "ON `opponent_stat_lines` (`gameId`)"
+                )
+            }
+        }
+
+        /**
          * Every migration in order. Exposed so MigrationTest can drive them
          * against a hand-built old database — the schema is not exported, so
          * this is the only guard that an upgrade on a phone holding real data
          * actually works.
          */
         fun migrations(): List<Migration> =
-            listOf(MIGRATION_1_2, MIGRATION_2_3, MIGRATION_3_4, MIGRATION_4_5, MIGRATION_5_6)
+            listOf(MIGRATION_1_2, MIGRATION_2_3, MIGRATION_3_4, MIGRATION_4_5, MIGRATION_5_6, MIGRATION_6_7)
 
         fun get(context: Context): JayhawksDatabase =
             instance ?: synchronized(this) {

@@ -33,6 +33,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import com.example.data.Game
+import com.example.data.OpponentStatLine
 import com.example.data.Player
 import com.example.data.StatLine
 import com.example.stats.BattingTotals
@@ -41,7 +42,10 @@ import com.example.stats.aggregatePitching
 import com.example.stats.formatAvg
 import com.example.stats.formatEra
 import com.example.stats.formatInnings
+import com.example.stats.opponentBatters
 import com.example.stats.opponentName
+import com.example.stats.opponentPitchers
+import com.example.stats.opponentPlayers
 import com.example.stats.opponentRecords
 import com.example.stats.teamKey
 
@@ -165,6 +169,7 @@ fun OpponentDetailScreen(
     players: List<Player>,
     games: List<Game>,
     statLines: List<StatLine>,
+    opponentStatLines: List<OpponentStatLine>,
     onBack: () -> Unit
 ) {
     val met = games
@@ -341,6 +346,83 @@ fun OpponentDetailScreen(
                                     )
                                 },
                                 labelWidth = 124
+                            )
+                        }
+                    }
+                }
+            }
+
+            // Their side of the same games. Everything here is against Kansas
+            // only — it is the whole of what this app holds about them — so a
+            // batting average covers two or three games and is quoted beside
+            // the line that produced it.
+            val theirs = opponentPlayers(opponentStatLines.filter { it.gameId in metIds })
+            val theirBatters = opponentBatters(theirs)
+            if (theirBatters.isNotEmpty()) {
+                item {
+                    Card(modifier = Modifier.fillMaxWidth()) {
+                        Column(modifier = Modifier.padding(12.dp)) {
+                            Text(
+                                "$title at the plate",
+                                style = MaterialTheme.typography.titleSmall,
+                                fontWeight = FontWeight.Bold
+                            )
+                            Text(
+                                "Against Kansas only, not their season.",
+                                style = MaterialTheme.typography.bodySmall,
+                                color = MaterialTheme.colorScheme.onSurfaceVariant
+                            )
+                            Spacer(modifier = Modifier.height(8.dp))
+                            StatsTable(
+                                columns = OPPONENT_PLAYER_COLUMNS,
+                                rows = theirBatters.map { t ->
+                                    (if (t.jerseyNumber.isNotBlank())
+                                        "${t.jerseyNumber} ${t.name}" else t.name) to listOf(
+                                        t.games.toString(), t.atBats.toString(),
+                                        t.runs.toString(), t.hits.toString(),
+                                        t.doubles.toString(), t.triples.toString(),
+                                        t.homeRuns.toString(), t.runsBattedIn.toString(),
+                                        t.walks.toString(), t.strikeouts.toString(),
+                                        formatAvg(t.battingAverage)
+                                    )
+                                },
+                                labelWidth = 140
+                            )
+                        }
+                    }
+                }
+            }
+            val theirPitchers = opponentPitchers(theirs)
+            if (theirPitchers.isNotEmpty()) {
+                item {
+                    Card(modifier = Modifier.fillMaxWidth()) {
+                        Column(modifier = Modifier.padding(12.dp)) {
+                            Text(
+                                "$title in the circle",
+                                style = MaterialTheme.typography.titleSmall,
+                                fontWeight = FontWeight.Bold
+                            )
+                            Spacer(modifier = Modifier.height(8.dp))
+                            StatsTable(
+                                columns = FORM_PITCHING_COLUMNS,
+                                rows = theirPitchers.map { t ->
+                                    val decision = buildString {
+                                        if (t.wins > 0) append(" (W)")
+                                        if (t.losses > 0) append(" (L)")
+                                        if (t.saves > 0) append(" (S)")
+                                    }
+                                    (t.name + decision) to listOf(
+                                        t.pitchingAppearances.toString(),
+                                        formatInnings(t.outsPitched),
+                                        t.earnedRuns.toString(),
+                                        t.pitcherStrikeouts.toString(),
+                                        formatEra(t.earnedRunAverage),
+                                        if (t.outsPitched > 0)
+                                            formatEra((t.walksAllowed + t.hitsAllowed) * 3.0 / t.outsPitched)
+                                        else "0.00"
+                                    )
+                                },
+                                labelWidth = 140
                             )
                         }
                     }

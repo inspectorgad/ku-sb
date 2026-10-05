@@ -114,6 +114,10 @@ DEFINITIONS = {
                     "is marked '(G2)' in the opponent name; strip that suffix to group "
                     "a series",
     "attendance": "announced crowd, 0 when not reported",
+    "opponent_batting / opponent_pitching": "the other side's box score lines. These "
+        "cover only the games that team played against Kansas — two or three in a "
+        "weekend series — so they are a record of those meetings and not of that "
+        "opponent's season. Never present them as season figures",
 }
 
 
@@ -122,11 +126,12 @@ DEFINITIONS = {
 # Claude's own code through the get_table tool; this only says how.
 SYSTEM_RULES = """You are the analyst behind the Kansas Jayhawks softball app and dashboard. You answer questions from coaches and fans about the team, using only the season data you are given.
 
-The complete data is available to your Python code through the get_table tool: tables games, innings (one row per half-inning), batting (one row per KU batter per game), pitching, fielding, scoring_plays (how each run scored), upcoming, standings, poll, rankings, roster, and definitions. Call it from inside code execution, for example: import json, pandas as pd; bat = pd.DataFrame(json.loads(await get_table({'table': 'batting'}))). Join tables on (season, date, opponent). A summary of the smaller tables is below for orientation.
+The complete data is available to your Python code through the get_table tool: tables games, innings (one row per half-inning), batting (one row per KU batter per game), pitching, fielding, scoring_plays (how each run scored), opponent_batting and opponent_pitching (the other side of every box score), upcoming, standings, poll, rankings, roster, and definitions. Call it from inside code execution, for example: import json, pandas as pd; bat = pd.DataFrame(json.loads(await get_table({'table': 'batting'}))). Join tables on (season, date, opponent). A summary of the smaller tables is below for orientation.
 
 How to answer:
 - Compute every number with code from the tables. Do not estimate, recall, or do arithmetic in your head, even for a simple total.
-- The player lines add up. Unlike basketball, softball has no team-level bucket that belongs to no individual: across every played game the batting lines sum exactly to the game's runs and hits, the fielding lines to its errors, and the pitching lines to the opponent's runs. So a team question can be answered by summing the player tables, and you should not go looking for a discrepancy.
+- The player lines add up. Unlike basketball, softball has no team-level bucket that belongs to no individual: across every played game the Kansas batting lines sum exactly to the game's runs and hits, the fielding lines to its errors, and the pitching lines to the opponent's runs. So a team question can be answered by summing the player tables, and you should not go looking for a discrepancy. One exception, on the opponent's side only: softball scoring allows an error charged to the team rather than to a fielder, and that happened once in 2026 (Houston on March 13, three errors reported and two charged to players), so opponent_batting and the game's own opp_errors can differ by one. Prefer the game row for an opponent's error total.
+- opponent_batting and opponent_pitching are only the games that team played against Kansas. Two or three meetings is not a season, so say what the sample is and never call a figure from them that opponent's season average.
 - Innings pitched are stored as outs. Divide by three for innings, and never read "7.2 innings" as 7.67 — it is 7 innings and 2 outs, which is 23 outs. ERA is scaled to seven innings (er * 21 / outs), because a regulation game is seven.
 - Fall games are exhibitions. They count toward no record, and are a separate season labelled "Fall 2026". Leave them out unless the question asks about the fall, and say so when it matters.
 - A missing half-inning is not a scoreless one. The home team does not bat in the last inning of a game it leads, and a run-rule game ends early; the innings table marks this with batted. Never average an unbatted half-inning as a zero.
@@ -263,6 +268,7 @@ def build_pack(seed):
     conference = {norm_team(s["team"]) for s in seed.get("standings", [])} - {norm_team("Kansas")}
 
     games, innings, batting, pitching, fielding, scoring, upcoming = [], [], [], [], [], [], []
+    opponent_batting, opponent_pitching = [], []
     for g in sorted(seed.get("games", []), key=lambda x: (x["date"], x["opponent"])):
         base = {"season": g["season"], "date": g["date"], "opponent": g["opponent"]}
         is_fall = g["season"].startswith("Fall")
@@ -294,6 +300,25 @@ def build_pack(seed):
                             "narrative": play.get("text"),
                             "ku_runs_after": play.get("us"),
                             "opp_runs_after": play.get("them")})
+        for line in g.get("opponentLines") or []:
+            ident = {**base, "player": line["player"],
+                     "jersey": line.get("number") or None}
+            if any(line.get(c) for c in ("ab", "bb", "hbp", "r", "sb")):
+                opponent_batting.append({
+                    **ident, "spot": line.get("spot") or None,
+                    "pos": line.get("pos") or None,
+                    "started": bool(line.get("gs")), "sub": bool(line.get("sub")),
+                    **{c: line.get(c, 0) for c in
+                       ("ab", "r", "h", "2b", "3b", "hr", "rbi", "bb", "so", "hbp", "sb")},
+                    **{c: line.get(c, 0) for c in ("po", "a", "e")},
+                })
+            if line.get("p"):
+                opponent_pitching.append({
+                    **ident,
+                    **{c: line.get(c, 0) for c in
+                       ("outs", "ha", "ra", "er", "bba", "ks", "hra", "np", "bf",
+                        "w", "l", "sv")},
+                })
         for line in g.get("lines", []):
             who = players.get(line["player"].lower(), {})
             ident = {**base, "player": line["player"],
@@ -329,6 +354,8 @@ def build_pack(seed):
         "pitching": pitching,
         "fielding": fielding,
         "scoring_plays": scoring,
+        "opponent_batting": opponent_batting,
+        "opponent_pitching": opponent_pitching,
         "upcoming": upcoming,
         "standings": [{k: st.get(k) for k in ("season", "team", "confW", "confL", "overallW",
                                               "overallL", "nationalRank", "rpiRank")}
@@ -394,5 +421,7 @@ if __name__ == "__main__":
     print(f"ask data: {len(P['games'])} games, {len(P['batting'])} batting lines, "
           f"{len(P['pitching'])} pitching, {len(P['fielding'])} fielding, "
           f"{len(P['innings'])} half-innings, {len(P['scoring_plays'])} scoring plays, "
+          f"{len(P['opponent_batting'])} opponent batting, "
+          f"{len(P['opponent_pitching'])} opponent pitching, "
           f"{len(P['upcoming'])} scheduled, {len(P['system_prompt'])}-char prompt"
           + ("" if CHANGED else " (unchanged; not rewritten)"))

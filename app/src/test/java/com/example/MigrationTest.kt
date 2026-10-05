@@ -152,6 +152,11 @@ class MigrationTest {
         // The v2 tables exist and are queryable; their contents are covered
         // by the dedicated test below.
         assertEquals(0, count(db, "SELECT COUNT(*) FROM standings"))
+        // The v7 table for the opposing side of a box score.
+        assertEquals(0, count(db, "SELECT COUNT(*) FROM opponent_stat_lines"))
+        for (c in listOf("gameId", "playerName", "lineupSpot", "outsPitched", "pitchCount")) {
+            assertTrue("opponent_stat_lines is missing $c", c in columns(db, "opponent_stat_lines"))
+        }
     }
 
     @Test
@@ -203,6 +208,32 @@ class MigrationTest {
      * Room sets from @Database. Reflection does not work: that annotation is
      * not retained at runtime, so asking the class for it returns null.
      */
+    /**
+     * Opposing lines belong to a game and to nothing else. Dropping a game has
+     * to take them with it, or a phantom opponent line outlives the game it
+     * described and shows up in the next one that reuses the id.
+     */
+    @Test
+    fun `an opposing line is deleted with its game`() {
+        val db = openV1()
+        db.execSQL("INSERT INTO games VALUES (1, '2026-04-17', 'UCF', '2026', 3, 6, NULL, NULL, NULL, NULL, NULL)")
+        migrateAll(db)
+        db.execSQL("PRAGMA foreign_keys = ON")
+        db.execSQL(
+            "INSERT INTO opponent_stat_lines (gameId, playerName, jerseyNumber, position, " +
+                "lineupSpot, started, substitute, atBats, runs, hits, doubles, triples, " +
+                "homeRuns, runsBattedIn, walks, strikeouts, hitByPitch, stolenBases, putouts, " +
+                "assists, errors, pitched, outsPitched, hitsAllowed, runsAllowed, earnedRuns, " +
+                "walksAllowed, pitcherStrikeouts, homeRunsAllowed, pitchCount, battersFaced, " +
+                "win, loss, save) VALUES " +
+                "(1, 'Aubrey Evans', '3', 'ss', 1, 1, 0, 3, 1, 1, 0, 0, 0, 0, 2, 0, 0, 0, 2, 3, " +
+                "0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)"
+        )
+        assertEquals(1, count(db, "SELECT COUNT(*) FROM opponent_stat_lines"))
+        db.execSQL("DELETE FROM games WHERE id = 1")
+        assertEquals(0, count(db, "SELECT COUNT(*) FROM opponent_stat_lines"))
+    }
+
     @Test
     fun `migrations are contiguous from 1 to the current version`() {
         val context = ApplicationProvider.getApplicationContext<Context>()

@@ -336,6 +336,63 @@ class MergeSyncTest {
         assertEquals("", dao.gamesOnce().single().scoringSummary)
     }
 
+    /**
+     * The opposing side of a box score. Scraper-owned, so a sync replaces a
+     * game's rows outright — and crucially these must never reach the roster,
+     * where they would turn up in leaderboards and career totals.
+     */
+    @Test
+    fun `opposing lines land on their own table and never on the roster`() = runTest {
+        val dao = db.dao()
+        Seeder.merge(
+            JSONObject(
+                """
+                {"players": [{"name": "Ada Alpha", "jerseyNumber": "1", "position": "SS"}],
+                 "games": [{"date": "2026-04-17", "opponent": "UCF", "season": "2026",
+                   "teamScore": 3, "opponentScore": 6,
+                   "lines": [{"player": "Ada Alpha", "ab": 4, "h": 2}],
+                   "opponentLines": [
+                     {"player": "Aubrey Evans", "number": "3", "pos": "ss", "spot": 1,
+                      "gs": 1, "ab": 3, "r": 1, "h": 1, "bb": 2, "po": 2, "a": 3},
+                     {"player": "Isabella Vega", "number": "9", "pos": "p", "spot": 10,
+                      "p": 1, "outs": 21, "ha": 7, "ra": 3, "er": 3, "ks": 4,
+                      "np": 102, "bf": 28, "w": 1}
+                   ]}]}
+                """
+            ),
+            dao
+        )
+        val theirs = dao.opponentStatLinesOnce()
+        assertEquals(2, theirs.size)
+        val evans = theirs.first { it.playerName == "Aubrey Evans" }
+        assertEquals("3", evans.jerseyNumber)
+        assertEquals(1, evans.lineupSpot)
+        assertTrue(evans.started)
+        assertEquals(3, evans.assists)
+        val vega = theirs.first { it.playerName == "Isabella Vega" }
+        assertTrue(vega.pitched)
+        assertEquals(21, vega.outsPitched)
+        assertEquals(102, vega.pitchCount)
+        assertTrue(vega.win)
+        // The roster is Kansas only. This is the whole point of the separate
+        // table: an opposing name here would surface on the Leaders board.
+        assertEquals(listOf("Ada Alpha"), dao.playersOnce().map { it.name })
+        assertEquals(1, dao.statLinesOnce().size)
+    }
+
+    @Test
+    fun `re-syncing replaces a game's opposing lines rather than doubling them`() = runTest {
+        val dao = db.dao()
+        val json = """
+            {"players": [], "games": [{"date": "2026-04-17", "opponent": "UCF", "season": "2026",
+              "teamScore": 3, "opponentScore": 6,
+              "opponentLines": [{"player": "Aubrey Evans", "ab": 3, "h": 1}]}]}
+        """
+        Seeder.merge(JSONObject(json), dao)
+        Seeder.merge(JSONObject(json), dao)
+        assertEquals(1, dao.opponentStatLinesOnce().size)
+    }
+
     @Test
     fun `unknown player in lines is skipped without error`() = runTest {
         val json = seedJson().apply {

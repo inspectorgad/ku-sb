@@ -102,6 +102,77 @@ data class Game(
 )
 
 /**
+ * One opposing player's line in one game against Kansas.
+ *
+ * Kept in its own table rather than through [Player] and [StatLine] on
+ * purpose: these are not Kansas players and must never reach the roster, a
+ * leaderboard, or a career total. The name is stored as text for the same
+ * reason — there is nothing to join to.
+ *
+ * Deliberately fewer columns than a Kansas line carries. This exists so an
+ * opposing box score can be read — who hit, who pitched, who made the plays —
+ * not so an opponent's season rates can be computed from the two or three
+ * games they played against Kansas, which would be a worse number than none.
+ *
+ * One caveat worth knowing: softball scoring allows an error charged to the
+ * team rather than to a fielder, so the errors here can sum to less than the
+ * game's reported total. It happened once in 2026 — Houston on March 13,
+ * three errors reported and two charged to players.
+ */
+@Entity(
+    tableName = "opponent_stat_lines",
+    foreignKeys = [
+        ForeignKey(
+            entity = Game::class,
+            parentColumns = ["id"],
+            childColumns = ["gameId"],
+            onDelete = ForeignKey.CASCADE
+        )
+    ],
+    indices = [Index("gameId")]
+)
+data class OpponentStatLine(
+    @PrimaryKey(autoGenerate = true) val id: Long = 0,
+    val gameId: Long,
+    val playerName: String,
+    val jerseyNumber: String = "",
+    val position: String = "",
+    val lineupSpot: Int = 0,
+    val started: Boolean = false,
+    val substitute: Boolean = false,
+    // Batting
+    val atBats: Int = 0,
+    val runs: Int = 0,
+    val hits: Int = 0,
+    val doubles: Int = 0,
+    val triples: Int = 0,
+    val homeRuns: Int = 0,
+    val runsBattedIn: Int = 0,
+    val walks: Int = 0,
+    val strikeouts: Int = 0,
+    val hitByPitch: Int = 0,
+    val stolenBases: Int = 0,
+    // Fielding
+    val putouts: Int = 0,
+    val assists: Int = 0,
+    val errors: Int = 0,
+    // Pitching
+    val pitched: Boolean = false,
+    val outsPitched: Int = 0,
+    val hitsAllowed: Int = 0,
+    val runsAllowed: Int = 0,
+    val earnedRuns: Int = 0,
+    val walksAllowed: Int = 0,
+    val pitcherStrikeouts: Int = 0,
+    val homeRunsAllowed: Int = 0,
+    val pitchCount: Int = 0,
+    val battersFaced: Int = 0,
+    val win: Boolean = false,
+    val loss: Boolean = false,
+    val save: Boolean = false
+)
+
+/**
  * One player's line for one game: batting counting stats plus, when the
  * player took the circle, their pitching line ([pitched] false leaves every
  * pitching column at zero and hides pitching in the UI).

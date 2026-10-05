@@ -1,21 +1,21 @@
 package com.example.ui
 
 import androidx.compose.foundation.clickable
+import androidx.compose.foundation.horizontalScroll
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
-import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
-import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
-import androidx.compose.foundation.horizontalScroll
 import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.ArrowBack
@@ -25,7 +25,6 @@ import androidx.compose.material.icons.filled.Edit
 import androidx.compose.material3.AlertDialog
 import androidx.compose.material3.Button
 import androidx.compose.material3.Card
-import androidx.compose.material3.Surface
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.FilterChip
 import androidx.compose.material3.FloatingActionButton
@@ -35,6 +34,7 @@ import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Scaffold
+import androidx.compose.material3.Surface
 import androidx.compose.material3.Switch
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextButton
@@ -52,9 +52,11 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.data.Game
+import com.example.data.OpponentStatLine
 import com.example.data.Player
 import com.example.data.StatLine
 import com.example.stats.formatInnings
+import com.example.stats.opponentName
 import com.example.stats.parseInnings
 import com.example.stats.summarize
 
@@ -663,12 +665,81 @@ private fun SectionLabel(text: String) {
     Spacer(modifier = Modifier.height(2.dp))
 }
 
+/**
+ * The opposing side of one game's box score: their batting order, then
+ * whoever pitched. Shorter than Kansas's, because this app keeps fewer
+ * columns for a team it only ever sees two or three times.
+ */
+@Composable
+private fun OpponentBoxScore(opponent: String, lines: List<OpponentStatLine>) {
+    // Row id is insertion order, which is the order the box score listed them,
+    // so this is lineup order with substitutes following the starter whose
+    // slot they took — the same ordering Kansas's box score uses.
+    val inOrder = lines.sortedWith(
+        compareBy({ it.lineupSpot == 0 }, { it.lineupSpot }, { it.substitute }, { it.id })
+    )
+    val batters = inOrder.filter {
+        it.atBats > 0 || it.walks > 0 || it.runs > 0 || it.hitByPitch > 0 ||
+            (it.lineupSpot > 0 && !it.pitched)
+    }
+    val pitchers = inOrder.filter { it.pitched }
+    if (batters.isEmpty() && pitchers.isEmpty()) return
+
+    Card(modifier = Modifier.fillMaxWidth()) {
+        Column(modifier = Modifier.padding(12.dp)) {
+            Text(
+                "$opponent box score",
+                style = MaterialTheme.typography.titleSmall,
+                fontWeight = FontWeight.SemiBold
+            )
+            Spacer(modifier = Modifier.height(6.dp))
+            if (batters.isNotEmpty()) {
+                StatsTable(
+                    columns = BOX_BATTING_COLUMNS,
+                    rows = batters.map { l ->
+                        val slot = if (l.lineupSpot > 0 && !l.substitute) "${l.lineupSpot} " else "  "
+                        val pos = if (l.position.isNotBlank()) " ${l.position}" else ""
+                        (slot + boxName(l.playerName) + pos) to listOf(
+                            l.atBats.toString(), l.runs.toString(), l.hits.toString(),
+                            l.runsBattedIn.toString(), l.walks.toString(), l.strikeouts.toString()
+                        )
+                    },
+                    labelWidth = 132
+                )
+            }
+            if (pitchers.isNotEmpty()) {
+                SectionLabel("Pitching")
+                StatsTable(
+                    columns = BOX_PITCHING_COLUMNS,
+                    rows = pitchers.map { l ->
+                        val decision = when {
+                            l.win -> " (W)"
+                            l.loss -> " (L)"
+                            l.save -> " (S)"
+                            else -> ""
+                        }
+                        (boxName(l.playerName) + decision) to listOf(
+                            formatInnings(l.outsPitched), l.hitsAllowed.toString(),
+                            l.runsAllowed.toString(), l.earnedRuns.toString(),
+                            l.walksAllowed.toString(), l.pitcherStrikeouts.toString(),
+                            if (l.pitchCount > 0) l.pitchCount.toString() else "\u2013",
+                            if (l.battersFaced > 0) l.battersFaced.toString() else "\u2013"
+                        )
+                    },
+                    labelWidth = 132
+                )
+            }
+        }
+    }
+}
+
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun GameDetailScreen(
     game: Game,
     players: List<Player>,
     statLines: List<StatLine>,
+    opponentStatLines: List<OpponentStatLine>,
     onSaveGame: (Game) -> Unit,
     onDeleteGame: (Game) -> Unit,
     onSaveStatLine: (StatLine) -> Unit,
@@ -729,6 +800,13 @@ fun GameDetailScreen(
 
             if (gameLines.isNotEmpty()) {
                 item { BoxScore(players, gameLines) }
+            }
+
+            // The other half of the box score. A game has two sides and the
+            // scrape downloads both; until now the app showed one.
+            val theirLines = opponentStatLines.filter { it.gameId == game.id }
+            if (theirLines.isNotEmpty()) {
+                item { OpponentBoxScore(opponentName(game.opponent), theirLines) }
             }
 
             if (players.isEmpty()) {

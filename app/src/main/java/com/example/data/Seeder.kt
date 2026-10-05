@@ -181,6 +181,59 @@ object Seeder {
                 if (updated != existing) dao.updateGame(updated)
             }
 
+            // The opposing box score. Scraper-owned with nothing user-entered
+            // in it, so a game's rows are replaced outright rather than
+            // gap-filled — the rule that protects a hand-typed Kansas line
+            // does not apply to a line nobody here can type.
+            g.optJSONArray("opponentLines")?.let { opp ->
+                val rows = ArrayList<OpponentStatLine>(opp.length())
+                for (j in 0 until opp.length()) {
+                    val l = opp.optJSONObject(j) ?: continue
+                    val name = l.optString("player")
+                    if (name.isBlank()) continue
+                    rows += OpponentStatLine(
+                        gameId = gameId,
+                        playerName = name,
+                        jerseyNumber = l.optString("number"),
+                        position = l.optString("pos"),
+                        lineupSpot = l.optInt("spot"),
+                        started = l.optInt("gs") == 1,
+                        substitute = l.optInt("sub") == 1,
+                        atBats = l.optInt("ab"),
+                        runs = l.optInt("r"),
+                        hits = l.optInt("h"),
+                        doubles = l.optInt("2b"),
+                        triples = l.optInt("3b"),
+                        homeRuns = l.optInt("hr"),
+                        runsBattedIn = l.optInt("rbi"),
+                        walks = l.optInt("bb"),
+                        strikeouts = l.optInt("so"),
+                        hitByPitch = l.optInt("hbp"),
+                        stolenBases = l.optInt("sb"),
+                        putouts = l.optInt("po"),
+                        assists = l.optInt("a"),
+                        errors = l.optInt("e"),
+                        pitched = l.optInt("p") == 1,
+                        outsPitched = l.optInt("outs"),
+                        hitsAllowed = l.optInt("ha"),
+                        runsAllowed = l.optInt("ra"),
+                        earnedRuns = l.optInt("er"),
+                        walksAllowed = l.optInt("bba"),
+                        pitcherStrikeouts = l.optInt("ks"),
+                        homeRunsAllowed = l.optInt("hra"),
+                        pitchCount = l.optInt("np"),
+                        battersFaced = l.optInt("bf"),
+                        win = l.optInt("w") == 1,
+                        loss = l.optInt("l") == 1,
+                        save = l.optInt("sv") == 1
+                    )
+                }
+                if (rows.isNotEmpty()) {
+                    dao.deleteOpponentStatLines(gameId)
+                    dao.insertOpponentStatLines(rows)
+                }
+            }
+
             if (existing != null && gameId in gamesWithLines) continue
             val lines = g.optJSONArray("lines") ?: continue
             for (j in 0 until lines.length()) {
