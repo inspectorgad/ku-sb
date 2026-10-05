@@ -244,6 +244,39 @@ TEMPLATE = r"""<!doctype html>
   /* How a game ended, when that is not simply "as scheduled". */
   .ending { display: block; font-size: 10px; letter-spacing: .06em; text-transform: uppercase; color: var(--muted); }
 
+  .opp-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(210px, 1fr)); gap: 12px; }
+  .ocard .nm { font-weight: 700; line-height: 1.25; }
+  .ocard .rec { font-size: 23px; font-weight: 800; margin-top: 7px; font-variant-numeric: tabular-nums; }
+  .ocard .rec small { font-size: 12px; font-weight: 600; color: var(--muted); margin-left: 5px; }
+  .ocard .d { font-size: 12px; color: var(--muted); margin-top: 3px; }
+  .ocard.beat .rec { color: var(--win); }
+  .ocard.lost .rec { color: var(--loss); }
+
+  tr.clickable { cursor: pointer; }
+  tr.clickable:focus-visible { outline: 2px solid var(--blue); outline-offset: -2px; }
+  .ls-wrap { overflow-x: auto; }
+  table.linescore td, table.linescore th { padding: 6px 9px; }
+  table.linescore .tm { text-align: left; font-weight: 700; min-width: 150px; }
+  table.linescore .tot { font-weight: 800; border-left: 2px solid var(--faint); }
+  table.linescore tr.ku { background: var(--surface2); }
+  .ginfo { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 10px 18px; font-size: 13px; }
+  .ginfo .k { font-size: 10.5px; font-weight: 700; letter-spacing: .09em; text-transform: uppercase; color: var(--muted); }
+  .scoring { list-style: none; margin: 0; padding: 0; }
+  .scoring li { display: grid; grid-template-columns: 34px 1fr 54px; gap: 10px; align-items: baseline;
+                padding: 6px 0; border-bottom: 1px solid var(--chart-grid); font-size: 13.5px; }
+  .scoring li:last-child { border-bottom: none; }
+  .scoring .inn { font-size: 11px; font-weight: 800; color: var(--muted); letter-spacing: .06em; }
+  .scoring .sc { text-align: right; font-weight: 700; font-variant-numeric: tabular-nums; }
+  .scoring li.them { color: var(--muted); }
+  .scoring li.them .sc { color: var(--muted); }
+  .m-sec .sub-h { font-size: 12px; color: var(--muted); margin: 0 0 6px; }
+  .m-links { display: flex; flex-wrap: wrap; gap: 14px; font-size: 13px; margin-top: 14px; }
+  .m-links a { color: var(--blue); }
+  .form-row { display: flex; flex-wrap: wrap; gap: 4px; margin-bottom: 8px; }
+  .form-g { font-size: 11px; font-weight: 700; border-radius: 5px; padding: 3px 6px;
+            background: var(--surface2); color: var(--muted); }
+  .form-g.hit { background: var(--win-bg); color: var(--win); }
+
   dialog#pmodal {
     border: none; border-radius: 14px; padding: 0;
     width: min(920px, calc(100vw - 32px));
@@ -407,6 +440,15 @@ TEMPLATE = r"""<!doctype html>
     </div>
   </section>
 
+  <section id="oppSec" hidden>
+    <div class="sec-head">
+      <h2>Opponents</h2>
+      <span class="note">head to head · open one for their box score</span>
+      <div class="rule"></div>
+    </div>
+    <div class="opp-grid" id="opponents"></div>
+  </section>
+
   <section id="upcomingSec" style="display:none">
     <div class="sec-head">
       <h2 id="upcomingHead">Schedule</h2>
@@ -471,8 +513,7 @@ TEMPLATE = r"""<!doctype html>
     Data: kuathletics.com box scores (batting + pitching) with NCAA-API results
     cross-check, via the nightly
     <a href="https://github.com/inspectorgad/ku-sb">ku-sb</a> scrape ·
-    Player runs verified against final scores ·
-    The Mar 1 Arkansas game has a result but no published box score ·
+    Player runs verified against final scores ·<span id="noBox"></span>
     Data updated __UPDATED__ UTC.
   </footer>
 </div>
@@ -490,6 +531,11 @@ TEMPLATE = r"""<!doctype html>
   </div>
   <div class="m-body">
     <div class="m-tiles" id="mTiles"></div>
+    <div class="m-sec" id="formSec" hidden>
+      <h4>Recent form</h4>
+      <p class="sub-h" id="formSub"></p>
+      <div class="form-row" id="formRow"></div>
+    </div>
     <div class="m-sec">
       <h4 id="pgTitle"></h4>
       <svg id="pgChart" viewBox="0 0 1000 190" role="img" aria-label="Bar chart of per-game production"></svg>
@@ -520,6 +566,28 @@ TEMPLATE = r"""<!doctype html>
       </div>
     </div>
   </div>
+</dialog>
+
+<dialog id="gmodal" aria-label="Game detail">
+  <div class="m-head">
+    <div>
+      <h3 id="gTitle"></h3>
+      <div class="sub" id="gSub"></div>
+    </div>
+    <button class="m-close" data-close="gmodal" aria-label="Close">✕</button>
+  </div>
+  <div class="m-body" id="gBody"></div>
+</dialog>
+
+<dialog id="omodal" aria-label="Opponent detail">
+  <div class="m-head">
+    <div>
+      <h3 id="oTitle"></h3>
+      <div class="sub" id="oSub"></div>
+    </div>
+    <button class="m-close" data-close="omodal" aria-label="Close">✕</button>
+  </div>
+  <div class="m-body" id="oBody"></div>
 </dialog>
 
 <script>
@@ -964,13 +1032,338 @@ function aggregate(gs) {
   }).join("");
 })();
 
+// ---------- one game, in full ----------
+// The page could already say what happened across a season but had no way to
+// open a single game, so the scoring summary and both box scores — which the
+// scrape has collected all along — had nowhere to be shown.
+const gameKey = g => g.date + "|" + g.opponent;
+const hasDetail = g => !!((g.lines && g.lines.length) || (g.scoring && g.scoring.length));
+const allGames = [...games, ...exhibitions];
+const gamesByKey = new Map(allGames.map(g => [gameKey(g), g]));
+
+/**
+ * The line score, away team on top as a scoreboard prints it.
+ *
+ * Which team was at home is taken from the line score itself where it can be:
+ * a half-inning marked "X" is one nobody batted, and only the home team is
+ * ever spared that. At a neutral-site tournament — most of February — that is
+ * more reliable than the site letter, which only says it was not Lawrence.
+ */
+function lineScoreHTML(g) {
+  const parts = String(g.inningScores || "").split(",").map(s => s.trim()).filter(Boolean);
+  if (!parts.length) return "";
+  const us = [], them = [];
+  for (const p of parts) {
+    const h = p.split("-");
+    us.push((h[0] || "").trim());
+    them.push((h.length > 1 ? h[1] : "").trim());
+  }
+  const isX = v => /^x$/i.test(v);
+  const kuHome = us.some(isX) ? true : them.some(isX) ? false : g.site === "H";
+  const ku = { name: "Kansas", cells: us, r: g.teamScore, h: g.teamHits, e: g.teamErrors, ku: 1 };
+  const op = { name: oppName(g.opponent), cells: them, r: g.opponentScore, h: g.opponentHits, e: g.opponentErrors, ku: 0 };
+  const order = kuHome ? [op, ku] : [ku, op];
+  const num = v => v == null ? "–" : v;
+  return `<div class="ls-wrap"><table class="linescore">
+    <thead><tr><th class="tm">&nbsp;</th>${
+      parts.map((_, i) => `<th>${i + 1}</th>`).join("")
+    }<th class="tot">R</th><th class="tot">H</th><th class="tot">E</th></tr></thead>
+    <tbody>${order.map(t => `<tr class="${t.ku ? "ku" : ""}">
+      <td class="tm">${esc(t.name)}</td>
+      ${t.cells.map(v => `<td>${esc(v === "" ? "–" : v)}</td>`).join("")}
+      <td class="tot">${num(t.r)}</td><td class="tot">${num(t.h)}</td><td class="tot">${num(t.e)}</td>
+    </tr>`).join("")}</tbody></table></div>`;
+}
+
+/** Lineup order: by slot, the starter above whoever replaced her, then the rest. */
+function inOrder(lines) {
+  return lines.map((l, i) => [l, i]).sort((a, b) =>
+    ((a[0].spot || 0) === 0) - ((b[0].spot || 0) === 0) ||
+    (a[0].spot || 0) - (b[0].spot || 0) ||
+    (a[0].sub || 0) - (b[0].sub || 0) ||
+    a[1] - b[1]
+  ).map(x => x[0]);
+}
+
+/**
+ * One side's box score. Opponent lines carry fewer columns than Kansas lines
+ * — deliberately, since they exist so an opposing box score can be read, not
+ * so a season rate can be computed from two games.
+ */
+function boxHTML(lines, who) {
+  if (!lines || !lines.length) return "";
+  const ordered = inOrder(lines);
+  // Every pitcher shares lineup slot 10 — softball's FLEX — so a pitcher who
+  // never came to the plate would otherwise sit in the batting order.
+  const batters = ordered.filter(l =>
+    (l.ab || 0) > 0 || (l.bb || 0) > 0 || (l.r || 0) > 0 || (l.hbp || 0) > 0 ||
+    (l.sf || 0) > 0 || (l.sh || 0) > 0 || ((l.spot || 0) > 0 && (l.spot || 0) < 10 && !l.p));
+  const pitchers = ordered.filter(l => l.p);
+  const nm = l => (l.sub ? "&nbsp;&nbsp;" : "") + esc(l.player) +
+    (l.sub ? ' <span class="dim">(sub)</span>' : "");
+  const dec = l => l.w ? "W" : l.l ? "L" : l.sv ? "S" : "";
+  const n = v => v || 0;
+
+  let html = "";
+  if (batters.length) {
+    html += `<div class="tbl-wrap"><table>
+      <thead><tr><th class="lft">${esc(who)} batting</th><th class="lft">Pos</th>
+        <th>AB</th><th>R</th><th>H</th><th>2B</th><th>3B</th><th>HR</th><th>RBI</th>
+        <th>BB</th><th>SO</th><th>HBP</th><th>SB</th><th>PO</th><th>A</th><th>E</th></tr></thead>
+      <tbody>${batters.map(l => `<tr>
+        <td class="lft">${(l.spot && !l.sub) ? '<span class="dim">' + l.spot + "</span> " : ""}${nm(l)}</td>
+        <td class="lft dim">${esc(l.pos || "")}</td>
+        <td>${n(l.ab)}</td><td>${n(l.r)}</td><td><b>${n(l.h)}</b></td>
+        <td>${n(l["2b"])}</td><td>${n(l["3b"])}</td><td>${n(l.hr)}</td><td>${n(l.rbi)}</td>
+        <td>${n(l.bb)}</td><td>${n(l.so)}</td><td>${n(l.hbp)}</td><td>${n(l.sb)}</td>
+        <td class="dim">${n(l.po)}</td><td class="dim">${n(l.a)}</td><td class="dim">${n(l.e)}</td>
+      </tr>`).join("")}</tbody></table></div>`;
+  }
+  if (pitchers.length) {
+    html += `<div class="tbl-wrap" style="margin-top:10px"><table>
+      <thead><tr><th class="lft">${esc(who)} pitching</th><th class="lft">Dec</th>
+        <th>IP</th><th>H</th><th>R</th><th>ER</th><th>BB</th><th>SO</th><th>HR</th>
+        <th>BF</th><th>NP</th></tr></thead>
+      <tbody>${pitchers.map(l => `<tr>
+        <td class="lft">${esc(l.player)}</td><td class="lft"><b>${dec(l)}</b></td>
+        <td>${ip(n(l.outs))}</td><td>${n(l.ha)}</td><td>${n(l.ra)}</td><td>${n(l.er)}</td>
+        <td>${n(l.bba)}</td><td><b>${n(l.ks)}</b></td><td>${n(l.hra)}</td>
+        <td class="dim">${n(l.bf)}</td><td class="dim">${n(l.np)}</td>
+      </tr>`).join("")}</tbody></table></div>`;
+  }
+  return html;
+}
+
+function scoringHTML(g) {
+  const plays = g.scoring || [];
+  if (!plays.length) return "";
+  const suffix = i => i === 1 ? "st" : i === 2 ? "nd" : i === 3 ? "rd" : "th";
+  let last = null;
+  return `<ul class="scoring">${plays.map(p => {
+    const label = p.inn === last ? "" : p.inn + suffix(p.inn);
+    last = p.inn;
+    return `<li class="${p.ku ? "" : "them"}"><span class="inn">${label}</span>` +
+      `<span>${esc(p.text)}</span>` +
+      `<span class="sc">${p.us}–${p.them}</span></li>`;
+  }).join("")}</ul>`;
+}
+
+const gmodal = document.getElementById("gmodal");
+const omodal = document.getElementById("omodal");
+document.addEventListener("click", ev => {
+  const b = ev.target.closest("[data-close]");
+  if (b) document.getElementById(b.dataset.close).close();
+});
+
+function openGame(key) {
+  const g = gamesByKey.get(key);
+  if (!g) return;
+  const won = g.teamScore > g.opponentScore, tied = g.teamScore === g.opponentScore;
+  document.getElementById("gTitle").textContent =
+    (g.site === "A" ? "at " : "vs ") + oppName(g.opponent) + "  " +
+    (tied ? "T" : won ? "W" : "L") + " " + g.teamScore + "–" + g.opponentScore;
+  document.getElementById("gSub").textContent = [
+    fmtDate(g.date) + ", " + g.date.slice(0, 4),
+    isExhibition(g) ? g.season + " exhibition" : phaseOf(g),
+    endingPhrase(g),
+    g.event,
+  ].filter(Boolean).join(" · ");
+
+  const info = [
+    ["Venue", g.stadium || g.venue],
+    ["Attendance", g.attendance ? g.attendance.toLocaleString("en-US") : ""],
+    ["First pitch", g.firstPitch],
+    ["Duration", g.duration],
+    ["Weather", g.weather],
+    ["Opponent that day", [g.opponentRank ? "#" + g.opponentRank : "", g.opponentRecord].filter(Boolean).join(" ")],
+    // A position nobody worked is stored as "0", not blank. The scraper now
+    // drops those, but a seed written before that fix still carries them.
+    ["Umpires", String(g.umpires || "").split(" · ").filter(s => !/:\s*0$/.test(s)).join(" · ")],
+  ].filter(([, v]) => v);
+  const links = [
+    g.boxScoreUrl ? `<a href="${esc(g.boxScoreUrl)}" target="_blank" rel="noopener">Official box score</a>` : "",
+    g.pdfUrl ? `<a href="${esc(g.pdfUrl)}" target="_blank" rel="noopener">PDF box score</a>` : "",
+  ].filter(Boolean);
+
+  const sec = (title, body, note) => body
+    ? `<div class="m-sec"><h4>${esc(title)}</h4>${note ? `<p class="sub-h">${esc(note)}</p>` : ""}${body}</div>`
+    : "";
+
+  document.getElementById("gBody").innerHTML =
+    (lineScoreHTML(g) ? `<div class="m-sec" style="margin-top:0">${lineScoreHTML(g)}</div>` : "") +
+    (info.length ? `<div class="m-sec"><h4>Game information</h4><div class="ginfo">${
+      info.map(([k, v]) => `<div><div class="k">${esc(k)}</div><div>${esc(v)}</div></div>`).join("")
+    }</div></div>` : "") +
+    sec("How the runs scored", scoringHTML(g)) +
+    sec("Kansas", boxHTML(g.lines, "Kansas")) +
+    sec(oppName(g.opponent), boxHTML(g.opponentLines, oppName(g.opponent)),
+        // Worth saying once per box score rather than leaving a reader to
+        // wonder why the errors do not add up.
+        (g.opponentErrors || 0) > (g.opponentLines || []).reduce((a, l) => a + (l.e || 0), 0)
+          ? "Softball charges some errors to the team rather than to a fielder, so these can sum to less than the line score."
+          : "") +
+    (links.length ? `<div class="m-links">${links.join("")}</div>` : "");
+  gmodal.showModal();
+}
+
+// Which games have a result but no published box score, named rather than
+// hardcoded — the note used to cite a March game whose box score has since
+// been posted, while the two it describes today are September exhibitions.
+(function missingBoxScores() {
+  const gaps = allGames.filter(g => !hasDetail(g));
+  if (!gaps.length) return;
+  // The raw name, not oppName: stripping "(G2)" would list both halves of a
+  // doubleheader as the same game twice.
+  const names = gaps.map(g => fmtDate(g.date) + " " + g.opponent);
+  document.getElementById("noBox").textContent =
+    " No published box score for " +
+    (names.length > 2 ? names.length + " games (" + names.join(", ") + ")" : names.join(" and ")) +
+    " ·";
+})();
+
+// ---------- opponents ----------
+// Softball is played in weekend series, so a head-to-head here is a real one:
+// a team is met two or three times in three days rather than once a year. The
+// halves of a doubleheader fold back together — "Baylor (G2)" is still Baylor.
+(function opponents() {
+  const met = new Map();
+  for (const g of games) {
+    const k = teamKey(g.opponent);
+    if (!met.has(k)) met.set(k, []);
+    met.get(k).push(g);
+  }
+  if (!met.size) return;
+
+  const records = [...met.values()].map(gs => ({
+    name: oppName(gs[0].opponent),
+    key: teamKey(gs[0].opponent),
+    gs,
+    n: gs.length,
+    w: gs.filter(g => g.teamScore > g.opponentScore).length,
+    l: gs.filter(g => g.teamScore < g.opponentScore).length,
+    rf: gs.reduce((a, g) => a + g.teamScore, 0),
+    ra: gs.reduce((a, g) => a + g.opponentScore, 0),
+    // Lowest rank number is the best; 0 means unranked, so it is never a
+    // candidate for "best" however often it appears.
+    bestRank: gs.reduce((a, g) => (g.opponentRank > 0 && (!a || g.opponentRank < a)) ? g.opponentRank : a, 0),
+    last: gs.reduce((a, g) => g.date > a ? g.date : a, ""),
+  })).sort((a, b) => b.n - a.n || b.w - a.w || a.name.localeCompare(b.name));
+
+  const byKey = new Map(records.map(r => [r.key, r]));
+  document.getElementById("opponents").innerHTML = records.map(r => `
+    <button class="pcard ocard${r.w > r.l ? " beat" : r.l > r.w ? " lost" : ""}" data-o="${esc(r.key)}">
+      <div class="nm">${r.bestRank ? '<span class="oppRank">#' + r.bestRank + "</span> " : ""}${esc(r.name)}</div>
+      <div class="rec">${r.w}–${r.l}<small>${r.n} game${r.n === 1 ? "" : "s"}</small></div>
+      <div class="d">${r.rf}–${r.ra} runs · ${inConference(r.gs[0]) ? "Big 12" : "Non-conference"}</div>
+      <div class="d">last met ${fmtDate(r.last)}</div>
+    </button>`).join("");
+  document.getElementById("oppSec").hidden = false;
+
+  document.getElementById("opponents").addEventListener("click", ev => {
+    const b = ev.target.closest(".ocard[data-o]");
+    if (b) openOpponent(b.dataset.o);
+  });
+
+  // Their players, summed over the meetings — and only over the meetings,
+  // which is why the counting line is shown beside every rate.
+  function theirPlayers(gs) {
+    const by = new Map();
+    for (const g of gs) for (const l of g.opponentLines || []) {
+      let t = by.get(l.player);
+      if (!t) {
+        t = { player: l.player, number: "", pos: "", g: 0,
+              ab:0, r:0, h:0, "2b":0, "3b":0, hr:0, rbi:0, bb:0, so:0, hbp:0, sb:0,
+              po:0, a:0, e:0, app:0, outs:0, ha:0, ra:0, er:0, bba:0, ks:0, hra:0,
+              bf:0, np:0, w:0, l:0, sv:0 };
+        by.set(l.player, t);
+      }
+      // The first non-blank wins: a number or a position can be missing from
+      // one game's box score and present in the next.
+      if (!t.number && l.number) t.number = l.number;
+      if (!t.pos && l.pos) t.pos = l.pos;
+      t.g++;
+      for (const k of ["ab","r","h","2b","3b","hr","rbi","bb","so","hbp","sb","po","a","e",
+                       "outs","ha","ra","er","bba","ks","hra","bf","np","w","l","sv"]) {
+        t[k] += l[k] || 0;
+      }
+      if (l.p) t.app++;
+    }
+    return [...by.values()];
+  }
+
+  // A dialog cannot sit usefully on top of another, so opening a game from
+  // here replaces this one rather than stacking. Bound once, not per opening.
+  document.getElementById("oBody").addEventListener("click", ev => {
+    const tr = ev.target.closest("tr[data-g]");
+    if (!tr) return;
+    omodal.close();
+    openGame(tr.dataset.g);
+  });
+
+  function openOpponent(key) {
+    const r = byKey.get(key);
+    if (!r) return;
+    document.getElementById("oTitle").textContent = r.name;
+    document.getElementById("oSub").textContent =
+      "Kansas " + r.w + "–" + r.l + " · " + r.n + " game" + (r.n === 1 ? "" : "s") +
+      " · " + r.rf + "–" + r.ra + " runs" + (r.bestRank ? " · ranked #" + r.bestRank : "");
+
+    const totals = theirPlayers(r.gs);
+    const bat = totals.filter(t => t.ab > 0 || t.bb > 0 || t.r > 0)
+      .sort((a, b) => b.h - a.h || b.ab - a.ab || a.player.localeCompare(b.player));
+    const pit = totals.filter(t => t.app > 0).sort((a, b) => b.outs - a.outs);
+    const n = v => v || 0;
+
+    document.getElementById("oBody").innerHTML =
+      `<div class="m-sec" style="margin-top:0"><h4>The meetings</h4>
+        <div class="tbl-wrap"><table><thead><tr>
+          <th class="lft">Date</th><th class="lft"></th><th></th><th>Score</th>
+          <th class="lft">Line</th><th class="lft">Kansas' best</th></tr></thead>
+        <tbody>${r.gs.slice().sort((a, b) => a.date < b.date ? -1 : 1).map(g => `
+          <tr class="${hasDetail(g) ? "clickable" : ""}"${hasDetail(g) ? ` data-g="${esc(gameKey(g))}"` : ""}>
+            <td class="lft">${fmtDate(g.date)}</td>
+            <td class="lft dim">${g.site === "A" ? "away" : g.site === "H" ? "home" : "neutral"}</td>
+            <td><span class="chip ${g.won ? "W" : "L"}">${g.won ? "W" : "L"}</span></td>
+            <td><b>${g.teamScore}–${g.opponentScore}</b>${
+              endingPhrase(g) ? '<span class="ending">' + endingPhrase(g) + "</span>" : ""}</td>
+            <td class="lft dim">${esc(g.inningScores || "")}</td>
+            <td class="lft">${g.top ? esc(g.top.name) + ' <span class="dim">' + g.top.h + "-" + g.top.ab + "</span>" : '<span class="dim">—</span>'}</td>
+          </tr>`).join("")}</tbody></table></div></div>` +
+      (bat.length ? `<div class="m-sec"><h4>Their batters</h4>
+        <p class="sub-h">Against Kansas only — ${r.n} game${r.n === 1 ? "" : "s"}, which is why the line is shown beside the average.</p>
+        <div class="tbl-wrap"><table><thead><tr>
+          <th class="lft">Player</th><th class="lft">Pos</th><th>G</th><th>AB</th><th>R</th><th>H</th>
+          <th>2B</th><th>3B</th><th>HR</th><th>RBI</th><th>BB</th><th>SO</th><th>SB</th><th>AVG</th>
+        </tr></thead><tbody>${bat.map(t => `<tr>
+          <td class="lft">${t.number ? '<span class="dim">#' + esc(t.number) + "</span> " : ""}${esc(t.player)}</td>
+          <td class="lft dim">${esc(t.pos || "")}</td><td class="dim">${t.g}</td>
+          <td>${n(t.ab)}</td><td>${n(t.r)}</td><td><b>${n(t.h)}</b></td>
+          <td>${n(t["2b"])}</td><td>${n(t["3b"])}</td><td>${n(t.hr)}</td><td>${n(t.rbi)}</td>
+          <td>${n(t.bb)}</td><td>${n(t.so)}</td><td>${n(t.sb)}</td>
+          <td>${t.ab ? fAvg(t.h / t.ab) : "–"}</td></tr>`).join("")}</tbody></table></div></div>` : "") +
+      (pit.length ? `<div class="m-sec"><h4>Their pitchers</h4>
+        <div class="tbl-wrap"><table><thead><tr>
+          <th class="lft">Player</th><th>App</th><th class="lft">W–L–S</th><th>IP</th><th>H</th>
+          <th>R</th><th>ER</th><th>BB</th><th>SO</th><th>HR</th><th>ERA</th>
+        </tr></thead><tbody>${pit.map(t => `<tr>
+          <td class="lft">${t.number ? '<span class="dim">#' + esc(t.number) + "</span> " : ""}${esc(t.player)}</td>
+          <td class="dim">${t.app}</td><td class="lft">${t.w}–${t.l}${t.sv ? "–" + t.sv : ""}</td>
+          <td>${ip(n(t.outs))}</td><td>${n(t.ha)}</td><td>${n(t.ra)}</td><td>${n(t.er)}</td>
+          <td>${n(t.bba)}</td><td><b>${n(t.ks)}</b></td><td>${n(t.hra)}</td>
+          <td>${t.outs ? f2(t.er * 21 / t.outs) : "–"}</td></tr>`).join("")}</tbody></table></div></div>` : "");
+    omodal.showModal();
+  }
+})();
+
 // ---------- games table ----------
 (function gamesTable() {
   // Exhibitions are listed after the season, dimmed and without a game
   // number, so the fall results stay visible without being countable.
   const rows = [...games, ...exhibitions.slice().sort((a, b) => a.date < b.date ? -1 : 1)];
-  document.querySelector("#gamesTbl tbody").innerHTML = rows.map(g => `
-    <tr${isExhibition(g) ? ' class="exhib"' : ""}>
+  const tbody = document.querySelector("#gamesTbl tbody");
+  tbody.innerHTML = rows.map(g => `
+    <tr class="${isExhibition(g) ? "exhib " : ""}${hasDetail(g) ? "clickable" : ""}"${
+      hasDetail(g) ? ` data-g="${esc(gameKey(g))}" tabindex="0"` : ""}>
       <td class="dim">${g.n || "–"}</td>
       <td class="lft">${fmtDate(g.date)}</td>
       <td class="lft"><b>${g.site === "A" ? "at " : "vs "}${
@@ -989,6 +1382,15 @@ function aggregate(gs) {
       <td class="lft"><span class="phase-lbl">${
         isExhibition(g) ? g.season + " exhibition" : phaseOf(g)}</span></td>
     </tr>`).join("");
+  tbody.addEventListener("click", ev => {
+    const tr = ev.target.closest("tr[data-g]");
+    if (tr) openGame(tr.dataset.g);
+  });
+  tbody.addEventListener("keydown", ev => {
+    if (ev.key !== "Enter" && ev.key !== " ") return;
+    const tr = ev.target.closest("tr[data-g]");
+    if (tr) { ev.preventDefault(); openGame(tr.dataset.g); }
+  });
 })();
 
 // ---------- upcoming schedule ----------
@@ -1215,6 +1617,35 @@ function openPlayer(name) {
   }
   document.getElementById("mTiles").innerHTML = mt.map(([l, v], i) =>
     `<div class="tile${i % 2 ? " alt" : ""}"><div class="v">${v}</div><div class="l">${l}</div></div>`).join("");
+
+  // Recent form. A season line says what a player did; the last ten games say
+  // what she is doing, which is the question anyone actually has in May.
+  const formSec = document.getElementById("formSec");
+  const recent = (pitcher ? p.log.filter(e => e.l.p) : p.log).slice(-10);
+  if (recent.length >= 2) {
+    const sum = (k) => recent.reduce((a, e) => a + (e.l[k] || 0), 0);
+    document.getElementById("formSub").textContent = pitcher
+      ? "Last " + recent.length + " appearances: " +
+        f2(sum("outs") ? sum("er") * 21 / sum("outs") : 0) + " ERA, " +
+        ip(sum("outs")) + " IP, " + sum("ks") + " K"
+      : "Last " + recent.length + " games: " +
+        fAvg(sum("ab") ? sum("h") / sum("ab") : 0) + " (" + sum("h") + "-for-" + sum("ab") + "), " +
+        sum("hr") + " HR, " + sum("rbi") + " RBI";
+    document.getElementById("formRow").innerHTML = recent.map(e => {
+      const l = e.l;
+      const label = pitcher
+        ? ip(l.outs || 0) + " IP, " + (l.ks || 0) + " K"
+        : (l.h || 0) + "-" + (l.ab || 0) + (l.hr ? ", " + l.hr + " HR" : l.rbi ? ", " + l.rbi + " RBI" : "");
+      // A pitcher who was pulled before recording an out did not throw a
+      // scoreless outing, whatever her earned-run line says.
+      const good = pitcher ? (l.er || 0) === 0 && (l.outs || 0) > 0 : (l.h || 0) > 0;
+      return `<span class="form-g${good ? " hit" : ""}" title="${esc(fmtDate(e.g.date) + " " + oppName(e.g.opponent))}">` +
+        `${esc(fmtDate(e.g.date))} <b>${esc(label)}</b></span>`;
+    }).join("");
+    formSec.hidden = false;
+  } else {
+    formSec.hidden = true;
+  }
 
   // per-game chart: hits for batters, strikeouts for pitchers
   const entries = pitcher ? p.log.filter(e => e.l.p) : p.log;

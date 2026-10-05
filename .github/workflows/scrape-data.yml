@@ -70,8 +70,13 @@ jobs:
           SEASONS: '2026 2027'
         run: node scripts/scrape-ku-sb.mjs
 
+      # Both guard the parsing that turns a scrape into the seed, so they run
+      # before it rather than after something wrong has been written.
       - name: Rebuild seed from scraped data
-        run: python3 scripts/update-seed.py
+        run: |
+          node --test scripts/roster-parser.test.mjs
+          python3 scripts/test_seed_helpers.py
+          python3 scripts/update-seed.py
 
       - name: Rebuild dashboard from seed
         run: python3 scripts/build-dashboard.py

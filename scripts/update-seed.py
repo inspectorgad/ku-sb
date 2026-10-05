@@ -17,9 +17,15 @@ import glob
 import json
 import os
 import re
+import sys
 from datetime import datetime, timedelta, timezone
 
 SEED_PATH = "app/src/main/assets/seed.json"
+
+# Pure parsing helpers, kept apart so they can be tested without this
+# script running its whole job on import. See scripts/seed_helpers.py.
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from seed_helpers import decision, to_int, umpire_crew  # noqa: E402
 
 
 def load_json(path, default):
@@ -28,20 +34,6 @@ def load_json(path, default):
             return json.load(f)
     except (OSError, json.JSONDecodeError):
         return default
-
-
-def to_int(value):
-    try:
-        return int(str(value).strip() or 0)
-    except ValueError:
-        return 0
-
-
-def decision(value):
-    """Sidearm marks a pitching decision by putting the pitcher's updated
-    record in the wins/losses field ("8-5"); "0" (or blank) means no
-    decision. Saves are a plain count."""
-    return 0 if str(value or "0").strip() in ("", "0") else 1
 
 
 def innings_to_outs(value):
@@ -228,18 +220,10 @@ def parse_sidearm_game(data):
         v = (venue.get(src) or "").strip()
         if v:
             game[key] = v
-    # Umpires arrive as {"Home Plate": "...", "First": "..."}; flattened to
-    # "Home Plate: Craig Hyde · First: Joshua Fo..." in the order a box score
-    # prints them, since nothing needs them separately.
-    crew = venue.get("umpires") or {}
-    if isinstance(crew, dict):
-        order = ["Home Plate", "First", "Second Base", "Third Base",
-                 "Left Field", "Right Field"]
-        named = [f"{k}: {crew[k]}" for k in order if (crew.get(k) or "").strip()]
-        named += [f"{k}: {v}" for k, v in crew.items()
-                  if k not in order and (v or "").strip()]
-        if named:
-            game["umpires"] = " · ".join(named)
+    # Umpires, flattened — see umpire_crew.
+    crew = umpire_crew(venue.get("umpires"))
+    if crew:
+        game["umpires"] = crew
 
     # How long the game was scheduled to be, which is the only way to know a
     # short game was a run-rule rather than one that was called. Softball ends
