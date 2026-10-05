@@ -4,6 +4,7 @@ import com.example.ui.BATTING_COLUMNS
 import com.example.ui.GLOSSARY
 import com.example.ui.PITCHING_COLUMNS
 import com.example.ui.explain
+import org.junit.Assert.assertNotEquals
 import org.junit.Assert.assertNotNull
 import org.junit.Assert.assertNull
 import org.junit.Assert.assertTrue
@@ -55,10 +56,23 @@ class GlossaryTest {
         }
     }
 
+    /**
+     * The point of tapping a label is to learn something, so an entry has to do
+     * more than expand the letters: "2B" answered with "Doubles" leaves anyone
+     * who did not already know it none the wiser. Counting words rather than
+     * characters is deliberate — a character threshold called "Doubles." too
+     * terse and "Games played." acceptable, which is not the distinction worth
+     * enforcing.
+     */
     @Test
-    fun `definitions are sentences, not restatements of the abbreviation`() {
+    fun `definitions explain the abbreviation rather than restating it`() {
         for ((label, definition) in GLOSSARY) {
-            assertTrue("$label is too terse: $definition", definition.length > 12)
+            val body = definition.trimEnd().trimEnd('.')
+            assertNotEquals("$label is defined as itself", label.lowercase(), body.lowercase())
+            assertTrue(
+                "$label is too terse to explain anything: $definition",
+                body.split(" ").filter { it.isNotBlank() }.size >= 4
+            )
             assertTrue("$label should read as prose", definition.trimEnd().endsWith("."))
         }
     }

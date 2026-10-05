@@ -29,18 +29,18 @@ import androidx.compose.ui.Modifier
 val GLOSSARY: Map<String, String> = mapOf(
     // Batting — exactly the BATTING_COLUMNS headings. A test asserts none is
     // left without a definition.
-    "GP" to "Games played.",
+    "GP" to "Games played — any game the player appeared in, at bat or in the field.",
     "GS" to "Games started — in the lineup for the first pitch, rather than coming off the bench.",
     "AVG" to "Batting average: hits divided by at-bats. Walks, hit-by-pitches and " +
         "sacrifices are not at-bats, so they neither help nor hurt it.",
     "AB" to "At-bats. A plate appearance that ends in a hit or an out, excluding " +
         "walks, hit-by-pitches and sacrifices.",
-    "2B" to "Doubles.",
-    "3B" to "Triples.",
+    "2B" to "Doubles — a hit on which the batter reached second base.",
+    "3B" to "Triples — a hit on which the batter reached third base.",
     "RBI" to "Runs batted in: runners who scored because of this batter, " +
         "excluding runs scored on an error or a double play.",
     "HBP" to "Hit by pitch. Counts toward on-base percentage but not batting average.",
-    "SB" to "Stolen bases.",
+    "SB" to "Stolen bases — bases advanced on the pitch, without a hit, walk or error to help.",
     "CS" to "Caught stealing — thrown out attempting to steal.",
     "OBP" to "On-base percentage: how often a batter reaches base, counting walks " +
         "and hit-by-pitches: (H + BB + HBP) / (AB + BB + HBP + SF).",
