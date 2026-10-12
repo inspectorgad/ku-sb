@@ -82,9 +82,9 @@ Lawrence, Kansas
 Days
 20
 Hours
-59
+46
 Minutes
-32
+20
 Seconds
 Add To Calendar
 Text Only

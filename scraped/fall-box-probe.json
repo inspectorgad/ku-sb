@@ -1,0 +1,98 @@
+[
+ {
+  "date": "2026-09-26",
+  "opponent": "Nebraska",
+  "sidearmId": "20786",
+  "captured": false,
+  "tried": [
+   {
+    "url": "https://kuathletics.com/sports/softball/stats/2027/nebraska/boxscore/20786",
+    "result": "no boxscore node in payload"
+   },
+   {
+    "url": "https://kuathletics.com/sports/softball/stats/2026/nebraska/boxscore/20786",
+    "result": "no boxscore node in payload"
+   }
+  ]
+ },
+ {
+  "date": "2026-09-26",
+  "opponent": "Nebraska",
+  "sidearmId": "20787",
+  "captured": false,
+  "tried": [
+   {
+    "url": "https://kuathletics.com/sports/softball/stats/2027/nebraska/boxscore/20787",
+    "result": "no boxscore node in payload"
+   },
+   {
+    "url": "https://kuathletics.com/sports/softball/stats/2026/nebraska/boxscore/20787",
+    "result": "no boxscore node in payload"
+   }
+  ]
+ },
+ {
+  "date": "2026-10-02",
+  "opponent": "Rockhurst",
+  "sidearmId": "20789",
+  "captured": false,
+  "tried": [
+   {
+    "url": "https://kuathletics.com/sports/softball/stats/2027/rockhurst/boxscore/20789",
+    "result": "no boxscore node in payload"
+   },
+   {
+    "url": "https://kuathletics.com/sports/softball/stats/2026/rockhurst/boxscore/20789",
+    "result": "no boxscore node in payload"
+   }
+  ]
+ },
+ {
+  "date": "2026-10-09",
+  "opponent": "Missouri",
+  "sidearmId": "20790",
+  "captured": false,
+  "tried": [
+   {
+    "url": "https://kuathletics.com/sports/softball/stats/2027/missouri/boxscore/20790",
+    "result": "no boxscore node in payload"
+   },
+   {
+    "url": "https://kuathletics.com/sports/softball/stats/2026/missouri/boxscore/20790",
+    "result": "no boxscore node in payload"
+   }
+  ]
+ },
+ {
+  "date": "2026-10-10",
+  "opponent": "Nebraska",
+  "sidearmId": "20791",
+  "captured": false,
+  "tried": [
+   {
+    "url": "https://kuathletics.com/sports/softball/stats/2027/nebraska/boxscore/20791",
+    "result": "no boxscore node in payload"
+   },
+   {
+    "url": "https://kuathletics.com/sports/softball/stats/2026/nebraska/boxscore/20791",
+    "result": "no boxscore node in payload"
+   }
+  ]
+ },
+ {
+  "date": "2026-10-10",
+  "opponent": "Kansas City Diamonds",
+  "sidearmId": "20792",
+  "captured": false,
+  "tried": [
+   {
+    "url": "https://kuathletics.com/sports/softball/stats/2027/kansas-city-diamonds/boxscore/20792",
+    "result": "no boxscore node in payload"
+   },
+   {
+    "url": "https://kuathletics.com/sports/softball/stats/2026/kansas-city-diamonds/boxscore/20792",
+    "result": "no boxscore node in payload"
+   }
+  ]
+ }
+]
