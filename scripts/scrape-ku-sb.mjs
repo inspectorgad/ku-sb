@@ -430,6 +430,10 @@ try {
     }
   }
 
+  // What each attempt found, written out rather than only logged. Whether KU
+  // publishes a fall box score is the question this answers, and a run log is
+  // not readable from everywhere the answer is wanted.
+  const probe = [];
   if (byId.size) {
     console.log(`trying ${byId.size} box score(s) by id that the stats page did not link`);
   }
@@ -440,20 +444,26 @@ try {
     // tried. The id is what actually identifies the game.
     const seasons = Number(g.date.slice(5, 7)) >= 8 ? [year + 1, year] : [year, year + 1];
     let got = false;
+    const tried = [];
     for (const season of seasons) {
       const url = `https://kuathletics.com/sports/softball/stats/${season}/${slugify(g.opponent)}/boxscore/${id}`;
       try {
         await scrapeBoxScore(url, id);
         index.sidearmGames[id] = { captured: true, boxVersion: BOX_VERSION, season: String(season), url };
         console.log(`captured sidearm box ${id} by id (${g.date} ${g.opponent}) <- ${url}`);
+        tried.push({ url, result: 'captured' });
         got = true;
         break;
       } catch (e) {
         console.log(`by-id box ${id} ${g.date} ${g.opponent} [${season}]: ${e.message}`);
+        tried.push({ url, result: e.message });
       }
     }
     if (!got) console.log(`no box score published for ${g.date} ${g.opponent} (id ${id})`);
+    probe.push({ date: g.date, opponent: g.opponent, sidearmId: id, captured: got, tried });
   }
+  fs.writeFileSync('scraped/fall-box-probe.json', JSON.stringify(probe, null, 1));
+  console.log(`box-score probe: ${probe.filter((p) => p.captured).length}/${probe.length} captured`);
 
   // 2b. Roster: lines run "Jersey Number\n<num>\n<name>\nPosition\n<pos>\n..."
   const rosterPage = await openPage('https://kuathletics.com/sports/softball/roster', 8000);
