@@ -394,6 +394,67 @@ try {
     }
   }
 
+  // 2a-bis. Box scores the stats page never links to.
+  //
+  // Box scores are found above by harvesting links off the season stats page.
+  // Fall exhibitions are not on it — KU publishes no fall stats — so a fall
+  // game could never get a box score however long it waited, and the only
+  // fall data the app has ever held is a hand-written final score.
+  //
+  // But the schedule payload gives every fall game a Sidearm id of its own,
+  // and a box score lives at a URL built from that id. So the ids are tried
+  // directly. If the page is not there this costs one load and logs a miss;
+  // if it is, a fall game arrives with its full batting and pitching lines.
+  //
+  // Bounded to games already played. A future game cannot have a box score,
+  // and the 2027 slate alone would otherwise be thirty page loads for nothing.
+  const slugify = (s) => String(s || '')
+    .toLowerCase()
+    .replace(/[.'’]/g, '')
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/^-+|-+$/g, '');
+
+  const today = new Date().toISOString().slice(0, 10);
+  const byId = new Map();
+  for (const file of fs.readdirSync('scraped')) {
+    if (!/^schedule-.*\.json$/.test(file)) continue;
+    let list = [];
+    try {
+      list = JSON.parse(fs.readFileSync(`scraped/${file}`, 'utf8'));
+    } catch { continue; }
+    for (const g of Array.isArray(list) ? list : []) {
+      if (!g || !g.sidearmId || !g.date || g.date > today) continue;
+      const prior = index.sidearmGames[g.sidearmId];
+      if (prior?.captured && (prior.boxVersion ?? 1) >= BOX_VERSION) continue;
+      if (!byId.has(g.sidearmId)) byId.set(g.sidearmId, g);
+    }
+  }
+
+  if (byId.size) {
+    console.log(`trying ${byId.size} box score(s) by id that the stats page did not link`);
+  }
+  for (const [id, g] of byId) {
+    const year = Number(g.date.slice(0, 4));
+    // A fall game belongs to the following competition year, but which folder
+    // the box score sits under is not something the schedule says, so both are
+    // tried. The id is what actually identifies the game.
+    const seasons = Number(g.date.slice(5, 7)) >= 8 ? [year + 1, year] : [year, year + 1];
+    let got = false;
+    for (const season of seasons) {
+      const url = `https://kuathletics.com/sports/softball/stats/${season}/${slugify(g.opponent)}/boxscore/${id}`;
+      try {
+        await scrapeBoxScore(url, id);
+        index.sidearmGames[id] = { captured: true, boxVersion: BOX_VERSION, season: String(season), url };
+        console.log(`captured sidearm box ${id} by id (${g.date} ${g.opponent}) <- ${url}`);
+        got = true;
+        break;
+      } catch (e) {
+        console.log(`by-id box ${id} ${g.date} ${g.opponent} [${season}]: ${e.message}`);
+      }
+    }
+    if (!got) console.log(`no box score published for ${g.date} ${g.opponent} (id ${id})`);
+  }
+
   // 2b. Roster: lines run "Jersey Number\n<num>\n<name>\nPosition\n<pos>\n..."
   const rosterPage = await openPage('https://kuathletics.com/sports/softball/roster', 8000);
   for (let i = 0; i < 10; i++) {
