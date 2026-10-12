@@ -8,24 +8,6 @@ Scoreboard
 Coming Up
 View Calendar 
 Skip Ad
-Upcoming Event: Softball versus Missouri on October 9, 2026 at 5:00 pm
-Fri. 10/09/26
--
-5:00 pm
-Softball
-vs Missouri
-Upcoming Event: Softball versus Nebraska on October 10, 2026 at 4:00 pm
-Sat. 10/10/26
--
-4:00 pm
-Softball
-vs Nebraska
-Upcoming Event: Softball at Kansas City Diamonds on October 10, 2026 at 7:00 pm
-Sat. 10/10/26
--
-7:00 pm
-Softball
-at Kansas City Diamonds
 Upcoming Event: Softball versus Johnson County CC on October 13, 2026 at 5:00 pm
 Tue. 10/13/26
 -
@@ -58,6 +40,18 @@ Upcoming Event: Softball at Utah on March 27, 2027
 Sat. 03/27/27
 Softball
 at Utah
+Upcoming Event: Softball at Utah on March 28, 2027
+Sun. 03/28/27
+Softball
+at Utah
+Upcoming Event: Softball versus BYU on April 1, 2027
+Thu. 04/01/27
+Softball
+vs BYU
+Upcoming Event: Softball versus BYU on April 2, 2027
+Fri. 04/02/27
+Softball
+vs BYU
 MENU
 Toggle Navigation
 , Opens in new window
@@ -76,21 +70,21 @@ University of Kansas
 
 vs
 
-Missouri
+Johnson County CC
 
-Friday, October 9
+Tuesday, October 13
 
 Lawrence, Kansas
 
 5:00 pm
 
-3
-Days
-8
-Hours
 1
+Days
+21
+Hours
+13
 Minutes
-30
+6
 Seconds
 Add To Calendar
 Text Only
