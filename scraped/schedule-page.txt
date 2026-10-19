@@ -8,18 +8,6 @@ Scoreboard
 Coming Up
 View Calendar 
 Skip Ad
-Upcoming Event: Softball versus Johnson County CC on October 13, 2026 at 5:00 pm
-Tue. 10/13/26
--
-5:00 pm
-Softball
-vs Johnson County CC
-Upcoming Event: Softball versus Ottawa on October 14, 2026 at 5:00 pm
-Wed. 10/14/26
--
-5:00 pm
-Softball
-vs Ottawa
 Upcoming Event: Softball at Texas Tech on March 12, 2027
 Fri. 03/12/27
 Softball
@@ -52,6 +40,14 @@ Upcoming Event: Softball versus BYU on April 2, 2027
 Fri. 04/02/27
 Softball
 vs BYU
+Upcoming Event: Softball versus BYU on April 3, 2027
+Sat. 04/03/27
+Softball
+vs BYU
+Upcoming Event: Softball versus UCF on April 9, 2027
+Fri. 04/09/27
+Softball
+vs UCF
 MENU
 Toggle Navigation
 , Opens in new window
@@ -68,23 +64,21 @@ Facility Info
 
 University of Kansas
 
-vs
+at
 
-Johnson County CC
+Texas Tech
 
-Tuesday, October 13
+Friday, March 12
 
-Lawrence, Kansas
+Lubbock, Texas
 
-5:00 pm
-
-1
+143
 Days
-3
+13
 Hours
-21
+44
 Minutes
-32
+33
 Seconds
 Add To Calendar
 Text Only
@@ -198,6 +192,18 @@ Oct 10
 
 History
 vs
+Ottawa
+
+Arrocha Ballpark
+Lawrence, Kansas
+
+Oct 12
+(Mon)
+
+5:00 pm
+
+History
+vs
 Johnson County CC
 
 Arrocha Ballpark
@@ -205,18 +211,6 @@ Lawrence, Kansas
 
 Oct 13
 (Tue)
-
-5:00 pm
-
-History
-vs
-Ottawa
-
-Arrocha Ballpark
-Lawrence, Kansas
-
-Oct 14
-(Wed)
 
 5:00 pm
 

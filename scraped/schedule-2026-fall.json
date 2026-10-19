@@ -84,6 +84,20 @@
   "opponentScore": null
  },
  {
+  "date": "2026-10-12",
+  "opponent": "Ottawa",
+  "site": "H",
+  "time": "5:00 pm",
+  "location": "Lawrence, Kansas",
+  "conference": false,
+  "doubleheader": false,
+  "tournament": "",
+  "sidearmId": "20793",
+  "played": false,
+  "teamScore": null,
+  "opponentScore": null
+ },
+ {
   "date": "2026-10-13",
   "opponent": "Johnson County CC",
   "site": "H",
@@ -93,20 +107,6 @@
   "doubleheader": false,
   "tournament": "",
   "sidearmId": "20788",
-  "played": false,
-  "teamScore": null,
-  "opponentScore": null
- },
- {
-  "date": "2026-10-14",
-  "opponent": "Ottawa",
-  "site": "H",
-  "time": "5:00 pm",
-  "location": "Lawrence, Kansas",
-  "conference": false,
-  "doubleheader": false,
-  "tournament": "",
-  "sidearmId": "20793",
   "played": false,
   "teamScore": null,
   "opponentScore": null
