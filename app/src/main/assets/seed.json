@@ -1,6 +1,6 @@
 {
  "formatVersion": 1,
- "generatedAt": "2026-10-12T00:46:53Z",
+ "generatedAt": "2026-10-19T16:15:28Z",
  "team": "Kansas Jayhawks Softball",
  "players": [
   {
@@ -34448,15 +34448,15 @@
    "startTime": "4:00 pm"
   },
   {
-   "date": "2026-10-13",
-   "opponent": "Johnson County CC",
+   "date": "2026-10-12",
+   "opponent": "Ottawa",
    "season": "Fall 2026",
    "site": "H",
    "startTime": "5:00 pm"
   },
   {
-   "date": "2026-10-14",
-   "opponent": "Ottawa",
+   "date": "2026-10-13",
+   "opponent": "Johnson County CC",
    "season": "Fall 2026",
    "site": "H",
    "startTime": "5:00 pm"
