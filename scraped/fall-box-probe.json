@@ -96,6 +96,22 @@
   ]
  },
  {
+  "date": "2026-10-12",
+  "opponent": "Ottawa",
+  "sidearmId": "20793",
+  "captured": false,
+  "tried": [
+   {
+    "url": "https://kuathletics.com/sports/softball/stats/2027/ottawa/boxscore/20793",
+    "result": "no boxscore node in payload"
+   },
+   {
+    "url": "https://kuathletics.com/sports/softball/stats/2026/ottawa/boxscore/20793",
+    "result": "no boxscore node in payload"
+   }
+  ]
+ },
+ {
   "date": "2026-10-13",
   "opponent": "Johnson County CC",
   "sidearmId": "20788",
@@ -107,22 +123,6 @@
    },
    {
     "url": "https://kuathletics.com/sports/softball/stats/2026/johnson-county-cc/boxscore/20788",
-    "result": "no boxscore node in payload"
-   }
-  ]
- },
- {
-  "date": "2026-10-14",
-  "opponent": "Ottawa",
-  "sidearmId": "20793",
-  "captured": false,
-  "tried": [
-   {
-    "url": "https://kuathletics.com/sports/softball/stats/2027/ottawa/boxscore/20793",
-    "result": "no boxscore node in payload"
-   },
-   {
-    "url": "https://kuathletics.com/sports/softball/stats/2026/ottawa/boxscore/20793",
     "result": "no boxscore node in payload"
    }
   ]
