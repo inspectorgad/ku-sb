@@ -1,7 +1,7 @@
 package com.example.data
 
-import android.content.Context
-import org.json.JSONObject
+import com.example.json.JSONObject
+import com.example.platform.Device
 
 /**
  * Syncs the bundled assets/seed.json into the database on every launch,
@@ -31,10 +31,8 @@ import org.json.JSONObject
  */
 object Seeder {
 
-    suspend fun sync(context: Context, dao: JayhawksDao) {
-        val json = runCatching {
-            context.assets.open("seed.json").bufferedReader().use { it.readText() }
-        }.getOrNull() ?: return
+    suspend fun sync(device: Device, dao: JayhawksDao) {
+        val json = device.readAsset("seed.json") ?: return
 
         runCatching { merge(JSONObject(json), dao) }
     }
@@ -419,7 +417,7 @@ object Seeder {
      * `inning|ku(1/0)|usScore|themScore|narrative`. The narrative comes last
      * so a stray pipe inside it cannot break the earlier fields.
      */
-    private fun encodeScoring(arr: org.json.JSONArray?): String {
+    private fun encodeScoring(arr: com.example.json.JSONArray?): String {
         if (arr == null || arr.length() == 0) return ""
         val sb = StringBuilder()
         for (i in 0 until arr.length()) {

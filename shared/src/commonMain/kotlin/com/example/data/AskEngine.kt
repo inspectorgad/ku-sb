@@ -2,21 +2,14 @@ package com.example.data
 
 import kotlinx.coroutines.CancellationException
 import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.suspendCancellableCoroutine
 import kotlinx.coroutines.withContext
-import okhttp3.Call
-import okhttp3.Callback
-import okhttp3.MediaType.Companion.toMediaType
-import okhttp3.OkHttpClient
-import okhttp3.Request
-import okhttp3.RequestBody.Companion.toRequestBody
-import okhttp3.Response
-import org.json.JSONArray
-import org.json.JSONObject
-import java.io.IOException
-import java.util.concurrent.TimeUnit
-import kotlin.coroutines.resume
-import kotlin.coroutines.resumeWithException
+import com.example.platform.Http
+import com.example.platform.HttpException
+import com.example.platform.newHttp
+import com.example.text.fixed
+import com.example.text.roundHalfUp
+import com.example.json.JSONArray
+import com.example.json.JSONObject
 
 /**
  * A model the reader can pick. Prices are dollars per million tokens;
@@ -78,7 +71,7 @@ class AskException(message: String) : Exception(message)
  * app that already has OkHttp and a JSON parser.
  */
 class AskEngine(
-    private val client: OkHttpClient = defaultClient,
+    private val client: Http = defaultClient,
     private val baseUrl: String = "https://api.anthropic.com",
     private val loadPack: suspend () -> JSONObject = { fetchPack(defaultClient) }
 ) {
@@ -196,26 +189,22 @@ class AskEngine(
     }
 
     private suspend fun send(apiKey: String, body: JSONObject): JSONObject {
-        val builder = Request.Builder()
-            .url("$baseUrl/v1/messages?beta=true")
-            .header("x-api-key", apiKey)
-            .header("anthropic-version", "2023-06-01")
-            .post(body.toString().toRequestBody("application/json".toMediaType()))
-        if (body.has("fallbacks")) builder.header("anthropic-beta", FALLBACK_BETA)
-        val call = client.newCall(builder.build())
+        val headers = buildMap {
+            put("x-api-key", apiKey)
+            put("anthropic-version", "2023-06-01")
+            if (body.has("fallbacks")) put("anthropic-beta", FALLBACK_BETA)
+        }
         val response = try {
-            call.await()
-        } catch (e: IOException) {
+            client.post("$baseUrl/v1/messages?beta=true", headers, body.toString())
+        } catch (e: HttpException) {
             throw AskException("Couldn't reach api.anthropic.com. Check your connection — some networks block it.")
         }
-        return response.use { r ->
-            val text = withContext(Dispatchers.IO) { r.body?.string().orEmpty() }
-            if (!r.isSuccessful) throw AskException(explainError(r.code, text))
-            try {
-                JSONObject(text)
-            } catch (e: Exception) {
-                throw AskException("Anthropic sent back something the app couldn't read.")
-            }
+        val text = response.text()
+        if (!response.isSuccessful) throw AskException(explainError(response.code, text))
+        return try {
+            JSONObject(text)
+        } catch (e: Exception) {
+            throw AskException("Anthropic sent back something the app couldn't read.")
         }
     }
 
@@ -281,20 +270,17 @@ class AskEngine(
             "https://github.com/inspectorgad/ku-sb/releases/latest/download/ask-data.json",
         )
 
-        val defaultClient: OkHttpClient by lazy {
-            OkHttpClient.Builder()
-                .connectTimeout(15, TimeUnit.SECONDS)
-                // One round trip can include several runs of Claude's code.
-                .readTimeout(5, TimeUnit.MINUTES)
-                .build()
+        // One round trip can include several runs of Claude's code, so the
+        // read timeout is minutes rather than seconds.
+        val defaultClient: Http by lazy {
+            newHttp(connectSeconds = 15, readSeconds = 5 * 60)
         }
 
-        suspend fun fetchPack(client: OkHttpClient, urls: List<String> = PACK_URLS): JSONObject {
+        suspend fun fetchPack(client: Http, urls: List<String> = PACK_URLS): JSONObject {
             for (url in urls) {
                 val pack = try {
-                    val r = client.newCall(Request.Builder().url(url).header("Cache-Control", "no-cache").build()).await()
-                    r.use { if (it.isSuccessful) withContext(Dispatchers.IO) { it.body?.string() } else null }
-                        ?.let { JSONObject(it) }
+                    val r = client.get(url, mapOf("Cache-Control" to "no-cache"))
+                    (if (r.isSuccessful) r.text() else null)?.let { JSONObject(it) }
                 } catch (e: CancellationException) {
                     throw e
                 } catch (e: Exception) {
@@ -329,8 +315,8 @@ class AskEngine(
             val cents = dollars * 100
             val price = when {
                 cents < 1 -> "under 1¢"
-                cents < 10 -> "about ${"%.1f".format(java.util.Locale.US, cents)}¢"
-                else -> "about ${Math.round(cents)}¢"
+                cents < 10 -> "about ${fixed(cents, 1)}¢"
+                else -> "about ${roundHalfUp(cents)}¢"
             }
             return "${model.shortName} · $price" +
                 (if (usage[2] > 0) " (season data read from cache)" else "") +
@@ -371,18 +357,4 @@ class AskEngine(
                     .put("allowed_callers", JSONArray().put("code_execution_20260120"))
             )
     }
-}
-
-/** Runs the call off the main thread; cancelling the coroutine cancels the call. */
-private suspend fun Call.await(): Response = suspendCancellableCoroutine { cont ->
-    cont.invokeOnCancellation { cancel() }
-    enqueue(object : Callback {
-        override fun onFailure(call: Call, e: IOException) {
-            if (!cont.isCancelled) cont.resumeWithException(e)
-        }
-
-        override fun onResponse(call: Call, response: Response) {
-            if (cont.isCancelled) response.close() else cont.resume(response)
-        }
-    })
 }

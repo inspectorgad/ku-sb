@@ -12,6 +12,7 @@ import com.example.data.get
 import com.example.data.Player
 import com.example.data.PollEntry
 import com.example.data.SeasonSync
+import com.example.platform.AndroidDevice
 import com.example.data.Seeder
 import com.example.data.StatLine
 import com.example.data.SyncResult
@@ -29,10 +30,13 @@ class JayhawksViewModel(app: Application) : AndroidViewModel(app) {
 
     private val dao = JayhawksDatabase.get(app).dao()
 
+    // The phone's storage, behind the same interface the iPhone will use.
+    private val device = AndroidDevice(app)
+
     private val _isSyncing = MutableStateFlow(false)
     val isSyncing: StateFlow<Boolean> = _isSyncing.asStateFlow()
 
-    private val _dataUpdatedAt = MutableStateFlow(SeasonSync.lastGeneratedAt(app))
+    private val _dataUpdatedAt = MutableStateFlow(SeasonSync.lastGeneratedAt(device))
     val dataUpdatedAt: StateFlow<String?> = _dataUpdatedAt.asStateFlow()
 
     // Snackbar messages, emitted only for user-initiated refreshes.
@@ -43,8 +47,8 @@ class JayhawksViewModel(app: Application) : AndroidViewModel(app) {
         viewModelScope.launch {
             // Bundled data first (also covers first launch offline), then a
             // throttled network sync for anything newer.
-            Seeder.sync(app, dao)
-            if (SeasonSync.shouldAutoSync(app)) refreshInternal(manual = false)
+            Seeder.sync(device, dao)
+            if (SeasonSync.shouldAutoSync(device)) refreshInternal(manual = false)
         }
     }
 
@@ -54,11 +58,11 @@ class JayhawksViewModel(app: Application) : AndroidViewModel(app) {
         if (_isSyncing.value) return
         _isSyncing.value = true
         val result = try {
-            SeasonSync.sync(getApplication(), dao)
+            SeasonSync.sync(device, dao)
         } finally {
             _isSyncing.value = false
         }
-        _dataUpdatedAt.value = SeasonSync.lastGeneratedAt(getApplication())
+        _dataUpdatedAt.value = SeasonSync.lastGeneratedAt(device)
         if (manual) {
             _syncMessages.emit(
                 when (result) {
