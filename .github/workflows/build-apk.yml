@@ -41,7 +41,7 @@ jobs:
 
       - uses: gradle/actions/setup-gradle@v4
         with:
-          gradle-version: '9.3.1'
+          gradle-version: '9.4.1'
 
       # The debug keystore is committed on purpose — its password is the
       # Android default and a fixed debug identity is what lets `adb install -r`
