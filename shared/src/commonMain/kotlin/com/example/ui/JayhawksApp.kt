@@ -19,6 +19,7 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.example.JayhawksViewModel
 
@@ -67,8 +68,11 @@ fun JayhawksApp(viewModel: JayhawksViewModel) {
     val openPlayer = openPlayerId?.let { id -> players.firstOrNull { it.id == id } }
     val openGame = openGameId?.let { id -> games.firstOrNull { it.id == id } }
 
-    when {
-        openPlayer != null -> PlayerDetailScreen(
+    // The open page, or null when nothing is open. Written once: on a phone it
+    // fills the screen, and on a wide window the same thing sits beside its
+    // list, so neither layout has its own copy to keep in step.
+    val detail: (@Composable () -> Unit)? = when {
+        openPlayer != null -> { { PlayerDetailScreen(
             player = openPlayer,
             games = games,
             statLines = statLines,
@@ -78,11 +82,11 @@ fun JayhawksApp(viewModel: JayhawksViewModel) {
                 openPlayerId = null
             },
             onBack = { openPlayerId = null }
-        )
+        ) } }
 
-        askOpen -> AskScreen(onBack = { askOpen = false })
+        askOpen -> { { AskScreen(onBack = { askOpen = false }) } }
 
-        openOpponentKey != null -> OpponentDetailScreen(
+        openOpponentKey != null -> { { OpponentDetailScreen(
             opponentKey = openOpponentKey!!,
             season = openOpponentSeason,
             players = players,
@@ -90,9 +94,9 @@ fun JayhawksApp(viewModel: JayhawksViewModel) {
             statLines = statLines,
             opponentStatLines = opponentStatLines,
             onBack = { openOpponentKey = null }
-        )
+        ) } }
 
-        openGame != null -> GameDetailScreen(
+        openGame != null -> { { GameDetailScreen(
             game = openGame,
             players = players,
             statLines = statLines,
@@ -105,9 +109,92 @@ fun JayhawksApp(viewModel: JayhawksViewModel) {
             onSaveStatLine = viewModel::saveStatLine,
             onDeleteStatLine = viewModel::deleteStatLine,
             onBack = { openGameId = null }
-        )
+        ) } }
 
-        else -> Scaffold(
+        else -> null
+    }
+
+    // Each tab's own screen, likewise written once: the bottom bar shows it
+    // full width, the rail shows it in the list pane or centred on its own.
+    val tabContent: @Composable () -> Unit = {
+        when (currentTab) {
+            Tab.Roster -> RosterScreen(
+                players = players,
+                statLines = statLines,
+                onSavePlayer = viewModel::savePlayer,
+                onOpenPlayer = { openPlayerId = it.id }
+            )
+
+            Tab.Games -> GamesScreen(
+                games = games,
+                statLines = statLines,
+                players = players,
+                onSaveGame = { game -> viewModel.saveGame(game) { openGameId = it } },
+                onOpenGame = { openGameId = it.id }
+            )
+
+            Tab.Season -> SeasonScreen(
+                players = players,
+                games = games,
+                statLines = statLines,
+                standings = standings,
+                onOpenAsk = { askOpen = true }
+            )
+
+            Tab.Leaders -> LeadersScreen(
+                players = players,
+                games = games,
+                statLines = statLines,
+                dataUpdatedAt = dataUpdatedAt
+            )
+
+            Tab.Opponents -> OpponentsScreen(
+                games = games,
+                onOpenOpponent = { key, season ->
+                    openOpponentKey = key
+                    openOpponentSeason = season
+                }
+            )
+
+            Tab.Big12 -> StandingsScreen(
+                standings = standings,
+                pollEntries = pollEntries,
+                rankingSnapshots = rankingSnapshots
+            )
+        }
+    }
+
+    val windowWidth = windowWidthDp()
+    if (isWideWindow(windowWidth)) {
+        // A rail down the side, and a page beside its list where there is room.
+        WideFrame(
+            currentTab = currentTab,
+            onSelectTab = { tab ->
+                // Changing tab closes whatever page was open, as tapping the
+                // bottom bar does on a phone.
+                openPlayerId = null
+                openGameId = null
+                openOpponentKey = null
+                askOpen = false
+                currentTab = tab
+            }
+        ) {
+            ListDetailPanes(
+                windowWidth = windowWidth.dp,
+                showsDetail = detail != null,
+                placeholder = placeholderFor(currentTab),
+                isRefreshing = isSyncing,
+                onRefresh = viewModel::refresh,
+                snackbarHostState = snackbarHostState,
+                list = tabContent,
+                detail = { detail?.invoke() }
+            )
+        }
+    } else if (detail != null) {
+        // The phone layout, unchanged: a page covers the screen.
+        detail()
+    } else {
+        Scaffold(
             snackbarHost = { SnackbarHost(snackbarHostState) },
             bottomBar = {
                 NavigationBar {
@@ -115,19 +202,7 @@ fun JayhawksApp(viewModel: JayhawksViewModel) {
                         NavigationBarItem(
                             selected = currentTab == tab,
                             onClick = { currentTab = tab },
-                            icon = {
-                                Icon(
-                                    imageVector = when (tab) {
-                                        Tab.Roster -> AppIcons.Groups
-                                        Tab.Games -> AppIcons.List
-                                        Tab.Season -> AppIcons.Insights
-                                        Tab.Leaders -> AppIcons.EmojiEvents
-                                        Tab.Opponents -> AppIcons.Shield
-                                        Tab.Big12 -> AppIcons.Leaderboard
-                                    },
-                                    contentDescription = tab.label
-                                )
-                            },
+                            icon = { Icon(imageVector = tab.icon, contentDescription = tab.label) },
                             label = { TabLabel(tab.label) }
                         )
                     }
@@ -141,51 +216,7 @@ fun JayhawksApp(viewModel: JayhawksViewModel) {
                     .fillMaxSize()
                     .padding(innerPadding)
             ) {
-                when (currentTab) {
-                    Tab.Roster -> RosterScreen(
-                        players = players,
-                        statLines = statLines,
-                        onSavePlayer = viewModel::savePlayer,
-                        onOpenPlayer = { openPlayerId = it.id }
-                    )
-
-                    Tab.Games -> GamesScreen(
-                        games = games,
-                        statLines = statLines,
-                        players = players,
-                        onSaveGame = { game -> viewModel.saveGame(game) { openGameId = it } },
-                        onOpenGame = { openGameId = it.id }
-                    )
-
-                    Tab.Season -> SeasonScreen(
-                        players = players,
-                        games = games,
-                        statLines = statLines,
-                        standings = standings,
-                        onOpenAsk = { askOpen = true }
-                    )
-
-                    Tab.Leaders -> LeadersScreen(
-                        players = players,
-                        games = games,
-                        statLines = statLines,
-                        dataUpdatedAt = dataUpdatedAt
-                    )
-
-                    Tab.Opponents -> OpponentsScreen(
-                        games = games,
-                        onOpenOpponent = { key, season ->
-                            openOpponentKey = key
-                            openOpponentSeason = season
-                        }
-                    )
-
-                    Tab.Big12 -> StandingsScreen(
-                        standings = standings,
-                        pollEntries = pollEntries,
-                        rankingSnapshots = rankingSnapshots
-                    )
-                }
+                tabContent()
             }
         }
     }
