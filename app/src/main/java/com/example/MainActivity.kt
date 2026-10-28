@@ -5,6 +5,10 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import androidx.compose.runtime.CompositionLocalProvider
+import androidx.lifecycle.viewmodel.compose.viewModel
+import com.example.JayhawksViewModel
+import com.example.data.JayhawksDatabase
+import com.example.data.get
 import com.example.platform.AndroidDevice
 import com.example.ui.JayhawksApp
 import com.example.ui.LocalDevice
@@ -19,9 +23,14 @@ class MainActivity : ComponentActivity() {
         // an iPhone with the Keychain behind it instead.
         val device = AndroidDevice(applicationContext)
         setContent {
+            // Kept across rotation like any ViewModel; built here because it
+            // takes this phone's database and storage rather than finding them.
+            val model = viewModel {
+                JayhawksViewModel(JayhawksDatabase.get(applicationContext).dao(), device)
+            }
             CompositionLocalProvider(LocalDevice provides device) {
                 MyApplicationTheme {
-                    JayhawksApp()
+                    JayhawksApp(model)
                 }
             }
         }

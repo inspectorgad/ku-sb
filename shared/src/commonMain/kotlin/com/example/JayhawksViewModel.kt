@@ -1,18 +1,16 @@
 package com.example
 
-import android.app.Application
-import androidx.lifecycle.AndroidViewModel
+import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.data.ConferenceStanding
 import com.example.data.OpponentStatLine
 import com.example.data.RankingSnapshot
 import com.example.data.Game
-import com.example.data.JayhawksDatabase
-import com.example.data.get
 import com.example.data.Player
 import com.example.data.PollEntry
+import com.example.data.JayhawksDao
 import com.example.data.SeasonSync
-import com.example.platform.AndroidDevice
+import com.example.platform.Device
 import com.example.data.Seeder
 import com.example.data.StatLine
 import com.example.data.SyncResult
@@ -26,12 +24,14 @@ import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.stateIn
 import kotlinx.coroutines.launch
 
-class JayhawksViewModel(app: Application) : AndroidViewModel(app) {
-
-    private val dao = JayhawksDatabase.get(app).dao()
-
-    // The phone's storage, behind the same interface the iPhone will use.
-    private val device = AndroidDevice(app)
+/**
+ * The screens' one source of data, built by each app with that phone's
+ * database and storage — so the same screens run on Android and on iPhone.
+ */
+class JayhawksViewModel(
+    private val dao: JayhawksDao,
+    private val device: Device,
+) : ViewModel() {
 
     private val _isSyncing = MutableStateFlow(false)
     val isSyncing: StateFlow<Boolean> = _isSyncing.asStateFlow()
