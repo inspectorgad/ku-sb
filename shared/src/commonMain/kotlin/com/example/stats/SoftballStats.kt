@@ -1,7 +1,7 @@
 package com.example.stats
 
 import com.example.data.StatLine
-import java.util.Locale
+import com.example.text.fixed
 
 /**
  * Aggregated batting totals for any collection of stat lines
@@ -129,17 +129,17 @@ fun aggregatePitching(lines: Collection<StatLine>): PitchingTotals {
 
 /** Formats a batting rate softball-style: .452, .000, 1.000 */
 fun formatAvg(value: Double): String {
-    val formatted = String.format(Locale.US, "%.3f", value)
+    val formatted = fixed(value, 3)
     return formatted
         .replace("0.", ".")
         .let { if (it == "-.000") ".000" else it }
 }
 
 /** Formats an ERA/WHIP-style rate: 2.45, 0.98 */
-fun formatEra(value: Double): String = String.format(Locale.US, "%.2f", value)
+fun formatEra(value: Double): String = fixed(value, 2)
 
 /** Formats a per-game rate: 1.4, 0.4 */
-fun formatPerGame(value: Double): String = String.format(Locale.US, "%.1f", value)
+fun formatPerGame(value: Double): String = fixed(value, 1)
 
 /** Outs recorded -> conventional innings notation: 22 outs = "7.1". */
 fun formatInnings(outs: Int): String = "${outs / 3}.${outs % 3}"
