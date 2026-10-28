@@ -100,7 +100,12 @@ jobs:
       # Publish the APK to a rolling "latest-apk" release for one-tap phone
       # download:
       # https://github.com/inspectorgad/ku-sb/releases/latest/download/app-debug.apk
+      # main publishes the rolling release the installed app updates from.
+      # A branch publishes its own prerelease instead, so a test build can
+      # never replace the stable APK, and never touches season-data.json or
+      # ask-data.json — which the installed app downloads from "latest".
       - name: Publish APK to rolling release
+        if: github.ref == 'refs/heads/main'
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
@@ -124,3 +129,21 @@ jobs:
           cp docs/ask-data.json ask-data.json
           gh release upload latest-apk ask-data.json \
             --repo "$GITHUB_REPOSITORY" --clobber
+
+      - name: Publish a branch test APK
+        if: github.ref != 'refs/heads/main'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          BRANCH: ${{ github.ref_name }}
+        run: |
+          TAG="test-apk-$(echo "$BRANCH" | tr '/' '-')"
+          gh release view "$TAG" --repo "$GITHUB_REPOSITORY" > /dev/null 2>&1 || \
+            gh release create "$TAG" \
+              --repo "$GITHUB_REPOSITORY" \
+              --target "$GITHUB_SHA" \
+              --title "KU Softball - test build ($BRANCH)" \
+              --notes "Test build from \`$BRANCH\`, for installing over the current app before the branch is merged. Same applicationId and the same debug signing key as the stable build, so it updates in place and keeps existing data. The stable APK is unaffected and stays at the latest-apk release." \
+              --prerelease
+          gh release upload "$TAG" app/build/outputs/apk/debug/app-debug.apk \
+            --repo "$GITHUB_REPOSITORY" --clobber
+          echo "Test APK: https://github.com/$GITHUB_REPOSITORY/releases/download/$TAG/app-debug.apk"
