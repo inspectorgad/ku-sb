@@ -95,7 +95,7 @@ private class DefaultsSettings(private val group: String) : Settings {
  * makes.
  */
 private object Keychain {
-    private const val SERVICE = "io.github.inspectorgad.kuvolleyball"
+    private const val SERVICE = "io.github.inspectorgad.kusb"
 
     fun load(account: String): String? = withCf(SERVICE, account) { service, acct ->
         val result = alloc<CFTypeRefVar>()
