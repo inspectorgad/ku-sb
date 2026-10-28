@@ -84,7 +84,12 @@ class AndroidDevice(context: Context) : Device {
 
     private companion object {
         const val SECRETS = "ask_key"
-        const val ALIAS = "ku_ask_api_key"
+        // This app's own alias, not ku-volleyball's. The Keystore entry that
+        // encrypted an installed copy's saved API key is named ku_sb_ask_api_key;
+        // under any other name the lookup misses, a fresh key is generated, the
+        // stored blob no longer decrypts, and the reader silently loses the key
+        // they entered and has to find it again.
+        const val ALIAS = "ku_sb_ask_api_key"
         const val TRANSFORM = "AES/GCM/NoPadding"
     }
 }

@@ -47,7 +47,6 @@ import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.font.FontStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.input.KeyboardType
@@ -168,9 +167,9 @@ object AskSession {
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun AskScreen(onBack: () -> Unit) {
-    val context = LocalContext.current.applicationContext
-    var savedKey by remember { mutableStateOf(AskSession.sessionKey ?: AskKeyStore.load(context)) }
-    var model by remember { mutableStateOf(AskKeyStore.model(context)) }
+    val device = LocalDevice.current
+    var savedKey by remember { mutableStateOf(AskSession.sessionKey ?: AskKeyStore.load(device)) }
+    var model by remember { mutableStateOf(AskKeyStore.model(device)) }
     var question by rememberSaveable { mutableStateOf("") }
     val busy = AskSession.running != null
     val listState = rememberLazyListState()
@@ -216,7 +215,7 @@ fun AskScreen(onBack: () -> Unit) {
                         savedKey = savedKey,
                         model = model,
                         onKey = { key, keep ->
-                            if (keep && AskKeyStore.save(context, key)) {
+                            if (keep && AskKeyStore.save(device, key)) {
                                 AskSession.sessionKey = null
                             } else {
                                 AskSession.sessionKey = key
@@ -224,13 +223,13 @@ fun AskScreen(onBack: () -> Unit) {
                             savedKey = key
                         },
                         onForget = {
-                            AskKeyStore.forget(context)
+                            AskKeyStore.forget(device)
                             AskSession.sessionKey = null
                             savedKey = null
                         },
                         onModel = {
                             model = it
-                            AskKeyStore.saveModel(context, it)
+                            AskKeyStore.saveModel(device, it)
                         }
                     )
                 }
