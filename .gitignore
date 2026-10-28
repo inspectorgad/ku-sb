@@ -10,6 +10,10 @@
 /.idea/assetWizardSettings.xml
 .DS_Store
 /build
+# Module build outputs. Only the root /build was ignored, which was enough
+# while nothing was ever built in this checkout; local builds put one in
+# every module.
+build/
 /captures
 .externalNativeBuild
 .cxx
