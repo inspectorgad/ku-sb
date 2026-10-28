@@ -30,6 +30,15 @@ import com.example.stats.PitchingTotals
 import com.example.stats.formatAvg
 import com.example.stats.formatEra
 import com.example.stats.formatInnings
+import androidx.compose.foundation.BorderStroke
+import androidx.compose.foundation.layout.RowScope
+import androidx.compose.material3.ButtonDefaults
+import androidx.compose.material3.FilterChip
+import androidx.compose.material3.FilterChipDefaults
+import androidx.compose.material3.LocalTextStyle
+import androidx.compose.material3.OutlinedButton
+import androidx.compose.ui.text.TextAutoSize
+import androidx.compose.ui.text.style.TextOverflow
 
 // Column label to cell width for the batting table.
 val BATTING_COLUMNS = listOf(
@@ -220,3 +229,61 @@ fun EmptyState(title: String, subtitle: String, modifier: Modifier = Modifier) {
 }
 
 val ListContentPadding = PaddingValues(start = 16.dp, end = 16.dp, top = 8.dp, bottom = 96.dp)
+
+// Material 3 1.4, which Compose Multiplatform 1.12 brings, recoloured
+// outlined buttons and chips in quieter greys and changed how a six-tab bar
+// lays its labels out. The app keeps the look it was designed with, set here
+// in one place rather than at each call.
+
+/** An OutlinedButton as this app has always drawn it: KU-blue text, mid-grey border. */
+@Composable
+fun AppOutlinedButton(
+    onClick: () -> Unit,
+    modifier: Modifier = Modifier,
+    content: @Composable RowScope.() -> Unit
+) {
+    OutlinedButton(
+        onClick = onClick,
+        modifier = modifier,
+        colors = ButtonDefaults.outlinedButtonColors(contentColor = MaterialTheme.colorScheme.primary),
+        border = BorderStroke(1.dp, MaterialTheme.colorScheme.outline),
+        content = content
+    )
+}
+
+/** A FilterChip whose unselected border is the mid-grey outline it has always had. */
+@Composable
+fun AppFilterChip(
+    selected: Boolean,
+    onClick: () -> Unit,
+    label: @Composable () -> Unit
+) {
+    FilterChip(
+        selected = selected,
+        onClick = onClick,
+        label = label,
+        border = FilterChipDefaults.filterChipBorder(
+            enabled = true,
+            selected = selected,
+            borderColor = MaterialTheme.colorScheme.outline
+        )
+    )
+}
+
+/**
+ * A tab's name, kept on one line. Six tabs share the bar, and where it is
+ * narrow — a small phone, or the iPhone Duo's front screen — "Opponents"
+ * broke mid-word onto two lines and pushed the bar taller. Now the name
+ * shrinks a little instead, down to 9sp, and stays whole.
+ */
+@Composable
+fun TabLabel(text: String) {
+    // The bar's own label size (labelMedium, 12sp) is the most it grows to.
+    val full = LocalTextStyle.current.fontSize.takeIf { it.isSp && it.value > 9f } ?: 12.sp
+    Text(
+        text,
+        maxLines = 1,
+        overflow = TextOverflow.Ellipsis,
+        autoSize = TextAutoSize.StepBased(minFontSize = 9.sp, maxFontSize = full)
+    )
+}

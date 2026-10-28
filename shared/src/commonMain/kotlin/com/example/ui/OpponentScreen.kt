@@ -14,7 +14,6 @@ import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.material3.Card
 import androidx.compose.material3.ExperimentalMaterial3Api
-import androidx.compose.material3.FilterChip
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
@@ -83,7 +82,7 @@ fun OpponentsScreen(
                 horizontalArrangement = Arrangement.spacedBy(8.dp)
             ) {
                 seasons.forEach { s ->
-                    FilterChip(
+                    AppFilterChip(
                         selected = season == s,
                         onClick = { selectedSeason = s },
                         label = { Text(s) }

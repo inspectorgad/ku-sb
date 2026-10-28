@@ -12,7 +12,6 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.material3.Card
-import androidx.compose.material3.FilterChip
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -90,7 +89,7 @@ fun LeadersScreen(
             horizontalArrangement = Arrangement.spacedBy(8.dp)
         ) {
             (seasons + ALL_SEASONS).forEach { s ->
-                FilterChip(
+                AppFilterChip(
                     selected = season == s,
                     onClick = { selectedSeason = s },
                     label = { Text(s) }

@@ -29,7 +29,6 @@ import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.OutlinedButton
 import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
@@ -318,7 +317,7 @@ private fun KeyCard(
             }
             Text("Model", style = MaterialTheme.typography.labelMedium)
             Box {
-                OutlinedButton(onClick = { menuOpen = true }, modifier = Modifier.fillMaxWidth()) {
+                AppOutlinedButton(onClick = { menuOpen = true }, modifier = Modifier.fillMaxWidth()) {
                     Text(model.label, style = MaterialTheme.typography.bodySmall, modifier = Modifier.weight(1f))
                     Text("▾")
                 }
@@ -404,7 +403,7 @@ private fun AskInput(
             verticalAlignment = Alignment.CenterVertically
         ) {
             if (busy) {
-                OutlinedButton(onClick = onStop) { Text("Stop") }
+                AppOutlinedButton(onClick = onStop) { Text("Stop") }
             } else {
                 Button(onClick = onAsk, enabled = hasKey && question.isNotBlank()) { Text("Ask") }
             }

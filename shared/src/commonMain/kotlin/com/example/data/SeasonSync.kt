@@ -38,8 +38,18 @@ object SeasonSync {
     fun lastGeneratedAt(device: Device): String? =
         device.settings(PREFS).string(KEY_GENERATED_AT)
 
-    fun shouldAutoSync(device: Device): Boolean =
-        currentTimeMs() - device.settings(PREFS).long(KEY_SUCCESS_MS) > AUTO_SYNC_INTERVAL_MS
+    /**
+     * Forgets the last feed this phone merged, so the next sync treats the
+     * feed as new and merges it again. Used to repair a phone whose data an
+     * older bundled seed rolled back before [Seeder] learned not to.
+     */
+    fun mergeAgain(device: Device) = device.settings(PREFS).edit { putString(KEY_HASH, null) }
+
+    fun shouldAutoSync(device: Device): Boolean = device.settings(PREFS).let { p ->
+        // A forgotten hash means a repair is owed, so it does not wait out the
+        // six hours. A phone that has simply never synced has both conditions.
+        p.string(KEY_HASH) == null || currentTimeMs() - p.long(KEY_SUCCESS_MS) > AUTO_SYNC_INTERVAL_MS
+    }
 
     suspend fun sync(device: Device, dao: JayhawksDao): SyncResult =
         withContext(Dispatchers.IO) {

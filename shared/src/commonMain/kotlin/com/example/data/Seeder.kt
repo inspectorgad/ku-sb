@@ -34,8 +34,42 @@ object Seeder {
     suspend fun sync(device: Device, dao: JayhawksDao) {
         val json = device.readAsset("seed.json") ?: return
 
-        runCatching { merge(JSONObject(json), dao) }
+        runCatching {
+            val root = JSONObject(json)
+            // The seed bundled inside the app is a snapshot from whenever the
+            // APK was built. A phone that has synced since then holds newer
+            // data, and merging the older copy over it puts back results and
+            // box scores the feed had already corrected.
+            val older = olderThan(root.optString("generatedAt"), SeasonSync.lastGeneratedAt(device))
+            // Builds before this check merged the older copy anyway, and the
+            // sync never re-merged an unchanged feed to undo it. So the first
+            // launch with the check has a held-back phone fetch the feed once
+            // more; a phone that is not held back repairs itself by merging.
+            val settings = device.settings(PREFS)
+            if (!settings.boolean(KEY_CHECKED)) {
+                if (older) SeasonSync.mergeAgain(device)
+                settings.edit { putBoolean(KEY_CHECKED, true) }
+            }
+            if (older) return
+            merge(root, dao)
+        }
     }
+
+    private const val PREFS = "season_seed"
+    private const val KEY_CHECKED = "rollback_checked"
+
+    private val STAMP = Regex("""\d{4}-\d\d-\d\dT\d\d:\d\d:\d\dZ""")
+
+    /**
+     * Whether the bundled data, generated at [seed], is older than the feed
+     * data last merged, generated at [feed]. Both are the scraper's UTC stamps
+     * ("2026-10-25T07:42:36Z"), which sort as text. The same stamp is not
+     * older, so a copy matching the feed is applied — which puts back anything
+     * an older copy rolled back — and a missing or unreadable stamp never
+     * holds the seed back.
+     */
+    internal fun olderThan(seed: String?, feed: String?): Boolean =
+        seed != null && feed != null && STAMP.matches(seed) && STAMP.matches(feed) && seed < feed
 
     private fun gameKey(date: String, opponent: String) = "$date|${opponent.lowercase()}"
 

@@ -128,7 +128,7 @@ fun JayhawksApp(viewModel: JayhawksViewModel) {
                                     contentDescription = tab.label
                                 )
                             },
-                            label = { Text(tab.label) }
+                            label = { TabLabel(tab.label) }
                         )
                     }
                 }
