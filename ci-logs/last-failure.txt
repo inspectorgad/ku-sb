@@ -1,4 +1,4 @@
-run 65 · commit e806cad660774f9a396ad0492144042be52090a8
+run 68 · commit 4961d0dfed56373db0ae7eb99fc50cd19c102e81
 
 
 Welcome to Gradle 9.4.1!
@@ -38,23 +38,23 @@ Solution: To suppress this warning, add 'kotlin.native.ignoreDisabledTargets=tru
 > Task :shared:generateComposeResClass SKIPPED
 > Task :shared:generateExpectResourceCollectorsForCommonMain SKIPPED
 > Task :shared:generateAndroidMainEmptyResourceFiles
-> Task :app:generateDebugResources
 > Task :app:generateDebugBuildConfig
+> Task :app:generateDebugResources
 > Task :app:packageDebugResources
 > Task :shared:writeAndroidMainAarMetadata
 > Task :app:javaPreCompileDebug
 > Task :app:mapDebugSourceSetPaths
 > Task :app:processDebugNavigationResources
 > Task :app:checkDebugAarMetadata
+> Task :app:parseDebugLocalResources
 > Task :app:compileDebugNavigationResources
 > Task :app:createDebugCompatibleScreenManifests
 > Task :app:extractDeepLinksDebug
-> Task :app:parseDebugLocalResources
-> Task :shared:processAndroidMainManifest
 > Task :app:generateDebugRFile
 > Task :app:preDebugUnitTestBuild UP-TO-DATE
-> Task :app:javaPreCompileDebugUnitTest
+> Task :app:javaPreCompileDebugUnitTest FROM-CACHE
 > Task :app:generateDebugAssets UP-TO-DATE
+> Task :shared:processAndroidMainManifest
 > Task :app:mergeDebugResources
 > Task :app:mergeDebugAssets
 > Task :app:processDebugMainManifest
@@ -67,54 +67,9 @@ Solution: To suppress this warning, add 'kotlin.native.ignoreDisabledTargets=tru
 > Task :shared:kspAndroidMain
 
 > Task :shared:compileAndroidMain FAILED
-e: file:///home/runner/work/ku-sb/ku-sb/shared/src/androidMain/kotlin/com/example/platform/Platform.android.kt:1:1 Syntax error: Expecting a top level declaration.
-e: file:///home/runner/work/ku-sb/ku-sb/shared/src/androidMain/kotlin/com/example/platform/Platform.android.kt:1:7 Syntax error: Expecting a top level declaration.
-e: file:///home/runner/work/ku-sb/ku-sb/shared/src/androidMain/kotlin/com/example/platform/Platform.android.kt:1:8 Syntax error: Expecting a top level declaration.
-e: file:///home/runner/work/ku-sb/ku-sb/shared/src/androidMain/kotlin/com/example/platform/Platform.android.kt:1:10 Syntax error: Expecting a top level declaration.
-e: file:///home/runner/work/ku-sb/ku-sb/shared/src/androidMain/kotlin/com/example/platform/Platform.android.kt:1:16 Syntax error: Expecting a top level declaration.
-e: file:///home/runner/work/ku-sb/ku-sb/shared/src/androidMain/kotlin/com/example/platform/Platform.android.kt:1:17 Syntax error: Expecting a top level declaration.
-e: file:///home/runner/work/ku-sb/ku-sb/shared/src/androidMain/kotlin/com/example/platform/Platform.android.kt:1:20 Syntax error: Expecting a top level declaration.
-e: file:///home/runner/work/ku-sb/ku-sb/shared/src/androidMain/kotlin/com/example/platform/Platform.android.kt:1:21 Syntax error: Expecting a top level declaration.
-e: file:///home/runner/work/ku-sb/ku-sb/shared/src/androidMain/kotlin/com/example/platform/Platform.android.kt:1:28 Syntax error: Expecting a top level declaration.
-e: file:///home/runner/work/ku-sb/ku-sb/shared/src/androidMain/kotlin/com/example/platform/Platform.android.kt:1:29 Syntax error: Expecting a top level declaration.
-e: file:///home/runner/work/ku-sb/ku-sb/shared/src/androidMain/kotlin/com/example/platform/Platform.android.kt:1:35 Syntax error: Expecting a top level declaration.
-e: file:///home/runner/work/ku-sb/ku-sb/shared/src/androidMain/kotlin/com/example/platform/Platform.android.kt:1:36 Syntax error: Expecting a top level declaration.
-e: file:///home/runner/work/ku-sb/ku-sb/shared/src/androidMain/kotlin/com/example/platform/Platform.android.kt:1:39 Syntax error: Expecting a top level declaration.
-e: file:///home/runner/work/ku-sb/ku-sb/shared/src/androidMain/kotlin/com/example/platform/Platform.android.kt:1:40 Syntax error: Expecting a top level declaration.
-e: file:///home/runner/work/ku-sb/ku-sb/shared/src/androidMain/kotlin/com/example/platform/Platform.android.kt:1:47 Syntax error: Expecting a top level declaration.
-e: file:///home/runner/work/ku-sb/ku-sb/shared/src/androidMain/kotlin/com/example/platform/Platform.android.kt:1:48 Syntax error: Expecting a top level declaration.
-e: file:///home/runner/work/ku-sb/ku-sb/shared/src/androidMain/kotlin/com/example/platform/Platform.android.kt:2:1 Syntax error: Expecting a top level declaration.
-e: file:///home/runner/work/ku-sb/ku-sb/shared/src/androidMain/kotlin/com/example/platform/Platform.android.kt:2:5 Syntax error: Expecting a top level declaration.
-e: file:///home/runner/work/ku-sb/ku-sb/shared/src/androidMain/kotlin/com/example/platform/Platform.android.kt:2:7 Syntax error: Expecting a top level declaration.
-e: file:///home/runner/work/ku-sb/ku-sb/shared/src/androidMain/kotlin/com/example/platform/Platform.android.kt:2:13 Syntax error: Expecting a top level declaration.
-e: file:///home/runner/work/ku-sb/ku-sb/shared/src/androidMain/kotlin/com/example/platform/Platform.android.kt:2:14 Syntax error: Expecting a top level declaration.
-e: file:///home/runner/work/ku-sb/ku-sb/shared/src/androidMain/kotlin/com/example/platform/Platform.android.kt:2:17 Syntax error: Expecting a top level declaration.
-e: file:///home/runner/work/ku-sb/ku-sb/shared/src/androidMain/kotlin/com/example/platform/Platform.android.kt:2:18 Syntax error: Expecting a top level declaration.
-e: file:///home/runner/work/ku-sb/ku-sb/shared/src/androidMain/kotlin/com/example/platform/Platform.android.kt:2:25 Syntax error: Expecting a top level declaration.
-e: file:///home/runner/work/ku-sb/ku-sb/shared/src/androidMain/kotlin/com/example/platform/Platform.android.kt:2:26 Syntax error: Expecting a top level declaration.
-e: file:///home/runner/work/ku-sb/ku-sb/shared/src/androidMain/kotlin/com/example/platform/Platform.android.kt:2:32 Syntax error: Expecting a top level declaration.
-e: file:///home/runner/work/ku-sb/ku-sb/shared/src/androidMain/kotlin/com/example/platform/Platform.android.kt:2:33 Syntax error: Expecting a top level declaration.
-e: file:///home/runner/work/ku-sb/ku-sb/shared/src/androidMain/kotlin/com/example/platform/Platform.android.kt:2:36 Syntax error: Expecting a top level declaration.
-e: file:///home/runner/work/ku-sb/ku-sb/shared/src/androidMain/kotlin/com/example/platform/Platform.android.kt:2:37 Syntax error: Expecting a top level declaration.
-e: file:///home/runner/work/ku-sb/ku-sb/shared/src/androidMain/kotlin/com/example/platform/Platform.android.kt:2:44 Syntax error: Expecting a top level declaration.
-e: file:///home/runner/work/ku-sb/ku-sb/shared/src/androidMain/kotlin/com/example/platform/Platform.android.kt:2:45 Syntax error: Expecting a top level declaration.
-e: file:///home/runner/work/ku-sb/ku-sb/shared/src/androidMain/kotlin/com/example/platform/Platform.android.kt:2:53 Syntax error: Expecting a top level declaration.
-e: file:///home/runner/work/ku-sb/ku-sb/shared/src/androidMain/kotlin/com/example/platform/Platform.android.kt:2:54 Syntax error: Expecting a top level declaration.
-e: file:///home/runner/work/ku-sb/ku-sb/shared/src/androidMain/kotlin/com/example/platform/Platform.android.kt:2:62 Syntax error: Expecting a top level declaration.
-e: file:///home/runner/work/ku-sb/ku-sb/shared/src/androidMain/kotlin/com/example/platform/Platform.android.kt:2:63 Syntax error: Expecting a top level declaration.
-e: file:///home/runner/work/ku-sb/ku-sb/shared/src/androidMain/kotlin/com/example/platform/Platform.android.kt:2:66 Syntax error: Expecting a top level declaration.
-e: file:///home/runner/work/ku-sb/ku-sb/shared/src/androidMain/kotlin/com/example/platform/Platform.android.kt:2:67 Syntax error: Expecting a top level declaration.
-e: file:///home/runner/work/ku-sb/ku-sb/shared/src/androidMain/kotlin/com/example/platform/Platform.android.kt:2:70 Syntax error: Expecting a top level declaration.
-e: file:///home/runner/work/ku-sb/ku-sb/shared/src/androidMain/kotlin/com/example/platform/Platform.android.kt:2:71 Syntax error: Expecting a top level declaration.
-e: file:///home/runner/work/ku-sb/ku-sb/shared/src/androidMain/kotlin/com/example/platform/Platform.android.kt:2:72 Syntax error: Expecting a top level declaration.
-e: file:///home/runner/work/ku-sb/ku-sb/shared/src/androidMain/kotlin/com/example/platform/Platform.android.kt:3:1 Syntax error: Expecting a top level declaration.
-e: file:///home/runner/work/ku-sb/ku-sb/shared/src/androidMain/kotlin/com/example/platform/Platform.android.kt:3:9 Syntax error: Expecting a top level declaration.
-e: file:///home/runner/work/ku-sb/ku-sb/shared/src/androidMain/kotlin/com/example/platform/Platform.android.kt:3:12 Syntax error: Expecting a top level declaration.
-e: file:///home/runner/work/ku-sb/ku-sb/shared/src/androidMain/kotlin/com/example/platform/Platform.android.kt:3:13 Syntax error: Expecting a top level declaration.
-e: file:///home/runner/work/ku-sb/ku-sb/shared/src/androidMain/kotlin/com/example/platform/Platform.android.kt:3:20 Syntax error: Expecting a top level declaration.
-e: file:///home/runner/work/ku-sb/ku-sb/shared/src/androidMain/kotlin/com/example/platform/Platform.android.kt:3:21 Syntax error: Expecting a top level declaration.
-e: file:///home/runner/work/ku-sb/ku-sb/shared/src/androidMain/kotlin/com/example/platform/Platform.android.kt:5:12 'public final actual fun platformName(): String' has no corresponding 'expect' declaration
-gradle/actions: Writing build results to /home/runner/work/_temp/.gradle-actions/build-results/__run_2-1793203771805.json
+e: file:///home/runner/work/ku-sb/ku-sb/shared/src/commonMain/kotlin/com/example/ui/Common.kt:40:33 Unresolved reference 'TextAutoSize'.
+e: file:///home/runner/work/ku-sb/ku-sb/shared/src/commonMain/kotlin/com/example/ui/Common.kt:287:20 Unresolved reference 'TextAutoSize'.
+gradle/actions: Writing build results to /home/runner/work/_temp/.gradle-actions/build-results/__run_2-1793207696462.json
 
 [Incubating] Problems report is available at: file:///home/runner/work/ku-sb/ku-sb/build/reports/problems/problems-report.html
 
@@ -123,10 +78,10 @@ FAILURE: Build failed with an exception.
 * What went wrong:
 Execution failed for task ':shared:compileAndroidMain'.
 > A failure occurred while executing org.jetbrains.kotlin.compilerRunner.btapi.BuildToolsApiCompilationWork
-   > Kotlin compiler: SYNTAX
+   > Kotlin compiler: UNRESOLVED_IMPORT
        Kotlin compiler error
-         Syntax error: Expecting a top level declaration.
-         Location: /home/runner/work/ku-sb/ku-sb/shared/src/androidMain/kotlin/com/example/platform/Platform.android.kt line 1
+         Unresolved reference 'TextAutoSize'.
+         Location: /home/runner/work/ku-sb/ku-sb/shared/src/commonMain/kotlin/com/example/ui/Common.kt line 40
 
 * Try:
 > Run with --stacktrace option to get the stack trace.
@@ -134,8 +89,8 @@ Execution failed for task ':shared:compileAndroidMain'.
 > Run with --scan to get full insights from a Build Scan (powered by Develocity).
 > Get more help at https://help.gradle.org.
 
-BUILD FAILED in 2m 1s
-28 actionable tasks: 28 executed
+BUILD FAILED in 2m 26s
+28 actionable tasks: 27 executed, 1 from cache
 Configuration cache entry stored.
 
 === failing test reports ===
