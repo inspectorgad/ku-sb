@@ -1,0 +1,34 @@
+name: Apple keys check
+
+# Confirms the Apple secrets the iOS build will use — the App Store Connect
+# key that uploads builds — without printing any of them. Run this first:
+# it says which secret is wrong in one line, where a failed TestFlight build
+# says so after twenty minutes of compiling.
+#
+# ios/check_apple_keys.py says what each check does. ku-volleyball's version
+# also checked a push key; this app has no alerts, so there is none to check.
+on:
+  workflow_dispatch:
+  push:
+    branches-ignore:
+      - main
+    paths:
+      - '.github/workflows/apple-keys-check.yml'
+      - 'ios/check_apple_keys.py'
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install a JWT library
+        run: python3 -m pip install --quiet "pyjwt[crypto]==2.10.1"
+
+      - name: Check the keys
+        env:
+          APPLE_TEAM_ID: ${{ secrets.APPLE_TEAM_ID }}
+          ASC_ISSUER_ID: ${{ secrets.ASC_ISSUER_ID }}
+          ASC_KEY_ID: ${{ secrets.ASC_KEY_ID }}
+          ASC_KEY_P8: ${{ secrets.ASC_KEY_P8 }}
+        run: python3 ios/check_apple_keys.py
