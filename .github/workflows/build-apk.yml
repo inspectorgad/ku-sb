@@ -53,43 +53,12 @@ jobs:
       - name: Run unit tests
         env:
           VERSION_CODE: ${{ github.run_number }}
-        run: |
-          set -o pipefail
-          gradle :app:testDebugUnitTest 2>&1 | tee -a /tmp/gradle-output.txt
+        run: gradle :app:testDebugUnitTest
 
       - name: Build debug APK
         env:
           VERSION_CODE: ${{ github.run_number }}
-        run: |
-          set -o pipefail
-          gradle :app:assembleDebug 2>&1 | tee -a /tmp/gradle-output.txt
-
-      # Scaffolding for the multiplatform port, removed before it merges.
-      # Neither half of the usual loop is available from the machine doing the
-      # work: dl.google.com is refused by its network policy so Gradle cannot
-      # run there at all, and the Actions log is served from blob storage,
-      # which is refused as well. Committing the output to the branch is the
-      # one channel that does get through, since the git API is reachable.
-      - name: Commit the build output when it fails
-        if: failure() && github.ref != 'refs/heads/main'
-        run: |
-          mkdir -p ci-logs
-          {
-            echo "run ${{ github.run_number }} · commit ${{ github.sha }}"
-            echo
-            tail -c 120000 /tmp/gradle-output.txt || echo "(no gradle output captured)"
-            echo
-            echo "=== failing test reports ==="
-            find . -path '*/build/reports/tests/*' -name '*.html' -newermt '-1 hour' | head -20 || true
-            for f in $(find . -path '*/build/test-results/*' -name 'TEST-*.xml' | head -40); do
-              grep -l '<failure\|<error' "$f" >/dev/null 2>&1 && { echo "--- $f"; sed -n '1,120p' "$f"; }
-            done
-          } > ci-logs/last-failure.txt 2>&1
-          git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add -f ci-logs/last-failure.txt
-          git commit -m "CI: build output for run ${{ github.run_number }} [skip ci]"
-          git push origin HEAD:${{ github.ref_name }}
+        run: gradle :app:assembleDebug
 
       - name: Upload APK artifact
         uses: actions/upload-artifact@v4
