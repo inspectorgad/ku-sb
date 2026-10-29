@@ -2,8 +2,12 @@ name: Build debug APK
 
 on:
   push:
-    branches:
-      - main
+    # Every branch, not just main. On main this publishes the rolling release
+    # the installed app updates from; on a branch it publishes that branch's
+    # own test APK and leaves the stable one alone (see the two publish steps).
+    # Restricting it to main meant a branch push ran no tests whatsoever --
+    # build-apk ignored the branch and the iPhone job ignored commonMain -- so
+    # the work sat unbuilt until someone started a run by hand.
     paths-ignore:
       - 'docs/**'
       - 'scripts/build-dashboard.py'
@@ -41,7 +45,7 @@ jobs:
 
       - uses: gradle/actions/setup-gradle@v4
         with:
-          gradle-version: '9.3.1'
+          gradle-version: '9.4.1'
 
       # The debug keystore is committed on purpose — its password is the
       # Android default and a fixed debug identity is what lets `adb install -r`
@@ -50,10 +54,15 @@ jobs:
       - name: Restore debug keystore
         run: base64 -d debug.keystore.base64 > debug.keystore
 
+      # Both suites. :app covers the Android half; :shared covers the code
+      # written once and compiled for both phones, which :app:testDebugUnitTest
+      # does not reach -- the seed rollback guard lived in shared/ for a while
+      # with nothing on this side running it, proven only by the iPhone job,
+      # which needs a Mac and only runs when iPhone files change.
       - name: Run unit tests
         env:
           VERSION_CODE: ${{ github.run_number }}
-        run: gradle :app:testDebugUnitTest
+        run: gradle :app:testDebugUnitTest :shared:testAndroidHostTest
 
       - name: Build debug APK
         env:
@@ -69,7 +78,12 @@ jobs:
       # Publish the APK to a rolling "latest-apk" release for one-tap phone
       # download:
       # https://github.com/inspectorgad/ku-sb/releases/latest/download/app-debug.apk
+      # main publishes the rolling release the installed app updates from.
+      # A branch publishes its own prerelease instead, so a test build can
+      # never replace the stable APK, and never touches season-data.json or
+      # ask-data.json — which the installed app downloads from "latest".
       - name: Publish APK to rolling release
+        if: github.ref == 'refs/heads/main'
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
@@ -93,3 +107,21 @@ jobs:
           cp docs/ask-data.json ask-data.json
           gh release upload latest-apk ask-data.json \
             --repo "$GITHUB_REPOSITORY" --clobber
+
+      - name: Publish a branch test APK
+        if: github.ref != 'refs/heads/main'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          BRANCH: ${{ github.ref_name }}
+        run: |
+          TAG="test-apk-$(echo "$BRANCH" | tr '/' '-')"
+          gh release view "$TAG" --repo "$GITHUB_REPOSITORY" > /dev/null 2>&1 || \
+            gh release create "$TAG" \
+              --repo "$GITHUB_REPOSITORY" \
+              --target "$GITHUB_SHA" \
+              --title "KU Softball - test build ($BRANCH)" \
+              --notes "Test build from \`$BRANCH\`, for installing over the current app before the branch is merged. Same applicationId and the same debug signing key as the stable build, so it updates in place and keeps existing data. The stable APK is unaffected and stays at the latest-apk release." \
+              --prerelease
+          gh release upload "$TAG" app/build/outputs/apk/debug/app-debug.apk \
+            --repo "$GITHUB_REPOSITORY" --clobber
+          echo "Test APK: https://github.com/$GITHUB_REPOSITORY/releases/download/$TAG/app-debug.apk"

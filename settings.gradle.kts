@@ -24,4 +24,4 @@ dependencyResolutionManagement {
 
 rootProject.name = "KU Softball"
 
-include(":app")
+include(":app", ":shared")

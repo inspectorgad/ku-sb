@@ -1,0 +1,223 @@
+package com.example.ui
+
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.padding
+import androidx.compose.material3.ExperimentalMaterial3Api
+import androidx.compose.material3.Icon
+import androidx.compose.material3.NavigationBar
+import androidx.compose.material3.NavigationBarItem
+import androidx.compose.material3.Scaffold
+import androidx.compose.material3.SnackbarHost
+import androidx.compose.material3.SnackbarHostState
+import androidx.compose.material3.Text
+import androidx.compose.material3.pulltorefresh.PullToRefreshBox
+import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.saveable.rememberSaveable
+import androidx.compose.runtime.setValue
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.unit.dp
+import androidx.lifecycle.compose.collectAsStateWithLifecycle
+import com.example.JayhawksViewModel
+
+enum class Tab(val label: String) {
+    Roster("Roster"), Games("Games"), Season("Season"),
+    Leaders("Leaders"), Opponents("Opponents"), Big12("Big 12")
+}
+
+@OptIn(ExperimentalMaterial3Api::class)
+@Composable
+fun JayhawksApp(viewModel: JayhawksViewModel) {
+    var currentTab by rememberSaveable { mutableStateOf(Tab.Roster) }
+    // Detail overlays: at most one is open at a time; back closes it.
+    var openPlayerId by rememberSaveable { mutableStateOf<Long?>(null) }
+    var openGameId by rememberSaveable { mutableStateOf<Long?>(null) }
+    // An opponent is identified by its name key plus the season, because the
+    // same school is a different head-to-head in a different year.
+    var openOpponentKey by rememberSaveable { mutableStateOf<String?>(null) }
+    var openOpponentSeason by rememberSaveable { mutableStateOf("") }
+    var askOpen by rememberSaveable { mutableStateOf(false) }
+
+    val players by viewModel.players.collectAsStateWithLifecycle()
+    val games by viewModel.games.collectAsStateWithLifecycle()
+    val statLines by viewModel.statLines.collectAsStateWithLifecycle()
+    val opponentStatLines by viewModel.opponentStatLines.collectAsStateWithLifecycle()
+    val rankingSnapshots by viewModel.rankingSnapshots.collectAsStateWithLifecycle()
+    val standings by viewModel.standings.collectAsStateWithLifecycle()
+    val pollEntries by viewModel.pollEntries.collectAsStateWithLifecycle()
+    val isSyncing by viewModel.isSyncing.collectAsStateWithLifecycle()
+    val dataUpdatedAt by viewModel.dataUpdatedAt.collectAsStateWithLifecycle()
+
+    val snackbarHostState = remember { SnackbarHostState() }
+    LaunchedEffect(Unit) {
+        viewModel.syncMessages.collect { snackbarHostState.showSnackbar(it) }
+    }
+
+    val showingDetail =
+        openPlayerId != null || openGameId != null || openOpponentKey != null || askOpen
+    SystemBackHandler(enabled = showingDetail) {
+        openPlayerId = null
+        openGameId = null
+        openOpponentKey = null
+        askOpen = false
+    }
+
+    val openPlayer = openPlayerId?.let { id -> players.firstOrNull { it.id == id } }
+    val openGame = openGameId?.let { id -> games.firstOrNull { it.id == id } }
+
+    // The open page, or null when nothing is open. Written once: on a phone it
+    // fills the screen, and on a wide window the same thing sits beside its
+    // list, so neither layout has its own copy to keep in step.
+    val detail: (@Composable () -> Unit)? = when {
+        openPlayer != null -> { { PlayerDetailScreen(
+            player = openPlayer,
+            games = games,
+            statLines = statLines,
+            onSavePlayer = viewModel::savePlayer,
+            onDeletePlayer = {
+                viewModel.deletePlayer(it)
+                openPlayerId = null
+            },
+            onBack = { openPlayerId = null }
+        ) } }
+
+        askOpen -> { { AskScreen(onBack = { askOpen = false }) } }
+
+        openOpponentKey != null -> { { OpponentDetailScreen(
+            opponentKey = openOpponentKey!!,
+            season = openOpponentSeason,
+            players = players,
+            games = games,
+            statLines = statLines,
+            opponentStatLines = opponentStatLines,
+            onBack = { openOpponentKey = null }
+        ) } }
+
+        openGame != null -> { { GameDetailScreen(
+            game = openGame,
+            players = players,
+            statLines = statLines,
+            opponentStatLines = opponentStatLines,
+            onSaveGame = { viewModel.saveGame(it) },
+            onDeleteGame = {
+                viewModel.deleteGame(it)
+                openGameId = null
+            },
+            onSaveStatLine = viewModel::saveStatLine,
+            onDeleteStatLine = viewModel::deleteStatLine,
+            onBack = { openGameId = null }
+        ) } }
+
+        else -> null
+    }
+
+    // Each tab's own screen, likewise written once: the bottom bar shows it
+    // full width, the rail shows it in the list pane or centred on its own.
+    val tabContent: @Composable () -> Unit = {
+        when (currentTab) {
+            Tab.Roster -> RosterScreen(
+                players = players,
+                statLines = statLines,
+                onSavePlayer = viewModel::savePlayer,
+                onOpenPlayer = { openPlayerId = it.id }
+            )
+
+            Tab.Games -> GamesScreen(
+                games = games,
+                statLines = statLines,
+                players = players,
+                onSaveGame = { game -> viewModel.saveGame(game) { openGameId = it } },
+                onOpenGame = { openGameId = it.id }
+            )
+
+            Tab.Season -> SeasonScreen(
+                players = players,
+                games = games,
+                statLines = statLines,
+                standings = standings,
+                onOpenAsk = { askOpen = true }
+            )
+
+            Tab.Leaders -> LeadersScreen(
+                players = players,
+                games = games,
+                statLines = statLines,
+                dataUpdatedAt = dataUpdatedAt
+            )
+
+            Tab.Opponents -> OpponentsScreen(
+                games = games,
+                onOpenOpponent = { key, season ->
+                    openOpponentKey = key
+                    openOpponentSeason = season
+                }
+            )
+
+            Tab.Big12 -> StandingsScreen(
+                standings = standings,
+                pollEntries = pollEntries,
+                rankingSnapshots = rankingSnapshots
+            )
+        }
+    }
+
+    val windowWidth = windowWidthDp()
+    if (isWideWindow(windowWidth)) {
+        // A rail down the side, and a page beside its list where there is room.
+        WideFrame(
+            currentTab = currentTab,
+            onSelectTab = { tab ->
+                // Changing tab closes whatever page was open, as tapping the
+                // bottom bar does on a phone.
+                openPlayerId = null
+                openGameId = null
+                openOpponentKey = null
+                askOpen = false
+                currentTab = tab
+            }
+        ) {
+            ListDetailPanes(
+                windowWidth = windowWidth.dp,
+                showsDetail = detail != null,
+                placeholder = placeholderFor(currentTab),
+                isRefreshing = isSyncing,
+                onRefresh = viewModel::refresh,
+                snackbarHostState = snackbarHostState,
+                list = tabContent,
+                detail = { detail?.invoke() }
+            )
+        }
+    } else if (detail != null) {
+        // The phone layout, unchanged: a page covers the screen.
+        detail()
+    } else {
+        Scaffold(
+            snackbarHost = { SnackbarHost(snackbarHostState) },
+            bottomBar = {
+                NavigationBar {
+                    Tab.entries.forEach { tab ->
+                        NavigationBarItem(
+                            selected = currentTab == tab,
+                            onClick = { currentTab = tab },
+                            icon = { Icon(imageVector = tab.icon, contentDescription = tab.label) },
+                            label = { TabLabel(tab.label) }
+                        )
+                    }
+                }
+            }
+        ) { innerPadding ->
+            PullToRefreshBox(
+                isRefreshing = isSyncing,
+                onRefresh = viewModel::refresh,
+                modifier = Modifier
+                    .fillMaxSize()
+                    .padding(innerPadding)
+            ) {
+                tabContent()
+            }
+        }
+    }
+}
