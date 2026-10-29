@@ -99,10 +99,11 @@ def check_app_store_connect(issuer, key_id, p8):
     if status == 200 and body.get("data"):
         caps = sorted({c["attributes"].get("capabilityType", "?") for c in body.get("included", [])
                        if c.get("type") == "bundleIdCapabilities"})
+        # Listed, not required. ku-volleyball demanded PUSH_NOTIFICATIONS and
+        # APP_GROUPS here because its match alerts need them. This app asks for
+        # no capability at all, so requiring any would fail a correct setup —
+        # which is exactly what it did the first time this ran.
         report(True, "the App ID is registered", ", ".join(caps) or "no capabilities listed")
-        for wanted in ("PUSH_NOTIFICATIONS", "APP_GROUPS"):
-            report(wanted in caps, f"the App ID has {wanted}",
-                   "" if wanted in caps else "tick it in Certificates, IDs & Profiles > Identifiers")
     else:
         report(False, "the App ID is registered", f"HTTP {status} {asc_error(body)}")
 
