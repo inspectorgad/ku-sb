@@ -49,6 +49,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.text.input.PasswordVisualTransformation
 import androidx.compose.ui.unit.dp
+import com.example.text.todayIso
 import com.example.data.ASK_MODELS
 import com.example.data.AskEngine
 import com.example.data.AskKeyStore
@@ -61,9 +62,6 @@ import kotlinx.coroutines.Job
 import kotlinx.coroutines.SupervisorJob
 import kotlinx.coroutines.cancelAndJoin
 import kotlinx.coroutines.launch
-import java.text.SimpleDateFormat
-import java.util.Date
-import java.util.Locale
 
 const val EXPLAIN_ASK =
     "Type a question about the team and Claude, Anthropic's AI, answers it from the season data: " +
@@ -116,7 +114,7 @@ object AskSession {
     fun ask(question: String, key: String, model: AskModel) {
         if (running != null) return
         val turn = AskTurn(question).also { turns += it }
-        val today = SimpleDateFormat("yyyy-MM-dd", Locale.US).format(Date())
+        val today = todayIso()
         // Off the main thread: the requests carry the season's tables, and
         // building them is too slow for the UI thread. Snapshot state may be
         // written from here; the screen redraws with each change.
@@ -136,7 +134,7 @@ object AskSession {
             } catch (e: CancellationException) {
                 turn.notes = listOf("Stopped.")
             } catch (e: Exception) {
-                turn.error = "Something went wrong: ${e.message ?: e.javaClass.simpleName}"
+                turn.error = "Something went wrong: ${e.message ?: e::class.simpleName}"
             } finally {
                 turn.status = ""
                 running = null

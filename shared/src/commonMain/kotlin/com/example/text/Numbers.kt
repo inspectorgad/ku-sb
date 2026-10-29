@@ -95,3 +95,26 @@ private fun incrementDecimal(digits: String): String {
     }
     return "1" + chars.concatToString()
 }
+
+/**
+ * [value] with a comma every three digits, as Java's "%,d" writes it in the
+ * US locale: 4235 is "4,235", -1234567 is "-1,234,567", 999 is "999".
+ *
+ * java.util.Formatter does this on Android and does not exist on iPhone, and
+ * a crowd of 4235 printed as "4235" would be the only place in the app a
+ * number loses its separator.
+ */
+fun grouped(value: Int): String = grouped(value.toLong())
+
+fun grouped(value: Long): String {
+    val negative = value < 0
+    // Long.MIN_VALUE has no positive counterpart, so group the digits of the
+    // text rather than negating the number.
+    val digits = value.toString().removePrefix("-")
+    val out = StringBuilder()
+    for ((i, c) in digits.withIndex()) {
+        if (i > 0 && (digits.length - i) % 3 == 0) out.append(',')
+        out.append(c)
+    }
+    return if (negative) "-$out" else out.toString()
+}

@@ -45,6 +45,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.example.text.grouped
 import com.example.data.Game
 import com.example.data.OpponentStatLine
 import com.example.data.Player
@@ -285,7 +286,7 @@ private fun GameContext(game: Game) {
     val bits = buildList {
         if (game.stadium.isNotBlank()) add(game.stadium)
         if (game.venue.isNotBlank()) add(game.venue)
-        if (game.attendance > 0) add("${"%,d".format(game.attendance)} fans")
+        if (game.attendance > 0) add("${grouped(game.attendance)} fans")
         // The opponent's record through this game. Shown only for a played
         // game: before first pitch the scrape has no record to report, and a
         // blank would read as "0-0" rather than "not known yet".

@@ -1,6 +1,7 @@
 package com.example.stats
 
 import com.example.data.Game
+import com.example.text.grouped
 import com.example.data.Player
 import com.example.data.StatLine
 
@@ -90,7 +91,7 @@ fun seasonHighlights(
     played.filter { it.attendance > 0 }.maxByOrNull { it.attendance }?.let { game ->
         out += Highlight(
             "Biggest crowd",
-            "%,d".format(game.attendance),
+            grouped(game.attendance),
             where(game)
         )
     }

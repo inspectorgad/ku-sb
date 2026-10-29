@@ -71,6 +71,30 @@ jobs:
           xcodebuild -version
           echo "iOS SDK $(xcrun --sdk iphoneos --show-sdk-version)"
 
+      # Whether this run can upload. Checked first so the answer is at the top
+      # of the log, and as an output rather than a failure: a push that only
+      # changes iPhone code should still prove the code compiles, which is the
+      # one thing no other job can do. Without the secrets it builds and stops
+      # short of TestFlight instead of going red for a setup step not yet done.
+      - name: Are the Apple secrets set?
+        id: apple
+        env:
+          APPLE_TEAM_ID: ${{ secrets.APPLE_TEAM_ID }}
+          ASC_ISSUER_ID: ${{ secrets.ASC_ISSUER_ID }}
+          ASC_KEY_ID: ${{ secrets.ASC_KEY_ID }}
+          ASC_KEY_P8: ${{ secrets.ASC_KEY_P8 }}
+        run: |
+          missing=""
+          for v in APPLE_TEAM_ID ASC_ISSUER_ID ASC_KEY_ID ASC_KEY_P8; do
+            [ -n "${!v}" ] || missing="$missing $v"
+          done
+          if [ -z "$missing" ]; then
+            echo "ready=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "ready=false" >> "$GITHUB_OUTPUT"
+            echo "::notice::Not uploading to TestFlight: missing$missing. The build below still checks the iPhone code compiles. See ios/README.md to set them, then run Apple keys check."
+          fi
+
       # Kotlin/Native's compiler and its iOS libraries, about 1 GB, fetched once.
       - uses: actions/cache@v4
         with:
@@ -110,15 +134,13 @@ jobs:
       # nothing that needs one. No push alerts, no iCloud, no app groups. The
       # API key sits in the Keychain, which every app may use.
       - name: Sign and upload to TestFlight
+        if: steps.apple.outputs.ready == 'true'
         env:
           APPLE_TEAM_ID: ${{ secrets.APPLE_TEAM_ID }}
           ASC_ISSUER_ID: ${{ secrets.ASC_ISSUER_ID }}
           ASC_KEY_ID: ${{ secrets.ASC_KEY_ID }}
           ASC_KEY_P8: ${{ secrets.ASC_KEY_P8 }}
         run: |
-          for v in APPLE_TEAM_ID ASC_ISSUER_ID ASC_KEY_ID ASC_KEY_P8; do
-            [ -n "${!v}" ] || { echo "::error::Secret $v is not set. See ios/README.md for where each comes from."; exit 1; }
-          done
           KEY="$RUNNER_TEMP/AuthKey.p8"
           printf '%s\n' "$ASC_KEY_P8" > "$KEY"
           trap 'rm -f "$KEY"' EXIT
