@@ -2,8 +2,12 @@ name: Build debug APK
 
 on:
   push:
-    branches:
-      - main
+    # Every branch, not just main. On main this publishes the rolling release
+    # the installed app updates from; on a branch it publishes that branch's
+    # own test APK and leaves the stable one alone (see the two publish steps).
+    # Restricting it to main meant a branch push ran no tests whatsoever --
+    # build-apk ignored the branch and the iPhone job ignored commonMain -- so
+    # the work sat unbuilt until someone started a run by hand.
     paths-ignore:
       - 'docs/**'
       - 'scripts/build-dashboard.py'

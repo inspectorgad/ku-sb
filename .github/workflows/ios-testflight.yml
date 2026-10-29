@@ -32,11 +32,27 @@ on:
       - main
     paths:
       - 'ios/**'
+      # commonMain and commonTest are compiled for Apple too, and this job is
+      # the only one that does it. Leaving them out meant a change to a screen,
+      # the sync, Ask or a test name reached the branch having been seen by the
+      # JVM alone: that is exactly how the two comma-in-backticks test names
+      # got in -- the commit that added them touched no path listed here, so
+      # this job never ran, and they surfaced only when a later commit happened
+      # to edit a file under iosMain as well.
+      - 'shared/src/commonMain/**'
+      - 'shared/src/commonTest/**'
       - 'shared/src/iosMain/**'
+      # A dependency bump can break the Native build on its own.
+      - 'shared/build.gradle.kts'
+      - 'gradle/libs.versions.toml'
       - '.github/workflows/ios-testflight.yml'
 
+# Per branch, and superseded runs are cancelled rather than queued: the filter
+# above now fires on most pushes, and this runs on a macOS runner for far
+# longer than the Android build.
 concurrency:
-  group: ios-testflight
+  group: ios-testflight-${{ github.ref }}
+  cancel-in-progress: true
 
 jobs:
   testflight:
