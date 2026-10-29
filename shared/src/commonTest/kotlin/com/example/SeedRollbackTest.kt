@@ -31,7 +31,7 @@ class SeedRollbackTest {
     }
 
     @Test
-    fun `the same stamp is applied, not held back`() {
+    fun `the same stamp is applied rather than held back`() {
         // A build carrying exactly the feed's data must still merge: that is
         // what puts back anything an older copy already rolled back.
         assertFalse(Seeder.olderThan(seed = newer, feed = newer))
@@ -51,7 +51,7 @@ class SeedRollbackTest {
     }
 
     @Test
-    fun `stamps compare by time, not by digit position`() {
+    fun `stamps compare by time rather than by digit position`() {
         // They are compared as text, which is only right because the scraper's
         // format is fixed-width. These would be wrong under a naive compare if
         // it ever stopped being.

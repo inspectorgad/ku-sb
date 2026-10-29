@@ -50,10 +50,15 @@ jobs:
       - name: Restore debug keystore
         run: base64 -d debug.keystore.base64 > debug.keystore
 
+      # Both suites. :app covers the Android half; :shared covers the code
+      # written once and compiled for both phones, which :app:testDebugUnitTest
+      # does not reach -- the seed rollback guard lived in shared/ for a while
+      # with nothing on this side running it, proven only by the iPhone job,
+      # which needs a Mac and only runs when iPhone files change.
       - name: Run unit tests
         env:
           VERSION_CODE: ${{ github.run_number }}
-        run: gradle :app:testDebugUnitTest
+        run: gradle :app:testDebugUnitTest :shared:testAndroidHostTest
 
       - name: Build debug APK
         env:

@@ -72,7 +72,9 @@ private class DefaultsSettings(private val group: String) : Settings {
     private fun has(key: String) = defaults.objectForKey(k(key)) != null
 
     override fun string(key: String): String? = defaults.stringForKey(k(key))
-    override fun long(key: String, default: Long): Long = if (has(key)) defaults.integerForKey(k(key)).toLong() else default
+    // integerForKey returns NSInteger, which is already Long on the 64-bit
+    // devices this builds for, so there is nothing to convert.
+    override fun long(key: String, default: Long): Long = if (has(key)) defaults.integerForKey(k(key)) else default
     override fun int(key: String, default: Int): Int = if (has(key)) defaults.integerForKey(k(key)).toInt() else default
     override fun boolean(key: String, default: Boolean): Boolean = if (has(key)) defaults.boolForKey(k(key)) else default
 
