@@ -20,16 +20,16 @@ Upcoming Event: Softball at Texas Tech on March 14, 2027
 Sun. 03/14/27
 Softball
 at Texas Tech
+Upcoming Event: Softball at Utah on March 25, 2027
+Thu. 03/25/27
+Softball
+at Utah
 Upcoming Event: Softball at Utah on March 26, 2027
 Fri. 03/26/27
 Softball
 at Utah
 Upcoming Event: Softball at Utah on March 27, 2027
 Sat. 03/27/27
-Softball
-at Utah
-Upcoming Event: Softball at Utah on March 28, 2027
-Sun. 03/28/27
 Softball
 at Utah
 Upcoming Event: Softball versus BYU on April 1, 2027
@@ -72,13 +72,13 @@ Friday, March 12
 
 Lubbock, Texas
 
-136
+129
 Days
-14
+10
 Hours
-5
+44
 Minutes
-37
+58
 Seconds
 Add To Calendar
 Text Only
@@ -119,65 +119,6 @@ Wins
 0
 Losses
 0
-Skip Ad
-at
-Nebraska
-
-Lincoln, Neb.
-
-Sep 26
-(Sat)
-
-12:00 pm
-
-History
-at
-Nebraska
-
-Lincoln, Neb.
-
-Sep 26
-(Sat)
-
-2:30 pm
-
-History
-vs
-Rockhurst
-
-Arrocha Ballpark
-Lawrence, Kansas
-
-Oct 2
-(Fri)
-
-5:00 pm
-
-History
-vs
-Missouri
-
-Arrocha Ballpark
-Lawrence, Kansas
-
-Oct 9
-(Fri)
-
-5:00 pm
-
-History
-vs
-Nebraska
-
-Legends Field
-Kansas City, Kansas
-
-Oct 10
-(Sat)
-
-4:00 pm
-
-History
 Skip Ad
 at
 Kansas City Diamonds
@@ -233,6 +174,7 @@ Mar 13
 (Sat)
 
 History
+Skip Ad
 at
 Texas Tech
 
@@ -240,6 +182,15 @@ Lubbock, Texas
 
 Mar 14
 (Sun)
+
+History
+at
+Utah
+
+Salt Lake City, Utah
+
+Mar 25
+(Thu)
 
 History
 at
@@ -260,15 +211,6 @@ Mar 27
 (Sat)
 
 History
-at
-Utah
-
-Salt Lake City, Utah
-
-Mar 28
-(Sun)
-
-History
 vs
 BYU
 
@@ -279,7 +221,6 @@ Apr 1
 (Thu)
 
 History
-Skip Ad
 vs
 BYU
 
@@ -330,15 +271,7 @@ Apr 11
 (Sun)
 
 History
-at
-Iowa State
-
-Ames, Iowa
-
-Apr 15
-(Thu)
-
-History
+Skip Ad
 at
 Iowa State
 
@@ -355,6 +288,15 @@ Ames, Iowa
 
 Apr 17
 (Sat)
+
+History
+at
+Iowa State
+
+Ames, Iowa
+
+Apr 18
+(Sun)
 
 History
 vs
@@ -377,7 +319,6 @@ Apr 24
 (Sat)
 
 History
-Skip Ad
 vs
 Oklahoma State
 
@@ -421,6 +362,17 @@ Houston
 Arrocha Ballpark
 Lawrence, Kansas
 
+May 6
+(Thu)
+
+History
+Skip Ad
+vs
+Houston
+
+Arrocha Ballpark
+Lawrence, Kansas
+
 May 7
 (Fri)
 
@@ -433,16 +385,6 @@ Lawrence, Kansas
 
 May 8
 (Sat)
-
-History
-vs
-Houston
-
-Arrocha Ballpark
-Lawrence, Kansas
-
-May 9
-(Sun)
 
 History
 Big 12 Tournament

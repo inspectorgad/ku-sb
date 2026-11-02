@@ -20,16 +20,16 @@ Upcoming Event: Softball at Texas Tech on March 14, 2027
 Sun. 03/14/27
 Softball
 at Texas Tech
+Upcoming Event: Softball at Utah on March 25, 2027
+Thu. 03/25/27
+Softball
+at Utah
 Upcoming Event: Softball at Utah on March 26, 2027
 Fri. 03/26/27
 Softball
 at Utah
 Upcoming Event: Softball at Utah on March 27, 2027
 Sat. 03/27/27
-Softball
-at Utah
-Upcoming Event: Softball at Utah on March 28, 2027
-Sun. 03/28/27
 Softball
 at Utah
 Upcoming Event: Softball versus BYU on April 1, 2027
@@ -92,7 +92,7 @@ Jersey Number
 2
 Timber Hensley
 Position
-INF/U 
+INF/OF 
 Academic Year
  So.
 Hometown
@@ -106,7 +106,7 @@ Jersey Number
 3
 Blakely Barber
 Position
-P 
+RHP 
 Academic Year
  So.
 Height
@@ -138,7 +138,7 @@ Jersey Number
 5
 Kadence Stafford
 Position
-INF 
+INF/OF 
 Academic Year
  Sr.
 Height
@@ -198,7 +198,7 @@ Jersey Number
 10
 Lila Partridge
 Position
-P 
+RHP 
 Academic Year
  So.
 Height
@@ -230,7 +230,7 @@ Jersey Number
 12
 September Flanagan
 Position
-INF/UTL 
+INF 
 Academic Year
  Gr.
 Height
@@ -284,7 +284,7 @@ Jersey Number
 21
 Ellie Loveless
 Position
-P/INF 
+RHP/INF 
 Academic Year
  Sr.
 Height
@@ -302,7 +302,7 @@ Jersey Number
 22
 Anna Soles
 Position
-LHP/UTL 
+LHP/1B 
 Academic Year
  Sr.
 Height
@@ -320,7 +320,7 @@ Jersey Number
 24
 Sam Claire
 Position
-P 
+RHP 
 Academic Year
  So.
 Height
@@ -356,7 +356,7 @@ Jersey Number
 26
 Chloe Barber
 Position
-P 
+RHP 
 Academic Year
  Sr.
 Height
@@ -420,7 +420,7 @@ Jersey Number
 33
 Kynleigh Ball
 Position
-INF 
+OF 
 Academic Year
  Fr.
 Hometown
@@ -450,7 +450,7 @@ Jersey Number
 66
 Daniella Gloria
 Position
-P 
+RHP 
 Academic Year
  Fr.
 Hometown
@@ -480,7 +480,7 @@ Jersey Number
 77
 Jocelyn Alatorre
 Position
-INF 
+OF 
 Academic Year
  Fr.
 Hometown
