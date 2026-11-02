@@ -1,12 +1,12 @@
 {
  "formatVersion": 1,
- "generatedAt": "2026-10-19T16:15:28Z",
+ "generatedAt": "2026-11-02T19:15:02Z",
  "team": "Kansas Jayhawks Softball",
  "players": [
   {
    "name": "Anna Soles",
    "jerseyNumber": "22",
-   "position": "LHP/UTL",
+   "position": "LHP/1B",
    "academicYear": "Sr.",
    "height": "5' 8''",
    "batsThrows": "L/L",
@@ -67,7 +67,7 @@
   {
    "name": "Blakely Barber",
    "jerseyNumber": "3",
-   "position": "P",
+   "position": "RHP",
    "academicYear": "So.",
    "height": "5' 7''",
    "batsThrows": "R/R",
@@ -94,7 +94,7 @@
   {
    "name": "Chloe Barber",
    "jerseyNumber": "26",
-   "position": "P",
+   "position": "RHP",
    "academicYear": "Sr.",
    "height": "5' 11''",
    "batsThrows": "R/R",
@@ -105,7 +105,7 @@
   {
    "name": "Daniella Gloria",
    "jerseyNumber": "66",
-   "position": "P",
+   "position": "RHP",
    "academicYear": "Fr.",
    "hometown": "Apache Junction, Ariz.",
    "active": true
@@ -124,7 +124,7 @@
   {
    "name": "Ellie Loveless",
    "jerseyNumber": "21",
-   "position": "P/INF",
+   "position": "RHP/INF",
    "academicYear": "Sr.",
    "height": "5' 8''",
    "batsThrows": "R/R",
@@ -170,7 +170,7 @@
   {
    "name": "Jocelyn Alatorre",
    "jerseyNumber": "77",
-   "position": "INF",
+   "position": "OF",
    "academicYear": "Fr.",
    "hometown": "Orange, CA",
    "active": true
@@ -178,7 +178,7 @@
   {
    "name": "Kadence Stafford",
    "jerseyNumber": "5",
-   "position": "INF",
+   "position": "INF/OF",
    "academicYear": "Sr.",
    "height": "5' 9''",
    "batsThrows": "R/R",
@@ -212,7 +212,7 @@
   {
    "name": "Kynleigh Ball",
    "jerseyNumber": "33",
-   "position": "INF",
+   "position": "OF",
    "academicYear": "Fr.",
    "hometown": "Georgetown, TX",
    "active": true
@@ -220,7 +220,7 @@
   {
    "name": "Lila Partridge",
    "jerseyNumber": "10",
-   "position": "P",
+   "position": "RHP",
    "academicYear": "So.",
    "height": "6' 0''",
    "batsThrows": "R/R",
@@ -262,7 +262,7 @@
   {
    "name": "Sam Claire",
    "jerseyNumber": "24",
-   "position": "P",
+   "position": "RHP",
    "academicYear": "So.",
    "height": "5' 10''",
    "batsThrows": "R/R",
@@ -273,7 +273,7 @@
   {
    "name": "September Flanagan",
    "jerseyNumber": "12",
-   "position": "INF/UTL",
+   "position": "INF",
    "academicYear": "Gr.",
    "height": "5' 9''",
    "batsThrows": "R/R",
@@ -312,7 +312,7 @@
   {
    "name": "Timber Hensley",
    "jerseyNumber": "2",
-   "position": "INF/U",
+   "position": "INF/OF",
    "academicYear": "So.",
    "hometown": "Durant, Okla.",
    "lastSchool": "Texas Tech",
@@ -34402,50 +34402,11 @@
    "event": "NCAA Regionals"
   },
   {
-   "date": "2026-09-26",
-   "opponent": "Nebraska",
-   "season": "Fall 2026",
-   "site": "A",
-   "startTime": "12:00 pm",
-   "teamScore": 0,
-   "opponentScore": 6
-  },
-  {
-   "date": "2026-09-26",
-   "opponent": "Nebraska (G2)",
-   "season": "Fall 2026",
-   "site": "A",
-   "startTime": "2:30 pm",
-   "teamScore": 0,
-   "opponentScore": 7
-  },
-  {
-   "date": "2026-10-02",
-   "opponent": "Rockhurst",
-   "season": "Fall 2026",
-   "site": "H",
-   "startTime": "5:00 pm"
-  },
-  {
-   "date": "2026-10-09",
-   "opponent": "Missouri",
-   "season": "Fall 2026",
-   "site": "H",
-   "startTime": "5:00 pm"
-  },
-  {
    "date": "2026-10-10",
    "opponent": "Kansas City Diamonds",
    "season": "Fall 2026",
    "site": "A",
    "startTime": "7:00 pm"
-  },
-  {
-   "date": "2026-10-10",
-   "opponent": "Nebraska",
-   "season": "Fall 2026",
-   "site": "N",
-   "startTime": "4:00 pm"
   },
   {
    "date": "2026-10-12",
@@ -34483,6 +34444,13 @@
    "startTime": ""
   },
   {
+   "date": "2027-03-25",
+   "opponent": "Utah",
+   "season": "2027",
+   "site": "A",
+   "startTime": ""
+  },
+  {
    "date": "2027-03-26",
    "opponent": "Utah",
    "season": "2027",
@@ -34491,13 +34459,6 @@
   },
   {
    "date": "2027-03-27",
-   "opponent": "Utah",
-   "season": "2027",
-   "site": "A",
-   "startTime": ""
-  },
-  {
-   "date": "2027-03-28",
    "opponent": "Utah",
    "season": "2027",
    "site": "A",
@@ -34546,13 +34507,6 @@
    "startTime": ""
   },
   {
-   "date": "2027-04-15",
-   "opponent": "Iowa State",
-   "season": "2027",
-   "site": "A",
-   "startTime": ""
-  },
-  {
    "date": "2027-04-16",
    "opponent": "Iowa State",
    "season": "2027",
@@ -34561,6 +34515,13 @@
   },
   {
    "date": "2027-04-17",
+   "opponent": "Iowa State",
+   "season": "2027",
+   "site": "A",
+   "startTime": ""
+  },
+  {
+   "date": "2027-04-18",
    "opponent": "Iowa State",
    "season": "2027",
    "site": "A",
@@ -34609,6 +34570,13 @@
    "startTime": ""
   },
   {
+   "date": "2027-05-06",
+   "opponent": "Houston",
+   "season": "2027",
+   "site": "H",
+   "startTime": ""
+  },
+  {
    "date": "2027-05-07",
    "opponent": "Houston",
    "season": "2027",
@@ -34617,13 +34585,6 @@
   },
   {
    "date": "2027-05-08",
-   "opponent": "Houston",
-   "season": "2027",
-   "site": "H",
-   "startTime": ""
-  },
-  {
-   "date": "2027-05-09",
    "opponent": "Houston",
    "season": "2027",
    "site": "H",
