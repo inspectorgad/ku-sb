@@ -40,6 +40,9 @@ fun JayhawksApp(viewModel: JayhawksViewModel) {
     var openOpponentKey by rememberSaveable { mutableStateOf<String?>(null) }
     var openOpponentSeason by rememberSaveable { mutableStateOf("") }
     var askOpen by rememberSaveable { mutableStateOf(false) }
+    // A question a Preview or Recap button sent through; null when Ask was
+    // opened from the Season tab and the reader types their own.
+    var askPrefill by rememberSaveable { mutableStateOf<String?>(null) }
 
     val players by viewModel.players.collectAsStateWithLifecycle()
     val games by viewModel.games.collectAsStateWithLifecycle()
@@ -84,7 +87,15 @@ fun JayhawksApp(viewModel: JayhawksViewModel) {
             onBack = { openPlayerId = null }
         ) } }
 
-        askOpen -> { { AskScreen(onBack = { askOpen = false }) } }
+        askOpen -> { {
+            AskScreen(
+                onBack = {
+                    askOpen = false
+                    askPrefill = null
+                },
+                prefill = askPrefill
+            )
+        } }
 
         openOpponentKey != null -> { { OpponentDetailScreen(
             opponentKey = openOpponentKey!!,
@@ -108,6 +119,11 @@ fun JayhawksApp(viewModel: JayhawksViewModel) {
             },
             onSaveStatLine = viewModel::saveStatLine,
             onDeleteStatLine = viewModel::deleteStatLine,
+            onAskClaude = { question ->
+                askPrefill = question
+                openGameId = null
+                askOpen = true
+            },
             onBack = { openGameId = null }
         ) } }
 

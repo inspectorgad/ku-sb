@@ -10,9 +10,9 @@
 /.idea/assetWizardSettings.xml
 .DS_Store
 /build
-# Module build outputs. Only the root /build was ignored, which was enough
-# while nothing was ever built in this checkout; local builds put one in
-# every module.
+# The root /build above does not cover a module's own, so a local Gradle run
+# left app/build and shared/build untracked and `git add -A` staged several
+# hundred files of them. Unanchored, so it catches a module at any depth.
 build/
 /captures
 .externalNativeBuild
