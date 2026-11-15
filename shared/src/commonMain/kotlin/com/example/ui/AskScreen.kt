@@ -313,7 +313,7 @@ fun AskScreen(onBack: () -> Unit, prefill: String? = null) {
                 webSearch = webSearch,
                 onWebSearch = {
                     webSearch = it
-                    AskKeyStore.saveWebSearch(context, it)
+                    AskKeyStore.saveWebSearch(device, it)
                 },
                 onAsk = {
                     val q = question.trim()
