@@ -20,8 +20,9 @@ import kotlinx.serialization.json.JsonPrimitive
 // - the numeric getters read numbers sent as strings ("12" -> 12);
 // - put(name, null) removes the name rather than storing a null;
 // - toString escapes '/' as "\/" and writes 2.0 as 2.
-// JsonCompatTest runs the same inputs through this and through Android's own
-// org.json and requires the same answers.
+// NOT YET TESTED. This wants a JsonCompatTest running the same inputs through
+// this and through Android's own org.json and requiring the same answers;
+// there isn't one. The quirks above are the ones that would bite.
 //
 // kotlinx.serialization does the parsing; the value model, the accessors and
 // the writer are here.

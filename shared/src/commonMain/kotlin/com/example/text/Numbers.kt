@@ -9,7 +9,12 @@ import kotlin.math.floor
 // matters more than it looks: Java rounds half-up on the shortest decimal
 // form of the number, not on its exact binary value, so a hitting percentage
 // of 1/16 shows as .063 where C's printf (and so a naive iOS port) would show
-// .062. NumbersTest compares the two over a few hundred thousand values.
+// .062.
+//
+// NOT YET TESTED. This wants a NumbersTest comparing the two over a few
+// hundred thousand values; there isn't one. Every batting average, ERA and
+// per-game figure on both phones comes through here, so treat a change to it
+// as unguarded until that test exists.
 
 /** [value] with exactly [decimals] digits after the point, as Java's %.Nf writes it. */
 fun fixed(value: Double, decimals: Int): String {

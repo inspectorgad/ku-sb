@@ -17,8 +17,13 @@ import kotlin.time.ExperimentalTime
 // the letters y M d E H h m s a, quoted text, and '' for a quote mark. It keeps
 // SimpleDateFormat's behaviour where the app could see a difference - US
 // English names, strict parsing (2026-02-30 is not a date), and anything after
-// the pattern ignored. Time zones come from kotlinx-datetime. DatesTest runs
-// every pattern the app uses against SimpleDateFormat over decades of dates.
+// the pattern ignored. Time zones come from kotlinx-datetime.
+//
+// NOT YET TESTED, AND NOT YET USED. This wants a DatesTest running every
+// pattern against SimpleDateFormat over decades of dates; there isn't one.
+// Nothing calls reformat, centralToUtcMs or utcToLocal either — only
+// currentTimeMs and todayIso below are live — so the pattern engine is dead
+// weight for now. Test it before giving it a caller, or delete it.
 
 private val MONTHS = listOf(
     "January", "February", "March", "April", "May", "June",

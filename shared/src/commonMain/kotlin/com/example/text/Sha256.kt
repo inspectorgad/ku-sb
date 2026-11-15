@@ -5,8 +5,11 @@ package com.example.text
 // The season sync keeps the hash of the last data it merged and skips a
 // download whose hash matches, so this has to give MessageDigest's answer for
 // every input: a hash that differed would make every phone re-merge once
-// after the update, and a wrong one could hide a change. Sha256Test compares
-// the two over thousands of inputs. The steps are FIPS 180-4's, section 6.2.
+// after the update, and a wrong one could hide a change. The steps are
+// FIPS 180-4's, section 6.2.
+//
+// NOT YET TESTED. This wants a Sha256Test comparing it with MessageDigest
+// over thousands of inputs; there isn't one.
 
 private val ROUND_CONSTANTS = longArrayOf(
     0x428a2f98, 0x71374491, 0xb5c0fbcf, 0xe9b5dba5, 0x3956c25b, 0x59f111f1, 0x923f82a4, 0xab1c5ed5,

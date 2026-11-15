@@ -1226,8 +1226,11 @@ function openGame(key) {
   if (recap) {
     recap.onclick = () => {
       gmodal.close();
+      // The raw name, as the app passes it. oppName would strip "(G2)" and
+      // the two halves of a doubleheader would ask a byte-identical question,
+      // leaving Claude no way to tell which game was meant.
       window.kuAskAbout(window.kuRecapQuestion(
-        g.date, g.site === "A" ? "at" : "vs", oppName(g.opponent)));
+        g.date, g.site === "A" ? "at" : "vs", g.opponent));
     };
   }
   gmodal.showModal();
@@ -1446,8 +1449,9 @@ function openGame(key) {
     const b = ev.target.closest("button[data-i]");
     if (!b) return;
     const g = pending[Number(b.dataset.i)];
+    // The raw name, as the app passes it — see the Recap button above.
     window.kuAskAbout(window.kuPreviewQuestion(
-      g.date, g.site === "A" ? "at" : "vs", oppName(g.opponent)));
+      g.date, g.site === "A" ? "at" : "vs", g.opponent));
   });
 })();
 

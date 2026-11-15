@@ -15,12 +15,17 @@ activityCompose = "1.13.0"
 kotlin = "2.4.21"
 composeBom = "2024.09.00"
 # The screens are Compose Multiplatform, shared with the iPhone app. On
-# Android it brings Jetpack Compose 1.12.1, which the Compose tooling and the
-# app's own Compose tests must match.
+# Android it brings Jetpack Compose 1.12.1.
+#
+# The app module's Compose tooling and test artifacts are NOT pinned to that:
+# they come from composeBom above, and Gradle's conflict resolution lifts them
+# to 1.12.1 because the shared module asks for it. An androidxCompose = "1.12.1"
+# entry used to sit here claiming to pin them, but nothing referenced it, so it
+# pinned nothing. If they ever need holding, wire a version here to the
+# artifacts rather than leaving a number that only looks load-bearing.
 composeMultiplatform = "1.12.2"
 composeMultiplatformMaterial3 = "1.12.0-alpha03"
 jetbrainsLifecycle = "2.11.0"
-androidxCompose = "1.12.1"
 # The SQLite Room uses on iPhone, built into the app.
 sqliteBundled = "2.6.2"
 kotlinxSerializationJson = "1.9.0"
