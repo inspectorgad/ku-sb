@@ -26,8 +26,9 @@ const SEASONS = (process.env.SEASONS || '2026 2027').trim().split(/\s+/);
 const TEAM_SEO = 'kansas';
 const CONFERENCE_SEO = 'big-12';
 // Bump to force a one-time full re-sweep of scanned dates (e.g. when the
-// sweep starts collecting something new, like v2's big12Games).
-const INDEX_VERSION = 2;
+// sweep starts collecting something new, like v2's big12Games, or v3's
+// d1Results).
+const INDEX_VERSION = 3;
 // Bump when scrapeBoxScore starts keeping MORE of the Sidearm box node, so
 // already-captured games are re-fetched once instead of staying thin forever.
 const BOX_VERSION = 2;
@@ -42,9 +43,27 @@ index.scannedDates ??= {};
 index.ncaaGames ??= {};
 index.sidearmGames ??= {};
 index.big12Games ??= {};
-if ((index.indexVersion ?? 1) < INDEX_VERSION) {
+
+// Every final Division I game, kept in its own file rather than in the index:
+// it is by far the largest thing the sweep collects, and mixing it in would
+// make every nightly diff of ku-index.json unreadable. The scoreboard this
+// comes from is already fetched for the Big 12 capture below, so keeping the
+// rest of each day's games costs no extra request.
+const D1_PATH = 'scraped/d1-results.json';
+const d1 = fs.existsSync(D1_PATH)
+  ? JSON.parse(fs.readFileSync(D1_PATH, 'utf8'))
+  : { games: {} };
+d1.games ??= {};
+
+// A scanned date is never re-read, so a sweep that starts collecting
+// something new has to clear them once or it would only ever see new dates.
+// Also triggered when the D1 file has gone missing while the index has not,
+// which would otherwise leave it permanently empty.
+const d1Empty = Object.keys(d1.games).length === 0;
+if ((index.indexVersion ?? 1) < INDEX_VERSION || d1Empty) {
   console.log(
-    `index v${index.indexVersion ?? 1} < v${INDEX_VERSION}: clearing ${Object.keys(index.scannedDates).length} scanned dates for a one-time full re-sweep`
+    `${d1Empty ? 'no D1 results yet' : `index v${index.indexVersion ?? 1} < v${INDEX_VERSION}`}: ` +
+      `clearing ${Object.keys(index.scannedDates).length} scanned dates for a one-time full re-sweep`
   );
   index.scannedDates = {};
   index.indexVersion = INDEX_VERSION;
@@ -95,6 +114,26 @@ for (const season of SEASONS) {
     for (const wrap of data.games || []) {
       const g = wrap.game || wrap;
       const sides = [g.home, g.away];
+
+      // Every final game of the day, not only the Big 12 ones below. Names
+      // and scores only — the keys the tables join on are derived in
+      // ask_pack.py, so one spelling rule serves every source.
+      if (g.gameState === 'final') {
+        d1.games[g.gameID] = {
+          date,
+          season: date.slice(0, 4),
+          home: g.home?.names?.short ?? '',
+          homeScore: Number(g.home?.score ?? 0),
+          away: g.away?.names?.short ?? '',
+          awayScore: Number(g.away?.score ?? 0),
+          // The same two facts the Big 12 capture keeps, for the same
+          // reasons: a game with neither side marked the winner is one the
+          // NCAA never filled in, and a bracket game is the NCAA tournament.
+          homeWon: Boolean(g.home?.winner),
+          awayWon: Boolean(g.away?.winner),
+          bracket: Boolean(g.bracketRound || g.bracketId),
+        };
+      }
 
       // Big 12 capture: any final game with at least one conference team.
       // Conference games (both sides tagged) drive conference records; the
@@ -147,6 +186,8 @@ for (const season of SEASONS) {
 }
 
 console.log(`big12 games captured: ${Object.keys(index.big12Games).length}`);
+fs.writeFileSync(D1_PATH, JSON.stringify(d1));
+console.log(`D1 games captured: ${Object.keys(d1.games).length} (${D1_PATH})`);
 
 // --- 1b. Rankings snapshots (best effort; never fail the run) ---------------
 // Both sources serve only the CURRENT snapshot — there is no per-season
