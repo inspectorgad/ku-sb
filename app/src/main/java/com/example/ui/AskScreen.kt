@@ -77,8 +77,8 @@ const val EXPLAIN_ASK =
     "Type a question about the team and Claude, Anthropic's AI, answers it from the season data: " +
         "every game, the score in every inning, every batting, pitching and fielding line, how each " +
         "run scored, the schedule, the Big 12 standings, the national poll, the weekly RPI and the " +
-        "roster — and, for other teams, every Big 12 game this season, each Big 12 team's scoring " +
-        "and record, and every Division I team's RPI row. Claude works each answer out by " +
+        "roster — and, for other teams, every Division I game this season, each Big 12 team's " +
+        "scoring and record, and every Division I team's RPI row. Claude works each answer out by " +
         "running Python on the data rather than from memory, and \"Show the code\" under an answer " +
         "lists exactly what it ran. On its own it knows nothing about injuries, practice or " +
         "line-ups; turn on web search below to let it look those up. Follow-up questions build on " +

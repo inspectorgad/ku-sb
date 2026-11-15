@@ -152,7 +152,7 @@ function rollBack(size) {
 const TABLES = ["games", "innings", "batting", "pitching", "fielding", "scoring_plays",
   "opponent_batting", "opponent_pitching", "upcoming", "standings", "poll", "rankings",
   "roster", "definitions",
-  "big12_results", "team_scoring", "team_records"];
+  "big12_results", "team_scoring", "team_records", "d1_results"];
 // Anthropic's price for one web search ($10 per 1,000), and the most one
 // question may use — the same as the app (AskEngine.kt).
 const SEARCH_DOLLARS = 0.01;
@@ -169,7 +169,7 @@ const TOOLS = [
   {
     name: "get_table",
     description: "Returns one table of the Kansas softball season data (or, for the big12_results, " +
-      "team_scoring and team_records tables, data on other teams) as a JSON string: " +
+      "team_scoring, team_records and d1_results tables, data on other teams) as a JSON string: " +
       "a list of records (one per row) for every table except 'definitions' (a dict of column " +
       "meanings) and 'poll' (a dict with season, name, updated and rows). Call it from Python and " +
       "load it with pandas, e.g. df = pd.DataFrame(json.loads(await get_table({'table': 'batting'}))).",

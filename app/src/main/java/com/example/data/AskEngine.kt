@@ -429,7 +429,7 @@ class AskEngine(
             "batting", "definitions", "fielding", "games", "innings",
             "opponent_batting", "opponent_pitching", "pitching", "poll", "rankings",
             "roster", "scoring_plays", "standings", "upcoming",
-            "big12_results", "team_scoring", "team_records"
+            "big12_results", "team_scoring", "team_records", "d1_results"
         )
 
         /**
@@ -671,7 +671,8 @@ class AskEngine(
                     .put(
                         "description",
                         "Returns one table of the Kansas softball season data (or, for the big12_results, " +
-                            "team_scoring and team_records tables, data on other teams) as a JSON string: a list " +
+                            "team_scoring, team_records and d1_results tables, data on other teams) as a JSON " +
+                            "string: a list " +
                             "of records (one per row) for every table except 'definitions' (a dict of column " +
                             "meanings) and 'poll' (a dict with season, name, updated and rows). Call it from " +
                             "Python and load it with pandas, e.g. " +

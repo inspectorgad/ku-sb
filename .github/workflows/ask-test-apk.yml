@@ -14,8 +14,12 @@ name: Ask test APK
 on:
   workflow_dispatch:
   push:
+    # Any working branch, rather than one named here: the first version named
+    # a single branch and the next piece of work, on a branch of its own,
+    # silently built nothing. build-apk.yml runs on main only, so these two
+    # never both fire.
     branches:
-      - claude/ask-web-search
+      - 'claude/**'
 
 permissions:
   contents: write   # to publish the prerelease

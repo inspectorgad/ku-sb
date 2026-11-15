@@ -155,8 +155,46 @@ POLL = {
               "Points": "30", "Previous": "NR"}],
 }
 
+# The whole Division I scoreboard, as scrape-ku-sb.mjs files it away. The
+# same cleaning rules as the Big 12 capture apply, so the fixture carries one
+# row for each: a placeholder, a score never filled in, a game listed twice,
+# and a real doubleheader.
+D1 = {
+    "games": {
+        # Two teams with no Big 12 side at all — the reason this table exists.
+        "900": {"date": "2026-03-01", "season": "2026", "home": "Michigan", "homeScore": 5,
+                "away": "Florida", "awayScore": 2, "homeWon": True, "awayWon": False,
+                "bracket": False},
+        "901": {"date": "2026-03-02", "season": "2026", "home": "Florida", "homeScore": 7,
+                "away": "Wichita St.", "awayScore": 1, "homeWon": True, "awayWon": False,
+                "bracket": False},
+        # A placeholder for a game that was never played.
+        "902": {"date": "2026-05-09", "season": "2026", "home": "Michigan", "homeScore": 0,
+                "away": "TBA", "awayScore": 0, "homeWon": False, "awayWon": False,
+                "bracket": False},
+        # No winner and no runs: a score the NCAA never filled in.
+        "903": {"date": "2026-03-10", "season": "2026", "home": "Yale", "homeScore": 0,
+                "away": "Villanova", "awayScore": 0, "homeWon": False, "awayWon": False,
+                "bracket": False},
+        # One game under two ids, exactly one bracket-flagged: a copy.
+        "904": {"date": "2026-05-17", "season": "2026", "home": "Michigan", "homeScore": 3,
+                "away": "Duke", "awayScore": 4, "homeWon": False, "awayWon": True,
+                "bracket": True},
+        "905": {"date": "2026-05-17", "season": "2026", "home": "Michigan", "homeScore": 3,
+                "away": "Duke", "awayScore": 4, "homeWon": False, "awayWon": True,
+                "bracket": False},
+        # A real doubleheader: neither listing flagged, so both are real.
+        "906": {"date": "2026-02-05", "season": "2026", "home": "Omaha", "homeScore": 2,
+                "away": "South Dakota", "awayScore": 1, "homeWon": True, "awayWon": False,
+                "bracket": False},
+        "907": {"date": "2026-02-05", "season": "2026", "home": "Omaha", "homeScore": 2,
+                "away": "South Dakota", "awayScore": 1, "homeWon": True, "awayWon": False,
+                "bracket": False},
+    }
+}
+
 PACK = build_pack(SEED)
-OTHERS = build_pack(SEED, INDEX, RPI, POLL)
+OTHERS = build_pack(SEED, INDEX, RPI, POLL, D1)
 
 
 print("team name keys agree with the rest of the project")
@@ -366,8 +404,38 @@ check("and when it runs through", all(r["as_of"] for r in T))
 check("and carries a key to match on", T[0]["team_key"] == team_key("Texas"))
 
 print()
+print("every Division I game, for the teams the Big 12 table cannot see")
+D = OTHERS["d1_results"]
+ids = {(r["date"], r["home"], r["away"]) for r in D}
+check("a game between two non-Big-12 teams is kept",
+      ("2026-03-01", "Michigan", "Florida") in ids, sorted(ids))
+check("a TBA placeholder is dropped",
+      not any(r["home"] == "TBA" or r["away"] == "TBA" for r in D))
+check("a score the NCAA never filled in is flagged",
+      next(r for r in D if r["home"] == "Yale")["score_missing"] is True)
+check("a played game is not flagged",
+      next(r for r in D if r["home"] == "Michigan" and r["away"] == "Florida")["score_missing"] is False)
+check("one game listed twice is counted once",
+      len([r for r in D if r["away"] == "Duke"]) == 1,
+      [r for r in D if r["away"] == "Duke"])
+check("a real doubleheader keeps both games",
+      len([r for r in D if r["away"] == "South Dakota"]) == 2)
+check("rows carry both teams' keys", all(r["home_key"] and r["away_key"] for r in D))
+check("the keys are the same ones the other tables use",
+      next(r for r in D if r["home"] == "Michigan")["home_key"] == team_key("Michigan"))
+check("rows stay thin, this being the largest table",
+      set(D[0]) == {"date", "season", "home", "home_key", "home_runs",
+                    "away", "away_key", "away_runs", "score_missing"},
+      sorted(D[0]))
+check("it can find a common opponent the Big 12 table cannot",
+      # Michigan and Wichita St. both played Florida; neither is in the Big 12,
+      # so big12_results has neither game.
+      {r["away_key"] for r in D if r["home_key"] == team_key("Florida")} == {team_key("Wichita St.")}
+      and any(r["away_key"] == team_key("Florida") for r in D))
+
+print()
 print("the other-team tables are always there, even with nothing to put in them")
-for t in ("big12_results", "team_scoring", "team_records"):
+for t in ("big12_results", "team_scoring", "team_records", "d1_results"):
     check(f"{t} is a list when no scrape was passed in", isinstance(PACK[t], list))
     check(f"{t} is empty rather than missing", PACK[t] == [])
 
