@@ -453,6 +453,8 @@ check("it says to join on the keys", "team_key" in op)
 check("it warns that team_scoring's W-L is approximate",
       "team_records" in op and "approximate" in op)
 
+ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+
 print()
 print("the clients and the pack agree on what tables exist")
 # The table list is written in three places — the pack, the dashboard's
@@ -478,13 +480,36 @@ def listed(path, pattern):
     return sorted(_re.findall(r'"([a-z0-9_]+)"', m.group(1))) if m else None
 
 
+def _find(*paths):
+    """The first of [paths] that exists, or None.
+
+    The Kotlin lives under app/ while this is an Android-only app and under
+    shared/ once it is shared with the iPhone. Naming only one of the two
+    meant this check quietly skipped on whichever branch had the other --
+    reporting no drift because it had looked nowhere.
+    """
+    for p in paths:
+        if os.path.exists(os.path.join(ROOT, p)):
+            return p
+    return None
+
+
+ASK_ENGINE = _find(
+    "shared/src/commonMain/kotlin/com/example/data/AskEngine.kt",
+    "app/src/main/java/com/example/data/AskEngine.kt",
+)
+ASK_SCREEN = _find(
+    "shared/src/commonMain/kotlin/com/example/ui/AskScreen.kt",
+    "app/src/main/java/com/example/ui/AskScreen.kt",
+)
+
 for path, pattern in [
     ("docs/ask.js", r"const TABLES = \[(.*?)\];"),
-    ("app/src/main/java/com/example/data/AskEngine.kt", r"val ASK_TABLES = listOf\((.*?)\)"),
+    (ASK_ENGINE, r"val ASK_TABLES = listOf\((.*?)\)"),
 ]:
-    found = listed(path, pattern)
+    found = listed(path, pattern) if path else None
     if found is None:
-        print(f"  --   {path} not present yet; skipped")
+        print(f"  --   {path or 'AskEngine.kt'} not found; skipped")
         continue
     check(f"{path} lists the pack's tables", found == PACK_TABLES,
           f"\n       pack: {PACK_TABLES}\n       file: {found}")
@@ -500,7 +525,9 @@ print("the app and the dashboard ask the Preview and Recap questions the same wa
 
 
 def _kotlin_question(fn):
-    src = open(os.path.join(ROOT, "app/src/main/java/com/example/ui/AskScreen.kt")).read()
+    if not ASK_SCREEN:
+        return None
+    src = open(os.path.join(ROOT, ASK_SCREEN)).read()
     m = _re.search(rf"fun {fn}\(date: String, versus: String, opponent: String\) =(.*?)\n\n", src, _re.S)
     if not m:
         return None
@@ -518,7 +545,6 @@ def _js_question(fn):
     return joined.replace("${date}", "<D>").replace("${versus}", "<V>").replace("${opponent}", "<O>")
 
 
-ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 for kt, js in (("previewQuestion", "kuPreviewQuestion"), ("recapQuestion", "kuRecapQuestion")):
     a, b = _kotlin_question(kt), _js_question(js)
     if a is None or b is None:
@@ -545,7 +571,6 @@ def _read(path):
         return None
 
 
-ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 REAL_SEED = _read("app/src/main/assets/seed.json")
 REAL_INDEX = _read("scraped/ku-index.json")
 REAL_RPI = _read("scraped/rankings-rpi.json")

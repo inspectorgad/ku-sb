@@ -11,8 +11,9 @@
 .DS_Store
 /build
 # The root /build above does not cover a module's own, so a local Gradle run
-# left app/build untracked and `git add -A` staged several hundred files of it.
-*/build/
+# left app/build and shared/build untracked and `git add -A` staged several
+# hundred files of them. Unanchored, so it catches a module at any depth.
+build/
 /captures
 .externalNativeBuild
 .cxx

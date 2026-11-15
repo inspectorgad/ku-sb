@@ -79,8 +79,9 @@ fine — it's only needed while installing.
 
 - Kotlin + Jetpack Compose (Material 3), KU crimson & blue theme
 - Room for persistence
-- Pure-Kotlin softball stats engine in `app/src/main/java/com/example/stats/`,
-  covered by unit tests in `app/src/test/`
+- Pure-Kotlin softball stats engine in
+  `shared/src/commonMain/kotlin/com/example/stats/`, shared by the Android and
+  iPhone apps and covered by unit tests in `app/src/test/`
 
 ## Data validation
 

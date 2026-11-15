@@ -6,12 +6,12 @@ import kotlinx.coroutines.CancellationException
 import kotlinx.coroutines.async
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.runBlocking
-import okhttp3.OkHttpClient
 import okhttp3.mockwebserver.MockResponse
 import okhttp3.mockwebserver.MockWebServer
 import okhttp3.mockwebserver.SocketPolicy
-import org.json.JSONArray
-import org.json.JSONObject
+import com.example.json.JSONArray
+import com.example.json.JSONObject
+import com.example.platform.OkHttpHttp
 import org.junit.After
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertFalse
@@ -19,9 +19,6 @@ import org.junit.Assert.assertNull
 import org.junit.Assert.assertTrue
 import org.junit.Before
 import org.junit.Test
-import org.junit.runner.RunWith
-import org.robolectric.RobolectricTestRunner
-import org.robolectric.annotation.Config
 import java.util.concurrent.TimeUnit
 
 /**
@@ -35,11 +32,10 @@ import java.util.concurrent.TimeUnit
  * wrong means a 400 that says nothing useful. They are pinned here so they
  * stay fixed.
  *
- * Robolectric because Android's org.json is a stub on a plain JVM, and the
- * engine parses every reply with it.
+ * No Robolectric here, unlike this repo's other tests: the engine parses
+ * replies with the shared module's own JSON rather than Android's org.json,
+ * which is a stub on a plain JVM, so these run straight on one.
  */
-@RunWith(RobolectricTestRunner::class)
-@Config(sdk = [36])
 class AskEngineTest {
 
     private lateinit var server: MockWebServer
@@ -67,10 +63,8 @@ class AskEngineTest {
     }
 
     private fun engine() = AskEngine(
-        client = OkHttpClient.Builder()
-            .connectTimeout(10, TimeUnit.SECONDS)
-            .readTimeout(10, TimeUnit.SECONDS)
-            .build(),
+        // OkHttp's own defaults, which these tests were written against.
+        client = OkHttpHttp(connectSeconds = 10, readSeconds = 10),
         baseUrl = server.url("/").toString().trimEnd('/'),
         loadPack = { pack }
     )
@@ -557,21 +551,18 @@ class AskEngineTest {
     }
 
     @Test
-    fun `an unreachable Anthropic is explained plainly`() = runBlocking {
+    fun `an unreachable Anthropic is explained with the reason`() = runBlocking {
         val closed = MockWebServer().apply { start() }
         val url = closed.url("/").toString().trimEnd('/')
         closed.shutdown()
         val engine = AskEngine(
-            client = OkHttpClient.Builder()
-                .connectTimeout(5, TimeUnit.SECONDS)
-                .readTimeout(5, TimeUnit.SECONDS)
-                .build(),
+            client = OkHttpHttp(connectSeconds = 5, readSeconds = 5),
             baseUrl = url,
             loadPack = { pack }
         )
         val answer = engine.ask("Anyone there?", "sk-ant-test", opus, "2026-10-25")
         assertEquals(
-            "Couldn't reach api.anthropic.com. Check your connection — some networks block it.",
+            "Couldn't reach api.anthropic.com: the connection was refused. Check your connection — some networks block it.",
             answer.error
         )
     }
