@@ -110,6 +110,26 @@ private val EXAMPLES = listOf(
     "With web search on: any injury or lineup news for our next opponent?",
 )
 
+/**
+ * The Preview button's question; the dashboard's ask.js asks the same, word
+ * for word. The injury and line-up news is looked up only when web search is
+ * on: every question tells Claude whether it is, so with search off Claude
+ * answers the rest from the tables and says it cannot get the news.
+ *
+ * [versus] is "vs" or "at", as [opponentLabel] prints it.
+ */
+fun previewQuestion(date: String, versus: String, opponent: String) =
+    "Give me a short scouting report for the $date game $versus $opponent: their season so far " +
+        "and where they sit in the RPI, our last meeting, any opponents we have both played and " +
+        "how each of us did against them, the hitters and pitchers to watch on each side, how we " +
+        "match up, and, if web search is on, any injury or lineup news for either team."
+
+/** The Recap button's question; the dashboard asks the same. */
+fun recapQuestion(date: String, versus: String, opponent: String) =
+    "Recap the $date game $versus $opponent: the result and how it unfolded inning by inning, " +
+        "our standout batters and pitchers and theirs, how the day compared with our season " +
+        "averages, and what decided it."
+
 /** One question and whatever came back for it. */
 class AskTurn(val question: String) {
     var answer by mutableStateOf("")
@@ -195,7 +215,7 @@ object AskSession {
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun AskScreen(onBack: () -> Unit) {
+fun AskScreen(onBack: () -> Unit, prefill: String? = null) {
     val context = LocalContext.current.applicationContext
     var savedKey by remember { mutableStateOf(AskSession.sessionKey ?: AskKeyStore.load(context)) }
     var model by remember { mutableStateOf(AskKeyStore.model(context)) }
@@ -207,6 +227,21 @@ fun AskScreen(onBack: () -> Unit) {
 
     LaunchedEffect(turns.size) {
         if (turns.isNotEmpty()) listState.animateScrollToItem(turns.size + 1)
+    }
+
+    // Arrived from a Preview or Recap button: ask it straight away when the
+    // key is already saved, and otherwise put it in the box so the reader can
+    // send it once they have entered one. Guarded against asking twice if the
+    // screen is recomposed, and against cutting across an answer in flight.
+    LaunchedEffect(prefill) {
+        val q = prefill ?: return@LaunchedEffect
+        if (turns.any { it.question == q }) return@LaunchedEffect
+        val key = savedKey
+        if (key != null && AskSession.running == null) {
+            AskSession.ask(q, key, model, webSearch)
+        } else {
+            question = q
+        }
     }
 
     Scaffold(

@@ -448,7 +448,7 @@
     <div class="card tbl-wrap" style="max-height:420px; overflow-y:auto;">
       <table id="upcomingTbl">
         <thead><tr>
-          <th class="lft">Date</th><th class="lft">Opponent</th><th class="lft">Site</th><th class="lft">First pitch</th>
+          <th class="lft">Date</th><th class="lft">Opponent</th><th class="lft">Site</th><th class="lft">First pitch</th><th class="lft"></th>
         </tr></thead>
         <tbody></tbody>
       </table>
@@ -1216,7 +1216,20 @@ function openGame(key) {
         (g.opponentErrors || 0) > (g.opponentLines || []).reduce((a, l) => a + (l.e || 0), 0)
           ? "Softball charges some errors to the team rather than to a fielder, so these can sum to less than the line score."
           : "") +
+    // One tap to Claude for a recap of this game, through "Ask about the
+    // team". Only when ask.js loaded and a key can be entered.
+    (window.kuRecapQuestion
+      ? `<div class="m-sec"><button class="ask-btn" id="gRecap">Recap this game with Claude</button></div>`
+      : "") +
     (links.length ? `<div class="m-links">${links.join("")}</div>` : "");
+  const recap = document.getElementById("gRecap");
+  if (recap) {
+    recap.onclick = () => {
+      gmodal.close();
+      window.kuAskAbout(window.kuRecapQuestion(
+        g.date, g.site === "A" ? "at" : "vs", oppName(g.opponent)));
+    };
+  }
   gmodal.showModal();
 }
 
@@ -1418,13 +1431,24 @@ function openGame(key) {
   document.getElementById("upcomingHead").textContent =
     seasons.length === 1 ? `${seasons[0]} schedule` : "Upcoming schedule";
   const siteLabel = { H: "Home", A: "Away", N: "Neutral" };
-  document.querySelector("#upcomingTbl tbody").innerHTML = pending.map(g => `
+  const tbody = document.querySelector("#upcomingTbl tbody");
+  tbody.innerHTML = pending.map((g, i) => `
     <tr>
       <td class="lft">${fmtDate(g.date)}<span class="dim"> ${g.date.slice(0, 4)}</span></td>
       <td class="lft"><b>${g.site === "A" ? "at " : "vs "}${g.opponent}</b></td>
       <td class="lft dim">${siteLabel[g.site] || ""}</td>
       <td class="lft dim">${g.startTime || ""}</td>
+      <td class="lft">${window.kuPreviewQuestion
+        ? `<button class="ask-btn ask-preview" data-i="${i}">Preview</button>` : ""}</td>
     </tr>`).join("");
+  // A scouting report for a game not yet played, through "Ask about the team".
+  tbody.addEventListener("click", ev => {
+    const b = ev.target.closest("button[data-i]");
+    if (!b) return;
+    const g = pending[Number(b.dataset.i)];
+    window.kuAskAbout(window.kuPreviewQuestion(
+      g.date, g.site === "A" ? "at" : "vs", oppName(g.opponent)));
+  });
 })();
 
 // ---------- Kansas in the RPI, week by week ----------

@@ -425,6 +425,43 @@ for t in PACK_TABLES:
     check(f"the prompt mentions {t}", t in PACK["system_prompt"])
 
 print()
+print("the app and the dashboard ask the Preview and Recap questions the same way")
+# Written out twice, in Kotlin and in JavaScript, so the same button can ask
+# two different things if one is edited and the other is not. Nothing would
+# fail: the answers would simply differ depending on which one you pressed.
+
+
+def _kotlin_question(fn):
+    src = open(os.path.join(ROOT, "app/src/main/java/com/example/ui/AskScreen.kt")).read()
+    m = _re.search(rf"fun {fn}\(date: String, versus: String, opponent: String\) =(.*?)\n\n", src, _re.S)
+    if not m:
+        return None
+    joined = "".join(_re.findall(r'"((?:[^"\\]|\\.)*)"', m.group(1)))
+    return joined.replace("$date", "<D>").replace("$versus", "<V>").replace("$opponent", "<O>")
+
+
+def _js_question(fn):
+    src = open(os.path.join(ROOT, "docs/ask.js")).read()
+    m = _re.search(rf"window\.{fn} = \(date, versus, opponent\) =>(.*?);\n", src, _re.S)
+    if not m:
+        return None
+    joined = "".join(a or b for a, b in
+                     _re.findall(r'`((?:[^`\\]|\\.)*)`|"((?:[^"\\]|\\.)*)"', m.group(1)))
+    return joined.replace("${date}", "<D>").replace("${versus}", "<V>").replace("${opponent}", "<O>")
+
+
+ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+for kt, js in (("previewQuestion", "kuPreviewQuestion"), ("recapQuestion", "kuRecapQuestion")):
+    a, b = _kotlin_question(kt), _js_question(js)
+    if a is None or b is None:
+        print(f"  --   {kt} or {js} not found; skipped")
+        continue
+    check(f"{kt} is word for word {js}", a == b,
+          f"\n       app: {a}\n       web: {b}")
+check("the Preview question asks for web news only when search is on",
+      "if web search is on" in (_kotlin_question("previewQuestion") or ""))
+
+print()
 print("the real scraped data, as warnings only")
 # These read the committed scrape rather than a fixture, so a new spelling or
 # a gap in the NCAA feed would make them fail. This script runs in the nightly
