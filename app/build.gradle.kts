@@ -112,6 +112,9 @@ dependencies {
   testImplementation(libs.androidx.junit)
   testImplementation(libs.junit)
   testImplementation(libs.kotlinx.coroutines.test)
+  // A stand-in for api.anthropic.com, so AskEngineTest can drive the request
+  // loop through shapes a real conversation only reaches occasionally.
+  testImplementation(libs.mockwebserver)
   testImplementation(libs.robolectric)
   testImplementation(libs.roborazzi)
   testImplementation(libs.roborazzi.compose)
