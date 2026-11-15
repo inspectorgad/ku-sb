@@ -11,7 +11,8 @@ import javax.crypto.SecretKey
 import javax.crypto.spec.GCMParameterSpec
 
 /**
- * Keeps the reader's Anthropic API key on this phone, encrypted.
+ * Keeps the reader's Anthropic API key on this phone, encrypted, the model
+ * they picked, and whether web search is on.
  *
  * The key is encrypted with an AES key held by the Android Keystore, which
  * never leaves the device, and only the encrypted form is written to the app's
@@ -26,6 +27,7 @@ object AskKeyStore {
     private const val SLOT = "api_key"
     private const val MODEL_PREFS = "ask_prefs"
     private const val MODEL_SLOT = "model"
+    private const val WEB_SLOT = "web_search"
     private const val ALIAS = "ku_sb_ask_api_key"
     private const val TRANSFORM = "AES/GCM/NoPadding"
 
@@ -65,6 +67,15 @@ object AskKeyStore {
     fun saveModel(context: Context, model: AskModel) {
         context.getSharedPreferences(MODEL_PREFS, Context.MODE_PRIVATE).edit()
             .putString(MODEL_SLOT, model.id).apply()
+    }
+
+    /** Whether the reader turned web search on; off until they do, since it costs extra. */
+    fun webSearch(context: Context): Boolean =
+        context.getSharedPreferences(MODEL_PREFS, Context.MODE_PRIVATE).getBoolean(WEB_SLOT, false)
+
+    fun saveWebSearch(context: Context, on: Boolean) {
+        context.getSharedPreferences(MODEL_PREFS, Context.MODE_PRIVATE).edit()
+            .putBoolean(WEB_SLOT, on).apply()
     }
 
     private fun prefs(context: Context) = context.getSharedPreferences(PREFS, Context.MODE_PRIVATE)
