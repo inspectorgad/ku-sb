@@ -40,9 +40,13 @@ jobs:
           distribution: temurin
           java-version: '21'
 
+      # Must be at least the minimum the Android plugin in gradle/libs.versions.toml
+      # asks for, and build-apk.yml has to agree: when the KMP port raised the
+      # plugin, this workflow was left behind and every branch build died at
+      # "Minimum supported Gradle version is 9.4.1".
       - uses: gradle/actions/setup-gradle@v4
         with:
-          gradle-version: '9.3.1'
+          gradle-version: '9.4.1'
 
       # Only the debug keystore: there is no upload keystore in this repository
       # (the app is not on Play), so restoring one would fail.
@@ -77,8 +81,10 @@ jobs:
 
       # This repository has no branch CI, so this is the only place the engine
       # tests run before the build.
+      # Both halves, as build-apk.yml runs them: the shared module's own tests
+      # are in commonTest and :app:testDebugUnitTest does not reach them.
       - name: Run the unit tests
-        run: gradle :app:testDebugUnitTest
+        run: gradle :app:testDebugUnitTest :shared:testAndroidHostTest
 
       # Ask Claude reads its tables and instructions from ask-data.json, which
       # the app downloads from the published dashboard. A branch that changes
@@ -86,9 +92,17 @@ jobs:
       # reads that one first; the published dashboard is untouched.
       - name: Point Ask Claude at this branch's data
         run: |
+          # The KMP port moved the engine into the shared module; a branch cut
+          # before that still has it under app/. Take whichever one is here.
+          engine=shared/src/commonMain/kotlin/com/example/data/AskEngine.kt
+          [ -f "$engine" ] || engine=app/src/main/java/com/example/data/AskEngine.kt
           sed -i "s#\"https://inspectorgad.github.io/ku-sb/ask-data.json\",#\"https://raw.githubusercontent.com/$GITHUB_REPOSITORY/$GITHUB_SHA/docs/ask-data.json\", &#" \
-            app/src/main/java/com/example/data/AskEngine.kt
-          grep -n "ask-data.json" app/src/main/java/com/example/data/AskEngine.kt
+            "$engine"
+          grep -n "ask-data.json" "$engine"
+          # A sed that quietly matched nothing would ship a test APK reading
+          # the published pack instead of this branch's, which is the one
+          # thing this step exists to prevent. Fail loudly instead.
+          grep -q "raw.githubusercontent.com/$GITHUB_REPOSITORY/$GITHUB_SHA" "$engine"
 
       - name: Build the APK
         env:
