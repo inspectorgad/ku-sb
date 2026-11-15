@@ -1,0 +1,107 @@
+name: Ask test APK
+
+# A test build of the Ask Claude branch, for installing over the everyday app.
+#
+# build-apk.yml is the only other APK workflow and it always publishes to the
+# rolling "latest-apk" release — the one the installed app updates from and the
+# one the README links. This publishes to its own "ask-test" prerelease instead
+# and never marks it latest, so the everyday APK, season-data.json and
+# ask-data.json that `releases/latest/download` serves are all left alone.
+#
+# Do not reach for scrape-data.yml to refresh the data on a branch: its last
+# step dispatches build-apk.yml and deploy-pages.yml on the same ref, which
+# would publish a branch build over the stable one.
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - claude/ask-web-search
+
+permissions:
+  contents: write   # to publish the prerelease
+  actions: read     # to read main's newest build number, for the version code
+
+concurrency:
+  group: ask-test-apk-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '21'
+
+      - uses: gradle/actions/setup-gradle@v4
+        with:
+          gradle-version: '9.3.1'
+
+      # Only the debug keystore: there is no upload keystore in this repository
+      # (the app is not on Play), so restoring one would fail.
+      - name: Restore debug keystore
+        run: base64 -d debug.keystore.base64 > debug.keystore
+
+      # One above main's newest build. Android refuses to install a lower
+      # versionCode over a higher one, and this workflow's own run_number
+      # starts at 1 — so without this the phone would reject the test build and
+      # the only way on would be to uninstall, which deletes the hand-entered
+      # stat lines the reader cannot get back.
+      - name: Number this build above main's newest
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          latest=$(gh api \
+            "repos/$GITHUB_REPOSITORY/actions/workflows/build-apk.yml/runs?branch=main&status=success&per_page=1" \
+            --jq '.workflow_runs[0].run_number')
+          echo "Newest main build: $latest"
+          echo "VERSION_CODE=$((latest + 1))" >> "$GITHUB_ENV"
+
+      - name: Test the data pack
+        run: python3 scripts/test_ask_pack.py
+
+      # The committed pack must match what ask_pack.py builds from the
+      # committed seed and scrape. Otherwise the APK ships instructions and a
+      # table list that the pack it downloads does not have.
+      - name: The committed pack is current
+        run: |
+          python3 scripts/ask_pack.py
+          git diff --exit-code docs/ask-data.json
+
+      # This repository has no branch CI, so this is the only place the engine
+      # tests run before the build.
+      - name: Run the unit tests
+        run: gradle :app:testDebugUnitTest
+
+      # Ask Claude reads its tables and instructions from ask-data.json, which
+      # the app downloads from the published dashboard. A branch that changes
+      # them has to be tested against the branch's own copy, so the test build
+      # reads that one first; the published dashboard is untouched.
+      - name: Point Ask Claude at this branch's data
+        run: |
+          sed -i "s#\"https://inspectorgad.github.io/ku-sb/ask-data.json\",#\"https://raw.githubusercontent.com/$GITHUB_REPOSITORY/$GITHUB_SHA/docs/ask-data.json\", &#" \
+            app/src/main/java/com/example/data/AskEngine.kt
+          grep -n "ask-data.json" app/src/main/java/com/example/data/AskEngine.kt
+
+      - name: Build the APK
+        env:
+          VERSION_CODE: ${{ env.VERSION_CODE }}
+        run: gradle :app:assembleDebug
+
+      - name: Publish the test APK
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          cp app/build/outputs/apk/debug/app-debug.apk ku-sb-ask-test.apk
+          gh release view ask-test --repo "$GITHUB_REPOSITORY" > /dev/null 2>&1 || \
+            gh release create ask-test \
+              --repo "$GITHUB_REPOSITORY" \
+              --target "$GITHUB_SHA" \
+              --title "KU Softball — Ask Claude test build" \
+              --notes "Test build of the Ask Claude web search and other-teams work, for installing over the everyday app before it is merged. Same applicationId and the same debug signing key, so it updates in place and keeps your data. Its Ask Claude reads this branch's ask-data.json. The everyday APK is unaffected and stays at the latest-apk release." \
+              --prerelease --latest=false
+          gh release upload ask-test ku-sb-ask-test.apk --repo "$GITHUB_REPOSITORY" --clobber
+          echo "Test APK: https://github.com/$GITHUB_REPOSITORY/releases/download/ask-test/ku-sb-ask-test.apk"

@@ -32,6 +32,7 @@ against this data rather than carried over:
 
 import json
 import re
+from datetime import datetime, timedelta
 
 # One row per batter per game. The first fifteen are the box score as it is
 # published; the rest are the detail the scrape keeps and the printed box
@@ -127,15 +128,38 @@ DEFINITIONS = {
         "cover only the games that team played against Kansas — two or three in a "
         "weekend series — so they are a record of those meetings and not of that "
         "opponent's season. Never present them as season figures",
+    # Other teams
+    "team_key / opponent_key / home_key / away_key": "one normalized spelling per school "
+        "('Oklahoma Sooners' and 'Oklahoma', 'Iowa State' and 'Iowa St.' each reduce to "
+        "one key). Each table spells schools as its own source does, so join on these "
+        "keys, never on the display names",
+    "big12_results": "every final game this season with a Big 12 side, from the NCAA "
+        "scoreboard. Only games with a Big 12 side, so it is not complete coverage of "
+        "any other team's season. source is 'ncaa', or 'ku_box' for a Kansas game the "
+        "scoreboard never finalized and that was filled in from KU's box score",
+    "score_missing": "a game the NCAA never filled in — both scores 0 and no winner. Not "
+        "a 0-0 tie; left out of team_scoring",
+    "big12_tournament": "a conference-tournament game. The scoreboard's conference flag "
+        "counts these and the official Big 12 standings do not, so this reconciles them",
+    "team_scoring": "per Big 12 team and season, counted from big12_results: games, "
+        "W-L-T, runs for and against, run differential, record against the final poll. "
+        "The runs are why it exists — the RPI has no scoring. Its W-L is approximate, "
+        "the scoreboard being short a few games; take records from team_records",
+    "vs_final_top25_w / vs_final_top25_l": "against teams in the FINAL poll, not teams "
+        "ranked on the day — the scoreboard carries no rank for any game. For KU's own "
+        "at-the-time figure use games.opp_rank",
+    "team_records": "every Division I team's NCAA RPI row: rank, previous rank, record, "
+        "conference, and home, road, neutral and non-Division I records, with the date "
+        "it runs through. The official record for any team",
 }
 
 
 # The instructions Claude is given, shared by the dashboard (docs/ask.js) and
 # the app (AskEngine.kt) so both ask the same way. The tables are fetched by
 # Claude's own code through the get_table tool; this only says how.
-SYSTEM_RULES = """You are the analyst behind the Kansas Jayhawks softball app and dashboard. You answer questions from coaches and fans about the team, using only the season data you are given.
+SYSTEM_RULES = """You are the analyst behind the Kansas Jayhawks softball app and dashboard. You answer questions from coaches and fans about the team and the teams it plays, using the season data you are given - and the web, when the reader turns web search on for a question.
 
-The complete data is available to your Python code through the get_table tool: tables games, innings (one row per half-inning), batting (one row per KU batter per game), pitching, fielding, scoring_plays (how each run scored), opponent_batting and opponent_pitching (the other side of every box score), upcoming, standings, poll, rankings, roster, and definitions. Call it from inside code execution, for example: import json, pandas as pd; bat = pd.DataFrame(json.loads(await get_table({'table': 'batting'}))). Join tables on (season, date, opponent). A summary of the smaller tables is below for orientation.
+The complete data is available to your Python code through the get_table tool: tables games, innings (one row per half-inning), batting (one row per KU batter per game), pitching, fielding, scoring_plays (how each run scored), opponent_batting and opponent_pitching (the other side of every box score), upcoming, standings, poll, rankings, roster, and definitions. Call it from inside code execution, for example: import json, pandas as pd; bat = pd.DataFrame(json.loads(await get_table({'table': 'batting'}))). Join tables on (season, date, opponent). There are also three tables about other teams: big12_results, team_scoring and team_records. A summary of the smaller tables is below for orientation.
 
 How to answer:
 - Compute every number with code from the tables. Do not estimate, recall, or do arithmetic in your head, even for a simple total.
@@ -150,7 +174,11 @@ How to answer:
 - Use softball conventions: averages as .328, ERA to two decimals, records as 36-21, innings as 7.2.
 - The Big 12 record in the standings table excludes the conference tournament; the conference flag on games does not. Say which you used when it changes the answer.
 - Name small samples plainly (for example "only 3 games", or "one weekend series").
-- If the data cannot answer the question — injuries, practice, recruiting, pitch-by-pitch detail, anything not in the box scores — say so in a sentence instead of guessing.
+- If the data cannot answer the question — injuries, practice, recruiting, pitch-by-pitch detail, anything not in the box scores — say so in a sentence instead of guessing; with web search on, look for it on the web instead.
+
+Other teams: big12_results (every final game this season with a Big 12 side), team_scoring (each Big 12 team's runs for and against, run differential, and record against teams in the final poll) and team_records (every Division I team's RPI row) let you analyse opponents too — results against common opponents, records against ranked teams, scoring, RPI. Match teams across tables on the team_key, opponent_key, home_key and away_key columns, never on the display names, because each table spells schools as its own source does. Take any team's record from team_records, which is official: team_scoring counts the scoreboard, which is missing a few games, so its W-L can be a game or two out. big12_results holds only games with a Big 12 side, so do not claim complete common-opponent coverage for a non-conference opponent.
+
+Web search: the reader can turn on web search for a question, and each question says whether it is on. When it is off, answer from the data only, and say plainly when the data cannot answer. When it is on, you may use the web_search tool for what the tables cannot tell you — previews, recaps, injuries and line-up news, coaches' comments, transfers, rankings commentary — preferring official athletics sites, the Big 12, the NCAA, the NFCA, D1Softball, Softball America and established news outlets. Even then, take every statistic from the tables when they have it, and keep web material for context. Make clear which statements come from the web, and give each article's date when it matters, since news goes out of date. Search only as much as the question needs.
 """
 
 
@@ -177,9 +205,214 @@ def norm_team(name):
     return re.sub(r"\s+", " ", n).strip()
 
 
+# The tables spell schools as their sources do, and three disagree on the name
+# itself: the seed says "Oklahoma Sooners", "South Florida" and "Florida
+# Atlantic" where the RPI and the NCAA scoreboard say "Oklahoma", "South Fla."
+# and "Fla. Atlantic". Joining on the raw names would silently drop those games.
+_ALIASES = {
+    "oklahoma sooners": "oklahoma",
+    "south florida": "south fla",
+    "florida atlantic": "fla atlantic",
+}
+
+
+def team_key(name):
+    """One spelling per school, for matching a team across tables.
+
+    norm_team already strips a doubleheader's "(G2)" and the poll's
+    first-place-vote "(25)", lowercases, and shortens "State" to "st"; this
+    adds the handful of schools whose sources disagree on the name itself.
+    norm_team itself is left alone: update-seed.py and the app's teamKey()
+    mirror it, and all three have to keep agreeing.
+    """
+    key = norm_team(name)
+    return _ALIASES.get(key, key)
+
+
 def base_opponent(name):
     """'Baylor (G2)' -> 'Baylor'."""
     return re.sub(r"\s*\(G\d\)\s*$", "", name or "").strip()
+
+
+def _int(v):
+    """'12' -> 12; '', None and 'NR' -> None."""
+    try:
+        return int(str(v).strip())
+    except (TypeError, ValueError):
+        return None
+
+
+def _ncaa_fences(games):
+    """Ten days before each season's first NCAA tournament game.
+
+    The same window update-seed.py's conf_fence draws, so that a conference
+    game this side of it counts toward the official Big 12 standings and one
+    beyond it is the conference tournament, which the standings exclude.
+    """
+    start = {}
+    for g in games.values():
+        if not g.get("bracket"):
+            continue
+        season = g.get("season") or (g.get("date") or "")[:4]
+        date = g.get("date") or ""
+        if date and (season not in start or date < start[season]):
+            start[season] = date
+    return {s: (datetime.strptime(d, "%Y-%m-%d") - timedelta(days=10)).strftime("%Y-%m-%d")
+            for s, d in start.items()}
+
+
+def _big12_results(index, fences):
+    """Every scoreboard game with a Big 12 side, cleaned.
+
+    Four corrections, each of which changes a count if it is skipped:
+
+      * A "TBA" side is a placeholder for a game that was never played.
+      * Both scores 0 with neither side marked the winner is a game the NCAA
+        never filled in, not a 0-0 tie. The row is kept, flagged
+        score_missing, and left out of team_scoring.
+      * The scoreboard sometimes lists one game under two ids. Keyed by id
+        alone nothing looks duplicated, but counting both gave Arizona 37-20
+        where the RPI says 37-18. Where ids share a date, both teams and both
+        scores and exactly one is bracket-flagged, that is the real one and
+        the rest are copies. Where none is flagged it is a real doubleheader
+        -- Southern Utah at Arizona, 8-0 twice on 2026-02-05 -- and the RPI
+        counts both, so both are kept.
+      * The scoreboard's conferenceGame flag includes the conference
+        tournament; big12_tournament separates it so Claude can reconcile
+        with the standings, which exclude it.
+    """
+    games = (index or {}).get("big12Games") or {}
+    kept = {}
+    for gid, g in games.items():
+        home, away = g.get("home") or {}, g.get("away") or {}
+        if not home.get("name") or not away.get("name"):
+            continue
+        if home["name"] == "TBA" or away["name"] == "TBA":
+            continue
+        kept[gid] = g
+
+    shapes = {}
+    for gid, g in kept.items():
+        shape = (g.get("date"), g["home"]["name"], g["away"]["name"],
+                 g["home"].get("score"), g["away"].get("score"))
+        shapes.setdefault(shape, []).append(gid)
+    for ids in shapes.values():
+        flagged = [i for i in ids if kept[i].get("bracket")]
+        if len(ids) > 1 and len(flagged) == 1:
+            for i in ids:
+                if i not in flagged:
+                    kept.pop(i, None)
+
+    rows = []
+    for gid, g in sorted(kept.items(), key=lambda kv: ((kv[1].get("date") or ""), kv[0])):
+        home, away = g["home"], g["away"]
+        season = g.get("season") or (g.get("date") or "")[:4]
+        hs, as_ = home.get("score"), away.get("score")
+        missing = (not home.get("winner") and not away.get("winner")
+                   and not (hs or 0) and not (as_ or 0))
+        fence = fences.get(season)
+        conf = bool(g.get("conferenceGame"))
+        rows.append({
+            "game_id": gid, "date": g.get("date"), "season": season,
+            "home": home["name"], "home_key": team_key(home["name"]), "home_runs": hs,
+            "away": away["name"], "away_key": team_key(away["name"]), "away_runs": as_,
+            "conference_game": conf,
+            "big12_tournament": bool(conf and not g.get("bracket") and fence
+                                     and (g.get("date") or "") >= fence),
+            "score_missing": missing,
+            "source": "ncaa",
+        })
+    return rows
+
+
+def _add_ku_games(rows, seed, conference, fences):
+    """KU's own played games that the scoreboard never finalized.
+
+    The 6-5 Big 12 tournament win over UCF on 2026-05-07 is in KU's box
+    scores and absent from the feed, so counting from the feed alone leaves
+    Kansas a win short and disagreeing with the RPI. update-seed.py fills the
+    standings from the seed the same way. A neutral-site game has no real home
+    side, so Kansas is written as the away team there; source says the row
+    came from the box scores rather than the scoreboard.
+    """
+    seen = {(r["date"], frozenset((r["home_key"], r["away_key"]))) for r in rows}
+    ku = team_key("Kansas")
+    added = []
+    for g in seed.get("games", []):
+        if g.get("teamScore") is None or g["season"].startswith("Fall"):
+            continue
+        key = (g["date"], frozenset((ku, team_key(g["opponent"]))))
+        if key in seen:
+            continue
+        seen.add(key)
+        opponent, us, them = base_opponent(g["opponent"]), g["teamScore"], g["opponentScore"]
+        at_home = (g.get("site") or "").upper() == "H"
+        conf = norm_team(g["opponent"]) in conference
+        fence = fences.get(g["season"])
+        added.append({
+            "game_id": None, "date": g["date"], "season": g["season"],
+            "home": "Kansas" if at_home else opponent,
+            "home_key": ku if at_home else team_key(g["opponent"]),
+            "home_runs": us if at_home else them,
+            "away": opponent if at_home else "Kansas",
+            "away_key": team_key(g["opponent"]) if at_home else ku,
+            "away_runs": them if at_home else us,
+            "conference_game": conf,
+            "big12_tournament": bool(conf and fence and g["date"] >= fence),
+            "score_missing": False,
+            "source": "ku_box",
+        })
+    return sorted(rows + added, key=lambda r: (r["date"] or "", r["home"], r["away"]))
+
+
+def _team_scoring(results, big12, top25):
+    """One row per Big 12 team per season, from the cleaned results.
+
+    Softball can tie, so a record is wins, losses and ties rather than wins
+    and games-minus-wins. The Top 25 columns are against teams in the *final*
+    poll, not teams ranked on the day: the scoreboard carries no rank at all
+    -- every one is null -- so there is nothing else to go on. KU's own
+    at-the-time figure stays games.opp_rank.
+    """
+    acc = {}
+    for r in results:
+        if r["score_missing"]:
+            continue
+        for side, other in (("home", "away"), ("away", "home")):
+            key = r[f"{side}_key"]
+            if key not in big12:
+                continue
+            mine, theirs = r[f"{side}_runs"] or 0, r[f"{other}_runs"] or 0
+            row = acc.setdefault((r["season"], key), {
+                "season": r["season"], "team": r[side], "team_key": key,
+                "games": 0, "w": 0, "l": 0, "t": 0,
+                "runs_for": 0, "runs_against": 0, "run_diff": 0,
+                "vs_final_top25_w": 0, "vs_final_top25_l": 0,
+            })
+            row["games"] += 1
+            row["runs_for"] += mine
+            row["runs_against"] += theirs
+            row["run_diff"] = row["runs_for"] - row["runs_against"]
+            won = mine > theirs
+            row["w" if won else "l" if mine < theirs else "t"] += 1
+            if r[f"{other}_key"] in top25 and mine != theirs:
+                row["vs_final_top25_w" if won else "vs_final_top25_l"] += 1
+    return [acc[k] for k in sorted(acc)]
+
+
+def _team_records(rpi):
+    """Every Division I team's RPI row, as the NCAA published it."""
+    updated = (rpi or {}).get("updated") or None
+    year = re.search(r"(\d{4})", updated or "")
+    season = year.group(1) if year else None
+    return [{
+        "season": season, "as_of": updated,
+        "rank": _int(r.get("Rank")), "previous_rank": _int(r.get("Prev")),
+        "team": r.get("School"), "team_key": team_key(r.get("School")),
+        "record": r.get("Record"), "conference": r.get("Conf"),
+        "home": r.get("Home"), "road": r.get("Road"), "neutral": r.get("Neutral"),
+        "non_div1": r.get("Non-Div I"),
+    } for r in (rpi or {}).get("data") or []]
 
 
 def _season_line(pack):
@@ -273,16 +506,24 @@ def _result(us, them):
     return "W" if us > them else "L" if us < them else "T"
 
 
-def build_pack(seed):
+def build_pack(seed, index=None, rpi=None, poll=None):
+    """The pack. [index] is scraped/ku-index.json, [rpi] rankings-rpi.json and
+    [poll] rankings-poll.json; without them the three other-team tables are
+    still emitted, empty, so the table list stays the same either way."""
     players = {p["name"].lower(): p for p in seed.get("players", [])}
     conference = {norm_team(s["team"]) for s in seed.get("standings", [])} - {norm_team("Kansas")}
 
     games, innings, batting, pitching, fielding, scoring, upcoming = [], [], [], [], [], [], []
     opponent_batting, opponent_pitching = [], []
     for g in sorted(seed.get("games", []), key=lambda x: (x["date"], x["opponent"])):
-        base = {"season": g["season"], "date": g["date"], "opponent": g["opponent"]}
+        base = {"season": g["season"], "date": g["date"], "opponent": g["opponent"],
+                "opponent_key": team_key(g["opponent"])}
         is_fall = g["season"].startswith("Fall")
-        in_conf = norm_team(g["opponent"]) in conference
+        # A fall game is an exhibition even against a Big 12 school, and the
+        # fall opponents carry no "(Exh.)" marker to give it away — only the
+        # season does. Counting one as a conference game would put a game in
+        # the Big 12 record that the standings have never heard of.
+        in_conf = not is_fall and norm_team(g["opponent"]) in conference
         if g.get("teamScore") is None:
             upcoming.append({**base, "team": base_opponent(g["opponent"]),
                              "site": g.get("site") or None, "conference": in_conf,
@@ -363,6 +604,16 @@ def build_pack(seed):
 
     polls = seed.get("polls") or []
     current_poll = polls[-1] if polls else None
+
+    fences = _ncaa_fences((index or {}).get("big12Games") or {})
+    big12_results = _big12_results(index, fences)
+    if big12_results:
+        big12_results = _add_ku_games(big12_results, seed, conference, fences)
+    big12_keys = {team_key(s["team"]) for s in seed.get("standings", [])}
+    final_top25 = {team_key(r.get("School")) for r in (poll or {}).get("data") or []}
+    team_scoring = _team_scoring(big12_results, big12_keys, final_top25)
+    team_records = _team_records(rpi)
+
     pack = {
         "about": "Kansas Jayhawks softball, from kuathletics.com box scores and the NCAA "
                  "feeds. One record per row; join tables on (season, date, opponent).",
@@ -377,21 +628,29 @@ def build_pack(seed):
         "opponent_batting": opponent_batting,
         "opponent_pitching": opponent_pitching,
         "upcoming": upcoming,
-        "standings": [{k: st.get(k) for k in ("season", "team", "confW", "confL", "overallW",
-                                              "overallL", "nationalRank", "rpiRank")}
+        "standings": [{**{k: st.get(k) for k in ("season", "team", "confW", "confL", "overallW",
+                                                 "overallL", "nationalRank", "rpiRank")},
+                       "team_key": team_key(st.get("team"))}
                       for st in seed.get("standings", [])],
         "poll": None if not current_poll else {
             "season": current_poll["season"], "name": current_poll.get("name") or "Poll",
             "updated": current_poll.get("updated"),
-            "rows": [{k: r.get(k) for k in ("rank", "rankLabel", "team", "record", "points",
-                                            "previous", "firstPlaceVotes")}
+            "rows": [{**{k: r.get(k) for k in ("rank", "rankLabel", "team", "record", "points",
+                                               "previous", "firstPlaceVotes")},
+                      "team_key": team_key(r.get("team"))}
                      for r in current_poll.get("rows", [])]},
         # Every weekly ranking snapshot kept, so "when did KU peak in the RPI"
         # is answerable rather than only "where are they now".
         "rankings": [{"date": h.get("date"), "source": h.get("source"),
                       "season": h.get("season"), "team": t.get("team"),
+                      "team_key": team_key(t.get("team")),
                       "rank": t.get("rank"), "record": t.get("record")}
                      for h in seed.get("rankingHistory", []) for t in h.get("teams", [])],
+        # Other teams. Always present, empty when the scraped files were not
+        # passed in, so the table list agrees either way.
+        "big12_results": big12_results,
+        "team_scoring": team_scoring,
+        "team_records": team_records,
         "roster": [{k: p.get(k) for k in
                     ("name", "jerseyNumber", "position", "academicYear", "height",
                      "batsThrows", "hometown", "lastSchool", "active")}
@@ -417,9 +676,9 @@ def _without_timestamp(pack):
     return out
 
 
-def write_pack(seed, path):
+def write_pack(seed, path, index=None, rpi=None, poll=None):
     """Writes the pack; returns False when only the timestamp would change."""
-    pack = build_pack(seed)
+    pack = build_pack(seed, index, rpi, poll)
     try:
         with open(path) as f:
             old = json.load(f)
@@ -433,17 +692,34 @@ def write_pack(seed, path):
     return True
 
 
+def _load(path):
+    """A scraped file, or None when the sweep has not written it yet."""
+    try:
+        with open(path) as f:
+            return json.load(f)
+    except (OSError, ValueError):
+        return None
+
+
 if __name__ == "__main__":
     # Rebuilding straight from the committed seed, so the published page can
     # never serve an ask-data.json older than the data the rest of it shows.
     with open("app/src/main/assets/seed.json") as f:
         SEED = json.load(f)
-    P = build_pack(SEED)
-    CHANGED = write_pack(SEED, "docs/ask-data.json")
+    # The other teams' data is not in the seed — it is far larger than KU's own
+    # season and would bloat the APK — so it is read from the committed scrape.
+    INDEX = _load("scraped/ku-index.json")
+    RPI = _load("scraped/rankings-rpi.json")
+    POLL = _load("scraped/rankings-poll.json")
+    P = build_pack(SEED, INDEX, RPI, POLL)
+    CHANGED = write_pack(SEED, "docs/ask-data.json", INDEX, RPI, POLL)
     print(f"ask data: {len(P['games'])} games, {len(P['batting'])} batting lines, "
           f"{len(P['pitching'])} pitching, {len(P['fielding'])} fielding, "
           f"{len(P['innings'])} half-innings, {len(P['scoring_plays'])} scoring plays, "
           f"{len(P['opponent_batting'])} opponent batting, "
           f"{len(P['opponent_pitching'])} opponent pitching, "
-          f"{len(P['upcoming'])} scheduled, {len(P['system_prompt'])}-char prompt"
+          f"{len(P['upcoming'])} scheduled, "
+          f"{len(P['big12_results'])} Big 12 results, "
+          f"{len(P['team_scoring'])} team scoring, {len(P['team_records'])} RPI rows, "
+          f"{len(P['system_prompt'])}-char prompt"
           + ("" if CHANGED else " (unchanged; not rewritten)"))

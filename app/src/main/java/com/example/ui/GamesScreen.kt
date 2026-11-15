@@ -32,6 +32,7 @@ import androidx.compose.material3.HorizontalDivider
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.OutlinedButton
 import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Surface
@@ -805,6 +806,7 @@ fun GameDetailScreen(
     onDeleteGame: (Game) -> Unit,
     onSaveStatLine: (StatLine) -> Unit,
     onDeleteStatLine: (StatLine) -> Unit,
+    onAskClaude: ((String) -> Unit)? = null,
     onBack: () -> Unit
 ) {
     var showEditDialog by remember { mutableStateOf(false) }
@@ -855,6 +857,28 @@ fun GameDetailScreen(
                         LineScore(game)
                         ScoringSummary(game)
                         GameContext(game)
+                    }
+                }
+            }
+
+            // One tap to Claude for a scouting report before the game or a
+            // recap after it, through "Ask about the team". Which one depends
+            // on whether the game has been played, since a game with no score
+            // has nothing to recap.
+            onAskClaude?.let { ask ->
+                item {
+                    val played = game.teamScore != null
+                    val versus = if (game.site == "A") "at" else "vs"
+                    OutlinedButton(
+                        onClick = {
+                            ask(
+                                if (played) recapQuestion(game.date, versus, game.opponent)
+                                else previewQuestion(game.date, versus, game.opponent)
+                            )
+                        },
+                        modifier = Modifier.fillMaxWidth()
+                    ) {
+                        Text(if (played) "Recap this game with Claude" else "Preview this game with Claude")
                     }
                 }
             }

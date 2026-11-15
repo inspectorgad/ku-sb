@@ -154,6 +154,11 @@ TEMPLATE = r"""<!doctype html>
   .ask-table th, .ask-table td { white-space: nowrap; }
   .ask-note { font-size: 11px; color: var(--muted); margin: 4px 0 0; }
   .ask-error { color: var(--loss); }
+  /* The pages a web-search answer cites, numbered to match its [1] marks. */
+  .ask-sources { margin: 6px 0 0; }
+  .ask-sources ol { margin: 2px 0 0; padding-left: 22px; font-size: 12px; }
+  .ask-sources li { margin: 2px 0; overflow-wrap: anywhere; }
+  .ask-sources a { color: var(--blue); }
   .ask-code summary { font-size: 12px; color: var(--muted); cursor: pointer; margin-top: 6px; }
   .fineprint { font-size: 11.5px; color: var(--muted); margin: 10px 0 0; line-height: 1.5; }
 
@@ -352,6 +357,10 @@ TEMPLATE = r"""<!doctype html>
       <button class="ask-btn ask-go" id="ask-go">Ask</button>
       <button class="ask-btn" id="ask-stop" hidden>Stop</button>
     </div>
+    <div class="ask-row">
+      <label class="ask-check"><input type="checkbox" id="ask-web"> Search the web</label>
+      <span class="note">lets Claude look up news the box scores cannot answer; about 1¢ a search</span>
+    </div>
     <div class="ask-row"><span id="ask-status" class="ask-status" role="status"></span>
       <button class="ask-btn" id="ask-new" hidden>New conversation</button></div>
     <div class="ask-examples" id="ask-examples"></div>
@@ -361,8 +370,14 @@ TEMPLATE = r"""<!doctype html>
       default), less with Sonnet 5, and follow-ups within a few minutes cost less because the season
       data is cached. Claude works from the same validated box scores this page is built from, and
       computes every figure by running Python on them rather than from memory — "Show the code"
-      under an answer lists exactly what it ran. It knows nothing about injuries, practice,
-      line-ups or recruiting.</p>
+      under an answer lists exactly what it ran. It can also read every Big 12 game this season,
+      each Big 12 team's scoring, and every Division I team's RPI row. On its own it knows nothing
+      about injuries, practice, line-ups or recruiting: tick "Search the web" and it will look
+      those up, listing the pages it used under the answer and numbering them to match the [1],
+      [2] marks in the text. Each search costs about 1¢ on your account on top of the question,
+      up to 5 a question, and web pages can be wrong or out of date — check the dates on the
+      sources. Turning it on partway through a conversation starts a new one, because Claude
+      cannot take on web search partway through.</p>
   </section>
 
   <section>
@@ -458,7 +473,7 @@ TEMPLATE = r"""<!doctype html>
     <div class="card tbl-wrap" style="max-height:420px; overflow-y:auto;">
       <table id="upcomingTbl">
         <thead><tr>
-          <th class="lft">Date</th><th class="lft">Opponent</th><th class="lft">Site</th><th class="lft">First pitch</th>
+          <th class="lft">Date</th><th class="lft">Opponent</th><th class="lft">Site</th><th class="lft">First pitch</th><th class="lft"></th>
         </tr></thead>
         <tbody></tbody>
       </table>
@@ -1226,7 +1241,20 @@ function openGame(key) {
         (g.opponentErrors || 0) > (g.opponentLines || []).reduce((a, l) => a + (l.e || 0), 0)
           ? "Softball charges some errors to the team rather than to a fielder, so these can sum to less than the line score."
           : "") +
+    // One tap to Claude for a recap of this game, through "Ask about the
+    // team". Only when ask.js loaded and a key can be entered.
+    (window.kuRecapQuestion
+      ? `<div class="m-sec"><button class="ask-btn" id="gRecap">Recap this game with Claude</button></div>`
+      : "") +
     (links.length ? `<div class="m-links">${links.join("")}</div>` : "");
+  const recap = document.getElementById("gRecap");
+  if (recap) {
+    recap.onclick = () => {
+      gmodal.close();
+      window.kuAskAbout(window.kuRecapQuestion(
+        g.date, g.site === "A" ? "at" : "vs", oppName(g.opponent)));
+    };
+  }
   gmodal.showModal();
 }
 
@@ -1428,13 +1456,24 @@ function openGame(key) {
   document.getElementById("upcomingHead").textContent =
     seasons.length === 1 ? `${seasons[0]} schedule` : "Upcoming schedule";
   const siteLabel = { H: "Home", A: "Away", N: "Neutral" };
-  document.querySelector("#upcomingTbl tbody").innerHTML = pending.map(g => `
+  const tbody = document.querySelector("#upcomingTbl tbody");
+  tbody.innerHTML = pending.map((g, i) => `
     <tr>
       <td class="lft">${fmtDate(g.date)}<span class="dim"> ${g.date.slice(0, 4)}</span></td>
       <td class="lft"><b>${g.site === "A" ? "at " : "vs "}${g.opponent}</b></td>
       <td class="lft dim">${siteLabel[g.site] || ""}</td>
       <td class="lft dim">${g.startTime || ""}</td>
+      <td class="lft">${window.kuPreviewQuestion
+        ? `<button class="ask-btn ask-preview" data-i="${i}">Preview</button>` : ""}</td>
     </tr>`).join("");
+  // A scouting report for a game not yet played, through "Ask about the team".
+  tbody.addEventListener("click", ev => {
+    const b = ev.target.closest("button[data-i]");
+    if (!b) return;
+    const g = pending[Number(b.dataset.i)];
+    window.kuAskAbout(window.kuPreviewQuestion(
+      g.date, g.site === "A" ? "at" : "vs", oppName(g.opponent)));
+  });
 })();
 
 // ---------- Kansas in the RPI, week by week ----------
