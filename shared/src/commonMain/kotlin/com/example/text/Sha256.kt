@@ -8,8 +8,12 @@ package com.example.text
 // after the update, and a wrong one could hide a change. The steps are
 // FIPS 180-4's, section 6.2.
 //
-// NOT YET TESTED. This wants a Sha256Test comparing it with MessageDigest
-// over thousands of inputs; there isn't one.
+// Sha256Test checks it against MessageDigest over every length through two
+// blocks — padding changes behaviour at 55, 56, 63 and 64, which is where a
+// hash most often drops or double-counts its tail — plus a seeded random
+// sweep, the published FIPS vectors, and a bit-flip check that a change to
+// any single input bit changes the digest. That last one is the property the
+// sync actually depends on.
 
 private val ROUND_CONSTANTS = longArrayOf(
     0x428a2f98, 0x71374491, 0xb5c0fbcf, 0xe9b5dba5, 0x3956c25b, 0x59f111f1, 0x923f82a4, 0xab1c5ed5,
