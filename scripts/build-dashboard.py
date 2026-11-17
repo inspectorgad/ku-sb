@@ -469,6 +469,7 @@ TEMPLATE = r"""<!doctype html>
       <h2 id="upcomingHead">Schedule</h2>
       <span class="note">posted games not yet played</span>
       <div class="rule"></div>
+      <div class="note" id="upcomingUnresolved"></div>
     </div>
     <div class="card tbl-wrap" style="max-height:420px; overflow-y:auto;">
       <table id="upcomingTbl">
@@ -1450,11 +1451,41 @@ function openGame(key) {
 
 // ---------- upcoming schedule ----------
 (function upcoming() {
-  const pending = (DATA.games || [])
+  // "Upcoming" has to mean upcoming. A game with no score is not necessarily
+  // unplayed: the fall exhibitions are against teams with no published box
+  // score, so a result never arrives and they sat in this table for weeks
+  // after they were over, reading as though they were still to come.
+  //
+  // The date is compared here rather than in ask_pack.py on purpose. The pack
+  // is committed and CI regenerates it and fails on any difference, so a pack
+  // that depended on today's date would go stale at midnight and turn CI red
+  // on a day nobody had touched it. In the browser "today" is free.
+  const now = new Date();
+  const todayIso = `${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2, "0")}-${String(now.getDate()).padStart(2, "0")}`;
+  const noScore = (DATA.games || [])
     .filter(g => g.teamScore == null)
     .sort((a, b) => a.date < b.date ? -1 : 1);
-  if (!pending.length) return;
+  const pending = noScore.filter(g => g.date >= todayIso);
+  // Played, but no score ever posted. These appear nowhere else on the page —
+  // the results table requires a score — so they are named rather than
+  // dropped, or the schedule would quietly lose games.
+  const unresolved = noScore.filter(g => g.date < todayIso);
+  const unresolvedNote = document.getElementById("upcomingUnresolved");
+  if (unresolvedNote) {
+    unresolvedNote.textContent = unresolved.length
+      ? "No result was ever posted for " +
+        unresolved.map(g => fmtDate(g.date) + " " + g.opponent).join(", ") +
+        (unresolved.every(g => isExhibition(g))
+          ? " — exhibitions, which do not get a box score." : ".")
+      : "";
+  }
+  if (!pending.length && !unresolved.length) return;
   document.getElementById("upcomingSec").style.display = "";
+  if (!pending.length) {
+    document.getElementById("upcomingHead").textContent = "Schedule";
+    document.querySelector("#upcomingTbl").style.display = "none";
+    return;
+  }
   const seasons = [...new Set(pending.map(g => g.season))].sort();
   document.getElementById("upcomingHead").textContent =
     seasons.length === 1 ? `${seasons[0]} schedule` : "Upcoming schedule";
@@ -1466,13 +1497,22 @@ function openGame(key) {
       <td class="lft"><b>${g.site === "A" ? "at " : "vs "}${g.opponent}</b></td>
       <td class="lft dim">${siteLabel[g.site] || ""}</td>
       <td class="lft dim">${g.startTime || ""}</td>
-      <td class="lft">${window.kuPreviewQuestion
-        ? `<button class="ask-btn ask-preview" data-i="${i}">Preview</button>` : ""}</td>
+      <td class="lft"><button class="ask-btn ask-preview" data-i="${i}">Preview</button></td>
     </tr>`).join("");
   // A scouting report for a game not yet played, through "Ask about the team".
+  //
+  // The button is written unconditionally and ask.js is checked here, at the
+  // click, rather than above at render time. ask.js is <script type="module">,
+  // which defers: it runs after this inline script, so window.kuPreviewQuestion
+  // is always undefined while this table is being built. Gating the markup on
+  // it meant the column rendered empty every single time and the Preview button
+  // never once appeared on the page. (The Recap button in the game modal was
+  // unaffected: that markup is built when a game is opened, long after the
+  // module has run.) By the time anyone can click, ask.js has loaded.
   tbody.addEventListener("click", ev => {
     const b = ev.target.closest("button[data-i]");
     if (!b) return;
+    if (!window.kuPreviewQuestion || !window.kuAskAbout) return;
     const g = pending[Number(b.dataset.i)];
     // The raw name, as the app passes it — see the Recap button above.
     window.kuAskAbout(window.kuPreviewQuestion(
