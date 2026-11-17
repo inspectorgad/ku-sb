@@ -14,15 +14,26 @@ import kotlinx.serialization.json.JsonPrimitive
 // scoreboard and the Claude API, this is a drop-in for the part of the API
 // the app uses, so moving a file over is an import change and nothing else.
 //
-// It keeps Android's behaviour exactly, quirks included, because the code
-// that calls it was written and tested against those quirks:
+// For well-formed JSON it keeps Android's behaviour exactly, quirks included,
+// because the code that calls it was written and tested against those quirks:
 // - optString of a JSON null is the string "null", not the fallback;
 // - the numeric getters read numbers sent as strings ("12" -> 12);
 // - put(name, null) removes the name rather than storing a null;
-// - toString escapes '/' as "\/" and writes 2.0 as 2.
-// NOT YET TESTED. This wants a JsonCompatTest running the same inputs through
-// this and through Android's own org.json and requiring the same answers;
-// there isn't one. The quirks above are the ones that would bite.
+// - toString escapes '/' as "\/" and writes 2.0 as 2;
+// - a whole number narrows to Int where it fits, so it prints as 1, not 1.0.
+// JsonCompatTest runs both over the same inputs and requires the same answers,
+// including the same decision about whether to throw.
+//
+// It is NOT a drop-in for malformed JSON. Android's JSONTokener is lenient
+// where the grammar is not — single quotes, unquoted names, ';' for ',', hex
+// literals, // and /* comments, trailing commas, trailing text — and the
+// parsing here is strict, so those inputs throw instead. Three of them do
+// something worse than throw: {"a":0x10} reads as the string "0x10" rather
+// than 16, and 'x' keeps its quotes. That is a deliberate limit, not an
+// oversight: every byte of JSON this app parses is machine-generated, by its
+// own scripts, the NCAA feed or the Claude API, and none of them emit any of
+// it. JsonCompatTest pins each case, so making the parser lenient later will
+// show up as a failing test rather than a silent change.
 //
 // kotlinx.serialization does the parsing; the value model, the accessors and
 // the writer are here.

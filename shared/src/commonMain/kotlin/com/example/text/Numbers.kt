@@ -11,10 +11,13 @@ import kotlin.math.floor
 // of 1/16 shows as .063 where C's printf (and so a naive iOS port) would show
 // .062.
 //
-// NOT YET TESTED. This wants a NumbersTest comparing the two over a few
-// hundred thousand values; there isn't one. Every batting average, ERA and
-// per-game figure on both phones comes through here, so treat a change to it
-// as unguarded until that test exists.
+// Every batting average, ERA and per-game figure on both phones comes through
+// here, so NumbersTest runs this and Java's Formatter over the same several
+// hundred thousand values and requires the same string back: every hits-over
+// at-bats and earned-runs-over-innings a season can produce, every n/2^k that
+// lands on a rounding boundary, and a seeded random sweep across every
+// magnitude. roundHalfUp, hex2 and grouped are checked against Math.round,
+// "%02x" and "%,d" the same way.
 
 /** [value] with exactly [decimals] digits after the point, as Java's %.Nf writes it. */
 fun fixed(value: Double, decimals: Int): String {
