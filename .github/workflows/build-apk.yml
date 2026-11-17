@@ -62,7 +62,11 @@ jobs:
       - name: Run unit tests
         env:
           VERSION_CODE: ${{ github.run_number }}
-        run: gradle :app:testDebugUnitTest :shared:testAndroidHostTest
+        # verify=true makes the Roborazzi screenshot test actually compare
+        # against its committed baseline. Without it captureRoboImage
+        # renders the card and discards it, which is what it did for every
+        # run until now.
+        run: gradle :app:testDebugUnitTest :shared:testAndroidHostTest -Proborazzi.test.verify=true
 
       - name: Build debug APK
         env:

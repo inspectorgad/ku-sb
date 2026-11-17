@@ -106,7 +106,7 @@ jobs:
       # Both halves, as build-apk.yml runs them: the shared module's own tests
       # are in commonTest and :app:testDebugUnitTest does not reach them.
       - name: Run the unit tests
-        run: gradle :app:testDebugUnitTest :shared:testAndroidHostTest
+        run: gradle :app:testDebugUnitTest :shared:testAndroidHostTest -Proborazzi.test.verify=true
 
       # Ask Claude reads its tables and instructions from ask-data.json, which
       # the app downloads from the published dashboard. A branch that changes
