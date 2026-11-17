@@ -100,7 +100,8 @@ DEFINITIONS = {
                   "does not count",
     "exhibition": "a fall game. Fall softball is preseason exhibition play: it counts "
                   "toward no official record and is kept as its own season, labelled "
-                  "'Fall 2026'",
+                  "'Fall' and the year — 'Fall 2026' for the autumn before the 2027 "
+                  "spring season",
     "result": "W, L, or T — softball can tie, when weather ends a game level",
     "opp_rank": "the opponent's national rank at the time of the game (null = unranked)",
     "opp_record": "the opponent's won-lost record including this game, as the box "
@@ -171,7 +172,7 @@ How to answer:
 - The player lines add up. Unlike basketball, softball has no team-level bucket that belongs to no individual: across every played game the Kansas batting lines sum exactly to the game's runs and hits, the fielding lines to its errors, and the pitching lines to the opponent's runs. So a team question can be answered by summing the player tables, and you should not go looking for a discrepancy. One exception, on the opponent's side only: softball scoring allows an error charged to the team rather than to a fielder, and that happened once in 2026 (Houston on March 13, three errors reported and two charged to players), so opponent_batting and the game's own opp_errors can differ by one. Prefer the game row for an opponent's error total.
 - opponent_batting and opponent_pitching are only the games that team played against Kansas. Two or three meetings is not a season, so say what the sample is and never call a figure from them that opponent's season average.
 - Innings pitched are stored as outs. Divide by three for innings, and never read "7.2 innings" as 7.67 — it is 7 innings and 2 outs, which is 23 outs. ERA is scaled to seven innings (er * 21 / outs), because a regulation game is seven.
-- Fall games are exhibitions. They count toward no record, and are a separate season labelled "Fall 2026". Leave them out unless the question asks about the fall, and say so when it matters.
+- Fall games are exhibitions. They count toward no record, and are a separate season labelled "Fall" and the year — "Fall 2026" is the autumn before the 2027 spring season, so it is not part of the 2026 season at all. Leave them out unless the question asks about the fall, and say so when it matters.
 - A missing half-inning is not a scoreless one. The home team does not bat in the last inning of a game it leads, and a run-rule game ends early; the innings table marks this with batted. Never average an unbatted half-inning as a zero.
 - Doubleheaders share a date and an opponent; the second game is marked "(G2)". Strip that suffix before grouping a series, and keep the two games distinct when counting.
 - Softball can tie, so a record is not simply wins and games-minus-wins. Check for result "T".

@@ -590,6 +590,29 @@ check("the upcoming table drops games whose date has passed",
       "g.date >= todayIso" in _DASH,
       "past-dated games would keep showing as still to come")
 
+# The page named its season in three places and keyed the postseason windows
+# to literal 2026 dates. All of it would have been wrong from the first pitch
+# of the next season, which is the kind of thing nobody notices until it is
+# live, so the generator is checked for the literals rather than the output:
+# the output says "2026" today because 2026 is in fact the current season.
+_GEN = ""
+try:
+    with open(os.path.join(ROOT, "scripts/build-dashboard.py")) as _f:
+        _GEN = _f.read()
+except OSError:
+    pass
+_season_literals = [
+    lit for lit in ("KU Softball 2026", "2026 Season ·", '"2026-05-10"', '"2026-05-06"',
+                    "no 2026 game stats", "2026 stats retained", '" · 2026"')
+    if lit in _GEN
+]
+check("the dashboard takes its season from the data, not a literal year",
+      not _season_literals and "__SEASON__" in _GEN,
+      f"hardcoded: {_season_literals}" if _season_literals else "no __SEASON__ placeholder")
+check("the postseason windows follow the game's own year",
+      "${y}-05-10" in _GEN and "${y}-05-06" in _GEN,
+      "fixed-year windows stop labelling postseason games once the season turns")
+
 print()
 print("the real scraped data, as warnings only")
 # These read the committed scrape rather than a fixture, so a new spelling or
