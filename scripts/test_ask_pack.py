@@ -555,6 +555,41 @@ for kt, js in (("previewQuestion", "kuPreviewQuestion"), ("recapQuestion", "kuRe
 check("the Preview question asks for web news only when search is on",
       "if web search is on" in (_kotlin_question("previewQuestion") or ""))
 
+# The built dashboard, not the generator: docs/index.html is what is actually
+# served, and these three are mistakes that left the page looking fine while
+# doing the wrong thing, so none of them would show up in a wording check.
+try:
+    with open(os.path.join(ROOT, "docs/index.html")) as _f:
+        _DASH = _f.read()
+except OSError:
+    _DASH = ""
+
+# ask.js is <script type="module">, which defers until after the inline script
+# that builds this table. Gating the markup on window.kuPreviewQuestion meant
+# the column rendered empty every time and the button never appeared at all.
+check("the Preview button is written without waiting for ask.js",
+      "ask-preview" in _DASH and "window.kuPreviewQuestion\n        ?" not in _DASH,
+      "a render-time check for ask.js is always false: the module has not run yet")
+
+# oppName strips a doubleheader's "(G2)". That is right for a heading or a box
+# score label, and wrong for the question: it made both halves of a
+# doubleheader ask a byte-identical question with nothing to tell them apart.
+# So this looks only at what the two Ask calls are handed, not at oppName
+# everywhere.
+_ask_calls = _re.findall(
+    r"window\.ku(?:Recap|Preview)Question\((.*?)\)\)", _DASH, _re.S)
+check("both Ask buttons were found in the built dashboard", len(_ask_calls) == 2,
+      f"found {len(_ask_calls)}")
+check("the Ask buttons pass the opponent the app passes",
+      all("oppName" not in c for c in _ask_calls),
+      "oppName would drop the (G2) that tells the two halves apart")
+
+# A game with no score is not necessarily unplayed: an exhibition never gets a
+# box score, so without a date test it sits under "upcoming" forever.
+check("the upcoming table drops games whose date has passed",
+      "g.date >= todayIso" in _DASH,
+      "past-dated games would keep showing as still to come")
+
 print()
 print("the real scraped data, as warnings only")
 # These read the committed scrape rather than a fixture, so a new spelling or
