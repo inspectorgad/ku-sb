@@ -636,8 +636,14 @@ if (!conference.size) {
 conference.delete(teamKey("Kansas"));
 const inConference = g => conference.has(teamKey(g.opponent));
 function phaseOf(g) {
-  if (g.date >= "2026-05-10" && g.date <= "2026-05-31") return "NCAA Regional";
-  if (g.date >= "2026-05-06" && g.date <= "2026-05-09") return "Big 12 Tourney";
+  // Keyed off the game's own year, not a fixed one. These windows were
+  // written as literal 2026 dates, so from the first game of 2027 every
+  // postseason game would have come back "Big 12" or "Non-conference".
+  // The exact dates move by a few days each year, so this stays an
+  // approximation — just one that follows the season instead of expiring.
+  const y = g.date.slice(0, 4);
+  if (g.date >= `${y}-05-10` && g.date <= `${y}-05-31`) return "NCAA Regional";
+  if (g.date >= `${y}-05-06` && g.date <= `${y}-05-09`) return "Big 12 Tourney";
   return inConference(g) ? "Big 12" : "Non-conference";
 }
 
@@ -1650,7 +1656,7 @@ function sparkSVG(p, w = 200, h = 26) {
 
   let html = current.map(p => card(p, false)).join("");
   if (bench.length) {
-    html += `<div class="former-head">On the roster — no 2026 game stats</div>`;
+    html += `<div class="former-head">On the roster — no ${SEASON} game stats</div>`;
     html += bench.map(p => `
       <div class="pcard" style="cursor:default">
         <div class="top">
@@ -1661,7 +1667,7 @@ function sparkSVG(p, w = 200, h = 26) {
       </div>`).join("");
   }
   if (former.length) {
-    html += `<div class="former-head">Former players — 2026 stats retained</div>`;
+    html += `<div class="former-head">Former players — ${SEASON} stats retained</div>`;
     html += former.map(p => card(p, true)).join("");
   }
   host.innerHTML = html;
@@ -1686,7 +1692,7 @@ function openPlayer(name) {
   document.getElementById("mSub").textContent =
     (p.position ? p.position + " · " : "") + t.g + " games (" + t.gs + " starts)" +
     (pt.app ? " · " + pt.app + " pitching app" : "") + " · " +
-    (p.active ? "current roster" : "former player") + " · 2026";
+    (p.active ? "current roster" : "former player") + " · " + SEASON;
 
   let mt = [];
   if (t.ab > 0 || !pt.app) {

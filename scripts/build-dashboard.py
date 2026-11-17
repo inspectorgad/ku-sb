@@ -23,12 +23,36 @@ with open(SEED_PATH) as f:
 data_json = json.dumps(seed, separators=(",", ":"))
 updated = seed.get("generatedAt") or datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
 
+
+def current_season(games):
+    """The season the page is about.
+
+    The same rule ask_pack.py uses, and for the same reason: the spring season
+    is the real one, and sorting puts "Fall 2026" after "2027", so the current
+    season is chosen by what has actually been played rather than by where a
+    label lands in an alphabet. Before the first pitch of a new year nothing
+    has been played in it yet, so it falls back to the latest spring label on
+    the schedule.
+
+    This used to be the literal "2026" in the title and the banner. That was
+    fine for one season and wrong from the first game of the next.
+    """
+    seasons = {g.get("season") for g in games if g.get("season")}
+    spring = sorted(s for s in seasons if not str(s).startswith("Fall"))
+    if not spring:
+        return ""
+    played = {g.get("season") for g in games if g.get("teamScore") is not None}
+    return max((s for s in spring if s in played), default=spring[-1])
+
+
+season = current_season(seed.get("games", []))
+
 TEMPLATE = r"""<!doctype html>
 <html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>KU Softball 2026</title>
+<title>KU Softball __SEASON__</title>
 <link rel="icon" href="icon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="icon-180.png">
 <link rel="manifest" href="manifest.json">
@@ -321,7 +345,7 @@ TEMPLATE = r"""<!doctype html>
 <header>
   <div class="head-in">
     <div>
-      <div class="eyebrow">2026 Season · NCAA Division I · Big 12</div>
+      <div class="eyebrow">__SEASON__ Season · NCAA Division I · Big 12</div>
       <h1>KANSAS JAYHAWKS <span class="thin">Softball</span></h1>
     </div>
     <div class="head-spacer"></div>
@@ -661,8 +685,14 @@ if (!conference.size) {
 conference.delete(teamKey("Kansas"));
 const inConference = g => conference.has(teamKey(g.opponent));
 function phaseOf(g) {
-  if (g.date >= "2026-05-10" && g.date <= "2026-05-31") return "NCAA Regional";
-  if (g.date >= "2026-05-06" && g.date <= "2026-05-09") return "Big 12 Tourney";
+  // Keyed off the game's own year, not a fixed one. These windows were
+  // written as literal 2026 dates, so from the first game of 2027 every
+  // postseason game would have come back "Big 12" or "Non-conference".
+  // The exact dates move by a few days each year, so this stays an
+  // approximation — just one that follows the season instead of expiring.
+  const y = g.date.slice(0, 4);
+  if (g.date >= `${y}-05-10` && g.date <= `${y}-05-31`) return "NCAA Regional";
+  if (g.date >= `${y}-05-06` && g.date <= `${y}-05-09`) return "Big 12 Tourney";
   return inConference(g) ? "Big 12" : "Non-conference";
 }
 
@@ -1675,7 +1705,7 @@ function sparkSVG(p, w = 200, h = 26) {
 
   let html = current.map(p => card(p, false)).join("");
   if (bench.length) {
-    html += `<div class="former-head">On the roster — no 2026 game stats</div>`;
+    html += `<div class="former-head">On the roster — no ${SEASON} game stats</div>`;
     html += bench.map(p => `
       <div class="pcard" style="cursor:default">
         <div class="top">
@@ -1686,7 +1716,7 @@ function sparkSVG(p, w = 200, h = 26) {
       </div>`).join("");
   }
   if (former.length) {
-    html += `<div class="former-head">Former players — 2026 stats retained</div>`;
+    html += `<div class="former-head">Former players — ${SEASON} stats retained</div>`;
     html += former.map(p => card(p, true)).join("");
   }
   host.innerHTML = html;
@@ -1711,7 +1741,7 @@ function openPlayer(name) {
   document.getElementById("mSub").textContent =
     (p.position ? p.position + " · " : "") + t.g + " games (" + t.gs + " starts)" +
     (pt.app ? " · " + pt.app + " pitching app" : "") + " · " +
-    (p.active ? "current roster" : "former player") + " · 2026";
+    (p.active ? "current roster" : "former player") + " · " + SEASON;
 
   let mt = [];
   if (t.ab > 0 || !pt.app) {
@@ -1854,9 +1884,9 @@ function openPlayer(name) {
 </body></html>
 """
 
-html = TEMPLATE.replace("__DATA__", data_json).replace(
-    "__UPDATED__", updated.replace("T", " ").replace("Z", "")
-)
+html = (TEMPLATE.replace("__DATA__", data_json)
+        .replace("__UPDATED__", updated.replace("T", " ").replace("Z", ""))
+        .replace("__SEASON__", season))
 
 os.makedirs(os.path.dirname(OUT_PATH), exist_ok=True)
 with open(OUT_PATH, "w") as f:
